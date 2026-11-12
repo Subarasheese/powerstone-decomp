@@ -1,0 +1,909 @@
+start,end,name,layer,boundary_cert,boundary_evidence,name_evidence,merged_cells,hidden_funcs_unlisted,unexplained_bytes,fpu_ops,switch_tables,jsr_calls,asm_kinds,matched_funcs,matched_units,sdk_source_files,bad_words
+0c010028,0c0100b0,src_0c010028.c,SDK/Katana,start,,,,0,50,0,0,0,,0,,,0
+0c0100b0,0c010134,src_0c0100b0.c,SDK/Katana,certain,hand asm edge,,hidden-only:0c0100f0;hidden-only:0c0100f8,2,38,0,0,0,"cache:1,ctrlreg:1",0,,,0
+0c010134,0c010138,src_0c010134.c,SDK/Katana,certain,hand asm edge,,,0,0,0,0,0,,1,w0_u_empty1.c,,0
+0c010138,0c01013c,src_0c010138.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,1,w0_u_empty1.c,,0
+0c01013c,0c01015c,src_0c01013c.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,28,0,0,0,,1,w0_u_empty1.c,,0
+0c01015c,0c010160,src_0c01015c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,1,w0_u_empty1.c,,0
+0c010160,0c012568,game_vmsave.c,Game,certain,layer change between anchored regions,string:POWSTONE_DAT,align2:0c011df6,0,42,8,0,113,,1,w0_u_a1.c,,0
+0c012568,0c012870,src_0c012568.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,34,0,4,,0,,,0
+0c012870,0c0128a0,src_0c012870.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0128a0,0c0158d8,src_0c0128a0.c,Game,probable,no link crosses; pool/padding closes previous,,,1,44,947,0,129,,5,w0_u_b1.c;w0_u_b2.c;w0_u_b3.c;w0_u_b4b.c,,0
+0c0158d8,0c01628c,src_0c0158d8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,228,0,26,,1,w0_u_i2.c,,0
+0c01628c,0c017240,src_0c01628c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,206,0,55,,0,,,0
+0c017240,0c0172e0,src_0c017240.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,27,0,0,,0,,,0
+0c0172e0,0c017a24,src_0c0172e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,136,0,10,,0,,,0
+0c017a24,0c0195f0,src_0c017a24.c,Game,probable,no link crosses; pool/padding closes previous,,,0,18,118,0,88,,0,,,0
+0c0195f0,0c019bf4,src_0c0195f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,47,0,13,,0,,,0
+0c019bf4,0c01a42c,src_0c019bf4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,70,0,37,,0,,,0
+0c01a42c,0c01ae48,src_0c01a42c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,69,0,37,,0,,,0
+0c01ae48,0c01b66c,src_0c01ae48.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,54,0,38,,0,,,0
+0c01b66c,0c01b9f4,src_0c01b66c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,13,0,24,,1,w0_u_c2.c,,0
+0c01b9f4,0c01d254,src_0c01b9f4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,56,264,1,46,,0,,,0
+0c01d254,0c01d304,src_0c01d254.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,16,0,2,,0,,,0
+0c01d304,0c01e798,src_0c01d304.c,Game,probable,no link crosses; pool/padding closes previous,,,0,16,163,0,43,,0,,,0
+0c01e798,0c020258,src_0c01e798.c,Game,probable,no link crosses; pool/padding closes previous,,,0,14,73,0,124,,1,w0_u_d4.c,,0
+0c020258,0c0203d0,src_0c020258.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,48,0,6,,0,,,0
+0c0203d0,0c022228,src_0c0203d0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,78,1270,1,55,,6,w0_u_e1.c;w0_u_f1.c;w0_u_i1.c;w0_u_i3.c,,0
+0c022228,0c022634,src_0c022228.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,279,0,7,,0,,,0
+0c022634,0c0228ac,src_0c022634.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,189,0,4,,0,,,0
+0c0228ac,0c02380c,src_0c0228ac.c,Game,probable,no link crosses; pool/padding closes previous,,,2,8,411,0,30,,1,w0_u_d1.c,,0
+0c02380c,0c023bf4,src_0c02380c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,281,0,4,,0,,,0
+0c023bf4,0c023d04,src_0c023bf4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,72,0,1,,0,,,0
+0c023d04,0c025958,src_0c023d04.c,Game,probable,no link crosses; pool/padding closes previous,,,0,32,1193,0,87,,0,,,0
+0c025958,0c026c7c,src_0c025958.c,Game,probable,no link crosses; pool/padding closes previous,,,0,14,121,0,124,,0,,,0
+0c026c7c,0c0276c4,src_0c026c7c.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c027658,1,64,0,0,0,,0,,,0
+0c0276c4,0c027b90,src_0c0276c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,0,1,0,,0,,,0
+0c027b90,0c027c74,src_0c027b90.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,3,,0,,,0
+0c027c74,0c027d50,src_0c027c74.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,4,0,4,,0,,,0
+0c027d50,0c027f90,src_0c027d50.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,35,0,16,,0,,,0
+0c027f90,0c028030,src_0c027f90.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c028030,0c028524,src_0c028030.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,139,0,28,,0,,,0
+0c028524,0c028a4c,src_0c028524.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,123,0,9,,0,,,0
+0c028a4c,0c028c88,src_0c028a4c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,44,0,3,,0,,,0
+0c028c88,0c028dec,src_0c028c88.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,49,0,8,,0,,,0
+0c028dec,0c029268,src_0c028dec.c,Game,guessed,no link crosses; previous has no pool tail,,,0,38,90,0,7,,0,,,0
+0c029268,0c029660,src_0c029268.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c029546,0,2,90,0,8,,0,,,0
+0c029660,0c029bc0,src_0c029660.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,147,0,23,,0,,,0
+0c029bc0,0c029ec4,src_0c029bc0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,104,0,16,,0,,,0
+0c029ec4,0c02a1f4,src_0c029ec4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,85,0,16,,0,,,0
+0c02a1f4,0c02afc4,src_0c02a1f4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,262,0,44,,0,,,0
+0c02afc4,0c02b0dc,src_0c02afc4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,21,0,7,,0,,,0
+0c02b0dc,0c02b884,src_0c02b0dc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,163,0,10,,0,,,0
+0c02b884,0c02ca74,src_0c02b884.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c02bb32,0,16,328,0,29,,0,,,0
+0c02ca74,0c02d774,game_fmt06x.c,Game,probable,no link crosses; pool/padding closes previous,string:%06x,,0,10,97,0,95,,0,,,0
+0c02d774,0c02d9e0,src_0c02d774.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,14,0,7,,0,,,0
+0c02d9e0,0c02f328,src_0c02d9e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,62,539,0,45,,1,w0_u_d2.c,,0
+0c02f328,0c02ff18,src_0c02f328.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,260,0,13,,0,,,0
+0c02ff18,0c03148c,src_0c02ff18.c,Game,probable,no link crosses; pool/padding closes previous,,,0,34,418,0,63,,1,w0_u_d3.c,,0
+0c03148c,0c0318e0,src_0c03148c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,115,0,16,,0,,,0
+0c0318e0,0c03202c,src_0c0318e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,123,0,15,,0,,,0
+0c03202c,0c032fd4,src_0c03202c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,10,389,0,65,,0,,,0
+0c032fd4,0c033114,src_0c032fd4.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,0,0,6,,0,,,0
+0c033114,0c0332a0,src_0c033114.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,15,0,5,,0,,,0
+0c0332a0,0c033670,src_0c0332a0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,102,0,11,,0,,,0
+0c033670,0c033990,src_0c033670.c,Game,guessed,no link crosses; previous has no pool tail,,,0,4,71,0,5,,0,,,0
+0c033990,0c033ba8,src_0c033990.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,39,0,3,,0,,,0
+0c033ba8,0c033cd0,src_0c033ba8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,12,0,4,,0,,,0
+0c033cd0,0c0342a0,src_0c033cd0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,122,0,29,,0,,,0
+0c0342a0,0c034530,src_0c0342a0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,60,0,15,,0,,,0
+0c034530,0c034884,src_0c034530.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,78,0,5,,0,,,0
+0c034884,0c034bfc,src_0c034884.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,79,0,5,,0,,,0
+0c034bfc,0c034dd0,src_0c034bfc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,40,0,3,,0,,,0
+0c034dd0,0c034eb0,src_0c034dd0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,5,0,2,,0,,,0
+0c034eb0,0c0350e0,src_0c034eb0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,20,0,4,,0,,,0
+0c0350e0,0c035444,src_0c0350e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,62,0,7,,0,,,0
+0c035444,0c0355cc,src_0c035444.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,20,0,3,,0,,,0
+0c0355cc,0c0357e0,src_0c0355cc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,20,0,5,,0,,,0
+0c0357e0,0c03598c,src_0c0357e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,7,0,5,,0,,,0
+0c03598c,0c035c84,src_0c03598c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,25,0,14,,0,,,0
+0c035c84,0c036248,src_0c035c84.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,83,0,21,,0,,,0
+0c036248,0c036598,src_0c036248.c,Game,probable,no link crosses; pool/padding closes previous,,,3,2,158,0,15,,0,,,0
+0c036598,0c0367e4,src_0c036598.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,47,0,5,,0,,,0
+0c0367e4,0c036a6c,src_0c0367e4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,71,0,8,,0,,,0
+0c036a6c,0c036fe4,src_0c036a6c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,132,0,16,,0,,,0
+0c036fe4,0c0372a8,src_0c036fe4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,47,0,4,,0,,,0
+0c0372a8,0c03743c,src_0c0372a8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,27,0,3,,0,,,0
+0c03743c,0c0375d4,src_0c03743c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,27,0,3,,0,,,0
+0c0375d4,0c037848,src_0c0375d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,73,0,9,,0,,,0
+0c037848,0c037ab8,src_0c037848.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,6,,0,,,0
+0c037ab8,0c037d88,src_0c037ab8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,36,0,6,,0,,,0
+0c037d88,0c0380d4,src_0c037d88.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,16,0,6,,0,,,0
+0c0380d4,0c0382a8,src_0c0380d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,48,0,3,,0,,,0
+0c0382a8,0c038418,src_0c0382a8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,30,0,2,,0,,,0
+0c038418,0c038640,src_0c038418.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,62,0,9,,0,,,0
+0c038640,0c0387ec,src_0c038640.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,35,0,3,,0,,,0
+0c0387ec,0c038a0c,src_0c0387ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,44,0,3,,0,,,0
+0c038a0c,0c038b98,src_0c038a0c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,13,0,3,,0,,,0
+0c038b98,0c039090,src_0c038b98.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,118,0,17,,0,,,0
+0c039090,0c03921c,src_0c039090.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,8,,0,,,0
+0c03921c,0c039424,src_0c03921c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,23,0,4,,0,,,0
+0c039424,0c0396bc,src_0c039424.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,33,0,10,,0,,,0
+0c0396bc,0c039828,src_0c0396bc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,34,0,5,,0,,,0
+0c039828,0c039aa0,src_0c039828.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,11,,0,,,0
+0c039aa0,0c039c6c,src_0c039aa0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,36,0,5,,0,,,0
+0c039c6c,0c039ed8,src_0c039c6c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,24,0,11,,0,,,0
+0c039ed8,0c03a024,src_0c039ed8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c03a024,0c03a12c,src_0c03a024.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,5,,0,,,0
+0c03a12c,0c03a278,src_0c03a12c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,6,,0,,,0
+0c03a278,0c03a58c,src_0c03a278.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,95,0,7,,0,,,0
+0c03a58c,0c03a918,src_0c03a58c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,115,0,9,,0,,,0
+0c03a918,0c03adf8,src_0c03a918.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,153,0,10,,0,,,0
+0c03adf8,0c03af38,src_0c03adf8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,6,0,3,,0,,,0
+0c03af38,0c03b1ec,src_0c03af38.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,48,0,11,,0,,,0
+0c03b1ec,0c03b384,src_0c03b1ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,36,0,7,,0,,,0
+0c03b384,0c03b4d0,src_0c03b384.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c03b4d0,0c03b86c,src_0c03b4d0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,76,0,6,,0,,,0
+0c03b86c,0c03ba7a,src_0c03b86c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,23,0,7,,0,,,0
+0c03ba7a,0c03bcac,src_0c03ba7a.c,Game,guessed,misaligned,,,1,4,85,0,4,,0,,,0
+0c03bcac,0c03c1ec,src_0c03bcac.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,55,0,12,,0,,,0
+0c03c1ec,0c03c5c0,src_0c03c1ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,27,0,10,,0,,,0
+0c03c5c0,0c03c724,src_0c03c5c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,8,0,4,,0,,,0
+0c03c724,0c03c904,src_0c03c724.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,45,0,3,,0,,,0
+0c03c904,0c03cb28,src_0c03c904.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,22,0,6,,0,,,0
+0c03cb28,0c03cc48,src_0c03cb28.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,12,0,5,,0,,,0
+0c03cc48,0c03cf50,src_0c03cc48.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,26,0,13,,0,,,0
+0c03cf50,0c03d0d4,src_0c03cf50.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,10,0,4,,0,,,0
+0c03d0d4,0c03d254,src_0c03d0d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,4,,0,,,0
+0c03d254,0c03d60c,src_0c03d254.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,51,0,4,,0,,,0
+0c03d60c,0c03d8b0,src_0c03d60c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,42,0,5,,0,,,0
+0c03d8b0,0c03dca8,src_0c03d8b0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,136,0,16,,0,,,0
+0c03dca8,0c03de24,src_0c03dca8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,25,0,4,,0,,,0
+0c03de24,0c03dfd0,src_0c03de24.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,19,0,6,,0,,,0
+0c03dfd0,0c03e354,src_0c03dfd0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,51,0,13,,0,,,0
+0c03e354,0c03e918,src_0c03e354.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,135,0,18,,0,,,0
+0c03e918,0c03ed0c,src_0c03e918.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,68,0,21,,0,,,0
+0c03ed0c,0c03ef18,src_0c03ed0c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,48,0,6,,0,,,0
+0c03ef18,0c03f004,src_0c03ef18.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,2,0,6,,0,,,0
+0c03f004,0c03f2c8,src_0c03f004.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,71,0,5,,0,,,0
+0c03f2c8,0c03f434,src_0c03f2c8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,8,0,7,,0,,,0
+0c03f434,0c03fab4,src_0c03f434.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,162,0,32,,0,,,0
+0c03fab4,0c03fd08,src_0c03fab4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,40,0,9,,0,,,0
+0c03fd08,0c040260,src_0c03fd08.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,85,0,29,,0,,,0
+0c040260,0c040550,src_0c040260.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,73,0,10,,0,,,0
+0c040550,0c040a84,src_0c040550.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,154,0,32,,0,,,0
+0c040a84,0c0411b8,src_0c040a84.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c040bd0;hidden-only:0c040cd0,2,220,159,1,41,,0,,,0
+0c0411b8,0c041574,src_0c0411b8.c,Game,guessed,no link crosses; previous has no pool tail,,,0,6,79,0,8,,0,,,0
+0c041574,0c0416d8,src_0c041574.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,8,0,7,,0,,,0
+0c0416d8,0c041820,src_0c0416d8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,17,0,5,,0,,,0
+0c041820,0c0419a8,src_0c041820.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,22,0,7,,0,,,0
+0c0419a8,0c041e14,src_0c0419a8.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c041c14;hidden-only:0c041d14,3,332,55,0,11,,0,,,0
+0c041e14,0c042150,src_0c041e14.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,69,0,6,,0,,,0
+0c042150,0c042514,src_0c042150.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,92,0,4,,0,,,0
+0c042514,0c042728,src_0c042514.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,71,0,2,,0,,,0
+0c042728,0c043384,src_0c042728.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,216,0,34,,0,,,0
+0c043384,0c0434cc,src_0c043384.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,25,0,3,,0,,,0
+0c0434cc,0c043730,src_0c0434cc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,39,0,4,,0,,,0
+0c043730,0c043bdc,src_0c043730.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,124,0,11,,0,,,0
+0c043bdc,0c044094,src_0c043bdc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,77,0,23,,0,,,0
+0c044094,0c044250,src_0c044094.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,65,0,3,,0,,,0
+0c044250,0c044408,src_0c044250.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,61,0,2,,0,,,0
+0c044408,0c04463c,src_0c044408.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,30,0,3,,0,,,0
+0c04463c,0c044e38,src_0c04463c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,235,0,21,,0,,,0
+0c044e38,0c04512c,src_0c044e38.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,56,0,11,,0,,,0
+0c04512c,0c0454b4,src_0c04512c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,84,0,18,,0,,,0
+0c0454b4,0c04571c,src_0c0454b4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,64,0,5,,0,,,0
+0c04571c,0c0457d0,src_0c04571c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,2,,0,,,0
+0c0457d0,0c045968,src_0c0457d0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,6,0,9,,0,,,0
+0c045968,0c045f9c,src_0c045968.c,Game,probable,no link crosses; pool/padding closes previous,,,0,28,122,1,14,,0,,,0
+0c045f9c,0c046360,src_0c045f9c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,52,0,15,,0,,,0
+0c046360,0c046798,src_0c046360.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,70,0,22,,0,,,0
+0c046798,0c046830,src_0c046798.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c046830,0c0469fa,src_0c046830.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c0469fa,0c047c6c,src_0c0469fa.c,Game,guessed,misaligned,,,1,24,404,0,234,,0,,,0
+0c047c6c,0c047df4,src_0c047c6c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,14,,0,,,0
+0c047df4,0c048074,src_0c047df4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,68,0,13,,0,,,0
+0c048074,0c0485f8,src_0c048074.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,115,0,8,,0,,,0
+0c0485f8,0c0488b8,src_0c0485f8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,26,0,9,,0,,,0
+0c0488b8,0c048aa0,src_0c0488b8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,13,0,5,,0,,,0
+0c048aa0,0c048c18,src_0c048aa0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,9,0,5,,0,,,0
+0c048c18,0c049288,src_0c048c18.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,160,0,19,,0,,,0
+0c049288,0c049408,src_0c049288.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,24,0,5,,0,,,0
+0c049408,0c0496f0,src_0c049408.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,83,0,8,,0,,,0
+0c0496f0,0c0497fc,src_0c0496f0.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,1,,0,,,0
+0c0497fc,0c0498c4,src_0c0497fc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0498c4,0c049b7c,src_0c0498c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,13,0,7,,0,,,0
+0c049b7c,0c049d14,src_0c049b7c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,69,0,2,,0,,,0
+0c049d14,0c049e68,src_0c049d14.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,6,0,3,,0,,,0
+0c049e68,0c04a13c,game_item.c,Game,guessed,no link crosses; previous has no pool tail,string:LIFE UP,,0,0,86,0,6,,0,,,0
+0c04a13c,0c04a294,src_0c04a13c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,14,0,5,,0,,,0
+0c04a294,0c04a4c4,src_0c04a294.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,24,0,4,,0,,,0
+0c04a4c4,0c04a8ec,src_0c04a4c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,57,0,14,,0,,,0
+0c04a8ec,0c04aa24,src_0c04a8ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,66,6,0,5,,0,,,0
+0c04aa24,0c04add0,src_0c04aa24.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,140,0,6,,0,,,0
+0c04add0,0c04b054,src_0c04add0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,51,0,0,,0,,,0
+0c04b054,0c04b1f0,src_0c04b054.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,18,0,5,,0,,,0
+0c04b1f0,0c04b428,src_0c04b1f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,18,0,8,,0,,,0
+0c04b428,0c04b6b8,src_0c04b428.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,63,0,4,,0,,,0
+0c04b6b8,0c04bfd0,src_0c04b6b8.c,Game,probable,no link crosses; pool/padding closes previous,,,1,8,125,0,37,,0,,,0
+0c04bfd0,0c04e94c,game_dbginfo.c,Game,probable,no link crosses; pool/padding closes previous,string:Kyori %8d,,0,76,392,0,101,,1,w1_u_empty_0c04cdee.c,,0
+0c04e94c,0c04eade,game_dbgprint.c,Game,probable,distinct string-anchored game files,string:Print %8x,,0,2,7,0,6,,0,,,0
+0c04eade,0c04ec40,src_0c04eade.c,Game,guessed,misaligned,,,1,0,0,0,2,,0,,,0
+0c04ec40,0c04eddc,src_0c04ec40.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,4,,0,,,0
+0c04eddc,0c04ef6c,src_0c04eddc.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,26,0,4,,0,,,0
+0c04ef6c,0c04f044,src_0c04ef6c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,0,0,2,,0,,,0
+0c04f044,0c04fb04,src_0c04f044.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c04fa64,1,8,220,0,18,,0,,,0
+0c04fb04,0c04fc9e,src_0c04fb04.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,37,0,5,,0,,,0
+0c04fc9e,0c04fed8,src_0c04fc9e.c,Game,guessed,misaligned,,,1,2,49,0,5,,0,,,0
+0c04fed8,0c050edc,src_0c04fed8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,136,0,18,,0,,,0
+0c050edc,0c050fe0,src_0c050edc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,3,,0,,,0
+0c050fe0,0c0510f0,src_0c050fe0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,7,0,3,,0,,,0
+0c0510f0,0c051360,src_0c0510f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,9,0,11,,0,,,0
+0c051360,0c0517a8,src_0c051360.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,9,0,25,,0,,,0
+0c0517a8,0c051aa0,src_0c0517a8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,19,,0,,,0
+0c051aa0,0c051ce4,src_0c051aa0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,9,0,9,,0,,,0
+0c051ce4,0c051e2c,src_0c051ce4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c051e2c,0c05203c,src_0c051e2c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,5,,0,,,0
+0c05203c,0c052150,src_0c05203c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,3,,0,,,0
+0c052150,0c052708,src_0c052150.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c052630,1,12,27,0,18,,0,,,0
+0c052708,0c053680,src_0c052708.c,Game,probable,no link crosses; pool/padding closes previous,,,8,12,84,0,136,,0,,,0
+0c053680,0c054114,src_0c053680.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,0,0,18,,0,,,0
+0c054114,0c0559bc,src_0c054114.c,Game,probable,no link crosses; pool/padding closes previous,,,15,882,66,0,86,ctrlreg:1,1,w1_u_empty_0c055562.c,,0
+0c0559bc,0c055d38,src_0c0559bc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,34,0,13,,0,,,0
+0c055d38,0c05600c,src_0c055d38.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,46,0,7,,0,,,0
+0c05600c,0c056340,src_0c05600c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,35,0,10,,0,,,0
+0c056340,0c0567c4,src_0c056340.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,42,0,17,,0,,,0
+0c0567c4,0c056bb4,src_0c0567c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,35,0,16,,0,,,0
+0c056bb4,0c056e2c,src_0c056bb4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,29,0,8,,0,,,0
+0c056e2c,0c057128,src_0c056e2c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,33,0,6,,0,,,0
+0c057128,0c057850,src_0c057128.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,82,0,20,,0,,,0
+0c057850,0c057b3c,src_0c057850.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,11,,0,,,0
+0c057b3c,0c057e28,src_0c057b3c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,26,0,10,,0,,,0
+0c057e28,0c05821c,src_0c057e28.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,10,,0,,,0
+0c05821c,0c0584e8,src_0c05821c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,29,0,10,,0,,,0
+0c0584e8,0c05876c,src_0c0584e8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,22,0,9,,0,,,0
+0c05876c,0c0588d8,src_0c05876c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,3,,0,,,0
+0c0588d8,0c058ba4,src_0c0588d8.c,Game,guessed,no link crosses; previous has no pool tail,,,0,4,32,0,10,,0,,,0
+0c058ba4,0c058ef4,src_0c058ba4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,35,0,12,,0,,,0
+0c058ef4,0c059718,src_0c058ef4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,9,0,16,,0,,,0
+0c059718,0c05986c,src_0c059718.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,24,0,1,,0,,,0
+0c05986c,0c059934,src_0c05986c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c059934,0c0599fc,src_0c059934.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0599fc,0c059c44,src_0c0599fc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,8,0,5,,0,,,0
+0c059c44,0c05a6e8,src_0c059c44.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,124,0,41,,0,,,0
+0c05a6e8,0c05a80c,src_0c05a6e8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,12,,0,,,0
+0c05a80c,0c05a96c,src_0c05a80c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,34,0,8,,0,,,0
+0c05a96c,0c05ae26,src_0c05a96c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,24,36,1,13,,0,,,0
+0c05ae26,0c05b6dc,src_0c05ae26.c,Game,guessed,misaligned,,,1,8,214,0,70,,1,w1_u_empty_0c05b188.c,,0
+0c05b6dc,0c05c1c0,src_0c05b6dc.c,Game,probable,no link crosses; pool/padding closes previous,,,1,50,112,0,48,,0,,,0
+0c05c1c0,0c05c6e0,src_0c05c1c0.c,Game,probable,no link crosses; pool/padding closes previous,,,1,6,67,0,35,,1,w1_u_empty_0c05c44e.c,,0
+0c05c6e0,0c05ca54,src_0c05c6e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,21,,0,,,0
+0c05ca54,0c05cd68,src_0c05ca54.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,55,0,28,,0,,,0
+0c05cd68,0c05d254,src_0c05cd68.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,75,0,14,,1,w1_u_empty_0c05d1cc.c,,0
+0c05d254,0c05d338,src_0c05d254.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,34,0,1,,0,,,0
+0c05d338,0c05d536,src_0c05d338.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,3,0,6,,0,,,0
+0c05d536,0c05d970,src_0c05d536.c,Game,guessed,misaligned,,,1,8,60,0,12,,0,,,0
+0c05d970,0c05dd00,src_0c05d970.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,34,0,22,,0,,,0
+0c05dd00,0c05e20c,src_0c05dd00.c,Game,probable,no link crosses; pool/padding closes previous,,,1,6,38,0,17,,0,,,0
+0c05e20c,0c05ec26,src_0c05e20c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,211,0,53,,1,w1_u_empty_0c05e4e8.c,,0
+0c05ec26,0c05eea0,src_0c05ec26.c,Game,guessed,misaligned,,,1,4,50,0,20,,0,,,0
+0c05eea0,0c05f6d8,src_0c05eea0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,69,0,15,,0,,,0
+0c05f6d8,0c05fc50,src_0c05f6d8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,113,0,18,,0,,,0
+0c05fc50,0c061094,game_resload.c,Game,probable,no link crosses; pool/padding closes previous,string:PL EFFECT,,0,44,0,1,26,,0,,,0
+0c061094,0c0612f4,src_0c061094.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,21,ctrlreg:2,0,,,0
+0c0612f4,0c061434,src_0c0612f4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c061434,0c062050,src_0c061434.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,5,0,94,ctrlreg:18,0,,,0
+0c062050,0c06208c,src_0c062050.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c06206e,0,0,24,0,0,,2,w2_u_vec1.c,,0
+0c06208c,0c0620a4,src_0c06208c.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,9,0,0,,1,w2_u_vec1.c,,0
+0c0620a4,0c06231c,src_0c0620a4.c,Game,guessed,no link crosses; previous has no pool tail,,,0,62,92,0,14,,0,,,0
+0c06231c,0c062b1c,src_0c06231c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c062a7e,0,64,8,0,38,,0,,,0
+0c062b1c,0c062de8,src_0c062b1c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,6,,1,w2_u_ret0.c,,0
+0c062de8,0c062f10,src_0c062de8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c062f10,0c063318,src_0c062f10.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,60,0,39,,0,,,0
+0c063318,0c0641a0,src_0c063318.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,171,1,105,,0,,,0
+0c0641a0,0c064a1c,src_0c0641a0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,20,100,0,50,,0,,,0
+0c064a1c,0c064b7c,src_0c064a1c.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,30,0,8,,0,,,0
+0c064b7c,0c064cc8,src_0c064b7c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,16,0,8,,0,,,0
+0c064cc8,0c06588c,src_0c064cc8.c,Game,probable,no link crosses; pool/padding closes previous,,,2,60,94,0,71,,0,,,0
+0c06588c,0c0658b8,src_0c06588c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,1,w2_u_c065.c,,0
+0c0658b8,0c065cb4,src_0c0658b8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,32,62,1,28,,0,,,0
+0c065cb4,0c06734c,src_0c065cb4.c,Game,probable,no link crosses; pool/padding closes previous,,,1,98,129,1,155,,0,,,0
+0c06734c,0c067870,src_0c06734c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0674da,0,4,4,0,36,,0,,,0
+0c067870,0c067944,src_0c067870.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,3,,0,,,0
+0c067944,0c067a68,src_0c067944.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,0,1,14,,0,,,0
+0c067a68,0c067bcc,src_0c067a68.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,0,1,4,,0,,,0
+0c067bcc,0c067d4c,src_0c067bcc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,7,,0,,,0
+0c067d4c,0c068e10,src_0c067d4c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c068d3a,1,14,257,0,161,,0,,,0
+0c068e10,0c0691c4,src_0c068e10.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,1,0,27,,0,,,0
+0c0691c4,0c06924c,src_0c0691c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,9,0,1,,0,,,0
+0c06924c,0c069a98,src_0c06924c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0693e2;align2:0c069536,0,32,15,0,43,,0,,,0
+0c069a98,0c06ce50,src_0c069a98.c,Game,probable,no link crosses; pool/padding closes previous,,,22,1088,371,3,290,ctrlreg:1,0,,,0
+0c06ce50,0c06cf4c,src_0c06ce50.c,Game,probable,no link crosses; pool/padding closes previous,,,2,2,11,0,28,,0,,,0
+0c06cf4c,0c06d140,src_0c06cf4c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,7,0,13,,0,,,0
+0c06d140,0c06d3d4,src_0c06d140.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,66,0,15,,0,,,0
+0c06d3d4,0c06d8b0,src_0c06d3d4.c,Game,probable,no link crosses; pool/padding closes previous,,,7,134,36,0,34,,0,,,0
+0c06d8b0,0c06dff0,src_0c06d8b0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,17,,0,,,0
+0c06dff0,0c06e0fc,src_0c06dff0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,32,0,0,1,,0,,,0
+0c06e0fc,0c06e18c,src_0c06e0fc.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,0,1,15,,0,,,0
+0c06e18c,0c06e37e,src_0c06e18c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,1,2,5,,0,,,0
+0c06e37e,0c06f4f0,src_0c06e37e.c,Game,guessed,misaligned,,align2:0c06f2ee;align2:0c06f392,13,28,412,1,217,,0,,,0
+0c06f4f0,0c06f8a8,src_0c06f4f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,84,36,0,25,,0,,,0
+0c06f8a8,0c070b46,src_0c06f8a8.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c06f992,11,412,319,0,74,,0,,,0
+0c070b46,0c071264,src_0c070b46.c,Game,guessed,misaligned,,hidden-only:0c070b98;hidden-only:0c070bf4;hidden-only:0c070d3c,8,6,293,0,42,,0,,,0
+0c071264,0c0712d8,src_0c071264.c,Game,probable,no link crosses; pool/padding closes previous,,,5,0,177,0,22,,0,,,0
+0c0712d8,0c07164c,src_0c0712d8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,66,0,22,,0,,,0
+0c07164c,0c071b2c,src_0c07164c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c07179a,0,4,12,0,33,,0,,,0
+0c071b2c,0c071c50,src_0c071b2c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,3,0,17,,0,,,0
+0c071c50,0c071e60,src_0c071c50.c,Game,probable,no link crosses; pool/padding closes previous,,,0,18,12,0,21,,0,,,0
+0c071e60,0c072818,src_0c071e60.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,33,,0,,,0
+0c072818,0c07282c,src_0c072818.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,1,w2_u_ret_a.c,,0
+0c07282c,0c0742fc,src_0c07282c.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c073558;hidden-only:0c0736c4,3,1720,270,2,108,,0,,,0
+0c0742fc,0c07438c,src_0c0742fc.c,Game,probable,no link crosses; pool/padding closes previous,,,7,36,62,1,26,,0,,,0
+0c07438c,0c07660c,src_0c07438c.c,Game,guessed,no link crosses; previous has no pool tail,,hidden-only:0c07515c;hidden-only:0c075284;hidden-only:0c075480;hidden-only:0c07560c;hidden-only:0c075754;hidden-only:0c075840;hidden-only:0c0759b8;hidden-only:0c075af0;hidden-only:0c075c10;hidden-only:0c075d48;hidden-only:0c075e68;hidden-only:0c076010;hidden-only:0c076140;hidden-only:0c076320,16,1308,530,0,94,,0,,,0
+0c07660c,0c076714,src_0c07660c.c,Game,probable,no link crosses; pool/padding closes previous,,,2,0,0,0,4,,0,,,0
+0c076714,0c076978,src_0c076714.c,Game,probable,no link crosses; pool/padding closes previous,,,1,2,1,0,18,,0,,,0
+0c076978,0c076a90,src_0c076978.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,9,0,4,,0,,,0
+0c076a90,0c076d98,src_0c076a90.c,Game,probable,no link crosses; pool/padding closes previous,,,0,34,17,0,28,,0,,,0
+0c076d98,0c077428,src_0c076d98.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,0,0,22,,0,,,0
+0c077428,0c07746c,src_0c077428.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,0,0,1,,0,,,0
+0c07746c,0c079386,src_0c07746c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,136,461,2,250,,0,,,0
+0c079386,0c07a1e4,src_0c079386.c,Game,guessed,misaligned,,align2:0c079386;align2:0c07946a,18,24,118,0,88,,0,,,0
+0c07a1e4,0c07ac0c,src_0c07a1e4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,10,,0,,,0
+0c07ac0c,0c07ac20,src_0c07ac0c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,1,w2_u_ret_b.c,,0
+0c07ac20,0c07c3ea,src_0c07ac20.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c07b3cc,1,330,284,2,189,,3,w2_u_c07ad.c,,0
+0c07c3ea,0c07c8be,src_0c07c3ea.c,Game,guessed,misaligned,,,5,12,14,0,26,,0,,,0
+0c07c8be,0c07cb42,src_0c07c8be.c,Game,guessed,misaligned,,,4,0,1,0,16,,0,,,0
+0c07cb42,0c07cda6,src_0c07cb42.c,Game,guessed,misaligned,,,4,2,21,0,22,,0,,,0
+0c07cda6,0c07d662,src_0c07cda6.c,Game,guessed,misaligned,,align2:0c07cf8e,13,84,44,0,84,,0,,,0
+0c07d662,0c07d7b0,src_0c07d662.c,Game,guessed,misaligned,,,2,2,3,0,7,,0,,,0
+0c07d7b0,0c07d90c,src_0c07d7b0.c,Game,probable,no link crosses; pool/padding closes previous,,,2,0,3,0,7,,0,,,0
+0c07d90c,0c07dd0c,src_0c07d90c.c,Game,probable,no link crosses; pool/padding closes previous,,,2,6,3,0,40,,0,,,0
+0c07dd0c,0c07e774,src_0c07dd0c.c,Game,guessed,no link crosses; previous has no pool tail,,,0,6,0,0,5,,0,,,0
+0c07e774,0c07e8f8,src_0c07e774.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,12,,0,,,0
+0c07e8f8,0c07e930,src_0c07e8f8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c07e930,0c07eb60,src_0c07e930.c,Game,probable,no link crosses; pool/padding closes previous,,,0,60,0,1,18,,0,,,0
+0c07eb60,0c080804,src_0c07eb60.c,Game,probable,no link crosses; pool/padding closes previous,,,3,36,127,1,144,,0,,,0
+0c080804,0c080ff4,src_0c080804.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,59,,0,,,0
+0c080ff4,0c081130,src_0c080ff4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,4,,0,,,0
+0c081130,0c081a46,src_0c081130.c,Game,probable,no link crosses; pool/padding closes previous,,,3,10,25,0,41,,0,,,0
+0c081a46,0c082efc,src_0c081a46.c,Game,guessed,misaligned,,hidden-only:0c081bd8;hidden-only:0c081e2c,10,1670,128,0,46,,0,,,0
+0c082efc,0c0830e0,src_0c082efc.c,Game,probable,no link crosses; pool/padding closes previous,,,12,0,227,0,89,,0,,,0
+0c0830e0,0c0833fa,src_0c0830e0.c,Game,probable,no link crosses; pool/padding closes previous,,,1,2,0,0,6,,0,,,0
+0c0833fa,0c08352c,src_0c0833fa.c,Game,guessed,misaligned,,,4,0,7,0,24,,0,,,0
+0c08352c,0c0835dc,src_0c08352c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,0,0,8,,0,,,0
+0c0835dc,0c08376c,src_0c0835dc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,19,0,10,,0,,,0
+0c08376c,0c083ce0,src_0c08376c.c,Game,probable,no link crosses; pool/padding closes previous,,,6,48,26,0,47,,0,,,0
+0c083ce0,0c084168,src_0c083ce0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,20,,0,,,0
+0c084168,0c08417c,src_0c084168.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,1,w3_u_f084168.c,,0
+0c08417c,0c084304,src_0c08417c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,0,1,14,,14,w3_u_f084168.c,,0
+0c084304,0c084310,src_0c084304.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,1,w3_u_f0c084304.c,,0
+0c084310,0c084d0c,src_0c084310.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c084b4c,1,342,193,1,76,,0,,,0
+0c084d0c,0c085606,src_0c084d0c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0852a6,2,98,91,0,56,,0,,,0
+0c085606,0c086636,src_0c085606.c,Game,guessed,misaligned,,,6,544,107,0,35,,0,,,0
+0c086636,0c08669c,src_0c086636.c,Game,guessed,misaligned,,,8,2,76,0,42,,0,,,0
+0c08669c,0c086d26,src_0c08669c.c,Game,guessed,no link crosses; previous has no pool tail,,,2,2,1,0,26,,0,,,0
+0c086d26,0c086d98,src_0c086d26.c,Game,guessed,misaligned,,,6,0,16,0,35,,0,,,0
+0c086d98,0c087604,src_0c086d98.c,Game,guessed,no link crosses; previous has no pool tail,,align2:0c08759a,0,20,116,0,53,,0,,,0
+0c087604,0c087c34,src_0c087604.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,8,,0,,,0
+0c087c34,0c087d60,src_0c087c34.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,4,0,3,,0,,,0
+0c087d60,0c08975c,src_0c087d60.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c088290;hidden-only:0c0893c0;hidden-only:0c0894c8;hidden-only:0c0895d4,4,628,254,3,158,,0,,,0
+0c08975c,0c089de8,src_0c08975c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c089bba,11,20,1,0,41,,0,,,0
+0c089de8,0c08a106,src_0c089de8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,17,0,25,,0,,,0
+0c08a106,0c08a140,src_0c08a106.c,Game,guessed,misaligned,,,3,0,0,0,4,,0,,,0
+0c08a140,0c08a6c0,src_0c08a140.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,10,,0,,,0
+0c08a6c0,0c08a7d4,src_0c08a6c0.c,Game,guessed,no link crosses; previous has no pool tail,,,0,0,16,0,3,,0,,,0
+0c08a7d4,0c08bf90,src_0c08a7d4.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c08b7d6;align2:0c08bbce,2,44,158,2,152,,0,,,0
+0c08bf90,0c08c074,src_0c08bf90.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,4,,0,,,0
+0c08c074,0c08c5c0,src_0c08c074.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c08c1b2,2,52,1,0,35,,0,,,0
+0c08c5c0,0c08c648,src_0c08c5c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,9,0,1,,0,,,0
+0c08c648,0c08c864,src_0c08c648.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c08c7de,0,58,15,0,17,,0,,,0
+0c08c864,0c08d644,src_0c08c864.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c08caea,0,12,87,0,36,,0,,,0
+0c08d644,0c09111e,src_0c08d644.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0909a6;align2:0c090b2e,32,1126,439,1,203,,0,,,0
+0c09111e,0c09153c,src_0c09111e.c,Game,guessed,misaligned,,,2,2,18,0,8,,0,,,0
+0c09153c,0c092814,src_0c09153c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c091326;align2:0c091566,19,20,138,0,100,,0,,,0
+0c092814,0c092894,src_0c092814.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c092412,8,2,65,0,46,,0,,,0
+0c092894,0c092908,src_0c092894.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,4,,3,w3_u_f092894.c,,0
+0c092908,0c093254,src_0c092908.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,67,0,34,,0,,,0
+0c093254,0c093998,src_0c093254.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,13,0,65,,0,,,0
+0c093998,0c093d88,src_0c093998.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,13,0,36,,0,,,0
+0c093d88,0c094562,src_0c093d88.c,Game,probable,no link crosses; pool/padding closes previous,,,2,10,49,0,39,,0,,,0
+0c094562,0c09468c,src_0c094562.c,Game,guessed,misaligned,,,3,68,34,0,23,,0,,,0
+0c09468c,0c094950,src_0c09468c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,13,0,18,,0,,,0
+0c094950,0c094a58,src_0c094950.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,6,0,7,,0,,,0
+0c094a58,0c09511c,src_0c094a58.c,Game,probable,no link crosses; pool/padding closes previous,,,2,98,40,0,23,,0,,,0
+0c09511c,0c095430,src_0c09511c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,36,0,34,,0,,,0
+0c095430,0c095ef8,src_0c095430.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,91,0,85,,0,,,0
+0c095ef8,0c09646a,src_0c095ef8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,28,19,0,31,,0,,,0
+0c09646a,0c096484,src_0c09646a.c,Game,guessed,misaligned,,,1,0,0,0,15,,0,,,0
+0c096484,0c0975c8,src_0c096484.c,Game,guessed,no link crosses; previous has no pool tail,,,2,298,157,0,99,,0,,,0
+0c0975c8,0c0976fc,src_0c0975c8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,6,,0,,,0
+0c0976fc,0c09788c,src_0c0976fc.c,Game,guessed,no link crosses; previous has no pool tail,,align2:0c097882,0,2,24,0,11,,0,,,0
+0c09788c,0c097c26,src_0c09788c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,16,,0,,,0
+0c097c26,0c098160,src_0c097c26.c,Game,guessed,misaligned,,,1,18,28,0,29,,0,,,0
+0c098160,0c098c48,src_0c098160.c,Game,probable,no link crosses; pool/padding closes previous,,,1,8,83,0,55,,0,,,0
+0c098c48,0c099c08,src_0c098c48.c,Game,guessed,no link crosses; previous has no pool tail,,align2:0c098fbe;align2:0c099396,0,52,136,0,70,,4,w3_u_f0c098c82.c;w3_u_f0c099920.c;w3_u_f0c09995e.c;w3_u_f0c099a84.c,,0
+0c099c08,0c09a808,src_0c099c08.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,115,0,65,,0,,,0
+0c09a808,0c09b068,src_0c09a808.c,Game,probable,no link crosses; pool/padding closes previous,,,0,44,0,0,0,,0,,,0
+0c09b068,0c09b0f8,src_0c09b068.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,0,,0,,,0
+0c09b0f8,0c09b7a4,src_0c09b0f8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,112,0,7,,2,w3_u_f0c09b68a.c;w3_u_f0c09b700.c,,0
+0c09b7a4,0c09c974,src_0c09b7a4.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c09c782,0,38,46,1,34,,0,,,0
+0c09c974,0c09d544,src_0c09c974.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,91,0,46,,0,,,0
+0c09d544,0c09d89c,src_0c09d544.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,79,0,13,,0,,,0
+0c09d89c,0c09da1c,src_0c09d89c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,68,0,5,,2,w3_u_f0c09d990.c;w3_u_f0c09d9bc.c,,0
+0c09da1c,0c09db78,src_0c09da1c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,51,0,3,,0,,,0
+0c09db78,0c09f6a8,src_0c09db78.c,Game,probable,no link crosses; pool/padding closes previous,,,2,356,271,5,75,,0,,,0
+0c09f6a8,0c09f8e0,src_0c09f6a8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,20,0,9,,0,,,0
+0c09f8e0,0c09fe58,src_0c09f8e0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,62,0,22,,0,,,0
+0c09fe58,0c0a0074,src_0c09fe58.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,27,0,10,,0,,,0
+0c0a0074,0c0a0188,src_0c0a0074.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,6,,0,,,0
+0c0a0188,0c0a02d4,src_0c0a0188.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,13,0,7,,0,,,0
+0c0a02d4,0c0a0370,src_0c0a02d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,13,0,3,,0,,,0
+0c0a0370,0c0a066c,src_0c0a0370.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,60,0,27,,0,,,0
+0c0a066c,0c0a07e4,src_0c0a066c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,38,0,1,7,,0,,,0
+0c0a07e4,0c0a0b78,src_0c0a07e4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,48,0,24,,0,,,0
+0c0a0b78,0c0a0ccc,src_0c0a0b78.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,16,0,9,,0,,,0
+0c0a0ccc,0c0a0dd0,src_0c0a0ccc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,22,0,8,,0,,,0
+0c0a0dd0,0c0a0eec,src_0c0a0dd0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,16,0,5,,0,,,0
+0c0a0eec,0c0a11f4,src_0c0a0eec.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0a10b6,0,2,60,0,13,,0,,,0
+0c0a11f4,0c0a16bc,src_0c0a11f4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,52,0,34,,0,,,0
+0c0a16bc,0c0a18f8,src_0c0a16bc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,15,,0,,,0
+0c0a18f8,0c0a2ee8,src_0c0a18f8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,104,169,0,69,,0,,,0
+0c0a2ee8,0c0a2eec,src_0c0a2ee8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,1,w3_u_f0c0a2ee8.c,,0
+0c0a2eec,0c0a4030,src_0c0a2eec.c,Game,guessed,no link crosses; previous has no pool tail,,,0,150,8,0,63,,2,w3_u_f0c0a3304.c;w4_u_e0c0a3792.c,,0
+0c0a4030,0c0a40e4,src_0c0a4030.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0a40e4,0c0a41a0,src_0c0a40e4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,0,,0,,,0
+0c0a41a0,0c0a71c4,src_0c0a41a0.c,Game,probable,no link crosses; pool/padding closes previous,,,6,214,266,0,149,,0,,,0
+0c0a71c4,0c0a7320,src_0c0a71c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,30,0,3,,0,,,0
+0c0a7320,0c0a80c4,src_0c0a7320.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,318,0,22,,0,,,0
+0c0a80c4,0c0a8388,src_0c0a80c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,36,0,5,,0,,,0
+0c0a8388,0c0a84d4,src_0c0a8388.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,7,0,5,,0,,,0
+0c0a84d4,0c0a8600,src_0c0a84d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,6,,0,,,0
+0c0a8600,0c0a8d6c,src_0c0a8600.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,36,0,22,,0,,,0
+0c0a8d6c,0c0a99d0,src_0c0a8d6c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,28,195,0,22,,0,,,0
+0c0a99d0,0c0a9d9c,src_0c0a99d0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,126,0,5,,0,,,0
+0c0a9d9c,0c0aba84,src_0c0a9d9c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,30,403,0,54,,0,,,0
+0c0aba84,0c0abd20,src_0c0aba84.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,11,0,5,,0,,,0
+0c0abd20,0c0abe44,src_0c0abd20.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,7,,0,,,0
+0c0abe44,0c0abf64,src_0c0abe44.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,2,0,3,,0,,,0
+0c0abf64,0c0ac7f0,src_0c0abf64.c,Game,probable,no link crosses; pool/padding closes previous,,,4,108,182,0,19,,0,,,0
+0c0ac7f0,0c0ac8dc,src_0c0ac7f0.c,Game,guessed,no link crosses; previous has no pool tail,,,0,2,0,0,8,,0,,,0
+0c0ac8dc,0c0aca24,src_0c0ac8dc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c0aca24,0c0acaf8,src_0c0aca24.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,4,,0,,,0
+0c0acaf8,0c0acc54,src_0c0acaf8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,12,0,7,,0,,,0
+0c0acc54,0c0ace1c,src_0c0acc54.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,54,0,2,,0,,,0
+0c0ace1c,0c0ad15c,src_0c0ace1c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,52,0,15,,0,,,0
+0c0ad15c,0c0ae1b4,src_0c0ad15c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0ae09e,17,124,138,1,60,,1,w4_u_e0c0ad46e.c,,0
+0c0ae1b4,0c0ae77c,src_0c0ae1b4.c,Game,probable,no link crosses; pool/padding closes previous,,,5,226,63,0,18,,2,w4_u_e0c0ae284.c;w4_u_e0c0ae396.c,,0
+0c0ae77c,0c0aeab8,src_0c0ae77c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,2,0,14,,0,,,0
+0c0aeab8,0c0aeca8,src_0c0aeab8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,11,,0,,,0
+0c0aeca8,0c0aed9c,src_0c0aeca8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,4,,0,,,0
+0c0aed9c,0c0aeee8,src_0c0aed9c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,17,0,6,,0,,,0
+0c0aeee8,0c0af23c,src_0c0aeee8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,28,22,0,13,,0,,,0
+0c0af23c,0c0af2f4,src_0c0af23c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,4,,0,,,0
+0c0af2f4,0c0af448,src_0c0af2f4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,6,,0,,,0
+0c0af448,0c0af4ec,src_0c0af448.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,4,,0,,,0
+0c0af4ec,0c0af7e8,src_0c0af4ec.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0af644,1,4,77,0,12,,0,,,0
+0c0af7e8,0c0afac2,src_0c0af7e8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,19,0,11,,0,,,0
+0c0afac2,0c0b0150,src_0c0afac2.c,Game,guessed,misaligned,,,2,4,62,0,23,,0,,,0
+0c0b0150,0c0b0324,src_0c0b0150.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,15,0,11,,0,,,0
+0c0b0324,0c0b0600,src_0c0b0324.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0b04d4,2,4,4,0,19,,0,,,0
+0c0b0600,0c0b0710,src_0c0b0600.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,8,0,5,,0,,,0
+0c0b0710,0c0b08a8,src_0c0b0710.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,7,,0,,,0
+0c0b08a8,0c0b0a30,src_0c0b08a8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,7,,0,,,0
+0c0b0a30,0c0b0da0,src_0c0b0a30.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,31,0,9,,0,,,0
+0c0b0da0,0c0b0e04,src_0c0b0da0.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,20,0,12,,0,,,0
+0c0b0e04,0c0b10cc,src_0c0b0e04.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,15,,0,,,0
+0c0b10cc,0c0b110c,src_0c0b10cc.c,Game,probable,no link crosses; pool/padding closes previous,,,1,0,11,0,4,,0,,,0
+0c0b110c,0c0b1264,src_0c0b110c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,8,,0,,,0
+0c0b1264,0c0b13c8,src_0c0b1264.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,10,,0,,,0
+0c0b13c8,0c0b1b34,src_0c0b13c8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,157,0,26,,0,,,0
+0c0b1b34,0c0b1e50,src_0c0b1b34.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,22,0,13,,0,,,0
+0c0b1e50,0c0b217c,src_0c0b1e50.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,11,0,15,,0,,,0
+0c0b217c,0c0b2518,src_0c0b217c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,18,0,16,,0,,,0
+0c0b2518,0c0b28a4,src_0c0b2518.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,18,0,14,,0,,,0
+0c0b28a4,0c0b2c50,src_0c0b28a4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,26,0,13,,0,,,0
+0c0b2c50,0c0b30c8,src_0c0b2c50.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,72,0,20,,0,,,0
+0c0b30c8,0c0b33fc,src_0c0b30c8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,12,0,12,,0,,,0
+0c0b33fc,0c0b3d30,src_0c0b33fc.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,125,0,33,,0,,,0
+0c0b3d30,0c0b3ea0,src_0c0b3d30.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c0b3ea0,0c0b4010,src_0c0b3ea0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,13,0,6,,0,,,0
+0c0b4010,0c0b4494,src_0c0b4010.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,64,0,40,,0,,,0
+0c0b4494,0c0b45dc,src_0c0b4494.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,5,,0,,,0
+0c0b45dc,0c0b476c,src_0c0b45dc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,29,0,3,,0,,,0
+0c0b476c,0c0b4a18,src_0c0b476c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,49,0,9,,0,,,0
+0c0b4a18,0c0b4c0c,src_0c0b4a18.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,15,0,7,,0,,,0
+0c0b4c0c,0c0b4dc4,src_0c0b4c0c.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0b4d54,1,2,13,0,7,,0,,,0
+0c0b4dc4,0c0b5308,src_0c0b4dc4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,90,0,16,,0,,,0
+0c0b5308,0c0b5420,src_0c0b5308.c,Game,probable,no link crosses; pool/padding closes previous,,,1,2,23,0,6,,0,,,0
+0c0b5420,0c0b5620,src_0c0b5420.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,46,0,9,,0,,,0
+0c0b5620,0c0b5770,src_0c0b5620.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,3,0,6,,0,,,0
+0c0b5770,0c0b5a5c,src_0c0b5770.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,88,0,17,,0,,,0
+0c0b5a5c,0c0b5d60,src_0c0b5a5c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,21,0,15,,0,,,0
+0c0b5d60,0c0b5f78,src_0c0b5d60.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,29,0,14,,0,,,0
+0c0b5f78,0c0b6368,src_0c0b5f78.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,76,0,26,,0,,,0
+0c0b6368,0c0b6568,src_0c0b6368.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,37,0,7,,0,,,0
+0c0b6568,0c0b68b4,src_0c0b6568.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,79,0,15,,0,,,0
+0c0b68b4,0c0b6a9c,src_0c0b68b4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,18,0,12,,0,,,0
+0c0b6a9c,0c0b6dcc,src_0c0b6a9c.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0b6cd2,1,278,10,0,12,,0,,,0
+0c0b6dcc,0c0b6f5c,src_0c0b6dcc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,18,0,8,,0,,,0
+0c0b6f5c,0c0b7150,src_0c0b6f5c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,31,0,9,,0,,,0
+0c0b7150,0c0b7368,src_0c0b7150.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,29,0,14,,0,,,0
+0c0b7368,0c0b7590,src_0c0b7368.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,22,0,9,,0,,,0
+0c0b7590,0c0b7998,src_0c0b7590.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,103,0,14,,0,,,0
+0c0b7998,0c0b8460,src_0c0b7998.c,Game,probable,no link crosses; pool/padding closes previous,,,0,18,254,0,41,,0,,,0
+0c0b8460,0c0b87b0,src_0c0b8460.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,45,0,10,,0,,,0
+0c0b87b0,0c0b8968,src_0c0b87b0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,7,0,7,,0,,,0
+0c0b8968,0c0b8b00,src_0c0b8968.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,16,0,6,,0,,,0
+0c0b8b00,0c0b8ddc,src_0c0b8b00.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,51,0,12,,0,,,0
+0c0b8ddc,0c0b9288,src_0c0b8ddc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,65,0,20,,0,,,0
+0c0b9288,0c0b9694,src_0c0b9288.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,65,0,8,,0,,,0
+0c0b9694,0c0b97c0,src_0c0b9694.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,3,,0,,,0
+0c0b97c0,0c0b9b0c,src_0c0b97c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,91,0,13,,0,,,0
+0c0b9b0c,0c0b9c54,src_0c0b9b0c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,4,0,4,,0,,,0
+0c0b9c54,0c0b9ee0,src_0c0b9c54.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,91,0,10,,0,,,0
+0c0b9ee0,0c0ba090,src_0c0b9ee0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,16,0,6,,0,,,0
+0c0ba090,0c0bb2e8,src_0c0ba090.c,Game,probable,no link crosses; pool/padding closes previous,,,0,44,718,0,105,,0,,,0
+0c0bb2e8,0c0bbaf8,src_0c0bb2e8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,260,0,40,,0,,,0
+0c0bbaf8,0c0bc1ec,src_0c0bbaf8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,194,0,33,,0,,,0
+0c0bc1ec,0c0bc690,src_0c0bc1ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,88,0,30,,0,,,0
+0c0bc690,0c0bcc64,src_0c0bc690.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,158,0,32,,0,,,0
+0c0bcc64,0c0bce68,src_0c0bcc64.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,39,0,4,,0,,,0
+0c0bce68,0c0bcfbc,src_0c0bce68.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,25,0,5,,0,,,0
+0c0bcfbc,0c0bd078,src_0c0bcfbc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,14,0,1,,0,,,0
+0c0bd078,0c0bd4fc,src_0c0bd078.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,106,0,18,,0,,,0
+0c0bd4fc,0c0bd640,src_0c0bd4fc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,17,0,5,,0,,,0
+0c0bd640,0c0bda68,src_0c0bd640.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0bd930,1,2,86,0,20,,0,,,0
+0c0bda68,0c0bdf9c,src_0c0bda68.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,97,0,19,,0,,,0
+0c0bdf9c,0c0be25c,src_0c0bdf9c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,32,0,8,,0,,,0
+0c0be25c,0c0be448,src_0c0be25c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,55,0,3,,0,,,0
+0c0be448,0c0be5a4,src_0c0be448.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,18,0,5,,0,,,0
+0c0be5a4,0c0be698,src_0c0be5a4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,23,0,1,,0,,,0
+0c0be698,0c0be7dc,src_0c0be698.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,17,0,5,,0,,,0
+0c0be7dc,0c0bed78,src_0c0be7dc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,131,0,7,,0,,,0
+0c0bed78,0c0bf488,src_0c0bed78.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,142,0,20,,0,,,0
+0c0bf488,0c0bfe20,src_0c0bf488.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0bfc0c,2,1384,69,0,13,,0,,,0
+0c0bfe20,0c0bfecc,src_0c0bfe20.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,4,0,1,,0,,,0
+0c0bfecc,0c0c033c,src_0c0bfecc.c,Game,probable,no link crosses; pool/padding closes previous,,align2:0c0c00aa,0,6,80,0,9,,0,,,0
+0c0c033c,0c0c07bc,src_0c0c033c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,77,0,14,,0,,,0
+0c0c07bc,0c0c0c70,src_0c0c07bc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,84,0,22,,0,,,0
+0c0c0c70,0c0c0e3c,src_0c0c0c70.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,20,0,11,,0,,,0
+0c0c0e3c,0c0c10f0,src_0c0c0e3c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,13,0,15,,0,,,0
+0c0c10f0,0c0c1360,src_0c0c10f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,73,0,10,,0,,,0
+0c0c1360,0c0c18ec,src_0c0c1360.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0c1654,1,262,93,0,17,,0,,,0
+0c0c18ec,0c0c1b64,src_0c0c18ec.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,32,0,6,,0,,,0
+0c0c1b64,0c0c209c,src_0c0c1b64.c,Game,probable,no link crosses; pool/padding closes previous,,,1,8,122,0,12,,0,,,0
+0c0c209c,0c0c2a20,src_0c0c209c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,12,151,0,26,,0,,,0
+0c0c2a20,0c0c2e5c,src_0c0c2a20.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,78,0,7,,0,,,0
+0c0c2e5c,0c0c3268,src_0c0c2e5c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,79,0,13,,0,,,0
+0c0c3268,0c0c3544,src_0c0c3268.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,39,0,9,,0,,,0
+0c0c3544,0c0c571c,src_0c0c3544.c,Game,probable,no link crosses; pool/padding closes previous,,,2,104,941,0,105,,0,,,0
+0c0c571c,0c0c6094,src_0c0c571c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,174,0,28,,0,,,0
+0c0c6094,0c0c6658,src_0c0c6094.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,190,1,12,,0,,,0
+0c0c6658,0c0c67c4,src_0c0c6658.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,10,0,7,,0,,,0
+0c0c67c4,0c0c6e6c,src_0c0c67c4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,211,0,25,,0,,,0
+0c0c6e6c,0c0c74bc,src_0c0c6e6c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,146,0,30,,0,,,0
+0c0c74bc,0c0c7668,src_0c0c74bc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,10,0,6,,0,,,0
+0c0c7668,0c0c7aa0,src_0c0c7668.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,109,0,21,,0,,,0
+0c0c7aa0,0c0c7c2c,src_0c0c7aa0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,6,0,10,,0,,,0
+0c0c7c2c,0c0c82b8,src_0c0c7c2c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,195,0,36,,0,,,0
+0c0c82b8,0c0c8460,src_0c0c82b8.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,12,0,9,,0,,,0
+0c0c8460,0c0c8acc,src_0c0c8460.c,Game,probable,no link crosses; pool/padding closes previous,,,0,6,172,0,27,,0,,,0
+0c0c8acc,0c0c964c,src_0c0c8acc.c,Game,probable,no link crosses; pool/padding closes previous,,,0,48,253,0,40,,0,,,0
+0c0c964c,0c0c9760,src_0c0c964c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,16,0,4,,0,,,0
+0c0c9760,0c0c9834,src_0c0c9760.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,2,,0,,,0
+0c0c9834,0c0c99c0,src_0c0c9834.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,12,0,5,,0,,,0
+0c0c99c0,0c0ca124,src_0c0c99c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,16,135,0,29,,0,,,0
+0c0ca124,0c0ca268,src_0c0ca124.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,4,0,5,,0,,,0
+0c0ca268,0c0cb00c,src_0c0ca268.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0ca708,1,2264,91,0,12,,0,,,0
+0c0cb00c,0c0cb50c,src_0c0cb00c.c,Game,probable,no link crosses; pool/padding closes previous,,,1,22,100,0,26,,0,,,0
+0c0cb50c,0c0cb994,src_0c0cb50c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,124,0,21,,0,,,0
+0c0cb994,0c0cc074,src_0c0cb994.c,Game,probable,no link crosses; pool/padding closes previous,,,0,18,138,0,34,,0,,,0
+0c0cc074,0c0ccefc,src_0c0cc074.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,51,0,42,,0,,,0
+0c0ccefc,0c0cdac0,src_0c0ccefc.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0cd0d8;hidden-only:0c0cd100;hidden-only:0c0cd2f4,4,538,60,0,12,,0,,,0
+0c0cdac0,0c0cf408,game_testmode.c,Game,probable,no link crosses; pool/padding closes previous,string:ROM %2d,,6,100,410,0,60,,0,,,0
+0c0cf408,0c0cfe04,game_dbgmotion.c,Game,probable,distinct string-anchored game files,string:Player No.  %02X,,0,10,62,0,58,,1,w4_u_cf408.c,,0
+0c0cfe04,0c0d24ec,game_resload3.c,Game,probable,distinct string-anchored game files,string:STAGE,,7,146,274,1,197,,1,w4_u_e0c0d00ea.c,,0
+0c0d24ec,0c0d2a70,game_dbgatk.c,Game,probable,distinct string-anchored game files,string:SELECT ATK DEF INDEX,,0,6,123,0,39,,0,,,0
+0c0d2a70,0c0d2a8c,src_0c0d2a70.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0d2a8c,0c0d2dd8,game_dbgkey.c,Game,probable,no link crosses; pool/padding closes previous,string:Player No.    %02X,,0,2,53,0,20,,0,,,0
+0c0d2dd8,0c0d46e4,game_ranking.c,Game,probable,distinct string-anchored game files,string:TIME RANKING,,5,54,198,1,117,,2,w4_u_d2dd8.c,,0
+0c0d46e4,0c0d54c0,game_wins_0c0d46e4.c,Game,probable,distinct string-anchored game files,string:%2d WINS,,1,22,35,1,86,,1,w5_u_54ac.c,,0
+0c0d54c0,0c0d57a4,game_version.c,Game,probable,distinct string-anchored game files,string:POWER STONE,,0,2,30,0,15,,0,,,0
+0c0d57a4,0c0d5bc0,src_0c0d57a4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,19,,0,,,0
+0c0d5bc0,0c0d7108,game_wins_0c0d5bc0.c,Game,probable,no link crosses; pool/padding closes previous,string:%2d WINS,,0,72,184,5,40,,1,w5_u_6098.c,,0
+0c0d7108,0c0d71f4,src_0c0d7108.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,8,0,5,,0,,,0
+0c0d71f4,0c0d7f30,src_0c0d71f4.c,Game,probable,no link crosses; pool/padding closes previous,,,1,8,4,0,101,,0,,,0
+0c0d7f30,0c0d80d4,src_0c0d7f30.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,1,0,26,,0,,,0
+0c0d80d4,0c0d8f10,src_0c0d80d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,72,675,1,54,,0,,,0
+0c0d8f10,0c0d9288,src_0c0d8f10.c,Game,probable,no link crosses; pool/padding closes previous,,,1,4,8,0,2,,0,,,0
+0c0d9288,0c0db1c0,src_0c0d9288.c,Game,probable,no link crosses; pool/padding closes previous,,,2,12,661,0,70,,0,,,0
+0c0db1c0,0c0dbe30,src_0c0db1c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,10,569,0,33,,0,,,0
+0c0dbe30,0c0dbf94,src_0c0dbe30.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,49,0,7,,0,,,0
+0c0dbf94,0c0dc27c,src_0c0dbf94.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,94,0,9,,0,,,0
+0c0dc27c,0c0dc9d4,src_0c0dc27c.c,Game,probable,no link crosses; pool/padding closes previous,,,0,28,362,0,13,,0,,,0
+0c0dc9d4,0c0dca60,src_0c0dc9d4.c,Game,probable,no link crosses; pool/padding closes previous,,,0,34,0,1,2,,0,,,0
+0c0dca60,0c0dcae0,src_0c0dca60.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,1,,0,,,0
+0c0dcae0,0c0dcf10,src_0c0dcae0.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0dcdb0;hidden-only:0c0dcdf0,2,240,60,0,14,,0,,,0
+0c0dcf10,0c0dd0d0,src_0c0dcf10.c,Game,probable,no link crosses; pool/padding closes previous,,,4,38,66,0,8,,0,,,0
+0c0dd0d0,0c0dd1f0,src_0c0dd0d0.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0dd1b0,1,24,36,1,14,frchg:2,0,,,0
+0c0dd1f0,0c0dd260,src_0c0dd1f0.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0dd248,1,28,0,0,5,,0,,,0
+0c0dd260,0c0dd2d0,src_0c0dd260.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0dd2b8,1,28,0,0,5,,0,,,0
+0c0dd2d0,0c0dd310,src_0c0dd2d0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,3,,2,w5_u_dd2d0.c,,0
+0c0dd310,0c0dd600,src_0c0dd310.c,Game,probable,no link crosses; pool/padding closes previous,,,0,90,0,0,9,,0,,,0
+0c0dd600,0c0dd880,src_0c0dd600.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0dd810,1,90,0,0,5,,0,,,0
+0c0dd880,0c0ddf30,src_0c0dd880.c,Game,probable,no link crosses; pool/padding closes previous,,,1,378,0,0,10,,0,,,0
+0c0ddf30,0c0dfe20,src_0c0ddf30.c,Game,certain,hand asm edge,,,27,2060,781,1,28,"ctrlreg:6,trapa:2",0,,,0
+0c0dfe20,0c0e0790,src_0c0dfe20.c,Game,certain,hand asm edge,,,0,530,54,0,8,,0,,,0
+0c0e0790,0c0e08d0,src_0c0e0790.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e0880,1,46,41,0,2,frchg:2,0,,,0
+0c0e08d0,0c0e0910,src_0c0e08d0.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,40,9,0,0,,0,,,0
+0c0e0910,0c0e0930,src_0c0e0910.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,8,0,0,,0,,,0
+0c0e0930,0c0e0970,src_0c0e0930.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,10,0,0,1,,0,,,0
+0c0e0970,0c0e0990,src_0c0e0970.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,8,0,0,,0,,,0
+0c0e0990,0c0e0ae0,src_0c0e0990.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e0a80,1,64,46,0,3,frchg:2,0,,,0
+0c0e0ae0,0c0e0bd0,src_0c0e0ae0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,align2:0c0e0b32;align2:0c0e0b56;align2:0c0e0b96,3,62,54,0,0,frchg:8,0,,,0
+0c0e0bd0,0c0e0c00,src_0c0e0bd0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,4,10,0,0,fschg:2,0,,,0
+0c0e0c00,0c0e0ce0,src_0c0e0c00.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,42,0,0,8,,0,,,0
+0c0e0ce0,0c0e0cf0,src_0c0e0ce0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,5,0,0,frchg:2,0,,,0
+0c0e0cf0,0c0e0da0,src_0c0e0cf0.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,14,0,0,3,,0,,,0
+0c0e0da0,0c0e0f4c,src_0c0e0da0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,72,21,0,4,,0,,,0
+0c0e0f4c,0c0e0f90,src_0c0e0f4c.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e0f54,1,54,0,0,0,,0,,,0
+0c0e0f90,0c0e0fe4,src_0c0e0f90.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e0fa4,1,70,0,0,0,,0,,,0
+0c0e0fe4,0c0e0ff0,src_0c0e0fe4.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,0,0,0,,0,,,0
+0c0e0ff0,0c0e12b0,src_0c0e0ff0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,34,128,0,21,frchg:2,0,,,0
+0c0e12b0,0c0e12e0,src_0c0e12b0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,10,0,0,fschg:2,0,,,0
+0c0e12e0,0c0e1600,src_0c0e12e0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,50,136,0,6,frchg:1,0,,,0
+0c0e1600,0c0e1640,src_0c0e1600.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,23,0,0,"fschg:2,frchg:1",0,,,0
+0c0e1640,0c0e1680,src_0c0e1640.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,24,0,0,"fschg:2,frchg:2",0,,,0
+0c0e1680,0c0e16c0,src_0c0e1680.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,30,0,0,frchg:2,0,,,0
+0c0e16c0,0c0e1960,src_0c0e16c0.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,72,144,0,6,,0,,,0
+0c0e1960,0c0e19b0,src_0c0e1960.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,10,0,0,fschg:2,0,,,0
+0c0e19b0,0c0e1a40,src_0c0e19b0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,40,0,0,"frchg:4,fschg:4",0,,,0
+0c0e1a40,0c0e1b40,src_0c0e1a40.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e1a70;hidden-only:0c0e1ab0;hidden-only:0c0e1ad0;hidden-only:0c0e1ae0;hidden-only:0c0e1b00;hidden-only:0c0e1b10;hidden-only:0c0e1b30,7,42,75,0,2,frchg:14,0,,,0
+0c0e1b40,0c0e1b80,src_0c0e1b40.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,2,6,0,2,,0,,,0
+0c0e1b80,0c0e1bb0,src_0c0e1b80.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,4,18,0,0,fschg:2,0,,,0
+0c0e1bb0,0c0e1be0,src_0c0e1bb0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,17,0,0,fschg:2,0,,,0
+0c0e1be0,0c0e1d00,src_0c0e1be0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,60,135,0,4,,0,,,0
+0c0e1d00,0c0e1d30,src_0c0e1d00.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,16,0,0,fschg:2,0,,,0
+0c0e1d30,0c0e1d60,src_0c0e1d30.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,17,0,0,fschg:2,0,,,0
+0c0e1d60,0c0e1dc0,src_0c0e1d60.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,60,16,0,0,fschg:2,0,,,0
+0c0e1dc0,0c0e1df0,src_0c0e1dc0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,16,0,0,fschg:2,0,,,0
+0c0e1df0,0c0e1e20,src_0c0e1df0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,16,0,0,fschg:2,0,,,0
+0c0e1e20,0c0e1e80,src_0c0e1e20.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,60,15,0,0,fschg:2,0,,,0
+0c0e1e80,0c0e1eb0,src_0c0e1e80.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,12,15,0,0,fschg:2,0,,,0
+0c0e1eb0,0c0e2020,src_0c0e1eb0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,28,59,0,17,,0,,,0
+0c0e2020,0c0e2050,src_0c0e2020.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,22,0,0,frchg:2,0,,,0
+0c0e2050,0c0e2080,src_0c0e2050.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,4,19,0,0,frchg:2,0,,,0
+0c0e2080,0c0e20e0,src_0c0e2080.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e2090,1,0,43,0,0,frchg:4,0,,,0
+0c0e20e0,0c0e2110,src_0c0e20e0.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,4,20,0,0,frchg:2,0,,,0
+0c0e2110,0c0e2120,src_0c0e2110.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,6,0,0,fschg:2,0,,,0
+0c0e2120,0c0e2160,src_0c0e2120.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,,0,14,9,0,0,,0,,,0
+0c0e2160,0c0e21b0,src_0c0e2160.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,44,15,0,0,fschg:2,0,,,0
+0c0e21b0,0c0e2220,src_0c0e21b0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0e21d0;hidden-only:0c0e21f0,2,4,40,0,0,,0,,,0
+0c0e2220,0c0e2240,src_0c0e2220.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,10,0,0,,0,,,0
+0c0e2240,0c0e2260,src_0c0e2240.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,13,0,0,,0,,,0
+0c0e2260,0c0e22e0,src_0c0e2260.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,hidden-only:0c0e22a0,1,24,47,0,0,,0,,,0
+0c0e22e0,0c0e2340,src_0c0e22e0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,32,14,0,1,,0,,,0
+0c0e2340,0c0e2390,src_0c0e2340.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,60,7,0,0,,0,,,0
+0c0e2390,0c0e23b0,src_0c0e2390.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,12,0,0,,0,,,0
+0c0e23b0,0c0e2590,src_0c0e23b0.c,NAOMI/nl,guessed,no link crosses; previous has no pool tail,,hidden-only:0c0e2540;hidden-only:0c0e2570,2,54,114,0,6,,0,,,0
+0c0e2590,0c0e2e90,src_0c0e2590.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,138,496,0,61,,0,,,0
+0c0e2e90,0c0e3400,src_0c0e2e90.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,132,261,0,22,,0,,,0
+0c0e3400,0c0e3470,src_0c0e3400.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,46,0,0,"fschg:2,frchg:4",0,,,0
+0c0e3470,0c0e34d0,src_0c0e3470.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,18,1,0,4,,0,,,0
+0c0e34d0,0c0e3510,src_0c0e34d0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,8,22,0,0,frchg:2,0,,,0
+0c0e3510,0c0e3564,src_0c0e3510.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,5,,0,,,0
+0c0e3564,0c0e46c0,src_0c0e3564.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,64,208,0,0,,0,,,0
+0c0e46c0,0c0e4af0,src_0c0e46c0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,226,0,0,12,ctrlreg:15,0,,,0
+0c0e4af0,0c0e50ec,src_0c0e4af0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,22,0,0,20,,0,,,0
+0c0e50ec,0c0e5178,src_0c0e50ec.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,3,,0,,,0
+0c0e5178,0c0e6d00,libsnd.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,string:libsnd,,1,310,0,0,3,,10,w5_u_66f4.c,,0
+0c0e6d00,0c0e6db4,src_0c0e6d00.c,C runtime,certain,layer change between anchored regions,,,0,2,0,0,0,,0,,,0
+0c0e6db4,0c0e6e5c,src_0c0e6db4.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0e6e5c,0c0e6f24,src_0c0e6e5c.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0e6f24,0c0e6fdc,src_0c0e6f24.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0e6fdc,0c0e7038,src_0c0e6fdc.c,C runtime,probable,no link crosses; pool/padding closes previous,,align2:0c0e6ffa;align2:0c0e6ffe;align2:0c0e7002;align2:0c0e7006;align2:0c0e700a;align2:0c0e700e;align2:0c0e7012;align2:0c0e7016;align2:0c0e701a;align2:0c0e701e;align2:0c0e7022;align2:0c0e7026;align2:0c0e702a;align2:0c0e702e;align2:0c0e7032;align2:0c0e7036,16,2,0,0,0,,0,,,0
+0c0e7038,0c0e7080,src_0c0e7038.c,C runtime,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0e7080,0c0e7140,src_0c0e7080.c,C runtime,guessed,no link crosses; previous has no pool tail,,,11,32,0,0,0,,0,,,0
+0c0e7140,0c0e7178,src_0c0e7140.c,C runtime,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0e7178,0c0e71bc,memcpy.c,C runtime,certain,sdk-source file edge,sdk-source:memcpy.c,,0,0,0,0,0,,1,w5_u_libc.c,memcpy.c,0
+0c0e71bc,0c0e71d4,memset.c,C runtime,certain,two distinct sdk-source files,sdk-source:memset.c,,0,0,0,0,0,,1,w5_u_libc.c,memset.c,0
+0c0e71d4,0c0e7210,sprintf.c,C runtime,certain,sdk-source file edge,libc-name:sprintf,,0,2,0,0,1,,0,,,0
+0c0e7210,0c0e7224,strcpy.c,C runtime,certain,sdk-source file edge,sdk-source:strcpy.c,,0,0,0,0,1,,1,w5_u_strcpy.c,strcpy.c,0
+0c0e7224,0c0e7240,strlen.c,C runtime,certain,two distinct sdk-source files,sdk-source:strlen.c,,0,12,0,0,0,,0,,strlen.c,0
+0c0e7240,0c0e8340,src_0c0e7240.c,Game,certain,sdk-source file edge,,align2:0c0e8256,4,652,737,0,4,fschg:34,0,,,0
+0c0e8340,0c0e94ca,src_0c0e8340.c,Game,probable,no link crosses; pool/padding closes previous,,,3,640,595,0,2,fschg:26,0,,,0
+0c0e94ca,0c0eacf0,src_0c0e94ca.c,Game,guessed,misaligned,,align2:0c0e94ca;align2:0c0ea0aa,1,2416,590,0,0,fschg:42,0,,,0
+0c0eacf0,0c0ead50,src_0c0eacf0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,34,0,0,0,,0,,,0
+0c0ead50,0c0eafb0,src_0c0ead50.c,Game,probable,no link crosses; pool/padding closes previous,,,1,140,0,0,0,,0,,,0
+0c0eafb0,0c0eb0c0,src_0c0eafb0.c,Game,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0eafe0,3,212,0,0,0,,0,,,0
+0c0eb0c0,0c0eb0f0,src_0c0eb0c0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb0f0,0c0eb238,src_0c0eb0f0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,3,ctrlreg:5,0,,,0
+0c0eb238,0c0eb400,src_0c0eb238.c,Game,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,7,,0,,,0
+0c0eb400,0c0eb5a4,src_0c0eb400.c,Game,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,9,ctrlreg:5,0,,,0
+0c0eb5a4,0c0eb5c8,src_0c0eb5a4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb5c8,0c0eb5dc,src_0c0eb5c8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb5dc,0c0eb5f0,src_0c0eb5dc.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb5f0,0c0eb604,src_0c0eb5f0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb604,0c0eb618,src_0c0eb604.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb618,0c0eb62c,src_0c0eb618.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb62c,0c0eb640,src_0c0eb62c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb640,0c0eb654,src_0c0eb640.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb654,0c0eb668,src_0c0eb654.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb668,0c0eb67c,src_0c0eb668.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eb67c,0c0eb6cc,src_0c0eb67c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,60,0,0,0,,0,,,0
+0c0eb6cc,0c0eb6f4,src_0c0eb6cc.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,22,0,0,0,,0,,,0
+0c0eb6f4,0c0eb708,src_0c0eb6f4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0eb708,0c0eb758,src_0c0eb708.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0eb758,0c0ec11c,src_0c0eb758.c,Game,probable,no link crosses; pool/padding closes previous,,,0,8,0,0,11,,1,w5_u_ec0f2.c,,0
+0c0ec11c,0c0ec150,umemcmp.c,C runtime,probable,no link crosses; pool/padding closes previous,libc-name:umemcmp,,0,0,0,0,0,,1,w5_u_umem.c,,0
+0c0ec150,0c0ec180,vsprintf.c,C runtime,certain,distinct named library files,libc-name:vsprintf,,0,10,0,0,1,,0,,,0
+0c0ec180,0c0ecce0,src_0c0ec180.c,Game,probable,no link crosses; pool/padding closes previous,,,1,894,293,0,0,fschg:20,0,,,0
+0c0ecce0,0c0ed750,src_0c0ecce0.c,Game,probable,no link crosses; pool/padding closes previous,,,0,1016,278,0,0,fschg:14,0,,,0
+0c0ed750,0c0ed78c,src_0c0ed750.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,1,,1,w6_u_ed750.c,,0
+0c0ed78c,0c0ed7e4,src_0c0ed78c.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0ed7e4,0c0ed8b0,src_0c0ed7e4.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0ed8b0,0c0ed8f4,src_0c0ed8b0.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c0ed8f4,0c0ed92c,src_0c0ed8f4.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0ed92c,0c0ed970,src_0c0ed92c.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c0ed970,0c0ed9ac,src_0c0ed970.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,1,,1,w6_u_ed970.c,,0
+0c0ed9ac,0c0ed9c0,src_0c0ed9ac.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0ed9c0,0c0ed9d4,src_0c0ed9c0.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0ed9d4,0c0ed9e8,src_0c0ed9d4.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c0ed9e8,0c0eda00,src_0c0ed9e8.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,0,,0,,,0
+0c0eda00,0c0eda64,src_0c0eda00.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0eda64,0c0ee1cc,src_0c0eda64.c,C runtime,guessed,no link crosses; previous has no pool tail,,,0,6,8,0,6,,0,,,0
+0c0ee1cc,0c0ee1fc,strncpy.c,C runtime,certain,sdk-source file edge,sdk-source:strncpy.c,,0,2,0,0,0,,1,w6_u_strncpy.c,strncpy.c,0
+0c0ee1fc,0c0ee210,src_0c0ee1fc.c,C runtime,certain,sdk-source file edge,,,0,2,0,0,0,,1,w6_u_ee1fc.c,,0
+0c0ee210,0c0ee248,src_0c0ee210.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,1,,0,,,0
+0c0ee248,0c0ee288,src_0c0ee248.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c0ee288,0c0ee29c,src_0c0ee288.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,1,w6_u_ee288.c,,0
+0c0ee29c,0c0ee3cc,libc_its.c,C runtime,probable,no link crosses; pool/padding closes previous,libc-name:its,,0,2,0,0,6,,0,,,0
+0c0ee3cc,0c0ee6dc,src_0c0ee3cc.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,8,0,19,,0,,,0
+0c0ee6dc,0c0ee6f0,src_0c0ee6dc.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,1,w6_u_ee6dc.c,,0
+0c0ee6f0,0c0ee718,src_0c0ee6f0.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0ee718,0c0ee738,libc_allzero.c,C runtime,probable,no link crosses; pool/padding closes previous,libc-name:allzero,,0,2,0,0,0,,1,w6_u_allzero.c,,0
+0c0ee738,0c0ee838,libc_calcnpw.c,C runtime,certain,distinct named library files,libc-name:calcnpw,,0,2,0,0,9,,0,,,0
+0c0ee838,0c0eeb1c,src_0c0ee838.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,6,46,0,9,,0,,,0
+0c0eeb1c,0c0eeb6c,libc_lsfts.c,C runtime,probable,no link crosses; pool/padding closes previous,libc-name:lsfts,,0,2,0,0,0,,0,,,0
+0c0eeb6c,0c0eeb90,libc_pow5.c,C runtime,certain,distinct named library files,libc-name:pow5,,0,2,0,0,0,,0,,,0
+0c0eeb90,0c0eebe8,libc_rsfts.c,C runtime,certain,distinct named library files,libc-name:rsfts,,0,2,0,0,0,,0,,,0
+0c0eebe8,0c0eec64,libc_sub.c,C runtime,certain,distinct named library files,libc-name:sub,,0,2,0,0,0,,0,,,0
+0c0eec64,0c0eec98,libc_umemcmp_2.c,C runtime,certain,distinct named library files,libc-name:umemcmp_2,,0,0,0,0,0,,0,,,0
+0c0eec98,0c0eeda0,src_0c0eec98.c,C runtime,guessed,no link crosses; previous has no pool tail,,,0,0,2,0,6,,0,,,0
+0c0eeda0,0c0eedf0,acosf.c,C runtime,certain,sdk-source file edge,sdk-source:acosf.c,,0,2,2,0,1,,0,,acosf.c,0
+0c0eedf0,0c0eee64,src_0c0eedf0.c,C runtime,certain,sdk-source file edge,,,0,0,16,0,0,,0,,,0
+0c0eee64,0c0eeecc,src_0c0eee64.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,16,0,0,,0,,,0
+0c0eeecc,0c0eef74,src_0c0eeecc.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,0,,0,,,0
+0c0eef74,0c0eefc4,src_0c0eef74.c,C runtime,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0eefc4,0c0ef158,src_0c0eefc4.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,12,,0,,,0
+0c0ef158,0c0ef19c,src_0c0ef158.c,C runtime,probable,no link crosses; pool/padding closes previous,,,0,2,2,0,0,,0,,,0
+0c0ef19c,0c0ef28c,libc_in_coss.c,C runtime,probable,no link crosses; pool/padding closes previous,libc-name:in_coss,,0,0,19,0,5,,0,,,0
+0c0ef28c,0c0ef2dc,libc_lsft.c,C runtime,certain,distinct named library files,libc-name:lsft,,0,2,0,0,0,,0,,,0
+0c0ef2dc,0c0ef34c,libc_mult64.c,C runtime,certain,distinct named library files,libc-name:mult64,,0,2,0,0,4,,0,,,0
+0c0ef34c,0c0ef36c,libc_mvito4b.c,C runtime,certain,distinct named library files,libc-name:mvito4b,,0,0,0,0,0,,0,,,0
+0c0ef36c,0c0ef4c0,libc_power.c,C runtime,certain,distinct named library files,libc-name:power,,0,2,0,0,10,,0,,,0
+0c0ef4c0,0c0ef598,libc_rnd.c,C runtime,certain,distinct named library files,libc-name:rnd,,0,2,0,0,4,,0,,,0
+0c0ef598,0c0ef614,libc_setsbit.c,C runtime,certain,distinct named library files,libc-name:setsbit,,0,2,0,0,2,,0,,,0
+0c0ef614,0c0ef634,libc_app_coss.c,C runtime,certain,distinct named library files,libc-name:app_coss,,0,0,8,0,0,,0,,,0
+0c0ef634,0c0ef658,libc_app_sins.c,C runtime,certain,distinct named library files,libc-name:app_sins,,0,0,10,0,0,,0,,,0
+0c0ef658,0c0ef69c,libc_add.c,C runtime,certain,distinct named library files,libc-name:add,,0,0,0,0,1,,0,,,0
+0c0ef69c,0c0ef7a0,libc_in_fmods.c,C runtime,certain,distinct named library files,libc-name:in_fmods,,0,0,32,0,0,,0,,,0
+0c0ef7a0,0c0ef86c,libc_mult.c,C runtime,certain,distinct named library files,libc-name:mult,,0,2,0,0,5,,0,,,0
+0c0ef86c,0c0ef904,libc_pow10.c,C runtime,certain,distinct named library files,libc-name:pow10,,0,2,0,0,4,,0,,,0
+0c0ef904,0c0ef94c,libc_rsft.c,C runtime,certain,distinct named library files,libc-name:rsft,,0,2,0,0,0,,0,,,0
+0c0ef94c,0c0ef980,libc_mvsto2b.c,C runtime,certain,distinct named library files,libc-name:mvsto2b,,0,18,0,0,0,,0,,,0
+0c0ef980,0c0efba0,src_0c0ef980.c,C runtime,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0efac0,1,170,40,0,0,,0,,,0
+0c0efba0,0c0f0260,src_0c0efba0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,align2:0c0efdee,1,378,2,0,11,ctrlreg:15,0,,,0
+0c0f0260,0c0f1590,gdfs_iso.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:CD001,,1,18,0,0,63,ctrlreg:60,0,,,0
+0c0f1590,0c0f1eb8,gdfs.c,SDK/Katana,certain,distinct named library files,func-prefix:gdFsClose,hidden-only:0c0f1dc8,4,240,0,0,23,ctrlreg:37,1,w6_u_f1670.c,,0
+0c0f1eb8,0c0f2114,src_0c0f1eb8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0f20c0,6,254,0,0,2,,0,,,0
+0c0f2114,0c0f27c4,gdfs_dev.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:(no device),,0,88,0,0,22,,0,,,0
+0c0f27c4,0c0f2808,src_0c0f27c4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,12,0,0,1,,0,,,0
+0c0f2808,0c0f2bb0,src_0c0f2808.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,1,148,0,0,2,ctrlreg:31,0,,,0
+0c0f2bb0,0c0f2ccc,src_0c0f2bb0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,5,ctrlreg:5,0,,,0
+0c0f2ccc,0c0f2d38,src_0c0f2ccc.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,2,,0,,,0
+0c0f2d38,0c0f2e9c,lcdvms.c,SDK/Katana,certain,sdk-source file edge,sdk-source:lcdvms.c,,0,6,0,0,4,,0,,lcdvms.c,0
+0c0f2e9c,0c0f2fec,src_0c0f2e9c.c,SDK/Katana,certain,sdk-source file edge,,,0,0,0,0,8,ctrlreg:10,0,,,0
+0c0f2fec,0c0f3ad4,vmsapi.c,SDK/Katana,certain,sdk-source file edge,sdk-source:vmsapi.c,,0,156,0,0,90,,0,,vmsapi.c,0
+0c0f3ad4,0c0f3eb8,src_0c0f3ad4.c,SDK/Katana,certain,sdk-source file edge,,,1,0,0,0,9,,0,,,0
+0c0f3eb8,0c0f4104,src_0c0f3eb8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,8,0,0,7,,0,,,0
+0c0f4104,0c0f4128,src_0c0f4104.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,1,,0,,,0
+0c0f4128,0c0f4570,src_0c0f4128.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,10,,0,,,0
+0c0f4570,0c0f4644,src_0c0f4570.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,16,0,0,1,,0,,,0
+0c0f4644,0c0f46d0,src_0c0f4644.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,10,,0,,,0
+0c0f46d0,0c0f4e2c,adx_tlk.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,string:ADXT,,0,26,4,0,58,,0,,,0
+0c0f4e2c,0c0f4fe0,src_0c0f4e2c.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,82,0,0,8,,0,,,0
+0c0f4fe0,0c0f5960,adx_fs.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:adx_fs.c,,1,82,0,0,38,,0,,adx_fs.c,0
+0c0f5960,0c0f7b60,src_0c0f5960.c,SDK/Katana,certain,sdk-source file edge,,hidden-only:0c0f76f4;hidden-only:0c0f7960;hidden-only:0c0f7a60,5,1024,0,0,150,,0,,,0
+0c0f7b60,0c0f7e80,src_0c0f7b60.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,142,0,0,4,,0,,,0
+0c0f7e80,0c0f8920,src_0c0f7e80.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,1,472,25,2,0,,0,,,0
+0c0f8920,0c0f94a0,src_0c0f8920.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0f8c08;hidden-only:0c0f8ee0;hidden-only:0c0f9120;hidden-only:0c0f9460,8,914,77,2,1,,0,,,0
+0c0f94a0,0c0f99e0,src_0c0f94a0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,158,0,0,10,,0,,,0
+0c0f99e0,0c0f9a20,src_0c0f99e0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,28,0,0,1,,0,,,0
+0c0f9a20,0c0fae00,km_sys_0c0f9a20.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:EnableTexture16MB,,0,460,24,0,31,,0,,,0
+0c0fae00,0c0faee0,src_0c0fae00.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,38,0,0,2,,0,,,0
+0c0faee0,0c0fb460,src_0c0faee0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,282,7,0,4,ctrlreg:5,0,,,0
+0c0fb460,0c0fb464,src_0c0fb460.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c0fb464,0c0fb468,src_0c0fb464.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0fb468,0c0fb46c,src_0c0fb468.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0fb46c,0c0fb470,src_0c0fb46c.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c0fb470,0c0fb4e0,src_0c0fb470.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,30,0,0,1,,0,,,0
+0c0fb4e0,0c0fba80,km_video.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:KAMUI,hidden-only:0c0fb9f0,1,206,0,0,37,,0,,,0
+0c0fba80,0c0fbc20,src_0c0fba80.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,68,0,0,5,,0,,,0
+0c0fbc20,0c0fbce0,src_0c0fbc20.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,30,1,0,5,,0,,,0
+0c0fbce0,0c0fbda0,src_0c0fbce0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,30,10,0,3,,0,,,0
+0c0fbda0,0c0fbf40,src_0c0fbda0.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,38,25,0,4,,0,,,0
+0c0fbf40,0c0fc280,src_0c0fbf40.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,,0,218,0,0,6,,0,,,0
+0c0fc280,0c0fc360,src_0c0fc280.c,NAOMI/nl,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0fc2f8,1,54,0,0,2,,0,,,0
+0c0fc360,0c0fd8c0,src_0c0fc360.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0fd854,2,816,0,0,72,,0,,,0
+0c0fd8c0,0c0fdda0,src_0c0fd8c0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0fdc60,2,166,0,0,8,,0,,,0
+0c0fdda0,0c0fddd4,src_0c0fdda0.c,SDK/Katana,certain,hand asm edge,,align2:0c0fddce,0,0,4,0,0,"fschg:2,cache:1",0,,,0
+0c0fddd4,0c0fde38,src_0c0fddd4.c,SDK/Katana,certain,hand asm edge,,,0,2,32,0,1,,0,,,0
+0c0fde38,0c0fe010,src_0c0fde38.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,0,,0,,,0
+0c0fe010,0c0fe224,src_0c0fe010.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,11,,0,,,0
+0c0fe224,0c0fe370,src_0c0fe224.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,11,,0,,,0
+0c0fe370,0c0fe8c0,src_0c0fe370.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c0fe8c0,0c0fe938,src_0c0fe8c0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,22,0,0,1,,0,,,0
+0c0fe938,0c0feab4,src_0c0fe938.c,SDK/Katana,certain,hand asm edge,,hidden-only:0c0fe9fc,2,206,0,1,1,cache:1,0,,,0
+0c0feab4,0c0fecd8,src_0c0feab4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0fec20,2,184,0,1,0,"cache:3,ctrlreg:2",0,,,0
+0c0fecd8,0c0feefc,src_0c0fecd8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0fee44,2,184,0,1,0,"cache:3,ctrlreg:2",0,,,0
+0c0feefc,0c0ff02c,src_0c0feefc.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,14,0,0,0,"cache:2,ctrlreg:2",0,,,0
+0c0ff02c,0c0ff15c,src_0c0ff02c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,hidden-only:0c0ff05c;hidden-only:0c0ff0e0,2,60,0,1,0,ctrlreg:5,0,,,0
+0c0ff15c,0c0ff4b4,src_0c0ff15c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,5,ctrlreg:18,0,,,0
+0c0ff4b4,0c0ff640,src_0c0ff4b4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,34,0,0,2,ctrlreg:6,0,,,0
+0c0ff640,0c0ff7e0,src_0c0ff640.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,0,"ctrlreg:17,cache:3",0,,,0
+0c0ff7e0,0c0ff7e4,src_0c0ff7e0.c,SDK/Katana,certain,hand asm edge,,,0,0,0,0,0,,0,,,0
+0c0ff7e4,0c0ff884,src_0c0ff7e4.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,hidden-only:0c0ff7e8,1,2,0,0,0,,0,,,0
+0c0ff884,0c0ff9e0,src_0c0ff884.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,50,0,0,3,ctrlreg:1,0,,,0
+0c0ff9e0,0c0ffb56,src_0c0ff9e0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,52,0,0,0,ctrlreg:1,0,,,0
+0c0ffb56,0c0ffc72,src_0c0ffb56.c,SDK/Katana,guessed,misaligned,,,3,4,0,0,6,,0,,,0
+0c0ffc72,0c101090,src_0c0ffc72.c,SDK/Katana,guessed,misaligned,,,2,32,0,0,92,ctrlreg:17,0,,,0
+0c101090,0c101140,src_0c101090.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,align2:0c1010c2;align2:0c1010ee;align2:0c10111a,0,0,0,0,0,,0,,,0
+0c101140,0c10121c,src_0c101140.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,2,,0,,,0
+0c10121c,0c1012f4,src_0c10121c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,2,,0,,,0
+0c1012f4,0c1013d8,src_0c1012f4.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,2,,0,,,0
+0c1013d8,0c10185c,src_0c1013d8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,68,0,1,40,,0,,,0
+0c10185c,0c101920,src_0c10185c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c101920,0c1019b8,src_0c101920.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c1019b8,0c101cf8,src_0c1019b8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,14,,0,,,0
+0c101cf8,0c101e40,src_0c101cf8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,8,,0,,,0
+0c101e40,0c1059ac,src_0c101e40.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,1,54,0,0,295,,0,,,0
+0c1059ac,0c105a14,src_0c1059ac.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,3,,0,,,0
+0c105a14,0c105b10,src_0c105a14.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,7,,0,,,0
+0c105b10,0c105b70,adx_crs.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:adx_crs.c,,0,2,0,0,0,ctrlreg:5,3,w7_u_adxcrs.c,adx_crs.c,0
+0c105b70,0c105c04,adx_errs.c,CRI ADX/Sofdec,certain,two distinct sdk-source files,sdk-source:adx_errs.c,,0,2,0,0,4,,4,w7_u_adxerr.c,adx_errs.c,0
+0c105c04,0c105d18,adx_rnas.c,CRI ADX/Sofdec,certain,two distinct sdk-source files,sdk-source:adx_rnas.c,,0,2,0,0,2,,28,w7_u_adxrna.c,adx_rnas.c,0
+0c105d18,0c1063e4,adx_sjd.c,CRI ADX/Sofdec,certain,sdk-source file edge,func-prefix:ADXSJD_Init,,0,56,0,0,38,,9,w7_u_sjd2.c;w7_u_sjdacc.c,,0
+0c1063e4,0c10641c,src_0c1063e4.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c10641c,0c1068e4,adx_stm_0c10641c.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,func-prefix:ADXSTM_Init,,0,32,0,0,36,,0,,,0
+0c1068e4,0c106994,adx_stm_0c1068e4.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,func-prefix:ADXSTM_GetFad,,0,2,0,0,5,,0,,,0
+0c106994,0c1070a0,adx_tsvr.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:adx_tsvr.c,,0,0,0,0,79,,0,,adx_tsvr.c,0
+0c1070a0,0c108474,mw_rna.c,CRI ADX/Sofdec,certain,sdk-source file edge,string:mwRna,,0,118,0,0,88,ctrlreg:5,0,,,0
+0c108474,0c108734,src_0c108474.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,14,0,0,6,ctrlreg:5,0,,,0
+0c108734,0c108b48,src_0c108734.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,8,0,0,14,ctrlreg:5,0,,,0
+0c108b48,0c108b4c,src_0c108b48.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c108b4c,0c108b50,src_0c108b4c.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,0,0,0,0,,0,,,0
+0c108b50,0c108b64,src_0c108b50.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,16,0,0,0,,0,,,0
+0c108b64,0c108fe8,km_render.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:RENDER,,0,110,0,0,23,,0,,,0
+0c108fe8,0c109020,src_0c108fe8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,42,0,0,0,,0,,,0
+0c109020,0c1092e0,km_sys_0c109020.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:EnableTexture16MB,,0,100,0,0,14,,0,,,0
+0c1092e0,0c109440,src_0c1092e0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,12,0,0,10,,0,,,0
+0c109440,0c10b5f2,src_0c109440.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,1206,0,0,50,,0,,,0
+0c10b5f2,0c10b680,src_0c10b5f2.c,SDK/Katana,guessed,misaligned,,,1,12,0,0,2,,0,,,0
+0c10b680,0c10b740,src_0c10b680.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,14,0,0,0,,0,,,0
+0c10b740,0c10ba20,src_0c10b740.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,102,0,0,0,ctrlreg:8,0,,,0
+0c10ba20,0c10bb58,src_0c10ba20.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,10,0,0,0,,0,,,0
+0c10bb58,0c10bc80,src_0c10bb58.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,hidden-only:0c10bbe8,1,54,0,0,0,,0,,,0
+0c10bc80,0c10bce0,km_sys_0c10bc80.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:EnableTexture16MB,,0,40,0,0,2,,0,,,0
+0c10bce0,0c10c0e0,src_0c10bce0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,204,0,0,38,,0,,,0
+0c10c0e0,0c10c760,src_0c10c0e0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,272,0,0,7,,0,,,0
+0c10c760,0c10d0a0,src_0c10c760.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,404,0,0,17,,0,,,0
+0c10d0a0,0c10d0a4,src_0c10d0a0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c10d0a4,0c10d0c0,src_0c10d0a4.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,24,0,0,0,,0,,,0
+0c10d0c0,0c10e180,src_0c10d0c0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,348,0,0,25,,0,,,0
+0c10e180,0c10e184,src_0c10e180.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c10e184,0c10e380,src_0c10e184.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,132,0,0,8,ctrlreg:1,0,,,0
+0c10e380,0c10e400,src_0c10e380.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,28,0,0,0,ctrlreg:6,0,,,0
+0c10e400,0c10f5a0,src_0c10e400.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,168,221,0,5,,0,,,0
+0c10f5a0,0c10f820,src_0c10f5a0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,46,21,0,8,,0,,,0
+0c10f820,0c10fae0,src_0c10f820.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,44,10,0,4,,0,,,0
+0c10fae0,0c10fe20,src_0c10fae0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,40,0,0,16,,0,,,0
+0c10fe20,0c1100a0,src_0c10fe20.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,26,21,0,8,,0,,,0
+0c1100a0,0c110320,src_0c1100a0.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,34,21,0,8,,0,,,0
+0c110320,0c110f6c,src_0c110320.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,410,13,0,21,,0,,,0
+0c110f6c,0c111310,src_0c110f6c.c,SDK/Katana,certain,hand asm edge,,hidden-only:0c1110b8,4,12,238,0,3,"ctrlreg:50,frchg:14,rte:3",0,,,0
+0c111310,0c11142c,src_0c111310.c,SDK/Katana,certain,hand asm edge,,,0,2,0,0,3,,0,,,0
+0c11142c,0c111c9c,src_0c11142c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,align2:0c111b8e,0,20,0,0,22,,0,,,0
+0c111c9c,0c111cb8,src_0c111c9c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c111cb8,0c112f5c,src_0c111cb8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,200,0,0,20,,0,,,0
+0c112f5c,0c112f6c,src_0c112f5c.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c112f6c,0c112f8c,src_0c112f6c.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,align2:0c112f76;align2:0c112f7e;align2:0c112f86,0,0,0,0,0,,0,,,0
+0c112f8c,0c112ff8,src_0c112f8c.c,SDK/Katana,guessed,no link crosses; previous has no pool tail,,,0,24,0,0,2,,0,,,0
+0c112ff8,0c1135b8,src_0c112ff8.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,,,0,6,0,0,59,,0,,,0
+0c1135b8,0c113d18,sy_flash.c,SDK/Katana,probable,no link crosses; pool/padding closes previous,string:KATANA_FLASH,,1,92,0,0,17,,0,,,0
+0c113d18,0c113e3c,src_0c113d18.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,5,,0,,,0
+0c113e3c,0c114320,adx_spsd.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,string:SPSD,,0,4,0,0,16,,0,,,0
+0c114320,0c114ab8,adx_bsc.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:adx_bsc.c,,0,20,0,0,31,,0,,adx_bsc.c,0
+0c114ab8,0c114aec,mw_rnaer.c,CRI ADX/Sofdec,certain,two distinct sdk-source files,sdk-source:mw_rnaer.c,,0,2,0,0,1,,2,w7_u_mwrnaer.c,mw_rnaer.c,0
+0c114aec,0c115234,mw_snd.c,CRI ADX/Sofdec,certain,sdk-source file edge,string:mwSnd,,0,8,0,0,45,,0,,,0
+0c115234,0c115240,src_0c115234.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,1,w7_u_thk1.c,,0
+0c115240,0c115270,sj_utl.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:sj_utl.c,,0,0,0,0,1,,1,w7_u_sjutl.c,sj_utl.c,0
+0c115270,0c115284,src_0c115270.c,CRI ADX/Sofdec,certain,sdk-source file edge,,,0,0,0,0,0,,0,,,0
+0c115284,0c11568c,src_0c115284.c,CRI ADX/Sofdec,guessed,no link crosses; previous has no pool tail,,,1,6,0,0,14,ctrlreg:5,0,,,0
+0c11568c,0c1156c8,src_0c11568c.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,0,0,0,0,,0,,,0
+0c1156c8,0c115880,src_0c1156c8.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,0,39,0,2,,0,,,0
+0c115880,0c115a48,src_0c115880.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,2,0,0,0,,0,,,0
+0c115a48,0c115c70,adx_xpnd.c,CRI ADX/Sofdec,certain,sdk-source file edge,sdk-source:adx_xpnd.c,,0,0,0,0,6,,0,,adx_xpnd.c,0
+0c115c70,0c115d7c,src_0c115c70.c,CRI ADX/Sofdec,certain,sdk-source file edge,,,0,2,0,0,0,,0,,,0
+0c115d7c,0c115fb8,src_0c115d7c.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,4,0,0,0,,0,,,0
+0c115fb8,0c159fb0,src_0c115fb8.c,CRI ADX/Sofdec,probable,no link crosses; pool/padding closes previous,,,0,10,65,0,0,,0,,,0
