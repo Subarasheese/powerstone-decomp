@@ -1,0 +1,51 @@
+{
+ "dev": [
+  {
+   "about": "rescue: flips 0C06626A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "rescue: flips 0C06626A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000003"
+    }
+   ]
+  },
+  {
+   "about": "rescue: flips 0C06626A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "rescue: flips 0C06626A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000002"
+    }
+   ]
+  },
+  {
+   "about": "rescue: flips 0C06626A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "000000FF"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "dev": [
+  {
+   "about": "case 0",
+   "poke": {},
+   "steps": 2000000
+  }
+ ],
+ "holdout": []
+}

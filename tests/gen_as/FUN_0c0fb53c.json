@@ -1,0 +1,114 @@
+{
+ "dev": [
+  {
+   "about": "endless (steady) 0",
+   "poke": {
+    "0C817328": "00000000",
+    "0C81732C": "10000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 2",
+   "poke": {
+    "0C817328": "02000000",
+    "0C81732C": "05000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 4",
+   "poke": {
+    "0C817328": "04000000",
+    "0C81732C": "05000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 6",
+   "poke": {
+    "0C817328": "08000000",
+    "0C81732C": "02000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 8",
+   "poke": {
+    "0C817328": "40000000",
+    "0C81732C": "00000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 10",
+   "poke": {
+    "0C817328": "0000803f",
+    "0C81732C": "01000000"
+   },
+   "endless": true,
+   "steps": 20000
+  }
+ ],
+ "holdout": [
+  {
+   "about": "endless (steady) 1",
+   "poke": {
+    "0C817328": "01000000",
+    "0C81732C": "ffffffff"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 3",
+   "poke": {
+    "0C817328": "03000000",
+    "0C81732C": "03000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 5",
+   "poke": {
+    "0C817328": "05000000",
+    "0C81732C": "05000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 7",
+   "poke": {
+    "0C817328": "10000000",
+    "0C81732C": "ffffffff"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 9",
+   "poke": {
+    "0C817328": "cdcccc3d",
+    "0C81732C": "04000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "endless (steady) 11",
+   "poke": {
+    "0C817328": "00002040",
+    "0C81732C": "10000000"
+   },
+   "endless": true,
+   "steps": 20000
+  }
+ ]
+}
