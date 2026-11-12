@@ -1,0 +1,12 @@
+{"dev":[
+{"about":"ch>12 -> 0","regs":{"r4":"d","r5":"3"}},
+{"about":"val<0 -> 0","regs":{"r4":"2","r5":"ffffffff"}},
+{"about":"val>15 -> 0","regs":{"r4":"2","r5":"10"}},
+{"about":"write field ch1 val5","regs":{"r4":"1","r5":"5"},"poke":{"0C346B3C":"00040000"}},
+{"about":"write field ch0 val f shift 4 mask f0","regs":{"r4":"0","r5":"f"},"poke":{"0C346B38":"0004f00f"}},
+{"about":"ch=0 val=0","regs":{"r4":"0","r5":"0"},"poke":{"0C346B38":"0004f00f"}}
+],"holdout":[
+{"about":"ch=12 edge","regs":{"r4":"c","r5":"f"},"poke":{"0C346B68":"0204f00f"}},
+{"about":"ch=3 val=7 sr other","regs":{"r4":"3","r5":"7"},"sr":"400000f0","poke":{"0C346B44":"0804f0ff"}},
+{"about":"negative shift count","regs":{"r4":"4","r5":"a"},"poke":{"0C346B48":"04fc0f00"}}
+]}

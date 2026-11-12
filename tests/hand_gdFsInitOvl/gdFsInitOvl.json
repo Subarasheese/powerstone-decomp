@@ -1,0 +1,6 @@
+{"dev":[
+{"about":"init entry called, returns 0","regs":{"r4":"11","r5":"22","r6":"33","r7":"44"},"poke":{"0C15A200":"00F0000C"},"calls":[{"r0":"0"}]},
+{"about":"init entry returns 7","regs":{"r4":"1","r5":"2","r6":"3","r7":"4"},"poke":{"0C15A200":"20F0000C"},"calls":[{"r0":"7"}]}
+],"holdout":[
+{"about":"other args, returns -1","regs":{"r4":"55","r5":"66","r6":"77","r7":"88"},"poke":{"0C15A200":"40F0000C","0C346BE4":"12345678"},"calls":[{"r0":"ffffffff"}]}
+]}

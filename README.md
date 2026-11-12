@@ -1,6 +1,6 @@
 # POWER STONE decomp
 
-![decomp progress](badges/progress.svg?p=58.9&b=27.5&a=18&s=0)
+![decomp progress](badges/progress.svg?p=91.8&b=80.4&a=43&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
@@ -26,18 +26,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE             18.3%  the instructions the cases ran, of all instructions, over the 4710 functions that can be C; the 2541 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (58.9% complete) 1936  of the 4710 functions that can be C (299 with no C form are counted apart)
-BYTES LEFT    (27.5% complete) 552842  of 762372 bytes of code that can be C
-FUNCTIONS                              
-  unnamed                        4331  functions still called FUN_... (4331 of 5009)
-  Not written C                  1936  552842 bytes
-  Written C with errors             0  0 bytes
-  Not drawn                         0  0 bytes
-  Drawn with errors                 0  0 bytes
-  Checked with errors               0  0 bytes
-  No C form                      6.0%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                     7.6%  381 named functions in docs/*.md
+TOTAL TEST COVERAGE            43.2%  the instructions the cases ran, of all instructions, over the 4791 functions that can be C; the 4164 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (91.8% complete) 394  of the 4791 functions that can be C (218 with no C form are counted apart)
+BYTES LEFT   (80.4% complete) 156582  of 797112 bytes of code that can be C
+FUNCTIONS                             
+  unnamed                       4331  functions still called FUN_... (4331 of 5009)
+  Not written C                    0  0 bytes
+  Written C with errors            0  0 bytes
+  Not drawn                       20  8480 bytes
+  Drawn with errors              109  43908 bytes
+  Checked with errors            265  104194 bytes
+  No C form                     4.4%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                   10.5%  526 named functions in docs/*.md
 ```
 <!-- /progress -->
 
@@ -51,7 +51,7 @@ Updated on every commit by `tools/hooks/pre-commit` (enable once per clone:
 | Functions mapped | 5,009 in `functions.txt` (3,321 from the first analysis, 1,647 added by reachability checks with `tools/boundaries.py`); about 612 more candidates are listed in [docs/missed_functions.txt](docs/missed_functions.txt) |
 | Source files mapped | 911 rows in [docs/sourcetree.csv](docs/sourcetree.csv): game 612, Katana SDK 128, NAOMI-style libraries 69, C runtime 69, CRI ADX/Sofdec 30, data 3 |
 | **Byte-matching C** | **111 units, 286 functions** (`src/m_*.c`), built into the executable; the build stays byte-identical |
-| Equivalent C (fuzzy) | the `src/gen_*.c` files, proven by test cases in `tests/`, not built |
+| Equivalent C (fuzzy) | 4,039 functions: the `src/gen_*.c` files written by the generator and 19 hand-written ones (`src/hand_*.c`: jump tables, stack locals, `cmp/str`, FPU mode), proven by test cases in `tests/`, not built. **Game code: 3,063 of 3,541 functions** are Equivalent or byte-matched (86.5%). What is left needs per-function fixes: simulator limits on slow or looping originals, unaligned memory accesses, hardware-register accesses |
 | Drafts | 17 near-misses in [partial/](partial/), with what still differs in [docs/research/near-misses.md](docs/research/near-misses.md) |
 
 Progress is also tracked on [ByteMatch](https://bytematch.dev/Subarasheese/pwrstn-decomp): the

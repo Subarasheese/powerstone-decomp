@@ -1,0 +1,524 @@
+{
+"dev": [
+{
+"about": "kind 0",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "0"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 1",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "1"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 2",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "2"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 3",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "3"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 4",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "4"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 5",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "5"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 6",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "6"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 7",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "7"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 8",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "8"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 9",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "9"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 10",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "a"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 11",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "b"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 12",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "c"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 13",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "d"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 14",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "e"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 15",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "f"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 16",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "10"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 17",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "11"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 18",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "12"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 19",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "13"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 20 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "14"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 21 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "15"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 127 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "7f"
+},
+{
+"r0": "5a"
+}
+]
+}
+],
+"holdout": [
+{
+"about": "kind 0, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "0"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 3, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "3"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 7, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "7"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 12, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "c"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 16, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "10"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 19, other result",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "13"
+},
+{
+"r0": "ffffffff"
+}
+]
+},
+{
+"about": "kind 128 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "80"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 255 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "ff"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 256 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "100"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 275 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "113"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 2147483647 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "7fffffff"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind -1 out of range",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "ffffffff"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 0x105 -> low byte 5",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "105"
+},
+{
+"r0": "5a"
+}
+]
+},
+{
+"about": "kind 0x1ff -> low byte -1",
+"regs": {
+"r4": "c800000"
+},
+"calls": [
+{
+"r0": "1ff"
+},
+{
+"r0": "5a"
+}
+]
+}
+]
+}
