@@ -1,0 +1,38 @@
+name: Progress report
+
+# Writes the objdiff-format progress report that bytematch.dev reads (artifact <VERSION>_report).
+# The repository holds no game code, so CI cannot rebuild the executable: the report is computed from what the
+# repository records (tools/bytematch_report.py explains how). Matching units are verified locally by build.sh.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: T-1201N
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate progress report
+        run: python3 tools/bytematch_report.py "build/${VERSION}"
+
+      - name: Upload progress report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.VERSION }}_report
+          path: |
+            build/${{ env.VERSION }}/report.json
+            build/${{ env.VERSION }}/functional.json
+          if-no-files-found: error

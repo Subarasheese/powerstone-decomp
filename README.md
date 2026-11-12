@@ -1,6 +1,7 @@
 # POWER STONE decomp
 
 ![decomp progress](badges/progress.svg?p=58.9&b=27.5&a=18&s=0)
+[![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -49,9 +50,16 @@ Updated on every commit by `tools/hooks/pre-commit` (enable once per clone:
 |---|---|
 | Functions mapped | 5,009 in `functions.txt` (3,321 from the first analysis, 1,647 added by reachability checks with `tools/boundaries.py`); about 612 more candidates are listed in [docs/missed_functions.txt](docs/missed_functions.txt) |
 | Source files mapped | 911 rows in [docs/sourcetree.csv](docs/sourcetree.csv): game 612, Katana SDK 128, NAOMI-style libraries 69, C runtime 69, CRI ADX/Sofdec 30, data 3 |
-| **Byte-matching C** | **111 units, 273 functions** (`src/m_*.c`), built into the executable; the build stays byte-identical |
+| **Byte-matching C** | **111 units, 286 functions** (`src/m_*.c`), built into the executable; the build stays byte-identical |
 | Equivalent C (fuzzy) | the `src/gen_*.c` files, proven by test cases in `tests/`, not built |
 | Drafts | 17 near-misses in [partial/](partial/), with what still differs in [docs/research/near-misses.md](docs/research/near-misses.md) |
+
+Progress is also tracked on [ByteMatch](https://bytematch.dev/Subarasheese/pwrstn-decomp): the
+`Progress report` workflow writes an objdiff-format report with
+[tools/bytematch_report.py](tools/bytematch_report.py). It counts byte-matched functions as matched and lists the
+Equivalent functions as functional C, rated by their test coverage. CI cannot rebuild the executable (no game code
+is committed), so the report is computed from what the repository records; matching units are verified locally
+by `build.sh`.
 
 The key compiler finding so far: most of the game's own code needs the hidden SHC option `-extra=a=400`
 (a `nop` after every `mov Rm,r0`). See [docs/matching.md](docs/matching.md).
