@@ -380,7 +380,6 @@ FUN_0c0301d2
 FUN_0c03027e
 FUN_0c0302b6
 FUN_0c0302fe
-FUN_0c030368
 FUN_0c03082e
 FUN_0c030832
 FUN_0c030920
@@ -4497,6 +4496,7 @@ ui_project_world_to_screen
 ui_sprite_queue_add
 ui_sprite_queue_reset
 ui_task_create
+ui_update_hit_counter
 ui_update_hud_indicators
 vec3f_to_vec3s
 vec3s_midpoint_to_vec3f

@@ -26,7 +26,7 @@ void ui_draw_digit_string(Vec3 *p, char *text, float scale);
 void ui_sprite_queue_add(Cell56 *src, int *o, short idx, int groups, char c5, char c6);
 int sprintf(char *, const char *, ...);
 
-void FUN_0c030368(void)
+void ui_update_hit_counter(void)
 {
     int i;
     signed char *p;

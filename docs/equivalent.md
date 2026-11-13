@@ -10892,58 +10892,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 78
 - the cases run 12 of 12 instructions
 
-### FUN_0c030368 (`0C030368`, 1222 bytes, `src/ui_hud_4_alt2_equiv.c`)
-- equivalent on 25 development and 23 holdout cases, in `tests/ui_hud_4_alt2_equiv/FUN_0c030368.json`
-- not running
-- idle none
-- m2 s0 p1
-- m2 s1 p1
-- m2 s2 p1
-- m2 s3 p1
-- m2 s4 p1
-- m2 s5 p1
-- m2 s6 p1
-- m2 s7 p1
-- m2 s8 p1
-- m2 s9 p1
-- m2 s10 p1
-- m2 count zero
-- m2 drop to one
-- m3 s0
-- m3 s2
-- m3 s4
-- m3 cancelled
-- coverage case 1: reaches 0C030514 (+16 instructions)
-- coverage case 3: reaches 0C0304E2 (+9 instructions)
-- coverage case 5: reaches 0C030660 (+7 instructions)
-- coverage case 7: reaches 0C0305C6 (+5 instructions)
-- m2 s1 count out, result 99 -> s9
-- m2 s1 count out, result 5 -> s5
-- idle to 2
-- m2 s0 p0
-- m2 s1 p0
-- m2 s2 p0
-- m2 s3 p0
-- m2 s4 p0
-- m2 s5 p0
-- m2 s6 p0
-- m2 s7 p0
-- m2 s8 p0
-- m2 s9 p0
-- m2 s10 p0
-- m2 count zero 99
-- m2 count changes
-- m2 new count
-- m3 s1
-- m3 s3
-- m3 s5
-- coverage case 2: reaches 0C0307B2 (+10 instructions)
-- coverage case 4: reaches 0C03056E (+8 instructions)
-- coverage case 6: reaches 0C030638 (+5 instructions)
-- coverage case 8: reaches 0C030774 (+3 instructions)
-- coverage case 10: reaches 0C03059C (+3 instructions) m2 s2 count out, result 99 -> s9 (p1)
-- the cases run 588 of 588 instructions
-
 ### FUN_0c03082e (`0C03082E`, 4 bytes, `src/ui_hud_4.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c03082e.json`
 - case 0
@@ -125024,6 +124972,58 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - alloc ok
 - alloc fails again
 - the cases run 28 of 28 instructions
+
+### ui_update_hit_counter (`0C030368`, 1222 bytes, `src/ui_hud_4_alt2_equiv.c`)
+- equivalent on 25 development and 23 holdout cases, in `tests/ui_hud_4_alt2_equiv/ui_update_hit_counter.json`
+- not running
+- idle none
+- m2 s0 p1
+- m2 s1 p1
+- m2 s2 p1
+- m2 s3 p1
+- m2 s4 p1
+- m2 s5 p1
+- m2 s6 p1
+- m2 s7 p1
+- m2 s8 p1
+- m2 s9 p1
+- m2 s10 p1
+- m2 count zero
+- m2 drop to one
+- m3 s0
+- m3 s2
+- m3 s4
+- m3 cancelled
+- coverage case 1: reaches 0C030514 (+16 instructions)
+- coverage case 3: reaches 0C0304E2 (+9 instructions)
+- coverage case 5: reaches 0C030660 (+7 instructions)
+- coverage case 7: reaches 0C0305C6 (+5 instructions)
+- m2 s1 count out, result 99 -> s9
+- m2 s1 count out, result 5 -> s5
+- idle to 2
+- m2 s0 p0
+- m2 s1 p0
+- m2 s2 p0
+- m2 s3 p0
+- m2 s4 p0
+- m2 s5 p0
+- m2 s6 p0
+- m2 s7 p0
+- m2 s8 p0
+- m2 s9 p0
+- m2 s10 p0
+- m2 count zero 99
+- m2 count changes
+- m2 new count
+- m3 s1
+- m3 s3
+- m3 s5
+- coverage case 2: reaches 0C0307B2 (+10 instructions)
+- coverage case 4: reaches 0C03056E (+8 instructions)
+- coverage case 6: reaches 0C030638 (+5 instructions)
+- coverage case 8: reaches 0C030774 (+3 instructions)
+- coverage case 10: reaches 0C03059C (+3 instructions) m2 s2 count out, result 99 -> s9 (p1)
+- the cases run 588 of 588 instructions
 
 ### ui_update_hud_indicators (`0C02EE40`, 1048 bytes, `src/ui_hud_2_alt_equiv.c`)
 - equivalent on 54 development and 10 holdout cases, in `tests/ui_hud_2_alt_equiv/ui_update_hud_indicators.json`

@@ -116,7 +116,7 @@ int ui_update_hud_indicators(void);
 int ui_draw_hud_cell_pair(void);
 int FUN_0c02f98a(void);
 int FUN_0c02ff18(void);
-int FUN_0c030368(void);
+int ui_update_hit_counter(void);
 int FUN_0c03082e(void);
 int FUN_0c030920(void);
 int FUN_0c03107e(void);
