@@ -474,6 +474,10 @@ static void draw_object(uint32_t obj, uint32_t light, float alpha)
                 float nrm[3] = {F32(vp + 12), F32(vp + 16), F32(vp + 20)};
                 struct rvert v;
                 project(pos, &v);
+                if (k == 0 && getenv("PORT_DEBUG_VTX"))
+                    fprintf(stderr, "vtx obj %08X pos %g %g %g -> x %g y %g w %g  m0 %g %g %g %g  m3 %g %g %g %g\n", obj, pos[0],
+                            pos[1], pos[2], v.x, v.y, v.z, port_xmtrx[0], port_xmtrx[4], port_xmtrx[8], port_xmtrx[12],
+                            port_xmtrx[3], port_xmtrx[7], port_xmtrx[11], port_xmtrx[15]);
                 v.u = F32(vp + 24);
                 v.v = F32(vp + 28);
                 light_vertex(&m, light, nrm, &v);

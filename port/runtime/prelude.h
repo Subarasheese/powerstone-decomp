@@ -10,6 +10,8 @@
 /* SHC's intrinsics, as host functions (port/runtime/shim.c); some sources declare them, so they are plain names */
 #define _builtin_fabsf port_fabsf
 #define _builtin_sqrtf port_sqrtf
+#define _builtin_fsrra port_fsrra      /* the SH-4 fsrra: 1 / sqrt(x); no source declares it */
+float port_fsrra(float);
 #define _builtin_get_cr port_get_cr
 #define _builtin_set_cr port_set_cr
 #define _builtin_set_imask port_set_imask

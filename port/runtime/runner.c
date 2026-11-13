@@ -59,6 +59,11 @@ static void map_fixed(uint64_t at, size_t size, int fd, const char *what)
     }
     void *p = mmap((void *)at, size, PROT_READ | PROT_WRITE, MAP_FIXED_NOREPLACE | (fd < 0 ? MAP_PRIVATE | MAP_ANONYMOUS : MAP_SHARED),
                    fd, 0);
+    /* the probe above sees only the range's first page: a mapping of the host's further in fails here instead */
+    if (p != (void *)at && errno == EEXIST && !(personality(0xffffffff) & ADDR_NO_RANDOMIZE)) {
+        personality(personality(0xffffffff) | ADDR_NO_RANDOMIZE);
+        execv("/proc/self/exe", saved_argv);
+    }
     if (p != (void *)at)
         die(what);
 }
@@ -342,12 +347,15 @@ int main(int argc, char **argv)
         } else if (!strcmp(argv[i], "--press") && i + 1 < argc) {
             extern unsigned long port_press_frame;
             port_press_frame = strtoul(argv[++i], 0, 10);
+        } else if (!strcmp(argv[i], "--vmu") && i + 1 < argc) {
+            extern const char *port_vmu_dir;
+            port_vmu_dir = argv[++i];
         } else if (!strcmp(argv[i], "--headless"))
             port_headless = 1;
         else if (!strcmp(argv[i], "--image") && i + 1 < argc)
             image_path = argv[++i];
         else {
-            fprintf(stderr, "usage: powerstone [--data DIR] [--headless] [--strict] [--trace-calls] [--seconds N] [--image FILE]\n"
+            fprintf(stderr, "usage: powerstone [--data DIR] [--vmu DIR] [--headless] [--strict] [--trace-calls] [--seconds N] [--image FILE]\n"
                             "  DIR: a folder holding the files of your Power Stone disc (1ST_READ.BIN, COMMON.BIN, ...)\n");
             return 2;
         }

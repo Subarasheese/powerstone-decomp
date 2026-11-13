@@ -2,6 +2,7 @@
    host, the clock is the host's, the console's config (sound mode) lives in the port. The library's C for these talks
    to registers and console-only code; these host functions take their places. */
 #include <stdint.h>
+#include <string.h>
 #include <time.h>
 
 #include "port.h"
@@ -19,6 +20,19 @@ NOOP("syRtcSetServerMode", sy_rtc_set_server_mode)
 NOOP("syCfgInit", sy_cfg_init)
 NOOP("syCfgExit", sy_cfg_exit)
 NOOP("gfx_set_border_color", gfx_set_border_color_host)
+
+/* Kamui's device set-up (0x0C108B64, no C yet): of what it does, the host needs only the system block, the static at
+   0x0C816FC0 its pointer 0x0C347628 names, cleared. The kmSet*Callback functions (FUN_0c0fb042) store into its callback
+   table at +0x230; the rest of the set-up is the PowerVR's, which the host renderer replaces. */
+int32_t km_device_init(void) __asm__("FUN_0c108b64");
+int32_t km_device_init(void)
+{
+    if (*(volatile uint32_t *)0x0C347628 == 0) {
+        *(volatile uint32_t *)0x0C347628 = 0x0C816FC0;
+        memset((void *)0x0C816FC0, 0, 0x4D0);
+    }
+    return 0;
+}
 
 static int32_t sound_mode; /* 0 stereo, 1 mono */
 

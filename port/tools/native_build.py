@@ -32,7 +32,7 @@ HOST_FLAGS = ['-std=gnu11', '-O2', '-g', '-Wall', '-fno-pie', '-fno-pic', '-I' +
               '-I' + os.path.join(ROOT, 'port', 'third_party', 'sa_numeric')]
 RUNTIME = ['port/runtime/runner.c', 'port/runtime/shim.c', 'port/runtime/files.c', 'port/runtime/platform.c',
            'port/runtime/render.c', 'port/runtime/draw.c', 'port/runtime/sound.c', 'port/runtime/system.c',
-           'port/runtime/sound_api.c', 'port/runtime/adx.c', 'port/runtime/aica.c', 'port/runtime/video.c']
+           'port/runtime/sound_api.c', 'port/runtime/adx.c', 'port/runtime/aica.c', 'port/runtime/video.c', 'port/runtime/vmu.c']
 NUMERIC = ['port/third_party/sa_numeric/math.c']
 
 

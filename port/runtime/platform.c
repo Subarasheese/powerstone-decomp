@@ -194,6 +194,51 @@ struct pds_peripheral *pdGetPeripheral(uint32_t port)
     return p;
 }
 
+/* --- vibration (the Puru Puru pack): the game's handles are Maple port * 6 + expansion socket; port A's first socket
+   is the host pad's rumble. The game times each pattern itself and stops it with pdVibMxStop ---------------------- */
+
+static int rumble_ok(uint32_t h)
+{
+    if (!pad || h / 6 != 0 || h % 6 != 1)
+        return 0;
+    SDL_PropertiesID props = SDL_GetGamepadProperties(pad);
+    return SDL_GetBooleanProperty(props, SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN, false);
+}
+
+int32_t vib_has(uint32_t h) __asm__("vib_port_has_vibration");
+int32_t vib_has(uint32_t h) { return rumble_ok(h); }
+
+/* the start: (handle, the pattern's bytes, its condition, count); the pattern's power byte is 0-15 */
+int32_t vib_start(uint32_t h, uint32_t param, uint32_t cond, int32_t n) __asm__("FUN_0c0f414e");
+int32_t vib_start(uint32_t h, uint32_t param, uint32_t cond, int32_t n)
+{
+    (void)cond;
+    (void)n;
+    if (!rumble_ok(h))
+        return 0;
+    int power = *(uint8_t *)(uintptr_t)param & 15;
+    uint16_t strength = (uint16_t)(power ? 0x4000 + power * 0x0BFF : 0xC000);
+    unsigned game = port_host_fp_enter();
+    SDL_RumbleGamepad(pad, strength, strength, 2000);
+    port_host_fp_leave(game);
+    return 0;
+}
+
+/* the per-frame continuation of a pattern: the rumble goes on until the stop */
+int32_t vib_continue(uint32_t h, uint32_t state) __asm__("FUN_0c0f4202");
+int32_t vib_continue(uint32_t h, uint32_t state) { (void)h; (void)state; return 0; }
+
+int32_t vib_stop(uint32_t h) __asm__("pdVibMxStop");
+int32_t vib_stop(uint32_t h)
+{
+    if (rumble_ok(h)) {
+        unsigned game = port_host_fp_enter();
+        SDL_RumbleGamepad(pad, 0, 0, 0);
+        port_host_fp_leave(game);
+    }
+    return 0;
+}
+
 /* --- sound output ----------------------------------------------------------------------------------------------------- */
 
 void port_mix(int16_t *out, int frames); /* sound.c */
@@ -215,7 +260,12 @@ static int SDLCALL sound_thread(void *arg)
                 energy += (double)buf[i] * buf[i];
             n += 512;
             if (made % 44032 == 0) {
-                fprintf(stderr, "audio %.1fs rms %.0f\n", made / 44100.0, n ? sqrt(energy / n) : 0.0);
+                extern unsigned long aica_key_ons(void);
+                extern uint32_t aica_arm_pc(void);
+                extern int aica_arm_running(void);
+                fprintf(stderr, "audio %.1fs rms %.0f  arm %s pc %06X key-ons %lu ready %X\n", made / 44100.0,
+                        n ? sqrt(energy / n) : 0.0, aica_arm_running() ? "on" : "off", aica_arm_pc(), aica_key_ons(),
+                        *(volatile uint32_t *)(uintptr_t)0xA080005Cu);
                 energy = 0;
                 n = 0;
             }
@@ -319,6 +369,8 @@ void port_frame_end(void)
     read_controller();
     port_frames++;
     port_host_fp_leave(game);
+    extern void port_vmu_deliver(void);
+    port_vmu_deliver();
     unsigned long seen = vsyncs;
     while (vsyncs == seen) {
         struct timespec ts = {0, 500000};

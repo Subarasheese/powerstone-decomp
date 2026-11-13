@@ -510,8 +510,14 @@ static float env_step(int rate, const float *table)
     return 1024.0f / (ms * 44.1f);
 }
 
+static unsigned long key_ons;
+unsigned long aica_key_ons(void) { return key_ons; }
+uint32_t aica_arm_pc(void) { return arm.r[15]; }
+int aica_arm_running(void) { return arm.running; }
+
 static void key_on(int c)
 {
+    key_ons++;
     struct channel *k = &ch[c];
     k->sa = ((CREG(c, 0) & 0x7F) << 16) | CREG(c, 1);
     k->fmt = (CREG(c, 0) >> 7) & 3;

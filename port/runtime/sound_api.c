@@ -10,9 +10,6 @@
     int32_t quiet_##sym(void) __asm__(#sym);                                                                           \
     int32_t quiet_##sym(void) { return 0; }
 
-QUIET(vib_port_has_vibration)
-QUIET(FUN_0c0f414e)
-QUIET(FUN_0c0f4202)
 
 /* exit to the console's menu (the BIOS vector at 0x8C0000E0) */
 void bios_exit(void) __asm__("sys_exit_to_bios");

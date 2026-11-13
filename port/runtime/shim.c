@@ -11,6 +11,7 @@
 /* SHC's intrinsics (port/runtime/prelude.h); port_sr stands for the status register */
 float port_fabsf(float x) { return fabsf(x); }
 float port_sqrtf(float x) { return sqrtf(x); }
+float port_fsrra(float x) { return 1.0f / sqrtf(x); }
 int port_get_cr(void) { return port_sr; }
 void port_set_cr(int v) { port_sr = v; }
 void port_set_imask(int m) { port_sr = (port_sr & ~0xF0) | ((m & 15) << 4); }
