@@ -1,6 +1,8 @@
 /* VMU save/load menu UI (handlers over the vmu_step_* state machines) (0c01e798-0c020258) */
 
 /* named globals (symbols.txt) */
+int FUN_0c01fb0c(int a4, int a5, int a6, int a7);
+int vmu_menu_scan_port_masks(int a4, int a5, int a6, int a7);
 extern char g_res_system_font[];
 int memset(int, int, int);
 struct o0_uchar { unsigned char v; };
@@ -480,38 +482,6 @@ void FUN_0c01f98e(int a4, int a5, int a6, int a7)
     }
 }
 
-int vmu_menu_scan_port_masks(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = vmu_get_ready_mask();
-    if ((int)t0 < 0) {
-        return 0xFFFFFFFF;
-    }
-    *(unsigned int *)((a4 + 0xC)) = t0;
-    if (t0 == 0) {
-        if ((*(signed char *)((a4 + 0x2))) != 2) {
-            return ((int (*)(int, int, int, int))(0xC01FA50))(t0, a5, a6, a7);
-        }
-        return 0x0;
-    }
-    *(unsigned int *)((a4 + 0x14)) = (vmu_get_savefile_mask());
-    *(unsigned int *)((a4 + 0x10)) = (vmu_get_free_space_mask());
-    *(unsigned int *)((a4 + 0x18)) = (vmu_get_vmgame_mask());
-    *(unsigned int *)((a4 + 0x1C)) = (FUN_0c0109e4());
-    t0 = *(signed char *)((a4 + 0x1));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                return 0x0;
-            }
-            return ((int (*)(void))(0xC01FA42))();
-        }
-        return ((int (*)(void))(0xC01FA42))();
-    }
-    *(volatile int *)((a4 + 0x14));
-    return t0;
-}
 
 int FUN_0c01fa70(int a4)
 {
@@ -572,100 +542,6 @@ int FUN_0c01fa70(int a4)
     return t1;
 }
 
-int FUN_0c01fb0c(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    int t3;
-    int t4;
-    register int t5;
-
-    t0 = vmu_get_ready_mask();
-    if ((int)t0 < 0) {
-        return 0xFFFFFFFF;
-    }
-    t1 = *(int *)((a4 + 0x20));
-    *(unsigned int *)((a4 + 0xC)) = t0;
-    if ((t0 & ((int)0x1 << (int)t1)) == 0) {
-        t0 = 0x0;
-        if ((*(signed char *)((a4 + 0x31))) != 2) {
-            (((struct o2D_uchar *)0xC362A54)->v) = 0x2;
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            t0 = 0x1;
-        }
-        return t0;
-    }
-    t0 = vmu_get_savefile_mask();
-    *(unsigned int *)((a4 + 0x14)) = t0;
-    t2 = vmu_get_free_space_mask();
-    *(unsigned int *)((a4 + 0x10)) = t2;
-    t3 = FUN_0c0109e4();
-    *(unsigned int *)((a4 + 0x1C)) = t3;
-    t4 = vmu_get_vmgame_mask();
-    *(unsigned int *)((a4 + 0x18)) = t4;
-    t5 = vmu_get_foreign_exec_mask();
-    *(unsigned int *)((a4 + 0x24)) = t5;
-    if ((t5 & ((int)0x1 << (int)t1)) != 0) {
-        t5 = 0x0;
-        if ((*(signed char *)((a4 + 0x31))) != 17) {
-            (((struct o2D_uchar *)0xC362A54)->v) = 0x11;
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            (((struct o33_uchar *)(a4))->v) = 0x2;
-            t5 = 0x1;
-        }
-        return t5;
-    }
-    if ((((t0 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)) & (t3 & ((int)0x1 << (int)t1))) == 0) {
-        if ((((t2 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)) & (t3 & ((int)0x1 << (int)t1))) == 0) {
-            if ((((t0 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)) & (t4 & ((int)0x1 << (int)t1))) != 0) {
-                t3 = 0x0;
-                if ((*(signed char *)((a4 + 0x31))) != 5) {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0x5;
-                    (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-                    t3 = 0x1;
-                }
-                return t3;
-            }
-            if (((t4 & ((int)0x1 << (int)t1)) & ((t2 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1))) != 0) {
-                t3 = 0x0;
-                if ((*(signed char *)((a4 + 0x31))) != 6) {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0x6;
-                    (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-                    t3 = 0x1;
-                }
-                return t3;
-            }
-            if ((*(signed char *)((a4 + 0x31))) == 3) {
-                return 0x0;
-            }
-            (((struct o2D_uchar *)0xC362A54)->v) = 0x3;
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            if (((t0 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)) == 0) {
-                if (((t2 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)) == 0) {
-                    (((struct o33_uchar *)(a4))->v) = 0x0;
-                    return 0x1;
-                }
-                return ((int (*)(int, int, int, int))(0xC01FC28))(((t2 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)), ((t0 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)), a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC01FC2A))(((t2 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)), ((t0 & ((int)0x1 << (int)t1)) & ((int)0x1 << (int)t1)), a6, a7);
-        }
-        t0 = 0x0;
-        if ((*(signed char *)((a4 + 0x31))) != 6) {
-            (((struct o2D_uchar *)0xC362A54)->v) = 0x6;
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            t0 = 0x1;
-        }
-        return t0;
-    }
-    t0 = 0x0;
-    if ((*(signed char *)((a4 + 0x31))) != 5) {
-        (((struct o2D_uchar *)0xC362A54)->v) = 0x5;
-        (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-        t0 = 0x1;
-    }
-    return t0;
-}
 
 int FUN_0c01fc44(int a4)
 {

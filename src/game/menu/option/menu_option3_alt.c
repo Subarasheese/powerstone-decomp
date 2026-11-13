@@ -1,6 +1,7 @@
 /* OPTION group screen 3 (0c01ae48-0c01b66c) */
 
 /* named globals (symbols.txt) */
+int FUN_0c01b4f2(int a4, int a5, int a6, int a7);
 extern char g_res_art_model[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -79,26 +80,3 @@ int opt_page3_run_objects_in_mask(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-int FUN_0c01b4f2(int a4, int a5, int a6, int a7)
-{
-    if ((signed char)a4 != 0) {
-        if ((signed char)a4 != 1) {
-            if ((signed char)a4 != 2) {
-                return ((int (*)(int, int, int, int))(0xC01B56A))(a4, a5, 0xC361BF0, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC01B554))(a4, a5, 0xC361BF0, a7);
-        }
-        if (((unsigned short)((((struct o2_short *)0xC361BF8)->v)) & a5) == 0) {
-            *(volatile short *)0xC361C0E;
-            return ((int (*)(int, int, int, int))(0xC01B54A))(a4, a5, 0xC361BF0, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC01B566))(a4, a5, 0xC361BF0, a7);
-    }
-    if (((unsigned short)((((struct o0_short *)0xC361BF8)->v)) & a5) == 0) {
-        if (((unsigned short)((((struct o14_short *)0xC361BF8)->v)) & a5) != 0) {
-            return ((int (*)(int, int, int, int))(0xC01B566))(a4, a5, 0xC361BF0, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC01B56A))(a4, a5, 0xC361BF0, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC01B566))(a4, a5, 0xC361BF0, a7);
-}

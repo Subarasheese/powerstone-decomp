@@ -1,6 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04b054-0c04b1f0) */
 
 /* named globals (symbols.txt) */
+void fx_tick_04b054(char *o);
 extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o24_float { char p[0x24]; float v; };
@@ -48,30 +49,29 @@ int fx_spawn_04b054(int a4)
     return t11;
 }
 
-int fx_tick_04b054(int a4, int a5, int a6, int a7)
-{
-    register int t0;
 
-    t0 = *(signed char *)((a4 + 0x8));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            return ((int (*)(int, int, int, int))(0xC04B1CC))(a4, 0xF, a6, a7);
+/* a pulsing effect: 15 frames in, then 15 frames fading out (+0x5C), then gone; its scale (+0x50, +0x54) steps 0.5 .. 1.25
+   with the timer (+0xEC) */
+extern int obj_destroy(int obj);
+
+void fx_tick_04b054(char *o)
+{
+    switch (o[8]) {
+    case 0:
+        if (++*(short *)(o + 0xEC) >= 15) {
+            o[8]++;
+            *(short *)(o + 0xEC) = 0;
         }
-        t0 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t0 + 0x1);
-        if ((int)(short)(t0 + 0x1) >= (int)0xF) {
-            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-        }
-        (((struct o5C_float *)(a4))->v) = (((((struct o5C_float *)(a4))->v)) - 0.0714285672f);
-    } else {
-        t0 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t0 + 0x1);
-        if ((int)(short)(t0 + 0x1) >= (int)0xF) {
-            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-            (((struct oEC_ushort *)(a4))->v) = 0x0;
-        }
+        break;
+    case 1:
+        if (++*(short *)(o + 0xEC) >= 15)
+            o[8]++;
+        *(float *)(o + 0x5C) = *(float *)(o + 0x5C) - 0.0714285672f;
+        break;
+    default:
+        obj_destroy((int)o);
+        return;
     }
-    *(volatile short *)((a4 + 0xEC));
-    FUN_0c0e6e5c(a4);
-    return ((int (*)(void))(0xC04B1A8))();
+    *(float *)(o + 0x50) = 0.5f + 0.25f * (float)(*(short *)(o + 0xEC) % 4);
+    *(float *)(o + 0x54) = 0.5f + 0.25f * (float)(*(short *)(o + 0xEC) % 4);
 }

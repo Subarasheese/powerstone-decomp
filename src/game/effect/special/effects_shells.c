@@ -1,6 +1,7 @@
 /* effect object constructor and update pairs for character special moves (unidentified kinds) (0c0c8acc-0c0c964c) */
 
 /* named globals (symbols.txt) */
+int FUN_0c0c9526(int a4, int a5, int a6, int a7);
 extern char g_camera_pos[];
 extern char g_res_kyoutsuu[];
 typedef struct { int x, y, zero; } S12;
@@ -307,57 +308,3 @@ int FUN_0c0c9394(int a4)
     return t58;
 }
 
-int FUN_0c0c9526(int a4, int a5, int a6, int a7)
-{
-    int stk[3];
-    register int t0;
-    register int t8;
-    register float u18;
-    register float u26;
-    register float u40;
-
-    t0 = (((struct o2EC_int *)(a4))->v);
-    if ((*(signed char *)(((0x308 + a4) + 0x5))) != 0) {
-        *(unsigned char *)(((0x308 + a4) + 0x5)) = ((*(signed char *)(((0x308 + a4) + 0x5))) - 1);
-    }
-    if ((*(signed char *)(((0x308 + a4) + 0x5))) != 0) {
-        *(unsigned char *)((t0 + 0x0)) = 0x1;
-        (((struct oC_float *)(t0))->v) = (((((struct o308_float *)(a4))->v)) / ((((struct o58_float *)(a4))->v)));
-        t8 = *(signed char *)(((0x308 + a4) + 0x4));
-        switch (t8) {
-        case 0:
-            *(unsigned char *)(((0x308 + a4) + 0x4)) = ((*(signed char *)(((0x308 + a4) + 0x4))) + 0x1);
-            (((struct o1C_float *)(t0))->v) = 0.125f;
-            break;
-        case 1:
-            u26 = (((struct o1C_float *)(t0))->v);
-            (((struct o1C_float *)(t0))->v) = (u26 + 0.25f);
-            if (!(1.0f > (u26 + 0.25f))) {
-                *(unsigned char *)(((0x308 + a4) + 0x4)) = ((*(signed char *)(((0x308 + a4) + 0x4))) + 0x1);
-                (((struct o1C_float *)(t0))->v) = 1.0f;
-            }
-            break;
-        case 2:
-            u18 = (((struct o1C_float *)(t0))->v);
-            (((struct o1C_float *)(t0))->v) = (u18 - 0.125f);
-            if (!((u18 - 0.125f) > 0.25f)) {
-                *(unsigned char *)(((0x308 + a4) + 0x4)) = ((*(signed char *)(((0x308 + a4) + 0x4))) + 0x1);
-            }
-            break;
-        case 3:
-            (((struct o1C_float *)(t0))->v) = (((((struct o1C_float *)(t0))->v)) + 0.125f);
-            if (!(0.5f > ((((struct o1C_float *)(t0))->v)))) {
-                *(unsigned char *)(((0x308 + a4) + 0x4)) = ((*(signed char *)(((0x308 + a4) + 0x4))) - 1);
-            }
-            break;
-        }
-        u40 = (((struct o1C_float *)(t0))->v);
-        (((struct o24_float *)(t0))->v) = u40;
-        (((struct o20_float *)(t0))->v) = u40;
-        (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) / ((((struct o58_float *)(a4))->v)));
-        math_vec3_sub(((int)stk + 0), ((int)g_camera_pos), (t0 + 0x4));
-        math_vec3_length(((int)stk + 0));
-        return 0xC0C9648;
-    }
-    return ((int (*)(int, int, int, int))(0xC0C9622))(a4, (0x308 + a4), a6, a7);
-}

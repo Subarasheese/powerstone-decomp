@@ -1,6 +1,7 @@
 /* start-button poll, per-frame update, mode handlers 0..4 (0c052708-0c053680) */
 
 /* named globals (symbols.txt) */
+int game_frame_update(int a4, int a5, int a6, int a7);
 extern char g_game_substate[];
 extern char g_tab_game_mode_handlers[];
 struct o0_uchar { unsigned char v; };
@@ -86,117 +87,6 @@ int game_poll_start_button_pl(int a4)
     return 0x0;
 }
 
-int game_frame_update(int a4, int a5, int a6, int a7)
-{
-    int stk[9];
-    register int t2;
-    register int t16;
-    register int t36;
-    register int t40;
-    register int t41;
-
-    t2 = ((int (*)(void))((*(int *)((((*(signed char *)0xC7F302C) << 2) + ((int)g_tab_game_mode_handlers))))))();
-    if ((*(signed char *)0xC7F302C) != 0) {
-        (((struct o0_uchar *)0xC7F3192)->v) = 0x0;
-        if ((*(signed char *)0xC7EB2F6) != 0) {
-            (((struct o0_uchar *)0xC7F3192)->v) = 0x1;
-        }
-        if ((*(signed char *)0xC7F25C6) != 0) {
-            (((struct o0_uchar *)0xC7F3192)->v) = ((*(signed char *)0xC7F3192) | 0x2);
-        }
-        if ((*(signed char *)0xC7F3192) != 0) {
-            (((struct o0_uchar *)0xC7F3078)->v) = 0x2;
-            if (((((struct o2_short *)0xC7F3192)->v)) != 0) {
-                t16 = (((struct o2_short *)0xC7F3192)->v);
-                (((struct o2_ushort *)0xC7F3192)->v) = (t16 - 1);
-                if ((short)(t16 - 1) == 0) {
-                    FUN_0c09c35e();
-                }
-            } else {
-                *(unsigned char *)0xC7F25C6 = 0x0;
-                *(unsigned char *)0xC7EB2F6 = 0x0;
-                (((struct o0_uchar *)0xC7F3192)->v) = 0x0;
-                (((struct o0_uchar *)0xC7F3078)->v) = 0x0;
-            }
-        }
-        t36 = *(signed char *)0xC7F3078;
-        if (t36 != 0) {
-            if (t36 == 1) {
-            } else {
-                if (t36 != 2) {
-                } else {
-                    (((struct o4_uint *)0xC7F3078)->v) = (((((struct o4_int *)0xC7F3078)->v)) + 0x1);
-                    t41 = *(int *)0xC7E407C;
-                    t40 = (game_update_fighters());
-                    for (;;) {
-                        if (t41 == 0) {
-                            break;
-                        }
-                        t40 = (*(signed char *)((t41 + 0x4)));
-                        if (t40 == 5) {
-                            t40 = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((t41 + 0x10)))))(t41, a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24)));
-                        }
-                        t41 = (*(int *)((t41 + 0x18)));
-                    }
-                    FUN_0c0593e0(0x2);
-                    FUN_0c0593e0(0x3);
-                    FUN_0c0593e0(0x4);
-                    FUN_0c0593e0(0x1);
-                    *(unsigned int *)(((int)stk + 0)) = 0xC7E40C4;
-                    pl_build_model_matrix(0xC7E40C4);
-                    pl_build_model_matrix(0xC7EB394);
-                    hit_world_step();
-                    pl_build_model_matrix((*(int *)(((int)stk + 0))));
-                    pl_build_model_matrix(0xC7EB394);
-                    FUN_0c062f10((*(int *)(((int)stk + 0))));
-                    FUN_0c062f10(0xC7EB394);
-                    FUN_0c05941e(0x2);
-                    FUN_0c05941e(0x3);
-                    FUN_0c05941e(0x4);
-                    FUN_0c05941e(0x1);
-                    if ((int)(*(signed char *)0xC7F302C) < (int)0x5) {
-                        FUN_0c0203f6();
-                    }
-                }
-            }
-        } else {
-            (((struct o4_uint *)0xC7F3078)->v) = (((((struct o4_int *)0xC7F3078)->v)) + 0x1);
-            game_update_fighters();
-            item_director_tick();
-            obj_tick_class(0x2);
-            obj_tick_class(0x3);
-            obj_tick_class(0x4);
-            obj_tick_class(0x1);
-            pl_build_model_matrix(0xC7E40C4);
-            *(unsigned int *)(((int)stk + 0)) = 0xC7EB394;
-            pl_build_model_matrix(0xC7EB394);
-            FUN_0c0593e0(0x2);
-            FUN_0c0593e0(0x3);
-            FUN_0c0593e0(0x4);
-            FUN_0c0593e0(0x1);
-            hit_world_step();
-            pl_build_model_matrix(0xC7E40C4);
-            pl_build_model_matrix((*(int *)(((int)stk + 0))));
-            FUN_0c062f10(0xC7E40C4);
-            FUN_0c062f10((*(int *)(((int)stk + 0))));
-            FUN_0c05941e(0x2);
-            FUN_0c05941e(0x3);
-            FUN_0c05941e(0x4);
-            FUN_0c05941e(0x1);
-            if ((int)(*(signed char *)0xC7F302C) < (int)0x5) {
-                FUN_0c0203f6();
-            }
-            obj_tick_class(0x5);
-            obj_tick_class(0x7);
-            FUN_0c0593e0(0x5);
-            FUN_0c0593e0(0x7);
-        }
-        obj_tick_class(0x6);
-        FUN_0c0593e0(0x6);
-        return ((int (*)(void))(0xC05299E))();
-    }
-    return t2;
-}
 
 void game_reset_state_block(void)
 {

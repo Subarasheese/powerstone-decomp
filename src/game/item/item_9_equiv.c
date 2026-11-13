@@ -1,6 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05cd68-0c05d254) */
 
 /* named globals (symbols.txt) */
+int FUN_0c05d0d8(int a4, int a5, int a6, int a7);
 extern char g_item_player_flags[];
 int FUN_0c0555dc(void);
 int obj_destroy(int);
@@ -97,33 +98,6 @@ void FUN_0c05cff8(char *obj)
         *(Vec12 *)(obj + 56) = *(Vec12 *)0x0C336320;
 }
 
-int FUN_0c05d0d8(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = *(signed char *)((a4 + 0x9));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            return ((int (*)(int, int, int, int))(0xC05D1C8))(0x0, a5, a6, a7);
-        }
-        t0 = (((struct o2E0_int *)(a4))->v);
-        (((struct o8_float *)(t0))->v) = (((((struct o8_float *)(t0))->v)) + 2.0f);
-        t0 = (((struct o2E0_int *)(a4))->v);
-        *(unsigned int *)((t0 + 0x14)) = ((*(int *)((t0 + 0x14))) + 0xEAAC);
-        t0 = (((struct o2E0_int *)(a4))->v);
-        *(volatile float *)0xC05D23C;
-        return ((int (*)(int, int, int, int))(0xC05D18C))(0x0, t0, a6, a7);
-    }
-    *(unsigned char *)((a4 + 0x9)) = ((*(signed char *)((a4 + 0x9))) + 0x1);
-    (((struct oEC_ushort *)(a4))->v) = 0x0;
-    (((struct o107_uchar *)(a4))->v) = 0x1;
-    *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
-    *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
-    *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x0;
-    *(unsigned char *)((((((struct o2EC_int *)(a4))->v)) + 0x0)) = 0x0;
-    *(unsigned char *)((a4 + 0xA)) = 0x1;
-    return fx_spawn_0454b4((a4 + 0x20), (*(signed char *)((a4 + 0xE))));
-}
 
 int FUN_0c05d1d0(int a4)
 {

@@ -1,5 +1,6 @@
 /* shared fighter code: item pickup, mode enter/update handlers (modes 1..15), hit/knock-back states (0c065cb4-0c06734c) */
 
+int pl_mode15_cls08_f1(int a4);
 struct o3C_float { char p[0x3C]; float v; };
 struct o71CC_int { char p[0x71CC]; int v; };
 struct o71CC_uint { char p[0x71CC]; unsigned int v; };
@@ -28,26 +29,6 @@ int pl_apply_velocity(int);
 int pl_landed(int);
 int pl_change_state(int, int, int);
 
-int pl_mode15_cls08_f1(int a4)
-{
-    register int t0;
-
-    t0 = pl_step_motion(a4);
-    if ((signed char)t0 != 0) {
-        t0 = FUN_0c09c782(a4);
-        if ((signed char)t0 != 0) {
-            FUN_0c0634b4(a4);
-            (((struct o7236_uchar *)(a4))->v) = 0x0;
-            (((struct o71CC_uint *)(a4))->v) = 0x0;
-        } else {
-            *(volatile signed char *)((a4 + 0x3));
-            obj_set_mode_owner(((((struct o71CC_int *)(a4))->v)), 0x5);
-        }
-        (((struct o3C_float *)(a4))->v) = 0.0f;
-        return pl_end_action_choose_state(a4);
-    }
-    return ((int (*)(void))(0xC0662F4))();
-}
 
 int pl_mode15_cls15_f0_phase1(int a4)
 {

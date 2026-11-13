@@ -1,5 +1,6 @@
 /* attract sequence: ranking screens (time/1P points/VS) (0c0d2dd8-0c0d46e4) */
 
+int FUN_0c0d3366(void);
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -296,22 +297,6 @@ int FUN_0c0d3350(void)
     return 0x0;
 }
 
-int FUN_0c0d3366(void)
-{
-    register int t0;
-
-    t0 = *(signed char *)0xC7F2EE6;
-    if ((unsigned char)t0 != 0) {
-        if ((unsigned char)t0 != 1) {
-            if ((unsigned char)t0 != 2) {
-                return ((int (*)(void))(0xC0D33C8))();
-            }
-            return ((int (*)(void))(0xC0D33C4))();
-        }
-        return ((int (*)(void))(0xC0D33BC))();
-    }
-    return ((int (*)(void))(0xC0D33B4))();
-}
 
 int rank_draw_time_rows(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8)
 {

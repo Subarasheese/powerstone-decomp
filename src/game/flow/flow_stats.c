@@ -1,6 +1,8 @@
 /* play-time/max-combo stats and mode handlers (0c053680-0c054114) */
 
 /* named globals (symbols.txt) */
+int FUN_0c053dcc(void);
+int FUN_0c053910(void);
 extern char g_game_substate[];
 extern char g_select_ready_mask[];
 struct o46_uchar { char p[0x46]; unsigned char v; };
@@ -239,67 +241,6 @@ int FUN_0c0537fe(void)
     return game_update_max_combo();
 }
 
-int FUN_0c053910(void)
-{
-    int t0;
-    int t1;
-    register int t2;
-
-    if (((int)(*(short *)0xC7EB298) < 0) && (t0 = *(short *)0xC7F2568, (int)t0 < 0)) {
-        *(unsigned char *)((((*(signed char *)0xC7F2E3F) + 0xC7F2E40) + 0x0)) = 0x50;
-        *(unsigned char *)((((*(signed char *)0xC7F2EB7) + 0xC7F2EB8) + 0x0)) = 0x50;
-        *(unsigned char *)0xC7F2E3F = ((*(signed char *)0xC7F2E3F) + 0x1);
-        *(unsigned char *)0xC7F2EB7 = ((*(signed char *)0xC7F2EB7) + 0x1);
-        (((struct o4_uchar *)0xC7F304F)->v) = 0x13;
-        (((struct o0_uchar *)0xC7F304F)->v) = 0x0;
-        return ((int (*)(int, int, int, int))(0xC053B54))(0xC7F2E68, 0xC7F2DF0, 0xC7F2DF0, 0xC7F302C);
-    }
-    if (((int)(*(short *)0xC7EB298) >= 0) && (t1 = *(short *)0xC7F2568, (int)t1 >= 0)) {
-        if ((*(short *)0xC7EB298) == (*(short *)0xC7F2568)) {
-            *(unsigned char *)((((*(signed char *)0xC7F2E3F) + 0xC7F2E40) + 0x0)) = 0x50;
-            *(unsigned char *)((((*(signed char *)0xC7F2EB7) + 0xC7F2EB8) + 0x0)) = 0x50;
-            *(unsigned char *)0xC7F2E3F = ((*(signed char *)0xC7F2E3F) + 0x1);
-            *(unsigned char *)0xC7F2EB7 = ((*(signed char *)0xC7F2EB7) + 0x1);
-            (((struct o0_uchar *)0xC7F304F)->v) = 0x0;
-            *(unsigned char *)0xC7E41CA = 0x7F;
-            *(unsigned char *)0xC7EB49A = 0x7F;
-            (((struct o4_uchar *)0xC7F304F)->v) = 0x23;
-            return ((int (*)(int, int, int, int))(0xC053B54))(0xC7F2E68, 0xC7EB394, 0xC7F2DF0, 0xC7F302C);
-        }
-        t0 = 0x1;
-        if ((int)(*(short *)0xC7EB298) > (int)(*(short *)0xC7F2568)) {
-            t0 = 0x0;
-        }
-        if (((((struct o71D4_short *)((0xC7E40C4 + (unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0))))->v)) == 0xF0) {
-            *(unsigned char *)((((*(signed char *)((((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x4F))) + (((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x50)) + 0x0)) = 0x40;
-            return ((int (*)(int, int, int, int))(0xC053B30))(((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0), 0xC7E40C4, 0xC7F2DF0, 0xC7F302C);
-        }
-        *(volatile signed char *)((((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x4F));
-        return ((int (*)(int, int, int, int))(0xC053B2E))(((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0), 0xC7E40C4, 0xC7F2DF0, 0xC7F302C);
-    }
-    t0 = 0x1;
-    if ((int)(*(short *)0xC7EB298) > (int)(*(short *)0xC7F2568)) {
-        t0 = 0x0;
-    }
-    (((struct o4_uchar *)0xC7F304F)->v) = (t0 + 0x1);
-    if (((((struct o71D4_short *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v)) == 0xF0) {
-        *(unsigned char *)((((*(signed char *)(((0x4F + ((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0)) + 0x0))) + (((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x50)) + 0x0)) = 0x40;
-    } else {
-        t1 = *(signed char *)((((((struct oF8_int *)(((unsigned short)((unsigned short)(0x1 - (signed char)t0) * (unsigned short)0x72D0) + 0xC7E40C4)))->v)) + 0x4));
-        if (((unsigned char)t1 != 4) && ((unsigned char)t1 != 3)) {
-            t1 = ((*(signed char *)(((0x4F + ((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0)) + 0x0))) + (((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x50));
-            t2 = 0x10;
-        } else {
-            t1 = ((*(signed char *)(((0x4F + ((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0)) + 0x0))) + (((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x50));
-            t2 = 0x30;
-        }
-        *(unsigned char *)((t1 + 0x0)) = t2;
-    }
-    (((struct o4F_uchar *)(((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0)))->v) = ((*(signed char *)((((unsigned char)((unsigned short)t0 * (unsigned short)0x78) + 0xC7F2DF0) + 0x4F))) + 0x1);
-    (((struct o0_uchar *)0xC7F304F)->v) = t0;
-    (((struct o106_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x7F;
-    return ((int (*)(int, int, int, int))(0xC053B54))(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), 0xC7E40C4, 0xC7F2DF0, 0xC7F302C);
-}
 
 int FUN_0c053b62(void)
 {
@@ -440,38 +381,6 @@ int FUN_0c053b62(void)
     return t0;
 }
 
-int FUN_0c053dcc(void)
-{
-    register int t0;
-
-    t0 = *(signed char *)0xC7F3053;
-    if ((t0 & 0xF0) != 0) {
-        if ((t0 & 0xF0) != 16) {
-            if ((t0 & 0xF0) != 32) {
-                return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-            }
-            t0 = *(signed char *)0xC7F3053;
-            if ((t0 & 0xF) != 1) {
-                if ((t0 & 0xF) != 2) {
-                    if ((t0 & 0xF) != 3) {
-                        return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-                    }
-                    return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-                }
-                return ((int (*)(int, int, int, int))(0xC053E4C))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-            }
-            return ((int (*)(int, int, int, int))(0xC053E4C))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-        }
-        return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-    }
-    t0 = *(signed char *)0xC7F3053;
-    if (((t0 & 0xF) != 1) && ((t0 & 0xF) != 2)) {
-        return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, 0xC7E40C4, 0xF, 0x7F);
-    }
-    t0 = *(signed char *)0xC7F3053;
-    (((struct o106_uchar *)((0xC7E40C4 + (unsigned short)((unsigned short)((t0 & 0xF) + 0xFFFF) * (unsigned short)0x72D0))))->v) = 0x7F;
-    return ((int (*)(int, int, int, int))(0xC053E62))(0xC7F3053, (0xC7E40C4 + (unsigned short)((unsigned short)((t0 & 0xF) + 0xFFFF) * (unsigned short)0x72D0)), 0xF, 0x7F);
-}
 
 void game_stage_intro_start(void)
 {

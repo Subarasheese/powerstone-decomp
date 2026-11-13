@@ -1,5 +1,7 @@
 /* float helper loops and weapon pose setup (059C44..05A6E8) (0c059c44-0c05a6e8) */
 
+int FUN_0c05a164(int a4, int a5, int a6, int a7);
+int FUN_0c059d7e(int a4, int a5, int a6, int a7);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
 struct Vec12 { int a, b, c; };
@@ -130,31 +132,4 @@ int FUN_0c059cec(struct Vec12 *out, int *idx, int *stream)
     return count;
 }
 
-int FUN_0c059d7e(int a4, int a5, int a6, int a7)
-{
 
-    return ((int (*)(int, int, int, int))(0xC05A112))(a4, a5, a6, a7);
-}
-
-int FUN_0c05a164(int a4, int a5, int a6, int a7)
-{
-    int stk[29];
-    register int t0;
-    register int t1;
-
-    t0 = *(signed char *)((a4 + 0x3));
-    t1 = *(signed char *)(((0x71F1 + a4) + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = (*(int *)((((t1 << 2) + (0xC3837F0 + (((signed char)t0 << 2) << 1))) + 0x0)));
-    *(unsigned int *)(((int)stk + 24)) = (*(signed char *)(((t1 + (0xC383800 + ((signed char)t0 << 1))) + 0x0)));
-    *(unsigned int *)(((int)stk + 4)) = (((*(int *)0xC7F307C) << 8) << 2);
-    if ((*(signed char *)((a4 + 0x1))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC05A6C6))((t1 + (0xC383800 + ((signed char)t0 << 1))), t0, a6, a7);
-    }
-    if ((*(signed char *)((a4 + 0x8))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC05A6C6))((t1 + (0xC383800 + ((signed char)t0 << 1))), t0, a6, a7);
-    }
-    FUN_0c0e1550(0x1);
-    *(unsigned int *)(((int)stk + 8)) = 0x0;
-    *(unsigned int *)(((int)stk + 16)) = (*(int *)(((int)stk + 0)));
-    return ((int (*)(void))(0xC05A6BA))();
-}

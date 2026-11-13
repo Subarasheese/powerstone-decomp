@@ -189,7 +189,7 @@ int FUN_0c0cb3b8(int a4);
 int game_play_dispatch_state(void);
 int FUN_0c0f2114(int a4, int a5, int a6);
 int FUN_0c107602(int a4, int a5, int a6, int a7);
-float FUN_0c068488(int a4);
+int FUN_0c068488(int a4);
 int pl_jack_mode04_phase1(int a4);
 int fx_calc_orbit_position(int a4, int a5, float f4);
 int FUN_0c01dada(int a4);

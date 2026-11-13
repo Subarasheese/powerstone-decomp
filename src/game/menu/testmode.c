@@ -1,6 +1,8 @@
 /* NAOMI-style test mode (colour test (0c0cdac0-0c0cf408) */
 
 /* named globals (symbols.txt) */
+int FUN_0c0cea90(int a4, int a5, int a6, int a7, float f4, float f5);
+int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5);
 extern char g_game_config[];
 extern char g_tbl_testmode_value_strings[];
 extern char g_testmode_game_config_view[];
@@ -284,41 +286,6 @@ int testmode_move_cursor(int a4, int a5, int a6, int a7)
     return dbg_print_at(0xC153474, ((float)a4 * ((((struct o4_float *)0xC0CE588)->v))), ((float)(((unsigned char)(*(signed char *)(((a7 + 0xC7F2EE4) + 0x0))) << 1) + a5) * ((((struct o0_float *)0xC0CE588)->v))));
 }
 
-int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5)
-{
-    int t0;
-    int t1;
-    register float u0;
-    register float u1;
-
-    if (((unsigned short)(*(short *)0xC361BFC) & 16) != 0) {
-        if (((unsigned char)(*(signed char *)g_testmode_system_config) == 17) && (t0 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t0 == 3)) {
-            *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = 0x2;
-        }
-        t0 = (0xFF + a6);
-        if ((*(signed char *)(((0xC7F2EE4 + a7) + 0x0))) == 0) {
-        } else {
-            t0 = ((*(signed char *)(((0xC7F2EE4 + a7) + 0x0))) - 1);
-        }
-        *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = t0;
-    }
-    t0 = a6;
-    if (((unsigned short)(*(short *)0xC361BFC) & 32) != 0) {
-        if (((unsigned char)(*(signed char *)g_testmode_system_config) == 17) && (t1 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t1 == 1)) {
-            *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = 0x2;
-        }
-        if ((unsigned char)(*(signed char *)(((0xC7F2EE4 + a7) + 0x0))) == (a6 - 1)) {
-            *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = 0x0;
-        } else {
-            *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = ((*(signed char *)(((0xC7F2EE4 + a7) + 0x0))) + 0x1);
-        }
-        t0 = (a6 - 1);
-    }
-    *(volatile signed char *)(((a7 + 0xC7F2EE4) + 0x0));
-    u0 = (((struct o0_float *)0xC0CE7AC)->v);
-    u1 = (((struct o4_float *)0xC0CE7AC)->v);
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0CE612))(0x2, 0xC361BF0, t0, ((int)g_testmode_system_config), f4, f5, u1, u0);
-}
 
 int FUN_0c0ce634(int a4, int a5, int a6)
 {
@@ -580,76 +547,6 @@ int FUN_0c0ce99a(int a4, int a5, int a6, int a7)
     return t22;
 }
 
-int FUN_0c0cea90(int a4, int a5, int a6, int a7, float f4, float f5)
-{
-    int t0;
-    int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t5;
-    register float u0;
-    register float u1;
-
-    t2 = *(short *)0xC361BFC;
-    if (((unsigned short)t2 & 16) != 0) {
-        *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = ((*(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0))) - 1);
-        if (((signed char)a7 == 0) && (t0 = *(signed char *)(((signed char)a6 + 0xC7F2EE4)), (unsigned char)t0 == 3)) {
-            *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = ((*(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0))) - 1);
-        }
-        t0 = a4;
-        if (((unsigned char)(*(signed char *)(((signed char)a6 + 0xC7F2EE4))) & 128) != 0) {
-            *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = (a4 + 0xFF);
-            t0 = (a4 + 0xFF);
-        }
-        t3 = t0;
-        t0 = (signed char)a7;
-    } else {
-        t4 = a7;
-        if (((unsigned short)t2 & 32) != 0) {
-            *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = ((*(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0))) + 0x1);
-            if (((signed char)a7 == 0) && (t1 = *(signed char *)(((signed char)a6 + 0xC7F2EE4)), (unsigned char)t1 == 3)) {
-                *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = ((*(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0))) + 0x1);
-            }
-            if ((int)(unsigned char)(*(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0))) > (int)((signed char)a4 - 1)) {
-                *(unsigned char *)(((0xC7F2EE4 + (signed char)a6) + 0x0)) = 0x0;
-            }
-            t4 = (signed char)a7;
-        }
-        t3 = a4;
-        t0 = t4;
-    }
-    t1 = *(signed char *)(((0xC7F2EE4 + (signed char)a6) + 0x0));
-    t2 = t3;
-    t3 = (unsigned char)t1;
-    t4 = t0;
-    if ((int)(unsigned char)t1 < (int)((signed char)a4 - 2)) {
-        t0 = *(short *)0xC361BFC;
-        if ((((unsigned short)t0 & 0xF0) != 64) && ((0x4 & (unsigned short)t0) == 0)) {
-            t5 = *(short *)0xC361BFC;
-            if (((0xF0 & (unsigned short)t5) == 0x80) || ((0x2 & (unsigned short)t5) != 0)) {
-                *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) + 0x1);
-                if ((int)(*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) > (int)((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1)) {
-                    *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = 0x0;
-                }
-            }
-            t3 = (0xF0 & (unsigned short)t5);
-            t4 = (unsigned short)t5;
-        } else {
-            *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) - 1);
-            if ((int)(*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) < 0) {
-                *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1);
-            }
-            t3 = 0xF0;
-            t4 = (unsigned short)t0;
-        }
-        t2 = (((int)g_game_config) + (unsigned char)t1);
-    }
-    u0 = (((struct o0_float *)0xC0CECD8)->v);
-    u1 = (((struct o4_float *)0xC0CECD8)->v);
-    *(volatile signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x15));
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0CEBD2))(t2, 0x7, t3, t4, f4, f5, u1, u0);
-}
 
 int testmode_game_config_commit(void)
 {

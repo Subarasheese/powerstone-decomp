@@ -1,6 +1,8 @@
 /* state update functions of the player state machine (table 0xC3390D4) (part 11 of 14 of the same module) (0c096484-0c0975c8) */
 
 /* named globals (symbols.txt) */
+int FUN_0c096a64(int a4, int a5, int a6, int a7);
+int FUN_0c09660c(int a4, int a5, int a6, int a7);
 extern char g_pl_char_param_tbl[];
 struct o0_float { float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -61,61 +63,6 @@ int pl_state39_phase0(int a4);
 int pl_state39_phase1(int a4);
 int pl_state39_phase2(int a4);
 
-int FUN_0c09660c(int a4, int a5, int a6, int a7)
-{
-    int stk[1];
-    register int t18;
-    register float t21;
-    register float t22;
-    register float u24;
-    register int t44;
-    register float t48;
-
-    if ((((((struct o2DC_int *)(a4))->v)) & 16) != 0) {
-        if ((*(signed char *)((a4 + 0x7237))) != 0) {
-            if ((*(signed char *)((a4 + 0x71BA))) == 34) {
-                pl_start_motion(a4, 0x2, 0xD5);
-            }
-            (((struct o7237_uchar *)(a4))->v) = 0x0;
-        }
-        t18 = hit_find_interactable_contact(a4, 0x1);
-        *(unsigned char *)(((int)stk + 0)) = t18;
-        if ((signed char)t18 != 0) {
-            t21 = FUN_0c02649a((*(int *)((((((*(signed char *)(((int)stk + 0))) - 1) << 2) + (0x294 + a4)) + 0x0))), 0x0);
-            t22 = FUN_0c02649a(a4, 0x0);
-            u24 = 0.0f;
-            if (t21 > t22) {
-                u24 = 5.0f;
-            }
-            (((struct o3C_float *)(a4))->v) = u24;
-        }
-        return 0x0;
-    }
-    if ((((((struct o2DC_int *)(a4))->v)) & 32) != 0) {
-        if ((*(signed char *)((a4 + 0x7237))) != 1) {
-            if ((*(signed char *)((a4 + 0x71BA))) == 34) {
-                pl_start_motion(a4, 0x2, 0xD6);
-            }
-            (((struct o7237_uchar *)(a4))->v) = 0x1;
-        }
-        t44 = hit_find_interactable_contact(a4, 0x1);
-        if ((signed char)t44 != 0) {
-            if (300.0f > ((((struct o24_float *)((*(int *)((((0x294 + a4) + (((signed char)t44 - 1) << 2)) + 0x0)))))->v))) {
-                t48 = FUN_0c02649a((*(int *)((((0x294 + a4) + (((signed char)t44 - 1) << 2)) + 0x0))), 0x1);
-                if (!((((((struct o24_float *)(a4))->v)) + -11.7099991f) > t48)) {
-                    (((struct o24_float *)(a4))->v) = (((((struct o2D4_float *)(a4))->v)) + -1.0f);
-                    (((struct o274_float *)(a4))->v) = 1.0f;
-                    (((struct o3C_float *)(a4))->v) = 0.0f;
-                    return 0x1;
-                }
-                return ((int (*)(void))(0xC096738))();
-            }
-            return ((int (*)(int, int, int, int))(0xC096738))(t44, a5, a6, a7);
-        }
-        return 0x0;
-    }
-    return 0x0;
-}
 
 int pl_state34_update(int a4)
 {
@@ -248,60 +195,6 @@ int pl_state26_phase1(int a4)
     return t2;
 }
 
-int FUN_0c096a64(int a4, int a5, int a6, int a7)
-{
-    int stk[1];
-    register int t18;
-    register float t21;
-    register float t22;
-    register int t37;
-    register float t42;
-
-    if ((((((struct o2DC_int *)(a4))->v)) & 16) != 0) {
-        if ((*(signed char *)((a4 + 0x7237))) != 0) {
-            if ((*(signed char *)((a4 + 0x71BA))) == 26) {
-                pl_start_motion(a4, 0x2, 0xD9);
-            }
-            (((struct o7237_uchar *)(a4))->v) = 0x0;
-        }
-        t18 = hit_find_interactable_contact(a4, 0x2);
-        *(unsigned char *)(((int)stk + 0)) = t18;
-        if ((signed char)t18 != 0) {
-            t21 = FUN_0c02649a((*(int *)((((((*(signed char *)(((int)stk + 0))) - 1) << 2) + (0x294 + a4)) + 0x0))), 0x0);
-            t22 = FUN_0c02649a(a4, 0x0);
-            if (t21 > t22) {
-                (((struct o3C_float *)(a4))->v) = 5.0f;
-                return 0x0;
-            }
-            (((struct o3C_float *)(a4))->v) = 0.0f;
-            return 0x2;
-        }
-        return 0x0;
-    }
-    if ((((((struct o2DC_int *)(a4))->v)) & 32) != 0) {
-        if ((*(signed char *)((a4 + 0x7237))) != 1) {
-            if ((*(signed char *)((a4 + 0x71BA))) == 26) {
-                pl_start_motion(a4, 0x2, 0xDA);
-            }
-            (((struct o7237_uchar *)(a4))->v) = 0x1;
-        }
-        t37 = hit_find_interactable_contact(a4, 0x2);
-        if ((signed char)t37 != 0) {
-            if (((((struct o0_float *)0xC096C20)->v)) > ((((struct o24_float *)((*(int *)((((0x294 + a4) + (((signed char)t37 - 1) << 2)) + 0x0)))))->v))) {
-                t42 = FUN_0c02649a((*(int *)((((0x294 + a4) + (((signed char)t37 - 1) << 2)) + 0x0))), 0x1);
-                if (!((((((struct o24_float *)(a4))->v)) + ((((struct o4_float *)0xC096C20)->v))) > t42)) {
-                    *(volatile float *)0xC096C28;
-                    *(volatile float *)((a4 + 0x2D4));
-                    return 0x0;
-                }
-                return ((int (*)(void))(0xC096B94))();
-            }
-            return ((int (*)(int, int, int, int))(0xC096B94))(t37, a5, a6, a7);
-        }
-        return 0x0;
-    }
-    return 0x0;
-}
 
 int pl_state35_phase0(int a4)
 {

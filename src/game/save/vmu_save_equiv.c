@@ -1,6 +1,10 @@
 /* VMU save/load: port table, LCD image, save pack/unpack, state machines, VMS CHECK boot screen (0c010160-0c012568) */
 
 /* named globals (symbols.txt) */
+void vmu_unmount_current(int a4, int a5, int a6, int a7);
+int vmu_step_write_vmgame(int a4, int a5);
+int save_reset_all_data(void);
+int FUN_0c0109e4(void);
 extern char g_key_config[];
 extern char g_res_vms_check[];
 extern char g_save_buffer[];
@@ -442,36 +446,6 @@ int thunk_FUN_0c0f2f7e(void)
     return FUN_0c0f2f7e();
 }
 
-void vmu_unmount_current(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-
-    if (((((struct o0_int *)g_vmu_op_pending)->v)) == 0) {
-        if (((((struct o0_int *)0xC361A64)->v)) == 18) {
-            if (((((struct o4_int *)0xC361A64)->v)) == 0xFFFF0000) {
-                t0 = (((struct o4_int *)g_vmu_op_pending)->v);
-                if (t0 != -1) {
-                    t1 = buUnmount((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))));
-                    if (t1 == 0) {
-                        t0 = (((struct o4_int *)g_vmu_op_pending)->v);
-                        *(unsigned int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4)) = 0x12;
-                        (((struct o4_uint *)g_vmu_op_pending)->v) = 0xFFFFFFFF;
-                        return;
-                    }
-                    ((int (*)(int, int, int, int))(0xC01075A))(t1, a5, a6, a7);
-    return;
-                }
-                ((int (*)(int, int, int, int))(0xC010730))(((int)g_vmu_port_slots), a5, a6, a7);
-    return;
-            }
-            ((int (*)(int, int, int, int))(0xC01075A))(((int)g_vmu_port_slots), a5, a6, a7);
-    return;
-        }
-        ((int (*)(int, int, int, int))(0xC01075A))(((int)g_vmu_port_slots), a5, a6, a7);
-    return;
-    }
-}
 
 int vmu_get_ready_mask(void)
 {
@@ -647,24 +621,6 @@ int vmu_get_free_space_mask(void)
     return 0xFFFFFFFF;
 }
 
-int FUN_0c0109e4(void)
-{
-    register int t0;
-    int t3;
-
-    t0 = 0x0;
-    for (;;) {
-        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t3 == 0xFFFF0000)) {
-            break;
-        }
-        t0 = (t0 + 0x1);
-        if ((int)t0 >= (int)0x8) {
-            t0 = 0x0;
-            return ((int (*)(int, int, int, int))(0xC010ABA))(((int)g_vmu_port_slots), t0, 0x8, 0x0);
-        }
-    }
-    return 0xFFFFFFFF;
-}
 
 int opt_reset_system_settings(void)
 {
@@ -704,110 +660,6 @@ int opt_reset_key_config(int a4)
     return 0x5;
 }
 
-int save_reset_all_data(void)
-{
-    register int t0;
-    register int t1;
-
-    (((struct o0_uchar *)0xC7F2F11)->v) = 0x3;
-    (((struct o7_uchar *)0xC7F2F11)->v) = 0x3;
-    (((struct o3_uchar *)0xC7F2F11)->v) = 0x1;
-    (((struct o4_uchar *)0xC7F2F11)->v) = 0x1;
-    (((struct o1_uchar *)0xC7F2F11)->v) = 0x1;
-    (((struct o8_uchar *)0xC7F2F11)->v) = 0x1;
-    (((struct o14_uchar *)0xC7F4750)->v) = 0x1;
-    (((struct o15_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o16_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o17_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o18_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o19_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o1A_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o1B_uchar *)0xC7F4750)->v) = 0x1;
-    (((struct o1C_uchar *)0xC7F4750)->v) = 0x1;
-    t0 = 0x0;
-    t1 = 0x0;
-    for (;;) {
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x0)) = 0x2;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x1)) = 0x3;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x2)) = 0x0;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x3)) = 0x1;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x4)) = 0x4;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x5)) = 0x5;
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x6)) = 0x4;
-        t1 = (t1 + 0x1);
-        *(unsigned char *)(((((int)g_key_config) + t0) + 0x7)) = 0x5;
-        t0 = (t0 + 0x8);
-        if ((int)t1 >= (int)0x2) {
-            break;
-        }
-    }
-    (((struct o0_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o1_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o2_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o3_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o4_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o5_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o6_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o7_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct o8_uchar *)0xC7F4750)->v) = 0x0;
-    (((struct oA_ushort *)0xC7F4750)->v) = 0x0;
-    (((struct oC_uint *)0xC7F4750)->v) = 0x0;
-    (((struct o10_uint *)0xC7F4750)->v) = 0x0;
-    t0 = 0x0;
-    for (;;) {
-        t1 = (0xC7F3083 + t0);
-        t0 = (t0 + 0x1);
-        *(unsigned char *)((t1 + 0x0)) = 0x0;
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-    t0 = 0x0;
-    t1 = 0x0;
-    for (;;) {
-        *(unsigned char *)(((0xC7F308D + t1) + 0x0)) = 0x43;
-        *(unsigned char *)(((0xC7F308D + t1) + 0x1)) = 0x41;
-        t0 = (t0 + 0x1);
-        *(unsigned char *)(((0xC7F308D + t1) + 0x2)) = 0x50;
-        t1 = (t1 + 0x4);
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-    t0 = 0x0;
-    for (;;) {
-        *(unsigned short *)(((0xC7F30B6 + (signed char)((t0 << 1) + (t0 << 2))) + 0x0)) = 0x1E;
-        *(unsigned short *)(((0xC7F30B6 + (signed char)((t0 << 1) + (t0 << 2))) + 0x2)) = 0x0;
-        t1 = (signed char)((t0 << 1) + (t0 << 2));
-        t0 = (t0 + 0x1);
-        *(unsigned short *)(((t1 + 0xC7F30B6) + 0x4)) = 0x0;
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-    t0 = 0x0;
-    for (;;) {
-        t1 = (0xC7F314C + t0);
-        t0 = (t0 + 0x1);
-        *(unsigned char *)((t1 + 0x0)) = 0x0;
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-    t0 = 0x0;
-    t1 = 0x0;
-    for (;;) {
-        *(unsigned char *)(((0xC7F3156 + t1) + 0x0)) = 0x43;
-        *(unsigned char *)(((0xC7F3156 + t1) + 0x1)) = 0x41;
-        t0 = (t0 + 0x1);
-        *(unsigned char *)(((0xC7F3156 + t1) + 0x2)) = 0x50;
-        t1 = (t1 + 0x4);
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-    return ((int (*)(int, int, int, int))(0xC010D36))(0x0, 0xC7F302C, 0xA, 0x2);
-}
 
 void save_pack_data(void)
 {
@@ -961,120 +813,6 @@ int vmu_defrag_disk(int a4)
     return (buDefragDisk(a4, 0xC352440));
 }
 
-int vmu_step_write_vmgame(int a4, int a5)
-{
-    int stk[2];
-    register int t1;
-    register int t2;
-    register int t42;
-    register int t57;
-    register int t63;
-    register int t78;
-    register int t81;
-    register int t82;
-    register int t117;
-    register int t120;
-    register int t121;
-    register int t37;
-    register int t38;
-    int t39;
-
-    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)g_vmu_ctl)->v));
-    t1 = *(signed char *)g_vmu_step_state;
-    t2 = (((struct o8_int *)g_vmu_ctl)->v);
-    if (t1 != 0) {
-        if (t1 != 1) {
-            if (t1 != 2) {
-                if (t1 != 3) {
-                    if (t1 == 4) {
-                        if (((((struct o4_int *)g_vmu_ctl)->v)) == 0) {
-                            if (t2 == (*(int *)(((int)stk + 0)))) {
-                                vmu_write_vmgame_file((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))), a5);
-                                return 0xFFFFFFFF;
-                            }
-                            return ((int (*)(void))(0xC011A24))();
-                        }
-                        return 0xFFFFFFFF;
-                    }
-                    if (t1 == 5) {
-                        return ((int (*)(void))(0xC011A2A))();
-                    }
-                    return 0xFFFFFFFF;
-                }
-                if (((((struct o4_int *)g_vmu_ctl)->v)) == 0) {
-                    if ((t2 == (*(int *)(((int)stk + 0)))) && ((t37 = (int)(((unsigned int)(((t2 << 2) + t2) << 2)) >> 31), t38 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x20)), (int)t38 >= (int)0x80) && (t39 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x24)), (int)t39 < (int)0x80))) {
-                        t42 = vmu_defrag_disk((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))));
-                        if (t42 == 0) {
-                            (((struct o4_uint *)g_vmu_ctl)->v) = 0x1;
-                            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x4;
-                        }
-                    } else {
-                        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x4;
-                    }
-                }
-                return 0xFFFFFFFF;
-            }
-            if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
-            } else {
-                t57 = *(int *)(((int)stk + 0));
-                *(unsigned int *)(((int)stk + 4)) = ((short)((((t57 << 2) + t57) << 2) << 1) + ((int)g_vmu_port_slots));
-                t63 = buMountDisk((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))), 0xC352640, ((((*(int *)((((short)((((t57 << 2) + t57) << 2) << 1) + ((int)g_vmu_port_slots)) + 0xC))) << 8) << 1) + 0x20));
-                if (t63 == 0) {
-                    (((struct o4_uint *)g_vmu_ctl)->v) = 0x1;
-                    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
-                }
-            }
-            return 0xFFFFFFFF;
-        }
-        if (((((struct o8_int *)g_vmu_ctl)->v)) != ((((struct oC_int *)g_vmu_ctl)->v))) {
-            if (((((struct o8_int *)g_vmu_ctl)->v)) != -1) {
-                if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
-                } else {
-                    t78 = (((struct o8_int *)g_vmu_ctl)->v);
-                    t81 = buUnmount((*(int *)(((short)((((t78 << 2) + t78) << 2) << 1) + ((int)g_vmu_port_slots)))));
-                    if (t81 != 0) {
-                    } else {
-                        t82 = (((struct o8_int *)g_vmu_ctl)->v);
-                        *(unsigned int *)(((short)((((t82 << 2) + t82) << 2) << 1) + 0xC361A64)) = 0x12;
-                        (((struct o8_uint *)g_vmu_ctl)->v) = 0xFFFFFFFF;
-                        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
-                    }
-                }
-            } else {
-                (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
-            }
-        } else {
-            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
-        }
-        return 0xFFFFFFFF;
-    }
-    (((struct o0_uint *)g_vmu_ctl)->v) = 0x1;
-    (((struct oC_uint *)g_vmu_ctl)->v) = a4;
-    vmu_lcd_set_busy_image();
-    vmu_lcd_refresh(((((struct oC_int *)g_vmu_ctl)->v)));
-    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x1;
-    if (((((struct o8_int *)g_vmu_ctl)->v)) != ((((struct oC_int *)g_vmu_ctl)->v))) {
-        if (((((struct o8_int *)g_vmu_ctl)->v)) != -1) {
-            if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
-            } else {
-                t117 = (((struct o8_int *)g_vmu_ctl)->v);
-                t120 = buUnmount((*(int *)(((short)((((t117 << 2) + t117) << 2) << 1) + ((int)g_vmu_port_slots)))));
-                if (t120 != 0) {
-                } else {
-                    t121 = (((struct o8_int *)g_vmu_ctl)->v);
-                    *(unsigned int *)(((short)((((t121 << 2) + t121) << 2) << 1) + 0xC361A64)) = 0x12;
-                    (((struct o8_uint *)g_vmu_ctl)->v) = 0xFFFFFFFF;
-                    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
-                }
-            }
-        } else {
-            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
-        }
-    } else {
-        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
-    }
-    return 0xFFFFFFFF;
-}
 
 int FUN_0c011a70(void)
 {

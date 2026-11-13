@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.5&b=97.6&a=62&s=0)
+![decomp progress](badges/progress.svg?p=98.5&b=97.7&m=1.6&a=62&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,9 +24,9 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE           62.3%  the instructions the cases ran, of all instructions, over the 4939 functions that can be C; the 4630 functions that reached the check are measured, the others count 0
+TOTAL TEST COVERAGE           62.3%  the instructions the cases ran, of all instructions, over the 4939 functions that can be C; the 4629 functions that reached the check are measured, the others count 0
 FUNCTIONS LEFT  (98.5% complete) 74  of the 4939 functions that can be C (76 with no C form are counted apart)
-BYTES LEFT   (97.6% complete) 20720  of 868952 bytes of code that can be C
+BYTES LEFT   (97.7% complete) 20720  of 887364 bytes of code that can be C
 FUNCTIONS                            
   unnamed                      1971  functions still called FUN_... (1971 of 5015)
   Not written C                   0  0 bytes

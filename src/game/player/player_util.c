@@ -1,5 +1,6 @@
 /* player helper functions: lists, item class, combo, linked object placement (0c09c974-0c09d544) */
 
+int FUN_0c09ca88(int a4, int a5, int a6, int a7);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -69,10 +70,6 @@ int hit_find_interactable_contact(int a4, int a5)
     return (t0 + 0x1);
 }
 
-int FUN_0c09ca88(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC09CADA))(a4, a5, 0x0, a7);
-}
 
 int hit_find_wall_entry_by_kind(int a4, int a5)
 {

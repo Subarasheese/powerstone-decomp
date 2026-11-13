@@ -1,5 +1,6 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c028dec-0c029268) */
 
+int FUN_0c028ea0(int a4, int a5, int a6, int a7, float f4);
 struct o5C_float { char p[0x5C]; float v; };
 struct o60_float { char p[0x60]; float v; };
 struct o64_float { char p[0x64]; float v; };
@@ -87,28 +88,3 @@ int FUN_0c028dec(int a4, int a5, int a6, int a7)
     goto L_C028E20;
 }
 
-int FUN_0c028ea0(int a4, int a5, int a6, int a7, float f4)
-{
-    register float u2;
-
-    u2 = 1.0f;
-    if ((*(int *)0xC386830) != 0) {
-        u2 = 0.833333313f;
-    }
-    *(unsigned char *)((a5 + 0x0)) = 0x1;
-    *(unsigned char *)((a5 + 0x3)) = 0x2;
-    *(unsigned char *)((a5 + 0x1)) = 0x1;
-    *(unsigned short *)((a5 + 0x6)) = 0x1F;
-    *(unsigned char *)((a5 + 0x5)) = 0x0;
-    *(unsigned char *)((a5 + 0xA)) = 0x0;
-    *(unsigned char *)((a5 + 0x9)) = 0x0;
-    *(unsigned char *)((a5 + 0x8)) = 0x0;
-    (((struct oEC_ushort *)(a5))->v) = (int)((float)(*(int *)((a4 + 0x10))) * u2);
-    (((struct oEE_ushort *)(a5))->v) = (int)((float)(*(int *)((a4 + 0x18))) * u2);
-    (((struct oF0_ushort *)(a5))->v) = (int)((float)(*(int *)((a4 + 0x20))) * u2);
-    (((struct o20_float *)(a5))->v) = f4;
-    (((struct o24_float *)(a5))->v) = ((((struct oC_float *)(a4))->v));
-    (((struct o28_float *)(a5))->v) = 0.0f;
-    *(unsigned int *)((a5 + 0x34)) = 0x0;
-    return ((int (*)(int, int, int, int, float, float, float))(0xC028F30))(a4, a5, 0x0, a7, f4, u2, 1.0f);
-}

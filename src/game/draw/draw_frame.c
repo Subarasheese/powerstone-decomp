@@ -1,6 +1,8 @@
 /* scene render per frame (cameras, split screen), then HUD (0c02ca74-0c02d774) */
 
 /* named globals (symbols.txt) */
+int game_draw_frame(void);
+int FUN_0c02d1cc(int a4, int a5, int a6, int a7);
 extern char g_cam_split_flag[];
 int dbg_set_cell_size(int, int);
 int dbg_set_cursor_cell(int, int);
@@ -185,23 +187,6 @@ int FUN_0c02ced4(int a4, float f4, float f5)
     return nlObjPutUseViewMatrixTrnsl((*(int *)(((*(int *)0xC4CFA70) + 0x0))), f5);
 }
 
-int FUN_0c02d1cc(int a4, int a5, int a6, int a7)
-{
-    if ((*(signed char *)((a4 + 0x0))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC02D40C))(a4, a5, a6, a7);
-    }
-    if ((*(signed char *)((a4 + 0x1))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC02D40C))(a4, a5, a6, a7);
-    }
-    FUN_0c0e1550(0x1);
-    FUN_0c05fb58((*(signed char *)((a4 + 0x5))));
-    if (((unsigned short)(*(short *)((a4 + 0x6))) & 0x200) != 0) {
-        FUN_0c0dcd20(((((struct o60_float *)(a4))->v)), ((((struct o64_float *)(a4))->v)), ((((struct o68_float *)(a4))->v)));
-    }
-    FUN_0c05a164(a4);
-    FUN_0c05a6e8(a4);
-    return ((int (*)(void))(0xC02D400))();
-}
 
 int FUN_0c02d458(void)
 {
@@ -216,83 +201,6 @@ int FUN_0c02d458(void)
     return 0x0;
 }
 
-int game_draw_frame(void)
-{
-    register int t0;
-    int t1;
-    register int t2;
-
-    t2 = FUN_0c02d458();
-    if (t2 != 0) {
-        return FUN_0c02828e();
-    }
-    if ((*(signed char *)0xC7F31D0) != 0) {
-        if (((*(signed char *)0xC7F300B) == 0) && ((t0 = *(signed char *)0xC7F300E, t0 == 0) && (t1 = *(signed char *)0xC494D20, t1 == 0))) {
-            (((struct o15_uchar *)0xC7F31BC)->v) = ((*(signed char *)0xC7F31D1) - 1);
-        }
-        t0 = *(signed char *)0xC7F31D0;
-        if (t0 != 1) {
-            if (t0 != 2) {
-            } else {
-                gfx_set_background_color(0xFFFF0000, 0xFFFF0000, 0xFFFF0000);
-            }
-        } else {
-            gfx_set_background_color(0xFFC0C0C0, 0xFFC0C0C0, 0xFFC0C0C0);
-        }
-        if ((int)(*(signed char *)0xC7F31D1) > 0) {
-        } else {
-            (((struct o15_uchar *)0xC7F31BC)->v) = 0x0;
-            (((struct o14_uchar *)0xC7F31BC)->v) = 0x0;
-        }
-    } else {
-        gfx_set_background_color(((((struct o0_int *)0xC7F31BC)->v)), ((((struct o4_int *)0xC7F31BC)->v)), ((((struct o8_int *)0xC7F31BC)->v)));
-        if ((*(signed char *)g_cam_split_flag) == 0) {
-            *(unsigned int *)0xC321190 = 0x0;
-            FUN_0c0e1550(0x3);
-            nlUnitMatrix();
-            FUN_0c0e2790(0x1D28, 1.33333325f, 0.299999982f, 12000.0f);
-            FUN_0c0e1550(0x2);
-            FUN_0c0e1240(0xC7F2A24);
-            FUN_0c02d420();
-        } else {
-            FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
-            FUN_0c0e1550(0x3);
-            nlUnitMatrix();
-            FUN_0c0e2110(-0.5f, 0.0f, 0.0f);
-            FUN_0c0e2790(0x1D28, 2.66666651f, 0.299999982f, 12000.0f);
-            FUN_0c0e1550(0x2);
-            FUN_0c0e1240(0xC7F2A24);
-            *(unsigned int *)0xC321190 = 0x2;
-            FUN_0c02d420();
-            FUN_0c0dcac0(0xF, 0x2);
-            FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
-            FUN_0c0e1550(0x3);
-            nlUnitMatrix();
-            FUN_0c0e2110(0.5f, 0.0f, 0.0f);
-            FUN_0c0e2790(0x1D28, 2.66666651f, 0.299999982f, 12000.0f);
-            FUN_0c0e1550(0x2);
-            FUN_0c0e1240(0xC7F2C20);
-            *(unsigned int *)0xC321190 = 0x3;
-            FUN_0c02d420();
-            FUN_0c0dcac0(0xF, 0x3);
-            FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
-            *(unsigned int *)0xC321190 = 0x0;
-            FUN_0c031388();
-            FUN_0c0dcac0(0xF, 0x0);
-        }
-    }
-    if ((unsigned char)(*(signed char *)0xC7F2EE4) == 4) {
-        if ((int)(*(signed char *)0xC7F302C) >= (int)0x1) {
-            if ((*(signed char *)0xC7F2F03) == 0) {
-                *(volatile signed char *)0xC7F300B;
-                return ((int (*)(void))(0xC02D6AC))();
-            }
-            return ((int (*)(void))(0xC02D6C4))();
-        }
-        return ((int (*)(void))(0xC02D6C4))();
-    }
-    return ((int (*)(void))(0xC02D6C4))();
-}
 
 int FUN_0c02d744(void)
 {

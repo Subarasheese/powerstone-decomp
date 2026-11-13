@@ -1,6 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05b6dc-0c05c1c0) */
 
 /* named globals (symbols.txt) */
+int FUN_0c05bcde(int a4, int a5, int a6, int a7);
 extern char g_item_player_flags[];
 extern char g_item_state[];
 typedef struct { int x, y, z; } S12;
@@ -135,42 +136,3 @@ void item_tick(char *actor)
     }
 }
 
-int FUN_0c05bcde(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register float u0;
-
-    t0 = *(signed char *)((a4 + 0x8));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                return t0;
-            }
-            return ((int (*)(int, int, int, int))(0xC05BE3A))(a4, a5, a6, a7);
-        }
-        if (((((struct o274_float *)(a4))->v)) > 0.0f) {
-            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-            (((struct oEC_ushort *)(a4))->v) = 0x0;
-            return 0xEC;
-        }
-        return ((int (*)(int, int, int, int))(0xC05BE0C))(a4, a5, a6, a7);
-    }
-    t0 = *(int *)((a4 + 0x1C));
-    *(unsigned char *)((a4 + 0x3)) = 0x2;
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    *(unsigned char *)((a4 + 0x1)) = 0x1;
-    *(unsigned int *)((a4 + 0x1C)) = 0x0;
-    FUN_0c0e6fe8(a4);
-    u0 = (((struct o0_float *)0xC05BE7C)->v);
-    (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + u0);
-    math_rand_next();
-    (((struct o38_float *)(a4))->v) = (-((math_cos_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000))) * ((((struct o10_float *)0xC05BE7C)->v))));
-    (((struct o3C_float *)(a4))->v) = ((((struct o14_float *)0xC05BE7C)->v));
-    (((struct o40_float *)(a4))->v) = (-((math_sin_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000))) * ((((struct o10_float *)0xC05BE7C)->v))));
-    (((struct o44_float *)(a4))->v) = ((-((((struct o38_float *)(a4))->v))) / u0);
-    (((struct o48_float *)(a4))->v) = ((((struct o1C_float *)0xC05BE7C)->v));
-    (((struct o4C_float *)(a4))->v) = ((-((((struct o40_float *)(a4))->v))) / u0);
-    (((struct o118_uint *)(a4))->v) = 0x0;
-    (((struct o107_uchar *)(a4))->v) = 0x0;
-    return 0x107;
-}

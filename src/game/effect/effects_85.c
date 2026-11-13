@@ -1,5 +1,6 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c040550-0c040a84) */
 
+int FUN_0c040938(int a4, int a5, int a6, int a7);
 struct vec3i { int x, y, z; };
 extern unsigned char *obj_create(int, int, int, int);
 extern int FUN_0c06233a(unsigned char *, int, int);
@@ -104,89 +105,3 @@ int FUN_0c0408d0(int a4)
     return 0x1;
 }
 
-int FUN_0c040938(int a4, int a5, int a6, int a7)
-{
-    int stk[1];
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t5;
-    register int t6;
-    register int t46;
-    register int t47;
-    register float u48;
-    register float u19;
-    register float u4;
-    register float u41;
-    register float u34;
-    register float u25;
-
-    *(unsigned int *)(((int)stk + 0)) = ((0x2E0 + a4) + 0x4);
-    t0 = ((0x2E0 + a4) + 0x4);
-    t1 = a4;
-    t2 = 0x0;
-    t3 = 0x1;
-    for (;;) {
-        t5 = *(int *)(((int)stk + 0));
-        *(unsigned int *)(((int)stk + 0)) = (t5 + 0x4);
-        t6 = *(int *)((((t5 + 0x4) - 4) + 0x0));
-        t46 = t0;
-        t47 = t1;
-        u48 = u4;
-        if (((((struct o1C_float *)(t6))->v)) != 0.0f) {
-            t2 = (t2 + 0x1);
-            if (((((struct o40_float *)(t6))->v)) != 0.0f) {
-                (((struct o40_float *)(t6))->v) = (((((struct o40_float *)(t6))->v)) - 1.0f);
-                t46 = t0;
-                t47 = t1;
-                u41 = u4;
-            } else {
-                t1 = t6;
-                *(unsigned char *)((t6 + 0x0)) = 0x1;
-                t1 = (t1 + 0x4);
-                math_vec3_add(t1, (t6 + 0x4), (t6 + 0x28));
-                t0 = t6;
-                t0 = (t0 + 0x38);
-                (((struct o2C_float *)(t6))->v) = (((((struct o2C_float *)(t6))->v)) + (*(float *)((t0 + 0x0))));
-                t0 = (*(int *)((t6 + 0x34)));
-                if ((float)t0 == 0.0f) {
-                    (((struct o44_float *)(t6))->v) = (((((struct o44_float *)(t6))->v)) - 0.099999994f);
-                    u4 = ((((struct o48_float *)(t6))->v));
-                    u4 = (u4 - 0.099999994f);
-                    (((struct o48_float *)(t6))->v) = u4;
-                    (((struct o4C_float *)(t6))->v) = (((((struct o4C_float *)(t6))->v)) - 0.099999994f);
-                    u4 = ((((struct o1C_float *)(t6))->v));
-                    u4 = (u4 - 0.099999994f);
-                    (((struct o1C_float *)(t6))->v) = u4;
-                    u19 = (((struct o20_float *)(t6))->v);
-                    (((struct o20_float *)(t6))->v) = (u19 - 0.099999994f);
-                    if (!((u19 - 0.099999994f) > 0.0f)) {
-                        t0 = 0xC0E6FE8;
-                        FUN_0c0e6fe8();
-                        FUN_0c0e6fe8();
-                        *(unsigned char *)((t6 + 0x0)) = 0x0;
-                    } else {
-                        t46 = t0;
-                        u25 = u4;
-                    }
-                    u34 = u25;
-                } else {
-                    t0 = (*(int *)((t6 + 0x34)));
-                    t0 = (t0 - 1);
-                    *(unsigned int *)((t6 + 0x34)) = t0;
-                    t46 = t0;
-                }
-                u41 = u34;
-            }
-            u48 = u41;
-        }
-        u4 = u48;
-        t3 = (t3 + 0x1);
-        t0 = t46;
-        t1 = t47;
-        if ((int)t3 >= (int)0x5) {
-            return ((int (*)(int, int, int, int))(0xC040A28))(t1, a5, a6, a7);
-        }
-    }
-}

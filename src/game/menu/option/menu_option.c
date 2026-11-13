@@ -1,6 +1,8 @@
 /* option menu: state machine and item handler table (0c0d71f4-0c0d7f30) */
 
 /* named globals (symbols.txt) */
+int menu_option_update(int a4, int a5, int a6, int a7, float f4);
+int FUN_0c0d78fa(void);
 extern char g_key_config[];
 extern char g_menu_option_cursor[];
 extern char g_menu_option_work[];
@@ -166,62 +168,6 @@ int FUN_0c0d724a(int a4, float f4)
     return 0x1A;
 }
 
-int menu_option_update(int a4, int a5, int a6, int a7, float f4)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(signed char *)g_menu_option_work;
-    if (t0 != 0) {
-        if (t0 != 1) {
-            t1 = t0;
-            if (t0 != 2) {
-            } else {
-                (((struct o2_uchar *)0xC7F306E)->v) = 0x1;
-                (((struct o0_uchar *)0xC7F306E)->v) = 0x1;
-                *(unsigned char *)0xC7F2F04 = 0x0;
-                t1 = 0x42;
-            }
-            return t1;
-        }
-        t0 = *(signed char *)0xC7F4725;
-        if (t0 != 0) {
-            if (t0 != 1) {
-                if (t0 != 2) {
-                    if (t0 != 3) {
-                        if (t0 != 4) {
-                            return t0;
-                        }
-                        return menu_option_run_item();
-                    }
-                    return FUN_0c0d780c();
-                }
-                return FUN_0c0d7758(f4);
-            }
-            return FUN_0c0d75bc(a4, a5, a6, a7);
-        }
-        game_reset_objects();
-        (((struct o1_uchar *)g_menu_option_work)->v) = ((*(signed char *)0xC7F4725) + 0x1);
-        (((struct o2_uchar *)g_menu_option_work)->v) = 0x0;
-        (((struct o3_uchar *)g_menu_option_work)->v) = 0x0;
-        (((struct o4_uchar *)g_menu_option_work)->v) = 0x0;
-        t0 = attract_take_step3_flag();
-        t1 = t0;
-        if (t0 != 0) {
-            (((struct o1_uchar *)g_menu_option_work)->v) = ((*(signed char *)0xC7F4725) + 0x1);
-            (((struct o16_uchar *)g_menu_option_work)->v) = 0x1;
-            t1 = 0x16;
-        }
-        return t1;
-    }
-    game_reset_objects();
-    (((struct o8_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
-    (((struct o4_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
-    (((struct o0_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
-    (((struct o0_uchar *)g_menu_option_work)->v) = 0x1;
-    (((struct o4_uchar *)g_menu_option_work)->v) = 0x0;
-    return ((int (*)(int, int, int, int))(0xC0D7528))(((int)g_menu_option_work), 0x0, 0x63, 0x0);
-}
 
 int FUN_0c0d7566(int a4, int a5, int a6, int a7)
 {
@@ -325,59 +271,6 @@ int FUN_0c0d7758(float f4)
     return t0;
 }
 
-int FUN_0c0d78fa(void)
-{
-    int stk[1];
-    register int t7;
-    register int t5;
-    register int t6;
-    int t10;
-    int t16;
-    int t23;
-    int t28;
-
-    if ((*(signed char *)0xC7F473B) == 0) {
-        if (((*(signed char *)g_menu_option_cursor) == 1) && ((t5 = (((struct o0_int *)0xC361BF0)->v), t5 == 0) || (t6 = (((struct o14_int *)0xC361BF0)->v), t6 == 0))) {
-            t7 = *(signed char *)0xC7F472D;
-            (((struct o3_uchar *)g_menu_option_cursor)->v) = t7;
-            if (t7 == 1) {
-                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x0;
-                return 0x14;
-            }
-            (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x2;
-            return 0x14;
-        }
-        *(unsigned char *)(((int)stk + 0)) = (*(signed char *)g_menu_option_cursor);
-        if ((((unsigned short)((((struct oC_short *)0xC361BF0)->v)) & 0x10) == 0) && (t10 = (((struct o20_short *)0xC361BF0)->v), ((unsigned short)t10 & 0x10) == 0)) {
-        } else {
-            (((struct o0_uchar *)g_menu_option_cursor)->v) = ((*(signed char *)g_menu_option_cursor) - 1);
-            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x1;
-            if ((int)(*(signed char *)g_menu_option_cursor) < 0) {
-                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x5;
-            }
-            if (((*(signed char *)g_menu_option_cursor) == 3) && (t16 = *(signed char *)0xC7F4739, t16 == 0)) {
-                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x2;
-            }
-        }
-        if ((((unsigned short)((((struct oC_short *)0xC361BF0)->v)) & 32) == 0) && (t23 = (((struct o20_short *)0xC361BF0)->v), ((unsigned short)t23 & 32) == 0)) {
-        } else {
-            (((struct o0_uchar *)g_menu_option_cursor)->v) = ((*(signed char *)g_menu_option_cursor) + 0x1);
-            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x2;
-            if ((int)(*(signed char *)g_menu_option_cursor) > (int)0x5) {
-                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x0;
-            }
-            if (((*(signed char *)g_menu_option_cursor) == 3) && (t28 = *(signed char *)0xC7F4739, t28 == 0)) {
-                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x4;
-            }
-        }
-        if ((*(signed char *)(((int)stk + 0))) == (*(signed char *)g_menu_option_cursor)) {
-            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x0;
-            return 0x17;
-        }
-        return ((int (*)(int, int, int, int))(0xC0D79F4))(((int)g_menu_option_work), 0xC361BF0, 0x0, 0xC361BF0);
-    }
-    return 0x17;
-}
 
 int FUN_0c0d7a0a(void)
 {

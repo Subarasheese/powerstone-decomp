@@ -1,6 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c0228ac-0c02380c) */
 
 /* named globals (symbols.txt) */
+char *hit_get_box_entry(char *obj, int index, int out);
 extern char g_hit_table_desc[];
 struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -266,41 +267,6 @@ Rec10 *hit_get_cylinder_entry(char *obj, unsigned short idx, int extra_arg)
     return rec_ptr;
 }
 
-int hit_get_box_entry(int a4, int a5, int a6, int a7)
-{
-    int t0;
-    register int t6;
-    register int t14;
-    register int t19;
-    register int t20;
-
-    t0 = *(signed char *)((a4 + 0x2));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            t19 = 0x4;
-            if ((t0 != 2) && ((t0 != 3) && (t0 != 4))) {
-                t19 = 0x0;
-            }
-            t20 = a7;
-        } else {
-            t20 = *(signed char *)((a4 + 0x3));
-            t6 = t20;
-            if ((int)t20 >= (int)0x2) {
-                t6 = (t20 - 2);
-            }
-            t19 = ((t6 << 1) + 0x1);
-        }
-    } else {
-        t20 = *(signed char *)((a4 + 0x3));
-        t14 = t20;
-        if ((int)t20 >= (int)0x2) {
-            t14 = (t20 - 2);
-        }
-        t19 = (t14 << 1);
-    }
-    *(volatile int *)(((((t19 << 2) << 2) << 1) + 0xC7D08F4));
-    return ((int (*)(int, int, int, int))(0xC022D36))(a4, ((((unsigned short)a5 << 1) + (unsigned short)a5) << 2), t19, t20);
-}
 
 void hit_offset_point_by_owner(char *obj, float *vec, char sel_idx)
 {
@@ -578,4 +544,37 @@ int FUN_0c02374e(int a4, int a5)
         }
     }
     return t0;
+}
+
+/* the 12-byte hit box entry `index` of the object's table (by kind and side), handed to FUN_0c020cc2 with `out`; returns it */
+struct HitBox12 { char b[12]; };      /* copied byte by byte (_slow_mvn), as the original does */
+extern char g_hit_table_desc[];
+extern int FUN_0c020cc2(int out, struct HitBox12 *box);
+
+char *hit_get_box_entry(char *obj, int index, int out)
+{
+    int slot = 0;
+    int side;
+    char *entry;
+    struct HitBox12 box;
+
+    switch (obj[2]) {
+    case 0:
+        side = obj[3];
+        slot = (side >= 2 ? side - 2 : side) << 1;
+        break;
+    case 1:
+        side = obj[3];
+        slot = ((side >= 2 ? side - 2 : side) << 1) + 1;
+        break;
+    case 2:
+    case 3:
+    case 4:
+        slot = 4;
+        break;
+    }
+    entry = *(char **)(g_hit_table_desc + 0x14 + slot * 32) + (unsigned short)index * 12;
+    box = *(struct HitBox12 *)entry;
+    FUN_0c020cc2(out, &box);
+    return entry;
 }

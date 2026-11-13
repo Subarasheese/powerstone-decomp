@@ -221,31 +221,49 @@ def write_badge(rows, label, path='badges/progress.svg', extra=()):
         wd = 2
     code_total = sum(sz for _, sz, n in funcs if n not in nocform) or 1
     dark = [0] * bar
-    pos = done_bytes = 0
+    mruns = []                                     # the same layout, byte-matched code only (inside a C unit the build rebuilds): exact runs,
+                                                   # since matched units are small and scattered, a slice is rarely mostly matched
+    pos = done_bytes = matched_bytes = 0
     for fa, fsz, fn in sorted(x for x in funcs if x[2] not in nocform):
-        if in_c(fa) or fn in equivalent or fn in verified:
+        matched = in_c(fa)
+        if matched or fn in equivalent or fn in verified:
             done_bytes += fsz
             for b in range(pos, pos + fsz):
                 dark[min(bar - 1, b * bar // code_total)] += 1
+        if matched:
+            matched_bytes += fsz
+            if mruns and mruns[-1][1] == pos:
+                mruns[-1][1] = pos + fsz
+            else:
+                mruns.append([pos, pos + fsz])
         pos += fsz
     X = 150                                        # the bars start here; the label column is wide enough for "Min. accuracy"
     per = float(code_total) / bar
-    runs, c = [], 0
-    while c < bar:
-        on = dark[c] * 2 > per
-        e = c
-        while e < bar and (dark[e] * 2 > per) == on:
-            e += 1
-        if on:
-            runs.append('<rect x="%d" y="46" width="%d" height="8" fill="#c87053"/>' % (X + c, e - c))
-        c = e
-    strip = '<rect x="%d" y="46" width="%d" height="8" fill="#ecc9b9"/>%s' % (X, bar, ''.join(runs))
+
+    def slices(cols, y):
+        """a strip: light, with a dark run wherever most of a slice of the code counts"""
+        runs, c = [], 0
+        while c < bar:
+            on = cols[c] * 2 > per
+            e = c
+            while e < bar and (cols[e] * 2 > per) == on:
+                e += 1
+            if on:
+                runs.append('<rect x="%d" y="%d" width="%d" height="8" fill="#c87053"/>' % (X + c, y, e - c))
+            c = e
+        return '<rect x="%d" y="%d" width="%d" height="8" fill="#ecc9b9"/>%s' % (X, y, bar, ''.join(runs))
+    strip = slices(dark, 46) + '<rect x="%d" y="66" width="%d" height="8" fill="#ecc9b9"/>%s' % (X, bar, ''.join(
+        '<rect x="%.2f" y="66" width="%.2f" height="8" fill="#c87053"/>' % (X + s * float(bar) / code_total,
+                                                                          (e - s) * float(bar) / code_total)
+        for s, e in mruns))
     ftext = '%.1f%%' % done
     btext = '%.1f%%' % (100.0 * done_bytes / code_total)
+    mtext = '%.1f%%' % (100.0 * matched_bytes / code_total)
     gtext = '%.1f%%' % wavg
-    title = '%s: %s of functions, %s of code bytes done; the total test coverage over all of them is %s' % (label, ftext, btext, gtext)
-    H = 60 + 20 * len(extra)
-    lines = ''.join('<text x="71" y="%d">%s</text><text x="278" y="%d">%s</text>' % (74 + 20 * k, t, 74 + 20 * k, v)
+    title = ('%s: %s of functions, %s of code bytes done (%s byte-matched); the total test coverage over all of them is %s'
+             % (label, ftext, btext, mtext, gtext))
+    H = 80 + 20 * len(extra)
+    lines = ''.join('<text x="71" y="%d">%s</text><text x="278" y="%d">%s</text>' % (94 + 20 * k, t, 94 + 20 * k, v)
                     for k, (t, v) in enumerate(extra))
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="304" height="%d" role="img" aria-label="%%s">' % H +
            '<title>%%s</title><clipPath id="r"><rect width="304" height="%d" rx="3"/></clipPath>' % H +
@@ -254,9 +272,10 @@ def write_badge(rows, label, path='badges/progress.svg', extra=()):
            '<rect x="%d" y="26" width="%d" height="8" rx="2" fill="#c87053"/>%s'
            '</g>'
            '<g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">'
-           '<text x="71" y="34">COVERED FUNCTIONS</text><text x="71" y="54">COVERED BYTES</text>'
-           '<text x="278" y="34">%s</text><text x="278" y="54">%s</text><text x="152" y="14">TOTAL TEST COVERAGE: %s</text>' + lines + '</g></svg>\n'
-           ) % (title, title, X, bar, X, wd, strip, ftext, btext, gtext)
+           '<text x="71" y="34">COVERED FUNCTIONS</text><text x="71" y="54">COVERED BYTES</text><text x="71" y="74">MATCHED BYTES</text>'
+           '<text x="278" y="34">%s</text><text x="278" y="54">%s</text><text x="278" y="74">%s</text>'
+           '<text x="152" y="14">TOTAL TEST COVERAGE: %s</text>' + lines + '</g></svg>\n'
+           ) % (title, title, X, bar, X, wd, strip, ftext, btext, mtext, gtext)
     import os as _os
     _os.makedirs(_os.path.dirname(path) or '.', exist_ok=True)
     try:
@@ -269,7 +288,8 @@ def write_badge(rows, label, path='badges/progress.svg', extra=()):
         readme = open('README.md').read()
         # the README's badge (an older name too: badge.svg, badges/regular, buildable or playable) becomes this one, with its numbers
         fresh = re.sub(r'\((badges/(?:regular|buildable|playable|progress)|badge)\.svg(\?[^)\s]*)?\)',
-                       lambda m: '(badges/progress.svg?p=%.1f&b=%s&a=%d&s=%d)' % (done, btext.rstrip('%'), int(round(wavg)), len(reached)),
+                       lambda m: '(badges/progress.svg?p=%.1f&b=%s&m=%s&a=%d&s=%d)' % (done, btext.rstrip('%'), mtext.rstrip('%'),
+                                                                                  int(round(wavg)), len(reached)),
                        readme, count=1)
         if fresh != readme:
             open('README.md', 'w').write(fresh)

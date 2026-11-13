@@ -1,6 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04512c-0c0454b4) */
 
 /* named globals (symbols.txt) */
+int fx_spawn_04512c(int a4, int a5, int a6);
 extern char g_camera_pos[];
 extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
@@ -26,84 +27,6 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
 
-int fx_spawn_04512c(int a4, int a5, int a6)
-{
-    int stk[6];
-    register float t2;
-    register int t5;
-    register int t7;
-    register int t13;
-    register int t27;
-    register float u30;
-    register int t34;
-    register int t35;
-    register int t36;
-
-    *(unsigned int *)(((int)stk + 4)) = a4;
-    *(unsigned int *)(((int)stk + 8)) = a5;
-    *(unsigned char *)(((int)stk + 0)) = a6;
-    math_vec3_sub((((int)stk + 0) + 0xC), ((int)g_camera_pos), (*(int *)(((int)stk + 4))));
-    t2 = math_vec3_length((((int)stk + 0) + 0xC));
-    if (!(t2 > 300.0f)) {
-        return 0xC045188;
-    }
-    t5 = 0x3;
-    if ((*(signed char *)(((int)stk + 0))) == 0) {
-        t5 = 0x1;
-    }
-    t7 = obj_create(0x5, 0x1, (signed char)t5);
-    if (t7 == 0) {
-        return t7;
-    }
-    *(unsigned char *)((t7 + 0x0)) = 0x1;
-    *(unsigned char *)((t7 + 0x1)) = 0x1;
-    *(unsigned char *)((t7 + 0x3)) = 0x2;
-    *(unsigned short *)((t7 + 0x6)) = 0x1F;
-    *(unsigned char *)((t7 + 0x5)) = 0x1;
-    *(unsigned int *)((t7 + 0x10)) = 0xC045354;
-    (((struct o118_uint *)(t7))->v) = 0x0;
-    *(volatile int *)(((int)stk + 8));
-    FUN_0c0e6fe8();
-    *(volatile int *)(((int)stk + 4));
-    FUN_0c0e6fe8();
-    FUN_0c0e6fe8();
-    t13 = (((struct o2E0_int *)(t7))->v);
-    FUN_0c06233a(t13, ((int)g_res_kyoutsuu), 0x69);
-    *(unsigned char *)((t13 + 0x0)) = 0x1;
-    *(unsigned short *)((t13 + 0x2)) = 0x218;
-    math_rand_float();
-    
-    *(unsigned int *)((t13 + 0x18)) = ((((FUN_0c0e6f24()) << 8) << 2) << 1);
-    math_rand_float();
-    
-    t27 = FUN_0c0e6f24();
-    u30 = (float)(t27 + 0x5);
-    if ((int)(t27 + 0x5) < 0) {
-        u30 = ((float)(t27 + 0x5) + 4.2949673e+09f);
-    }
-    (((struct o24_float *)(t13))->v) = (u30 / 10.0f);
-    FUN_0c0e6fe8();
-    t34 = *(signed char *)(((int)stk + 0));
-    *(unsigned char *)((t7 + 0xB)) = t34;
-    if ((signed char)t34 != 0) {
-        (((struct o58_float *)(t7))->v) = 1.19999993f;
-        (((struct o54_float *)(t7))->v) = 1.19999993f;
-        (((struct o50_float *)(t7))->v) = 1.19999993f;
-        *(unsigned int *)(((int)stk + 0)) = ((0x2E0 + t7) + 0x4);
-        t35 = *(int *)(((int)stk + 0));
-        *(unsigned int *)(((int)stk + 0)) = (t35 + 0x4);
-        t36 = *(int *)((((t35 + 0x4) - 4) + 0x0));
-        FUN_0c06233a(t36, ((int)g_res_kyoutsuu), 0x7A);
-        *(unsigned char *)((t36 + 0x0)) = 0x1;
-        *(unsigned short *)((t36 + 0x2)) = 0x21C;
-        *(unsigned int *)((t36 + 0x14)) = 0x8000;
-        math_rand_float();
-        
-        *(unsigned int *)((t36 + 0x18)) = ((((FUN_0c0e6f24()) << 8) << 2) << 1);
-        return ((int (*)(void))(0xC045320))();
-    }
-    return (signed char)t34;
-}
 
 int fx_tick_04512c(int a4)
 {

@@ -1,6 +1,8 @@
 /* object pool, class lists, part pools, obj_create/obj_destroy/obj_tick_class (0c058ef4-0c059718) */
 
 /* named globals (symbols.txt) */
+int obj_destroy(int a4, int a5, int a6, int a7);
+int FUN_0c05941e(int a4, int a5, int a6, int a7);
 extern char g_obj_class_head[];
 extern char g_obj_class_tail[];
 extern char g_obj_free_list[];
@@ -273,73 +275,6 @@ int obj_create(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int obj_destroy(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-
-    t0 = a4;
-    t1 = 0x0;
-    for (;;) {
-        if ((int)t1 >= (int)(*(signed char *)((a4 + 0x2DC)))) {
-            break;
-        }
-        t2 = t1;
-        t3 = *(signed char *)((a4 + 0x2DD));
-        t2 = (t2 << 2);
-        if (t3 != 0) {
-            if (t3 != 1) {
-                if (t3 != 2) {
-                    t3 = t0;
-                } else {
-                    t0 = 0x2E0;
-                    t0 = (t0 + a4);
-                    t0 = (t0 + t2);
-                    t0 = (*(int *)((t0 + 0x0)));
-                    part_free2(t0);
-                }
-                t4 = t3;
-            } else {
-                t0 = 0x2E0;
-                t0 = (t0 + a4);
-                t0 = (t0 + t2);
-                t0 = (*(int *)((t0 + 0x0)));
-                part_free1(t0);
-            }
-            t3 = t4;
-        } else {
-            t0 = 0x2E0;
-            t0 = (t0 + a4);
-            t0 = (t0 + t2);
-            t0 = (*(int *)((t0 + 0x0)));
-            part_free0(t0);
-        }
-        t1 = (t1 + 0x1);
-        t0 = t3;
-    }
-    if ((*(int *)((a4 + 0x14))) == 0) {
-        t0 = *(int *)((a4 + 0x18));
-        *(unsigned int *)(((((int)g_obj_class_head) + ((*(signed char *)((a4 + 0x2))) << 2)) + 0x0)) = t0;
-        if (t0 == 0) {
-            *(unsigned int *)((((int)g_obj_class_tail) + ((*(signed char *)((a4 + 0x2))) << 2))) = 0x0;
-        } else {
-            *(unsigned int *)((t0 + 0x14)) = 0x0;
-        }
-    } else {
-        if ((*(int *)((a4 + 0x18))) == 0) {
-            t0 = *(int *)((a4 + 0x14));
-            *(unsigned int *)((((int)g_obj_class_tail) + ((*(signed char *)((a4 + 0x2))) << 2))) = t0;
-            *(unsigned int *)((t0 + 0x18)) = 0x0;
-        } else {
-            *(unsigned int *)(((*(int *)((a4 + 0x14))) + 0x18)) = (*(int *)((a4 + 0x18)));
-            *(unsigned int *)(((*(int *)((a4 + 0x18))) + 0x14)) = (*(int *)((a4 + 0x14)));
-        }
-    }
-    return ((int (*)(int, int, int, int))(0xC0593DA))(a4, ((int)g_obj_class_tail), a6, a7);
-}
 
 int FUN_0c0593e0(int a4)
 {
@@ -381,11 +316,6 @@ int FUN_0c0593e0(int a4)
     return t1;
 }
 
-int FUN_0c05941e(int a4, int a5, int a6, int a7)
-{
-    *(volatile int *)(((a4 << 2) + ((int)g_obj_class_head)));
-    return ((int (*)(int, int, int, int))(0xC05947C))(a4, a5, a6, a7);
-}
 
 int obj_tick_class(int a4, int a5, int a6, int a7)
 {

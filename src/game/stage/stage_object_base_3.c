@@ -1,6 +1,8 @@
 /* stage object helpers: layout position load contact lists mode/owner setters (0c0abf64-0c0ac7f0) */
 
 /* named globals (symbols.txt) */
+int FUN_0c0ac5c4(int a4, int a5, int a6, int a7);
+int FUN_0c0ac4d0(void);
 extern char g_proj_def_tbl[];
 float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
@@ -180,11 +182,6 @@ void obj_collect_slot_contacts(char *o)
     *(char **)(o + 0x71C8) = best;
 }
 
-int FUN_0c0ac4d0(void)
-{
-    *(volatile int *)0xC7E4078;
-    return ((int (*)(void))(0xC0AC54C))();
-}
 
 int FUN_0c0ac55c(int a4, int a5)
 {
@@ -226,10 +223,6 @@ int FUN_0c0ac55c(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c0ac5c4(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC0AC5F2))(a4, 0x0, a6, a7);
-}
 
 int obj_find_hitting_player(int a4)
 {

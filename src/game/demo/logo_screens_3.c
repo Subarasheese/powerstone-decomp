@@ -1,6 +1,7 @@
 /* PSTONE LOGO bank objects and logo screens (0c02b884-0c02ca74) */
 
 /* named globals (symbols.txt) */
+int FUN_0c02bc0e(int a4, int a5, int a6, int a7);
 extern char g_menu_option_cursor[];
 extern char g_res_pstone_logo[];
 struct o0_float { float v; };
@@ -196,31 +197,6 @@ int logo_spawn_overlay(float f4)
     return t19;
 }
 
-int FUN_0c02bc0e(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = *(signed char *)((a4 + 0xA));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                return ((int (*)(int, int, int, int))(0xC02BCB6))(a4, 0x444, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC02BC94))(a4, 0x444, a6, a7);
-        }
-        t0 = (((struct o2E4_int *)(a4))->v);
-        *(unsigned int *)((t0 + 0x18)) = ((*(int *)((t0 + 0x18))) + 0x444);
-    } else {
-        t0 = (((struct o2E4_int *)(a4))->v);
-        *(unsigned int *)((t0 + 0x18)) = ((*(int *)((t0 + 0x18))) - (int)(((float)((((struct oEC_short *)(a4))->v)) * 65536.0f) / 360.0f));
-    }
-    (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
-    if (((((struct oEC_short *)(a4))->v)) == 0) {
-        *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
-        return ((int (*)(int, int, int, int))(0xC02BCB0))(a4, 0x444, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC02BCB6))(a4, 0x444, a6, a7);
-}
 
 int FUN_0c02bcba(void)
 {

@@ -1,6 +1,9 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c025958-0c026c7c) */
 
 /* named globals (symbols.txt) */
+int stage_point_in_box(int a4, int a5, int a6, int a7);
+int FUN_0c025d72(int a4, int a5, int a6, int a7);
+int FUN_0c025a0e(int a4, int a5, int a6, int a7);
 extern char g_obj_list_heads[];
 struct o2A8_uchar { char p[0x2A8]; unsigned char v; };
 int FUN_0c0246b2(int);
@@ -83,15 +86,7 @@ int FUN_0c0259ee(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c025a0e(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC025CDE))(a4, a5, a6, a7);
-}
 
-int FUN_0c025d72(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC025F26))(a4, a5, a6, a7);
-}
 
 int FUN_0c025f50(void)
 {
@@ -491,35 +486,6 @@ int FUN_0c026880(int a4)
     return t42;
 }
 
-int stage_point_in_box(int a4, int a5, int a6, int a7)
-{
-    register float u0;
-    register float u1;
-    register float u2;
-
-    u0 = *(float *)((a5 + 0x0));
-    u1 = (((struct oC_float *)(a5))->v);
-    u2 = *(float *)((a4 + 0x0));
-    if (!((u0 - u1) > u2)) {
-        if (!(u2 > (u1 + u0))) {
-            if (!((((((struct o8_float *)(a5))->v)) - ((((struct o14_float *)(a5))->v))) > ((((struct o8_float *)(a4))->v)))) {
-                if (!(((((struct o8_float *)(a4))->v)) > (((((struct o8_float *)(a5))->v)) + ((((struct o14_float *)(a5))->v))))) {
-                    if (!((((((struct o4_float *)(a5))->v)) - ((((struct o10_float *)(a5))->v))) > ((((struct o4_float *)(a4))->v)))) {
-                        if (!(((((struct o4_float *)(a4))->v)) > (((((struct o4_float *)(a5))->v)) + ((((struct o10_float *)(a5))->v))))) {
-                            return 0x1;
-                        }
-                        return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-                    }
-                    return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-                }
-                return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-            }
-            return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-        }
-        return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-    }
-    return ((int (*)(int, int, int, int, float, float, float))(0xC026A48))(a4, a5, a6, a7, u2, u1, u0);
-}
 
 int stage_point_in_cylinder(int a4, int a5)
 {

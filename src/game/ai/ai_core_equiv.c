@@ -1,6 +1,9 @@
 /* CPU fighter AI: slot helpers, debug overlay, script runner/selector, ai_think, first opcode handlers (0c04bfd0-0c04e94c) */
 
 /* named globals (symbols.txt) */
+void ai_script_branch(void);
+int FUN_0c04ca94(int a4, int a5, int a6, int a7);
+int FUN_0c04c0ea(void);
 extern char g_ai_script_group[];
 extern char g_obj_class_head[];
 extern char g_tab_ai_ops[];
@@ -46,7 +49,7 @@ struct o38_ushort { char p[0x38]; unsigned short v; };
 struct o2C_ushort { char p[0x2C]; unsigned short v; };
 
 int ai_clear_op_state(void);
-int ai_script_branch(int a4, int a5);
+void ai_script_branch(void);
 
 int ai_calc_angle_to_target(int a4)
 {
@@ -121,11 +124,6 @@ int ai_calc_dist_to_saved_pos(int a4)
     return (int)(math_signed_sqrt(u7));
 }
 
-int FUN_0c04c0ea(void)
-{
-    *(unsigned char *)0xC3673EE = 0x0;
-    return ((int (*)(int, int, int, int))(0xC04C222))(0xC3673EE, 0xC366F40, 0x0, 0x1);
-}
 
 int ai_run_script(int a4, int a5, int a6, int a7)
 {
@@ -182,10 +180,6 @@ int FUN_0c04ca6e(int a4)
     return 0x0;
 }
 
-int FUN_0c04ca94(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC04CAEE))(a4, a5, 0x0, a7);
-}
 
 int FUN_0c04cafe(int a4)
 {
@@ -376,13 +370,6 @@ void ai_select_script(char *player, unsigned char group, unsigned char entry)
     *(int *)(0xC366F4C + (short)(*(unsigned char *)0xC3673EE * 596)) = tbl_b[group][pick];
 }
 
-int ai_script_branch(int a4, int a5)
-{
-    register int t1;
-
-    t1 = *(short *)((((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F40) + 0x16));
-    return ((int (*)(int, int, int, int))(0xC04E0A0))((t1 + 0x1), a5, 0xC3673E8, 0xC3673EE);
-}
 
 int ai_op_end_frame(void)
 {
@@ -527,7 +514,7 @@ int ai_op29_jump_if_reg_le(int a4, int a5)
     t1 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t1 + 0x2);
     if ((int)t0 <= (int)(*(short *)((((t1 + 0x2) - 2) + 0x0)))) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t0 = ai_clear_op_state();
@@ -544,7 +531,7 @@ int ai_op30_jump_if_reg_ge(int a4, int a5)
     t1 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t1 + 0x2);
     if ((int)t0 >= (int)(*(short *)((((t1 + 0x2) - 2) + 0x0)))) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t0 = ai_clear_op_state();
@@ -561,7 +548,7 @@ int ai_op31_jump_if_reg_ne(int a4, int a5)
     t1 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t1 + 0x2);
     if (t0 != (*(short *)((((t1 + 0x2) - 2) + 0x0)))) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t0 = ai_clear_op_state();
@@ -578,7 +565,7 @@ int ai_op59_jump_if_reg_eq(int a4, int a5)
     t1 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t1 + 0x2);
     if (t0 == (*(short *)((((t1 + 0x2) - 2) + 0x0)))) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t0 = ai_clear_op_state();
@@ -591,7 +578,7 @@ int ai_op32_jump_if_reg_zero(int a4, int a5)
     register int t10;
 
     if ((*(short *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F66))) == 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -604,7 +591,7 @@ int ai_op33_jump_if_reg_nonzero(int a4, int a5)
     register int t10;
 
     if ((*(short *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F66))) != 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -617,7 +604,7 @@ int ai_op38_jump_if_flag24_clear(int a4, int a5)
     register int t10;
 
     if ((*(signed char *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F64))) == 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -630,7 +617,7 @@ int ai_op39_jump_if_flag24_set(int a4, int a5)
     register int t10;
 
     if ((*(signed char *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F64))) != 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -643,7 +630,7 @@ int ai_op40_jump_if_flag25_clear(int a4, int a5)
     register int t10;
 
     if ((*(signed char *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F65))) == 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -656,7 +643,7 @@ int ai_op41_jump_if_flag25_set(int a4, int a5)
     register int t10;
 
     if ((*(signed char *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F65))) != 0) {
-        ai_script_branch(a4, a5);
+        ai_script_branch();
     }
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t10 = ai_clear_op_state();
@@ -702,4 +689,40 @@ int ai_op64_clear_cmd_bits(void)
     t0 = ai_clear_op_state();
     (((struct o4_ushort *)0xC3673E8)->v) = 0x1;
     return t0;
+}
+
+/* skips the AI script forward to the end of the current block: past nested blocks (ops 29..33 and 59 open one, 7 closes one)
+   up to the op that brings the depth back to the slot's own; an op 8 (else) at that depth stops it too */
+#define AI_SLOT_DEPTH (*(short *)(0x0C366F40 + (short)((short)*(unsigned char *)0x0C3673EE * (short)0x254) + 22))
+#define AI_PC (*(short **)0x0C3673E8)
+#define AI_OP_LENGTH ((unsigned char *)0x0C32D958)          /* in 16-bit words, by op */
+
+void ai_script_branch(void)
+{
+    unsigned short op;
+    int depth = AI_SLOT_DEPTH + 1;
+
+    while ((unsigned short)depth != (unsigned short)AI_SLOT_DEPTH) {
+        op = *AI_PC;
+        if (op == 7)
+            depth--;
+        if (op == 8) {
+            depth--;
+            if ((unsigned short)depth != (unsigned short)AI_SLOT_DEPTH)
+                depth++;
+        }
+        if (op == 32)
+            depth++;
+        if (op == 33)
+            depth++;
+        if (op == 29)
+            depth++;
+        if (op == 30)
+            depth++;
+        if (op == 31)
+            depth++;
+        if (op == 59)
+            depth++;
+        AI_PC = (short *)((char *)AI_PC + ((unsigned short)AI_OP_LENGTH[op] << 1));
+    }
 }

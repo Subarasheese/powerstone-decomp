@@ -1,6 +1,7 @@
 /* debug work/player/stage editor (CHAR/EDIT/MENU mode); not a resource loader (0c0cfe04-0c0d24ec) */
 
 /* named globals (symbols.txt) */
+int FUN_0c0d0d80(int a4, int a5, int a6, int a7);
 extern char g_hit_table_desc[];
 extern char g_res_kyoutsuu[];
 int FUN_0c0282cc(void);
@@ -146,11 +147,6 @@ void FUN_0c0d00ea(void)
     
 }
 
-int FUN_0c0d0d80(int a4, int a5, int a6, int a7)
-{
-    *(volatile signed char *)((a4 + 0x5));
-    return ((int (*)(int, int, int, int))(0xC0D0DF8))(0xC7F31F0, a5, a6, a7);
-}
 
 void dbgedit_select_stage_object(char *menu)
 {

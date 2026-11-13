@@ -1,5 +1,6 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c3544-0c0c571c) */
 
+int FUN_0c0c3ab2(int a4, int a5, int a6, int a7);
 struct Vec3i { int x, y, z; };
 struct at_20_float { char pad[0x20]; float field_20; };
 struct at_24_float { char pad[0x24]; float field_24; };
@@ -227,18 +228,6 @@ int fx31_pick_mode1_from_owner(int a4)
     return (*(signed char *)(((a4 + 0x308) + 0x2)));
 }
 
-int FUN_0c0c3ab2(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t2;
-
-    t0 = *(int *)((a4 + 0x1C));
-    if ((*(signed char *)((t0 + 0x71BA))) == 11) {
-        t2 = *(signed char *)((t0 + 0x7223));
-        return ((int (*)(int, int, int, int))(0xC0C3B02))(t2, t0, (0x308 + a4), a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0C3AF8))(a4, t0, (0x308 + a4), a7);
-}
 
 int fx31_pick_mode2_from_owner(int a4)
 {

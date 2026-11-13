@@ -1,5 +1,6 @@
 /* velocity/acceleration/gravity, angle to opponent, stick direction (part 3 of 3 of the same module) (0c09db78-0c09f6a8) */
 
+int FUN_0c09e910(int a4, int a5, int a6, int a7);
 struct o2DC_int { char p[0x2DC]; int v; };
 struct o2FE_short { char p[0x2FE]; short v; };
 int pl_get_held_item_class(int, int, int);
@@ -46,66 +47,3 @@ int FUN_0c09e7fc(int a4, int a5, int a6)
     return t2;
 }
 
-int FUN_0c09e910(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    int t2;
-    register int t3;
-    int t4;
-    register int t5;
-    register int t6;
-    register float u0;
-
-    t6 = pl_get_held_item_class(a4, a5, a6);
-    if ((signed char)t6 != 0) {
-        return 0x0;
-    }
-    if ((*(signed char *)((a4 + 0x72AF))) == 0) {
-        return 0x0;
-    }
-    if (0.0f > (((((struct o24_float *)(a4))->v)) - ((((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v)))) {
-        u0 = ((-((((struct o24_float *)(a4))->v))) + ((((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v)));
-    } else {
-        u0 = (((((struct o24_float *)(a4))->v)) - ((((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v)));
-    }
-    if (u0 > 100.0f) {
-        return 0x0;
-    }
-    if (((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC))) == 0) && (((t0 = *(int *)((a4 + 0x1C)), t5 = *(signed char *)((t0 + 0x71BA)), t5 == 10) && ((t1 = *(signed char *)((t0 + 0x7206)), (int)(unsigned char)t1 <= (int)0xF) && (t2 = *(signed char *)((t0 + 0x100)), t2 != 0))) || ((t5 == 11) && ((t3 = *(signed char *)((t0 + 0x7206)), (int)(unsigned char)t3 <= (int)0xF) && (t4 = *(signed char *)((t0 + 0x100)), t4 != 0))))) {
-        if ((((((struct o2E4_int *)(a4))->v)) & 4) != 0) {
-            (((struct o72B1_uchar *)(a4))->v) = 0x1;
-            (((struct o7221_uchar *)(a4))->v) = 0xC;
-            return ((int (*)(int, int, int, int))(0xC09EA50))(0x1, t5, a6, a7);
-        }
-        if ((((((struct o2E4_int *)(a4))->v)) & 240) != 0) {
-            (((struct o72B1_uchar *)(a4))->v) = 0x1;
-            t0 = pl_stick_dir_angle(a4);
-            t1 = *(short *)0xC7F31E0;
-            t2 = pl_angle_to_opponent(a4);
-            t3 = *(int *)((a4 + 0x1C));
-            t4 = (unsigned short)((unsigned short)(t1 + t0) - t2);
-            if ((0x8000 & (unsigned short)((unsigned short)(t1 + t0) - t2)) != 0) {
-                t4 = ((unsigned short)((unsigned short)(t1 + t0) - t2) | 0xFFFF0000);
-            }
-            if (((*(signed char *)((0x71BA + t3))) != 11) && (((int)t4 >= (int)0xFFFFF1C8) && ((int)t4 <= (int)0xE38))) {
-                (((struct o7221_uchar *)(a4))->v) = 0x9;
-                return ((int (*)(void))(0xC09EA50))();
-            }
-            if (((int)t4 > 0) && ((int)t4 <= (int)0x471C)) {
-                (((struct o7221_uchar *)(a4))->v) = 0xA;
-                return ((int (*)(void))(0xC09EA50))();
-            }
-            if ((int)t4 < 0) {
-                if ((int)t4 >= (int)0xFFFFB8E4) {
-                    (((struct o7221_uchar *)(a4))->v) = 0xB;
-                    return ((int (*)(void))(0xC09EA50))();
-                }
-                return ((int (*)(void))(0xC09EA46))();
-            }
-            return ((int (*)(void))(0xC09EA46))();
-        }
-        return 0x0;
-    }
-    return 0x0;
-}

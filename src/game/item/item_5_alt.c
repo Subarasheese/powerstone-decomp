@@ -1,6 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05b6dc-0c05c1c0) */
 
 /* named globals (symbols.txt) */
+int FUN_0c05bbc8(int a4, int a5, int a6, int a7);
 extern char g_proj_char_offset_tbl[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 int item_init_hold_pose(int);
@@ -48,50 +49,6 @@ void FUN_0c05b9e4(void)
     
 }
 
-int FUN_0c05bbc8(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t5;
-    register float u0;
-
-    t4 = *(signed char *)((a4 + 0x8));
-    if (t4 != 0) {
-        if (t4 != 1) {
-            return t4;
-        }
-        (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-        t4 = (((struct o2E0_int *)(a4))->v);
-        t5 = (((struct oEC_short *)(a4))->v);
-        u0 = math_sin_angle16(((int)(((((float)((t5 << 1) + (t5 << 2)) * ((((struct o0_float *)0xC05BD18)->v))) / ((((struct o4_float *)0xC05BD18)->v)))) + ((((struct o8_float *)0xC05BD18)->v))) & 0xFFFF));
-        (((struct o8_float *)(t4))->v) = (u0 * ((((struct o14_float *)0xC05BD18)->v)));
-        t4 = (((struct o2E0_int *)(a4))->v);
-        *(unsigned int *)((t4 + 0x14)) = ((*(int *)((t4 + 0x14))) + 0xB6);
-        *(volatile short *)((a4 + 0xEC));
-        t4 = FUN_0c0e6e5c();
-        math_rand_next();
-        t5 = FUN_0c0e6e5c();
-        if (t4 == t5) {
-            fx_spawn_item_sparkle((a4 + 0x20));
-        }
-        if (((((struct o274_float *)(a4))->v)) > 0.0f) {
-            (((struct o3C_float *)(a4))->v) = 0.0f;
-        }
-        return ((int (*)(int, int, int, int))(0xC05BCC4))(a4, a4, a6, a7);
-    }
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    *(unsigned char *)((a4 + 0x1)) = 0x1;
-    *(unsigned int *)((a4 + 0x2C)) = 0x0;
-    *(unsigned int *)((a4 + 0x34)) = 0x0;
-    t4 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(a4, 0x0, 0x1);
-    t4 = ((int (*)(int))(FUN_0c0e6fe8))(t0);
-    (((struct o105_uchar *)(t2))->v) = t1;
-    (((struct o107_uchar *)(t2))->v) = t3;
-    return 0x107;
-}
 
 void obj_tick_owner_projectile(char *obj)
 {

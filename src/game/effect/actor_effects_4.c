@@ -1,5 +1,6 @@
 /* actor objects: reset/update routines sharing the entity header (counter byte 8, rotation 44..52, velocity 56..64); exact class not identified (0c05ec26-0c05eea0) */
 
+int FUN_0c05ed92(int a4, int a5, int a6, int a7);
 typedef struct { int w0, w1, w2; } vec3i;
 typedef struct {
     char pad_a[8];
@@ -77,31 +78,3 @@ void FUN_0c05ec88(char *p)
     FUN_0c0e21b0(p + 56, p + 68);
 }
 
-int FUN_0c05ed92(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(signed char *)((a4 + 0x8));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            return t0;
-        }
-        *(volatile float *)((((((struct o2E0_int *)(a4))->v)) + 0x8));
-        return ((int (*)(int, int, int, int))(0xC05EE3C))(a4, a5, a6, a7);
-    }
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    (((struct oEC_ushort *)(a4))->v) = 0x0;
-    t0 = (((struct o2E0_int *)(a4))->v);
-    *(unsigned short *)((t0 + 0x2)) = ((*(short *)((t0 + 0x2))) | 0x10);
-    (((struct o107_uchar *)(a4))->v) = 0x1;
-    t0 = *(signed char *)((a4 + 0xB));
-    t1 = t0;
-    if (t0 == 0) {
-        (((struct o0_uchar *)0xC7F2979)->v) = (*(signed char *)((a4 + 0xD)));
-        (((struct o1_uchar *)0xC7F2979)->v) = 0x1;
-        *(unsigned char *)((a4 + 0xB)) = 0x1;
-        t1 = 0x1;
-    }
-    return t1;
-}

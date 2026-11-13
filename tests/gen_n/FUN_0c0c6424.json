@@ -1,0 +1,32 @@
+{
+ "dev": [
+  {
+   "about": "rescue: empty case",
+   "regs": {}
+  },
+  {
+   "about": "directed: flips 0C0C6446 (taken)",
+   "regs": {
+    "r5": "00000001"
+   }
+  },
+  {
+   "about": "directed: flips 0C0C6450 (taken)",
+   "regs": {
+    "r5": "00000003"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "rescue: empty case",
+   "regs": {}
+  },
+  {
+   "about": "directed: flips 0C0C644C (taken)",
+   "regs": {
+    "r5": "00000002"
+   }
+  }
+ ]
+}

@@ -1,6 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c046360-0c046798) */
 
 /* named globals (symbols.txt) */
+int fx_spawn_046360(int a4);
 extern char g_camera_pos[];
 extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
@@ -31,55 +32,6 @@ int FUN_0c0e24f0(int);
 int FUN_0c0e6e5c(int);
 int thunk_FUN_0c062242(int);
 
-int fx_spawn_046360(int a4)
-{
-    register int t0;
-    register int t1;
-    register float u0;
-
-    t0 = obj_create(0x5, 0x1, 0x1);
-    if (t0 == 0) {
-        return t0;
-    }
-    *(unsigned char *)((t0 + 0x0)) = 0x1;
-    *(unsigned char *)((t0 + 0x1)) = 0x1;
-    *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
-    *(unsigned short *)((t0 + 0x6)) = 0xF;
-    *(unsigned char *)((t0 + 0x5)) = 0x1;
-    *(unsigned int *)((t0 + 0x10)) = 0xC046534;
-    FUN_0c0e6fe8();
-    (((struct o118_uint *)(t0))->v) = 0x0;
-    FUN_0c0e6fe8();
-    FUN_0c0e6fe8();
-    t1 = (((struct o2E0_int *)(t0))->v);
-    memset((t1 + 0x34), 0x0, 0xC);
-    FUN_0c06233a(t1, ((int)g_res_kyoutsuu), ((*(signed char *)(((t1 + 0x34) + 0x6))) + 0x75));
-    *(unsigned char *)((t1 + 0x0)) = 0x1;
-    *(unsigned short *)((t1 + 0x2)) = 0x31;
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
-    u0 = (float)(t0 + 0x1);
-    if ((int)(t0 + 0x1) < 0) {
-        u0 = ((float)(t0 + 0x1) + 4.2949673e+09f);
-    }
-    (((struct o24_float *)(t1))->v) = ((u0 / 10.0f) + 1.0f);
-    (((struct o20_float *)(t1))->v) = ((u0 / 10.0f) + 1.0f);
-    (((struct o1C_float *)(t1))->v) = ((u0 / 10.0f) + 1.0f);
-    (((struct o34_float *)(t1))->v) = (((((struct o1C_float *)(t1))->v)) / 8.0f);
-    *(unsigned char *)(((t1 + 0x34) + 0x4)) = 0x1;
-    math_rand_float();
-    
-    *(unsigned char *)(((t1 + 0x34) + 0x5)) = ((FUN_0c0e6f24()) + 0x1);
-    math_rand_float();
-    
-    *(unsigned char *)(((t1 + 0x34) + 0x6)) = (FUN_0c0e6f24());
-    u0 = math_rand_float();
-    if (!(2.14748365e+09f > (u0 * 255.0f))) {
-        return ((int (*)(void))(0xC0464F4))();
-    }
-    return ((int (*)(void))(0xC0464F8))();
-}
 
 int fx_tick_046360(int a4)
 {

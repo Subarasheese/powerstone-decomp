@@ -1,6 +1,7 @@
 /* resource loader: file load/unpack, texture and model register/release, per-scene sets, per-player model load (0c05fc50-0c061094) */
 
 /* named globals (symbols.txt) */
+int res_load_pl_models(int a4);
 extern char g_res_art_art[];
 extern char g_res_art_model[];
 extern char g_res_capcom_logo[];
@@ -279,30 +280,6 @@ int res_pl_textures_release_all(void)
     return t1;
 }
 
-int res_load_pl_models(int a4)
-{
-    int stk[18];
-    register int t0;
-    register int t1;
-    int t2;
-    register int t4;
-
-    *(unsigned char *)(((int)stk + 8)) = a4;
-    t0 = *(signed char *)(((int)stk + 8));
-    t1 = *(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x4));
-    t2 = *(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71EC));
-    t4 = *(signed char *)(((int)stk + 8));
-    *(unsigned int *)(((int)stk + 0)) = (((int)g_res_pl_textures) + (short)((short)(signed char)t4 * (short)0xF0));
-    *(unsigned int *)(((int)stk + 68)) = (0xC14DA54 + ((t1 << 2) << 1));
-    *(unsigned int *)(((int)stk + 20)) = (0xC4D02D0 + ((signed char)t4 * 0x98000));
-    *(unsigned int *)(((int)stk + 64)) = (((int)g_res_pl_textures) + (short)((short)(signed char)t4 * (short)0xF0));
-    *(unsigned int *)(((int)stk + 52)) = (0xC4CFC90 + (short)((short)(signed char)t4 * (short)0x320));
-    *(unsigned int *)(((int)stk + 56)) = ((0xC14DACC + ((t1 << 2) << 2)) + ((((-(0x1 & t2)) + 0x1) << 2) << 1));
-    *(unsigned int *)(((int)stk + 60)) = ((0xC14DBBC + ((t1 << 2) << 2)) + ((((-(0x1 & t2)) + 0x1) << 2) << 1));
-    *(unsigned int *)(((int)stk + 44)) = (((((-(0x1 & t2)) + 0x1) << 2) << 1) + (0xC14DCAC + ((t1 << 2) << 2)));
-    *(unsigned int *)(((int)stk + 48)) = ((signed char)((((t4 << 2) + t4) << 2) << 1) + 0xC336578);
-    return ((int (*)(int, int, int, int))(0xC060340))(t1, ((-(0x1 & t2)) + 0x1), (((((-(0x1 & t2)) + 0x1) << 2) << 1) + (0xC14DCAC + ((t1 << 2) << 2))), ((t1 << 2) << 2));
-}
 
 int res_player_release(int a4)
 {

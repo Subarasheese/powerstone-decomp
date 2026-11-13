@@ -1,6 +1,10 @@
 /* velocity/acceleration/gravity, angle to opponent, stick direction (part 3 of 3 of the same module) (0c09db78-0c09f6a8) */
 
 /* named globals (symbols.txt) */
+int pl_turn_to_opponent(int a4, int a5);
+int FUN_0c09f2e2(int a4, int a5, int a6, int a7);
+int FUN_0c09e4ac(int a4, int a5, int a6);
+int FUN_0c09de5e(int a4, int a5, int a6, int a7);
 extern char g_move_cmd_list_tab[];
 extern char g_pl_char_param_tbl[];
 struct o0_float { float v; };
@@ -145,23 +149,6 @@ int math_angle_between_points_xz(int a4, int a5)
     return (unsigned short)(t11 + 0x4000);
 }
 
-int pl_turn_to_opponent(int a4, int a5)
-{
-    register int t0;
-    register int t1;
-    register int t3;
-
-    t0 = pl_angle_to_opponent(a4);
-    t1 = *(int *)((a4 + 0x30));
-    t3 = (unsigned short)(t1 - t0);
-    if ((0x8000 & (unsigned short)(t1 - t0)) != 0) {
-        t3 = ((unsigned short)(t1 - t0) | 0xFFFF0000);
-    }
-    if (((int)t3 >= (int)(-a5)) && ((int)t3 <= (int)a5)) {
-        *(unsigned int *)((a4 + 0x30)) = t0;
-    }
-    return t0;
-}
 
 int FUN_0c09dcd2(int a4, int a5)
 {
@@ -264,22 +251,6 @@ int pl_stick_dir_angle(int a4)
     return t19;
 }
 
-int FUN_0c09de5e(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = (((struct o2DC_int *)(a4))->v);
-    if ((t0 & 0xF0) == 16) {
-        return 0x1;
-    }
-    if ((t0 & 0xF0) == 0x90) {
-        return 0x2;
-    }
-    if ((t0 & 0xF0) == 0x80) {
-        return 0x3;
-    }
-    return ((int (*)(int, int, int, int))(0xC09DEB4))((t0 & 0xF0), a5, a6, a7);
-}
 
 int pl_stick_zone(int a4)
 {
@@ -401,141 +372,6 @@ int pl_is_airborne(int a4)
     return 0x0;
 }
 
-int FUN_0c09e4ac(int a4, int a5, int a6)
-{
-    int t0;
-    register int t8;
-    int t16;
-    register int t10;
-    register int t18;
-    register int t19;
-    register int t20;
-    int t23;
-    register int t26;
-    register int t27;
-    int t37;
-    register int t41;
-    register int t42;
-    register int t51;
-    int t65;
-    register int t69;
-    register int t70;
-    int t21;
-    register int t48;
-    int t49;
-    register int t53;
-    register int t54;
-    register int t55;
-    int t56;
-    int t57;
-    register int t76;
-    int t77;
-
-    t0 = *(signed char *)((a4 + 0x71BC));
-    if ((t0 != 0) && (t0 != 1)) {
-        if ((0x600 & ((((struct o2E4_int *)(a4))->v))) != 0) {
-            if ((((((struct o2E4_int *)(a4))->v)) & 0x400) != 0) {
-                (((struct o721E_uchar *)(a4))->v) = 0x0;
-                return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, a6, 0x600);
-            }
-            return ((int (*)(int, int, int, int))(0xC09E614))(a4, a5, a6, 0x600);
-        }
-        return 0x0;
-    }
-    if ((((((((struct o2E4_int *)(a4))->v)) | ((((struct o71F8_int *)(a4))->v))) | ((((struct o71FC_int *)(a4))->v))) & 0x600) != 0) {
-        t8 = (((struct o2E4_int *)(a4))->v);
-        t16 = (t8 & 0x600);
-        if ((t8 & 0x600) == 0) {
-            t10 = (((struct o71F8_int *)(a4))->v);
-            t16 = (t10 & 0x600);
-            if ((t10 & 0x600) == 0) {
-                t16 = (((((struct o71FC_int *)(a4))->v)) & 0x600);
-            }
-        }
-        t18 = (((struct o71F8_int *)(a4))->v);
-        t19 = (((struct o71FC_int *)(a4))->v);
-        t20 = (((struct o2E4_int *)(a4))->v);
-        t23 = (t16 | (((t20 | t18) | t19) & 0xF0));
-        t27 = t19;
-        if (((0xC0 & (t16 | (((t20 | t18) | t19) & 0xF0))) != 0) && (t21 = *(signed char *)((a4 + 0x71EE)), t21 == 1)) {
-            t23 = ((t16 | (((t20 | t18) | t19) & 0xF0)) ^ 0xC0);
-            t27 = 0xC0;
-        }
-        t26 = *(int *)((((*(signed char *)((a4 + 0x4))) << 2) + ((int)g_move_cmd_list_tab)));
-        *(unsigned char *)((a5 + 0x0)) = 0x0;
-        for (;;) {
-            if ((*(signed char *)((t26 + (((*(signed char *)((a5 + 0x0))) << 2) << 2)))) == 99) {
-                t37 = (((struct o2E4_int *)(a4))->v);
-                if ((t37 & 0x600) != 0) {
-                    t27 = (*(signed char *)((a6 + 0x0)));
-                    if (t27 == 0) {
-                        t41 = *(int *)((((*(signed char *)((a4 + 0x4))) << 2) + ((int)g_move_cmd_list_tab)));
-                        t42 = 0x0;
-                        for (;;) {
-                            if ((*(signed char *)((t41 + (((signed char)t42 << 2) << 2)))) == 99) {
-                                return 0x0;
-                            }
-                            if (((*(signed char *)((((((signed char)t42 << 2) << 2) + t41) + 0x0))) == 0) && ((t48 = *(int *)((((((signed char)t42 << 2) << 2) + t41) + 0x8)), t48 == 0) && (t49 = *(int *)((((((signed char)t42 << 2) << 2) + t41) + 0x4)), ((t49 & (t37 & 0x600)) & 0x600) != 0))) {
-                                break;
-                            }
-                            t42 = (t42 + 0x1);
-                        }
-                        *(unsigned char *)((a5 + 0x0)) = t42;
-                        if ((0x400 & (t37 & 0x600)) == 0) {
-                            (((struct o721E_uchar *)(a4))->v) = 0x1;
-                            return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, t42, 0x600);
-                        }
-                        (((struct o721E_uchar *)(a4))->v) = 0x0;
-                        return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, t42, 0x600);
-                    }
-                    if ((0x400 & (t37 & 0x600)) == 0) {
-                        return ((int (*)(int, int, int, int))(0xC09E614))(a4, a5, a6, 0x600);
-                    }
-                    (((struct o721E_uchar *)(a4))->v) = 0x0;
-                    return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, a6, 0x600);
-                }
-                return 0x0;
-            }
-            t51 = *(signed char *)((a5 + 0x0));
-            if (((*(signed char *)(((((t51 << 2) << 2) + t26) + 0x0))) == 0) && ((t53 = *(int *)(((((t51 << 2) << 2) + t26) + 0x8)), t53 != 0) && ((t54 = *(signed char *)((a5 + 0x0)), t55 = *(int *)(((((t54 << 2) << 2) + t26) + 0x4)), ((t55 & t23) & 0x600) != 0) && (t56 = *(int *)(((((t54 << 2) << 2) + t26) + 0x8)), t57 = *(int *)(((((t54 << 2) << 2) + t26) + 0x8)), (((t56 & t23) & t57) & 240) != 0)))) {
-                break;
-            }
-            t27 = (*(signed char *)((a5 + 0x0)));
-            t27 = (t27 + 0x1);
-            *(unsigned char *)((a5 + 0x0)) = t27;
-        }
-        *(unsigned char *)((a6 + 0x0)) = 0x1;
-    }
-    t65 = (((struct o2E4_int *)(a4))->v);
-    if ((t65 & 0x600) != 0) {
-        if ((*(signed char *)((a6 + 0x0))) == 0) {
-            t69 = *(int *)((((*(signed char *)((a4 + 0x4))) << 2) + ((int)g_move_cmd_list_tab)));
-            t70 = 0x0;
-            for (;;) {
-                if ((*(signed char *)((t69 + (((signed char)t70 << 2) << 2)))) == 99) {
-                    return 0x0;
-                }
-                if (((*(signed char *)((((((signed char)t70 << 2) << 2) + t69) + 0x0))) == 0) && ((t76 = *(int *)((((((signed char)t70 << 2) << 2) + t69) + 0x8)), t76 == 0) && (t77 = *(int *)((((((signed char)t70 << 2) << 2) + t69) + 0x4)), ((t77 & (t65 & 0x600)) & 0x600) != 0))) {
-                    break;
-                }
-                t70 = (t70 + 0x1);
-            }
-            *(unsigned char *)((a5 + 0x0)) = t70;
-            if ((0x400 & (t65 & 0x600)) == 0) {
-                (((struct o721E_uchar *)(a4))->v) = 0x1;
-                return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, t70, 0x600);
-            }
-            (((struct o721E_uchar *)(a4))->v) = 0x0;
-            return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, t70, 0x600);
-        }
-        if ((0x400 & (t65 & 0x600)) == 0) {
-            return ((int (*)(int, int, int, int))(0xC09E614))(a4, a5, a6, 0x600);
-        }
-        (((struct o721E_uchar *)(a4))->v) = 0x0;
-        return ((int (*)(int, int, int, int))(0xC09E618))(a4, a5, a6, 0x600);
-    }
-    return 0x0;
-}
 
 int pl_find_move_input_any(int a4, int a5, int a6, int a7)
 {
@@ -846,49 +682,3 @@ int pl_start_fall_motion(char *player)
     return pl_start_motion(player, mode, val);
 }
 
-int FUN_0c09f2e2(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    int t2;
-    register float u0;
-    register float u1;
-
-    if ((((((struct o2DC_int *)(a4))->v)) & 240) == 0) {
-        return ((int (*)(int, int, int, int))(0xC09F49C))(a4, a5, a6, a7);
-    }
-    t0 = pl_stick_dir_angle(a4);
-    t1 = *(short *)0xC7F31E0;
-    t2 = *(signed char *)((a4 + 0x721B));
-    if ((t2 != 0) && (t2 != 1)) {
-        if (t2 == 2) {
-            u0 = (((struct o34_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v);
-            u1 = ((((struct o20_float *)(a4))->v));
-            u1 = u1 + u0 * (math_cos_angle16((0x14000 - (unsigned short)(t0 + t1))));
-            (((struct o20_float *)(a4))->v) = u1;
-            math_sin_angle16((0x14000 - (unsigned short)(t0 + t1)));
-            *(volatile signed char *)((a4 + 0x4));
-            return ((int (*)(void))(0xC09F47A))();
-        }
-        if (t2 != 3) {
-            if (t2 != 4) {
-                if (t2 == 5) {
-                    return ((int (*)(int, int, int, int))(0xC09F49C))((unsigned short)(t0 + t1), a5, a6, a7);
-                }
-                
-            }
-            u0 = (((struct o1C_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v);
-        } else {
-            u0 = (((struct o30_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v);
-        }
-    } else {
-        u0 = (((struct o1C_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v);
-    }
-    u1 = ((((struct o20_float *)(a4))->v));
-    u1 = u1 + u0 * (math_cos_angle16((0x14000 - (unsigned short)(t0 + t1))));
-    (((struct o20_float *)(a4))->v) = u1;
-    math_sin_angle16((0x14000 - (unsigned short)(t0 + t1)));
-    *(volatile signed char *)((a4 + 0x4));
-    *(volatile signed char *)(((0x71F1 + a4) + 0x0));
-    return ((int (*)(void))(0xC09F492))();
-}

@@ -1,5 +1,7 @@
 /* VMU save/load menu UI (handlers over the vmu_step_* state machines) (0c01e798-0c020258) */
 
+int FUN_0c01e860(int a4, int a5, int a6, int a7);
+int vmu_menu_update_objs();
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -61,68 +63,8 @@ float math_sin_angle16(int, int, int, int);
 
 int FUN_0c01eb32(int a4, int a5, int a6, int a7);
 int FUN_0c01ebc0(int a4, int a5, int a6, int a7);
-int vmu_menu_update_objs(void);
+int vmu_menu_update_objs();
 
-int FUN_0c01e860(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = *(signed char *)0xC362A50;
-    switch (t0) {
-    case 0:
-        (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        (((struct o1_uchar *)0xC362A50)->v) = 0x1;
-        (((struct oA_ushort *)0xC362A50)->v) = 0x0;
-        (((struct o2F_uchar *)0xC362A50)->v) = 0x1;
-        (((struct o30_uchar *)0xC362A50)->v) = 0x1;
-        (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        vmu_menu_update_objs();
-        break;
-    case 1:
-        (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        vmu_menu_update_objs();
-        break;
-    case 2:
-        break;
-    default:
-        if (t0 != 3) {
-            return FUN_0c0d7566(a4, a5, a6, a7);
-        }
-        t0 = *(signed char *)0xC362A51;
-        if (t0 != 0) {
-            if (t0 != 1) {
-                return t0;
-            }
-            return FUN_0c0d7566(0xC362A50, a5, a6, a7);
-        }
-        return FUN_0c01eb32(0xC362A50, a5, a6, a7);
-    }
-    t0 = vmu_menu_pad_pressed(0x40);
-    if ((signed char)t0 != 0) {
-        (((struct o1_uchar *)0xC362A50)->v) = 0x0;
-        snd_play_side_se(0x0, 0x4C);
-    } else {
-        t0 = vmu_menu_pad_pressed(0x80);
-        if ((signed char)t0 != 0) {
-            (((struct o1_uchar *)0xC362A50)->v) = 0x1;
-            snd_play_side_se(0x0, 0x4C);
-        }
-    }
-    vmu_menu_draw_buttons();
-    t0 = vmu_menu_pad_pressed(0x4);
-    if ((signed char)t0 != 0) {
-        (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        (((struct o3_uchar *)0xC362A50)->v) = 0x0;
-        (((struct o2_uchar *)0xC362A50)->v) = 0x0;
-        return snd_play_side_se(0x0, 0x4D);
-    }
-    t0 = vmu_menu_pad_pressed(0x8);
-    if ((signed char)t0 != 0) {
-        (((struct o0_uchar *)0xC362A50)->v) = 0x63;
-        return snd_play_side_se(0x0, 0x4D);
-    }
-    return (signed char)t0;
-}
 
 int FUN_0c01ea20(int a4, int a5, int a6, int a7)
 {
@@ -136,7 +78,7 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
                 break;
             case 3:
                 (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-                vmu_menu_update_objs();
+                vmu_menu_update_objs(a4, 0, 0x0C362A50, a7);   /* r6: g_vmu_menu_work, left by the switch */
                 (((struct o8_ushort *)0xC362A50)->v) = 0x1;
                 vmu_menu_spawn_message(0x10);
                 vmu_menu_spawn_choice_cursor(0x10);
@@ -148,7 +90,7 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
                     if (t0 != 6) {
                         if (t0 != 7) {
                             if (t0 != 8) {
-                                vmu_menu_update_objs();
+                                vmu_menu_update_objs(a4, 0, 0x0C362A50, a7);   /* r6: g_vmu_menu_work, left by the switch */
                                 return 0x2;
                             }
                             return FUN_0c01ec9c(0xC362A50, 0x0, 0xC362A50, a7);
@@ -171,7 +113,7 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
             }
         } else {
             (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-            vmu_menu_update_objs();
+            vmu_menu_update_objs(a4, 0, 0x0C362A50, a7);   /* r6: g_vmu_menu_work, left by the switch */
             vmu_menu_spawn_message(0xF);
             vmu_menu_spawn_choice_cursor(0xF);
         }
@@ -182,7 +124,7 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
         (((struct o28_float *)0xC362A50)->v) = (*(float *)0xC01EBB4);
         (((struct o34_uchar *)0xC362A50)->v) = a4;
         (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        vmu_menu_update_objs();
+        vmu_menu_update_objs(a4, 0, 0x0C362A50, a7);   /* r6: g_vmu_menu_work, left by the switch */
         vmu_menu_spawn_message(0xF);
         vmu_menu_spawn_choice_cursor(0xF);
     }
@@ -475,9 +417,3 @@ int vmu_menu_tick_choice_cursor(int a4, int a5, int a6, int a7)
     return 0xC01F620;
 }
 
-int vmu_menu_update_objs(void)
-{
-    *(unsigned char *)0xC362A7E = 0x1;
-    *(volatile int *)0xC7E4084;
-    return ((int (*)(void))(0xC01FE24))();
-}

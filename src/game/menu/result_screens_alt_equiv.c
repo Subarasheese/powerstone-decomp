@@ -1,5 +1,6 @@
 /* challenger / continue / the end screens and win text (0c0d5bc0-0c0d7108) */
 
+int FUN_0c0d5f6a(int a4, int a5, int a6, int a7);
 int ui_draw_please_wait(int);
 int ui_draw_no_challenge(int);
 int FUN_0c0d5f3a(int);
@@ -34,79 +35,6 @@ int FUN_0c0d5f16(int a4)
     return ui_draw_please_wait((*(signed char *)((a4 + 0x9))));
 }
 
-int FUN_0c0d5f6a(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-
-    t0 = FUN_0c0d5f3a(a4);
-    if (t0 != 0) {
-        t1 = *(signed char *)0xC7F2EE4;
-        if ((int)(unsigned char)t1 >= (int)0x8) {
-            return (unsigned char)t1;
-        }
-        return ui_draw_no_challenge((*(signed char *)((a4 + 0x9))));
-    }
-    if ((*(signed char *)0xC7F3070) != 0) {
-        return t0;
-    }
-    t0 = *(signed char *)((a4 + 0x1));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                if (t0 != 3) {
-                    if (t0 != 4) {
-                        if (t0 != 5) {
-                            return t0;
-                        }
-                        return ((int (*)(void))(0xC0D607E))();
-                    }
-                    return ((int (*)(void))(0xC0D6070))();
-                }
-                ui_draw_continue_countdown(a4);
-                t0 = *(signed char *)0xC7F2EE4;
-                if ((int)(unsigned char)t0 < (int)0x8) {
-                    t1 = *(signed char *)0xC494D28;
-                    if (t1 == 0) {
-                        return ((int (*)(int, int, int, int))(0xC0D5ECE))(a4, a5, a6, a7);
-                    }
-                    return t1;
-                }
-                return (unsigned char)t0;
-            }
-            FUN_0c0d6212(a4);
-            t0 = *(signed char *)0xC7F2EE4;
-            if ((int)(unsigned char)t0 < (int)0x8) {
-                t1 = *(signed char *)0xC494D28;
-                if (t1 == 0) {
-                    return ((int (*)(int, int, int, int))(0xC0D5CEE))(a4, a5, a6, a7);
-                }
-                return t1;
-            }
-            return (unsigned char)t0;
-        }
-        FUN_0c0d6190(a4);
-        t0 = *(signed char *)0xC7F2EE4;
-        if ((int)(unsigned char)t0 < (int)0x8) {
-            t1 = *(signed char *)0xC494D28;
-            if (t1 == 0) {
-                return ((int (*)(int, int, int, int))(0xC0D5CC4))(a4, a5, a6, a7);
-            }
-            return t1;
-        }
-        return (unsigned char)t0;
-    }
-    FUN_0c0d6098(a4);
-    t0 = *(signed char *)0xC7F2EE4;
-    if ((int)(unsigned char)t0 < (int)0x8) {
-        t1 = *(signed char *)0xC494D28;
-        if (t1 == 0) {
-            return ((int (*)(int, int, int, int))(0xC0D5C9A))(a4, a5, a6, a7);
-        }
-        return t1;
-    }
-    return (unsigned char)t0;
-}
 
 int FUN_0c0d6874(int a4, int a5, int a6, int a7)
 {

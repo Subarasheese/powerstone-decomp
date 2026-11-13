@@ -1,6 +1,7 @@
 /* character 3 (Jack) (0c07282c-0c0742fc) */
 
 /* named globals (symbols.txt) */
+int pl_jack_mode04_update(int a4, int a5, int a6, int a7);
 extern char g_pl_jack_start_action_tbl[];
 extern char g_pl_jack_update_action_tbl[];
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
@@ -645,25 +646,6 @@ int pl_jack_mode04_phase2(int a4)
     return t1;
 }
 
-int pl_jack_mode04_update(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = *(signed char *)((a4 + 0xA));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                if (t0 != 3) {
-                    return ((int (*)(int, int, int, int))(0xC07320C))(a4, a5, a6, a7);
-                }
-                return ((int (*)(int, int, int, int))(0xC073208))(a4, a5, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC073204))(a4, a5, a6, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC073200))(a4, a5, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0731FC))(a4, a5, a6, a7);
-}
 
 float pl_jack_mode12_phase0(int a4, float f4, float f5)
 {

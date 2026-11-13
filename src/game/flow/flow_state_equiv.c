@@ -1,6 +1,7 @@
 /* mode 5..9 handlers, state predicates, HP gauge tick (0c054114-0c0559bc) */
 
 /* named globals (symbols.txt) */
+int FUN_0c055686(void);
 extern char g_game_substate[];
 int FUN_0c041e14(int);
 int obj_release_class(int);
@@ -197,40 +198,6 @@ int FUN_0c05566a(void)
     return 0x1;
 }
 
-int FUN_0c055686(void)
-{
-    register int t0;
-    register int t1;
-
-    if ((*(signed char *)0xC7F2F03) == 0) {
-        t0 = *(signed char *)0xC7F3196;
-        if (t0 != 0) {
-            if (t0 != 1) {
-                return ((int (*)(void))(0xC055774))();
-            }
-            t0 = *(signed char *)0xC3673FC;
-            t1 = FUN_0c095472();
-            if (t0 != (signed char)t1) {
-                *(unsigned char *)0xC7F3196 = 0x0;
-                FUN_0c095472();
-                return ((int (*)(void))(0xC05574C))();
-            }
-            return ((int (*)(void))(0xC055774))();
-        }
-        t0 = FUN_0c095472();
-        *(unsigned char *)0xC3673FC = t0;
-        if ((signed char)t0 != 0) {
-            *(unsigned char *)0xC7F3196 = 0x1;
-            bgm_set_volume(0x0, 0x0);
-            if ((int)(*(signed char *)(((unsigned short)((unsigned short)((*(signed char *)0xC3673FC) + 0xFFFF) * (unsigned short)0x72D0) + 0xC7E40C8))) >= (int)0x9) {
-                return bgm_play_hen_01();
-            }
-            return bgm_play_hen_00();
-        }
-        return ((int (*)(void))(0xC055774))();
-    }
-    return ((int (*)(void))(0xC055774))();
-}
 
 int FUN_0c055782(int a4)
 {

@@ -1,5 +1,6 @@
 /* motion-id sound table of the secondary actors (0c08c864-0c08d644) */
 
+int ai_dist_class(int a4);
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -16,30 +17,6 @@ int ai_run_reaction_script(int);
 
 int ai_dist_class(int a4);
 
-int ai_dist_class(int a4)
-{
-    register int t0;
-    register float t1;
-
-    t0 = pl_rel_angle_to_linked(a4);
-    t1 = ai_dist_to_opponent(a4);
-    if ((int)(unsigned short)(t0 + 0x271C) > (int)0x4E38) {
-        if (700.0f > t1) {
-            return 0x4;
-        }
-        return 0x5;
-    }
-    if (((((struct o0_float *)0xC08CCE8)->v)) > t1) {
-        return 0x0;
-    }
-    if (((((struct o4_float *)0xC08CCE8)->v)) > t1) {
-        return 0x1;
-    }
-    if (((((struct o8_float *)0xC08CCE8)->v)) > t1) {
-        return 0x5;
-    }
-    return ((int (*)(float))(0xC08CC0C))(t1);
-}
 
 int ai_roll_chance(int arg, unsigned char *obj)
 {

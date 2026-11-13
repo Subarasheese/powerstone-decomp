@@ -1,5 +1,6 @@
 /* player state change (pl_change_state) power form flags input chords and character move hooks (0c0a18f8-0c0a2ee8) */
 
+int pl_try_grab_target_object(int a4);
 struct o24_float { char p[0x24]; float v; };
 struct o71C8_int { char p[0x71C8]; int v; };
 struct o7236_uchar { char p[0x7236]; unsigned char v; };
@@ -20,43 +21,6 @@ int pl_try_start_pickup_touched(int);
 
 int pl_try_grab_target_object(int a4);
 
-int pl_try_grab_target_object(int a4)
-{
-    int stk[6];
-    register int t4;
-    register int t11;
-    register float t18;
-    register float t19;
-    int t1;
-    int t12;
-
-    if (((*(signed char *)((a4 + 0x71BC))) != 2) && (t1 = (((struct o71C8_int *)(a4))->v), t1 != 0)) {
-        t4 = obj_can_interact(((((struct o71C8_int *)(a4))->v)), 0x1, (*(signed char *)((a4 + 0x3))));
-        if (t4 != 0) {
-            t11 = *(signed char *)((a4 + 0x4));
-            if ((t11 != 4) && ((t11 != 5) && ((t11 != 9) && (t12 = *(signed char *)((a4 + 0x71F1)), t12 == 0)))) {
-                t18 = FUN_0c02649a(((((struct o71C8_int *)(a4))->v)), 0x0);
-                *(float *)(((int)stk + 4)) = t18;
-                t19 = FUN_0c02649a(a4, 0x0);
-                if (t19 > t18) {
-                    (((struct o24_float *)(a4))->v) = (*(float *)(((int)stk + 4)));
-                }
-                *(float *)(((int)stk + 0)) = (FUN_0c02649a(((((struct o71C8_int *)(a4))->v)), 0x1));
-                FUN_0c02649a(a4, 0x1);
-                return 0x0;
-            }
-            if ((*(signed char *)((((((struct o71C8_int *)(a4))->v)) + 0x30D))) == 0) {
-                obj_set_mode_owner(((((struct o71C8_int *)(a4))->v)), 0x5, (*(signed char *)((a4 + 0x3))));
-                pl_change_state(a4, 0xA, 0xA, 0x0);
-                (((struct o7236_uchar *)(a4))->v) = 0x1;
-                return ((int (*)(void))(0xC0A247E))();
-            }
-            return 0x0;
-        }
-        return 0x0;
-    }
-    return 0x0;
-}
 
 int pl_try_dual_button_action(int a4, int a5, int a6)
 {

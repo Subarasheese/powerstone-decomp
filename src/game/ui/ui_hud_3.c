@@ -1,5 +1,7 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02f328-0c02ff18) */
 
+int FUN_0c02f786(int a4, int a5, int a6);
+int FUN_0c02f3f2(int a4, float f4, float f5);
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -55,9 +57,13 @@ int FUN_0c02f3a6(int a4, int a5)
     return t8;
 }
 
-int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
+
+
+
+
+int FUN_0c02f3f2(int a4, float f4, float f5)
 {
-    int stk[17];
+    int stk[19];
     register int t36;
     register int t9;
     register int t10;
@@ -78,8 +84,23 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
     register int t54;
     register float u57;
     register float u58;
+    register int t109;
+    register int t110;
+    register int t111;
+    register int t112;
+    register int t113;
+    register int t114;
+    register int t115;
+    register float u116;
+    register float u117;
+    register float u118;
+    register float u129;
+    register float u134;
+    register int t136;
     register int t18;
     register int t19;
+    register int t99;
+    register float u103;
     register float u104;
     register float u105;
     register int t55;
@@ -89,6 +110,13 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
     register float u68;
     register float u69;
     register float u70;
+    register int t146;
+    register int t147;
+    register int t148;
+    register int t149;
+    register float u150;
+    register float u151;
+    register float u152;
 
     *(unsigned short *)((a4 + 0x8)) = (*(short *)((0xC7EB298 + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0))));
     *(unsigned short *)((a4 + 0xA)) = (*(short *)((0xC7EB29C + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0))));
@@ -117,7 +145,7 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
         }
         if ((int)(*(short *)((0xC7EB29A + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0)))) > 0) {
             *(volatile short *)(((unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0) + 0xC7EB29A));
-            *(unsigned char *)((a4 + 0x2)) = ((FUN_0c0e6d00()) + 0x1);
+            *(unsigned char *)((a4 + 0x2)) = (*(short *)((0xC7EB29A + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0))) - 1) / 48 + 1;   /* hp segments of 48 */
             t21 = 0x0;
             for (;;) {
                 if ((int)t21 >= (int)(*(signed char *)((a4 + 0x2)))) {
@@ -144,17 +172,18 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
     }
     t46 = *(short *)((0xC7EB29A + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0)));
     t40 = *(short *)((a4 + 0xC));
-    *(unsigned short *)(((int)stk + 4)) = (t40 - t46);
+    *(unsigned short *)(((int)stk + 12)) = (t40 - t46);
     t101 = t36;
     if ((int)(short)(t40 - t46) <= 0) {
+        t99 = t46;
     } else {
         t43 = *(short *)(((unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0) + 0xC7EB29A));
-        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        *(unsigned int *)(((int)stk + 8)) = 0x0;
         t45 = t43;
         if ((int)(short)t43 > (int)0x30) {
             for (;;) {
                 t43 = (t43 - 48);
-                *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + 0x1);
+                *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
                 if ((int)(short)t43 <= (int)0x30) {
                     break;
                 }
@@ -162,8 +191,8 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
             t45 = t43;
             t46 = (short)t43;
         }
-        t48 = *(short *)(((int)stk + 4));
-        *(unsigned int *)(((int)stk + 8)) = 0x0;
+        t48 = *(short *)(((int)stk + 12));
+        *(unsigned int *)(((int)stk + 16)) = 0x0;
         t49 = t48;
         t50 = 0xC7EB29A;
         t51 = t46;
@@ -173,7 +202,7 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
         u57 = f4;
         u58 = f5;
         for (;;) {
-            if (((int)(*(int *)(((int)stk + 8))) < (int)0x8) && (t50 = (short)t53, (int)t50 > 0)) {
+            if (((int)(*(int *)(((int)stk + 16))) < (int)0x8) && (t50 = (short)t53, (int)t50 > 0)) {
                 t49 = (*(signed char *)((a4 + 0xF)));
                 t51 = a4;
                 t51 = (t51 + 0x10);
@@ -212,7 +241,7 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
                 if ((int)(short)t54 > 0) {
                     t51 = 0x30;
                     if ((int)(short)t53 < (int)t51) {
-                        t49 = (*(short *)(((int)stk + 4)));
+                        t49 = (*(short *)(((int)stk + 12)));
                         u56 = (float)t49;
                         t49 = 0x10;
                         *(float *)((t55 + t49)) = u56;
@@ -271,7 +300,7 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
                 t49 = 0xC02F6C4;
                 u58 = (*(float *)((t49 + 0x0)));
                 t49 = (*(signed char *)((a4 + 0x1)));
-                u56 = (float)(*(int *)(((int)stk + 0)));
+                u56 = (float)(*(int *)(((int)stk + 8)));
                 u57 = u56;
                 u57 = (u57 * u58);
                 if (t49 == 0) {
@@ -290,23 +319,131 @@ int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5)
                 }
                 t54 = (t54 - 48);
                 t53 = (t53 - 48);
-                *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + 0x1);
-                t51 = (*(int *)(((int)stk + 8)));
+                *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
+                t51 = (*(int *)(((int)stk + 16)));
                 t51 = (t51 + 0x1);
-                *(unsigned int *)(((int)stk + 8)) = t51;
+                *(unsigned int *)(((int)stk + 16)) = t51;
                 continue;
             }
             break;
         }
+        t115 = t55;
+        t99 = t51;
         t101 = t52;
+        u103 = u56;
         u104 = u57;
         u105 = u58;
     }
     *(unsigned short *)((a4 + 0xC)) = (*(short *)((0xC7EB29A + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x1))) * (unsigned short)0x72D0))));
-    return ((int (*)(int, int, int, int, float, float))(0xC02F764))(t101, a5, a6, a7, u104, u105);
-}
-
-int FUN_0c02f786(int a4, int a5, int a6)
-{
-    return ((int (*)(int, int, int, int, float, float, float, float, float, float, float, float))(0xC02F96C))(a4, 0x0, a6, 0x8, 40.0f, 24.0f, 1.0f, 96.0f, 84.0f, -1.0f, 556.0f, 4.0f);
+    t109 = 0xC02F6DC;
+    t110 = 0xC7EB29A;
+    t111 = t99;
+    t112 = 0x72D0;
+    t113 = t101;
+    t114 = 0x0;
+    u116 = u103;
+    u117 = u104;
+    u118 = u105;
+    for (;;) {
+        if ((int)t114 >= (int)0x8) {
+            break;
+        }
+        t115 = t114;
+        t115 = (t115 << 2);
+        t112 = t114;
+        t115 = (t115 + t112);
+        t111 = a4;
+        t115 = (t115 << 2);
+        t111 = (t111 + 0x10);
+        t115 = (unsigned char)t115;
+        t115 = (t115 + t111);
+        t112 = (*(signed char *)((t115 + 0x0)));
+        if (t112 != 0) {
+            t109 = (*(signed char *)((t115 + 0x1)));
+            t112 = 0x28;
+            if ((int)t109 > (int)t112) {
+                t109 = 0x4;
+                *(float *)((t115 + t109)) = 1.0f;
+            } else {
+                t111 = t109;
+                t109 = 0x4;
+                u116 = (float)t111;
+                u116 = (u116 / 40.0f);
+                *(float *)((t115 + t109)) = u116;
+            }
+            t109 = 0x10;
+            t112 = 0xC366A74;
+            t110 = 0xC366A84;
+            *(unsigned int *)(((int)stk + 60)) = 0x0;
+            u116 = (*(float *)((t115 + t109)));
+            t109 = 0x20;
+            *(float *)((((int)stk + 8) + t109)) = u116;
+            t109 = 0x1C;
+            *(float *)((((int)stk + 8) + t109)) = 13.0f;
+            t109 = 0x8;
+            u116 = (*(float *)((t115 + t109)));
+            t109 = 0x10;
+            *(float *)((((int)stk + 8) + t109)) = u116;
+            t109 = 0xC;
+            u129 = *(float *)((t115 + t109));
+            t109 = 0x14;
+            u116 = (*(float *)((t112 + 0x0)));
+            *(float *)((((int)stk + 8) + t109)) = (u129 + u116);
+            t109 = 0x18;
+            *(float *)((((int)stk + 8) + t109)) = 7.5999999f;
+            t109 = 0x40;
+            *(unsigned int *)((((int)stk + 8) + t109)) = 0xE;
+            t109 = (*(signed char *)((a4 + 0x1)));
+            t109 = (t109 << 2);
+            u116 = (*(float *)((t110 + t109)));
+            t109 = 0x4;
+            u134 = *(float *)((t115 + t109));
+            t109 = 0x38;
+            *(float *)((((int)stk + 8) + t109)) = (u134 * u116);
+            *(int *)((int)stk + 4) = 0x0;
+            t109 = (*(signed char *)((a4 + 0x1)));
+            t136 = t109;
+            *(int *)((int)stk + 0) = t136;
+            t111 = t109;
+            t111 = 0xC027FA4;
+            t113 = ((int)stk + 0);
+            t113 = (t113 + 0x14);
+            t109 = (ui_sprite_queue_add(t113, 0xC17FDB0, 0x3, 0x2, t136, 0x0));
+            t111 = 0xC7F3028;
+            t112 = (*(int *)((t111 + 0x0)));
+            if (t112 != 0) {
+                t109 = (*(signed char *)((t115 + 0x1)));
+                t109 = (t109 + 0x1);
+                *(unsigned char *)((t115 + 0x1)) = t109;
+            }
+            t109 = (*(signed char *)((t115 + 0x1)));
+            t109 = (t109 - 1);
+            *(unsigned char *)((t115 + 0x1)) = t109;
+            t109 = (signed char)t109;
+            if (t109 == 0) {
+                t113 = t115;
+                t109 = (FUN_0c02f3a6(t113, a4));
+            } else {
+                t147 = t111;
+                t148 = t112;
+            }
+        } else {
+            t146 = t110;
+            t147 = t111;
+            t148 = t112;
+            t149 = t113;
+            u150 = u116;
+            u151 = u117;
+            u152 = u118;
+        }
+        u116 = u150;
+        u117 = u151;
+        u118 = u152;
+        t110 = t146;
+        t114 = (t114 + 0x1);
+        t111 = t147;
+        t112 = t148;
+        t113 = t149;
+    }
+    return t109;
 }

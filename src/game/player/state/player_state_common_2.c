@@ -1,5 +1,7 @@
 /* shared fighter code: item pickup, mode enter/update handlers (modes 1..15), hit/knock-back states (0c0641a0-0c064a1c) */
 
+int FUN_0c06428a(int a4);
+int pl_mode10_update(int a4, int a5, int a6, int a7);
 struct o0_float { float v; };
 struct o10_float { char p[0x10]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -98,28 +100,6 @@ float FUN_0c0641a0(int a4, float f4, float f5)
     return (u2 * (u3 / u0));
 }
 
-int FUN_0c06428a(int a4)
-{
-    register int t0;
-
-    (((struct o2D9_uchar *)(a4))->v) = 0x2;
-    pl_step_motion(a4);
-    t0 = (((struct oEC_short *)(a4))->v);
-    (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
-    if ((int)(short)(t0 - 1) <= 0) {
-        (((struct o71BC_uchar *)(a4))->v) = 0x2;
-        *(unsigned int *)((a4 + 0x30)) = (pl_angle_to_opponent(a4));
-        t0 = *(signed char *)((a4 + 0x4));
-        if (t0 != 3) {
-            if (t0 != 5) {
-                return ((int (*)(void))(0xC06430E))();
-            }
-            return 0xC064418;
-        }
-        return ((int (*)(void))(0xC06430E))();
-    }
-    return 0xEC;
-}
 
 int FUN_0c064534(int a4)
 {
@@ -321,24 +301,3 @@ int pl_wait_anim_end_b(int a4)
     return (signed char)t0;
 }
 
-int pl_mode10_update(int a4, int a5, int a6, int a7)
-{
-    int t0;
-    register int t1;
-
-    t1 = *(signed char *)((a4 + 0x4));
-    if ((t1 != 4) && ((t1 != 5) && ((t1 != 9) && (t0 = *(signed char *)((a4 + 0x71F1)), t0 == 0)))) {
-        t0 = *(signed char *)((a4 + 0xA));
-        if (t0 != 0) {
-            if (t0 != 1) {
-                if (t0 != 2) {
-                    return ((int (*)(int, int, int, int))(0xC064A18))(a4, t1, a6, a7);
-                }
-                return ((int (*)(int, int, int, int))(0xC064A14))(a4, t1, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC064A10))(a4, t1, a6, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC064A0C))(a4, t1, a6, a7);
-    }
-    return FUN_0c0646fe(a4);
-}

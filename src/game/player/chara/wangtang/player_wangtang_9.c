@@ -1,5 +1,6 @@
 /* character 2 (Wang Tang) (0c0712d8-0c07164c) */
 
+int pl_wangtang_attack_kind24_phase2(int a4, int a5, int a6, int a7);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o40_float { char p[0x40]; float v; };
@@ -95,67 +96,6 @@ int pl_wangtang_attack_kind24_phase1(int a4)
     return t1;
 }
 
-int pl_wangtang_attack_kind24_phase2(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register float u0;
-    register float u1;
-    register float u2;
-    register float u3;
-    register float u4;
-
-    if ((((((struct o2DC_int *)(a4))->v)) & 240) != 0) {
-        *(unsigned int *)((a4 + 0x30)) = (pl_angle_to_target_pos(a4));
-        (((struct o7248_uint *)(a4))->v) = (unsigned short)((pl_stick_dir_angle(a4)) + (*(short *)0xC7F31E0));
-        pl_set_velocity_from_move_table(a4, ((((struct o7248_int *)(a4))->v)));
-        pl_apply_velocity(a4);
-    }
-    t0 = *(int *)((a4 + 0x1C));
-    u0 = (((struct o20_float *)(a4))->v);
-    u1 = (((struct o20_float *)(t0))->v);
-    *(volatile float *)((t0 + 0x24));
-    *(volatile float *)((a4 + 0x24));
-    u2 = (((struct o28_float *)(t0))->v);
-    u3 = (((struct o28_float *)(a4))->v);
-    u4 = (u1 - u0);
-    if ((u1 - u0) == 0.0f) {
-        u4 = 9.99999997e-07f;
-    }
-    u0 = (u2 - u3);
-    if ((u2 - u3) == 0.0f) {
-        u0 = 9.99999997e-07f;
-    }
-    t1 = math_atan_angle16(t0, ((-u0) / u4));
-    t0 = t1;
-    if (0.0f > u4) {
-        t0 = (t1 + 0x8000);
-    }
-    u1 = (u0 * u0);
-    u1 = u1 + u4 * u4;
-    u0 = math_signed_sqrt(u1);
-    if (300.0f > u0) {
-        t1 = *(int *)((a4 + 0x1C));
-        (((struct o20_float *)(t1))->v) = (((((struct o20_float *)(t1))->v)) - (((math_cos_angle16((0x14000 - (unsigned short)(t0 + 0x4000)))) * 5.0f)));
-        t1 = *(int *)((a4 + 0x1C));
-        (((struct o28_float *)(t1))->v) = (((((struct o28_float *)(t1))->v)) - (((math_sin_angle16((0x14000 - (unsigned short)(t0 + 0x4000)))) * 5.0f)));
-    }
-    pl_step_motion(a4);
-    if ((((((struct o2E4_int *)(a4))->v)) & 0x200) != 0) {
-        (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-    }
-    t0 = (((struct oEC_short *)(a4))->v);
-    (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
-    if ((short)(t0 - 1) == 0) {
-        if ((*(signed char *)((a4 + 0x71BC))) == 0) {
-            pl_start_motion(a4, 0x1, 0x64);
-            (((struct o71A9_uchar *)(a4))->v) = 0x1;
-            return ((int (*)(void))(0xC071560))();
-        }
-        return ((int (*)(void))(0xC07156A))();
-    }
-    return 0xEC;
-}
 
 int pl_wangtang_wait_anim_end_f(int a4)
 {

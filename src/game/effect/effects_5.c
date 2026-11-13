@@ -1,5 +1,6 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c0332a0-0c033670) */
 
+int FUN_0c033390(int a4, int a5, int a6, int a7);
 struct o118_uint { char p[0x118]; unsigned int v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
@@ -57,42 +58,6 @@ int fx_spawn_0332a0(int a4)
     return t19;
 }
 
-int FUN_0c033390(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register float u0;
-    register float u1;
-
-    t0 = (((struct o2E0_int *)(a4))->v);
-    t1 = *(signed char *)((a4 + 0x8));
-    if (t1 != 0) {
-        if (t1 != 1) {
-            if (t1 != 2) {
-                if (t1 != 3) {
-                    return ((int (*)(int, int, int, int))(0xC03343E))(a4, t0, a6, a7);
-                }
-                return ((int (*)(int, int, int, int))(0xC03343E))(a4, t0, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC033420))(a4, t0, a6, a7);
-        }
-    } else {
-        *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-        (((struct o30_float *)(t0))->v) = (*(float *)0xC03351C);
-        *(unsigned short *)((t0 + 0x2)) = 0x1F;
-        *(unsigned int *)((t0 + 0x14)) = (*(int *)(((*(int *)((a4 + 0x1C))) + 0x30)));
-    }
-    (((struct o1C_float *)(t0))->v) = (((((struct o1C_float *)(t0))->v)) + ((((struct o30_float *)(t0))->v)));
-    (((struct o20_float *)(t0))->v) = (((((struct o20_float *)(t0))->v)) + ((((struct o30_float *)(t0))->v)));
-    u0 = (((struct o24_float *)(t0))->v);
-    u1 = (((struct o30_float *)(t0))->v);
-    (((struct o24_float *)(t0))->v) = (u0 + u1);
-    if (!(1.0f > (u0 + u1))) {
-        *(volatile signed char *)((a4 + 0x8));
-        return ((int (*)(int, int, int, int))(0xC03341C))(a4, t0, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC03343E))(a4, t0, a6, a7);
-}
 
 int FUN_0c033442(int a4)
 {

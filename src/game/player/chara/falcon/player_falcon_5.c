@@ -1,6 +1,7 @@
 /* character 0 (Falcon): frame hook, state dispatchers, start-action wrappers, specials, victim hooks (0c067d4c-0c068e10) */
 
 /* named globals (symbols.txt) */
+int pl_falcon_attack_kind68(int a4, int a5, int a6, int a7);
 extern char g_pl_falcon_special_tbl[];
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -277,7 +278,7 @@ int pl_falcon_attack_kind13(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC068216))(a4, a5, a6, a7);
 }
 
-float FUN_0c068488(int a4)
+int FUN_0c068488(int a4)
 {
     int stk[6];
     register float u4;
@@ -301,12 +302,11 @@ float FUN_0c068488(int a4)
         *(float *)(((int)stk + 4)) = (-(math_sin_angle16((*(int *)((a4 + 0x2C))))));
         FUN_0c0e24f0(((int)stk + 0));
         t19 = FUN_0c0e2220(((int)stk + 0), (((int)stk + 0) + 0xC));
-        if (!(t19 > 0.0f)) {
-            return t19;
-        }
-        return t19;
+        if (t19 > 0.0f)
+            return 0;
+        return 1;
     }
-    return t6;
+    return 0;
 }
 
 int FUN_0c068558(int a4)
@@ -436,31 +436,6 @@ int pl_falcon_attack_kind68_phase5(int a4)
     return pl_apply_acceleration(a4);
 }
 
-int pl_falcon_attack_kind68(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = *(signed char *)((a4 + 0xA));
-    if (t0 != 0) {
-        if (t0 != 1) {
-            if (t0 != 2) {
-                if (t0 != 3) {
-                    if (t0 != 4) {
-                        if (t0 != 5) {
-                            return ((int (*)(int, int, int, int))(0xC068B14))(a4, a5, a6, a7);
-                        }
-                        return ((int (*)(int, int, int, int))(0xC068B10))(a4, a5, a6, a7);
-                    }
-                    return ((int (*)(int, int, int, int))(0xC068B0C))(a4, a5, a6, a7);
-                }
-                return ((int (*)(int, int, int, int))(0xC068B08))(a4, a5, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC068B04))(a4, a5, a6, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC068B00))(a4, a5, a6, a7);
-    }
-    return pl_falcon_attack_kind68_phase0(a4);
-}
 
 int pl_falcon_attack_kind57_phase0(int a4)
 {

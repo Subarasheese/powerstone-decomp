@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05ae26-0c05b6dc) */
 
+int FUN_0c05b18c(int a4, int a5, int a6, int a7);
+int FUN_0c05ae26(int a4, int a5, int a6, int a7);
 struct o274_float { char p[0x274]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -19,28 +21,6 @@ extern void fx_spawn_01(struct vec3f *, int, int);
 extern void fx_spawn_02(struct vec3f *, int, int);
 extern void fx_spawn_05(struct vec3f *, int, int);
 
-int FUN_0c05ae26(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    float u0;
-
-    t1 = *(signed char *)((a4 + 0x8));
-    if (t1 != 0) {
-        if (t1 != 1) {
-            return t1;
-        }
-        t1 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t1 + 0x1);
-        if (((int)(short)(t1 + 0x1) > (int)0x5) && (u0 = (((struct o274_float *)(a4))->v), u0 > 0.0f)) {
-            return obj_set_mode_owner(a4, 0x0, (*(signed char *)((a4 + 0x3))));
-        }
-        return ((int (*)(int, int, int, int))(0xC05AEB2))(a4, a4, a6, a7);
-    }
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    FUN_0c0e6fe8(a4);
-    return (FUN_0c0e6fe8(t0));
-}
 
 int FUN_0c05aeca(int a4)
 {
@@ -78,13 +58,6 @@ int item_tick_held(int a4)
     return 0x71CC;
 }
 
-int FUN_0c05b18c(int a4, int a5, int a6, int a7)
-{
-    if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x7236))) == 0) {
-        return obj_set_mode_owner(a4, 0x4, (*(signed char *)((a4 + 0x3))));
-    }
-    return ((int (*)(int, int, int, int))(0xC05B1E4))(a4, a5, a6, a7);
-}
 
 void obj_launch_owner_projectile(unsigned char *obj)
 {
