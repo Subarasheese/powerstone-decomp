@@ -119,7 +119,7 @@ float math_cos_angle16(int);
 extern float math_pow_float();
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _modlu(void);
 int _quick_evn_mvn(int);
 int _quick_odd_mvn(void);
@@ -198,31 +198,31 @@ int FUN_0c0e5b20(int a4, int a5, int a6)
                         t0 = 0xFFFFFFFE;
                         if (a5 != 0x50A5) {
                         } else {
-                            t0 = (FUN_0c0e5d22(((a5 + ((a4 & 0xF) << 8)) + ((a6 & 0xF) << 16))));
+                            t0 = (snd_send_command(((a5 + ((a4 & 0xF) << 8)) + ((a6 & 0xF) << 16))));
                         }
                         t1 = t0;
                     } else {
-                        t1 = (FUN_0c0e5d22(((a5 + ((a4 & 0xF) << 8)) + (((a6 + 0x40) & 0x7F) << 16))));
+                        t1 = (snd_send_command(((a5 + ((a4 & 0xF) << 8)) + (((a6 + 0x40) & 0x7F) << 16))));
                     }
                     t0 = t1;
                 } else {
-                    t0 = (FUN_0c0e5d22(((a5 + ((a4 & 0xF) << 8)) + ((a6 & 0x7F) << 16))));
+                    t0 = (snd_send_command(((a5 + ((a4 & 0xF) << 8)) + ((a6 & 0x7F) << 16))));
                 }
                 t1 = t0;
             } else {
-                t1 = (FUN_0c0e5d22(((a5 + ((a4 & 0xF) << 8)) + (((a6 + 0x40) & 0x7F) << 16))));
+                t1 = (snd_send_command(((a5 + ((a4 & 0xF) << 8)) + (((a6 + 0x40) & 0x7F) << 16))));
             }
             t0 = t1;
         } else {
-            t0 = (FUN_0c0e5d22(((a5 + ((a4 & 0xF) << 8)) + (((a6 & 0x7F) << 16) + ((((a6 & 0x80) << 2) << 2) << 1)))));
+            t0 = (snd_send_command(((a5 + ((a4 & 0xF) << 8)) + (((a6 & 0x7F) << 16) + ((((a6 & 0x80) << 2) << 2) << 1)))));
         }
         t1 = t0;
     } else {
-        t0 = FUN_0c0e5d22(((((a6 & 0x7F00) << 8) + ((a4 & 0xF) << 8)) + 0x70A5));
+        t0 = snd_send_command(((((a6 & 0x7F00) << 8) + ((a4 & 0xF) << 8)) + 0x70A5));
         t1 = t0;
         if (t0 != 0) {
         } else {
-            t1 = (FUN_0c0e5d22(((((a4 & 0xF) << 8) + ((a6 & 0x7F) << 16)) + 0xA5)));
+            t1 = (snd_send_command(((((a4 & 0xF) << 8) + ((a6 & 0x7F) << 16)) + 0xA5)));
         }
     }
     return t1;

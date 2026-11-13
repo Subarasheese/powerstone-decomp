@@ -116,13 +116,13 @@ float math_sin_angle16(int);
 int dbg_set_cursor_cell(void);
 int dbg_printf(int, ...);
 int FUN_0c0e09f0(int, int, int, int, float, float, float, float);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e0bd0(int);
-int FUN_0c0e12b0(int, int, int, int);
+int nlStoreMatrix(int);
+int nlStoreMatrix8(int);
+int nlLoadMatrix8(int, int, int, int);
 int FUN_0c0e12e0(int, int);
 int FUN_0c0e16c0(void);
 int FUN_0c0e1900(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int FUN_0c0e4980(int, int);
 int _divls(void);
 int FUN_0c0eb5c8(int, int);
@@ -316,8 +316,8 @@ int game_mode_handler_9(void);
 int pl_ayame_move00_init(int a4);
 int pl_rouge_move09_init(int a4);
 int cam_force_mode_14(int a4, int a5, int a6);
-int FUN_0c0f4d38(int a4);
-int FUN_0c0f4d56(int a4, int a5, int a6, int a7);
+int ADXT_GetNumSmpl(int a4);
+int ADXT_GetSfreq(int a4, int a5, int a6, int a7);
 int gdDcfSeek_(int a4);
 int gdDcfDaRelease_(int a4);
 int gdDcfGetVer_(int a4);
@@ -542,14 +542,14 @@ int nlGetPushedMatrix(int a4, int a5, int a6, int a7, float f4, float f5, float 
 
     t0 = *(int *)0xC7FCCBC;
     if (a4 == 0) {
-        return FUN_0c0e12b0((t0 - 64), a5, a6, a7);
+        return nlLoadMatrix8((t0 - 64), a5, a6, a7);
     }
     return FUN_0c0e09f0(a4, (t0 - 64), a6, a7, f4, f5, f6, f7);
 }
 
 int FUN_0c0e3470(void)
 {
-    FUN_0c0e19b0(0xC7FCEE8);
+    nlPushMatrix(0xC7FCEE8);
     nlMultiMatrix(((((struct oC_int *)0xC7FCCD4)->v)));
     nlMultiMatrix(((((struct o0_int *)0xC7FCCD4)->v)));
     FUN_0c0e16c0();
@@ -558,10 +558,10 @@ int FUN_0c0e3470(void)
 
 int FUN_0c0e2720(void)
 {
-    FUN_0c0e19b0(((((struct oC_int *)0xC7FCCD4)->v)));
+    nlPushMatrix(((((struct oC_int *)0xC7FCCD4)->v)));
     nlMultiMatrix(((((struct o0_int *)0xC7FCCD4)->v)));
     FUN_0c0e16c0();
-    FUN_0c0e0bd0(0xC7FCEA8);
+    nlStoreMatrix8(0xC7FCEA8);
     return nlPopMatrix(0x1);
 }
 
@@ -876,16 +876,16 @@ int FUN_0c0ffd98(void)
 
 int nlProjectScreen3D(int a4, int a5)
 {
-    FUN_0c0e19b0(0xC7FCE68);
+    nlPushMatrix(0xC7FCE68);
     nlCalcPoint(a4, a5);
     return nlPopMatrix(0x1);
 }
 
 int FUN_0c0e2750(void)
 {
-    FUN_0c0e19b0((*(int *)0xC7FCCD4));
+    nlPushMatrix((*(int *)0xC7FCCD4));
     FUN_0c0e16c0();
-    FUN_0c0e0ae0(0xC7FCE68);
+    nlStoreMatrix(0xC7FCE68);
     return nlPopMatrix(0x1);
 }
 
@@ -909,7 +909,7 @@ int gdDcfReqStat_(int a4, int a5, int a6, int a7)
     return (FUN_0c0eb5c8(0x24, ((int)stk + 0)));
 }
 
-int FUN_0c0f4d38(int a4)
+int ADXT_GetNumSmpl(int a4)
 {
     if ((int)(*(signed char *)((a4 + 0x1))) >= (int)0x2) {
         return ADXSJD_GetTotalNumSmpl((*(int *)((a4 + 0x4))));
@@ -917,7 +917,7 @@ int FUN_0c0f4d38(int a4)
     return 0x0;
 }
 
-int FUN_0c0f4d56(int a4, int a5, int a6, int a7)
+int ADXT_GetSfreq(int a4, int a5, int a6, int a7)
 {
     if ((int)(*(signed char *)((a4 + 0x1))) >= (int)0x2) {
         return ADXSJD_GetSfreq((*(int *)((a4 + 0x4))), a5, a6, a7);

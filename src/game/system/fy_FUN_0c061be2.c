@@ -10,39 +10,39 @@ static void ia_setsr(int v)
 {
     LDC R4,SR
 }
-extern void FUN_0c06143c(void);
-extern int FUN_0c0f2114(int, int, int);
+extern void sys_vsync_handler_remove(void);
+extern int pdInitPeripheral(int, int, int);
 extern void pad_state_clear(void);
 extern int gdFsInit(int, int, int, int);
 extern void FUN_0c0f2664(void);
 extern void FUN_0c0f283e(void);
 extern void FUN_0c0df100(void);
-extern void FUN_0c0f4104(void);
+extern void sys_exit_to_bios(void);
 extern int gdFsCreateDirhn(int, int);
 extern void syRtcInit(void);
 extern void syRtcSetServerMode(int);
 extern void syCfgInit(int);
 extern void syCfgGetSoundMode(int *);
-extern void FUN_0c0f4644(void);
+extern void ADXT_Init(void);
 extern void FUN_0c0f1ffe(int, int);
-extern void FUN_0c0de890(int);
-extern void FUN_0c0de8a0(void);
-extern void FUN_0c0de960(int);
-extern void FUN_0c0dea30(int);
-extern void FUN_0c0debe0(int, int, int, int);
-extern void FUN_0c0dfe20(void);
+extern void gfx_set_buffer_size(int);
+extern void gfx_init_renderer(void);
+extern void gfx_set_display_mode(int);
+extern void gfx_set_vertex_buffer(int);
+extern void gfx_set_list_buffers(int, int, int, int);
+extern void dbg_text_init(void);
 extern void FUN_0c0e0580(void);
-extern void FUN_0c0dd8e0(int, int, int);
-extern void FUN_0c0e3564(int, int, int);
+extern void nl_texture_tables_init(int, int, int);
+extern void nl_sprite_tables_init(int, int, int);
 extern void nlInitMatrix(int, int);
 extern void gfx_set_border_color(int);
 extern void gfx_set_background_color(int, int, int);
 extern void thunk_FUN_0c0fbcf0(int);
-extern void FUN_0c0e07c0(int);
-extern void FUN_0c0e0800(int);
-extern void FUN_0c0e1550(int);
+extern void gfx_set_fog_color(int);
+extern void gfx_set_fog_density(int);
+extern void nlSelectMatrixStack(int);
 extern void nlUnitMatrix(void);
-extern void FUN_0c0e2790(int, float, float, float);
+extern void nlPerspective(int, float, float, float);
 extern void FUN_0c0dd310(void);
 extern void nlObjPutInit(void);
 extern void FUN_0c05eed2(void);
@@ -53,7 +53,7 @@ extern void snd_init_adx(void);
 extern void bgm_stop_all(void);
 extern void FUN_0c0a3062(int);
 extern void vmu_init(void);
-extern void FUN_0c061434(void);
+extern void sys_vsync_handler_install(void);
 
 void sys_init_all(void)
 {
@@ -66,9 +66,9 @@ void sys_init_all(void)
     float *zero_ptr;
     int idx;
 
-    FUN_0c06143c();
+    sys_vsync_handler_remove();
     ia_setsr((ia_getsr() & ~0xF0) | 0xE0);
-    FUN_0c0f2114(0, 0xC38683C, 0xC39285C);
+    pdInitPeripheral(0, 0xC38683C, 0xC39285C);
     pad_state_clear();
     for (;;) {
         status = gdFsInit(8, work_a, 1024, work_b);
@@ -81,7 +81,7 @@ void sys_init_all(void)
             FUN_0c0f2664();
             FUN_0c0f283e();
             FUN_0c0df100();
-            FUN_0c0f4104();
+            sys_exit_to_bios();
             for (;;)
                 ;
         }
@@ -97,17 +97,17 @@ void sys_init_all(void)
     syCfgGetSoundMode(&mode);
     state[46] = (mode == 0) ? 1 : 0;
     ia_setsr(ia_getsr() & ~0xF0);
-    FUN_0c0f4644();
+    ADXT_Init();
     FUN_0c0f1ffe(0xC0614FC, 0);
-    FUN_0c0de890(0x100000);
-    FUN_0c0de8a0();
-    FUN_0c0de960(0);
-    FUN_0c0dea30(0xCE00000);
-    FUN_0c0debe0(0, 0, 0x70000, 0);
-    FUN_0c0dfe20();
+    gfx_set_buffer_size(0x100000);
+    gfx_init_renderer();
+    gfx_set_display_mode(0);
+    gfx_set_vertex_buffer(0xCE00000);
+    gfx_set_list_buffers(0, 0, 0x70000, 0);
+    dbg_text_init();
     FUN_0c0e0580();
-    FUN_0c0dd8e0(0xC494D68, 2048, 4096);
-    FUN_0c0e3564(0xC4BB0A8, 2048, 4096);
+    nl_texture_tables_init(0xC494D68, 2048, 4096);
+    nl_sprite_tables_init(0xC4BB0A8, 2048, 4096);
     nlInitMatrix(0xC7F370C, 63);
     gfx_set_border_color(0);
     gfx_set_background_color(0, 0, 0);
@@ -115,12 +115,12 @@ void sys_init_all(void)
     for (idx = 0; idx < 129; idx++)
         *zero_ptr++ = 0.0f;
     thunk_FUN_0c0fbcf0(0xC494B18);
-    FUN_0c0e07c0(0x101010);
-    FUN_0c0e0800(0xFF09);
-    FUN_0c0e1550(3);
+    gfx_set_fog_color(0x101010);
+    gfx_set_fog_density(0xFF09);
+    nlSelectMatrixStack(3);
     nlUnitMatrix();
-    FUN_0c0e2790(7464, 1.33333325f, 0.299999982f, 12000.0f);
-    FUN_0c0e1550(1);
+    nlPerspective(7464, 1.33333325f, 0.299999982f, 12000.0f);
+    nlSelectMatrixStack(1);
     FUN_0c0dd310();
     nlObjPutInit();
     FUN_0c05eed2();
@@ -148,7 +148,7 @@ void sys_init_all(void)
     snd_init_adx();
     bgm_stop_all();
     FUN_0c0a3062((signed char)state[46]);
-    FUN_0c06143c();
+    sys_vsync_handler_remove();
     vmu_init();
-    FUN_0c061434();
+    sys_vsync_handler_install();
 }

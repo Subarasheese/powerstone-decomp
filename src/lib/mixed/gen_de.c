@@ -86,8 +86,8 @@ float math_sin_angle16(int);
 int _divls(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
-int FUN_0c0f547e(int);
-int FUN_0c0f5570(int);
+int ADXF_Open(int);
+int ADXF_Close(int);
 int adxf_ChkPrmPt(int, int);
 int adxf_LoadData(int, int, int, int, int, int, int, int);
 int kmiBGPlaneCountWords(int);
@@ -162,7 +162,7 @@ int FUN_0c0f5238(int a4, int a5, int a6, int a7)
     L_C0F5264:;
     v0_3 = (int)(ADXSTM_GetFad((*(int *)(((int)stk + 8))), (((int)stk + 0) + 0x4))) < 0;
     if (v0_3) goto L_C0F5280;
-    v0_3 = FUN_0c0f547e((*(int *)(((int)stk + 8))));
+    v0_3 = ADXF_Open((*(int *)(((int)stk + 8))));
     *(unsigned int *)(((int)stk + 16)) = v0_3;
     if (!((v0_3 != 0))) goto L_C0F5280;
     v0_3 = *(int *)(((int)stk + 0));
@@ -199,7 +199,7 @@ int FUN_0c0f5238(int a4, int a5, int a6, int a7)
     L_C0F5370:;
     *(unsigned short *)((v0_2 + 0x10)) = R8;
     *(unsigned int *)((v0_2 + 0x4)) = (((((unsigned short)(*(short *)((v0_2 + 0x10))) << 2) << 1) + (*(int *)(((*(int *)((v0_2 + 0x0))) + 0x4)))) + 0x14);
-    FUN_0c0f5570((*(int *)(((int)stk + 16))));
+    ADXF_Close((*(int *)(((int)stk + 16))));
     goto L_C0F538C;
     L_C0F52DC:;
     v0_3 = *(int *)((R9 + 0x0));

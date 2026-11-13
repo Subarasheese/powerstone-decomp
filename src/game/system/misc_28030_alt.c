@@ -2,9 +2,9 @@
 
 struct vec3 { float x, y, z; };
 struct screen_req { int field_00; struct vec3 pos; float size_x, size_y; char pad_1c[24]; int mode; int field_52; };
-int FUN_0c0e1550(int);
-int FUN_0c0e19b0(int);
-int FUN_0c0e3c54(struct screen_req *);
+int nlSelectMatrixStack(int);
+int nlPushMatrix(int);
+int nl_sprite_draw(struct screen_req *);
 int nlCalcPoint(struct vec3 *, struct vec3 *);
 int nlCalcPoint44(struct vec3 *, float *);
 int nlPopMatrix(int);
@@ -16,17 +16,17 @@ int draw_project_point_sprite_z01(struct screen_req *req)
     struct screen_req local_req;
     float scale;
 
-    FUN_0c0e19b0(0);
+    nlPushMatrix(0);
     local_req = *req;
     *(struct vec3 *)&stk[15] = local_req.pos;
-    FUN_0c0e1550(2);
+    nlSelectMatrixStack(2);
     nlCalcPoint((struct vec3 *)&stk[15], (struct vec3 *)&stk[12]);
     *(struct vec3 *)&stk[9] = *(struct vec3 *)&stk[12];
     stk[9] = stk[9] + 1.0f;
-    FUN_0c0e1550(3);
+    nlSelectMatrixStack(3);
     nlCalcPoint44((struct vec3 *)&stk[12], &stk[5]);
     nlCalcPoint44((struct vec3 *)&stk[9], &stk[1]);
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     nlPopMatrix(1);
     stk[15] = (((stk[5] / stk[8]) + 1.0f) / 2.0f) * 640.0f;
     stk[16] = -((((stk[6] / stk[8]) + 1.0f) / 2.0f) * 480.0f) + 480.0f;
@@ -38,7 +38,7 @@ int draw_project_point_sprite_z01(struct screen_req *req)
     local_req.size_x = local_req.size_x * scale;
     local_req.size_y = local_req.size_y * scale;
     local_req.mode = 2;
-    return FUN_0c0e3c54(&local_req);
+    return nl_sprite_draw(&local_req);
 }
 
 int FUN_0c0283f0(int a4)

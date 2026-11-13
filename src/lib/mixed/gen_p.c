@@ -132,7 +132,7 @@ int FUN_0c0eee64(int);
 int gdFsReopenHn(int, int, int, int);
 int FUN_0c0f1c44(int);
 int FUN_0c0f4968(int);
-int FUN_0c0f4c2c(void);
+int ADXT_Stop(void);
 int FUN_0c0ff8aa(void);
 int FUN_0c0ff8b4(int, int);
 int vmsfs_unmount(int);
@@ -168,7 +168,7 @@ int fx_spawn_041820(int a4);
 int FUN_0c04ae50(int a4, int a5, int a6, float f4, float f5, float f6);
 int fx_spawn_04a4c4(int a4);
 int FUN_0c092ace(int a4);
-int FUN_0c0f488a(int a4, int a5, int a6, int a7);
+int ADXT_Destroy(int a4, int a5, int a6, int a7);
 int FUN_0c112718(int a4, int a5, int a6, int a7);
 int pl_mode10_enter(int a4);
 int gdFsWaitCompleteReq(int a4, int a5, int a6, int a7);
@@ -189,8 +189,8 @@ float pl_hitreact_21_stick_vector(int a4);
 int item_director_phase1(int a4, int a5, int a6, int a7);
 int item_director_spawn_queued(int a4);
 int FUN_0c0d2d22(int a4);
-int FUN_0c0f55a2(int a4, int a5, int a6);
-int FUN_0c0f4a06(int a4, int a5);
+int ADXF_ReadSj(int a4, int a5, int a6);
+int ADXT_StartFname(int a4, int a5);
 int opt_page1_spawn_bg_scroll(int a4);
 int opt_page3_spawn_bg_scroll(int a4);
 int FUN_0c01fe52(int a4);
@@ -202,7 +202,7 @@ int FUN_0c09bb9e(int a4, int a5);
 int FUN_0c0c8cea(int a4, int a5, int a6, float f4);
 int FUN_0c0c99c0(int a4, int a5, int a6, float f4);
 int FUN_0c0d6104(int a4);
-int FUN_0c0e59e8(int a4, int a5, int a6, int a7);
+int snd_send_port_command(int a4, int a5, int a6, int a7);
 int fmMngFormat(int a4, int a5, int a6);
 int FUN_0c01e4ea(int a4, float f4);
 int FUN_0c023d04(int a4, int a5);
@@ -279,7 +279,7 @@ int FUN_0c1152a4(int a4)
     return t1;
 }
 
-int FUN_0c0f488a(int a4, int a5, int a6, int a7)
+int ADXT_Destroy(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -288,7 +288,7 @@ int FUN_0c0f488a(int a4, int a5, int a6, int a7)
     register int t4;
 
     if (a4 != 0) {
-        FUN_0c0f4c2c();
+        ADXT_Stop();
         t0 = *(int *)((a4 + 0xC));
         if (t0 != 0) {
             ADXRNA_Destroy((*(int *)((a4 + 0xC))));
@@ -541,7 +541,7 @@ int FUN_0c109800(int a4)
     return t39;
 }
 
-int FUN_0c0f55a2(int a4, int a5, int a6)
+int ADXF_ReadSj(int a4, int a5, int a6)
 {
     register int t0;
     register int t3;
@@ -581,7 +581,7 @@ int FUN_0c0f55a2(int a4, int a5, int a6)
     return t0;
 }
 
-int FUN_0c0f4a06(int a4, int a5)
+int ADXT_StartFname(int a4, int a5)
 {
     int stk[7];
     register int t2;
@@ -589,7 +589,7 @@ int FUN_0c0f4a06(int a4, int a5)
     register int t11;
     register int t20;
 
-    FUN_0c0f4c2c();
+    ADXT_Stop();
     ADXCRS_Lock();
     t2 = ADXSTM_GetFad(a5, (((int)stk + 8) + 0x4));
     if ((int)t2 < 0) {
@@ -621,7 +621,7 @@ int FUN_0c0f4a06(int a4, int a5)
     return t20;
 }
 
-int FUN_0c0e59e8(int a4, int a5, int a6, int a7)
+int snd_send_port_command(int a4, int a5, int a6, int a7)
 {
     int stk[5];
     int t3;

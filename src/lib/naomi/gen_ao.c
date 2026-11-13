@@ -5,10 +5,10 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 int nlCalcPoint(int, int);
 int nlCalcVector(int, int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int, int, int, float, float, float, float);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int, int, int, float, float, float, float);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int _quick_odd_mvn(void);
 extern float _builtin_fipr(float *, float *);
 extern void _builtin_ftrv(float *, float *);
@@ -181,12 +181,12 @@ int FUN_0c0e09f0(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
 {
     if (a4 == 0) {
         if (a5 != 0) {
-            return FUN_0c0e1240(a5, a5, a6, f4, f5, f6, f7);
+            return nlLoadMatrix(a5, a5, a6, f4, f5, f6, f7);
         }
         return ((int (*)(int, int, int, int))(0xC0E0A30))(a4, a5, a6, a7);
     }
     if (a5 == 0) {
-        return FUN_0c0e0ae0(a4);
+        return nlStoreMatrix(a4);
     }
     return ((int (*)(int, int, int, int))(0xC0E0A22))(a4, a4, a6, a7);
 }

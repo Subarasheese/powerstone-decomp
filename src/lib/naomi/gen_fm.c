@@ -100,11 +100,11 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6, int a7);
 int pl_state23_phase1(int a4, int a5, int a6, int a7);
 int fx_homing_shell_update(int a4);
 int fx_update_35(int a4);
-int FUN_0c0e5d98(int a4, int a5, int a6, int a7);
+int snd_stream_setup(int a4, int a5, int a6, int a7);
 int FUN_0c0a5240(int a4);
 int pl_kraken_mode04_update(int a4, float f4);
 
-int FUN_0c0e5d98(int a4, int a5, int a6, int a7)
+int snd_stream_setup(int a4, int a5, int a6, int a7)
 {
     int stk[9];
 

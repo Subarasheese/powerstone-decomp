@@ -122,7 +122,7 @@ float math_sin_angle16(int);
 int dbg_set_text_color(int);
 int FUN_0c0e5178(int, int, int);
 int FUN_0c0e51d0(void);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _divls(void);
 extern int _modls();
 int _modlu(void);
@@ -370,7 +370,7 @@ int FUN_0c0e572c(void)
             return 0x1;
         }
         for (;;) {
-            t0 = FUN_0c0e5d22(0x18A0);
+            t0 = snd_send_command(0x18A0);
             if (t0 != -1) {
                 break;
             }

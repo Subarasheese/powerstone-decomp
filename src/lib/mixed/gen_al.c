@@ -97,7 +97,7 @@ int obj_release(int);
 int obj_create(int, int, int);
 int res_load_pl_effect(int, int);
 int res_load_pl_models(int);
-int FUN_0c06143c(int, int, int);
+int sys_vsync_handler_remove(int, int, int);
 int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
 int res_load_pl_motion_data(int, int);
@@ -132,11 +132,11 @@ int cam_force_mode(int, int, int);
 int cam_step_keyframe_script(int, int);
 int FUN_0c0df100(void);
 int math_signed_sqrt(float);
-int FUN_0c0e0ae0(int);
+int nlStoreMatrix(int);
 int nlUnitMatrix(void);
 float FUN_0c0e2340(int);
-int FUN_0c0e365c(int, int, int);
-int FUN_0c0e3a0c(int, int, int);
+int nl_sprite_texture_bind(int, int, int);
+int nl_sprite_texture_release(int, int, int);
 int syRtcFinish(void);
 int FUN_0c0e67a2(int, int, int);
 int FUN_0c0e6bc4(int, int, int);
@@ -154,13 +154,13 @@ int gdFsFinish(void);
 int FUN_0c0f2664(void);
 int FUN_0c0f283e(void);
 int syCfgExit(void);
-int FUN_0c0f4104(void);
-int FUN_0c0f4686(void);
+int sys_exit_to_bios(void);
+int ADXT_Finish(void);
 int FUN_0c0f4938(int, int);
-int FUN_0c0f4a06(int);
-int FUN_0c0f4db4(int, int);
+int ADXT_StartFname(int);
+int ADXT_SetOutVol(int, int);
 int FUN_0c0f5428(int, int);
-int FUN_0c0f5570(int);
+int ADXF_Close(int);
 int kmSetFogTableColor(int, ...);
 int FUN_0c0fcfa0(int);
 int FUN_0c0fcff0(int);
@@ -218,13 +218,13 @@ int FUN_0c0593e0(int a4);
 int res_player_load(int a4);
 int math_angle3_delta_scaled(int a4, int a5, int a6, float f4);
 int pl_try_start_basic_attack(int a4, int a5, int a6);
-int FUN_0c0de960(int a4, int a5, int a6, int a7);
+int gfx_set_display_mode(int a4, int a5, int a6, int a7);
 int FUN_0c0e6278(int a4);
 int FUN_0c0e62c4(int a4);
 int FUN_0c0f2292(int a4);
 int gdFsReadWG(int a4, int a5, int a6);
 int FUN_0c0f4968(int a4);
-int FUN_0c0f4644(void);
+int ADXT_Init(void);
 int FUN_0c0fcf46(int a4);
 int search_exec_file(int a4, int a5);
 int FUN_0c108290(int a4, int a5, int a6, int a7);
@@ -262,7 +262,7 @@ int dbgmotion_set_start_positions(int a4);
 int game_play_start_game_over(void);
 float FUN_0c0e22e0(int a4, int a5, float f4);
 int syRtcMakeDayOfWeek(int a4, int a5);
-int FUN_0c0e5d22(int a4);
+int snd_send_command(int a4);
 void FUN_0c0e6620(int a4);
 void FUN_0c0f2f24(void);
 int FUN_0c0f42ec(int a4, int a5);
@@ -294,15 +294,15 @@ int FUN_0c0d7a0a(void);
 int cam_mode_03(int a4);
 int cam_mode_25(int a4);
 int nlInitMatrixStack(int a4, int a5, int a6);
-int FUN_0c0e07c0(int a4);
-int FUN_0c0e3900(int a4, int a5);
-int FUN_0c0e3bb2(int a4, int a5, int a6, int a7);
+int gfx_set_fog_color(int a4);
+int nl_sprite_set_register(int a4, int a5);
+int nl_sprite_set_release(int a4, int a5, int a6, int a7);
 int FUN_0c0e5178(int a4, int a5, int a6);
 int FUN_0c0e50ec(int a4, int a5, int a6);
 int FUN_0c0e67f4(int a4, int a5);
 int FUN_0c0ef158(float f4, float f5);
 int FUN_0c0f53ae(void);
-int FUN_0c0f547e(int a4);
+int ADXF_Open(int a4);
 int FUN_0c0fde38(int a4, int a5, int a6, int a7);
 int FUN_0c0fe8c0(int a4, int a5, int a6, int a7);
 int gdFsStrcmpi(int a4, int a5);
@@ -495,7 +495,7 @@ int FUN_0c0f4968(int a4)
     return 0x0;
 }
 
-int FUN_0c0f4644(void)
+int ADXT_Init(void)
 {
     ADXF_Init();
     FUN_0c108768();
@@ -681,7 +681,7 @@ float FUN_0c0e22e0(int a4, int a5, float f4)
     return t0;
 }
 
-int FUN_0c0e5d22(int a4)
+int snd_send_command(int a4)
 {
     register int t2;
 
@@ -893,11 +893,11 @@ int nlInitMatrixStack(int a4, int a5, int a6)
     *(unsigned int *)((a4 + 0x8)) = ((a5 + 0x1F) & 0xFFFFFFE0);
     *(unsigned int *)((a4 + 0x4)) = ((a5 + 0x1F) & 0xFFFFFFE0);
     nlUnitMatrix();
-    FUN_0c0e0ae0((*(int *)((a4 + 0x8))));
+    nlStoreMatrix((*(int *)((a4 + 0x8))));
     return (*(int *)((a4 + 0x4)));
 }
 
-int FUN_0c0e3900(int a4, int a5)
+int nl_sprite_set_register(int a4, int a5)
 {
     int stk[4];
     register int t1;
@@ -915,7 +915,7 @@ int FUN_0c0e3900(int a4, int a5)
         if (t4 == -1) {
             break;
         }
-        FUN_0c0e365c((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))));
+        nl_sprite_texture_bind((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))));
         t1 = (*(int *)(((int)stk + 4)));
         t1 = (t1 + 0x10);
         *(unsigned int *)(((int)stk + 4)) = t1;
@@ -926,7 +926,7 @@ int FUN_0c0e3900(int a4, int a5)
     return t4;
 }
 
-int FUN_0c0e3bb2(int a4, int a5, int a6, int a7)
+int nl_sprite_set_release(int a4, int a5, int a6, int a7)
 {
     int stk[4];
     register int t1;
@@ -942,7 +942,7 @@ int FUN_0c0e3bb2(int a4, int a5, int a6, int a7)
         if ((*(int *)(((*(int *)(((int)stk + 4))) + 0x4))) == -1) {
             break;
         }
-        FUN_0c0e3a0c((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))));
+        nl_sprite_texture_release((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))));
         t1 = (*(int *)(((int)stk + 4)));
         t1 = (t1 + 0x10);
         *(unsigned int *)(((int)stk + 4)) = t1;
@@ -961,7 +961,7 @@ int FUN_0c0e5178(int a4, int a5, int a6)
     (((struct o4_uint *)0xA0800090)->v) = (0x5F800000 + a5);
     (((struct o8_uint *)0xA0800090)->v) = a6;
     for (;;) {
-        t0 = FUN_0c0e5d22(0x2000A0);
+        t0 = snd_send_command(0x2000A0);
         if (t0 != -1) {
             break;
         }
@@ -1048,7 +1048,7 @@ int FUN_0c0f53ae(void)
     return ((short)((((t0 << 2) + t0) << 2) << 1) + 0xC7FF568);
 }
 
-int FUN_0c0f547e(int a4)
+int ADXF_Open(int a4)
 {
     register int t1;
     register int t9;
@@ -1061,7 +1061,7 @@ int FUN_0c0f547e(int a4)
         t2 = FUN_0c0f5428(t1, a4);
         t9 = t1;
         if ((int)t2 < 0) {
-            FUN_0c0f5570(t1);
+            ADXF_Close(t1);
             t9 = 0x0;
         }
     }

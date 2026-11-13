@@ -224,9 +224,9 @@ Script runtime globals: g_ai_pc (0C3673E8, pointer into script, advances by shor
 |---|---|---|---|
 | 0 | u8 | loaded | res_textures_register sets 1, res_textures_release clears 0; skipped when already in the wanted state |
 | 2 | s16 | count | loop bound over the pointer list (and argument of FUN_0c0dd9e0) |
-| 4 | ptr | model_or_base | argument of FUN_0c0e3900 / 0c0e3bb2 |
-| 8 | ptr | list | array of `count` entries passed to FUN_0c0dd5d0 / 0c0dd6c0 |
-| 12 | int | arg | second argument of FUN_0c0dd5d0 |
+| 4 | ptr | model_or_base | argument of nl_sprite_set_register / 0c0e3bb2 |
+| 8 | ptr | list | array of `count` entries passed to nl_model_bind_textures / 0c0dd6c0 |
+| 12 | int | arg | second argument of nl_model_bind_textures |
 | 16,20 | int | extra | filled by res_*_load from the loaded file header |
 
 ## FxSlot (144 bytes), array of 8 at 0xc7f3238 (fxslot_*)

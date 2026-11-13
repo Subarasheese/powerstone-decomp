@@ -891,7 +891,7 @@ int FUN_0c0d4136(int a4, int a5, int a6, int a7)
     return FUN_0c0593e0(0x5);
 }
 
-int FUN_0c0d4196(int a4, int a5, int a6, int a7)
+int attract_title_screen(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
@@ -952,7 +952,7 @@ int thunk_FUN_0c0d45fe(void)
     return FUN_0c0d45fe();
 }
 
-int FUN_0c0d4660(int a4)
+int attract_draw_text_item(int a4)
 {
     register float u1;
 
@@ -960,7 +960,7 @@ int FUN_0c0d4660(int a4)
     return ui_draw_text_stub((*(int *)((((unsigned char)(((a4 << 1) + a4) << 2) + 0xC154710) + 0x8))), 0x0, ((*(float *)((((unsigned char)(((a4 << 1) + a4) << 2) + 0xC154710) + 0x0))) * u1), (((((struct o4_float *)(((unsigned char)(((a4 << 1) + a4) << 2) + 0xC154710)))->v)) * u1), 1.0f, 1.0f);
 }
 
-int FUN_0c0d4692(int a4, int a5, int a6, int a7)
+int attract_draw_press_start(int a4, int a5, int a6, int a7)
 {
     return ((int (*)(int, int, int, int))(0xC0D4660))(0x0, a5, a6, a7);
 }

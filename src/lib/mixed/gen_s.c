@@ -115,12 +115,12 @@ float math_cos_angle16(int);
 float math_sin_angle16(int);
 int nlCalcPoint44(int, int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int _divls(void);
 int _modls(void);
 int _quick_odd_mvn(int, int);
 int _slow_mvn(int);
-int FUN_0c0f55a2(int, int, int);
+int ADXF_ReadSj(int, int, int);
 int FUN_0c1012f4(int, int, int);
 int FUN_0c1025e0(int, int, int, int);
 int FUN_0c1040be(int);
@@ -143,7 +143,7 @@ int memset(int, int, int);
 int mwRnaErrCallFunc(int);
 int thunk_FUN_0c062242(int);
 int pl_end_action_reset(int a4);
-int FUN_0c0f5630(int a4, int a5, int a6);
+int ADXF_ReadNw(int a4, int a5, int a6);
 int set_vmstime(int a4, int a5);
 int FUN_0c107a36(int a4);
 int FUN_0c02649a(int a4, int a5);
@@ -192,7 +192,7 @@ int vmu_check_do_load(int a4, int a5, int a6, int a7);
 int FUN_0c01dd6a(int a4, int a5, float f4);
 int FUN_0c098026(int a4);
 
-int FUN_0c0f5630(int a4, int a5, int a6)
+int ADXF_ReadNw(int a4, int a5, int a6)
 {
     register int t10;
     register int t12;
@@ -209,7 +209,7 @@ int FUN_0c0f5630(int a4, int a5, int a6)
             return 0xFFFFFFFE;
         }
         ADXCRS_Lock();
-        t12 = FUN_0c0f55a2(a4, a5, t10);
+        t12 = ADXF_ReadSj(a4, a5, t10);
         if ((int)t12 <= 0) {
             return t12;
         }
@@ -375,7 +375,7 @@ int nlProjectScreen(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 4)) = a4;
     *(unsigned int *)(((int)stk + 0)) = a5;
-    FUN_0c0e19b0(0xC7FCEA8);
+    nlPushMatrix(0xC7FCEA8);
     nlCalcPoint44((*(int *)(((int)stk + 4))), (((int)stk + 0) + 0x8));
     u3 = *(float *)(((int)stk + 20));
     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) * (1.0f / u3));

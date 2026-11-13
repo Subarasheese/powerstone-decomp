@@ -17,8 +17,8 @@ struct o8_float { char p[0x8]; float v; };
 struct o8_uint { char p[0x8]; unsigned int v; };
 struct oC_float { char p[0xC]; float v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
-int FUN_0c0fc38c(int, int, int, int);
-int FUN_0c0fc5da(int, int, int, int);
+int kmCreateTextureSurface(int, int, int, int);
+int kmLoadTexture(int, int, int, int);
 struct o14_int { char p[0x14]; int v; };
 struct o24_int { char p[0x24]; int v; };
 struct o28_int { char p[0x28]; int v; };
@@ -34,7 +34,7 @@ struct o4_int { char p[0x4]; int v; };
 int FUN_0c0dff60(void);
 int FUN_0c0dffb0(void);
 
-int FUN_0c0dfe20(void)
+int dbg_text_init(void)
 {
     int stk[1];
     register int t0;
@@ -63,8 +63,8 @@ int FUN_0c0dfe20(void)
             break;
         }
     }
-    FUN_0c0fc38c(0xC7F8C64, 0x8, 0x400, 0x902);
-    FUN_0c0fc5da(0xC7F8C64, (*(int *)0xC346A5C), 0x0, 0x0);
+    kmCreateTextureSurface(0xC7F8C64, 0x8, 0x400, 0x902);
+    kmLoadTexture(0xC7F8C64, (*(int *)0xC346A5C), 0x0, 0x0);
     return (FUN_0c0dffb0());
 }
 

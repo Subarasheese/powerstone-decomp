@@ -7,7 +7,7 @@ struct o5C_float { char p[0x5C]; float v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int a4, int a5, int a6);
 struct vec3_int { int x, y, z; };
-int FUN_0c0e1240(char *);
+int nlLoadMatrix(char *);
 int nlInvertMatrix(int);
 int nlCalcPoint(float *, float *);
 int thunk_FUN_0c062242(int, float *);
@@ -61,7 +61,7 @@ void cam_frame_stage_corners(char *cam)
         *(float *)(cam + 0x24) = *(float *)(player + 0x2D4);
     *(int *)(cam + 0x30) = *(int *)(player + 0x30);
     *(float *)(cam + 0x24) = *(float *)(cam + 0x24) + (2.5f + 1.0f * (float)cam[3]);
-    FUN_0c0e1240(player + 0x6C);
+    nlLoadMatrix(player + 0x6C);
     nlInvertMatrix(0);
     for (i = 0; i < 19; i++) {
         float x, z;

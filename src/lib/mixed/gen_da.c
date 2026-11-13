@@ -79,7 +79,7 @@ int snd_play_stage_obj_se(int, int, int);
 int stage_obj_on_break(int);
 int dbgmotion_select_text_color(int, int);
 int cam_set_shake_ramp(int, int);
-int FUN_0c0ddbc0(int, int);
+int nl_texture_slot_free(int, int);
 float math_signed_sqrt(float);
 float math_cos_angle16(int);
 int math_rand_next(void);
@@ -94,7 +94,7 @@ int _modls(void);
 int _quick_odd_mvn(void);
 int FUN_0c0ed7e4(int);
 int FUN_0c0ed8f4(int, int);
-int FUN_0c0fca2e(int);
+int kmFreeTexture(int);
 int FUN_0c0ff1ac(int, int, int, int);
 int FUN_0c1104c8(int, int, int, int, int, int);
 int kmiBGPlaneCountWords(int);
@@ -116,7 +116,7 @@ int FUN_0c044408(int a4, int a5, int a6, int a7);
 int dbgmotion_draw_info(int a4, int a5);
 int fx_tick_039c78(int a4, int a5, int a6, int a7);
 int FUN_0c0acf90(int a4, int a5, int a6, int a7);
-int FUN_0c0e3a0c(int a4, int a5, int a6, int a7);
+int nl_sprite_texture_release(int a4, int a5, int a6, int a7);
 int FUN_0c0e6834(int a4, int a5, int a6, int a7);
 int stage_gimmick_23_update_b(int a4, int a5, int a6, int a7);
 
@@ -207,7 +207,7 @@ int FUN_0c10d4ea(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC10D668))(0x0, a5, a6, a7);
 }
 
-int FUN_0c0e3a0c(int a4, int a5, int a6, int a7)
+int nl_sprite_texture_release(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -225,7 +225,7 @@ int FUN_0c0e3a0c(int a4, int a5, int a6, int a7)
     }
     t1 = *(int *)((((((t0 + a6) << 2) << 1) + ((((struct o8_int *)0xC7F87C0)->v))) + 0x4));
     if ((*(int *)((((t1 * 0x3C) + (*(int *)0xC7FC4F0)) + 0x28))) == 0) {
-        t2 = FUN_0c0fca2e(((t1 * 0x3C) + (*(int *)0xC7FC4F0)));
+        t2 = kmFreeTexture(((t1 * 0x3C) + (*(int *)0xC7FC4F0)));
         if (t2 != 0) {
             (((struct o0_uint *)0xC7FD040)->v) = 0x2;
             for (;;) {
@@ -237,7 +237,7 @@ int FUN_0c0e3a0c(int a4, int a5, int a6, int a7)
     *(unsigned int *)((((t1 * 0x3C) + (*(int *)0xC7FC4F0)) + 0x2C)) = 0x0;
     *(unsigned int *)((((t1 * 0x3C) + (*(int *)0xC7FC4F0)) + 0x38)) = 0xFFFFFFFF;
     t3 = *(short *)((((t0 + a6) << 1) + ((((struct o4_int *)0xC7FD040)->v))));
-    FUN_0c0ddbc0(t1, t2);
+    nl_texture_slot_free(t1, t2);
     FUN_0c0e4688((short)t3);
     *(unsigned int *)((((((t0 + a6) << 2) << 1) + ((((struct o8_int *)0xC7F87C0)->v))) + 0x4)) = 0xFFFFFFFF;
     *(unsigned short *)((((t0 + a6) << 1) + ((((struct o4_int *)0xC7FD040)->v)))) = 0xFFFFFFFF;

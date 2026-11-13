@@ -122,7 +122,7 @@ int cam_set_shake_ramp(int, int);
 float math_signed_sqrt(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _divls(void);
 int _modls(int);
 int _quick_odd_mvn(void);
@@ -411,13 +411,13 @@ int FUN_0c0e5a94(int a4, int a5, int a6, int a7)
                 if (a6 != 0x2AB0) {
                     return 0xFFFFFFFE;
                 }
-                return (FUN_0c0e5d22(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + (((a7 + 0x40) & 0x7F) << 16))));
+                return (snd_send_command(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + (((a7 + 0x40) & 0x7F) << 16))));
             }
-            return (FUN_0c0e5d22(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + ((a7 & 0x7F) << 16))));
+            return (snd_send_command(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + ((a7 & 0x7F) << 16))));
         }
-        return (FUN_0c0e5d22(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + (((a7 + 0x40) & 0x7F) << 16))));
+        return (snd_send_command(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + (((a7 + 0x40) & 0x7F) << 16))));
     }
-    return (FUN_0c0e5d22(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + ((a7 & 0x7F) << 16))));
+    return (snd_send_command(((((0xF & (a5 - 1)) + (((a4 & 0xF) << 16) << 8)) + a6) + ((a7 & 0x7F) << 16))));
 }
 
 int gdDcfRead_(int a4, int a5, int a6, int a7)

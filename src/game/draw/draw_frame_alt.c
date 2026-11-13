@@ -5,7 +5,7 @@ struct o24_int { char p[0x24]; int v; };
 int FUN_0c02cb4a(int);
 int FUN_0c05fb58(int, float);
 int nlObjPutUseViewMatrix(int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 int nlUnitMatrix(void);
 int FUN_0c02cf18(void);
 int FUN_0c02d1cc(int);
@@ -21,7 +21,7 @@ int FUN_0c02cc18(float f4)
     t0 = *(signed char *)0xC7F2665;
     t1 = t0;
     if (t0 != 0) {
-        FUN_0c0e1550(0x1);
+        nlSelectMatrixStack(0x1);
         nlUnitMatrix();
         FUN_0c02cb4a(((((struct o0_int *)0xC7F294C)->v)));
         nlObjPutUseViewMatrix(((((struct o0_int *)0xC7F294C)->v)));

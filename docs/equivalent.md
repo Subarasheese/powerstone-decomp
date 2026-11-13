@@ -17066,8 +17066,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 134
 - the cases run 23 of 23 instructions
 
-### FUN_0c061434 (`0C061434`, 8 bytes, `src/game/system/system_init_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/FUN_0c061434.json`
+### sys_vsync_handler_install (`0C061434`, 8 bytes, `src/game/system/system_init_3.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/sys_vsync_handler_install.json`
 - case 0
 - case 1
 - case 2
@@ -17106,8 +17106,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 46
 - the cases run 4 of 4 instructions
 
-### FUN_0c06143c (`0C06143C`, 8 bytes, `src/game/system/system_init_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/FUN_0c06143c.json`
+### sys_vsync_handler_remove (`0C06143C`, 8 bytes, `src/game/system/system_init_3.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/sys_vsync_handler_remove.json`
 - case 0
 - case 1
 - case 2
@@ -17265,8 +17265,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 38
 - the cases run 9 of 12 instructions
 
-### FUN_0c061694 (`0C061694`, 20 bytes, `src/game/system/system_init_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/FUN_0c061694.json`
+### sys_vsync_handler (`0C061694`, 20 bytes, `src/game/system/system_init_3.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/system_init_3/sys_vsync_handler.json`
 - case 0
 - case 1
 - case 2
@@ -29598,8 +29598,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 11 of 11 instructions
 
-### FUN_0c0d4196 (`0C0D4196`, 210 bytes, `src/game/demo/attract_ranking_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/FUN_0c0d4196.json`
+### attract_title_screen (`0C0D4196`, 210 bytes, `src/game/demo/attract_ranking_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/attract_title_screen.json`
 - case 9
 - case 0
 - case 1
@@ -29728,8 +29728,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 126
 - the cases run 47 of 47 instructions
 
-### FUN_0c0d4660 (`0C0D4660`, 50 bytes, `src/game/demo/attract_ranking_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/FUN_0c0d4660.json`
+### attract_draw_text_item (`0C0D4660`, 50 bytes, `src/game/demo/attract_ranking_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/attract_draw_text_item.json`
 - case 0
 - case 1
 - case 2
@@ -29768,8 +29768,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 47
 - the cases run 25 of 25 instructions
 
-### FUN_0c0d4692 (`0C0D4692`, 54 bytes, `src/game/demo/attract_ranking_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/FUN_0c0d4692.json`
+### attract_draw_press_start (`0C0D4692`, 54 bytes, `src/game/demo/attract_ranking_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/attract_draw_press_start.json`
 - case 0
 - case 1
 - case 2
@@ -32418,8 +32418,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 91
 - the cases run 9 of 9 instructions
 
-### FUN_0c0dccd0 (`0C0DCCD0`, 66 bytes, `src/lib/naomi/nl_objput.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_objput/FUN_0c0dccd0.json`
+### nlSetLightDirection (`0C0DCCD0`, 66 bytes, `src/lib/naomi/nl_objput.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_objput/nlSetLightDirection.json`
 - case 0
 - case 1
 - case 2
@@ -32458,8 +32458,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 59
 - the cases run 33 of 33 instructions
 
-### FUN_0c0dcd20 (`0C0DCD20`, 30 bytes, `src/lib/naomi/nl_objput.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_objput/FUN_0c0dcd20.json`
+### nlSetLightColor (`0C0DCD20`, 30 bytes, `src/lib/naomi/nl_objput.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_objput/nlSetLightColor.json`
 - vector
 - other vector
 - the cases run 15 of 15 instructions
@@ -32516,8 +32516,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 6 of 6 instructions
 
-### FUN_0c0dd320 (`0C0DD320`, 676 bytes, `src/lib/naomi/nl_texture.c`)
-- equivalent on 4 development and 5 holdout cases, in `tests/nl_texture/FUN_0c0dd320.json`
+### nl_model_bind_step (`0C0DD320`, 676 bytes, `src/lib/naomi/nl_texture.c`)
+- equivalent on 4 development and 5 holdout cases, in `tests/nl_texture/nl_model_bind_step.json`
 - rescue: empty case
 - fuzz 21.368
 - fuzz 1.1
@@ -32529,8 +32529,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fuzz 1.428
 - the cases run 185 of 260 instructions
 
-### FUN_0c0dd5d0 (`0C0DD5D0`, 44 bytes, `src/lib/naomi/nl_texture.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture/FUN_0c0dd5d0.json`
+### nl_model_bind_textures (`0C0DD5D0`, 44 bytes, `src/lib/naomi/nl_texture.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture/nl_model_bind_textures.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 22 of 22 instructions
@@ -32621,14 +32621,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 108
 - the cases run 3 of 3 instructions
 
-### FUN_0c0dd880 (`0C0DD880`, 94 bytes, `src/lib/naomi/nl_texture_3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/FUN_0c0dd880.json`
+### nl_texture_slot_load (`0C0DD880`, 94 bytes, `src/lib/naomi/nl_texture_3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/nl_texture_slot_load.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 46 of 47 instructions
 
-### FUN_0c0dd8e0 (`0C0DD8E0`, 160 bytes, `src/lib/naomi/nl_texture_3.c`)
-- equivalent on 4 development and 3 holdout cases, in `tests/nl_texture_3/FUN_0c0dd8e0.json`
+### nl_texture_tables_init (`0C0DD8E0`, 160 bytes, `src/lib/naomi/nl_texture_3.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/nl_texture_3/nl_texture_tables_init.json`
 - base c800000 a 1 b 3
 - base c800100 a 0 b 0
 - base c810000 a 2 b 40
@@ -32849,8 +32849,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 141
 - the cases run 12 of 12 instructions
 
-### FUN_0c0ddb40 (`0C0DDB40`, 100 bytes, `src/lib/naomi/nl_texture_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_texture_3/FUN_0c0ddb40.json`
+### nl_texture_slot_alloc (`0C0DDB40`, 100 bytes, `src/lib/naomi/nl_texture_3.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_texture_3/nl_texture_slot_alloc.json`
 - case 0
 - case 1
 - case 2
@@ -32889,8 +32889,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 70
 - the cases run 15 of 15 instructions
 
-### FUN_0c0ddbc0 (`0C0DDBC0`, 36 bytes, `src/lib/naomi/nl_texture_3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/FUN_0c0ddbc0.json`
+### nl_texture_slot_free (`0C0DDBC0`, 36 bytes, `src/lib/naomi/nl_texture_3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/nl_texture_slot_free.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 18 of 18 instructions
@@ -32975,8 +32975,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 59
 - the cases run 18 of 18 instructions
 
-### FUN_0c0ddd10 (`0C0DDD10`, 38 bytes, `src/lib/naomi/nl_texture_3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/FUN_0c0ddd10.json`
+### nl_mesh_set_texture (`0C0DDD10`, 38 bytes, `src/lib/naomi/nl_texture_3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3/nl_mesh_set_texture.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 19 of 19 instructions
@@ -33021,14 +33021,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 105
 - the cases run 22 of 22 instructions
 
-### FUN_0c0ddd70 (`0C0DDD70`, 114 bytes, `src/lib/naomi/nl_texture_3_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3_alt/FUN_0c0ddd70.json`
+### nl_texture_surface_words (`0C0DDD70`, 114 bytes, `src/lib/naomi/nl_texture_3_alt.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3_alt/nl_texture_surface_words.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 57 of 57 instructions
 
-### FUN_0c0dde00 (`0C0DDE00`, 38 bytes, `src/lib/naomi/nl_texture_3_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3_alt/FUN_0c0dde00.json`
+### nl_texture_slot_finish (`0C0DDE00`, 38 bytes, `src/lib/naomi/nl_texture_3_alt.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_texture_3_alt/nl_texture_slot_finish.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 12 of 12 instructions
@@ -33331,8 +33331,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 104
 - the cases run 49 of 49 instructions
 
-### FUN_0c0de890 (`0C0DE890`, 6 bytes, `src/lib/naomi/nl_screen_math.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/FUN_0c0de890.json`
+### gfx_set_buffer_size (`0C0DE890`, 6 bytes, `src/lib/naomi/nl_screen_math.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/gfx_set_buffer_size.json`
 - case 0
 - case 1
 - case 2
@@ -33371,8 +33371,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 88
 - the cases run 3 of 3 instructions
 
-### FUN_0c0de8a0 (`0C0DE8A0`, 52 bytes, `src/lib/naomi/nl_screen_math.c`)
-- equivalent on 4 development and 2 holdout cases, in `tests/nl_screen_math/FUN_0c0de8a0.json`
+### gfx_init_renderer (`0C0DE8A0`, 52 bytes, `src/lib/naomi/nl_screen_math.c`)
+- equivalent on 4 development and 2 holdout cases, in `tests/nl_screen_math/gfx_init_renderer.json`
 - mode 1
 - mode 1 flags set
 - mode 0
@@ -33381,8 +33381,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mode 1 other bits
 - the cases run 21 of 21 instructions
 
-### FUN_0c0de960 (`0C0DE960`, 62 bytes, `src/lib/naomi/nl_screen_math.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/FUN_0c0de960.json`
+### gfx_set_display_mode (`0C0DE960`, 62 bytes, `src/lib/naomi/nl_screen_math.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/gfx_set_display_mode.json`
 - case 0
 - case 1
 - case 12
@@ -33461,8 +33461,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 50
 - the cases run 3 of 3 instructions
 
-### FUN_0c0dea30 (`0C0DEA30`, 34 bytes, `src/lib/naomi/nl_screen_math.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/FUN_0c0dea30.json`
+### gfx_set_vertex_buffer (`0C0DEA30`, 34 bytes, `src/lib/naomi/nl_screen_math.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/gfx_set_vertex_buffer.json`
 - case 1
 - case 0
 - case 2
@@ -33501,8 +33501,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 51
 - the cases run 10 of 10 instructions
 
-### FUN_0c0debe0 (`0C0DEBE0`, 30 bytes, `src/lib/naomi/nl_screen_math.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/FUN_0c0debe0.json`
+### gfx_set_list_buffers (`0C0DEBE0`, 30 bytes, `src/lib/naomi/nl_screen_math.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_screen_math/gfx_set_list_buffers.json`
 - case 1
 - case 0
 - case 2
@@ -33941,8 +33941,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - the cases run 47 of 55 instructions
 
-### FUN_0c0dfe20 (`0C0DFE20`, 136 bytes, `src/lib/naomi/nl_debug_text.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/nl_debug_text/FUN_0c0dfe20.json`
+### dbg_text_init (`0C0DFE20`, 136 bytes, `src/lib/naomi/nl_debug_text.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/nl_debug_text/dbg_text_init.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 68 of 68 instructions
@@ -34227,8 +34227,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 123
 - the cases run 19 of 19 instructions
 
-### FUN_0c0e0800 (`0C0E0800`, 8 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0e0800.json`
+### gfx_set_fog_density (`0C0E0800`, 8 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/gfx_set_fog_density.json`
 - case 0
 - case 1
 - case 2
@@ -34353,8 +34353,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 17 of 17 instructions
 
-### FUN_0c0e0ae0 (`0C0E0AE0`, 52 bytes, `src/lib/mixed/gen_an.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/FUN_0c0e0ae0.json`
+### nlStoreMatrix (`0C0E0AE0`, 52 bytes, `src/lib/mixed/gen_an.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/nlStoreMatrix.json`
 - case 15
 - case 15
 - case 15
@@ -34393,8 +34393,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - the cases run 24 of 26 instructions
 
-### FUN_0c0e0bd0 (`0C0E0BD0`, 40 bytes, `src/lib/mixed/gen_ap.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/FUN_0c0e0bd0.json`
+### nlStoreMatrix8 (`0C0E0BD0`, 40 bytes, `src/lib/mixed/gen_ap.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/nlStoreMatrix8.json`
 - case 15
 - case 15
 - case 15
@@ -34553,8 +34553,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 68
 - the cases run 2 of 2 instructions
 
-### FUN_0c0e1240 (`0C0E1240`, 50 bytes, `src/lib/mixed/gen_an.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/FUN_0c0e1240.json`
+### nlLoadMatrix (`0C0E1240`, 50 bytes, `src/lib/mixed/gen_an.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/nlLoadMatrix.json`
 - case 46
 - case 0
 - case 1
@@ -34593,8 +34593,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 75
 - the cases run 6 of 6 instructions
 
-### FUN_0c0e12b0 (`0C0E12B0`, 36 bytes, `src/lib/mixed/gen_ar.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ar/FUN_0c0e12b0.json`
+### nlLoadMatrix8 (`0C0E12B0`, 36 bytes, `src/lib/mixed/gen_ar.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ar/nlLoadMatrix8.json`
 - case 15
 - case 15
 - case 15
@@ -34743,8 +34743,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 110
 - the cases run 25 of 25 instructions
 
-### FUN_0c0e19b0 (`0C0E19B0`, 144 bytes, `src/lib/naomi/hand_FUN_0c0e19b0.c`)
-- equivalent on 9 development and 10 holdout cases, in `tests/hand_FUN_0c0e19b0/FUN_0c0e19b0.json`
+### nlPushMatrix (`0C0E19B0`, 144 bytes, `src/lib/naomi/hand_FUN_0c0e19b0.c`)
+- equivalent on 9 development and 10 holdout cases, in `tests/hand_FUN_0c0e19b0/nlPushMatrix.json`
 - null matrix, hi>lo
 - null matrix, hi==lo
 - null matrix, hi<lo
@@ -34892,8 +34892,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - the cases run 18 of 18 instructions
 
-### FUN_0c0e2050 (`0C0E2050`, 44 bytes, `src/lib/mixed/gen_ap.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/FUN_0c0e2050.json`
+### nlScaleV (`0C0E2050`, 44 bytes, `src/lib/mixed/gen_ap.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/nlScaleV.json`
 - case 15
 - case 15
 - case 15
@@ -34932,8 +34932,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - the cases run 22 of 22 instructions
 
-### FUN_0c0e2080 (`0C0E2080`, 16 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0e2080.json`
+### nlSetTranslate (`0C0E2080`, 16 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/nlSetTranslate.json`
 - case 15
 - case 15
 - case 15
@@ -34972,8 +34972,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - the cases run 8 of 8 instructions
 
-### FUN_0c0e2110 (`0C0E2110`, 16 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0e2110.json`
+### nlTranslate (`0C0E2110`, 16 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/nlTranslate.json`
 - case 15
 - case 15
 - case 15
@@ -35052,8 +35052,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - the cases run 13 of 13 instructions
 
-### FUN_0c0e2140 (`0C0E2140`, 20 bytes, `src/lib/mixed/gen_bs.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bs/FUN_0c0e2140.json`
+### nlTranslateV (`0C0E2140`, 20 bytes, `src/lib/mixed/gen_bs.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bs/nlTranslateV.json`
 - case 0
 - case 1
 - case 2
@@ -35460,8 +35460,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 172 of 199 instructions
 
-### FUN_0c0e31c0 (`0C0E31C0`, 214 bytes, `src/lib/mixed/gen_el.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_el/FUN_0c0e31c0.json`
+### nlSetViewport (`0C0E31C0`, 214 bytes, `src/lib/mixed/gen_el.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_el/nlSetViewport.json`
 - rescue: flips 0C0E3262
 - rescue: flips 0C0E3262
 - the cases run 78 of 89 instructions
@@ -35650,8 +35650,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 26 of 26 instructions
 
-### FUN_0c0e3900 (`0C0E3900`, 58 bytes, `src/lib/mixed/gen_al.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/FUN_0c0e3900.json`
+### nl_sprite_set_register (`0C0E3900`, 58 bytes, `src/lib/mixed/gen_al.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/nl_sprite_set_register.json`
 - case 0
 - case 1
 - case 2
@@ -35696,14 +35696,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: flips 0C0E39E6
 - the cases run 12 of 26 instructions
 
-### FUN_0c0e3a0c (`0C0E3A0C`, 368 bytes, `src/lib/mixed/gen_da.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_da/FUN_0c0e3a0c.json`
+### nl_sprite_texture_release (`0C0E3A0C`, 368 bytes, `src/lib/mixed/gen_da.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_da/nl_sprite_texture_release.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 32 of 86 instructions
 
-### FUN_0c0e3bb2 (`0C0E3BB2`, 58 bytes, `src/lib/mixed/gen_al.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/FUN_0c0e3bb2.json`
+### nl_sprite_set_release (`0C0E3BB2`, 58 bytes, `src/lib/mixed/gen_al.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/nl_sprite_set_release.json`
 - case 0
 - case 1
 - case 2
@@ -35742,8 +35742,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 85
 - the cases run 10 of 10 instructions
 
-### FUN_0c0e3bf2 (`0C0E3BF2`, 52 bytes, `src/lib/mixed/gen_an.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/FUN_0c0e3bf2.json`
+### nl_set_virtual_screen (`0C0E3BF2`, 52 bytes, `src/lib/mixed/gen_an.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_an/nl_set_virtual_screen.json`
 - case 0
 - case 1
 - case 2
@@ -35855,8 +35855,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 21 of 21 instructions
 
-### FUN_0c0e46c0 (`0C0E46C0`, 106 bytes, `src/lib/mixed/gen_ab.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ab/FUN_0c0e46c0.json`
+### sys_reset_interrupt_handlers (`0C0E46C0`, 106 bytes, `src/lib/mixed/gen_ab.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_ab/sys_reset_interrupt_handlers.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 53 of 53 instructions
@@ -36034,8 +36034,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 114
 - the cases run 2 of 2 instructions
 
-### FUN_0c0e48b0 (`0C0E48B0`, 86 bytes, `src/lib/mixed/gen_ae.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ae/FUN_0c0e48b0.json`
+### sys_set_interrupt_handler (`0C0E48B0`, 86 bytes, `src/lib/mixed/gen_ae.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ae/sys_set_interrupt_handler.json`
 - case 0
 - case 1
 - case 2
@@ -36247,8 +36247,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 86
 - the cases run 16 of 16 instructions
 
-### FUN_0c0e4ac0 (`0C0E4AC0`, 12 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0e4ac0.json`
+### sys_set_exception_area (`0C0E4AC0`, 12 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/sys_set_exception_area.json`
 - case 0
 - case 1
 - case 2
@@ -36293,8 +36293,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 23 of 29 instructions
 
-### FUN_0c0e5126 (`0C0E5126`, 70 bytes, `src/lib/mixed/gen_aj.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_aj/FUN_0c0e5126.json`
+### sys_get_video_standard (`0C0E5126`, 70 bytes, `src/lib/mixed/gen_aj.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_aj/sys_get_video_standard.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 33 instructions
@@ -36459,8 +36459,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 109
 - the cases run 97 of 100 instructions
 
-### FUN_0c0e55e0 (`0C0E55E0`, 186 bytes, `src/lib/mixed/gen_e.c`)
-- equivalent on 3 development and 3 holdout cases, in `tests/gen_e/FUN_0c0e55e0.json`
+### snd_bank_load (`0C0E55E0`, 186 bytes, `src/lib/mixed/gen_e.c`)
+- equivalent on 3 development and 3 holdout cases, in `tests/gen_e/snd_bank_load.json`
 - rescue: flips 0C0E55FA
 - rescue: flips 0C0E55FA
 - rescue: flips 0C0E55FA
@@ -36549,8 +36549,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 85
 - the cases run 124 of 141 instructions
 
-### FUN_0c0e5884 (`0C0E5884`, 314 bytes, `src/lib/mixed/gen_do.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_do/FUN_0c0e5884.json`
+### snd_bank_unload (`0C0E5884`, 314 bytes, `src/lib/mixed/gen_do.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_do/snd_bank_unload.json`
 - case 0
 - case 0
 - case 1
@@ -36589,8 +36589,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 146
 - the cases run 30 of 139 instructions
 
-### FUN_0c0e59e8 (`0C0E59E8`, 140 bytes, `src/lib/mixed/gen_p.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_p/FUN_0c0e59e8.json`
+### snd_send_port_command (`0C0E59E8`, 140 bytes, `src/lib/mixed/gen_p.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_p/snd_send_port_command.json`
 - case 32
 - case 0
 - case 7
@@ -36749,8 +36749,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 75
 - the cases run 37 of 42 instructions
 
-### FUN_0c0e5d22 (`0C0E5D22`, 60 bytes, `src/lib/mixed/gen_al.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/FUN_0c0e5d22.json`
+### snd_send_command (`0C0E5D22`, 60 bytes, `src/lib/mixed/gen_al.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_al/snd_send_command.json`
 - case 0
 - case 0
 - case 1
@@ -36829,8 +36829,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 69
 - the cases run 3 of 3 instructions
 
-### FUN_0c0e5d98 (`0C0E5D98`, 716 bytes, `src/lib/naomi/gen_fm.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_fm/FUN_0c0e5d98.json`
+### snd_stream_setup (`0C0E5D98`, 716 bytes, `src/lib/naomi/gen_fm.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_fm/snd_stream_setup.json`
 - case 32
 - case 0
 - case 1
@@ -37887,8 +37887,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 39
 - the cases run 2 of 2 instructions
 
-### FUN_0c0e7240 (`0C0E7240`, 2 bytes, `src/lib/libc/nl_objasm_plain.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/nl_objasm_plain/FUN_0c0e7240.json`
+### nl_objasm_draw_obj_opaque (`0C0E7240`, 2 bytes, `src/lib/libc/nl_objasm_plain.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/nl_objasm_plain/nl_objasm_draw_obj_opaque.json`
 - case 0
 - case 1
 - case 2
@@ -40684,8 +40684,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 50
 - the cases run 12 of 12 instructions
 
-### FUN_0c0f2114 (`0C0F2114`, 158 bytes, `src/lib/mixed/gen_m.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_m/FUN_0c0f2114.json`
+### pdInitPeripheral (`0C0F2114`, 158 bytes, `src/lib/mixed/gen_m.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_m/pdInitPeripheral.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 69 of 79 instructions
@@ -40856,8 +40856,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 38
 - the cases run 26 of 26 instructions
 
-### FUN_0c0f263a (`0C0F263A`, 12 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f263a.json`
+### pdGetPeripheral (`0C0F263A`, 12 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/pdGetPeripheral.json`
 - case 0
 - case 1
 - case 2
@@ -41510,8 +41510,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 69
 - the cases run 32 of 35 instructions
 
-### FUN_0c0f4104 (`0C0F4104`, 8 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4104.json`
+### sys_exit_to_bios (`0C0F4104`, 8 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/sys_exit_to_bios.json`
 - case 0
 - case 2
 - case 4
@@ -41556,8 +41556,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 9 of 9 instructions
 
-### FUN_0c0f4128 (`0C0F4128`, 38 bytes, `src/lib/mixed/gen_ap.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/FUN_0c0f4128.json`
+### vib_port_has_vibration (`0C0F4128`, 38 bytes, `src/lib/mixed/gen_ap.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/vib_port_has_vibration.json`
 - case 0
 - case 0
 - case 1
@@ -41712,20 +41712,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 43 of 45 instructions
 
-### FUN_0c0f4644 (`0C0F4644`, 62 bytes, `src/lib/mixed/gen_al.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_al/FUN_0c0f4644.json`
+### ADXT_Init (`0C0F4644`, 62 bytes, `src/lib/mixed/gen_al.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_al/ADXT_Init.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 31 of 31 instructions
 
-### FUN_0c0f4686 (`0C0F4686`, 24 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_as/FUN_0c0f4686.json`
+### ADXT_Finish (`0C0F4686`, 24 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_as/ADXT_Finish.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 10 of 10 instructions
 
-### FUN_0c0f488a (`0C0F488A`, 148 bytes, `src/lib/mixed/gen_p.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_p/FUN_0c0f488a.json`
+### ADXT_Destroy (`0C0F488A`, 148 bytes, `src/lib/mixed/gen_p.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_p/ADXT_Destroy.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 16 of 74 instructions
@@ -41742,32 +41742,32 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 31 of 31 instructions
 
-### FUN_0c0f49a6 (`0C0F49A6`, 96 bytes, `src/lib/mixed/gen_bk.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bk/FUN_0c0f49a6.json`
+### ADXT_StartAfs (`0C0F49A6`, 96 bytes, `src/lib/mixed/gen_bk.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bk/ADXT_StartAfs.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 46 of 48 instructions
 
-### FUN_0c0f4a06 (`0C0F4A06`, 142 bytes, `src/lib/mixed/gen_p.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_p/FUN_0c0f4a06.json`
+### ADXT_StartFname (`0C0F4A06`, 142 bytes, `src/lib/mixed/gen_p.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_p/ADXT_StartFname.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 54 of 68 instructions
 
-### FUN_0c0f4a94 (`0C0F4A94`, 70 bytes, `src/lib/mixed/gen_bo.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/FUN_0c0f4a94.json`
+### ADXT_StartMem (`0C0F4A94`, 70 bytes, `src/lib/mixed/gen_bo.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/ADXT_StartMem.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 31 of 35 instructions
 
-### FUN_0c0f4ada (`0C0F4ADA`, 62 bytes, `src/lib/mixed/gen_bo.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/FUN_0c0f4ada.json`
+### ADXT_StartSj (`0C0F4ADA`, 62 bytes, `src/lib/mixed/gen_bo.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/ADXT_StartSj.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 31 of 31 instructions
 
-### FUN_0c0f4b64 (`0C0F4B64`, 200 bytes, `src/lib/mixed/gen_au.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_au/FUN_0c0f4b64.json`
+### ADXT_StartMemIdx (`0C0F4B64`, 200 bytes, `src/lib/mixed/gen_au.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_au/ADXT_StartMemIdx.json`
 - case 0
 - case 1
 - case 2
@@ -41806,14 +41806,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 73
 - the cases run 40 of 97 instructions
 
-### FUN_0c0f4c2c (`0C0F4C2C`, 154 bytes, `src/lib/mixed/gen_m.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_m/FUN_0c0f4c2c.json`
+### ADXT_Stop (`0C0F4C2C`, 154 bytes, `src/lib/mixed/gen_m.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_m/ADXT_Stop.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 44 of 77 instructions
 
-### FUN_0c0f4cc6 (`0C0F4CC6`, 4 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4cc6.json`
+### ADXT_GetStat (`0C0F4CC6`, 4 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXT_GetStat.json`
 - case 0
 - case 1
 - case 2
@@ -41852,8 +41852,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 74
 - the cases run 2 of 2 instructions
 
-### FUN_0c0f4cca (`0C0F4CCA`, 110 bytes, `src/lib/mixed/gen_bh.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bh/FUN_0c0f4cca.json`
+### ADXT_GetTime (`0C0F4CCA`, 110 bytes, `src/lib/mixed/gen_bh.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bh/ADXT_GetTime.json`
 - case 0
 - case 1
 - case 2
@@ -41892,8 +41892,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 72
 - the cases run 27 of 55 instructions
 
-### FUN_0c0f4d38 (`0C0F4D38`, 30 bytes, `src/lib/mixed/gen_bq.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bq/FUN_0c0f4d38.json`
+### ADXT_GetNumSmpl (`0C0F4D38`, 30 bytes, `src/lib/mixed/gen_bq.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bq/ADXT_GetNumSmpl.json`
 - case 16
 - case 0
 - case 1
@@ -41932,8 +41932,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 103
 - the cases run 15 of 15 instructions
 
-### FUN_0c0f4d56 (`0C0F4D56`, 30 bytes, `src/lib/mixed/gen_bq.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bq/FUN_0c0f4d56.json`
+### ADXT_GetSfreq (`0C0F4D56`, 30 bytes, `src/lib/mixed/gen_bq.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bq/ADXT_GetSfreq.json`
 - case 77
 - case 0
 - case 1
@@ -41972,8 +41972,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 70
 - the cases run 15 of 15 instructions
 
-### FUN_0c0f4d74 (`0C0F4D74`, 50 bytes, `src/lib/cri/gen_bp.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bp/FUN_0c0f4d74.json`
+### ADXT_SetOutPan (`0C0F4D74`, 50 bytes, `src/lib/cri/gen_bp.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bp/ADXT_SetOutPan.json`
 - case 0
 - case 1
 - case 2
@@ -42012,8 +42012,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 51
 - the cases run 20 of 25 instructions
 
-### FUN_0c0f4db4 (`0C0F4DB4`, 20 bytes, `src/lib/mixed/gen_at.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_at/FUN_0c0f4db4.json`
+### ADXT_SetOutVol (`0C0F4DB4`, 20 bytes, `src/lib/mixed/gen_at.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_at/ADXT_SetOutVol.json`
 - case 0
 - case 1
 - case 2
@@ -42052,8 +42052,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 110
 - the cases run 10 of 10 instructions
 
-### FUN_0c0f4dc8 (`0C0F4DC8`, 6 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4dc8.json`
+### ADXT_GetOutVol (`0C0F4DC8`, 6 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXT_GetOutVol.json`
 - case 0
 - case 1
 - case 2
@@ -42138,14 +42138,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 85
 - the cases run 32 of 32 instructions
 
-### FUN_0c0f4eac (`0C0F4EAC`, 104 bytes, `src/lib/mixed/gen_ab.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ab/FUN_0c0f4eac.json`
+### ADXT_ExecServer (`0C0F4EAC`, 104 bytes, `src/lib/mixed/gen_ab.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_ab/ADXT_ExecServer.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 50 of 51 instructions
 
-### FUN_0c0f4f14 (`0C0F4F14`, 6 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4f14.json`
+### ADXT_GetErrCode (`0C0F4F14`, 6 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXT_GetErrCode.json`
 - case 0
 - case 1
 - case 2
@@ -42184,8 +42184,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 95
 - the cases run 3 of 3 instructions
 
-### FUN_0c0f4f1a (`0C0F4F1A`, 8 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4f1a.json`
+### ADXT_ClearErrCode (`0C0F4F1A`, 8 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXT_ClearErrCode.json`
 - case 0
 - case 1
 - case 2
@@ -42224,8 +42224,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 36
 - the cases run 4 of 4 instructions
 
-### FUN_0c0f4f28 (`0C0F4F28`, 6 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f4f28.json`
+### ADXT_SetLpFlg (`0C0F4F28`, 6 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXT_SetLpFlg.json`
 - case 0
 - case 1
 - case 2
@@ -42481,14 +42481,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 41 of 43 instructions
 
-### FUN_0c0f547e (`0C0F547E`, 58 bytes, `src/lib/mixed/gen_al.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_al/FUN_0c0f547e.json`
+### ADXF_Open (`0C0F547E`, 58 bytes, `src/lib/mixed/gen_al.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_al/ADXF_Open.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 20 of 29 instructions
 
-### FUN_0c0f54fc (`0C0F54FC`, 62 bytes, `src/lib/mixed/gen_bo.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/FUN_0c0f54fc.json`
+### ADXF_OpenAfs (`0C0F54FC`, 62 bytes, `src/lib/mixed/gen_bo.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bo/ADXF_OpenAfs.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 21 of 31 instructions
@@ -42499,14 +42499,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 14 of 27 instructions
 
-### FUN_0c0f5570 (`0C0F5570`, 50 bytes, `src/lib/mixed/gen_an.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_an/FUN_0c0f5570.json`
+### ADXF_Close (`0C0F5570`, 50 bytes, `src/lib/mixed/gen_an.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_an/ADXF_Close.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 0 of 24 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
 
-### FUN_0c0f55a2 (`0C0F55A2`, 142 bytes, `src/lib/mixed/gen_p.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_p/FUN_0c0f55a2.json`
+### ADXF_ReadSj (`0C0F55A2`, 142 bytes, `src/lib/mixed/gen_p.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_p/ADXF_ReadSj.json`
 - case 1
 - case 2
 - case 3
@@ -42545,8 +42545,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 99
 - the cases run 29 of 68 instructions
 
-### FUN_0c0f5630 (`0C0F5630`, 134 bytes, `src/lib/mixed/gen_s.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_s/FUN_0c0f5630.json`
+### ADXF_ReadNw (`0C0F5630`, 134 bytes, `src/lib/mixed/gen_s.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_s/ADXF_ReadNw.json`
 - case 1
 - case 8
 - case 2
@@ -42585,8 +42585,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - the cases run 25 of 40 instructions
 
-### FUN_0c0f5810 (`0C0F5810`, 14 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f5810.json`
+### ADXF_GetFsizeSct (`0C0F5810`, 14 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXF_GetFsizeSct.json`
 - case 0
 - case 1
 - case 2
@@ -42625,8 +42625,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 41
 - the cases run 5 of 7 instructions
 
-### FUN_0c0f581e (`0C0F581E`, 14 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f581e.json`
+### ADXF_GetFsizeByte (`0C0F581E`, 14 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXF_GetFsizeByte.json`
 - case 0
 - case 1
 - case 2
@@ -42665,8 +42665,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 117
 - the cases run 5 of 7 instructions
 
-### FUN_0c0f5842 (`0C0F5842`, 14 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f5842.json`
+### ADXF_GetNumReadSct (`0C0F5842`, 14 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXF_GetNumReadSct.json`
 - case 0
 - case 1
 - case 2
@@ -42705,8 +42705,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 46
 - the cases run 5 of 7 instructions
 
-### FUN_0c0f5850 (`0C0F5850`, 14 bytes, `src/lib/mixed/gen_as.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/FUN_0c0f5850.json`
+### ADXF_GetStat (`0C0F5850`, 14 bytes, `src/lib/mixed/gen_as.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXF_GetStat.json`
 - case 0
 - case 0
 - case 1
@@ -44243,8 +44243,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 22 of 22 instructions
 
-### FUN_0c0fc38c (`0C0FC38C`, 68 bytes, `src/lib/mixed/gen_aj.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_aj/FUN_0c0fc38c.json`
+### kmCreateTextureSurface (`0C0FC38C`, 68 bytes, `src/lib/mixed/gen_aj.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_aj/kmCreateTextureSurface.json`
 - case 1
 - case 2
 - case 3
@@ -44323,8 +44323,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 59
 - the cases run 33 of 130 instructions
 
-### FUN_0c0fc5da (`0C0FC5DA`, 98 bytes, `src/lib/mixed/gen_ab.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ab/FUN_0c0fc5da.json`
+### kmLoadTexture (`0C0FC5DA`, 98 bytes, `src/lib/mixed/gen_ab.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ab/kmLoadTexture.json`
 - case 37
 - case 3
 - case 0
@@ -44563,8 +44563,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 67
 - the cases run 28 of 42 instructions
 
-### FUN_0c0fca2e (`0C0FCA2E`, 36 bytes, `src/lib/mixed/gen_ar.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ar/FUN_0c0fca2e.json`
+### kmFreeTexture (`0C0FCA2E`, 36 bytes, `src/lib/mixed/gen_ar.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ar/kmFreeTexture.json`
 - case 3
 - case 0
 - case 1

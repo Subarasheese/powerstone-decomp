@@ -6,7 +6,7 @@ int FUN_0c0e22e0(int, int, float);
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 
 int nlInvLightVector(void)
 {
@@ -19,11 +19,11 @@ int nlInvLightVector(void)
 
 int nlInvLightVectorUseViewMatrix(void)
 {
-    FUN_0c0e1550(0x2);
+    nlSelectMatrixStack(0x2);
     nlTransposeMatrix();
     nlCalcVector(0xC3468A0, 0xC7FCC80);
     nlTransposeMatrix();
-    FUN_0c0e1550(0x1);
+    nlSelectMatrixStack(0x1);
     nlTransposeMatrix();
     nlCalcVector(0xC346880, 0xC7FCC90);
     (((struct o0_float *)0xC7FCC80)->v) = (((((struct o0_float *)0xC7FCC80)->v)) + ((((struct o0_float *)0xC346880)->v)));

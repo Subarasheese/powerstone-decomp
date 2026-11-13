@@ -6,9 +6,9 @@ struct o8_uint { char p[0x8]; unsigned int v; };
 extern int FUN_0c0ddc70();
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
-int FUN_0c0fca2e(int);
+int kmFreeTexture(int);
 
-int FUN_0c0ddd70(int a4, int a5, int a6, int a7);
+int nl_texture_surface_words(int a4, int a5, int a6, int a7);
 
 int FUN_0c0ddd40(int a4, int a5)
 {
@@ -39,7 +39,7 @@ int FUN_0c0ddd40(int a4, int a5)
     return t2;
 }
 
-int FUN_0c0ddd70(int a4, int a5, int a6, int a7)
+int nl_texture_surface_words(int a4, int a5, int a6, int a7)
 {
     register int t1;
     int t5;
@@ -55,13 +55,13 @@ int FUN_0c0ddd70(int a4, int a5, int a6, int a7)
     return ((unsigned int)((unsigned int)t10 >> 2) >> 1);
 }
 
-int FUN_0c0dde00(int a4, int a5, int a6, int a7)
+int nl_texture_slot_finish(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
     t0 = *(int *)0xC7FC4F0;
     if ((*(int *)((((a4 * 0x3C) + t0) + 0x28))) == 0) {
-        return FUN_0c0ddd70(((a4 * 0x3C) + t0), a5, a6, a7);
+        return nl_texture_surface_words(((a4 * 0x3C) + t0), a5, a6, a7);
     }
     *(unsigned int *)((((a4 * 0x3C) + t0) + 0x30)) = (*(int *)0xC7F8800);
     return ((int (*)(int, int, int, int))(0xC0DDE26))(((a4 * 0x3C) + t0), 0xC7F87D0, a6, a7);
@@ -80,7 +80,7 @@ int FUN_0c0dde30(int a4, int a5, int a6, int a7)
             break;
         }
         if (((*(int *)((t2 + 0x2C))) != 0) && (t0 = *(int *)((t2 + 0x28)), t0 == 0)) {
-            FUN_0c0fca2e(t2);
+            kmFreeTexture(t2);
         }
         t1 = (t1 + 0x1);
         t2 = (t2 + 0x3C);

@@ -25,10 +25,10 @@ int hit_load_cylinder_world(int, int, int);
 int hit_load_sphere_world(int, int, int);
 int hit_get_sphere_entry(int, int, int);
 int hit_get_cylinder_entry(int, int, int);
-int FUN_0c0e0ae0(int);
+int nlStoreMatrix(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
-int FUN_0c0e2080(int);
+int nlPushMatrix(int);
+int nlSetTranslate(int);
 int FUN_0c0e24f0(int, int, int, float, float, float, float);
 int math_mat_transform_vector(int, int);
 int math_mat_get_translate(int, int);
@@ -120,9 +120,9 @@ int vec3s_to_vec3f(int a4, int a5)
 
 int FUN_0c020468(int a4)
 {
-    FUN_0c0e19b0((a4 + 0x6C));
-    FUN_0c0e2080((a4 + 0x20));
-    FUN_0c0e0ae0((a4 + 0x6C));
+    nlPushMatrix((a4 + 0x6C));
+    nlSetTranslate((a4 + 0x20));
+    nlStoreMatrix((a4 + 0x6C));
     return nlPopMatrix(0x1);
 }
 

@@ -231,8 +231,8 @@ void nlProjectScreen(Vec3 *point, float *screen);
 void nlUnitMatrix(void);
 void nlLookAt(Vec3 *eye, Vec3 *target, int roll);
 int nlInvertMatrix(float *m);
-void FUN_0c0e0ae0(float *m);
-int FUN_0c0e1550(int mode);
+void nlStoreMatrix(float *m);
+int nlSelectMatrixStack(int mode);
 void *memset(void *p, int c, int n);
 
 #endif

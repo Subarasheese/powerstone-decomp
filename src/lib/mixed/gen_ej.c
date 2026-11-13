@@ -148,7 +148,7 @@ int _modls(void);
 extern int _quick_odd_mvn();
 int FUN_0c0f05c8(void);
 int FUN_0c0f0d04(int, int, int, int);
-int FUN_0c0f4128(int);
+int vib_port_has_vibration(int);
 int FUN_0c109800(int);
 int FUN_0c10b260(int, int);
 int FUN_0c10b3e0(int);
@@ -291,7 +291,7 @@ int FUN_0c0f4202(int a4, int a5, int a6, int a7)
     register int t46;
 
     *(unsigned int *)(((int)stk + 0)) = a4;
-    t0 = FUN_0c0f4128(a4);
+    t0 = vib_port_has_vibration(a4);
     if (t0 == 0) {
     } else {
         if ((unsigned int)0x0 < (unsigned int)a6) {

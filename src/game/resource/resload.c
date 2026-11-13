@@ -34,9 +34,9 @@ int FUN_0c0100b0(int, int);
 int FUN_0c0612f4(int, int, int);
 int FUN_0c0dd6c0(int);
 int FUN_0c0dd9e0(int);
-int FUN_0c0e3900(int, int);
-int FUN_0c0e3bb2(int, int);
-int FUN_0c0dd5d0(int, int);
+int nl_sprite_set_register(int, int);
+int nl_sprite_set_release(int, int);
+int nl_model_bind_textures(int, int);
 int memcpy(int, int, int);
 
 int res_load_file_unpack(int a4);
@@ -88,7 +88,7 @@ int res_model_release(int a4)
 {
     if ((*(signed char *)((a4 + 0x0))) != 0) {
         FUN_0c0dd9e0((*(short *)((a4 + 0x2))));
-        FUN_0c0e3bb2((*(int *)((a4 + 0x4))), 0x0);
+        nl_sprite_set_release((*(int *)((a4 + 0x4))), 0x0);
         *(unsigned char *)((a4 + 0x0)) = 0x0;
     }
     return 0x0;
@@ -118,7 +118,7 @@ int res_model_register(int a4)
 {
     if ((*(signed char *)((a4 + 0x0))) == 0) {
         FUN_0c0dd9e0((*(short *)((a4 + 0x2))));
-        FUN_0c0e3900((*(int *)((a4 + 0x4))), 0x0);
+        nl_sprite_set_register((*(int *)((a4 + 0x4))), 0x0);
         *(unsigned char *)((a4 + 0x0)) = 0x1;
     }
     return 0x0;
@@ -135,7 +135,7 @@ int res_textures_register(int a4)
             if ((int)t3 >= (int)(*(short *)((a4 + 0x2)))) {
                 break;
             }
-            FUN_0c0dd5d0((*(int *)(((t3 << 2) + (*(int *)((a4 + 0x8)))))), (*(int *)((a4 + 0xC))));
+            nl_model_bind_textures((*(int *)(((t3 << 2) + (*(int *)((a4 + 0x8)))))), (*(int *)((a4 + 0xC))));
             t3 = (t3 + 0x1);
         }
         *(unsigned char *)((a4 + 0x0)) = 0x1;

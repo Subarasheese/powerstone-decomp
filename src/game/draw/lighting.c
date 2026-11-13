@@ -13,8 +13,8 @@ struct o84_float { char p[0x84]; float v; };
 struct o88_float { char p[0x88]; float v; };
 struct o8C_float { char p[0x8C]; float v; };
 int nlObjPutSetGlobalAmbience(float);
-int FUN_0c0dccd0(int);
-int FUN_0c0dcd20(float, float, float);
+int nlSetLightDirection(int);
+int nlSetLightColor(float, float, float);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 struct o8_float { char p[0x8]; float v; };
@@ -136,12 +136,12 @@ int FUN_0c05fb58(int a4)
         t1 = (t1 - 1);
         t0 = (t0 << 1);
         if ((int)t1 < 0) {
-            return (FUN_0c0dcd20(1.0f, 1.0f, 1.0f));
+            return (nlSetLightColor(1.0f, 1.0f, 1.0f));
         }
     }
     nlObjPutSetGlobalAmbience(((((struct o7C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)));
-    FUN_0c0dccd0((((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots)) + 0x44));
-    return (FUN_0c0dcd20((((((struct o84_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o88_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o8C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f)));
+    nlSetLightDirection((((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots)) + 0x44));
+    return (nlSetLightColor((((((struct o84_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o88_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o8C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f)));
 }
 
 int FUN_0c05fbee(int a4)

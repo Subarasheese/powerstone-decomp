@@ -76,7 +76,7 @@ int snd_play_stage_obj_se(int, int, int);
 float FUN_0c0d5bc0(void);
 int cam_set_shake_ramp(int, int);
 float math_signed_sqrt(float);
-int FUN_0c0e2140(int);
+int nlTranslateV(int);
 float FUN_0c0e2220(int, int);
 int _modls(void);
 int _quick_odd_mvn(void);
@@ -235,7 +235,7 @@ int FUN_0c0e17d0(int a4, int a5, int a6)
     *(float *)(((int)stk + 56)) = 0.0f;
     *(float *)(((int)stk + 72)) = 1.0f;
     nlMultiMatrix((((int)stk + 0) + 0xC));
-    return (FUN_0c0e2140(a5));
+    return (nlTranslateV(a5));
 }
 
 float FUN_0c0ef980(int a4)

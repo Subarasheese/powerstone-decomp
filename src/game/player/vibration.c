@@ -16,7 +16,7 @@ struct o72B6_uchar { char p[0x72B6]; unsigned char v; };
 struct o72B7_uchar { char p[0x72B7]; unsigned char v; };
 struct o72B8_uchar { char p[0x72B8]; unsigned char v; };
 int FUN_0c0555c4(void);
-int FUN_0c0f4128(int);
+int vib_port_has_vibration(int);
 int FUN_0c0f414e(int, int, int, int);
 int FUN_0c0f4202(int, int);
 int pdVibMxStop(int);
@@ -91,10 +91,10 @@ int pl_vib_start_preset(int a4, int a5)
     if ((v0_4 == 0)) goto L_C09B86C;
     v0_3 = (0x71ED);
     if (((*(signed char *)((v0_2 + 0x71ED))) != 0)) goto L_C09B86C;
-    v0_3 = (FUN_0c0f4128((*(int *)((((((*(signed char *)((v0_2 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))))) != 0;
+    v0_3 = (vib_port_has_vibration((*(int *)((((((*(signed char *)((v0_2 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))))) != 0;
     v0_4 = (((int)g_vib_handles));
     if (v0_3) goto L_C09B816;
-    v0_5 = FUN_0c0f4128((*(int *)((((v0_1 + 0x1) << 2) + ((((*(signed char *)((v0_2 + 0x3))) << 2) << 1) + v0_4)))));
+    v0_5 = vib_port_has_vibration((*(int *)((((v0_1 + 0x1) << 2) + ((((*(signed char *)((v0_2 + 0x3))) << 2) << 1) + v0_4)))));
     v0_3 = (v0_5);
     v0_1 = ((v0_1 + 0x1));
     if ((v0_5 == 0)) goto L_C09B86C;
@@ -131,9 +131,9 @@ int pl_vib_start_custom(int a4, int a5, int a6, int a7)
     if ((*(signed char *)g_vib_disabled) == 0) {
         t47 = 0x71ED;
         if ((*(signed char *)((a4 + 0x71ED))) == 0) {
-            t8 = FUN_0c0f4128((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
+            t8 = vib_port_has_vibration((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
             if (t8 == 0) {
-                t12 = FUN_0c0f4128((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                t12 = vib_port_has_vibration((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                 t47 = t12;
                 if (t12 != 0) {
                     (((struct o72B4_uchar *)(a4))->v) = 0x1;
@@ -173,9 +173,9 @@ int pl_vib_update(int a4)
         t1 = *(signed char *)((a4 + 0x72B2));
         (((struct o72B2_uchar *)(a4))->v) = (t1 - 1);
         if (((unsigned char)(t1 - 1) == 0) && (t0 = *(signed char *)((a4 + 0x71ED)), t0 == 0)) {
-            t0 = FUN_0c0f4128((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
+            t0 = vib_port_has_vibration((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
             if (t0 == 0) {
-                t0 = FUN_0c0f4128((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                t0 = vib_port_has_vibration((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                 if (t0 != 0) {
                     if ((*(signed char *)g_vib_disabled) == 0) {
                         FUN_0c0f4202((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))), (0x72B4 + a4));
@@ -185,9 +185,9 @@ int pl_vib_update(int a4)
                         (((struct o72B3_uchar *)(a4))->v) = (t1 - 1);
                         if ((unsigned char)(t1 - 1) == 0) {
                             if ((*(signed char *)((a4 + 0x71ED))) == 0) {
-                                t1 = FUN_0c0f4128((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                                t1 = vib_port_has_vibration((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                                 if (t1 == 0) {
-                                    t1 = FUN_0c0f4128((*(int *)((0x8 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                                    t1 = vib_port_has_vibration((*(int *)((0x8 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                                     if (t1 != 0) {
                                         return pdVibMxStop((*(int *)((0x8 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                                     }
@@ -213,9 +213,9 @@ int pl_vib_update(int a4)
         (((struct o72B3_uchar *)(a4))->v) = (t0 - 1);
         if ((unsigned char)(t0 - 1) == 0) {
             if ((*(signed char *)((a4 + 0x71ED))) == 0) {
-                t0 = FUN_0c0f4128((*(int *)((0x0 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                t0 = vib_port_has_vibration((*(int *)((0x0 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                 if (t0 == 0) {
-                    t0 = FUN_0c0f4128((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+                    t0 = vib_port_has_vibration((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                     if (t0 != 0) {
                         return pdVibMxStop((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
                     }
@@ -235,9 +235,9 @@ int pl_vib_stop(int a4)
     register int t0;
 
     if ((*(signed char *)((a4 + 0x71ED))) == 0) {
-        t0 = FUN_0c0f4128((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
+        t0 = vib_port_has_vibration((*(int *)((((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles)) + 0x0))));
         if (t0 == 0) {
-            t0 = FUN_0c0f4128((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
+            t0 = vib_port_has_vibration((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
             if (t0 != 0) {
                 return pdVibMxStop((*(int *)((0x4 + ((((*(signed char *)((a4 + 0x3))) << 2) << 1) + ((int)g_vib_handles))))));
             }
@@ -262,11 +262,11 @@ int vib_stop_all(void)
     t2 = 0x0;
     t3 = ((int)g_vib_handles);
     for (;;) {
-        t5 = FUN_0c0f4128((*(int *)((((t2 << 2) << 1) + ((int)g_vib_handles)))));
+        t5 = vib_port_has_vibration((*(int *)((((t2 << 2) << 1) + ((int)g_vib_handles)))));
         if (t5 != 0) {
             pdVibMxStop((*(int *)((t1 + 0x0))));
         }
-        t5 = FUN_0c0f4128((*(int *)((t0 + 0x4))));
+        t5 = vib_port_has_vibration((*(int *)((t0 + 0x4))));
         t4 = t5;
         if (t5 != 0) {
             t4 = (pdVibMxStop((*(int *)((t3 + 0x4)))));
@@ -293,9 +293,9 @@ int vib_is_any_active(void)
     t1 = ((int)g_vib_handles);
     t2 = ((int)g_vib_handles);
     for (;;) {
-        t3 = FUN_0c0f4128((*(int *)((t1 + 0x0))));
+        t3 = vib_port_has_vibration((*(int *)((t1 + 0x0))));
         if (t3 == 0) {
-            t3 = FUN_0c0f4128((*(int *)((t2 + 0x4))));
+            t3 = vib_port_has_vibration((*(int *)((t2 + 0x4))));
             if (t3 != 0) {
                 break;
             }

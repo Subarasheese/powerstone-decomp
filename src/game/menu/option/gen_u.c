@@ -78,8 +78,8 @@ int FUN_0c0647f0(int, int);
 int FUN_0c0648d4(int);
 int FUN_0c0d0e50(int, int, int, int);
 int FUN_0c0d2424(int);
-int FUN_0c0e1240(int);
-int FUN_0c0e1550(int);
+int nlLoadMatrix(int);
+int nlSelectMatrixStack(int);
 int FUN_0c0e21b0(int, int);
 int _modls(int);
 int _quick_odd_mvn(int);
@@ -345,8 +345,8 @@ int fx_tick_model_effect(int a4)
     t1 = *(signed char *)((a4 + 0x8));
     if (t1 != 0) {
         if (t1 == 1) {
-            FUN_0c0e1550(0x1);
-            FUN_0c0e1240(((((struct o90_int *)(t0))->v)));
+            nlSelectMatrixStack(0x1);
+            nlLoadMatrix(((((struct o90_int *)(t0))->v)));
             *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x3C);
             nlCalcPoint((a4 + 0x20), (((int)stk + 0) + 0x3C));
             *(unsigned int *)(((int)stk + 4)) = ((((int)stk + 0) + 0x3C) + 0xC);
@@ -1196,8 +1196,8 @@ int fx_tick_model_effect(int a4)
     } else {
         if ((*(signed char *)((a4 + 0x9))) == 0) {
             *(unsigned char *)((a4 + 0x1)) = 0x0;
-            FUN_0c0e1550(0x1);
-            FUN_0c0e1240(((((struct o90_int *)(t0))->v)));
+            nlSelectMatrixStack(0x1);
+            nlLoadMatrix(((((struct o90_int *)(t0))->v)));
             *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x3C);
             nlCalcPoint((a4 + 0x20), (((int)stk + 0) + 0x3C));
             *(unsigned int *)(((int)stk + 4)) = ((((int)stk + 0) + 0x3C) + 0xC);
@@ -1212,8 +1212,8 @@ int fx_tick_model_effect(int a4)
             *(unsigned char *)((a4 + 0x9)) = (t761 + 0x1);
             t874 = (t761 + 0x1);
         } else {
-            FUN_0c0e1550(0x1);
-            FUN_0c0e1240(((((struct o90_int *)(t0))->v)));
+            nlSelectMatrixStack(0x1);
+            nlLoadMatrix(((((struct o90_int *)(t0))->v)));
             *(unsigned int *)(((int)stk + 8)) = (((int)stk + 0) + 0x3C);
             nlCalcPoint((a4 + 0x20), (((int)stk + 0) + 0x3C));
             *(unsigned int *)(((int)stk + 12)) = ((((int)stk + 0) + 0x3C) + 0xC);

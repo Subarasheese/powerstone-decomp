@@ -128,7 +128,7 @@ int stage_gimmick_41_spawn_b(int, int);
 int FUN_0c0d54ac(void);
 int cam_reset_shake(int, int, int, int);
 float math_exp_float(int, int, int, int, float);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int FUN_0c0efc6a(int, int, int, int, int, int);
 int FUN_0c0ff1ac(int, int, int, int);
 int FUN_0c0ff4b4(int);
@@ -282,7 +282,7 @@ int FUN_0c0e6a20(int a4, int a5)
     if (t3 != 1) {
         return t3;
     }
-    return (FUN_0c0e5d22((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0xCA1)));
+    return (snd_send_command((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0xCA1)));
 }
 
 int syRtcSetDate(void)

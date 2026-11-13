@@ -146,35 +146,35 @@ int nlInvLightVectorUseViewMatrix(void);
 int nlobjput_sub(int);
 int nlobjput_sub_trnsl(int);
 int nlMakeModelViewProjectMatrix_objput(void);
-int FUN_0c0dd320(int, int, int, int);
+int nl_model_bind_step(int, int, int, int);
 int FUN_0c0dd9e0(int);
-int FUN_0c0ddd70(int);
+int nl_texture_surface_words(int);
 int gfx_flip_frame_buffer(void);
 int gfx_set_background_color(int, int, int);
-int FUN_0c0e07c0(int);
-int FUN_0c0e0800(int);
-int FUN_0c0e0ae0(int);
+int gfx_set_fog_color(int);
+int gfx_set_fog_density(int);
+int nlStoreMatrix(int);
 int nlMultiMatrixRevOrder8(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
-int FUN_0c0e2080(int);
+int nlPushMatrix(int);
+int nlSetTranslate(int);
 int FUN_0c0e24f0(int, int, int, float, float, float, float);
-int FUN_0c0e3900(int, int);
-int FUN_0c0e3bb2(int, int);
+int nl_sprite_set_register(int, int);
+int nl_sprite_set_release(int, int);
 int syRtcGetAndCheckCount(int);
 int syRtcGetCountForce(void);
-int FUN_0c0e55e0(int, int);
-int FUN_0c0e5884(int);
+int snd_bank_load(int, int);
+int snd_bank_unload(int);
 int _divls(void);
 int sys_strided_copy_blocks(int, int, int, int, int, int);
 int FUN_0c0ee6dc(int, int);
 int FUN_0c0f1766(int);
 int syCfgGetIDAddress(int, int, int);
 int FUN_0c0f4202(int, int);
-int FUN_0c0f4db4(int, int, int, int);
+int ADXT_SetOutVol(int, int, int, int);
 int FUN_0c0fb042(int, int, int, int);
-int FUN_0c0fc38c(int, int, int, int);
-int FUN_0c0fc5da(int, int, int, int);
+int kmCreateTextureSurface(int, int, int, int);
+int kmLoadTexture(int, int, int, int);
 int FUN_0c0fcea0(int, int);
 int FUN_0c0fddce(int);
 int gdFsToUpper(int);
@@ -275,12 +275,12 @@ int rank_start_vs_rows(int a4);
 int input_get_active_pads_mask(void);
 int cam_request_mode_04(int a4, int a5);
 int cam_request_mode_03(int a4, int a5);
-int FUN_0c0dd5d0(int a4, int a5);
+int nl_model_bind_textures(int a4, int a5);
 int nlObjPutUseViewMatrixTrnsl(int a4, float f4);
 int FUN_0c0ddd40(int a4, int a5);
 int nlObjPut(int a4);
 float nlRotateAX(int a4);
-void FUN_0c0e2050(int a4);
+void nlScaleV(int a4);
 void nlTransposeMatrix(void);
 int FUN_0c0e66f4(int a4, int a5, int a6);
 int FUN_0c0e6726(int a4, int a5, int a6);
@@ -345,7 +345,7 @@ int pl_load_gravity(int a4);
 int FUN_0c0a32dc(void);
 int FUN_0c0afb0a(int a4);
 int FUN_0c0ddeb0(void);
-int FUN_0c0e0bd0(int a4, int a5, int a6, int a7);
+int nlStoreMatrix8(int a4, int a5, int a6, int a7);
 float nlRotateXSC(float f4, float f5);
 float nlRotateAY(int a4);
 float nlRotateAZ(int a4);
@@ -377,11 +377,11 @@ int FUN_0c092894(int a4);
 int pl_is_airborne(int a4);
 int FUN_0c0a3cb0(int a4, int a5);
 void FUN_0c0a3f50(int a4);
-int FUN_0c0ddd10(int a4, int a5);
+int nl_mesh_set_texture(int a4, int a5);
 int syRtcAicaSetDateLo(int a4);
 int syRtcAicaSetDateHi(int a4);
 int gdFsGetLE4(int a4);
-int FUN_0c0f4128(int a4);
+int vib_port_has_vibration(int a4);
 int pdVibMxStart(int a4, int a5);
 int FUN_0c0f271a(void);
 int gdFsGetTokenSize(int a4, int a5, int a6);
@@ -409,7 +409,7 @@ int input_get_start_pressed_pad(void);
 int FUN_0c0d643c(int a4);
 int cam_request_mode_01(int a4);
 int cam_request_mode_02(int a4);
-int FUN_0c0ddbc0(int a4, int a5);
+int nl_texture_slot_free(int a4, int a5);
 float nlRotateYSC(float f4, float f5);
 void nlUnitMatrix(void);
 int kmSetBackGroundPlane(int a4, int a5, int a6, int a7);
@@ -531,7 +531,7 @@ float nlRotateAX(int a4)
     return u2[0];
 }
 
-void FUN_0c0e2050(int a4)
+void nlScaleV(int a4)
 {
     register float u2;
     register float u3;
@@ -1096,7 +1096,7 @@ int kmiBGPlaneSetPCW(int a4, int a5, int a6)
     return t1;
 }
 
-int FUN_0c0e0bd0(int a4, int a5, int a6, int a7)
+int nlStoreMatrix8(int a4, int a5, int a6, int a7)
 {
     register int t1;
     float u3[16];
@@ -1370,7 +1370,7 @@ int gdFsGetLE4(int a4)
     return (((((unsigned char)(*(signed char *)((a4 + 0x1))) << 8) | ((unsigned char)(*(signed char *)((a4 + 0x2))) << 16)) | (((unsigned char)(*(signed char *)((a4 + 0x3))) << 16) << 8)) | (unsigned char)(*(signed char *)((a4 + 0x0))));
 }
 
-int FUN_0c0f4128(int a4)
+int vib_port_has_vibration(int a4)
 {
     register int t1;
 

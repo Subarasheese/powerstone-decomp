@@ -2,9 +2,9 @@
 
 struct o90_int { char p[0x90]; int v; };
 int FUN_0c0ccf38(int, int, int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
-int FUN_0c0e1550(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
+int nlSelectMatrixStack(int);
 extern int _quick_odd_mvn();
 int nlCalcPoint(int, int);
 int nlInvertMatrix(int);
@@ -46,7 +46,7 @@ int FUN_0c05a6e8(int a4)
         t6 = *(signed char *)((a4 + 0x8));
         t62 = t6;
         if (t6 != 0) {
-            FUN_0c0e1550(0x1);
+            nlSelectMatrixStack(0x1);
             t12 = t11;
             t13 = 0xFFFFFFFF;
             t14 = 0xFFFFFFFF;
@@ -70,14 +70,14 @@ int FUN_0c05a6e8(int a4)
                         t44 = t10;
                     } else {
                         t12 = t17;
-                        FUN_0c0e1240(t12);
+                        nlLoadMatrix(t12);
                         t14 = 0xC0E0DA0;
                         t12 = 0x0;
                         nlInvertMatrix(t12);
                         t14 = 0xC0E0AE0;
                         t12 = ((int)stk + 0);
                         t12 = (t12 + 0x18);
-                        FUN_0c0e0ae0(t12);
+                        nlStoreMatrix(t12);
                         t13 = (*(int *)((t18 + 0x4)));
                         t14 = (*(int *)((t18 + 0x0)));
                     }
@@ -85,7 +85,7 @@ int FUN_0c05a6e8(int a4)
                     t9 = t43;
                     t10 = t44;
                     t12 = t15;
-                    FUN_0c0e1240(t12);
+                    nlLoadMatrix(t12);
                     t8 = ((int)stk + 0);
                     t9 = (*(int *)((t18 + 0x14)));
                     t8 = (t8 + 0xC);
@@ -100,7 +100,7 @@ int FUN_0c05a6e8(int a4)
                     nlCalcPoint(t12, ((int)stk + 0));
                     t12 = ((int)stk + 0);
                     t12 = (t12 + 0x18);
-                    FUN_0c0e1240(t12);
+                    nlLoadMatrix(t12);
                     t12 = ((int)stk + 0);
                     nlCalcPoint(t12, (((int)stk + 0) + 0xC));
                     t9 = ((int)stk + 0);

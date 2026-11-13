@@ -147,7 +147,7 @@ int fx_spawn_03af38(int a4, int a5);
 int ai_op83(int a4, float f4);
 int FUN_0c0638fe(int a4);
 int pl_kraken_mode04_phase1(int a4);
-int FUN_0c0d4196(int a4, int a5, int a6, int a7);
+int attract_title_screen(int a4, int a5, int a6, int a7);
 int gdFsDaPlaySctG(int a4, int a5, int a6, int a7);
 int FUN_0c0fa42e(int a4, int a5, int a6, int a7, int a8);
 int vmsfs_findfirst(int a4, int a5);

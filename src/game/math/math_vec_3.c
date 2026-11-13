@@ -4,7 +4,7 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 int math_signed_sqrt(float);
 struct vec3f { float x, y, z; };
-extern int FUN_0c0e19b0(void *m);
+extern int nlPushMatrix(void *m);
 extern void nlCalcVector(void *src, void *dst);
 extern int nlPopMatrix(int n);
 
@@ -28,7 +28,7 @@ int math_vec3_length(int a4)
 void math_mat_transform_vector(struct vec3f *vec, void *matrix)
 {
     struct vec3f tmp_vec;
-    FUN_0c0e19b0(matrix);
+    nlPushMatrix(matrix);
     tmp_vec = *vec;
     nlCalcVector(&tmp_vec, vec);
     nlPopMatrix(1);

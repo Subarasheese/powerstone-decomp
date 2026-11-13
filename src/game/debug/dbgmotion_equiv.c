@@ -6,7 +6,7 @@ int dbg_set_cursor_cell(int, int);
 int dbg_set_text_color(int);
 int dbg_printf(int, ...);
 struct Vec3f { float x, y, z; };
-extern int FUN_0c0e1550(int);
+extern int nlSelectMatrixStack(int);
 extern void nlUnitMatrix(void);
 extern void nlLookAt(float *, float *, int);
 struct Pad { char pad[12]; unsigned short flags; };
@@ -160,10 +160,10 @@ void dbgmotion_update_camera(void)
     default:
         break;
     }
-    FUN_0c0e1550(2);
+    nlSelectMatrixStack(2);
     nlUnitMatrix();
     nlLookAt((float *)&pos_b, (float *)&pos_a, 0);
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     *(struct Vec3f *)(0xC7F29F8 + 188) = pos_b;
     *(struct Vec3f *)(0xC7F29F8 + 236) = pos_a;
 }

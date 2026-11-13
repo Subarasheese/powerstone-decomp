@@ -4,10 +4,10 @@
 struct o124_int { char p[0x124]; int v; };
 int cam_update_by_mode(int, float);
 int cam_apply_shake(int, int, int);
-int FUN_0c0e0ae0(int);
+int nlStoreMatrix(int);
 int nlInvertMatrix(int);
 int nlLookAt(int, int, int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 int nlUnitMatrix(void);
 int _quick_odd_mvn(void);
 int FUN_0c10121c(int, int, int);

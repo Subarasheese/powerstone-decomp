@@ -1,7 +1,7 @@
 /* same module (helpers) (0c0dd880-0c0ddf30) */
 
-int FUN_0c0fc38c(int, int, int, int);
-int FUN_0c0fc5da(int, int, int, int);
+int kmCreateTextureSurface(int, int, int, int);
+int kmLoadTexture(int, int, int, int);
 void FUN_0c0ddd40(int, int);
 struct at_0_int { int field_0; };
 struct at_4_int { char pad[0x4]; int field_4; };
@@ -11,30 +11,30 @@ struct o0_short { short v; };
 struct o2_short { char p[0x2]; short v; };
 struct o4_int { char p[0x4]; int v; };
 struct o8_int { char p[0x8]; int v; };
-int FUN_0c0ddd70(int);
+int nl_texture_surface_words(int);
 struct o0_int { int v; };
 int FUN_0c0fcb8a(void);
 
 int FUN_0c0dd9f0(int a4, int a5);
 
-int FUN_0c0dd880(int a4, int a5, int a6)
+int nl_texture_slot_load(int a4, int a5, int a6)
 {
     register int t0;
     register int t1;
 
     t0 = *(int *)0xC7FC4F0;
     *(unsigned int *)0xC7FD488 = ((*(int *)0xC7FD488) + 0x1);
-    t1 = FUN_0c0fc38c(((a5 * 0x3C) + t0), (*(short *)((a4 + 0x0))), (*(short *)((a4 + 0x2))), (*(int *)((a4 + 0x4))));
+    t1 = kmCreateTextureSurface(((a5 * 0x3C) + t0), (*(short *)((a4 + 0x0))), (*(short *)((a4 + 0x2))), (*(int *)((a4 + 0x4))));
     *(unsigned int *)((((a5 * 0x3C) + t0) + 0x28)) = t1;
     t0 = 0x1;
     if (t1 == 0) {
-        FUN_0c0fc5da(((a5 * 0x3C) + (*(int *)0xC7FC4F0)), a6, 0x0, 0x0);
+        kmLoadTexture(((a5 * 0x3C) + (*(int *)0xC7FC4F0)), a6, 0x0, 0x0);
         t0 = 0x0;
     }
     return t0;
 }
 
-void FUN_0c0dd8e0(int base, int row_max, int col_max)
+void nl_texture_tables_init(int base, int row_max, int col_max)
 {
     int rows, cols, idx, word_idx;
 
@@ -118,7 +118,7 @@ int FUN_0c0dd9f0(int a4, int a5)
         t0 = *(int *)0xC7FC4F0;
         t1 = 0x0;
         if ((*(int *)((((t3 * 0x3C) + t0) + 0x28))) == 0) {
-            t4 = FUN_0c0fc5da(((t3 * 0x3C) + t0), a5, 0x0, 0x0);
+            t4 = kmLoadTexture(((t3 * 0x3C) + t0), a5, 0x0, 0x0);
             t0 = 0x1;
             if (t4 != 0) {
                 t0 = 0x0;
@@ -151,12 +151,12 @@ int FUN_0c0ddb20(void)
     return (*(int *)(((int)stk + 0)));
 }
 
-int FUN_0c0ddb40(int a4, int a5, int a6)
+int nl_texture_slot_alloc(int a4, int a5, int a6)
 {
     return ((int (*)(int, int, int, int))(0xC0DDBA8))(a4, 0x0, a6, 0x0);
 }
 
-int FUN_0c0ddbc0(int a4, int a5)
+int nl_texture_slot_free(int a4, int a5)
 {
     register int t2;
 
@@ -181,7 +181,7 @@ int FUN_0c0ddc30(void)
             break;
         }
         if ((*(int *)((t4 + 0x28))) == 0) {
-            t2 = (FUN_0c0ddd70(t4));
+            t2 = (nl_texture_surface_words(t4));
         }
         t4 = (t4 + 0x3C);
         t3 = (t3 + 0x1);
@@ -206,7 +206,7 @@ int FUN_0c0ddc70(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC0DDCD0))(a4, a5, a6, a7);
 }
 
-int FUN_0c0ddd10(int a4, int a5)
+int nl_mesh_set_texture(int a4, int a5)
 {
     register int t0;
     register int t2;
@@ -220,9 +220,9 @@ int FUN_0c0ddd10(int a4, int a5)
 
 int FUN_0c0ddeb0(void)
 {
-    FUN_0c0fc38c(0xC7F87D0, ((((struct o0_short *)0xC155588)->v)), ((((struct o2_short *)0xC155588)->v)), ((((struct o4_int *)0xC155588)->v)));
-    FUN_0c0fc5da(0xC7F87D0, ((((struct o8_int *)0xC155588)->v)), 0x0, 0x0);
-    return FUN_0c0ddd70(0xC7F87D0);
+    kmCreateTextureSurface(0xC7F87D0, ((((struct o0_short *)0xC155588)->v)), ((((struct o2_short *)0xC155588)->v)), ((((struct o4_int *)0xC155588)->v)));
+    kmLoadTexture(0xC7F87D0, ((((struct o8_int *)0xC155588)->v)), 0x0, 0x0);
+    return nl_texture_surface_words(0xC7F87D0);
 }
 
 int FUN_0c0ddee0(int a4)

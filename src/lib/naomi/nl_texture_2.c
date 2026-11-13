@@ -1,10 +1,10 @@
 /* same module (0c0dd600-0c0dd880) */
 
-int FUN_0c0ddd10(int, int);
+int nl_mesh_set_texture(int, int);
 int FUN_0c0ddee0(int);
-int FUN_0c0ddbc0(int);
+int nl_texture_slot_free(int);
 int res_texture_slot_tick_release(int);
-int FUN_0c0fca2e(int);
+int kmFreeTexture(int);
 
 int FUN_0c0dd600(int a4)
 {
@@ -52,7 +52,7 @@ int FUN_0c0dd600(int a4)
             if ((int)t7 >= 0) {
                 t0 = 0xC0DDD10;
                 t1 = t6;
-                t9 = (FUN_0c0ddd10(t1, t7));
+                t9 = (nl_mesh_set_texture(t1, t7));
             } else {
                 t0 = 0xC0DDEE0;
                 t1 = t6;
@@ -134,7 +134,7 @@ int FUN_0c0dd6c0(int a4, int a5, int a6, int a7)
                     t2 = (*(int *)((t4 + 0x28)));
                     if (t2 == 0) {
                         t4 = 0xC0FCA2E;
-                        t2 = (FUN_0c0fca2e(((*(int *)0xC7FC4F0) + t6)));
+                        t2 = (kmFreeTexture(((*(int *)0xC7FC4F0) + t6)));
                         if (t2 != 0) {
                             t4 = 0x1;
                             *(unsigned int *)(((int)stk + 4)) = t4;
@@ -154,7 +154,7 @@ int FUN_0c0dd6c0(int a4, int a5, int a6, int a7)
                     t5 = (t5 + t6);
                     *(unsigned int *)((t5 + 0x38)) = 0xFFFFFFFF;
                     t5 = 0xC0DDBC0;
-                    t2 = (FUN_0c0ddbc0((*(int *)(((int)stk + 0)))));
+                    t2 = (nl_texture_slot_free((*(int *)(((int)stk + 0)))));
                     t4 = (*(int *)0xC7F87C8);
                     t4 = (t4 + t8);
                     *(unsigned int *)((t4 + 0x4)) = 0xFFFFFFFF;

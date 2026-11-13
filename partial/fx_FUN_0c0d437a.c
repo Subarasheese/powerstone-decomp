@@ -2,7 +2,7 @@
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c0d437a.json (synthetic). */
 /* State machine tick on the record at 0xC7F2EE0 (phase byte 7, sub-phase byte 8, timer halfword 20): intro, a timed wait, a three-step sequence, and a fade-out wait. */
 extern void FUN_0c0d5292(void);
-extern void FUN_0c0d4692(void);
+extern void attract_draw_press_start(void);
 extern void FUN_0c031030(void);
 extern void game_frame_update(void);
 extern void bgm_stop_streams(void);
@@ -24,7 +24,7 @@ void attract_ranking_step(void)
         /* fall through */
     case 1:
         if (*(int *)(g + 0x134) & 16)
-            FUN_0c0d4692();
+            attract_draw_press_start();
         FUN_0c031030();
         game_frame_update();
         *tm = *tm - 1;

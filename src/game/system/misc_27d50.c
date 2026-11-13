@@ -2,7 +2,7 @@
 
 typedef struct { int a, b, c; } Vec12;
 typedef struct { int a, b, c, d; } Vec16;
-extern int FUN_0c0e1550(int);
+extern int nlSelectMatrixStack(int);
 extern void nlUnitMatrix(void);
 extern void math_vec3_add(Vec12 *d, Vec12 *a, Vec12 *b);
 extern void math_vec3_mul_xyz(Vec12 *d, float x, float y, float z);
@@ -23,7 +23,7 @@ void stage_draw_lights(void)
 
     if (game[299] != 0 || game[302] != 0 || *(char *)0xC494D20 != 0)
         *pend_count = *(int *)0xC363744;
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     nlUnitMatrix();
     for (i = 0; i < *pend_count; i++) {
         entry = (char *)(0xC363290 + (short)(i * 24));

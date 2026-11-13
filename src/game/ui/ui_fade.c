@@ -20,7 +20,7 @@ extern char g_game_work[];
 
 void ui_fade_init(void)
 {
-    FUN_0c0dd5d0(g_ui_fade_obj, g_ui_fade_obj_data);
+    nl_model_bind_textures(g_ui_fade_obj, g_ui_fade_obj_data);
 }
 
 /* a fade of `duration` frames in `colour` (0x00RRGGBB); mode 0 flat, 1 bands; dir 0 to the colour, 1 from it */
@@ -50,7 +50,7 @@ void ui_fade_draw(void)
     float *col = g_ui_fade_colour;
     float t, y, band;
 
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     nlUnitMatrix();
     if (g_fade_state.counter == 0)
         return;
@@ -87,7 +87,7 @@ void ui_fade_draw(void)
         FADE_OBJ_COLOUR = *(UiWord4 *)col;
         FADE_OBJ_F(20) = 640.0f;
         FADE_OBJ_F(52) = 640.0f;
-        FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+        nlSetLightColor(1.0f, 1.0f, 1.0f);
         nlObjPutTrnsl(g_ui_fade_obj, t);
         break;
     case 1:
@@ -113,7 +113,7 @@ void ui_fade_draw(void)
         FADE_OBJ_COLOUR = *(UiWord4 *)col;
         FADE_OBJ_F(20) = 640.0f;
         FADE_OBJ_F(52) = 640.0f;
-        FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+        nlSetLightColor(1.0f, 1.0f, 1.0f);
         band = t * 3.125f;
         for (y = -37.5f; 37.5f > y; y = y + 3.125f) {
             v[2].y = y;

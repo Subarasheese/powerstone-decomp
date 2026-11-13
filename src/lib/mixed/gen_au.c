@@ -134,7 +134,7 @@ int testmode_input_test_screen(void);
 int testmode_game_data_screen(void);
 int FUN_0c0cf240(int, int, int);
 int cam_force_mode_23(int);
-int FUN_0c0ddd10(int, int);
+int nl_mesh_set_texture(int, int);
 int FUN_0c0ddee0(int);
 int gfx_set_background_color(int, int, int);
 float math_cos_angle16(int);
@@ -149,7 +149,7 @@ int FUN_0c0e24f0(int);
 int _modlu(void);
 int _quick_odd_mvn(int);
 int FUN_0c0f4938(int, int);
-int FUN_0c0f4c2c(int, int, int, int);
+int ADXT_Stop(int, int, int, int);
 int vmsfs_unmount(int);
 int FUN_0c104962(int, int, int);
 int direntry(int, int);
@@ -162,7 +162,7 @@ int buIsFormat(int);
 int memset(int, int, int);
 int thunk_FUN_0c062242(int);
 float stage_type01_start_thrown_item(int a4);
-int FUN_0c0f4b64(int a4, int a5, int a6, int a7);
+int ADXT_StartMemIdx(int a4, int a5, int a6, int a7);
 int fx_spawn_03d0d4(int a4, int a5, int a6, int a7);
 int pl_rouge_special_id5(int a4);
 int ai_reaction_mode1(int a4, int a5);
@@ -192,12 +192,12 @@ int ai_op60(void);
 int pl_garuda_victim_phase9(int a4, int a5, int a6, int a7);
 int FUN_0c0fdaca(int a4, int a5);
 
-int FUN_0c0f4b64(int a4, int a5, int a6, int a7)
+int ADXT_StartMemIdx(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
 
-    FUN_0c0f4c2c(a4, a5, a6, a7);
+    ADXT_Stop(a4, a5, a6, a7);
     t0 = *(int *)((a5 + 0x4));
     if (((int)a6 < (int)((((unsigned char)(signed char)((unsigned int)((unsigned int)t0 >> 16) >> 8) | (((int)t0 >> 8) & 0xFF00)) | ((t0 << 8) & 0xFF0000)) | ((t0 << 16) << 8))) && ((int)a6 >= 0)) {
         ADXCRS_Lock();

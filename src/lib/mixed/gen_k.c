@@ -120,7 +120,7 @@ float math_cos_angle16(int);
 float math_rsqrt_float(float);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 int nlRotateXSC(float, float);
 int nlRotateYSC(float, float);
 int nlRotateAZ(int, float, float);

@@ -142,7 +142,7 @@ int cam_force_mode_23(int);
 float math_signed_sqrt(float);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _divls(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
@@ -517,15 +517,15 @@ int FUN_0c0e6bc4(int a4, int a5, int a6)
     } else {
         t4 = *(short *)(((int)stk + 6));
         t5 = *(short *)(((int)stk + 2));
-        FUN_0c0e5d22((((((t4 << 8) << 2) << 2) | (t5 << 16)) | 0x2A2));
+        snd_send_command((((((t4 << 8) << 2) << 2) | (t5 << 16)) | 0x2A2));
         t7 = *(short *)(((int)stk + 6));
         t8 = *(short *)(((int)stk + 4));
-        FUN_0c0e5d22((((((t7 << 8) << 2) << 2) | (t8 << 16)) | 0x3A2));
+        snd_send_command((((((t7 << 8) << 2) << 2) | (t8 << 16)) | 0x3A2));
         t10 = *(short *)(((int)stk + 6));
         t23 = 0xC7FD118;
         if ((*(int *)(((unsigned char)((((t10 << 1) + t10) << 2) << 1) + 0xC7FD118))) != 0) {
-            FUN_0c0e5d22(((((((t4 << 8) << 2) << 2) | (t5 << 16)) | 0x2A2) + 0x800));
-            t23 = (FUN_0c0e5d22(((((((t7 << 8) << 2) << 2) | (t8 << 16)) | 0x3A2) + 0x800)));
+            snd_send_command(((((((t4 << 8) << 2) << 2) | (t5 << 16)) | 0x2A2) + 0x800));
+            t23 = (snd_send_command(((((((t7 << 8) << 2) << 2) | (t8 << 16)) | 0x3A2) + 0x800)));
         }
     }
     return t23;

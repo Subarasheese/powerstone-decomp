@@ -4,29 +4,29 @@ int FUN_0c0a3988(int a4, int a5, int a6, int a7);
 int FUN_0c0a3824(int a4, int a5, int a6, int a7);
 struct o719E_short { char p[0x719E]; short v; };
 struct o71D4_short { char p[0x71D4]; short v; };
-int FUN_0c0e5d22(int);
-int FUN_0c0e59e8(int, int, int);
-int FUN_0c0f4a06(int, int);
-int FUN_0c0f4db4(int, int);
+int snd_send_command(int);
+int snd_send_port_command(int, int, int);
+int ADXT_StartFname(int, int);
+int ADXT_SetOutVol(int, int);
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 int res_load_file_raw_c(int);
-int FUN_0c0e55e0(int, int);
-int FUN_0c0e5884(int);
-int FUN_0c0f4c2c(int);
-int FUN_0c0f4cc6(int);
+int snd_bank_load(int, int);
+int snd_bank_unload(int);
+int ADXT_Stop(int);
+int ADXT_GetStat(int);
 struct o8_int { char p[0x8]; int v; };
 struct oC_int { char p[0xC]; int v; };
 struct o8_uint { char p[0x8]; unsigned int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
-int FUN_0c0f4dc8(int);
+int ADXT_GetOutVol(int);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
-int FUN_0c0e540c(int, int);
-int FUN_0c0e5d98(int, int, int);
-int FUN_0c0f46d0(int, int, int);
-int FUN_0c0f4f14(int);
-int FUN_0c0f4f1a(int);
+int snd_driver_upload(int, int);
+int snd_stream_setup(int, int, int);
+int ADXT_Create(int, int, int);
+int ADXT_GetErrCode(int);
+int ADXT_ClearErrCode(int);
 
 int snd_play_se(int a4);
 int snd_play_se_raw(int a4);
@@ -42,19 +42,19 @@ int snd_play_se(int a4)
     if (((*(signed char *)0xC7F2F0C) == 0) && (t1 = *(signed char *)0xC7F2F03, t1 != 0)) {
         return 0x23;
     }
-    return FUN_0c0e5d22(a4);
+    return snd_send_command(a4);
 }
 
 int snd_play_se_raw(int a4)
 {
-    return FUN_0c0e5d22(a4);
+    return snd_send_command(a4);
 }
 
 void bgm_start_file(int a4, int a5)
 {
     if ((*(int *)((((a4 << 2) + 0xC494048) + 0x0))) != 0) {
-        FUN_0c0f4a06((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)((a5 << 2) + 0xC180BD0)));
-        FUN_0c0f4db4((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)0xC494058));
+        ADXT_StartFname((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)((a5 << 2) + 0xC180BD0)));
+        ADXT_SetOutVol((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)0xC494058));
     return;
     }
 }
@@ -67,7 +67,7 @@ int bgm_stop_all(void)
 
 int FUN_0c0a2f5c(void)
 {
-    return FUN_0c0e59e8(0x0, 0x300A0, 0x0);
+    return snd_send_port_command(0x0, 0x300A0, 0x0);
 }
 
 int FUN_0c0a2f66(int a4)
@@ -75,7 +75,7 @@ int FUN_0c0a2f66(int a4)
     int stk[1];
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    return FUN_0c0e59e8((*(signed char *)(((int)stk + 0))), 0x1300A0, 0x0);
+    return snd_send_port_command((*(signed char *)(((int)stk + 0))), 0x1300A0, 0x0);
 }
 
 int bgm_stop_streams(void)
@@ -86,18 +86,18 @@ int bgm_stop_streams(void)
 
     t0 = (((struct o0_int *)0xC494048)->v);
     if (t0 != 0) {
-        t1 = FUN_0c0f4cc6(t0);
+        t1 = ADXT_GetStat(t0);
         t0 = t1;
         if (t1 != 0) {
-                        t0 = (FUN_0c0f4c2c(*(int *)0xC494048));
+                        t0 = (ADXT_Stop(*(int *)0xC494048));
         }
         t1 = t0;
     }
     t0 = (((struct o4_int *)0xC494048)->v);
     if (t0 != 0) {
-        t2 = FUN_0c0f4cc6(t0);
+        t2 = ADXT_GetStat(t0);
         if (t2 != 0) {
-                        return FUN_0c0f4c2c(*(int *)0xC49404C);
+                        return ADXT_Stop(*(int *)0xC49404C);
         }
         return t2;
     }
@@ -114,9 +114,9 @@ int bgm_stop_slot(int a4)
     t1 = *(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC494048));
     *(unsigned int *)(((int)stk + 4)) = t1;
     if (t1 != 0) {
-        t2 = FUN_0c0f4cc6(t1);
+        t2 = ADXT_GetStat(t1);
         if (t2 != 0) {
-                        return FUN_0c0f4c2c(*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC494048)));
+                        return ADXT_Stop(*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC494048)));
         }
         return t2;
     }
@@ -129,11 +129,11 @@ int FUN_0c0a3062(int a4)
     register int t1;
 
     if ((unsigned char)a4 == 0) {
-        t0 = FUN_0c0e59e8(0x0, 0x900A0, 0x0);
+        t0 = snd_send_port_command(0x0, 0x900A0, 0x0);
         *(unsigned int *)0xC494058 = 0xFFFFFFC9;
         t1 = t0;
     } else {
-        t0 = FUN_0c0e59e8(0x0, 0x800A0, 0x0);
+        t0 = snd_send_port_command(0x0, 0x800A0, 0x0);
         *(unsigned int *)0xC494058 = 0xFFFFFFF1;
         t1 = t0;
     }
@@ -144,16 +144,16 @@ int bgm_duck(void)
 {
     register int t0;
 
-    t0 = FUN_0c0f4cc6(((((struct o0_int *)0xC494048)->v)));
+    t0 = ADXT_GetStat(((((struct o0_int *)0xC494048)->v)));
     if (t0 != 0) {
-        (((struct o8_uint *)0xC494048)->v) = (FUN_0c0f4dc8(((((struct o0_int *)0xC494048)->v))));
-        FUN_0c0f4db4(((((struct o0_int *)0xC494048)->v)), 0xFFFFFC40);
+        (((struct o8_uint *)0xC494048)->v) = (ADXT_GetOutVol(((((struct o0_int *)0xC494048)->v))));
+        ADXT_SetOutVol(((((struct o0_int *)0xC494048)->v)), 0xFFFFFC40);
         FUN_0c0a2f5c();
     }
-    t0 = FUN_0c0f4cc6(((((struct o4_int *)0xC494048)->v)));
+    t0 = ADXT_GetStat(((((struct o4_int *)0xC494048)->v)));
     if (t0 != 0) {
-        (((struct oC_uint *)0xC494048)->v) = (FUN_0c0f4dc8(((((struct o4_int *)0xC494048)->v))));
-        FUN_0c0f4db4(((((struct o4_int *)0xC494048)->v)), 0xFFFFFC40);
+        (((struct oC_uint *)0xC494048)->v) = (ADXT_GetOutVol(((((struct o4_int *)0xC494048)->v))));
+        ADXT_SetOutVol(((((struct o4_int *)0xC494048)->v)), 0xFFFFFC40);
         return FUN_0c0a2f5c();
     }
     return t0;
@@ -163,13 +163,13 @@ int bgm_unduck(void)
 {
     register int t0;
 
-    t0 = FUN_0c0f4cc6(((((struct o0_int *)0xC494048)->v)));
+    t0 = ADXT_GetStat(((((struct o0_int *)0xC494048)->v)));
     if (t0 != 0) {
-        FUN_0c0f4db4(((((struct o0_int *)0xC494048)->v)), ((((struct o8_int *)0xC494048)->v)));
+        ADXT_SetOutVol(((((struct o0_int *)0xC494048)->v)), ((((struct o8_int *)0xC494048)->v)));
     }
-    t0 = FUN_0c0f4cc6(((((struct o4_int *)0xC494048)->v)));
+    t0 = ADXT_GetStat(((((struct o4_int *)0xC494048)->v)));
     if (t0 != 0) {
-        return FUN_0c0f4db4(((((struct o4_int *)0xC494048)->v)), ((((struct oC_int *)0xC494048)->v)));
+        return ADXT_SetOutVol(((((struct o4_int *)0xC494048)->v)), ((((struct oC_int *)0xC494048)->v)));
     }
     return t0;
 }
@@ -178,16 +178,16 @@ int snd_init_adx(void)
 {
     register int t9;
 
-    FUN_0c0e540c(0xC16C40C, 0x0);
-    FUN_0c0e5884(0x1);
-    FUN_0c0e5884(0x0);
+    snd_driver_upload(0xC16C40C, 0x0);
+    snd_bank_unload(0x1);
+    snd_bank_unload(0x0);
     res_load_file_raw_c(0xC5);
-    FUN_0c0e55e0(0xCC00000, 0x0);
+    snd_bank_load(0xCC00000, 0x0);
     res_load_file_raw_c(0xC7);
-    FUN_0c0e55e0(0xCC00000, 0x1);
-    FUN_0c0e5d98(0x4, 0x2, 0x0);
-    (((struct o0_uint *)0xC494048)->v) = (FUN_0c0f46d0(0x2, 0xC439EC0, 0x2D0C4));
-    t9 = FUN_0c0f46d0(0x2, 0xC466F84, 0x2D0C4);
+    snd_bank_load(0xCC00000, 0x1);
+    snd_stream_setup(0x4, 0x2, 0x0);
+    (((struct o0_uint *)0xC494048)->v) = (ADXT_Create(0x2, 0xC439EC0, 0x2D0C4));
+    t9 = ADXT_Create(0x2, 0xC466F84, 0x2D0C4);
     (((struct o4_uint *)0xC494048)->v) = t9;
     return t9;
 }
@@ -214,13 +214,13 @@ int FUN_0c0a3274(void)
         t20 = t2;
         if ((*(int *)((t4 + 0x0))) != 0) {
             t2 = (*(int *)((t5 + 0x0)));
-            t0 = (FUN_0c0f4f14(t2));
+            t0 = (ADXT_GetErrCode(t2));
             t2 = t0;
             if (t2 != 0) {
                 t2 = (*(int *)((t6 + 0x0)));
-                t0 = (FUN_0c0f4f1a(t2));
+                t0 = (ADXT_ClearErrCode(t2));
                 t2 = (*(int *)((t6 + 0x0)));
-                t0 = (FUN_0c0f4c2c(t2));
+                t0 = (ADXT_Stop(t2));
                 t1 = (*(int *)0xC339C80);
                 t1 = (t1 + 0x1);
                 *(unsigned int *)0xC339C80 = t1;
@@ -244,11 +244,11 @@ int FUN_0c0a3274(void)
 
 int FUN_0c0a32dc(void)
 {
-    FUN_0c0e5884(0x4);
-    FUN_0c0e5884(0x3);
-    FUN_0c0e5884(0x2);
+    snd_bank_unload(0x4);
+    snd_bank_unload(0x3);
+    snd_bank_unload(0x2);
     res_load_file_raw_c(0xC8);
-    return (FUN_0c0e55e0(0xCC00000, 0x2));
+    return (snd_bank_load(0xCC00000, 0x2));
 }
 
 void FUN_0c0a3304(void)
@@ -261,13 +261,13 @@ int FUN_0c0a3308(int a4)
     int stk[1];
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    FUN_0c0e5884(0x4);
-    FUN_0c0e5884(0x3);
-    FUN_0c0e5884(0x2);
+    snd_bank_unload(0x4);
+    snd_bank_unload(0x3);
+    snd_bank_unload(0x2);
     res_load_file_raw_c(0xEA);
-    FUN_0c0e55e0(0xCC00000, 0x2);
+    snd_bank_load(0xCC00000, 0x2);
     res_load_file_raw_c((*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC151B80))));
-    return (FUN_0c0e55e0(0xCC00000, 0x3));
+    return (snd_bank_load(0xCC00000, 0x3));
 }
 
 void res_load_match_sound_banks(int obj, int arg1, int arg2)
@@ -283,25 +283,25 @@ void res_load_match_sound_banks(int obj, int arg1, int arg2)
     *(unsigned char *)(((int)stack_args + 4)) = obj;
     *(unsigned char *)(((int)stack_args + 8)) = arg1;
     *(unsigned char *)(((int)stack_args + 0)) = arg2;
-    FUN_0c0e5884(0x4);
-    FUN_0c0e5884(0x3);
-    FUN_0c0e5884(0x2);
+    snd_bank_unload(0x4);
+    snd_bank_unload(0x3);
+    snd_bank_unload(0x2);
     tmp3 = *(signed char *)(((int)stack_args + 8));
     tmp6 = 0xC151BA8;
     if (((unsigned char)(*(signed char *)0xC7F2F08) == 1) && (tmp5 = *(signed char *)0xC7F2F10, tmp5 == 0)) {
         tmp6 = 0xC151BD4;
     }
     res_load_file_raw_c((*(int *)(((tmp3 << 2) + tmp6))));
-    FUN_0c0e55e0(0xCC00000, 0x2);
+    snd_bank_load(0xCC00000, 0x2);
     tmp11 = *(signed char *)(((int)stack_args + 0));
     tmp14 = 0xC151BA8;
     if (((unsigned char)(*(signed char *)0xC7F2F08) == 1) && (tmp13 = *(signed char *)0xC7F2F10, tmp13 == 0)) {
         tmp14 = 0xC151BD4;
     }
     res_load_file_raw_c((*(int *)(((tmp11 << 2) + tmp14))));
-    FUN_0c0e55e0(0xCC00000, 0x3);
+    snd_bank_load(0xCC00000, 0x3);
     res_load_file_raw_c((*(int *)((((*(signed char *)(((int)stack_args + 4))) << 2) + 0xC151C00))));
-    FUN_0c0e55e0(0xCC00000, 0x4);
+    snd_bank_load(0xCC00000, 0x4);
 }
 
 int FUN_0c0a3426(int a4)
@@ -309,11 +309,11 @@ int FUN_0c0a3426(int a4)
     int stk[1];
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    FUN_0c0e5884(0x4);
-    FUN_0c0e5884(0x3);
-    FUN_0c0e5884(0x2);
+    snd_bank_unload(0x4);
+    snd_bank_unload(0x3);
+    snd_bank_unload(0x2);
     res_load_file_raw_c((*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC151BA8))));
-    return (FUN_0c0e55e0(0xCC00000, 0x2));
+    return (snd_bank_load(0xCC00000, 0x2));
 }
 
 int FUN_0c0a375c(void)

@@ -109,11 +109,11 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int nlCalcPoint(int, int);
 extern int FUN_0c0e09f0();
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
 int nlMultiMatrixRevOrder8(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int FUN_0c0e21b0(int, int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e2260(int, int, int);
@@ -257,8 +257,8 @@ int nlGetNormalCalcMatrix(int a4, int a5, int a6, int a7, float f4, float f5, fl
 
     *(unsigned int *)(((int)stk + 4)) = a4;
     if (a4 == 0) {
-        t4 = FUN_0c0e0ae0(0x0);
-        FUN_0c0e0ae0((((int)stk + 0) + 0x8));
+        t4 = nlStoreMatrix(0x0);
+        nlStoreMatrix((((int)stk + 0) + 0x8));
     } else {
         t2 = ((int (*)(int, int, int, int, float, float, float, float))(FUN_0c0e09f0))((((int)stk + 0) + 0x8), a4, a6, a7, f4, f5, f6, f7);
         t4 = a4;
@@ -270,7 +270,7 @@ int nlGetNormalCalcMatrix(int a4, int a5, int a6, int a7, float f4, float f5, fl
     *(unsigned int *)(((int)stk + 0)) = t4;
     FUN_0c0e2260((*(int *)(((int)stk + 0))), (t4 + 0x10), (((int)stk + 0) + 0x28));
     if ((*(int *)(((int)stk + 4))) == 0) {
-        t14 = (FUN_0c0e1240((((int)stk + 0) + 0x8)));
+        t14 = (nlLoadMatrix((((int)stk + 0) + 0x8)));
     } else {
         t14 = (((int (*)(int, int, int, int, int))(FUN_0c0e09f0))(t4, (((int)stk + 0) + 0x8), 0x0, 0x0, *(int *)((int)stk + 0)));
     }

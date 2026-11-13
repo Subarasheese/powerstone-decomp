@@ -13,7 +13,7 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int dbg_print_at(int, float, float);
-int FUN_0c0e3c54(int);
+int nl_sprite_draw(int);
 int sprintf(int, int, int, int, int);
 struct o0_short { short v; };
 struct o0_uchar { unsigned char v; };
@@ -61,7 +61,7 @@ int FUN_0c0cdac0(void)
     *(float *)(((int)stk + 32)) = 1.0f;
     *(float *)(((int)stk + 36)) = 1.0f;
     *(unsigned int *)(((int)stk + 48)) = 0x2;
-    return (FUN_0c0e3c54(((int)stk + 0)));
+    return (nl_sprite_draw(((int)stk + 0)));
 }
 
 int testmode_color_test_screen(void)
