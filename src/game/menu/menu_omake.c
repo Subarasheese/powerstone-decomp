@@ -848,7 +848,7 @@ int FUN_0c01c75e(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -872,7 +872,7 @@ int FUN_0c01c7c4(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -896,7 +896,7 @@ int FUN_0c01c80a(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -925,7 +925,7 @@ int FUN_0c01c850(int index, int variant)
     register int name_a;
 
     *(unsigned char *)(((int)frame_buf + 0)) = index;
-    task = obj_create(0x5, 0x1, 0x6);
+    task = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x6, 0x0);
     result = task;
     if (task != 0) {
         *(unsigned char *)((task + 0x0)) = 0x1;
@@ -985,7 +985,7 @@ int FUN_0c01cab6(int a4)
     register int t8;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t8 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1012,7 +1012,7 @@ int FUN_0c01cb1e(int a4)
     register int t8;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t8 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1040,7 +1040,7 @@ int FUN_0c01cb86(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

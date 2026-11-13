@@ -3,7 +3,7 @@
 /* named globals (symbols.txt) */
 extern char g_res_kyoutsuu[];
 typedef struct { int a, b, c; } vec12;
-extern int sprintf(char *, int, int, int, const char *, int);
+extern int sprintf(char *, const char *, ...);
 extern void FUN_0c06233a(int a, int b, int c);
 extern void dbg_print_at(char *s, int n, float x, float y, float sx, float sy);
 
@@ -32,8 +32,8 @@ void dbgedit_select_object(char *obj)
         FUN_0c06233a(*(int *)(owner + 736), ((int)g_res_kyoutsuu), *(short *)(obj + 156));
     }
     buf = (char *)0xC7F36B8;
-    sprintf(buf, 0, 0, 0, (const char *)0xC1544D0, 0);
+    sprintf(buf, (const char *)0xC1544D0);
     dbg_print_at(buf, 7, 40.0f, 136.0f, eight, eight);
-    sprintf(buf, 0, 0, 0, (const char *)0xC1544C8, (unsigned short)*(short *)(obj + 156));
+    sprintf(buf, (const char *)0xC1544C8, (unsigned short)*(short *)(obj + 156));
     dbg_print_at(buf, 7, 160.0f, 136.0f, eight, eight);
 }

@@ -144,7 +144,7 @@ int cam_step_keyframe_script(int, int);
 int nlInvLightVector(void);
 int nlInvLightVectorUseViewMatrix(void);
 int nlobjput_sub(int);
-int nlobjput_sub_trnsl(int);
+int nlobjput_sub_trnsl(int, float);
 int nlMakeModelViewProjectMatrix_objput(void);
 int nl_model_bind_step(int, int, int, int);
 int FUN_0c0dd9e0(int);
@@ -1096,33 +1096,18 @@ int kmiBGPlaneSetPCW(int a4, int a5, int a6)
     return t1;
 }
 
+/* nlStoreMatrix8(m): XMTRX to the 16 floats at m (8-aligned: moved in pairs, in order); 0: the stack's top. Returns m */
 int nlStoreMatrix8(int a4)
 {
-    register int t1;
-    float u3[16];
+    float *m = (float *)(a4 == 0 ? *(int *)0xC7FCCBC : a4);
+    float x[16];
+    int i;
 
-    t1 = a4;
-    if (a4 == 0) {
-        t1 = (*(int *)0xC7FCCBC);
+    _builtin_st_ext((float (*)[4])x);
+    for (i = 0; i < 16; i++) {
+        m[i] = x[i];
     }
-    _builtin_st_ext((float (*)[4])u3);
-    *(float *)((((t1 + 0x40) - 0x8) + 0x0)) = u3[15];
-    *(float *)(((((t1 + 0x40) - 0x8) + 0x0) + 4)) = u3[14];
-    *(float *)(((((t1 + 0x40) - 0x8) - 0x8) + 0x0)) = u3[13];
-    *(float *)((((((t1 + 0x40) - 0x8) - 0x8) + 0x0) + 4)) = u3[12];
-    *(float *)((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[11];
-    *(float *)(((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[10];
-    *(float *)(((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[9];
-    *(float *)((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[8];
-    *(float *)((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[7];
-    *(float *)(((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[6];
-    *(float *)(((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[5];
-    *(float *)((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[4];
-    *(float *)((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[3];
-    *(float *)(((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[2];
-    *(float *)(((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[1];
-    *(float *)((((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[0];
-    return (((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8);
+    return (int)m;
 }
 
 float nlRotateXSC(float f4, float f5)
@@ -1389,7 +1374,7 @@ int pdVibMxStart(int a4, int a5)
     if (t0 == 0) {
         return 0xFFFFFFFE;
     }
-    return FUN_0c0f4202(a4, a5);
+    return ((int (*)(int, int, int))FUN_0c0f4202)(a4, a5, 0x1);
 }
 
 int FUN_0c0f271a(void)

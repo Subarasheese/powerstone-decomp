@@ -30,7 +30,7 @@ int stage_gimmick_33_spawn(int a4)
     register int t3;
     register int t5;
 
-    t0 = obj_create(0x5, 0x1, 0x3);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x3, 0x0);
     t7 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

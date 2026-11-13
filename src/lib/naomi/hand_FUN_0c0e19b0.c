@@ -14,9 +14,8 @@ int nlPushMatrix(float *src_matrix)
 
     _builtin_st_ext((float (*)[4])tmp);
     stack_ptr = *(float **)(0xC7FCCB4 + 8);
-    for (idx = 0; idx < 16; idx += 2) {
-        stack_ptr[idx] = tmp[idx + 1];
-        stack_ptr[idx + 1] = tmp[idx];
+    for (idx = 0; idx < 16; idx++) {
+        stack_ptr[idx] = tmp[idx];
     }
     counts = *(int *)0xC7FCCB4;
     count = (short)counts;
@@ -27,15 +26,9 @@ int nlPushMatrix(float *src_matrix)
     if (src_matrix == 0) {
         return room;
     }
-    if (((int)src_matrix & 4) != 0) {
-        for (idx = 0; idx < 16; idx++) {
-            tmp[idx] = src_matrix[idx];
-        }
-    } else {
-        for (idx = 0; idx < 16; idx += 2) {
-            tmp[idx] = src_matrix[idx + 1];
-            tmp[idx + 1] = src_matrix[idx];
-        }
+    /* single moves for a matrix at an odd word, pair moves otherwise: the same 16 floats in order either way */
+    for (idx = 0; idx < 16; idx++) {
+        tmp[idx] = src_matrix[idx];
     }
     _builtin_ld_ext((float (*)[4])tmp);
     return room;

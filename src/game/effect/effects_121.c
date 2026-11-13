@@ -30,7 +30,7 @@ int fx_spawn_0498c4(int a4)
     register int t2;
     register int t5;
 
-    t0 = obj_create(0x6, 0x1, 0x8);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x6, 0x1, 0x8, 0x0);
     t6 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

@@ -37,7 +37,7 @@ int fx_spawn_jack_projectile_alt(int owner, int variant)
     register int idx_off;
 
     *(unsigned char *)(((int)frame_buf + 8)) = variant;
-    effect = obj_create(0x1, 0x1, 0x3);
+    effect = ((int (*)(int, int, int, int))obj_create)(0x1, 0x1, 0x3, 0x0);
     result = effect;
     if (effect != 0) {
         *(unsigned char *)((effect + 0x0)) = 0x1;

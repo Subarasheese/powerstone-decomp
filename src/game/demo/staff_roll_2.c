@@ -86,7 +86,7 @@ int staffroll_spawn_line(int a4, int a5)
                         *(unsigned int *)(((int)stk + 20)) = t7;
                         t11 = 0x0;
                     }
-                    t14 = obj_create(0x5, 0x1, (*(int *)(((int)stk + 20))));
+                    t14 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, (*(int *)(((int)stk + 20))), 0x0);
                     t86 = t14;
                     u93 = 0.0f;
                     if (t14 != 0) {
@@ -160,7 +160,7 @@ int staffroll_spawn_line(int a4, int a5)
                     t160 = t86;
                     if (t11 == 0) {
                     } else {
-                        t95 = obj_create(0x5, 0x1, t11);
+                        t95 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, t11, 0x0);
                         t160 = t95;
                         if (t95 == 0) {
                         } else {
@@ -213,7 +213,7 @@ int staffroll_spawn_line(int a4, int a5)
                 }
                 t247 = t160;
             } else {
-                t177 = obj_create(0x5, 0x1, 0x1);
+                t177 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
                 t247 = t177;
                 if (t177 == 0) {
                 } else {
@@ -239,7 +239,7 @@ int staffroll_spawn_line(int a4, int a5)
                 }
             }
         } else {
-            t206 = obj_create(0x5, 0x1, 0x1);
+            t206 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
             t247 = t206;
             if (t206 == 0) {
             } else {
@@ -265,7 +265,7 @@ int staffroll_spawn_line(int a4, int a5)
             }
         }
     } else {
-        t235 = obj_create(0x5, 0x1, 0x1);
+        t235 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
         t247 = t235;
         if (t235 == 0) {
         } else {
@@ -357,7 +357,7 @@ int staffroll_create(void)
 {
     register int t0;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned int *)((t0 + 0x10)) = 0xC017940;

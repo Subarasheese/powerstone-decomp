@@ -38,7 +38,7 @@ struct o2_uchar { char p[0x2]; unsigned char v; };
 struct oA_uchar { char p[0xA]; unsigned char v; };
 struct oB_uchar { char p[0xB]; unsigned char v; };
 struct oC_uchar { char p[0xC]; unsigned char v; };
-int ui_draw_text_stub(void);
+void ui_draw_text_stub(char *str, int mode, float x, float y, float scale_x, float scale_y);
 int ui_fade_start(int, int, int, int);
 struct o2E8_int { char p[0x2E8]; int v; };
 struct o2EC_int { char p[0x2EC]; int v; };
@@ -59,7 +59,7 @@ struct o8_uint { char p[0x8]; unsigned int v; };
 int FUN_0c02b884(int a4);
 int logo_spawn_overlay(float f4);
 int FUN_0c02bc0e(int a4, int a5, int a6, int a7);
-int FUN_0c02bcba(void);
+void FUN_0c02bcba(void);
 int FUN_0c02c2d0(int a4);
 int FUN_0c02c38a(int a4);
 int FUN_0c02c830(int a4);
@@ -198,21 +198,20 @@ int logo_spawn_overlay(float f4)
 }
 
 
-int FUN_0c02bcba(void)
+/* The title's copyright line under the logo, in the language's strings (the table at 0x0C321180): one line for
+   languages 0-3, two for the others; "\\" (0x0C149158) is the font's copyright sign before each line. */
+void FUN_0c02bcba(void)
 {
-    register int t0;
+    unsigned char lang = *(unsigned char *)0xC7F2F08;
 
-    t0 = *(signed char *)0xC7F2F08;
-    if (((unsigned char)t0 != 0) && (((unsigned char)t0 != 1) && (((unsigned char)t0 != 2) && ((unsigned char)t0 != 3)))) {
-        *(volatile int *)0xC321184;
-        ui_draw_text_stub();
-        ui_draw_text_stub();
-        *(volatile int *)0xC321188;
+    if (lang == 0 || lang == 1 || lang == 2 || lang == 3) {
+        ui_draw_text_stub(*(char **)0xC321180, 0, 86.0f, 432.0f, 0.75f, 1.0f);
     } else {
-        *(volatile int *)0xC321180;
+        ui_draw_text_stub(*(char **)0xC321184, 0, 86.0f, 416.0f, 0.679999948f, 1.0f);
+        ui_draw_text_stub((char *)0xC149158, 0, 70.0f, 416.0f, 1.0f, 1.0f);
+        ui_draw_text_stub(*(char **)0xC321188, 0, 86.0f, 432.0f, 0.679999948f, 1.0f);
     }
-    ui_draw_text_stub();
-    return (ui_draw_text_stub());
+    ui_draw_text_stub((char *)0xC149158, 0, 70.0f, 432.0f, 1.0f, 1.0f);
 }
 
 int FUN_0c02bd8c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8)

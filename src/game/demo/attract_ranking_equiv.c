@@ -48,7 +48,7 @@ struct o54_float { char p[0x54]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int ui_draw_sprite_string(int, int, float, float, float, float, float);
 int obj_destroy(int, int, int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 struct o10_float { char p[0x10]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2C_float { char p[0x2C]; float v; };
@@ -360,13 +360,13 @@ int rank_draw_time_rows(int a4, int a5, int a6, int a7, float f4, float f5, floa
     *(int *)((int)stk + 8) = ((*(short *)((((signed char)((v0_4 << 1) + (v0_4 << 2)) + (0x8A + v0_2)) + 0x0))));
     *(int *)((int)stk + 4) = ((*(int *)((((*(signed char *)(((int)stk + 20))) << 2) + 0xC33F6A0))));
     *(int *)((int)stk + 0) = 0xC154674;
-    sprintf(v0_3, v0_0, a6, a7, 0xC154674);
+    sprintf(v0_3, 0xC154674, *(int *)((int)stk + 4), *(int *)((int)stk + 8), *(int *)((int)stk + 12), *(int *)((int)stk + 16));
     v0_3 = ((ui_draw_sprite_string(v0_3, 0x2, (((((struct o20_float *)(v0_1))->v)) + ((((struct oC_float *)0xC0D3650)->v))), ((((struct o24_float *)(v0_1))->v)), ((((struct o50_float *)(v0_1))->v)), ((((struct o54_float *)(v0_1))->v)), w0_0)));
     return v0_3;
     L_C0D353C:;
     *(int *)((int)stk + 16) = ((*(signed char *)((v0_4 + (((*(signed char *)((v0_1 + 0x4))) << 2) + (v0_2 + 0x61))))));
     *(int *)((int)stk + 12) = 0xC154670;
-    sprintf(v0_3, v0_0, 0x0, 0x0, 0xC154670);
+    sprintf(v0_3, 0xC154670, *(int *)((int)stk + 16));
     ui_draw_sprite_string(v0_3, 0x2, (((((struct o20_float *)(v0_1))->v)) + (float)((((v0_4 + 0xF) << 2) << 2) << 1)), ((((struct o24_float *)(v0_1))->v)), ((((struct o50_float *)(v0_1))->v)), ((((struct o54_float *)(v0_1))->v)), w0_0);
     v0_4 = ((v0_4 + 0x1));
     goto L_C0D357E;
@@ -441,7 +441,7 @@ int rank_start_time_rows(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x6, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x6, 0x1, 0x1, 0x0);
     t2 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -467,22 +467,20 @@ int rank_screen_1p_points(void)
     u4 = (((struct o10_float *)0xC0D387C)->v);
     t5 = 0x0;
     for (;;) {
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1546AC);
+        sprintf(0xC7F36B8, 0xC1546AC, t5 + 1);      /* the rank, from 1 */
         u7 = (((struct o24_float *)0xC0D387C)->v);
         u8 = (((struct o28_float *)0xC0D387C)->v);
         ui_draw_text_stub(0xC7F36B8, 0x1, ((((struct o2C_float *)0xC0D387C)->v)), (((float)t5 + u7) * u8), 1.0f, 1.0f);
         t11 = 0x0;
         for (;;) {
-            *(volatile signed char *)((t11 + (0xC7F30FC + (t5 << 2))));
-            sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154670);
+            sprintf(0xC7F36B8, 0xC154670, (int)*(signed char *)((t11 + (0xC7F30FC + (t5 << 2)))));
             ui_draw_text_stub(0xC7F36B8, 0x1, (((float)t11 + u4) * u3), (((float)t5 + u7) * u8), 1.0f, 1.0f);
             t11 = (t11 + 0x1);
             if ((int)t11 >= (int)0x3) {
                 break;
             }
         }
-        *(volatile int *)(((0xC7F3124 + (t5 << 2)) + 0x0));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1546B0);
+        sprintf(0xC7F36B8, 0xC1546B0, (int)*(int *)(((0xC7F3124 + (t5 << 2)) + 0x0)));
         t20 = ui_draw_text_stub(0xC7F36B8, 0x1, ((((struct o38_float *)0xC0D387C)->v)), (((float)t5 + u7) * u8), 1.0f, 1.0f);
         t5 = (t5 + 0x1);
         if ((int)t5 >= (int)0xA) {
@@ -556,13 +554,13 @@ int rank_draw_vs_rows(int a4, int a5, int a6, int a7, float f4, float f5, float 
     *(int *)((int)stk + 8) = ((*(short *)((((v0_4 << 1) + (0x152 + v0_5)) + 0x0))));
     *(int *)((int)stk + 4) = ((*(int *)((((*(int *)(((int)stk + 12))) << 2) + 0xC33F6A0))));
     *(int *)((int)stk + 0) = 0xC1546B8;
-    sprintf(v0_6, v0_0, v0_1, v0_2, 0xC1546B8);
+    sprintf(v0_6, 0xC1546B8, *(int *)((int)stk + 4), *(int *)((int)stk + 8));
     v0_5 = ((ui_draw_sprite_string(v0_6, 0x2, (((((struct o20_float *)(v0_3))->v)) + (*(float *)0xC0D3B28)), ((((struct o24_float *)(v0_3))->v)), ((((struct o50_float *)(v0_3))->v)), ((((struct o54_float *)(v0_3))->v)), w0_0)));
     return v0_5;
     L_C0D39F0:;
     *(int *)((int)stk + 8) = ((*(signed char *)((v0_4 + (((*(signed char *)((v0_3 + 0x4))) << 2) + (0x12A + v0_5))))));
     *(int *)((int)stk + 4) = 0xC154670;
-    sprintf(v0_6, v0_0, v0_1, v0_2, 0xC154670);
+    sprintf(v0_6, 0xC154670, *(int *)((int)stk + 8));
     ui_draw_sprite_string(v0_6, 0x2, (((((struct o20_float *)(v0_3))->v)) + (float)((((v0_4 + 0xF) << 2) << 2) << 1)), ((((struct o24_float *)(v0_3))->v)), ((((struct o50_float *)(v0_3))->v)), ((((struct o54_float *)(v0_3))->v)), w0_0);
     v0_4 = ((v0_4 + 0x1));
     goto L_C0D3A32;
@@ -637,7 +635,7 @@ int rank_start_vs_rows(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x6, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x6, 0x1, 0x1, 0x0);
     t2 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

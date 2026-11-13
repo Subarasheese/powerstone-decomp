@@ -85,7 +85,7 @@ int FUN_0c02a5e4(void)
     register int t1;
     register int t3;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t5 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC02A4E0;
@@ -136,7 +136,7 @@ int FUN_0c02a6c4(void)
     register int t1;
     register int t3;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t5 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC02A6AC;

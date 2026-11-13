@@ -84,7 +84,7 @@ int attract_ranking_step(int obj, int arg1, int arg2, float f4)
         (((struct fld2_uchar *)0xC7F2EE6)->value) = 0x0;
         bgm_stop_streams();
         bgm_play_rank();
-        return cam_reset_shake(0x0, 0x0, 0x63);
+        return ((int (*)(int, int, int, int))cam_reset_shake)(0x0, 0x0, 0x63, 0x0);
     }
     return (short)(tmp0 - 1);
 }

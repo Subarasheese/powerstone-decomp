@@ -31,7 +31,7 @@ int fx_spawn_garuda_fan_shot(int owner, int variant)
     register int variant_val;
 
     *(unsigned char *)(((int)frame + 4)) = variant;
-    new_obj = obj_create(0x1, 0x1, 0x2);
+    new_obj = ((int (*)(int, int, int, int))obj_create)(0x1, 0x1, 0x2, 0x0);
     result = new_obj;
     if (new_obj == 0) {
     } else {

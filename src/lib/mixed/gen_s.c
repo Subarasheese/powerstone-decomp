@@ -147,7 +147,7 @@ int pl_end_action_reset(int a4);
 int ADXF_ReadNw(int a4, int a5, int a6, int a7);
 int set_vmstime(int a4, int a5);
 int FUN_0c107a36(int a4);
-int FUN_0c02649a(int a4, int a5);
+float FUN_0c02649a(int a4, int a5);
 int check_cache(int a4);
 int FUN_0c01ff6c(int a4);
 int FUN_0c0229d8(int a4, int a5, int a6, int a7);

@@ -409,7 +409,7 @@ int FUN_0c029abc(int a4, int a5)
     }
     t7 = 0x3;
     for (;;) {
-        t10 = obj_create(0x5, 0x1, 0xA);
+        t10 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0xA, 0x0);
         t18 = t10;
         if (t10 != 0) {
             *(unsigned int *)((t10 + 0x10)) = 0xC029660;

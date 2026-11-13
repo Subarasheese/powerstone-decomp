@@ -106,7 +106,7 @@ int res_load_pl_models(int);
 int sys_load_file(int, int);
 int FUN_0c0612f4(int, int, int);
 int math_vec3_sub(int, int, int);
-int math_vec3_length(int);
+float math_vec3_length(int);
 int math_mat_transform_point(int, int);
 int res_load_pl_motion_data(int, int);
 int FUN_0c062cf4(int, int);
@@ -249,7 +249,7 @@ void FUN_0c0a3e64(int a4, int a5);
 int FUN_0c0b5420(int a4);
 int stage_obj_on_break(int a4);
 int FUN_0c0d609e(int a4, int a5);
-int math_sin_float(float f4);
+float math_sin_float(float f4);
 int FUN_0c0e6758(int a4, int a5);
 int FUN_0c0e64c4(int a4);
 int FUN_0c0efe10(int a4);
@@ -797,48 +797,28 @@ int FUN_0c0ffdba(void)
     return t12;
 }
 
+/* nlPopMatrix(n): drops n matrices (at least 1) from the active stack and loads XMTRX from the new top; returns
+   whether the stack held n */
 int nlPopMatrix(int a4)
 {
-    register int t0;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t6;
-    float u10[16];
+    int n = a4 <= 0 ? 1 : a4;
+    int count = *(short *)0xC7FCCB4;
+    int limit = *(short *)0xC7FCCB6;
+    int top = count < n ? 0 : count - n;
+    int base = *(int *)0xC7FCCB8;
+    float *m = (float *)(base + ((unsigned int)(top << 8) >> 2));
+    float x[16];
+    int i;
 
-    t0 = a4;
-    if ((int)a4 <= 0) {
-        t0 = 0x1;
+    *(unsigned short *)0xC7FCCB4 = top;
+    if (top < limit) {
+        *(int *)0xC7FCCBC = (int)m;
     }
-    t2 = (((struct o0_short *)0xC7FCCB4)->v);
-    t3 = (((struct o2_short *)0xC7FCCB4)->v);
-    t4 = (t2 - t0);
-    if ((int)t2 < (int)t0) {
-        t4 = 0x0;
+    for (i = 0; i < 16; i++) {
+        x[i] = m[i];
     }
-    t6 = (((struct o4_int *)0xC7FCCB4)->v);
-    (((struct o0_ushort *)0xC7FCCB4)->v) = t4;
-    if ((int)t4 < (int)t3) {
-        (((struct o8_uint *)0xC7FCCB4)->v) = (t6 + ((unsigned int)(t4 << 8) >> 2));
-    }
-    u10[0] = (*(float *)((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x0) + 4)));
-    u10[1] = (*(float *)(((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x0)));
-    u10[2] = (*(float *)(((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x0) + 4)));
-    u10[3] = ((((struct o8_float *)((t6 + ((unsigned int)(t4 << 8) >> 2))))->v));
-    u10[4] = (*(float *)((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[5] = ((((struct o8_float *)(((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8)))->v));
-    u10[6] = (*(float *)(((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[7] = ((((struct o8_float *)((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8)))->v));
-    u10[8] = (*(float *)((((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[9] = ((((struct o8_float *)(((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8)))->v));
-    u10[10] = (*(float *)(((((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[11] = ((((struct o8_float *)((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    u10[12] = (*(float *)((((((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[13] = ((((struct o8_float *)(((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    u10[14] = (*(float *)(((((((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u10[15] = ((((struct o8_float *)((((((((t6 + ((unsigned int)(t4 << 8) >> 2)) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    _builtin_ld_ext((float (*)[4])u10);
-    return ((((int)t2 >= (int)t0)) ? 1 : 0);
+    _builtin_ld_ext((float (*)[4])x);
+    return count >= n ? 1 : 0;
 }
 
 int FUN_0c0e6478(int a4)

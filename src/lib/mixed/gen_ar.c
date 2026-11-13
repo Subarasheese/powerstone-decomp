@@ -440,32 +440,17 @@ int syCfgGetIDAddress(int a4, int a5, int a6);
 int FUN_0c0fb3fe(int a4);
 int FUN_0c0fdea0(int a4);
 
+/* nlLoadMatrix8(m): XMTRX from the 16 floats at m (8-aligned: moved in pairs, in order); 0: the stack's top */
 void nlLoadMatrix8(int a4)
 {
-    register int t1;
-    float u5[16];
+    float *m = (float *)(a4 == 0 ? *(int *)0xC7FCCBC : a4);
+    float x[16];
+    int i;
 
-    t1 = a4;
-    if (a4 == 0) {
-        t1 = (*(int *)0xC7FCCBC);
+    for (i = 0; i < 16; i++) {
+        x[i] = m[i];
     }
-    u5[0] = (*(float *)(((t1 + 0x0) + 4)));
-    u5[1] = (*(float *)((t1 + 0x0)));
-    u5[2] = (*(float *)((((t1 + 0x8) + 0x0) + 4)));
-    u5[3] = ((((struct o8_float *)(t1))->v));
-    u5[4] = (*(float *)(((((t1 + 0x8) + 0x8) + 0x0) + 4)));
-    u5[5] = ((((struct o8_float *)((t1 + 0x8)))->v));
-    u5[6] = (*(float *)((((((t1 + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u5[7] = ((((struct o8_float *)(((t1 + 0x8) + 0x8)))->v));
-    u5[8] = (*(float *)(((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u5[9] = ((((struct o8_float *)((((t1 + 0x8) + 0x8) + 0x8)))->v));
-    u5[10] = (*(float *)((((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u5[11] = ((((struct o8_float *)(((((t1 + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    u5[12] = (*(float *)(((((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u5[13] = ((((struct o8_float *)((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    u5[14] = (*(float *)((((((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
-    u5[15] = ((((struct o8_float *)(((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
-    _builtin_ld_ext((float (*)[4])u5);
+    _builtin_ld_ext((float (*)[4])x);
 }
 
 int FUN_0c0ee6f0(int a4, int a5)
@@ -689,7 +674,7 @@ int pdVibMxStop(int a4)
     if (t0 == 0) {
         return 0xFFFFFFFE;
     }
-    return FUN_0c0f4202(a4, 0xC15A7D0);
+    return ((int (*)(int, int, int))FUN_0c0f4202)(a4, 0xC15A7D0, 0x1);
 }
 
 int FUN_0c0fb0da(int a4, int a5)

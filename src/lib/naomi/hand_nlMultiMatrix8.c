@@ -8,11 +8,8 @@ void nlMultiMatrix8(float *a4)
     float v[16];
     int i;
 
-    for (i = 0; i < 16; i += 4) {
-        v[i] = a4[i + 1];
-        v[i + 1] = a4[i];
-        v[i + 2] = a4[i + 3];
-        v[i + 3] = a4[i + 2];
+    for (i = 0; i < 16; i++) {
+        v[i] = a4[i];
     }
     _builtin_ftrv(&v[0], &v[0]);
     _builtin_ftrv(&v[4], &v[4]);

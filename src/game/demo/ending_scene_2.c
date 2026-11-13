@@ -152,7 +152,7 @@ int ending_spawn_sprite_pair(void)
     register int t3;
     register int t2;
 
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x2, 0x0);
     t8 = t0;
     if (t0 != 0) {
         ending_obj_init_basic(t0);
@@ -262,7 +262,7 @@ int ending_spawn_uv_scroll(void)
     register int t3;
     register int t2;
 
-    t0 = obj_create(0x5, 0x1, 0x3);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x3, 0x0);
     t8 = t0;
     if (t0 != 0) {
         ending_obj_init_basic(t0);
@@ -468,7 +468,7 @@ int FUN_0c016d08(void)
     register int t5;
     register float u6;
 
-    t0 = obj_create(0x5, 0x1, 0x9);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x9, 0x0);
     t12 = t0;
     if (t0 != 0) {
         ending_obj_init_basic(t0);
@@ -535,7 +535,7 @@ int FUN_0c016e02(void)
     register int t6;
     register int t2;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t6 = t0;
     if (t0 != 0) {
         ending_obj_init_basic(t0);

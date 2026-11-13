@@ -32,7 +32,7 @@ int fx_spawn_03d254(int a4, int a5)
     register int t10;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x2, 0x0);
     t12 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

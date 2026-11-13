@@ -26,7 +26,7 @@ void fx_spawn_17(char *parent, signed char kind)
     float speed;
     short life;
 
-    fx = obj_create(1, 1, 1);
+    fx = ((char *(*)(int, int, int, int))obj_create)(1, 1, 1, 0x0);
     if (fx == 0) {
         return;
     }

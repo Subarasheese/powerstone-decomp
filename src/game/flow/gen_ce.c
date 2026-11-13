@@ -145,7 +145,7 @@ int pl_timer_disable(int);
 int pl_try_dual_button_action(int, int, int);
 int pl_turn_to_opponent(int, int);
 int snd_play_char_voice(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int thunk_FUN_0c062242(int);
 int ui_disable_hud(void);
 int ui_draw_text_stub(int, int, float, float, float, float);
@@ -1433,7 +1433,7 @@ int FUN_0c0d5cee(int a4, int a5, int a6, int a7)
                 }
                 t1 = t0;
             }
-            sprintf(0xC7F36B8, 0xC7F302C, a6, a7, t1);
+            sprintf(0xC7F36B8, t1, (int)*(short *)(a4 + 0x44));      /* "%1d WIN(S)" */
             u0 = FUN_0c0d5bc0();
             u1 = (float)(((short)(*(signed char *)((a4 + 0x9))) * (short)0x13) + 0x1);
             return ui_draw_text_stub(0xC7F36B8, 0x0, (u1 * 16.0f), (u0 + 16.0f), 1.0f, 1.0f);
@@ -1444,19 +1444,25 @@ int FUN_0c0d5cee(int a4, int a5, int a6, int a7)
     if (((unsigned char)(*(signed char *)0xC7F3071) - 1) != t0) {
         return t0;
     }
-    *(volatile short *)((((a4 + 0x12) + 0x6) + 0x4));
-    *(volatile short *)(((a4 + 0x12) + 0x0));
-    *(volatile short *)(((a4 + 0x12) + 0x4));
-    *(volatile short *)((((a4 + 0x12) + 0x6) + 0x2));
-    *(volatile short *)(((a4 + 0x12) + 0x2));
-    *(volatile short *)((((a4 + 0x12) + 0x6) + 0x0));
-    
-    if ((*(signed char *)((a4 + 0x9))) == 0) {
-        t0 = 0xC154FB4;
-    } else {
-        t0 = 0xC154FC8;
+    {
+        /* the run's time: two laps (minutes, seconds, frames at +0x12 and +0x18) added, carried at 60, the frames
+           shown as hundredths: "TIME %2d'%02d`%02d" */
+        short *lap = (short *)(a4 + 0x12);
+        short min = lap[0] + lap[3];
+        short sec = lap[1] + lap[4];
+        short fr = lap[2] + lap[5];
+
+        if (fr >= 60) {
+            sec++;
+            fr -= 60;
+        }
+        if (sec >= 60) {
+            min++;
+            sec -= 60;
+        }
+        sprintf(0xC7F36B8, *(signed char *)(a4 + 0x9) == 0 ? 0xC154FB4 : 0xC154FC8, (int)min, (int)sec,
+                (int)((float)fr * 1.66666591f));
     }
-    sprintf(0xC7F36B8, (a4 + 0x12), (a4 + 0x12), a7, t0);
     u0 = FUN_0c0d5bc0();
     u1 = (float)(((short)(*(signed char *)((a4 + 0x9))) * (short)0x13) + 0x1);
     return ui_draw_text_stub(0xC7F36B8, 0x0, (u1 * 16.0f), (u0 + 16.0f), 1.0f, 1.0f);

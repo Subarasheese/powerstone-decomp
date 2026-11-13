@@ -56,7 +56,7 @@ int FUN_0c05a96c(int slot, int kind)
     *(unsigned char *)(((int)saved + 4)) = slot;
     *(unsigned char *)(((int)saved + 0)) = kind;
     kind_idx = *(signed char *)(((int)saved + 0));
-    new_obj = obj_create(0x3, 0x1, (*(int *)(((kind_idx << 2) + 0xC3361D4))));
+    new_obj = ((int (*)(int, int, int, int))obj_create)(0x3, 0x1, (*(int *)(((kind_idx << 2) + 0xC3361D4))), 0x0);
     result = new_obj;
     if (new_obj != 0) {
         *(unsigned char *)((new_obj + 0x0)) = 0x1;

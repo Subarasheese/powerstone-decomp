@@ -161,7 +161,7 @@ int res_switch_scene(int);
 int res_textures_register(int);
 int snd_play_announcer(int, int);
 int snd_play_side_se(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int stage_gimmick_20_pick_random_point(int, int);
 int ui_draw_element_sprite(int);
 int ui_fade_start(int, int, int, int);
@@ -237,7 +237,7 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6)
     if ((v0_6 == 1)) goto L_C0D0400;
     if (!((v0_6 == 2))) goto L_C0D0436;
     *(int *)((int)stk + 0) = 0xC1543A4;
-    sprintf(v0_3, R5, v0_0, 0x0, 0xC1543A4);
+    sprintf(v0_3, 0xC1543A4);
     goto L_C0D0416;
     L_C0D0436:;
     *(unsigned int *)(((int)stk + 4)) = (signed char)((((v0_2 << 2) << 1) + v0_2) << 2);
@@ -249,7 +249,7 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6)
     if ((v0_6 == 1)) goto L_C0D0536;
     if ((v0_6 != 2)) goto L_C0D046E;
     *(int *)((int)stk + 0) = 0xC1543C4;
-    sprintf(v0_3, R5, v0_0, 0x0, 0xC1543C4);
+    sprintf(v0_3, 0xC1543C4);
     dbg_print_at(v0_3, w0_1, w0_0);
     if ((((*(int *)((((*(int *)(((int)stk + 4))) + 0xC7F31F0) + 0x8))) & 8) == 0)) goto L_C0D05D8;
     *(unsigned char *)((v0_5 + 0x1)) = v0_4;
@@ -265,7 +265,7 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6)
     goto L_C0D05E6;
     L_C0D0536:;
     *(int *)((int)stk + 0) = 0xC1543B8;
-    sprintf(v0_3, R5, v0_0, 0x0, 0xC1543B8);
+    sprintf(v0_3, 0xC1543B8);
     dbg_print_at(v0_3, w0_1, w0_0);
     if ((((*(int *)((((*(int *)(((int)stk + 4))) + 0xC7F31F0) + 0x8))) & 8) == 0)) goto L_C0D056E;
     *(unsigned char *)((v0_5 + 0x1)) = ((*(signed char *)((v0_5 + 0x1))) + 0x1);
@@ -282,7 +282,7 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6)
     goto L_C0D057C;
     L_C0D0472:;
     *(int *)((int)stk + 0) = 0xC1543AC;
-    sprintf(v0_3, R5, v0_0, 0x0, 0xC1543AC);
+    sprintf(v0_3, 0xC1543AC);
     dbg_print_at(v0_3, w0_1, w0_0);
     if ((((*(int *)((((*(int *)(((int)stk + 4))) + 0xC7F31F0) + 0x8))) & 8) == 0)) goto L_C0D049E;
     *(unsigned char *)((v0_5 + 0x1)) = ((*(signed char *)((v0_5 + 0x1))) + 0x1);
@@ -317,7 +317,7 @@ int dbgedit_draw_editor_screen(int a4, int a5, int a6)
     L_C0D0402:;
     v0_6 = v0_6;
     *(int *)((int)stk + 0) = v0_6;
-    sprintf(v0_3, R5, v0_0, 0x0, v0_6);
+    sprintf(v0_3, v0_6);      /* "(PLAYER)" or "(SHELL)" */
     goto L_C0D0416;
     L_C0D03BE:;
     v0_6 = (0xC154390);

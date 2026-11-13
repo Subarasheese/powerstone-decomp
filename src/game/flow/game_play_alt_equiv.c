@@ -31,7 +31,7 @@ struct o1C_float { char p[0x1C]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int dbg_print_at(int, float, float);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 
 int ui_draw_win_counts_both(int a4, int a5, int a6, int a7)
 {
@@ -172,19 +172,19 @@ int FUN_0c0d52e8(void)
         *(unsigned short *)(((((int)stk + 24) + 0x4) + 0x0)) = ((*(short *)(((((int)stk + 24) + 0x4) + 0x0))) + (*(short *)((((unsigned char)((unsigned short)((unsigned char)t0 - 1) * (unsigned short)0x78) + 0xC7F2DF0) + 0x18))));
         *(int *)((int)stk + 20) = ((*(short *)(((*(int *)(((int)stk + 24))) + 0x0))));
         *(int *)((int)stk + 16) = 0xC15486C;
-        sprintf(0xC7F36B8, 0x3C, ((((int)stk + 24) + 0x4) + 0x2), 0xC7F2DF0, 0xC15486C);
+        sprintf(0xC7F36B8, 0xC15486C, *(int *)((int)stk + 20));
         u25 = (((struct o0_float *)0xC0D5488)->v);
         *(volatile float *)0xC0D548C;
         dbg_print_at(0xC7F36B8, ((((struct o8_float *)0xC0D5488)->v)), u25);
         dbg_print_at(0xC154870, ((((struct oC_float *)0xC0D5488)->v)), u25);
         *(int *)((int)stk + 12) = ((*(short *)(((((int)stk + 24) + 0x4) + 0x2))));
         *(int *)((int)stk + 8) = 0xC15486C;
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15486C);
+        sprintf(0xC7F36B8, 0xC15486C, *(int *)((int)stk + 12));
         dbg_print_at(0xC7F36B8, ((((struct o14_float *)0xC0D5488)->v)), u25);
         dbg_print_at(0xC154870, ((((struct o18_float *)0xC0D5488)->v)), u25);
         *(int *)((int)stk + 4) = ((*(short *)(((((int)stk + 24) + 0x4) + 0x4))));
         *(int *)((int)stk + 0) = 0xC15486C;
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15486C);
+        sprintf(0xC7F36B8, 0xC15486C, *(int *)((int)stk + 4));
         t43 = (dbg_print_at(0xC7F36B8, ((((struct o1C_float *)0xC0D5488)->v)), u25));
     }
     return t43;

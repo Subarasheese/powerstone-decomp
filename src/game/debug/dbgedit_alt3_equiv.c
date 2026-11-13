@@ -12,7 +12,7 @@ int pl_start_motion(int, int, int);
 int dbg_print_at(int, float, float);
 int dbgedit_set_start_positions(int);
 int dbgedit_select_stage_object(int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int thunk_FUN_0c05fff4(void);
 struct o14_uchar { char p[0x14]; unsigned char v; };
 struct o15_uchar { char p[0x15]; unsigned char v; };
@@ -50,7 +50,7 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
     *(unsigned int *)(((int)stk + 4)) = ((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0);
     *(unsigned int *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0xC)) = ((*(int *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0xC))) & 0x3);
     *(int *)((int)stk + 0) = 0xC1544B4;
-    sprintf(0xC7F36B8, a5, a6, a7, 0xC1544B4);
+    sprintf(0xC7F36B8, 0xC1544B4);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0x8) << 2) << 1), (float)((((*(int *)(((*(int *)(((int)stk + 4))) + 0xC))) + 0x3) << 2) << 1));
     if ((((((struct o48_int *)(a4))->v)) & 192) == 0) {
     } else {

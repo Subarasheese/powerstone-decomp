@@ -44,7 +44,7 @@ struct oF4_int { char p[0xF4]; int v; };
 struct oF8_uint { char p[0xF8]; unsigned int v; };
 struct oFC_int { char p[0xFC]; int v; };
 int FUN_0c0555c4(void);
-int FUN_0c08dfa4(void);
+void FUN_0c08dfa4(int);
 int FUN_0c09c51e(int);
 int math_angle_between_points_xz(int, int);
 int pl_change_state(int, int, int, int);
@@ -297,7 +297,7 @@ int FUN_0c08d6ec(int a4, int a5, int a6, int a7)
             t151 = t129;
             if (t129 != 0) {
                 t130 = (((struct o71D6_short *)(a5))->v);
-                FUN_0c08dfa4();
+                FUN_0c08dfa4(a5);
                 if ((int)((((struct o71D4_short *)(a5))->v)) >= 0) {
                     (((struct o7226_uchar *)(a5))->v) = 0x40;
                     (((struct o7228_ushort *)(a5))->v) = 0x4;
@@ -334,7 +334,7 @@ int FUN_0c08d6ec(int a4, int a5, int a6, int a7)
             }
             t178 = t151;
         } else {
-            FUN_0c08dfa4();
+            FUN_0c08dfa4(a5);
             if ((((unsigned char)(*(signed char *)((0x10 + ((((struct oF8_int *)(a5))->v))))) & 0x20) != 32) && (((t158 = *(signed char *)((a5 + 0x71F3)), t158 != 0) || (t159 = *(signed char *)((a5 + 0x7230)), (int)t159 >= (int)0x3)) && ((t160 = *(signed char *)((a5 + 0x71DD)), t160 != 23) && (t161 = (((struct o71D4_short *)(a5))->v), (int)t161 >= 0)))) {
                 t178 = (FUN_0c09c51e(a5));
             } else {
@@ -377,7 +377,7 @@ int FUN_0c08dacc(int a4, int a5)
     if ((unsigned char)(*(signed char *)((0x12 + ((((struct oF8_int *)(a4))->v))))) != 99) {
         FUN_0c0a3762((*(signed char *)((a4 + 0x3))), (*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x12))));
     }
-    FUN_0c08dfa4();
+    FUN_0c08dfa4(a4);
     *(unsigned char *)((a4 + 0x9)) = 0x1;
     *(unsigned char *)((a4 + 0xA)) = 0x0;
     *(unsigned char *)((a4 + 0xD)) = 0x0;

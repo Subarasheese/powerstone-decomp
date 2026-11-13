@@ -103,7 +103,7 @@ int pl_step_motion(int);
 int res_load_match_sound_banks(int, int, int);
 int snd_play_char_voice(int, int);
 int snd_play_side_se(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int stage_type01_init_thrown_from_owner(int);
 int stage_type01_spawn_ground_fx(int);
 int testmode_check_exit_combo(void);
@@ -211,7 +211,7 @@ int FUN_0c0cd58e(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     L_C0CDA5C:;
     *(int *)((int)stk + 4) = ((*(short *)((((v0_2 + 0xE) + R11) + 0x2))));
     *(int *)((int)stk + 0) = 0xC153478;
-    sprintf(v0_5, R5, v0_0, R7, 0xC153478);
+    sprintf(v0_5, 0xC153478, *(int *)((int)stk + 4));
     dbg_print_at(v0_5, w0_0, ((float)v0_4 * w0_1));
     *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
     R11 = ((R11 + 0x2));
