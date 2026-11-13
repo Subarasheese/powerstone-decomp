@@ -145,8 +145,8 @@ int game_play_state_07(void);
 int FUN_0c0d52aa(void);
 int FUN_0c0d5428(void);
 int nlObjPutSetGlobalAmbience(float);
-int FUN_0c0dccd0(int);
-int FUN_0c0dcd20(float, float, float);
+int nlSetLightDirection(int);
+int nlSetLightColor(float, float, float);
 float math_signed_sqrt(float);
 float math_cos_angle16(int);
 int math_rand_next(void);
@@ -187,7 +187,7 @@ int memset(int, int, int);
 int mwRnaErrCallFunc(int);
 int FUN_0c0cb3b8(int a4);
 int game_play_dispatch_state(void);
-int FUN_0c0f2114(int a4, int a5, int a6);
+int pdInitPeripheral(int a4, int a5, int a6);
 int FUN_0c107602(int a4, int a5, int a6, int a7);
 int FUN_0c068488(int a4);
 int pl_jack_mode04_phase1(int a4);
@@ -197,7 +197,7 @@ int FUN_0c02a5e4(void);
 int FUN_0c09c35e(void);
 int FUN_0c0de120(int a4);
 void FUN_0c0f2968(int a4, int a5, int a6);
-int FUN_0c0f4c2c(int a4, int a5, int a6, int a7);
+int ADXT_Stop(int a4, int a5, int a6, int a7);
 int FUN_0c103f6c(int a4, int a5);
 int vmsfs_load_file_ex(int a4, int a5, int a6, int a7, int a8);
 int ending_spawn_obj_t08(void);
@@ -232,7 +232,7 @@ int FUN_0c0d4ff4(int a4, int a5, int a6, int a7);
 int ADXPD_ExecHndl(int a4);
 int keycfg_settings_changed(int a4, int a5, int a6, int a7);
 
-int FUN_0c0f2114(int a4, int a5, int a6)
+int pdInitPeripheral(int a4, int a5, int a6)
 {
     register int t4;
 
@@ -346,7 +346,7 @@ void FUN_0c0f2968(int a4, int a5, int a6)
     _builtin_set_imask(((unsigned int)((((unsigned short)t0 & 0xF) << 2) << 2) >> 4));
 }
 
-int FUN_0c0f4c2c(int a4, int a5, int a6, int a7)
+int ADXT_Stop(int a4, int a5, int a6, int a7)
 {
     int t0;
     register int t1;

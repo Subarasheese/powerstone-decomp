@@ -128,13 +128,13 @@ void cam_set_view_matrix(CamRecord *c)
     eye = c->eye[CAM_CUR];
     target = c->look[CAM_CUR];
     cam_apply_shake(c, &eye, &target);
-    FUN_0c0e1550(2);
+    nlSelectMatrixStack(2);
     nlUnitMatrix();
     nlLookAt(&eye, &target, c->roll[CAM_CUR]);
-    FUN_0c0e0ae0(c->inv_matrix);
-    FUN_0c0e0ae0(c->matrix);
+    nlStoreMatrix(c->inv_matrix);
+    nlStoreMatrix(c->matrix);
     nlInvertMatrix(c->inv_matrix);
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
 }
 
 void cam_set_priority(int index, int priority)

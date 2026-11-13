@@ -694,10 +694,10 @@
 0c05fcaa	res_load_file_raw_b	medium	body identical to res_load_file_raw
 0c05fcc2	res_load_file_raw_c	medium	body identical to res_load_file_raw
 0c05fcda	res_load_file_raw_d	medium	body identical to res_load_file_raw
-0c05fcf2	res_model_release	high	if record loaded: FUN_0c0dd9e0(h2) then FUN_0c0e3bb2(w4,0), clears flag byte 0
+0c05fcf2	res_model_release	high	if record loaded: FUN_0c0dd9e0(h2) then nl_sprite_set_release(w4,0), clears flag byte 0
 0c05fd1a	res_textures_release	high	for each of h2 entries of the 24-byte record call FUN_0c0dd6c0 (release), clear flag
-0c05fd5e	res_model_register	high	FUN_0c0dd9e0(h2) then FUN_0c0e3900(w4,0), sets flag byte 0 = 1
-0c05fd86	res_textures_register	high	for each of h2 entries call FUN_0c0dd5d0(entry,w12), sets flag byte 0 = 1
+0c05fd5e	res_model_register	high	FUN_0c0dd9e0(h2) then nl_sprite_set_register(w4,0), sets flag byte 0 = 1
+0c05fd86	res_textures_register	high	for each of h2 entries call nl_model_bind_textures(entry,w12), sets flag byte 0 = 1
 0c05fdc6	res_player_entry_release	high	release_textures on entry r4*24 of g_res_player_entries
 0c05fddc	res_player_entries_release_all	high	loop 0..1 calling res_player_entry_release
 0c05fe24	res_load_pl_effect	high	loads PLxx effect pack (label PL EFFECT) for player slot/char, copies parts, registers textures
@@ -757,7 +757,7 @@
 0c060c88	res_switch_scene	high	switch on scene number 0..15: releases the resources not needed and loads those of the new scene (calls the res_*_load/release set)
 0c0610b6	sys_load_file_adx	high	ADX file open/size check/wait loop; caller sys_load_file
 0c061240	sys_load_file	high	loads disc file by index (table g_file_table) into the address in r4 with retry loop and gd error handler
-0c061514	sys_set_boot_state	medium	sets state word from mode reported by FUN_0c0e5126
+0c061514	sys_set_boot_state	medium	sets state word from mode reported by sys_get_video_standard
 0c0615b0	sys_main_loop	high	syHwInit, sys_init_all, per-frame loop until run flag clears, sys_shutdown_all
 0c0616f4	sys_main_loop_step	medium	per-frame step with pad_poll_all, attract_mode_update, boot_screens_update
 0c061be2	sys_init_all	medium	calls gdFsInit, gdFsCreateDirhn, syRtcInit, syRtcSetServerMode, syCfgInit, syCfgGetSoundMode
@@ -1683,8 +1683,8 @@
 0c0a2c4a	pl_update_pos_delta	high	o[0x7270..0x7278] = pos(0x20..0x28) - prev pos(0x7264..0x726c)
 0c0a2db4	pl_set_velocity_forward	medium	vel x/z = facing(cos,sin)*speed, accel = -vel/steps, timer o+0xEC = steps
 0c0a2e26	pl_change_state	high	saves prev state 0x71BB, clears o+9..0xD, loads flag byte from table 0xC338D38 and jumps through enter table 0xC339490[state]
-0c0a2eec	snd_play_se	medium	sound trigger wrapper: returns early when mute flags 0xC7F2F0C/0xC7F2F03 say so, else FUN_0c0e5d22(id)
-0c0a2f0e	snd_play_se_raw	medium	direct FUN_0c0e5d22(id) without the mute check; callers pass ids like 0x1A9
+0c0a2eec	snd_play_se	medium	sound trigger wrapper: returns early when mute flags 0xC7F2F0C/0xC7F2F03 say so, else snd_send_command(id)
+0c0a2f0e	snd_play_se_raw	medium	direct snd_send_command(id) without the mute check; callers pass ids like 0x1A9
 0c0a2f16	bgm_start_file	medium	opens file name from table 0xC180BD0[id] (ADX stream) on handle slot; ids 0x101.. are .ADX names
 0c0a2f52	bgm_stop_all	medium	stop command + bgm_stop_streams
 0c0a2f7a	bgm_stop_streams	medium	for both stream handles at 0xC494048/4C: if playing, stop
@@ -1692,7 +1692,7 @@
 0c0a302c	bgm_stop_slot	medium	stops stream handle[slot] if playing
 0c0a3118	bgm_duck	medium	saves volume of both handles and sets them to -960
 0c0a3180	bgm_unduck	medium	restores saved volumes of both handles
-0c0a31b8	snd_init_adx	medium	sound driver setup then creates the two stream handles (FUN_0c0f46d0 x2) stored at 0xC494048/4C
+0c0a31b8	snd_init_adx	medium	sound driver setup then creates the two stream handles (ADXT_Create x2) stored at 0xC494048/4C
 0c0a334a	res_load_match_sound_banks	medium	loads three files chosen by character/stage indexes into banks 4,3,2 at 0xCC00000; called from game_reset_match_screen
 0c0a3458	bgm_play_open	high	bgm_start_file(0,0x101 = OPEN.ADX) + volume
 0c0a347c	bgm_play_demo_00	high	file id 0x102 = DEMO_00.ADX

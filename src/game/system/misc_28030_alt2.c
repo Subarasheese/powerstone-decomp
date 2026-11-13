@@ -6,7 +6,7 @@ struct o4_int { char p[0x4]; int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 int draw_project_point_sprite(int);
 int draw_project_point_sprite_z01(int);
-int FUN_0c0e3c54(int);
+int nl_sprite_draw(int);
 int _quick_evn_mvn(int, int);
 struct o10_float { char p[0x10]; float v; };
 struct o14_float { char p[0x14]; float v; };
@@ -119,7 +119,7 @@ int FUN_0c0282cc(void)
         case 0:
             *(unsigned int *)(((int)stk + 48)) = 0x2;
             t16 = ((int)stk + 0);
-            t13 = (FUN_0c0e3c54(t16));
+            t13 = (nl_sprite_draw(t16));
             break;
         case 1:
             t16 = ((int)stk + 0);
@@ -226,7 +226,7 @@ int FUN_0c02842a(int a4, int a5)
         } else {
             *(unsigned int *)(((int)stk + 48)) = 0x2;
             t1 = ((int)stk + 0);
-            FUN_0c0e3c54(t1);
+            nl_sprite_draw(t1);
         }
         u4 = u52;
         u5 = u53;

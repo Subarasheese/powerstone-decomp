@@ -11,7 +11,7 @@ int math_mat_get_translate(int);
 int gfx_set_background_plane(int, int, int, float);
 int nlMultiMatrix(int);
 int FUN_0c0e16c0(void);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int gdFsCreateHn(int, int);
 int mpdrv_stat(int);
 int FUN_0c1135c8(int, int, int);
@@ -20,7 +20,7 @@ int FUN_0c11556a(int, int, int, int, float, float, float, float, float, float, f
 int nlMakeModelViewProjectMatrix_objput(void);
 int FUN_0c0d3fbe(void);
 int FUN_0c0d4136(int a4, int a5, int a6, int a7);
-int FUN_0c0f4db4(int a4, int a5, int a6, int a7);
+int ADXT_SetOutVol(int a4, int a5, int a6, int a7);
 int gfx_set_background_color(int a4, int a5, int a6);
 int thunk_FUN_0c062242(int a4);
 int gdFsChangeDir(int a4);
@@ -29,7 +29,7 @@ int fmMngMcpy(int a4, int a5, int a6);
 int fmMngSncmp(int a4, int a5, int a6);
 int FUN_0c1155a8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
 
-int FUN_0c0f4db4(int a4, int a5, int a6, int a7)
+int ADXT_SetOutVol(int a4, int a5, int a6, int a7)
 {
     (((struct o40_ushort *)(a4))->v) = a5;
     return ADXRNA_SetOutVol((*(int *)((a4 + 0xC))), a5, a6, a7);

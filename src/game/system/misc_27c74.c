@@ -1,13 +1,13 @@
 /* not identified yet (keep old name) (0c027c74-0c027d50) */
 
-int FUN_0c0dd5d0(int, int);
+int nl_model_bind_textures(int, int);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 int memset(int, int, int);
 
 int FUN_0c027c74(void)
 {
-    return FUN_0c0dd5d0(0xC1437B8, 0xC321050);
+    return nl_model_bind_textures(0xC1437B8, 0xC321050);
 }
 
 int FUN_0c027c7e(void)

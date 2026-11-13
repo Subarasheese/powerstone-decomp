@@ -270,10 +270,10 @@ void ui_fade_draw(void);
 /* from other modules */
 void *memset(void *p, int c, int n);
 int fx_spawn_049b7c(void);
-int FUN_0c0dd5d0(char *obj, char *data);
-int FUN_0c0e1550(int mode);
+int nl_model_bind_textures(char *obj, char *data);
+int nlSelectMatrixStack(int mode);
 void nlUnitMatrix(void);
-int FUN_0c0dcd20(float sx, float sy, float sz);
+int nlSetLightColor(float sx, float sy, float sz);
 int nlObjPut(char *obj);
 int nlObjPutTrnsl(char *obj, float alpha);
 

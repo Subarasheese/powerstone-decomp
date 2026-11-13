@@ -1,7 +1,7 @@
 /* boot/init/shutdown of the system, file loader with retry (gd error handler), boot sequence returning the next scene (0c061434-0c062050) */
 
 int gfx_init_display_mode(int, int, int);
-int FUN_0c0e48b0(int, int, int);
+int sys_set_interrupt_handler(int, int, int);
 int vib_stop_all(void);
 int bgm_stop_all(void);
 int gfx_flip_frame_buffer(void);
@@ -15,16 +15,16 @@ int FUN_0c0f1c44(int);
 int FUN_0c0f1fd2(int);
 int FUN_0c0f202c(int);
 int FUN_0c0f2044(int);
-int FUN_0c0f4eac(void);
-extern int FUN_0c0e5126(void);
+int ADXT_ExecServer(void);
+extern int sys_get_video_standard(void);
 int FUN_0c0df100(void);
 int syRtcFinish(void);
 int gdFsFinish(void);
 int FUN_0c0f2664(void);
 int FUN_0c0f283e(void);
 int syCfgExit(void);
-int FUN_0c0f4104(void);
-int FUN_0c0f4686(void);
+int sys_exit_to_bios(void);
+int ADXT_Finish(void);
 int thunk_FUN_0c0f2f7e(void);
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -36,16 +36,16 @@ struct o3_uchar { char p[0x3]; unsigned char v; };
 int ui_fade_reset(void);
 int FUN_0c05f136(void);
 
-int FUN_0c06143c(int a4, int a5, int a6);
+int sys_vsync_handler_remove(int a4, int a5, int a6);
 
-int FUN_0c061434(int a4, int a5, int a6)
+int sys_vsync_handler_install(int a4, int a5, int a6)
 {
-    return FUN_0c0e48b0(0x1, 0xC061694, a6);
+    return sys_set_interrupt_handler(0x1, 0xC061694, a6);
 }
 
-int FUN_0c06143c(int a4, int a5, int a6)
+int sys_vsync_handler_remove(int a4, int a5, int a6)
 {
-    return FUN_0c0e48b0(0x1, 0x0, a6);
+    return sys_set_interrupt_handler(0x1, 0x0, a6);
 }
 
 int FUN_0c061444(int a4)
@@ -111,7 +111,7 @@ void sys_set_boot_state(void)
 {
     char *state_block = (char *)0xC7F2EE0;
     int *flag_ptr = (int *)0xC386830;
-    switch (FUN_0c0e5126()) {
+    switch (sys_get_video_standard()) {
     case 0:
         *(int *)(state_block + 0x140) = 9;
         *flag_ptr = 0;
@@ -131,25 +131,25 @@ void sys_set_boot_state(void)
     }
 }
 
-int FUN_0c061694(int a4, int a5, int a6, int a7)
+int sys_vsync_handler(int a4, int a5, int a6, int a7)
 {
     *(unsigned int *)0xC386828 = ((*(int *)0xC386828) + 0x1);
-    FUN_0c0f4eac();
+    ADXT_ExecServer();
     return 0x0;
 }
 
 int sys_shutdown_all(int a4, int a5, int a6)
 {
-    FUN_0c06143c(a4, a5, a6);
+    sys_vsync_handler_remove(a4, a5, a6);
     FUN_0c0f2664();
-    FUN_0c0f4686();
+    ADXT_Finish();
     gdFsFinish();
     syCfgExit();
     thunk_FUN_0c0f2f7e();
     syRtcFinish();
     FUN_0c0f283e();
     FUN_0c0df100();
-    return FUN_0c0f4104();
+    return sys_exit_to_bios();
 }
 
 int FUN_0c061f9c(int a4)

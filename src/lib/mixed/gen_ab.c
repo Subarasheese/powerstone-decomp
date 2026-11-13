@@ -134,7 +134,7 @@ int stage_type01_calc_throw_vec(int);
 int FUN_0c0b146e(int, int);
 int dbg_print_at(int, float, float);
 int nlObjPutUseViewMatrix(int);
-int FUN_0c0dcd20(float, float, float);
+int nlSetLightColor(float, float, float);
 float math_signed_sqrt(float);
 int math_atan_angle16(float);
 float math_rand_float(void);
@@ -143,28 +143,28 @@ int dbg_set_cursor_cell(int, int);
 int dbg_set_text_color(int);
 int dbg_printf(int, ...);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int nlScale(float, float, float);
-int FUN_0c0e2140(int);
+int nlTranslateV(int);
 int nlUnitMatrix(void);
-int FUN_0c0e3c54(int);
-int FUN_0c0e48b0(int, int);
+int nl_sprite_draw(int);
+int sys_set_interrupt_handler(int, int);
 int FUN_0c0e49c0(int, int, int, int);
 int FUN_0c0e4a80(int);
 int FUN_0c0e51e8(int, int);
 int FUN_0c0e52b6(int, int, int, int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _divls(void);
 int _modls(int);
 int _modlu(void);
 int _slow_mvn(int);
 int FUN_0c0f3ad4(int, int);
-int FUN_0c0f4128(int);
+int vib_port_has_vibration(int);
 int pdVibMxStop(int);
-int FUN_0c0f4cc6(int);
-int FUN_0c0f4db4(int, int);
-int FUN_0c0f4dc8(int);
-int FUN_0c0fca2e(int);
+int ADXT_GetStat(int);
+int ADXT_SetOutVol(int, int);
+int ADXT_GetOutVol(int);
+int kmFreeTexture(int);
 int FUN_0c0fd160(int, int, int);
 int FUN_0c0fd1e0(int, int, int, int);
 int FUN_0c0fdda0(int, int, int);
@@ -204,7 +204,7 @@ int FUN_0c02ca74(void);
 int FUN_0c03bdb2(int a4);
 int ai_select_variant_script(int a4, int a5);
 int FUN_0c0b1536(int a4, int a5);
-int FUN_0c0e46c0(void);
+int sys_reset_interrupt_handlers(void);
 int FUN_0c108e74(void);
 int FUN_0c01cab6(int a4);
 int FUN_0c01cb1e(int a4);
@@ -215,7 +215,7 @@ int bgm_duck(void);
 int FUN_0c0ac55c(int a4, int a5);
 int cam_mode_15(int a4, int a5, int a6, int a7);
 int kmSetFogTable(int a4);
-int FUN_0c0f4eac(void);
+int ADXT_ExecServer(void);
 int opt_reset_key_config(int a4);
 int FUN_0c01e2e4(int a4, int a5, float f4);
 int pl_wangtang_attack_kind24_phase0(int a4);
@@ -247,7 +247,7 @@ int fx29_advance_kid_frame(int a4);
 int FUN_0c0ce404(int a4, int a5, int a6, int a7);
 int FUN_0c0cdac0(void);
 int FUN_0c0d699e(int a4);
-int FUN_0c0ddb40(int a4, int a5, int a6);
+int nl_texture_slot_alloc(int a4, int a5, int a6);
 int FUN_0c0dde30(int a4, int a5, int a6, int a7);
 int kdDevGetStorageInfo(int a4, int a5);
 int check_fat_xross(int a4, int a5, int a6, int a7);
@@ -264,7 +264,7 @@ int FUN_0c0d6460(int a4);
 int FUN_0c0de820(int a4);
 int FUN_0c0e56a0(int a4, int a5, int a6);
 float FUN_0c0fddd4(int a4, int a5, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
-int FUN_0c0fc5da(int a4, int a5, int a6, int a7);
+int kmLoadTexture(int a4, int a5, int a6, int a7);
 int get_vmstime(int a4, int a5);
 int FUN_0c0161d8(void);
 int ai_update_slot(int a4, int a5, int a6, int a7);
@@ -285,7 +285,7 @@ int FUN_0c11428e(int a4, int a5, int a6)
     return FUN_0c113ef4(a4, a5, a6);
 }
 
-int FUN_0c0e46c0(void)
+int sys_reset_interrupt_handlers(void)
 {
     register int t0;
     register int t1;
@@ -316,7 +316,7 @@ int FUN_0c0e46c0(void)
     }
     t1 = 0x0;
     for (;;) {
-        FUN_0c0e48b0(t1, 0x0);
+        sys_set_interrupt_handler(t1, 0x0);
         t1 = (t1 + 0x1);
         if ((int)t1 >= (int)0xC) {
             break;
@@ -372,7 +372,7 @@ int kmSetFogTable(int a4)
     return 0x0;
 }
 
-int FUN_0c0f4eac(void)
+int ADXT_ExecServer(void)
 {
     register int t0;
     register int t1;
@@ -422,7 +422,7 @@ int FUN_0c0e69a8(int a4, int a5, int a6)
     if (t3 != 1) {
         return t3;
     }
-    return (FUN_0c0e5d22(((0xA2 | (((*(short *)(((int)stk + 2))) << 16) | ((((*(short *)(((int)stk + 6))) << 8) << 2) << 2))) + ((((*(short *)(((int)stk + 4))) << 8) << 2) << 1))));
+    return (snd_send_command(((0xA2 | (((*(short *)(((int)stk + 2))) << 16) | ((((*(short *)(((int)stk + 6))) << 8) << 2) << 2))) + ((((*(short *)(((int)stk + 4))) << 8) << 2) << 1))));
 }
 
 int FUN_0c0e6a84(int a4, int a5, int a6)
@@ -439,7 +439,7 @@ int FUN_0c0e6a84(int a4, int a5, int a6)
     if (t3 != 1) {
         return t3;
     }
-    return (FUN_0c0e5d22((((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 2))) << 16)) | 0x1A2) + ((((*(short *)(((int)stk + 4))) << 8) << 2) << 1))));
+    return (snd_send_command((((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 2))) << 16)) | 0x1A2) + ((((*(short *)(((int)stk + 4))) << 8) << 2) << 1))));
 }
 
 int FUN_0c0f2d38(int a4, int a5, int a6)
@@ -707,7 +707,7 @@ float FUN_0c0fddd4(int a4, int a5, float f4, float f5, float f6, float f7, float
     return u2;
 }
 
-int FUN_0c0fc5da(int a4, int a5, int a6, int a7)
+int kmLoadTexture(int a4, int a5, int a6, int a7)
 {
     int t10;
 

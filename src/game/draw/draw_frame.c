@@ -18,7 +18,7 @@ int nlRotateAX(int);
 int nlRotateAY(int);
 int nlRotateAZ(int);
 int nlScale(float, float, float);
-int FUN_0c0e2110(float, float, float);
+int nlTranslate(float, float, float);
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2D4_float { char p[0x2D4]; float v; };
@@ -30,8 +30,8 @@ struct o68_float { char p[0x68]; float v; };
 int FUN_0c05a164(int);
 int FUN_0c05a6e8(int);
 int FUN_0c05fb58(int);
-int FUN_0c0dcd20(float, float, float);
-int FUN_0c0e1550(int);
+int nlSetLightColor(float, float, float);
+int nlSelectMatrixStack(int);
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 struct o14_uchar { char p[0x14]; unsigned char v; };
@@ -43,8 +43,8 @@ int FUN_0c031388(void);
 int FUN_0c0dca60(int, int, int, int, int);
 int FUN_0c0dcac0(int, int);
 int gfx_set_background_color(int, int, int);
-int FUN_0c0e1240(int);
-int FUN_0c0e2790(int, float, float, float);
+int nlLoadMatrix(int);
+int nlPerspective(int, float, float, float);
 int stage_draw_lights(void);
 int FUN_0c0282cc(void);
 int FUN_0c02cf18(void);
@@ -159,7 +159,7 @@ int FUN_0c02ccbc(int a4, int a5, int a6, int a7)
     register int t1;
 
     if ((0x1 & (short)a4) != 0) {
-        t0 = (FUN_0c0e2110((*(float *)((a5 + 0x0))), ((((struct o4_float *)(a5))->v)), ((((struct o8_float *)(a5))->v))));
+        t0 = (nlTranslate((*(float *)((a5 + 0x0))), ((((struct o4_float *)(a5))->v)), ((((struct o8_float *)(a5))->v))));
     }
     t1 = t0;
     if ((0x8 & (short)a4) != 0) {
@@ -182,7 +182,7 @@ int FUN_0c02ccbc(int a4, int a5, int a6, int a7)
 int FUN_0c02ced4(int a4, float f4, float f5)
 {
     nlUnitMatrix();
-    FUN_0c0e2110(((((struct o20_float *)(a4))->v)), (((((struct o2D4_float *)(a4))->v)) + 1.0f), ((((struct o28_float *)(a4))->v)));
+    nlTranslate(((((struct o20_float *)(a4))->v)), (((((struct o2D4_float *)(a4))->v)) + 1.0f), ((((struct o28_float *)(a4))->v)));
     nlScale(f4, f4, f4);
     return nlObjPutUseViewMatrixTrnsl((*(int *)(((*(int *)0xC4CFA70) + 0x0))), f5);
 }

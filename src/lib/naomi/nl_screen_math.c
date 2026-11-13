@@ -322,12 +322,12 @@ int FUN_0c0de820(int a4)
     return 0x5C;
 }
 
-void FUN_0c0de890(int a4)
+void gfx_set_buffer_size(int a4)
 {
     *(unsigned int *)0xC7F882C = a4;
 }
 
-void FUN_0c0de8a0(void)
+void gfx_init_renderer(void)
 {
     if (*(int *)0xC7F8880 == 1) {
         *(int *)0xC7F886C = 32;
@@ -338,7 +338,7 @@ void FUN_0c0de8a0(void)
     }
 }
 
-int FUN_0c0de960(int a4, int a5, int a6, int a7)
+int gfx_set_display_mode(int a4, int a5, int a6, int a7)
 {
     if (a4 != 0) {
         if (a4 != 2) {
@@ -357,7 +357,7 @@ void FUN_0c0dea20(int a4)
     *(unsigned int *)0xC7F887C = a4;
 }
 
-int FUN_0c0dea30(int a4, int a5, int a6, int a7)
+int gfx_set_vertex_buffer(int a4, int a5, int a6, int a7)
 {
     if ((*(int *)0xC7F8880) == 1) {
         *(unsigned int *)0xC7F8834 = (0xA0000000 | a4);
@@ -366,7 +366,7 @@ int FUN_0c0dea30(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC0DEA70))(a4, a5, a6, a7);
 }
 
-int FUN_0c0debe0(int a4, int a5, int a6, int a7)
+int gfx_set_list_buffers(int a4, int a5, int a6, int a7)
 {
     if ((*(int *)0xC7F8880) == 1) {
         return (gfx_set_frame_time_weights(a4, a5, a6, a7));

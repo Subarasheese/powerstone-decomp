@@ -130,7 +130,7 @@ int FUN_0c0d6744(int);
 int FUN_0c0d7566(int, int, int, int);
 float math_rand_float(void);
 int FUN_0c0e21b0(int, int);
-int FUN_0c0e3c54(int);
+int nl_sprite_draw(int);
 int _modls(void);
 int _modlu(void);
 int _quick_evn_mvn(int, int);

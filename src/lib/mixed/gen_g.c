@@ -139,7 +139,7 @@ int FUN_0c0d78fa(void);
 int FUN_0c0d7a0a(void);
 int FUN_0c0d7a44(int);
 int cam_init_records(void);
-int FUN_0c0ddd10(int, int);
+int nl_mesh_set_texture(int, int);
 int gfx_set_background_color(int, int, int, float);
 float math_signed_sqrt(float);
 float math_cos_angle16(int);
@@ -149,7 +149,7 @@ int _divls(void);
 int _modlu(void);
 int _quick_evn_mvn(int);
 extern int _quick_odd_mvn();
-int FUN_0c0f4128(int);
+int vib_port_has_vibration(int);
 int kdSetBlockWrite(int, ...);
 int FUN_0c1012f4(int, int, int);
 int vmsfs_c_progress(int, int, int, int);
@@ -280,7 +280,7 @@ int FUN_0c0f414e(int a4, int a5, int a6, int a7)
     *(unsigned int *)(((int)stk + 20)) = a4;
     *(unsigned int *)(((int)stk + 16)) = a5;
     *(unsigned int *)(((int)stk + 12)) = a6;
-    t1 = FUN_0c0f4128((*(int *)(((int)stk + 20))));
+    t1 = vib_port_has_vibration((*(int *)(((int)stk + 20))));
     t23 = 0xFFFFFFFE;
     if (t1 == 0) {
     } else {
@@ -571,7 +571,7 @@ int FUN_0c0e393a(int a4, int a5, int a6, int a7)
             t4 = (*(int *)((t2 + 0x0)));
             t5 = (t5 + t4);
             t4 = 0xFFFFA352;
-            FUN_0c0ddd10(t5, (*(int *)(((int)stk + 8))));
+            nl_mesh_set_texture(t5, (*(int *)(((int)stk + 8))));
             t4 = (*(int *)(((int)stk + 0)));
             t4 = (t4 << 2);
             t4 = (t4 << 2);

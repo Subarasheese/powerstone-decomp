@@ -14,7 +14,7 @@ int FUN_0c0d320a(void);
 int FUN_0c0d3366(void);
 int attract_screen_adx_logo(int, int, int, int);
 int FUN_0c0d4094(void);
-int FUN_0c0d4196(int, int, int, int);
+int attract_title_screen(int, int, int, int);
 int attract_screen_urls(void);
 extern int FUN_0c0d452e();
 int thunk_FUN_0c0d45fe(void);
@@ -79,7 +79,7 @@ int attract_run_sequence(int a4, int a5, int a6, int a7)
                     FUN_0c0d4094();
                 }
             } else {
-                FUN_0c0d4196(0xC7F2EE5, a5, a6, a7);
+                attract_title_screen(0xC7F2EE5, a5, a6, a7);
             }
         } else {
             FUN_0c0d3366();

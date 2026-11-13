@@ -13,7 +13,7 @@ int bgm_stop_streams(void);
 int bgm_play_rank(void);
 int rank_screen_time_ranking(void);
 int rank_screen_vs_ranking(void);
-int FUN_0c0d4692(void);
+int attract_draw_press_start(void);
 int FUN_0c0d5292(void);
 int cam_reset_shake(int, int, int);
 
@@ -73,7 +73,7 @@ int attract_ranking_step(int obj, int arg1, int arg2, float f4)
         FUN_0c0d5292();
     }
     if (((*(int *)0xC7F3014) & 16) != 0) {
-        FUN_0c0d4692();
+        attract_draw_press_start();
     }
     FUN_0c031030();
     tmp0 = ((int (*)(void))(game_frame_update))();

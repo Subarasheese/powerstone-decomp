@@ -10,7 +10,7 @@ struct o20_ushort { char p[0x20]; unsigned short v; };
 struct o22_ushort { char p[0x22]; unsigned short v; };
 float math_signed_sqrt(float);
 int math_atan_angle16(float);
-int FUN_0c0f263a(int);
+int pdGetPeripheral(int);
 int pad_poll_all(void);
 
 int pad_poll_all(void)
@@ -39,7 +39,7 @@ int pad_poll_all(void)
     t0 = 0x0;
     t1 = 0xC361BF0;
     for (;;) {
-        t3 = FUN_0c0f263a((*(int *)((0xC178D78 + (t0 << 2)))));
+        t3 = pdGetPeripheral((*(int *)((0xC178D78 + (t0 << 2)))));
         if (((*(int *)((t3 + 0x4))) & 0x6FE) == 0x6FE) {
             if (((*(int *)((t3 + 0x4))) & 0x101) == 0x101) {
                 *(unsigned int *)((t1 + 0x0)) = 0x1;

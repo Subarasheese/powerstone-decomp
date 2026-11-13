@@ -141,13 +141,13 @@ int gfx_set_frame_time_weights(int, int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int FUN_0c0dff60(void);
-int FUN_0c0e0bd0(int);
+int nlStoreMatrix8(int);
 int FUN_0c0e16c0(void);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int nlRotateAxeSC(int, float, float);
-int FUN_0c0e2110(float, float, float);
-int FUN_0c0e5d22(int);
+int nlTranslate(float, float, float);
+int snd_send_command(int);
 int FUN_0c0e6278(int);
 int FUN_0c0e62c4(int);
 int FUN_0c0e6310(int);
@@ -160,9 +160,9 @@ int _quick_odd_mvn(int, float, float, float);
 int FUN_0c0eb6f4(int);
 int FUN_0c0f1766(int);
 int gdFsLoadDir(int, int);
-int FUN_0c0f263a(int);
+int pdGetPeripheral(int);
 int FUN_0c0f4202(int, int);
-int FUN_0c0f4db4(int, int);
+int ADXT_SetOutVol(int, int);
 int FUN_0c0fb042(int, int, int, int);
 int kmSetBorderColor(int, ...);
 int FUN_0c0fddbe(int, int, int);
@@ -202,9 +202,9 @@ int bgm_play_demo_w(void);
 int bgm_play_demo_01(void);
 int FUN_0c0ac8dc(int a4);
 int FUN_0c0d6744(int a4);
-int FUN_0c0e12b0(int a4, int a5, int a6, int a7);
+int nlLoadMatrix8(int a4, int a5, int a6, int a7);
 int FUN_0c0ee6f0(int a4, int a5);
-int FUN_0c0fca2e(int a4);
+int kmFreeTexture(int a4);
 int FUN_0c0ff35a(int a4, int a5, int a6, int a7);
 int FUN_0c0ff02c(void);
 int kdSetCallback(int a4, int a5, int a6);
@@ -269,7 +269,7 @@ int cam_request_mode_06(int a4, int a5);
 int cam_request_mode_07(int a4, int a5);
 int cam_mode_21(int a4);
 int nlObjPutUseViewMatrix(int a4);
-int FUN_0c0dea30(int a4, int a5, int a6, int a7);
+int gfx_set_vertex_buffer(int a4, int a5, int a6, int a7);
 int dbg_set_cursor_cell(int a4, int a5);
 int FUN_0c0dffb0(void);
 int FUN_0c0efdee(int a4);
@@ -362,9 +362,9 @@ int pl_set_power_form_on(int a4);
 int pl_set_power_form_off(int a4);
 int testmode_draw_title_and_footer(int a4);
 int cam_force_mode_23(int a4);
-int FUN_0c0dcd20(float f4, float f5, float f6);
+int nlSetLightColor(float f4, float f5, float f6);
 int math_rand_next(void);
-int FUN_0c0debe0(int a4, int a5, int a6, int a7);
+int gfx_set_list_buffers(int a4, int a5, int a6, int a7);
 int gdFsFinish(void);
 int FUN_0c0f2f60(void);
 int FUN_0c0f9c92(int a4);
@@ -441,7 +441,7 @@ int syCfgGetIDAddress(int a4, int a5, int a6);
 int FUN_0c0fb3fe(int a4);
 int FUN_0c0fdea0(int a4);
 
-int FUN_0c0e12b0(int a4, int a5, int a6, int a7)
+int nlLoadMatrix8(int a4, int a5, int a6, int a7)
 {
     register int t1;
     float u5[16];
@@ -482,7 +482,7 @@ int FUN_0c0ee6f0(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c0fca2e(int a4)
+int kmFreeTexture(int a4)
 {
     register int t4;
 
@@ -912,9 +912,9 @@ int FUN_0c0e4a80(int a4)
 
 int FUN_0c0e2700(void)
 {
-    FUN_0c0e19b0((*(int *)0xC7FCCE0));
+    nlPushMatrix((*(int *)0xC7FCCE0));
     FUN_0c0e16c0();
-    FUN_0c0e0bd0(0xC7FCEA8);
+    nlStoreMatrix8(0xC7FCEA8);
     return nlPopMatrix(0x1);
 }
 
@@ -942,7 +942,7 @@ int FUN_0c0fe8fa(int a4)
 {
     register int t0;
 
-    t0 = FUN_0c0f263a(a4);
+    t0 = pdGetPeripheral(a4);
     if (((*(int *)(((*(int *)((t0 + 0x30))) + 0x0))) & 64) != 0) {
         return (*(int *)((t0 + 0x28)));
     }
@@ -1371,7 +1371,7 @@ int FUN_0c11554e(int a4, int a5)
 
 int FUN_0c0e2120(int a4)
 {
-    return FUN_0c0e2110((-(*(float *)((a4 + 0x0)))), (-((((struct o4_float *)(a4))->v))), (-((((struct o8_float *)(a4))->v))));
+    return nlTranslate((-(*(float *)((a4 + 0x0)))), (-((((struct o4_float *)(a4))->v))), (-((((struct o8_float *)(a4))->v))));
 }
 
 int syCfgGetIDAddress(int a4, int a5, int a6)

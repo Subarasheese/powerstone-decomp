@@ -81,14 +81,14 @@ float math_cos_float(float);
 float math_floor_float(float);
 float math_ln_float(int, int, int, int, float);
 float math_sin_float(float);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
 int FUN_0c0e16c0(void);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int FUN_0c0e1d00(float, float);
 int FUN_0c0e1dc0(float, float);
 int FUN_0c0e1e20(float, float);
-int FUN_0c0e2110(float, float, float);
+int nlTranslate(float, float, float);
 int FUN_0c0e6834(int, int, int);
 int FUN_0c0eb5c8(int, int);
 int FUN_0c0eb604(int, int);
@@ -96,7 +96,7 @@ int FUN_0c0eb618(int, int);
 int FUN_0c0f0b42(int, int);
 int FUN_0c0f1766(int);
 int FUN_0c0f1c44(int);
-int FUN_0c0f4eac(void);
+int ADXT_ExecServer(void);
 int FUN_0c0fae0e(int, int, int, int);
 int FUN_0c0fb042(int, int, int, int);
 int FUN_0c0fb236(int);
@@ -192,13 +192,13 @@ int FUN_0c0ae4c0(int a4, int a5, int a6, int a7);
 int FUN_0c0dda50(int a4, int a5, int a6);
 int math_rsqrt_float(float f4);
 int FUN_0c0448f6(int a4);
-int FUN_0c061694(int a4, int a5, int a6, int a7);
+int sys_vsync_handler(int a4, int a5, int a6, int a7);
 int pl_enter_state_22(int a4, int a5);
 int pl_enter_state_19(int a4);
 int FUN_0c0de730(void);
 int nlSysMetricsCpuPowerEnd(void);
 int nlSysMetricsCpuPowerGet(void);
-int FUN_0c0e2140(int a4);
+int nlTranslateV(int a4);
 int FUN_0c0fc212(int a4, int a5, int a6, int a7);
 void vmu_menu_tick_message(int a4, int a5, int a6, int a7);
 void vmu_check_message_update(int a4, int a5, int a6, int a7);
@@ -558,10 +558,10 @@ int FUN_0c1081d6(int a4, int a5, int a6, int a7)
 
 int nlClearMatrix(void)
 {
-    FUN_0c0e0ae0(0x0);
+    nlStoreMatrix(0x0);
     (((struct o8_uint *)0xC7FCCB4)->v) = ((((struct o4_int *)0xC7FCCB4)->v));
     (((struct o0_ushort *)0xC7FCCB4)->v) = 0x0;
-    return FUN_0c0e1240(0x0);
+    return nlLoadMatrix(0x0);
 }
 
 int FUN_0c0e4860(int a4, int a5)
@@ -574,7 +574,7 @@ int FUN_0c0e1a40(void)
 {
     register int t0;
 
-    t0 = FUN_0c0e19b0(0x0);
+    t0 = nlPushMatrix(0x0);
     nlUnitMatrix();
     return t0;
 }
@@ -650,9 +650,9 @@ int FUN_0c1145cc(int a4, int a5, int a6, int a7)
     return FUN_0c114584(a4, ((a5 << 1) + a4), a7);
 }
 
-int FUN_0c0e2140(int a4)
+int nlTranslateV(int a4)
 {
-    return FUN_0c0e2110((*(float *)((a4 + 0x0))), ((((struct o4_float *)(a4))->v)), ((((struct o8_float *)(a4))->v)));
+    return nlTranslate((*(float *)((a4 + 0x0))), ((((struct o4_float *)(a4))->v)), ((((struct o8_float *)(a4))->v)));
 }
 
 int FUN_0c0fc212(int a4, int a5, int a6, int a7)
@@ -689,7 +689,7 @@ int FUN_0c113d4a(int a4, int a5, int a6)
 
 int FUN_0c0e16e0(void)
 {
-    FUN_0c0e19b0((*(int *)0xC7FCCD4));
+    nlPushMatrix((*(int *)0xC7FCCD4));
     return FUN_0c0e16c0();
 }
 

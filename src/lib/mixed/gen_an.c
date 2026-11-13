@@ -145,24 +145,24 @@ float math_rand_float(void);
 int dbg_print_string(int);
 int dbg_set_cursor_cell(int);
 int nlCalcVector(int, int);
-extern int FUN_0c0e0bd0();
-int FUN_0c0e12b0(int);
+extern int nlStoreMatrix8();
+int nlLoadMatrix8(int);
 int nlMultiMatrix8(int);
 int nlMultiMatrixRevOrder8(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int nlRotateAX(int);
 int nlRotateAxe(int, int);
 int nlRotateAY(int);
 int nlRotateAZ(int);
-int FUN_0c0e2050(int);
+int nlScaleV(int);
 int nlTransposeMatrix(void);
-int FUN_0c0e2140(int);
+int nlTranslateV(int);
 int FUN_0c0e22e0(int, int, float);
 int FUN_0c0e24f0(int, int, int, float, float, float, float);
 int FUN_0c0e34d0(int);
-int FUN_0c0e55e0(int, int);
-int FUN_0c0e5884(int);
-int FUN_0c0e59e8(int, int, int);
+int snd_bank_load(int, int);
+int snd_bank_unload(int);
+int snd_send_port_command(int, int, int);
 int FUN_0c0e6212(int, int, int);
 int _divls(void);
 int _modlu(void);
@@ -171,10 +171,10 @@ int FUN_0c0ee6f0(int, int);
 int FUN_0c0f1c72(int);
 int FUN_0c0f2968(int);
 int FUN_0c0f2f60(void);
-int FUN_0c0f4c2c(void);
-int FUN_0c0f4cc6(int);
-int FUN_0c0f4db4(int, int);
-int FUN_0c0f4f28(int, int);
+int ADXT_Stop(void);
+int ADXT_GetStat(int);
+int ADXT_SetOutVol(int, int);
+int ADXT_SetLpFlg(int, int);
 int FUN_0c0f53ae(void);
 int FUN_0c0fde38(int, int, int);
 int FUN_0c0fdea0(int);
@@ -229,7 +229,7 @@ int FUN_0c098a64(int a4);
 int bgm_stop_slot(int a4);
 int FUN_0c0cc7fc(int a4);
 int dbg_print_at(int a4, float f4, float f5);
-int FUN_0c0d4692(int a4, int a5, int a6, int a7);
+int attract_draw_press_start(int a4, int a5, int a6, int a7);
 int cam_mode_01(int a4);
 int FUN_0c0ddf30(void);
 int nlRotate(int a4, int a5, int a6, float f4, float f5, float f6, float f7);
@@ -256,9 +256,9 @@ int menu_check_start_button(int a4);
 int stage_obj_play_break_se(int a4);
 int FUN_0c0ccbca(void);
 int nlObjPutTrnsl(int a4, float f4);
-int FUN_0c0e0ae0(int a4);
+int nlStoreMatrix(int a4);
 float FUN_0c0e2260(int a4, int a5, int a6);
-int FUN_0c0e3bf2(float f4, float f5);
+int nl_set_virtual_screen(float f4, float f5);
 int FUN_0c0e3510(float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
 int FUN_0c0ed8b0(void);
 int FUN_0c0ed92c(void);
@@ -287,8 +287,8 @@ void FUN_0c0a413a(int a4);
 int FUN_0c0ac640(int a4);
 int FUN_0c0c3ab2(int a4, int a5, int a6, int a7);
 int nlInvLightVector(void);
-int FUN_0c0e1240(int a4, int a5, int a6, int a7);
-void FUN_0c0f5570(int a4);
+int nlLoadMatrix(int a4, int a5, int a6, int a7);
+void ADXF_Close(int a4);
 int vmsfs_ismount(int a4);
 int set_fat(int a4, int a5, int a6, int a7);
 int ADXSTM_ExecServer(void);
@@ -564,7 +564,7 @@ int FUN_0c1151de(int a4, int a5, int a6, int a7)
     return 0x0;
 }
 
-int FUN_0c0e0ae0(int a4)
+int nlStoreMatrix(int a4)
 {
     register int t1;
     float u3[16];
@@ -641,7 +641,7 @@ float FUN_0c0e2260(int a4, int a5, int a6)
     return u1;
 }
 
-int FUN_0c0e3bf2(float f4, float f5)
+int nl_set_virtual_screen(float f4, float f5)
 {
     int stk[2];
 
@@ -658,12 +658,12 @@ int FUN_0c0e3510(float f4, float f5, float f6, float f7, float f8, float f9, flo
 {
     register int t0;
 
-    t0 = ((int (*)(int, float, float, float, float, float, float, float, float))(FUN_0c0e0bd0))(0xC7FD000, f4, f5, f6, f7, f8, f9, f10, f11);
+    t0 = ((int (*)(int, float, float, float, float, float, float, float, float))(nlStoreMatrix8))(0xC7FD000, f4, f5, f6, f7, f8, f9, f10, f11);
     FUN_0c0e34d0(0xC7FCEE8);
     nlMultiMatrix8(0xC7FD000);
-    t0 = ((int (*)(int))(FUN_0c0e0bd0))(0xC7FCF80);
-    t0 = ((int (*)(int))(FUN_0c0e0bd0))(0xC7FCFC0);
-    return FUN_0c0e12b0(0xC7FD000);
+    t0 = ((int (*)(int))(nlStoreMatrix8))(0xC7FCF80);
+    t0 = ((int (*)(int))(nlStoreMatrix8))(0xC7FCFC0);
+    return nlLoadMatrix8(0xC7FD000);
 }
 
 int FUN_0c0ed8b0(void)
@@ -862,7 +862,7 @@ int FUN_0c11568c(int a4, int a5, int a6, int a7)
     return (unsigned short)(~(unsigned short)t6);
 }
 
-int FUN_0c0e1240(int a4, int a5, int a6, int a7)
+int nlLoadMatrix(int a4, int a5, int a6, int a7)
 {
     register int t1;
 
@@ -873,7 +873,7 @@ int FUN_0c0e1240(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC0E1280))(t1, a5, a6, a7);
 }
 
-void FUN_0c0f5570(int a4)
+void ADXF_Close(int a4)
 {
     if (a4 != 0) {
         ADXCRS_Lock();

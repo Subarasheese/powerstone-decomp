@@ -151,7 +151,7 @@ int FUN_0c0d7a7c(void);
 int FUN_0c0d7a9c(void);
 int cam_compute_follow(int, int);
 int cam_step_keyframe_script(int, int);
-int FUN_0c0dd5d0(int, int);
+int nl_model_bind_textures(int, int);
 int gfx_set_background_color(int, int, int, float);
 int gfx_init_display_mode(int, int, int);
 int math_rand_next(void);
@@ -159,10 +159,10 @@ int math_sin_angle16(int);
 int math_sin_float(float);
 int nlMultiMatrix8(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(void);
-int FUN_0c0e48b0(int, int, int);
-int FUN_0c0e59e8(int, int, int);
-int FUN_0c0e5d22(int);
+int nlPushMatrix(void);
+int sys_set_interrupt_handler(int, int, int);
+int snd_send_port_command(int, int, int);
+int snd_send_command(int);
 int FUN_0c0e6758(int, int);
 int FUN_0c0e6834(int, int, int);
 int _quick_odd_mvn(int);
@@ -173,8 +173,8 @@ int gdFsChangeDir(void);
 int gdFsSeek(int, int, int);
 int gdFsInitOvl(void);
 int FUN_0c0f2f7e(void);
-int FUN_0c0f4128(int);
-int FUN_0c0f4db4(int, int);
+int vib_port_has_vibration(int);
+int ADXT_SetOutVol(int, int);
 int kmFlipFrameBuffer(void);
 int FUN_0c0f61c0(void);
 int FUN_0c0f9bb2(void);
@@ -268,7 +268,7 @@ int FUN_0c0f1c44(int a4);
 int FUN_0c0f1fa4(void);
 int FUN_0c0f202c(void);
 int FUN_0c0f2044(void);
-int FUN_0c0f4686(int a4, int a5, int a6, int a7);
+int ADXT_Finish(int a4, int a5, int a6, int a7);
 int kmSetColorClampValue(Stk4 s);
 int kmSetFogDensity(int a4);
 void gdFsMemcpy(int a4, int a5, int a6);
@@ -415,8 +415,8 @@ int stage_spawn_gimmick_by_kind(int a4, int a5, int a6, int a7);
 int testmode_color_test_screen(void);
 int nlSysMetricsScaleTime(int a4);
 void nlGetTranslate(int a4);
-void FUN_0c0e2080(int a4);
-void FUN_0c0e2110(float f4, float f5, float f6);
+void nlSetTranslate(int a4);
+void nlTranslate(float f4, float f5, float f6);
 int FUN_0c0ec0f2(int a4);
 int syHwCacheFinish(int a4, int a5, int a6, int a7);
 int syHwInit2(void);
@@ -466,10 +466,10 @@ int syRtcFinish(void);
 int FUN_0c0ee1fc(int a4);
 int FUN_0c0ee288(int a4);
 int FUN_0c0ee6dc(int a4, int a5);
-int FUN_0c0f581e(int a4);
-int FUN_0c0f5810(int a4);
-int FUN_0c0f5842(int a4);
-int FUN_0c0f5850(int a4);
+int ADXF_GetFsizeByte(int a4);
+int ADXF_GetFsizeSct(int a4);
+int ADXF_GetNumReadSct(int a4);
+int ADXF_GetStat(int a4);
 int gdDcfChkDmaTrans_(int a4, int a5);
 int gdDcfSvr_(int a4, int a5);
 int kdGetDeviceInfo(int a4);
@@ -491,7 +491,7 @@ int FUN_0c0d44c4(void);
 int ui_draw_win_counts_both(int a4, int a5, int a6, int a7);
 int FUN_0c0d5ba8(void);
 void FUN_0c0dd310(void);
-void FUN_0c0e4ac0(int a4);
+void sys_set_exception_area(int a4);
 int FUN_0c0eb5c8(int a4, int a5);
 int FUN_0c0eb5b6(void);
 int FUN_0c0eb604(int a4, int a5);
@@ -501,7 +501,7 @@ int FUN_0c0eb5dc(int a4, int a5);
 int FUN_0c0eb640(int a4, int a5);
 int FUN_0c0eb654(int a4, int a5);
 int gdFsCreateDirhn(int a4, int a5);
-int FUN_0c0f263a(int a4);
+int pdGetPeripheral(int a4);
 int FUN_0c0fad80(int a4);
 int FUN_0c0fd8c0(int a4, int a5);
 int ADXSJD_GetFormat(int a4);
@@ -579,8 +579,8 @@ int FUN_0c02d83c(void);
 void ui_fade_reset(void);
 void FUN_0c05fc00(void);
 void FUN_0c05fc1c(void);
-int FUN_0c061434(int a4, int a5, int a6);
-int FUN_0c06143c(int a4, int a5, int a6);
+int sys_vsync_handler_install(int a4, int a5, int a6);
+int sys_vsync_handler_remove(int a4, int a5, int a6);
 int pl_start_motion_10(int a4);
 int FUN_0c0645ee(int a4);
 int pl_mode12_enter(int a4);
@@ -591,10 +591,10 @@ void FUN_0c0d487e(void);
 int cam_mode_default(int a4);
 int cam_mode_28(int a4);
 int FUN_0c0df100(void);
-int FUN_0c0e0800(int a4);
+int gfx_set_fog_density(int a4);
 int FUN_0c0e4980(int a4, int a5);
-int FUN_0c0f4104(int a4, int a5, int a6, int a7);
-int FUN_0c0f4f1a(int a4);
+int sys_exit_to_bios(int a4, int a5, int a6, int a7);
+int ADXT_ClearErrCode(int a4);
 int FUN_0c0fae00(int a4);
 void kdSetGunTrigger(int a4);
 int FUN_0c101140(int a4);
@@ -644,7 +644,7 @@ int cam_mode_14(int a4);
 int cam_mode_08_09(int a4);
 int cam_mode_26(int a4);
 void FUN_0c0dd9e0(int a4);
-void FUN_0c0de890(int a4);
+void gfx_set_buffer_size(int a4);
 int nlSysMetricsReadTimer(void);
 int nlSysMetricsDiffTime(int a4, int a5);
 void dbg_set_text_color(int a4);
@@ -656,9 +656,9 @@ int buGetVersion(int a4);
 void buSetPrintFunc(int a4);
 int syCfgConvLang(int a4);
 int pdVibMxIsReady(int a4);
-int FUN_0c0f4dc8(int a4);
-int FUN_0c0f4f14(int a4);
-int FUN_0c0f4f28(int a4, int a5);
+int ADXT_GetOutVol(int a4);
+int ADXT_GetErrCode(int a4);
+int ADXT_SetLpFlg(int a4, int a5);
 int FUN_0c0fae08(void);
 void FUN_0c0fddce(int a4);
 int gdFsGetGdDcf(void);
@@ -719,7 +719,7 @@ void cam_nop(void);
 int FUN_0c0e48a0(void);
 void FUN_0c0eacf0(void);
 void FUN_0c0f283e(void);
-int FUN_0c0f4cc6(int a4);
+int ADXT_GetStat(int a4);
 void FUN_0c0f619a(void);
 int gdFsStrcmp(int a4, int a5);
 void FUN_0c0ff7e0(void);
@@ -744,7 +744,7 @@ void kmiModuleInitialize(void);
 void FUN_0c113000(void);
 int FUN_0c114342(int a4);
 int FUN_0c115108(void);
-int FUN_0c0e7240(int a4, int a5);
+int nl_objasm_draw_obj_opaque(int a4, int a5);
 
 void fmMngMcpy4(int a4, int a5, int a6)
 {
@@ -969,7 +969,7 @@ int FUN_0c0f2044(void)
     return 0x0;
 }
 
-int FUN_0c0f4686(int a4, int a5, int a6, int a7)
+int ADXT_Finish(int a4, int a5, int a6, int a7)
 {
     ADXRNA_Finish(a4, a5, a6, a7);
     ADXSJD_Finish();
@@ -1543,7 +1543,7 @@ void nlGetTranslate(int a4)
     _builtin_ld_ext((float (*)[4])u1);
 }
 
-void FUN_0c0e2080(int a4)
+void nlSetTranslate(int a4)
 {
     register float u0;
     register float u1;
@@ -1560,7 +1560,7 @@ void FUN_0c0e2080(int a4)
     _builtin_ld_ext((float (*)[4])u3);
 }
 
-void FUN_0c0e2110(float f4, float f5, float f6)
+void nlTranslate(float f4, float f5, float f6)
 {
     float u0[4];
     float u1[16];
@@ -1751,7 +1751,7 @@ int FUN_0c0ee6dc(int a4, int a5)
     return (FUN_0c0eeecc(a4, a5));
 }
 
-int FUN_0c0f581e(int a4)
+int ADXF_GetFsizeByte(int a4)
 {
     if (a4 == 0) {
         return 0xFFFFFFFD;
@@ -1759,7 +1759,7 @@ int FUN_0c0f581e(int a4)
     return (*(int *)((a4 + 0x14)));
 }
 
-int FUN_0c0f5810(int a4)
+int ADXF_GetFsizeSct(int a4)
 {
     if (a4 == 0) {
         return 0xFFFFFFFD;
@@ -1767,7 +1767,7 @@ int FUN_0c0f5810(int a4)
     return (*(int *)((a4 + 0x10)));
 }
 
-int FUN_0c0f5842(int a4)
+int ADXF_GetNumReadSct(int a4)
 {
     if (a4 == 0) {
         return 0xFFFFFFFD;
@@ -1775,7 +1775,7 @@ int FUN_0c0f5842(int a4)
     return (*(int *)((a4 + 0x24)));
 }
 
-int FUN_0c0f5850(int a4)
+int ADXF_GetStat(int a4)
 {
     if (a4 == 0) {
         return 0xFFFFFFFD;
@@ -1834,7 +1834,7 @@ int mpdrv_swapmode(int a4)
     return 0x10C4;
 }
 
-void FUN_0c0e4ac0(int a4)
+void sys_set_exception_area(int a4)
 {
     *(unsigned int *)0xC15A374 = 0x80000000;
     *(unsigned int *)0xC346BE8 = a4;
@@ -1909,7 +1909,7 @@ int gdFsCreateDirhn(int a4, int a5)
     return a4;
 }
 
-int FUN_0c0f263a(int a4)
+int pdGetPeripheral(int a4)
 {
     return ((a4 * 0x34) + 0xC7FE70C);
 }
@@ -2209,7 +2209,7 @@ int FUN_0c115a48(void)
     return memset(0xC857C8C, 0x0, 0x1A0);
 }
 
-int FUN_0c0e0800(int a4)
+int gfx_set_fog_density(int a4)
 {
     return kmSetFogDensity(a4);
 }
@@ -2220,7 +2220,7 @@ int FUN_0c0e4980(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c0f4104(int a4, int a5, int a6, int a7)
+int sys_exit_to_bios(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
@@ -2228,7 +2228,7 @@ int FUN_0c0f4104(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(t0))(0x1, a5, a6, a7);
 }
 
-int FUN_0c0f4f1a(int a4)
+int ADXT_ClearErrCode(int a4)
 {
     (((struct o60_ushort *)(a4))->v) = 0x0;
     return 0x60;
@@ -2336,20 +2336,20 @@ int syCfgConvLang(int a4)
 
 int pdVibMxIsReady(int a4)
 {
-    return FUN_0c0f4128(a4);
+    return vib_port_has_vibration(a4);
 }
 
-int FUN_0c0f4dc8(int a4)
+int ADXT_GetOutVol(int a4)
 {
     return ((((struct o40_short *)(a4))->v));
 }
 
-int FUN_0c0f4f14(int a4)
+int ADXT_GetErrCode(int a4)
 {
     return ((((struct o60_short *)(a4))->v));
 }
 
-int FUN_0c0f4f28(int a4, int a5)
+int ADXT_SetLpFlg(int a4, int a5)
 {
     (((struct o6C_uchar *)(a4))->v) = a5;
     return 0x6C;
@@ -2468,7 +2468,7 @@ void FUN_0c0f283e(void)
     
 }
 
-int FUN_0c0f4cc6(int a4)
+int ADXT_GetStat(int a4)
 {
     return (*(signed char *)((a4 + 0x1)));
 }

@@ -5,7 +5,7 @@ struct o8_float { char p[0x8]; float v; };
 float math_vec3_length(int, float);
 float math_signed_sqrt(float);
 struct vec3i { int x, y, z; };
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int nlCalcPoint(struct vec3i *, struct vec3i *);
 int nlPopMatrix(int);
 int math_mat_row_length(int, int, float);
@@ -48,7 +48,7 @@ void math_mat_transform_point(struct vec3i *point, int matrix_idx)
 {
     struct vec3i tmp;
 
-    FUN_0c0e19b0(matrix_idx);
+    nlPushMatrix(matrix_idx);
     tmp = *point;
     nlCalcPoint(&tmp, point);
     nlPopMatrix(1);

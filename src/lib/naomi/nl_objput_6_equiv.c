@@ -2,11 +2,11 @@
 
 int nlMultiMatrix(int);
 int FUN_0c0e16c0(void);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 
 int nlMakeModelViewProjectMatrix_objput(void)
 {
-    FUN_0c0e19b0(0xC7FCF80);
+    nlPushMatrix(0xC7FCF80);
     nlMultiMatrix((*(int *)0xC7FCCD4));
     return FUN_0c0e16c0();
 }

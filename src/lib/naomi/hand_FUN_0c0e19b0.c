@@ -2,7 +2,7 @@
 extern void _builtin_ld_ext(float (*)[4]);
 extern void _builtin_st_ext(float (*)[4]);
 
-int FUN_0c0e19b0(float *src_matrix)
+int nlPushMatrix(float *src_matrix)
 {
     float tmp[16];
     float *stack_ptr;

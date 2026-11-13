@@ -124,14 +124,14 @@ int stage_type02_mode_03(void);
 int fx_spawn_25(int, int);
 int cam_request_mode_with_args(int, int, int, int);
 int cam_set_shake_ramp(int, int);
-int FUN_0c0ddd70(int);
+int nl_texture_surface_words(int);
 float math_sin_angle16(int);
 float math_tan_angle16(int);
 int FUN_0c0e34a0(float);
 int FUN_0c0eb0c0(int, int, int);
 int FUN_0c0f4938(int, int);
-int FUN_0c0f4c2c(int, int, int, int);
-int FUN_0c0f5570(int);
+int ADXT_Stop(int, int, int, int);
+int ADXF_Close(int);
 int FUN_0c0f5898(int, int, int, int);
 int FUN_0c0fcb8a(void);
 int FUN_0c0fdda0(int, int, int);
@@ -170,7 +170,7 @@ int FUN_0c1073ea(int a4, int a5, int a6, int a7);
 float math_vec3_cos_between(int a4, int a5, float f4);
 int pl_mode08_09_phase2_fall(int a4);
 int pl_kraken_attack_kind6_phase4(int a4);
-int FUN_0c0f4a94(int a4, int a5, int a6, int a7);
+int ADXT_StartMem(int a4, int a5, int a6, int a7);
 int FUN_0c01acfc(int a4);
 int ai_op74_get_own_move(int a4);
 int ai_op15(int a4);
@@ -206,8 +206,8 @@ int pl_kraken_attack_kind6_phase2(int a4);
 int pl_state11_update(int a4, int a5, int a6, int a7);
 int FUN_0c0ddc30(void);
 void kmiDefaultFatalErrorCallback(int a4);
-int FUN_0c0f4ada(int a4, int a5, int a6, int a7);
-int FUN_0c0f54fc(int a4, int a5);
+int ADXT_StartSj(int a4, int a5, int a6, int a7);
+int ADXF_OpenAfs(int a4, int a5);
 int FUN_0c108252(int a4, int a5, int a6, int a7);
 int FUN_0c01b82e(int a4);
 int pl_state40_phase0(int a4);
@@ -259,7 +259,7 @@ int pl_gunrock_special2_dispatch(int a4, int a5, int a6, int a7);
 int pl_kraken_attack_kind5(int a4, int a5, int a6, int a7);
 int FUN_0c089b1a(int a4, int a5, int a6, int a7);
 int pl_hitreact_20_update(int a4, int a5, int a6, int a7);
-int FUN_0c0d4660(int a4);
+int attract_draw_text_item(int a4);
 int FUN_0c114a6c(void);
 int FUN_0c115c2e(void);
 int game_mode_handler_1(int a4, int a5, int a6, int a7);
@@ -282,11 +282,11 @@ int FUN_0c1073ea(int a4, int a5, int a6, int a7)
     return (FUN_0c1070b8(((int)stk + 0)));
 }
 
-int FUN_0c0f4a94(int a4, int a5, int a6, int a7)
+int ADXT_StartMem(int a4, int a5, int a6, int a7)
 {
     register int t2;
 
-    FUN_0c0f4c2c(a4, a5, a6, a7);
+    ADXT_Stop(a4, a5, a6, a7);
     ADXCRS_Lock();
     t2 = FUN_0c1084b6(a5, 0x40000000);
     if (t2 == 0) {
@@ -589,9 +589,9 @@ void kmiDefaultFatalErrorCallback(int a4)
     }
 }
 
-int FUN_0c0f4ada(int a4, int a5, int a6, int a7)
+int ADXT_StartSj(int a4, int a5, int a6, int a7)
 {
-    FUN_0c0f4c2c(a4, a5, a6, a7);
+    ADXT_Stop(a4, a5, a6, a7);
     ADXCRS_Lock();
     FUN_0c105e8e((*(int *)((a4 + 0x4))), a5);
     *(unsigned int *)((a4 + 0x14)) = a5;
@@ -602,7 +602,7 @@ int FUN_0c0f4ada(int a4, int a5, int a6, int a7)
     return ADXCRS_Unlock();
 }
 
-int FUN_0c0f54fc(int a4, int a5)
+int ADXF_OpenAfs(int a4, int a5)
 {
     register int t1;
     register int t9;
@@ -615,7 +615,7 @@ int FUN_0c0f54fc(int a4, int a5)
         t2 = adxf_SetAfsFileInfo(t1, a4, a5);
         t9 = t1;
         if ((int)t2 < 0) {
-            FUN_0c0f5570(t1);
+            ADXF_Close(t1);
             t9 = 0x0;
         }
     }

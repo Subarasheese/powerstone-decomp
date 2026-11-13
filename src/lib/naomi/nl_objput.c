@@ -1,14 +1,14 @@
 /* nlObjPut family (object put with world or view matrix) (0c0dcae0-0c0dcf10) */
 
-extern int FUN_0c0e0bd0();
-int FUN_0c0e12b0(int);
+extern int nlStoreMatrix8();
+int nlLoadMatrix8(int);
 int nlMultiMatrixRevOrder8(int);
 int nlInvLightVector(void);
 int nlInvLightVectorUseViewMatrix(void);
 int nlobjput_sub(int);
 int nlobjput_sub_trnsl(int);
 int nlMakeModelViewProjectMatrix_objput(void);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct o0_float { float v; };
@@ -54,10 +54,10 @@ int nlObjPutWorldMatrixMode(int a4, int a5, int a6, int a7, float f4, float f5, 
 {
     register int t0;
 
-    t0 = ((int (*)(int, int, int, int, float, float, float, float, float, float, float, float))(FUN_0c0e0bd0))(0xC7F8780, a5, a6, a7, f4, f5, f6, f7, f8, f9, f10, f11);
+    t0 = ((int (*)(int, int, int, int, float, float, float, float, float, float, float, float))(nlStoreMatrix8))(0xC7F8780, a5, a6, a7, f4, f5, f6, f7, f8, f9, f10, f11);
     nlMultiMatrixRevOrder8(0xC7FCFC0);
-    t0 = ((int (*)(int))(FUN_0c0e0bd0))(0xC7FCF80);
-    return FUN_0c0e12b0(0xC7F8780);
+    t0 = ((int (*)(int))(nlStoreMatrix8))(0xC7FCF80);
+    return nlLoadMatrix8(0xC7F8780);
 }
 
 int nlObjPut(int a4)
@@ -65,7 +65,7 @@ int nlObjPut(int a4)
     if (((*(int *)((a4 + 0x4))) & 0x2) == 0) {
         nlInvLightVector();
     }
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlMultiMatrixRevOrder8(0xC7FCF80);
     return nlobjput_sub(a4);
 }
@@ -84,7 +84,7 @@ int nlObjPutTrnsl(int a4, float f4)
     if (((*(int *)((a4 + 0x4))) & 2) == 0) {
         nlInvLightVector();
     }
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlMultiMatrixRevOrder8(0xC7FCF80);
     return nlobjput_sub_trnsl(a4);
 }
@@ -116,7 +116,7 @@ int FUN_0c0dccb0(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int, float, float, float))(0xC0DCC80))(a4, a5, a6, a7, u1, u2, u0);
 }
 
-int FUN_0c0dccd0(int a4)
+int nlSetLightDirection(int a4)
 {
     register float u0;
     register float u1;
@@ -138,7 +138,7 @@ int FUN_0c0dccd0(int a4)
     return 0x8;
 }
 
-void FUN_0c0dcd20(float x, float y, float z)
+void nlSetLightColor(float x, float y, float z)
 {
     struct Vec3f *stored = (struct Vec3f *)0xC3468B0;
     struct Vec3f *copy = (struct Vec3f *)0xC3468C0;

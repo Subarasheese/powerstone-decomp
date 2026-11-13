@@ -3,8 +3,8 @@
 /* named globals (symbols.txt) */
 extern char g_bgm_by_index_tbl[];
 int bgm_start_file(int, int);
-int FUN_0c0f4db4(int, int);
-int FUN_0c0f4f28(int, int);
+int ADXT_SetOutVol(int, int);
+int ADXT_SetLpFlg(int, int);
 
 int bgm_play_open(void)
 {
@@ -17,14 +17,14 @@ int bgm_play_open(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x46;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_here(void)
 {
     bgm_start_file(0x0, 0x106);
     *(volatile signed char *)0xC7F2F0E;
-    return FUN_0c0f4db4((*(int *)0xC494048), 0xFFFFFFF6);
+    return ADXT_SetOutVol((*(int *)0xC494048), 0xFFFFFFF6);
 }
 
 int bgm_play_rank(void)
@@ -38,8 +38,8 @@ int bgm_play_rank(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x41;
     }
-    FUN_0c0f4db4(t2, t3);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
+    ADXT_SetOutVol(t2, t3);
+    return ADXT_SetLpFlg((*(int *)0xC494048), 0x1);
 }
 
 int bgm_play_demo_01(void)
@@ -53,7 +53,7 @@ int bgm_play_demo_01(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x41;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_ending_start(void)
@@ -67,7 +67,7 @@ int bgm_play_ending_start(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x41;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_demo_w(void)
@@ -81,7 +81,7 @@ int bgm_play_demo_w(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x46;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_demo_e(void)
@@ -95,7 +95,7 @@ int bgm_play_demo_e(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x46;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_demo_m(void)
@@ -109,7 +109,7 @@ int bgm_play_demo_m(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x46;
     }
-    return FUN_0c0f4db4(t2, t3);
+    return ADXT_SetOutVol(t2, t3);
 }
 
 int bgm_play_omake(void)
@@ -123,8 +123,8 @@ int bgm_play_omake(void)
     if ((*(signed char *)0xC7F2F0E) != 0) {
         t3 = 0x14;
     }
-    FUN_0c0f4db4(t2, t3);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
+    ADXT_SetOutVol(t2, t3);
+    return ADXT_SetLpFlg((*(int *)0xC494048), 0x1);
 }
 
 void bgm_play_by_index(int a4)
@@ -141,8 +141,8 @@ void bgm_play_by_index(int a4)
         if ((*(signed char *)0xC7F2F0E) != 0) {
             t6 = 0x2D;
         }
-        FUN_0c0f4db4(t5, t6);
-        FUN_0c0f4f28((*(int *)0xC494048), 0x1);
+        ADXT_SetOutVol(t5, t6);
+        ADXT_SetLpFlg((*(int *)0xC494048), 0x1);
     return;
     }
 }

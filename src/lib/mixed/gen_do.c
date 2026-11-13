@@ -140,7 +140,7 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int FUN_0c0e5178(int, int, int);
 int FUN_0c0e51d0(void);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _modlu(void);
 int _quick_odd_mvn(void);
 int FUN_0c0ff8aa(void);
@@ -159,7 +159,7 @@ int syCfgSetSoundMode(int, int, int);
 int thunk_FUN_0c062242(int);
 int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8);
 int FUN_0c0265de(int a4);
-int FUN_0c0e5884(int a4);
+int snd_bank_unload(int a4);
 int fx_spawn_03f2c8(int a4);
 int pl_mode08_09_phase1(int a4);
 int pl_try_dual_button_action(int a4, int a5, int a6);
@@ -284,7 +284,7 @@ int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8)
     goto L_C0FE7A2;
 }
 
-int FUN_0c0e5884(int a4)
+int snd_bank_unload(int a4)
 {
     register int t0;
     register int t1;
@@ -349,7 +349,7 @@ int FUN_0c0e5884(int a4)
             }
             *(unsigned int *)((((a4 << 2) + 0xA0800060) + 0x0)) = 0xFFFFFFFF;
             for (;;) {
-                t3 = FUN_0c0e5d22(0x18A0);
+                t3 = snd_send_command(0x18A0);
                 if (t3 != -1) {
                     break;
                 }

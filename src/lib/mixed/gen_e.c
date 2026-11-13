@@ -117,15 +117,15 @@ float math_cos_angle16(int);
 float math_sin_angle16(int);
 int nlCalcPoint44(int, int);
 int nlCalcPoint(int, int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 int nlMultiMatrix(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int FUN_0c0e5178(int, int, int);
 int FUN_0c0e51d0(void);
 int FUN_0c0e51e8(int, int);
 int FUN_0c0e52b6(int, int, int, int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int FUN_0c0e60ce(int, int);
 int FUN_0c0e6834(int, int, int);
 int _quick_odd_mvn(int, int, int, int);
@@ -167,7 +167,7 @@ int FUN_0c02c2d0(int a4);
 int fx_spawn_048aa0(int a4);
 int FUN_0c08c114(int a4, int a5, int a6, int a7);
 int savedata_reset_default(void);
-int FUN_0c0e55e0(int a4, int a5);
+int snd_bank_load(int a4, int a5);
 int FUN_0c0f4328(int a4, int a5, int a6, int a7, int a8, int a9);
 int kmiCopyToFrameBuffer(int a4, int a5, int a6, int a7);
 int ADXB_ExecOneSpsd(int a4, int a5, int a6, int a7);
@@ -385,7 +385,7 @@ int FUN_0c1137d4(int a4)
     goto L_C11387C;
 }
 
-int FUN_0c0e55e0(int a4, int a5)
+int snd_bank_load(int a4, int a5)
 {
     int stk[7];
     register int t2;
@@ -409,7 +409,7 @@ int FUN_0c0e55e0(int a4, int a5)
         *(unsigned int *)(((int)stk + 8)) = (*(int *)((t3 + 0x4)));
         *(unsigned int *)(((int)stk + 16)) = (FUN_0c0e52b6((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), ((int)stk + 0)));
         for (;;) {
-            t10 = FUN_0c0e5d22(0x18A0);
+            t10 = snd_send_command(0x18A0);
             if (t10 != -1) {
                 break;
             }

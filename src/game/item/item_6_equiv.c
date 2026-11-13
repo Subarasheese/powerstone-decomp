@@ -37,8 +37,8 @@ struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int snd_play_side_se(int, int);
 struct sub_obj { char pad0[24]; int field_24; float scale_x, scale_y, scale_z; };
 float math_sin_angle16(int a);
-int FUN_0c0e1550(int a);
-int FUN_0c0e1240(char *m);
+int nlSelectMatrixStack(int a);
+int nlLoadMatrix(char *m);
 int nlCalcPoint(float *in, float *out);
 void fx_spawn_heading_shot(float *p, char *q, int a, int b);
 
@@ -162,8 +162,8 @@ void fx_tick_pulsing_emitter(char *obj)
     default:
         break;
     }
-    FUN_0c0e1550(1);
-    FUN_0c0e1240(obj + 108);
+    nlSelectMatrixStack(1);
+    nlLoadMatrix(obj + 108);
     pts[3] = 0.0f;
     pts[4] = 12.3999996f;
     pts[5] = 76.0f;

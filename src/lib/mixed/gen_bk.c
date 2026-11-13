@@ -91,13 +91,13 @@ int cam_set_shake_ramp(int, int);
 float math_signed_sqrt(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int FUN_0c0eb640(int, int);
 int FUN_0c0f42ec(int, int);
 int FUN_0c0f4968(int);
-int FUN_0c0f4c2c(int, int, int, int);
+int ADXT_Stop(int, int, int, int);
 int FUN_0c0f5898(int, int, int, int);
-int FUN_0c0fc5da(int, int, int, int);
+int kmLoadTexture(int, int, int, int);
 int FUN_0c0fe978(int, int);
 int FUN_0c0feba6(int, int);
 int FUN_0c0ff4b4(int);
@@ -129,7 +129,7 @@ int obj_release_all_but_class(int a4);
 int pl_garuda_victim_phase7(int a4, int a5, int a6, int a7);
 int pl_gunrock_mode04_phase2(int a4);
 int pl_valgas_mode04_phase2(int a4);
-int FUN_0c0f49a6(int a4, int a5, int a6, int a7);
+int ADXT_StartAfs(int a4, int a5, int a6, int a7);
 int kdSetBlockReadEx(int a4, int a5, int a6, int a7, int a8, int a9);
 int kdSetGetLastErrorEx(int a4, int a5, int a6, int a7, int a8, int a9);
 int FUN_0c0232ca(int a4, int a5, int a6, int a7);
@@ -197,14 +197,14 @@ int FUN_0c0f0ae0(void)
     return t0;
 }
 
-int FUN_0c0f49a6(int a4, int a5, int a6, int a7)
+int ADXT_StartAfs(int a4, int a5, int a6, int a7)
 {
     int stk[7];
     register int t8;
 
     *(unsigned int *)(((int)stk + 20)) = a5;
     *(unsigned int *)(((int)stk + 24)) = a6;
-    FUN_0c0f4c2c(a4, a5, a6, a7);
+    ADXT_Stop(a4, a5, a6, a7);
     ADXCRS_Lock();
     FUN_0c0f5898((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 24))), ((int)stk + 12), (((int)stk + 12) + 0x4));
     t8 = ADXSTM_OpenRange((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 16))), (*(int *)((a4 + 0x10))));
@@ -382,11 +382,11 @@ int FUN_0c0e5cc6(int a4, int a5)
     t5 = 0xFFFFFFFE;
     if (a4 != 0xA3) {
     } else {
-        t0 = FUN_0c0e5d22((a4 + ((a5 & 0xF) << 16)));
+        t0 = snd_send_command((a4 + ((a5 & 0xF) << 16)));
         t5 = t0;
         if (t0 != 0) {
         } else {
-            t5 = (FUN_0c0e5d22(((a4 + ((a5 & 0xF) << 16)) + 0x100)));
+            t5 = (snd_send_command(((a4 + ((a5 & 0xF) << 16)) + 0x100)));
         }
     }
     return t5;

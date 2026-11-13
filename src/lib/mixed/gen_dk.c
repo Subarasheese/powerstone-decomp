@@ -142,10 +142,10 @@ float math_cos_angle16(int);
 int math_rand_next(void);
 float math_sin_angle16(int);
 int FUN_0c0e09f0(int, int, int, int, float);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
 float FUN_0c0e12e0(int, int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 extern int _modls();
 extern int _quick_evn_mvn();
 int _quick_odd_mvn(void);
@@ -229,7 +229,7 @@ float nlInvertMatrix(int a4)
     *(unsigned int *)(((int)stk + 8)) = a4;
     t2 = a4;
     if (a4 == 0) {
-        t2 = (FUN_0c0e0ae0(0x0));
+        t2 = (nlStoreMatrix(0x0));
     }
     t5 = FUN_0c0e12e0(t2, (((int)stk + 0) + 0x4C));
     if (t5 == 0.0f) {
@@ -322,7 +322,7 @@ float nlInvertMatrix(int a4)
         }
         FUN_0c0e09f0(t2, (((int)stk + 0) + 0xC), t45, t46, (u47 / u32));
         if ((*(int *)(((int)stk + 8))) == 0) {
-            FUN_0c0e1240(t2);
+            nlLoadMatrix(t2);
         }
     }
     return t5;

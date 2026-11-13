@@ -32,10 +32,10 @@ L2: .DATA.W H'00D0
 L3: NOP
 }
 extern void _quick_mvn(void);
-extern void FUN_0c0e1240(unsigned char *);
-extern void FUN_0c0e0ae0(unsigned char *);
-extern void FUN_0c0e2140(unsigned char *);
-extern void FUN_0c0e2050(unsigned char *);
+extern void nlLoadMatrix(unsigned char *);
+extern void nlStoreMatrix(unsigned char *);
+extern void nlTranslateV(unsigned char *);
+extern void nlScaleV(unsigned char *);
 extern void nlRotateAX(int);
 extern void nlRotateAY(int);
 extern void nlCalcPoint(struct vec3 *, struct vec3 *);
@@ -65,7 +65,7 @@ void pl_aim_joint_at_target(unsigned char *obj)
     cam = rec + 704;
     mvn208(frame.limit_tbl, (void *)0xC150B8C);
     *(struct vec3 *)(0xC439EA8 + (signed char)(obj[3] * 12)) = *(struct vec3 *)(cam + 84);
-    FUN_0c0e1240(frame.mat_ptr);
+    nlLoadMatrix(frame.mat_ptr);
     frame.tmp_vec.x = 0;
     frame.tmp_vec.y = 0;
     frame.tmp_vec.z = 0;
@@ -79,14 +79,14 @@ void pl_aim_joint_at_target(unsigned char *obj)
     frame.look_z = frame.tmp_vec.z;
     sq = frame.tmp_vec.z * frame.tmp_vec.z + frame.tmp_vec.x * frame.look_x;
     frame.cam_ang[0] = math_atan2_angle16(frame.tmp_vec.y, math_signed_sqrt(sq));
-    FUN_0c0e1240(frame.mat_ptr);
-    FUN_0c0e2140(cam + 152);
+    nlLoadMatrix(frame.mat_ptr);
+    nlTranslateV(cam + 152);
     nlRotateAX(frame.cam_ang[0]);
-    FUN_0c0e2050(cam + 108);
-    FUN_0c0e0ae0(frame.mat_a);
+    nlScaleV(cam + 108);
+    nlStoreMatrix(frame.mat_a);
     if (obj[0x7232] == 0 && *(signed char *)0xC7F300B == 0 && *(signed char *)0xC7F300E == 0 && *(signed char *)0xC7F3078 == 0) {
         nlInvertMatrix(0);
-        FUN_0c0e0ae0(frame.mat_b);
+        nlStoreMatrix(frame.mat_b);
         frame.aim_vec.y = 0;
         frame.aim_vec.x = 0;
         frame.aim_vec.z = 100.0f;
@@ -149,8 +149,8 @@ void pl_aim_joint_at_target(unsigned char *obj)
         else if (angle < limits[3] && angle > 0x8000)
             *(int *)(cam + 84) = limits[3];
     }
-    FUN_0c0e1240(frame.mat_a);
+    nlLoadMatrix(frame.mat_a);
     nlRotateAY(*(int *)(cam + 88));
     nlRotateAX(*(int *)(cam + 84));
-    FUN_0c0e0ae0(cam);
+    nlStoreMatrix(cam);
 }

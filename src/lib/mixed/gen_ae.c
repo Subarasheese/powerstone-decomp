@@ -164,7 +164,7 @@ float math_signed_sqrt(float);
 int math_atan_angle16(float);
 float math_rand_float(void);
 int syRtcGetDate(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int FUN_0c0e60ce(int, int);
 int FUN_0c0e6102(int, int);
 int _modls(int);
@@ -233,7 +233,7 @@ void FUN_0c0a40e4(int a4);
 int FUN_0c0bfe20(int a4);
 int obj_integrate_motion(int a4);
 int FUN_0c0d7566(int a4, int a5, int a6, int a7);
-int FUN_0c0e48b0(int a4, int a5, int a6, int a7);
+int sys_set_interrupt_handler(int a4, int a5, int a6, int a7);
 int FUN_0c0f5428(int a4, int a5);
 int FUN_0c0fff62(int a4, int a5, int a6, int a7);
 int FUN_0c114cba(int a4, int a5, int a6);
@@ -420,7 +420,7 @@ int FUN_0c113958(int a4)
     return t15;
 }
 
-int FUN_0c0e48b0(int a4, int a5, int a6, int a7)
+int sys_set_interrupt_handler(int a4, int a5, int a6, int a7)
 {
     register int t2;
 
@@ -719,7 +719,7 @@ int FUN_0c0e6afc(int a4, int a5)
     if (t3 != 1) {
         return t3;
     }
-    return (FUN_0c0e5d22((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0x8A1)));
+    return (snd_send_command((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0x8A1)));
 }
 
 int FUN_0c0e6b60(int a4, int a5)
@@ -735,7 +735,7 @@ int FUN_0c0e6b60(int a4, int a5)
     if (t3 != 1) {
         return t3;
     }
-    return (FUN_0c0e5d22((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0x9A1)));
+    return (snd_send_command((((((*(short *)(((int)stk + 0))) + 0x40) << 16) | ((((*(short *)(((int)stk + 2))) << 8) << 2) << 2)) | 0x9A1)));
 }
 
 int FUN_0c104308(int a4, int a5, int a6, int a7)

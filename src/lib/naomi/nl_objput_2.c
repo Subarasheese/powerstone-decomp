@@ -6,7 +6,7 @@ struct o4_float { char p[0x4]; float v; };
 int nlCalcPoint(int, int);
 int nlMultiMatrixRevOrder8(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 
 int FUN_0c0dcf10(int a4)
 {
@@ -24,7 +24,7 @@ int FUN_0c0dcf10(int a4)
     *(unsigned int *)(((int)stk + 0)) = a4;
     u0 = (((struct o14_float *)(a4))->v);
     u1 = *(float *)0xC7FD648;
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlMultiMatrixRevOrder8(0xC7FCF80);
     nlCalcPoint(((*(int *)(((int)stk + 0))) + 0x8), (((int)stk + 0) + 0x4));
     nlPopMatrix(0x1);
@@ -71,7 +71,7 @@ int FUN_0c0dcfb0(int a4)
     *(unsigned int *)(((int)stk + 0)) = a4;
     u0 = (((struct o14_float *)(a4))->v);
     u1 = *(float *)0xC7FD648;
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlMultiMatrixRevOrder8(0xC7FCF80);
     nlCalcPoint(((*(int *)(((int)stk + 0))) + 0x8), (((int)stk + 0) + 0x4));
     nlPopMatrix(0x1);

@@ -3,17 +3,17 @@
 struct at0_int { int value; };
 struct at4c_int { char pad[0x4C]; int value; };
 struct at8_int { char pad[0x8]; int value; };
-int FUN_0c0dd880(int, int, int);
-int FUN_0c0ddb40(void);
-int FUN_0c0ddd10(int, int);
-int FUN_0c0dde00(int);
+int nl_texture_slot_load(int, int, int);
+int nl_texture_slot_alloc(void);
+int nl_mesh_set_texture(int, int);
+int nl_texture_slot_finish(int);
 int FUN_0c0ddee0(int);
 int FUN_0c0eacf0(void);
 int FUN_0c0eae20(int, int);
 int FUN_0c0eaef0(int, int);
 int FUN_0c0eb0c0(int, int, int);
 
-int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3);
+int nl_model_bind_step(int arg0, int arg1, int arg2, int arg3);
 
 void FUN_0c0dd310(void)
 {
@@ -21,7 +21,7 @@ void FUN_0c0dd310(void)
     *(unsigned int *)0xC7F87C0 = 0x0;
 }
 
-int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3)
+int nl_model_bind_step(int arg0, int arg1, int arg2, int arg3)
 {
     int stack_buf[5];
 
@@ -72,7 +72,7 @@ int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3)
     if (((*(int *)(((((((struct at8_int *)0xC7F87C0)->value)) + (((tmp_5 + tmp_8) << 2) << 1)) + 0x0))) != 0)) goto L_C0DD3AA;
     tmp_5 = *(int *)((tmp_7 + 0x0));
     *(int *)((int)stack_buf + 0) = (0x4 + (tmp_5 + tmp_6));
-    *(unsigned int *)(((0x4 + (tmp_5 + tmp_6)) + 0x0)) = (FUN_0c0ddb40());
+    *(unsigned int *)(((0x4 + (tmp_5 + tmp_6)) + 0x0)) = (nl_texture_slot_alloc());
     L_C0DD3AA:;
     tmp_5 = (((struct at8_int *)0xC7F87C0)->value);
     *(unsigned int *)(((tmp_5 + tmp_6) + 0x0)) = ((*(int *)(((tmp_5 + tmp_6) + 0x0))) + 0x1);
@@ -84,8 +84,8 @@ int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3)
     tmp_7 = *(int *)(((int)stack_buf + 4));
     tmp_8 = *(int *)(((int)stack_buf + 16));
     *(unsigned int *)(((int)stack_buf + 8)) = (((tmp_7 << 2) << 2) + tmp_8);
-    *(unsigned int *)(((int)stack_buf + 12)) = ((*(int *)(((int)stack_buf + 12))) | (FUN_0c0dd880((((tmp_7 << 2) << 2) + tmp_8), tmp_5, (*(int *)(((((tmp_7 << 2) << 2) + tmp_8) + 0x8))))));
-    FUN_0c0dde00(tmp_5);
+    *(unsigned int *)(((int)stack_buf + 12)) = ((*(int *)(((int)stack_buf + 12))) | (nl_texture_slot_load((((tmp_7 << 2) << 2) + tmp_8), tmp_5, (*(int *)(((((tmp_7 << 2) << 2) + tmp_8) + 0x8))))));
+    nl_texture_slot_finish(tmp_5);
     *(unsigned int *)((tmp_6 + 0x38)) = tmp_5;
     *(unsigned int *)(((int)stack_buf + 8)) = tmp_4;
     L_C0DD3F4:;
@@ -97,7 +97,7 @@ int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3)
     L_C0DD40E:;
     *(unsigned int *)((tmp_3 + 0x0)) = (((*(int *)((tmp_3 + 0x0))) & 0xFFFCFFFF) | (((*(int *)0xC3468EC) << 16) | 0x8C0000));
     if (((int)tmp_5 < 0)) goto L_C0DD440;
-    FUN_0c0ddd10(tmp_3, tmp_5);
+    nl_mesh_set_texture(tmp_3, tmp_5);
     L_C0DD446:;
     tmp_7 = (0x7);
     if (((*(int *)0xC346B68) != 0)) goto L_C0DD510;
@@ -171,7 +171,7 @@ int FUN_0c0dd320(int arg0, int arg1, int arg2, int arg3)
     goto L_C0DD372;
 }
 
-int FUN_0c0dd5d0(int a4, int a5)
+int nl_model_bind_textures(int a4, int a5)
 {
     int stk[3];
     register int t0;
@@ -183,7 +183,7 @@ int FUN_0c0dd5d0(int a4, int a5)
     t0 = 0x0;
     for (;;) {
         t5 = *(int *)(((int)stk + 0));
-        t0 = (t0 | (FUN_0c0dd320((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))), ((int)stk + 0))));
+        t0 = (t0 | (nl_model_bind_step((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))), ((int)stk + 0))));
         if (t5 == 0) {
             break;
         }

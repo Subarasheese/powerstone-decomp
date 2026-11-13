@@ -77,9 +77,9 @@ int FUN_0c06231c(int, int, int);
 int FUN_0c0a2f66(int);
 int FUN_0c0d71f4(int);
 int FUN_0c0d7566(int, int, int);
-int FUN_0c0dcd20(float, float, float);
-int FUN_0c0e1240(int);
-int FUN_0c0e1550(int);
+int nlSetLightColor(float, float, float);
+int nlLoadMatrix(int);
+int nlSelectMatrixStack(int);
 int _divls(void);
 int _modls(int);
 int _modlu(void);
@@ -1127,10 +1127,10 @@ int FUN_0c02d1cc(int a4)
         if (t24 == 0) {
             t25 = t24;
         } else {
-            FUN_0c0e1550(0x1);
+            nlSelectMatrixStack(0x1);
             FUN_0c05fb58((*(signed char *)((a4 + 0x5))));
             if (((unsigned short)(*(short *)((a4 + 0x6))) & 0x200) != 0) {
-                FUN_0c0dcd20(((((struct o60_float *)(a4))->v)), ((((struct o64_float *)(a4))->v)), ((((struct o68_float *)(a4))->v)));
+                nlSetLightColor(((((struct o60_float *)(a4))->v)), ((((struct o64_float *)(a4))->v)), ((((struct o68_float *)(a4))->v)));
             }
             FUN_0c05a164(a4);
             t24 = (FUN_0c05a6e8(a4));
@@ -1287,7 +1287,7 @@ int FUN_0c02d1cc(int a4)
                                     if (t29 == (*(signed char *)((a4 + t24)))) {
                                         t0 = 0xC0E1240;
                                         t33 = t28;
-                                        t24 = (FUN_0c0e1240(t33));
+                                        t24 = (nlLoadMatrix(t33));
                                         t24 = 0x90;
                                         t29 = (*(int *)((t28 + t24)));
                                         t34 = 0xC0E1240;
@@ -1340,7 +1340,7 @@ int FUN_0c02d1cc(int a4)
                                         } else {
                                             t0 = 0xC0E1240;
                                             t33 = t28;
-                                            t24 = (FUN_0c0e1240(t33));
+                                            t24 = (nlLoadMatrix(t33));
                                             t24 = 0x90;
                                             t29 = (*(int *)((t28 + t24)));
                                             t40 = 0xC0E1240;
@@ -1387,7 +1387,7 @@ int FUN_0c02d1cc(int a4)
                                         } else {
                                             t0 = 0xC0E1240;
                                             t33 = t28;
-                                            t24 = (FUN_0c0e1240(t33));
+                                            t24 = (nlLoadMatrix(t33));
                                             t24 = 0x90;
                                             t29 = (*(int *)((t28 + t24)));
                                             t36 = 0xC0E1240;
@@ -1431,7 +1431,7 @@ int FUN_0c02d1cc(int a4)
                             } else {
                                 t0 = 0xC0E1240;
                                 t33 = t28;
-                                t24 = (FUN_0c0e1240(t33));
+                                t24 = (nlLoadMatrix(t33));
                                 t24 = 0x90;
                                 t29 = (*(int *)((t28 + t24)));
                                 t38 = 0xC0E1240;

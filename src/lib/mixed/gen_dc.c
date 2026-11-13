@@ -106,8 +106,8 @@ int math_atan_angle16(int, int, float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int, int, int, int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int, int, int, int);
 int _modlu(void);
 extern int _quick_odd_mvn();
 int kmiBGPlaneCountWords(int);
@@ -207,7 +207,7 @@ int FUN_0c0e12e0(int a4, int a5, float f4, float f5)
     *(unsigned int *)(((int)stk + 12)) = a4;
     t2 = a4;
     if (a4 == 0) {
-        t2 = FUN_0c0e0ae0(0x0);
+        t2 = nlStoreMatrix(0x0);
         t5 = t2;
     }
     t8 = t7;
@@ -329,7 +329,7 @@ int FUN_0c0e12e0(int a4, int a5, float f4, float f5)
             }
             if ((*(int *)(((int)stk + 12))) == 0) {
                 t6 = 0xC0E1240;
-                t5 = (FUN_0c0e1240(t2, 0x4, t8, t9));
+                t5 = (nlLoadMatrix(t2, 0x4, t8, t9));
                 return ((int (*)(void))(0xC0E1448))();
             }
             return ((int (*)(int, int, int, int, float, float, float, float))(0xC0E1448))(t2, 0x4, t8, t9, u12, u13, -1.0f, 1.0f);

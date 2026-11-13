@@ -4,7 +4,7 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 extern float math_vec3_length();
 int nlPopMatrix(int);
-int FUN_0c0e19b0(void);
+int nlPushMatrix(void);
 void nlGetTranslate(int a4);
 
 float math_vec3_cos_between(int a4, int a5, float f4)
@@ -28,7 +28,7 @@ float math_vec3_cos_between(int a4, int a5, float f4)
 
 int math_mat_get_translate(int a4, int a5)
 {
-    FUN_0c0e19b0();
+    nlPushMatrix();
     nlGetTranslate(a5);
     return nlPopMatrix(0x1);
 }

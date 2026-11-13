@@ -148,7 +148,7 @@
 0c0d87f6 cam_mode_11_12 0c0d8468
 0c0df720 math_ldexp_float 0c0df5d0
 0c0f2968 FUN_0c0f2968 0c0f2808
-0c0f5842 FUN_0c0f5842 0c0f5032
+0c0f5842 ADXF_GetNumReadSct 0c0f5032
 0c0fe3f4 FUN_0c0fe3f4 0c0fe3e8
 0c0fffb8 FUN_0c0fffb8 0c0ffc30
 0c10207c vmsfs_mount2 0c101eac

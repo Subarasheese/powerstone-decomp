@@ -2,7 +2,7 @@
 
 extern float math_cos_angle16(int);
 extern float math_sin_angle16(int);
-extern int FUN_0c0e1550(int);
+extern int nlSelectMatrixStack(int);
 extern void nlUnitMatrix(void);
 extern void nlLookAt(float *, float *, int);
 struct sub_obj { char active; char pad; short model_id; };
@@ -81,10 +81,10 @@ int dbgedit_update_camera(void)
     cam[0xBC / 4] = cam[0xEC / 4] + cam[0x130 / 4] * math_cos_angle16(*(int *)((char *)cam + 0x110));
     cam[0xC4 / 4] = cam[0xF4 / 4] + cam[0x130 / 4] * math_sin_angle16(*(int *)((char *)cam + 0x110));
     cam[0xC0 / 4] = cam[0xF0 / 4];
-    FUN_0c0e1550(2);
+    nlSelectMatrixStack(2);
     nlUnitMatrix();
     nlLookAt(cam + 0xBC / 4, cam + 0xEC / 4, 0);
-    return FUN_0c0e1550(1);
+    return nlSelectMatrixStack(1);
 }
 
 void dbgedit_spawn_player_tasks(struct spawner *spawner)

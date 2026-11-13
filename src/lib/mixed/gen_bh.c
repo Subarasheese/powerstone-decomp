@@ -196,7 +196,7 @@ int FUN_0c02642c(int a4, int a5);
 int pl_mode11_phase0(int a4);
 int pl_state04_update(int a4);
 int FUN_0c0f4430(int a4, int a5, int a6, int a7);
-int FUN_0c0f4cca(int a4, int a5, int a6, int a7);
+int ADXT_GetTime(int a4, int a5, int a6, int a7);
 int FUN_0c1064c0(int a4, int a5);
 int FUN_0c01ec30(int a4, int a5, int a6, int a7);
 int FUN_0c02cade(void);
@@ -343,7 +343,7 @@ int FUN_0c0f4430(int a4, int a5, int a6, int a7)
     return t25;
 }
 
-int FUN_0c0f4cca(int a4, int a5, int a6, int a7)
+int ADXT_GetTime(int a4, int a5, int a6, int a7)
 {
     int t0;
     register int t2;

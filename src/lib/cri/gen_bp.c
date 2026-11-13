@@ -40,9 +40,9 @@ int fx_tick_03adf8(int a4, int a5, int a6, int a7);
 int stage_gimmick_28_update(int a4, int a5, int a6, int a7);
 int fx_tick_03a024(int a4, int a5, int a6, int a7);
 int pl_wangtang_attack_kind57(int a4, int a5, int a6, int a7);
-int FUN_0c0f4d74(int a4, int a5, int a6, int a7);
+int ADXT_SetOutPan(int a4, int a5, int a6, int a7);
 
-int FUN_0c0f4d74(int a4, int a5, int a6, int a7)
+int ADXT_SetOutPan(int a4, int a5, int a6, int a7)
 {
     *(unsigned short *)((((a5 << 1) + (a4 + 0x42)) + 0x0)) = a6;
     if ((int)a5 < (int)(*(signed char *)((a4 + 0x3)))) {

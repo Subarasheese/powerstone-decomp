@@ -27,10 +27,10 @@ float FUN_0c0211d0(float, float, float, float, float, float, float);
 int FUN_0c05c4ea(int);
 int FUN_0c0ccf38(int, int, int);
 int FUN_0c0ccfba(int, int, int, int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
-int FUN_0c0e1550(int);
-int FUN_0c0e2140(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
+int nlSelectMatrixStack(int);
+int nlTranslateV(int);
 int _quick_odd_mvn(float);
 int fx_tick_pulsing_emitter(int);
 int item_draw_marker(int, int, int, int, float, float, float, float);
@@ -416,7 +416,7 @@ int FUN_0c062f10(int a4)
     register float u157;
 
     t3 = *(int *)(((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + (0xC336880 + (((*(signed char *)((a4 + 0x4))) << 2) << 1))) + 0x0));
-    FUN_0c0e1550(0x1);
+    nlSelectMatrixStack(0x1);
     t6 = *(signed char *)((0xC439DE8 + ((*(signed char *)((a4 + 0x3))) << 2)));
     if (t6 != 0) {
         if (t6 != 1) {
@@ -437,10 +437,10 @@ int FUN_0c062f10(int a4)
                                     math_mat_get_translate(t7, (((int)stk + 0) + 0x70));
                                     math_mat_get_translate((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x64));
                                     *(float *)(((int)stk + 116)) = ((*(float *)(((int)stk + 116))) - ((((struct o8_float *)(t8))->v)));
-                                    FUN_0c0e1240((*(int *)(((int)stk + 0))));
+                                    nlLoadMatrix((*(int *)(((int)stk + 0))));
                                     nlInvertMatrix(0x0);
                                     nlCalcPoint((((int)stk + 0) + 0x70), (0x98 + t7));
-                                    FUN_0c0e0ae0((((int)stk + 0) + 0x18));
+                                    nlStoreMatrix((((int)stk + 0) + 0x18));
                                     t33 = math_vec3_length((0x98 + t7));
                                     u34 = t33;
                                     if (t33 == 0.0f) {
@@ -492,11 +492,11 @@ int FUN_0c062f10(int a4)
                                     t81 = *(int *)((t8 + 0xC));
                                     *(unsigned int *)(((int)stk + 4)) = t81;
                                     FUN_0c0ccfba((*(int *)(((int)stk + 12))), (t7 + 0x54), (*(int *)(((int)stk + 4))), (unsigned short)(-t81));
-                                    FUN_0c0e1240((*(int *)(((int)stk + 0))));
-                                    FUN_0c0e2140((0x98 + t7));
+                                    nlLoadMatrix((*(int *)(((int)stk + 0))));
+                                    nlTranslateV((0x98 + t7));
                                     nlRotateAY(((((struct o58_int *)(t7))->v)));
                                     nlRotateAX(((((struct o54_int *)(t7))->v)));
-                                    FUN_0c0e0ae0(t7);
+                                    nlStoreMatrix(t7);
                                     math_mat_get_translate(t7, (((int)stk + 0) + 0x70));
                                     *(float *)(((int)stk + 92)) = 0.0f;
                                     *(float *)(((int)stk + 88)) = 0.0f;
@@ -504,16 +504,16 @@ int FUN_0c062f10(int a4)
                                     math_mat_transform_point((((int)stk + 0) + 0x58), t7);
                                     math_vec3_sub((((int)stk + 0) + 0x58), (((int)stk + 0) + 0x64), (((int)stk + 0) + 0x58));
                                     math_vec3_add((((int)stk + 0) + 0x70), (((int)stk + 0) + 0x70), (((int)stk + 0) + 0x58));
-                                    FUN_0c0e1240((((int)stk + 0) + 0x18));
+                                    nlLoadMatrix((((int)stk + 0) + 0x18));
                                     nlCalcPoint((((int)stk + 0) + 0x70), (0x98 + t7));
                                 }
                             }
                         }
-                        FUN_0c0e1240((*(int *)(((int)stk + 0))));
-                        FUN_0c0e2140((0x98 + t7));
+                        nlLoadMatrix((*(int *)(((int)stk + 0))));
+                        nlTranslateV((0x98 + t7));
                         nlRotateAY(((((struct o58_int *)(t7))->v)));
                         nlRotateAX(((((struct o54_int *)(t7))->v)));
-                        FUN_0c0e0ae0(t7);
+                        nlStoreMatrix(t7);
                         t8 = (t8 + 0x10);
                         continue;
                     }
@@ -559,10 +559,10 @@ int FUN_0c062f10(int a4)
                                 math_mat_get_translate(t155, (((int)stk + 0) + 0x70));
                                 math_mat_get_translate((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x64));
                                 *(float *)(((int)stk + 116)) = ((*(float *)(((int)stk + 116))) - ((((struct o8_float *)(t156))->v)));
-                                FUN_0c0e1240((*(int *)(((int)stk + 0))));
+                                nlLoadMatrix((*(int *)(((int)stk + 0))));
                                 nlInvertMatrix(0x0);
                                 nlCalcPoint((((int)stk + 0) + 0x70), (0x98 + t155));
-                                FUN_0c0e0ae0((((int)stk + 0) + 0x18));
+                                nlStoreMatrix((((int)stk + 0) + 0x18));
                                 t181 = math_vec3_length((0x98 + t155));
                                 u182 = t181;
                                 if (t181 == 0.0f) {
@@ -614,11 +614,11 @@ int FUN_0c062f10(int a4)
                                 t229 = *(int *)((t156 + 0xC));
                                 *(unsigned int *)(((int)stk + 4)) = t229;
                                 FUN_0c0ccfba((*(int *)(((int)stk + 12))), (t155 + 0x54), (*(int *)(((int)stk + 4))), (unsigned short)(-t229));
-                                FUN_0c0e1240((*(int *)(((int)stk + 0))));
-                                FUN_0c0e2140((0x98 + t155));
+                                nlLoadMatrix((*(int *)(((int)stk + 0))));
+                                nlTranslateV((0x98 + t155));
                                 nlRotateAY(((((struct o58_int *)(t155))->v)));
                                 nlRotateAX(((((struct o54_int *)(t155))->v)));
-                                FUN_0c0e0ae0(t155);
+                                nlStoreMatrix(t155);
                                 math_mat_get_translate(t155, (((int)stk + 0) + 0x70));
                                 *(float *)(((int)stk + 92)) = 0.0f;
                                 *(float *)(((int)stk + 88)) = 0.0f;
@@ -626,16 +626,16 @@ int FUN_0c062f10(int a4)
                                 math_mat_transform_point((((int)stk + 0) + 0x58), t155);
                                 math_vec3_sub((((int)stk + 0) + 0x58), (((int)stk + 0) + 0x64), (((int)stk + 0) + 0x58));
                                 math_vec3_add((((int)stk + 0) + 0x70), (((int)stk + 0) + 0x70), (((int)stk + 0) + 0x58));
-                                FUN_0c0e1240((((int)stk + 0) + 0x18));
+                                nlLoadMatrix((((int)stk + 0) + 0x18));
                                 nlCalcPoint((((int)stk + 0) + 0x70), (0x98 + t155));
                             }
                         }
                     }
-                    FUN_0c0e1240((*(int *)(((int)stk + 0))));
-                    FUN_0c0e2140((0x98 + t155));
+                    nlLoadMatrix((*(int *)(((int)stk + 0))));
+                    nlTranslateV((0x98 + t155));
                     nlRotateAY(((((struct o58_int *)(t155))->v)));
                     nlRotateAX(((((struct o54_int *)(t155))->v)));
-                    FUN_0c0e0ae0(t155);
+                    nlStoreMatrix(t155);
                     t156 = (t156 + 0x10);
                     continue;
                 }

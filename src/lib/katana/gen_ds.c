@@ -134,7 +134,7 @@ int FUN_0c0d320a(void);
 int FUN_0c0d3366(void);
 int attract_screen_adx_logo(int, int, int, int);
 int FUN_0c0d4094(void);
-int FUN_0c0d4196(int, int, int, int);
+int attract_title_screen(int, int, int, int);
 int attract_screen_urls(void);
 extern int FUN_0c0d452e();
 float math_signed_sqrt(float);

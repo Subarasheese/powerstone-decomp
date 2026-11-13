@@ -5,7 +5,7 @@ int FUN_0c059d7e(int a4, int a5, int a6, int a7);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
 struct Vec12 { int a, b, c; };
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 
 float FUN_0c059c44(int a4, int a5, float f4)
 {

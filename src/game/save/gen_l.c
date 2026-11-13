@@ -76,10 +76,10 @@ int FUN_0c0ccf38(int, int, int);
 float FUN_0c0d5bc0(void);
 int FUN_0c0d708c(int, int);
 int FUN_0c0e09f0(int, int, int, int, int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int);
-int FUN_0c0e1550(int);
-int FUN_0c0e19b0(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int);
+int nlSelectMatrixStack(int);
+int nlPushMatrix(int);
 int _quick_odd_mvn(void);
 int buMountDisk(int, int, int);
 int buUnmount(int);
@@ -350,7 +350,7 @@ int FUN_0c05a164(int a4)
         t1700 = *(signed char *)((a4 + 0x8));
         if (t1700 == 0) {
         } else {
-            t12 = FUN_0c0e1550(0x1);
+            t12 = nlSelectMatrixStack(0x1);
             *(unsigned int *)(((int)stk + 12)) = 0x0;
             *(unsigned int *)(((int)stk + 20)) = (*(int *)(((int)stk + 4)));
             t13 = 0x0;
@@ -475,14 +475,14 @@ int FUN_0c05a164(int a4)
                                     t20 = 0xC0E1240;
                                     t19 = t12;
                                     t15 = t16;
-                                    t12 = (FUN_0c0e1240(t15));
+                                    t12 = (nlLoadMatrix(t15));
                                     t18 = 0xC0E0DA0;
                                     t15 = 0x0;
                                     t12 = (nlInvertMatrix(t15));
                                     t18 = 0xC0E0AE0;
                                     t15 = ((int)stk + 4);
                                     t15 = (t15 + 0x34);
-                                    t12 = (FUN_0c0e0ae0(t15));
+                                    t12 = (nlStoreMatrix(t15));
                                     t12 = (*(signed char *)((t21 + 0x2)));
                                     t91 = 0xC0E0AE0;
                                     if (t12 != 0) {
@@ -510,7 +510,7 @@ int FUN_0c05a164(int a4)
                                     t18 = t91;
                                     t13 = t92;
                                     t15 = t16;
-                                    t12 = (FUN_0c0e1240(t15));
+                                    t12 = (nlLoadMatrix(t15));
                                     *(unsigned int *)(((int)stk + 4)) = 0x0;
                                     for (;;) {
                                         if ((int)(*(int *)(((int)stk + 4))) < (int)(*(int *)((t21 + 0x28)))) {
@@ -639,7 +639,7 @@ int FUN_0c05a164(int a4)
                                                                                 t15 = ((int)stk + 4);
                                                                                 *(unsigned int *)(((int)stk + 8)) = t301;
                                                                                 t15 = (t15 + 0x34);
-                                                                                t12 = (FUN_0c0e19b0(t15));
+                                                                                t12 = (nlPushMatrix(t15));
                                                                                 t15 = t18;
                                                                                 t12 = (nlCalcPoint(t15, t19));
                                                                                 t13 = 0xC0E1960;
@@ -848,7 +848,7 @@ int FUN_0c05a164(int a4)
                                                                                         t15 = ((int)stk + 4);
                                                                                         *(unsigned int *)(((int)stk + 8)) = t432;
                                                                                         t15 = (t15 + 0x34);
-                                                                                        t12 = (FUN_0c0e19b0(t15));
+                                                                                        t12 = (nlPushMatrix(t15));
                                                                                         t15 = t18;
                                                                                         t12 = (nlCalcPoint(t15, t19));
                                                                                         t13 = 0xC0E1960;
@@ -1059,7 +1059,7 @@ int FUN_0c05a164(int a4)
                                                                                 t15 = ((int)stk + 4);
                                                                                 *(unsigned int *)(((int)stk + 8)) = t583;
                                                                                 t15 = (t15 + 0x34);
-                                                                                t12 = (FUN_0c0e19b0(t15));
+                                                                                t12 = (nlPushMatrix(t15));
                                                                                 t15 = t18;
                                                                                 t12 = (nlCalcPoint(t15, t19));
                                                                                 t13 = 0xC0E1960;
@@ -1267,7 +1267,7 @@ int FUN_0c05a164(int a4)
                                                                             t15 = ((int)stk + 4);
                                                                             *(unsigned int *)(((int)stk + 8)) = t726;
                                                                             t15 = (t15 + 0x34);
-                                                                            t12 = (FUN_0c0e19b0(t15));
+                                                                            t12 = (nlPushMatrix(t15));
                                                                             t15 = t18;
                                                                             t12 = (nlCalcPoint(t15, t19));
                                                                             t13 = 0xC0E1960;
@@ -1472,7 +1472,7 @@ int FUN_0c05a164(int a4)
                                                                         t15 = ((int)stk + 4);
                                                                         *(unsigned int *)(((int)stk + 8)) = t868;
                                                                         t15 = (t15 + 0x34);
-                                                                        t12 = (FUN_0c0e19b0(t15));
+                                                                        t12 = (nlPushMatrix(t15));
                                                                         t15 = t18;
                                                                         t12 = (nlCalcPoint(t15, t19));
                                                                         t13 = 0xC0E1960;
@@ -1677,7 +1677,7 @@ int FUN_0c05a164(int a4)
                                                                     t15 = ((int)stk + 4);
                                                                     *(unsigned int *)(((int)stk + 8)) = t1010;
                                                                     t15 = (t15 + 0x34);
-                                                                    t12 = (FUN_0c0e19b0(t15));
+                                                                    t12 = (nlPushMatrix(t15));
                                                                     t15 = t18;
                                                                     t12 = (nlCalcPoint(t15, t19));
                                                                     t13 = 0xC0E1960;
@@ -1882,7 +1882,7 @@ int FUN_0c05a164(int a4)
                                                                 t15 = ((int)stk + 4);
                                                                 *(unsigned int *)(((int)stk + 8)) = t1152;
                                                                 t15 = (t15 + 0x34);
-                                                                t12 = (FUN_0c0e19b0(t15));
+                                                                t12 = (nlPushMatrix(t15));
                                                                 t15 = t18;
                                                                 t12 = (nlCalcPoint(t15, t19));
                                                                 t13 = 0xC0E1960;
@@ -2087,7 +2087,7 @@ int FUN_0c05a164(int a4)
                                                             t15 = ((int)stk + 4);
                                                             *(unsigned int *)(((int)stk + 8)) = t1294;
                                                             t15 = (t15 + 0x34);
-                                                            t12 = (FUN_0c0e19b0(t15));
+                                                            t12 = (nlPushMatrix(t15));
                                                             t15 = t18;
                                                             t12 = (nlCalcPoint(t15, t19));
                                                             t13 = 0xC0E1960;
@@ -2292,7 +2292,7 @@ int FUN_0c05a164(int a4)
                                                         t15 = ((int)stk + 4);
                                                         *(unsigned int *)(((int)stk + 8)) = t1436;
                                                         t15 = (t15 + 0x34);
-                                                        t12 = (FUN_0c0e19b0(t15));
+                                                        t12 = (nlPushMatrix(t15));
                                                         t15 = t18;
                                                         t12 = (nlCalcPoint(t15, t19));
                                                         t13 = 0xC0E1960;
@@ -2495,7 +2495,7 @@ int FUN_0c05a164(int a4)
                                                     t15 = ((int)stk + 4);
                                                     *(unsigned int *)(((int)stk + 8)) = t1578;
                                                     t15 = (t15 + 0x34);
-                                                    t12 = (FUN_0c0e19b0(t15));
+                                                    t12 = (nlPushMatrix(t15));
                                                     t15 = t18;
                                                     t12 = (nlCalcPoint(t15, t19));
                                                     t13 = 0xC0E1960;

@@ -142,29 +142,29 @@ int math_atan_angle16(float);
 float math_rand_float(void);
 float math_sin_reduce_quadrant(int, float);
 int nlScale(float, float, float);
-int FUN_0c0e2110(float, float, float);
+int nlTranslate(float, float, float);
 int nlUnitMatrix(void);
 float FUN_0c0e2240(int, int);
 int syRtcDateToCount(void);
 int FUN_0c0e50ec(void);
-int FUN_0c0e55e0(int, int);
-int FUN_0c0e5884(int);
-int FUN_0c0e5d22(int);
+int snd_bank_load(int, int);
+int snd_bank_unload(int);
+int snd_send_command(int);
 int FUN_0c0e6518(int);
 int _divlu(void);
 int _modls(void);
 int _modlu(int);
 int _quick_evn_mvn(int, int);
 int _quick_odd_mvn(void);
-int FUN_0c0e7240(void);
+int nl_objasm_draw_obj_opaque(void);
 int nl_objasm_draw_obj(int, int, float);
 int FUN_0c0eb5a4(void);
 int FUN_0c0eb6f4(void);
 int FUN_0c0efdee(int);
 int FUN_0c0f2292(int);
-int FUN_0c0f4128(int);
-int FUN_0c0f4c2c(void);
-int FUN_0c0f4cc6(int);
+int vib_port_has_vibration(int);
+int ADXT_Stop(void);
+int ADXT_GetStat(int);
 int FUN_0c0f553a(int);
 int kmSetFogDensity(int);
 int FUN_0c0fcbc0(int, int, int, int);
@@ -224,7 +224,7 @@ int FUN_0c0b1652(int a4, int a5, float f4);
 int FUN_0c0cf898(int a4, int a5);
 int FUN_0c0d0d80(int a4, int a5, int a6, int a7);
 int FUN_0c0e6310(int a4);
-int FUN_0c0e5126(void);
+int sys_get_video_standard(void);
 int FUN_0c0f40bc(int a4);
 int syCfgGetIndividualID(int a4, int a5, int a6);
 int adxf_ExecOne(int a4);
@@ -254,7 +254,7 @@ int FUN_0c0e6758(int a4, int a5);
 int FUN_0c0e64c4(int a4);
 int FUN_0c0efe10(int a4, int a5, int a6, int a7);
 int buCalcCRC(int a4, int a5, int a6, int a7);
-int FUN_0c0fc38c(int a4, int a5, int a6, int a7);
+int kmCreateTextureSurface(int a4, int a5, int a6, int a7);
 int mpdrv_insertnop(int a4);
 int pad_state_clear(void);
 int FUN_0c01ef8e(int a4, int a5, int a6, int a7);
@@ -272,7 +272,7 @@ int pl_get_hit_count_of_opponent(int a4);
 int FUN_0c0a01ec(int a4, int a5, int a6);
 int FUN_0c0a3308(int a4);
 int FUN_0c0bfe76(int a4);
-int FUN_0c0dccd0(int a4);
+int nlSetLightDirection(int a4);
 int FUN_0c0dff60(void);
 int FUN_0c0e0820(float f4);
 int FUN_0c0ffdba(void);
@@ -463,7 +463,7 @@ int FUN_0c0e6310(int a4)
     return (*(int *)(((int)stk + 0)));
 }
 
-int FUN_0c0e5126(void)
+int sys_get_video_standard(void)
 {
     register int t0;
     int t1;
@@ -626,7 +626,7 @@ int FUN_0c0e64c4(int a4)
     }
     t4 = *(short *)(((int)stk + 6));
     *(unsigned int *)(((int)stk + 0)) = ((((t4 << 8) << 2) << 2) + 0x1A1);
-    return (FUN_0c0e5d22(((((t4 << 8) << 2) << 2) + 0x1A1)));
+    return (snd_send_command(((((t4 << 8) << 2) << 2) + 0x1A1)));
 }
 
 int FUN_0c0efe10(int a4, int a5, int a6, int a7)
@@ -687,7 +687,7 @@ int buCalcCRC(int a4, int a5, int a6, int a7)
     return t2;
 }
 
-int FUN_0c0fc38c(int a4, int a5, int a6, int a7)
+int kmCreateTextureSurface(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;

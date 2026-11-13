@@ -15,7 +15,7 @@ extern char g_item_state[];
 
 /* from other modules */
 int thunk_FUN_0c062242(char *mat, Vec3 *out);   /* math_mat_get_translate */
-int FUN_0c0e19b0(float *matrix);
+int nlPushMatrix(float *matrix);
 void nlCalcPoint(Vec3 *in, Vec3 *out);
 void nlCalcPoint44(Vec3 *in, float *out);
 int nlPopMatrix(int n);
@@ -32,12 +32,12 @@ void ui_project_fighter_to_screen(char slot, Vec3 *out)
     Fighter *f = FIGHTER(slot);
 
     thunk_FUN_0c062242((char *)f + 0x300 + (short)((short)f->power_form * 0xDC0) + 0x2C0, &pos);
-    FUN_0c0e19b0(0);
-    FUN_0c0e1550(2);
+    nlPushMatrix(0);
+    nlSelectMatrixStack(2);
     nlCalcPoint(&pos, &pos);
-    FUN_0c0e1550(3);
+    nlSelectMatrixStack(3);
     nlCalcPoint44(&pos, q);
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     nlPopMatrix(1);
     out->x = (q[0] / q[3] + 1.0f) / 2.0f * 640.0f;
     out->y = -((q[1] / q[3] + 1.0f) / 2.0f * 480.0f) + 480.0f;
@@ -76,15 +76,15 @@ void ui_project_world_to_screen(Vec3 *out, Vec3 *world, float *scale, float heig
     Vec3 p, up;
     float q[4], q_up[4];
 
-    FUN_0c0e19b0(0);
-    FUN_0c0e1550(2);
+    nlPushMatrix(0);
+    nlSelectMatrixStack(2);
     nlCalcPoint(world, &p);
     up = p;
     up.y = up.y + 1.0f * height;
-    FUN_0c0e1550(3);
+    nlSelectMatrixStack(3);
     nlCalcPoint44(&p, q);
     nlCalcPoint44(&up, q_up);
-    FUN_0c0e1550(1);
+    nlSelectMatrixStack(1);
     nlPopMatrix(1);
     out->x = (q[0] / q[3] + 1.0f) / 2.0f * 640.0f;
     out->y = -((q[1] / q[3] + 1.0f) / 2.0f * 480.0f) + 480.0f;

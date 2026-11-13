@@ -5,8 +5,8 @@ extern char g_model_scale_tab[];
 int nlRotateAX(int);
 int nlRotateAY(int);
 int nlRotateAZ(int);
-int FUN_0c0e2140(int);
-int FUN_0c0e2050(int);
+int nlTranslateV(int);
+int nlScaleV(int);
 struct o18_float { char p[0x18]; float v; };
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
@@ -19,9 +19,9 @@ struct o723C_short { char p[0x723C]; short v; };
 int math_vec3_mul_xyz(int, float, float, float);
 float math_vec3_length(int);
 int pl_aim_joint_at_target(int);
-int FUN_0c0e0ae0(int);
-int FUN_0c0e1240(int, int, int, int, float, float, float);
-int FUN_0c0e1550(int);
+int nlStoreMatrix(int);
+int nlLoadMatrix(int, int, int, int, float, float, float);
+int nlSelectMatrixStack(int);
 int _quick_odd_mvn(int, int, int, int, float, float, float);
 int nlCalcVector(int, int);
 int nlScale(float, float, float);
@@ -34,7 +34,7 @@ int FUN_0c099c30(int a4, int a5, int a6);
 
 int draw_set_euler_rotation(int a4, int a5)
 {
-    FUN_0c0e2140(a5);
+    nlTranslateV(a5);
     nlRotateAZ((*(int *)((a4 + 0x8))));
     nlRotateAY((*(int *)((a4 + 0x4))));
     return nlRotateAX((*(int *)((a4 + 0x0))));
@@ -42,11 +42,11 @@ int draw_set_euler_rotation(int a4, int a5)
 
 int FUN_0c099c30(int a4, int a5, int a6)
 {
-    FUN_0c0e2140(a5);
+    nlTranslateV(a5);
     nlRotateAZ((*(int *)((a4 + 0x8))));
     nlRotateAY((*(int *)((a4 + 0x4))));
     nlRotateAX((*(int *)((a4 + 0x0))));
-    return FUN_0c0e2050(a6);
+    return nlScaleV(a6);
 }
 
 float pl_build_model_matrix(int a4)
@@ -78,12 +78,12 @@ float pl_build_model_matrix(int a4)
     register float w0_3;
     register float w0_4;
     v0_5 = a4;
-    FUN_0c0e1550(0x1);
+    nlSelectMatrixStack(0x1);
     nlUnitMatrix();
     draw_set_euler_rotation((v0_5 + 0x2C), (v0_5 + 0x20));
     nlScale(((((struct o50_float *)(v0_5))->v)), ((((struct o54_float *)(v0_5))->v)), ((((struct o58_float *)(v0_5))->v)));
-    FUN_0c0e0ae0((v0_5 + 0x6C));
-    FUN_0c0e2140((0x7110 + v0_5));
+    nlStoreMatrix((v0_5 + 0x6C));
+    nlTranslateV((0x7110 + v0_5));
     v0_6 = (0x71B4);
     v0_0 = (0xC0E2020);
     v0_0 = (0xC0E2140);
@@ -99,7 +99,7 @@ float pl_build_model_matrix(int a4)
     v0_4 = ((((int)stk + 0) + 0x2C));
     L_C099D16:;
     draw_set_euler_rotation((0x7134 + v0_1), v0_4);
-    v0_2 = FUN_0c0e0ae0((((int)stk + 0) + 0x44));
+    v0_2 = nlStoreMatrix((((int)stk + 0) + 0x44));
     *(unsigned int *)(((((int)stk + 0) + 0x38) + 0x0)) = v0_0;
     *(unsigned int *)(((int)stk + 12)) = 0xC150C60;
     v0_6 = (v0_2);
@@ -143,7 +143,7 @@ float pl_build_model_matrix(int a4)
     *(unsigned int *)((v0_3 + 0x0)) = ((*(int *)((v0_3 + 0x0))) + 0x1);
     goto L_C09A23A;
     L_C09A0E6:;
-    FUN_0c0e1240(v0_5, v0_4, R6, R7, F4, F5, F6);
+    nlLoadMatrix(v0_5, v0_4, R6, R7, F4, F5, F6);
     if (!(((*(signed char *)((v0_1 + 0x4))) == 3))) goto L_C09A218;
     v0_6 = (0x71F1);
     if (((*(signed char *)((v0_1 + 0x71F1))) != 0)) goto L_C09A102;
@@ -151,11 +151,11 @@ float pl_build_model_matrix(int a4)
     L_C09A218:;
     FUN_0c099c30(((*(int *)(((int)stk + 0))) + 0x54), ((*(int *)(((int)stk + 0))) + 0x98), ((*(int *)(((int)stk + 0))) + 0x6C));
     L_C09A228:;
-    v0_6 = ((FUN_0c0e0ae0((*(int *)(((int)stk + 0))))));
+    v0_6 = ((nlStoreMatrix((*(int *)(((int)stk + 0))))));
     goto L_C09A22C;
     L_C09A102:;
     *(float *)(((int)stk + 4)) = ((((struct o18_float *)((((*(signed char *)((v0_1 + v0_6))) << 2) + (*(int *)(((int)stk + 12))))))->v));
-    FUN_0c0e2140(((*(int *)(((int)stk + 0))) + 0x98));
+    nlTranslateV(((*(int *)(((int)stk + 0))) + 0x98));
     *(float *)(((int)stk + 32)) = 1.0f;
     *(float *)(((int)stk + 36)) = 0.0f;
     *(float *)(((int)stk + 40)) = 0.0f;
@@ -193,7 +193,7 @@ float pl_build_model_matrix(int a4)
     nlRotateAZ(((((struct o5C_int *)((*(int *)(((int)stk + 0)))))->v)));
     nlRotateAY(((((struct o58_int *)((*(int *)(((int)stk + 0)))))->v)));
     nlRotateAX(((((struct o54_int *)((*(int *)(((int)stk + 0)))))->v)));
-    FUN_0c0e2050(((*(int *)(((int)stk + 0))) + 0x6C));
+    nlScaleV(((*(int *)(((int)stk + 0))) + 0x6C));
     goto L_C09A228;
     L_C09A0BC:;
     v0_5 = ((((short)((short)(*(signed char *)((v0_1 + 0x71F1))) * (short)0x6E0) + (0x6340 + v0_1)) + (short)((short)(*(signed char *)(((*(int *)(((int)stk + 0))) + 0x43))) * (short)0xB0)));
@@ -238,9 +238,9 @@ float pl_build_model_matrix(int a4)
     v0_6 = (0x723B);
     goto L_C09A22C;
     L_C099F9E:;
-    FUN_0c0e1240(v0_5, v0_4, R6, R7, F4, F5, F6);
+    nlLoadMatrix(v0_5, v0_4, R6, R7, F4, F5, F6);
     FUN_0c099c30(((*(int *)(((int)stk + 0))) + 0x54), ((*(int *)(((int)stk + 0))) + 0x98), ((*(int *)(((int)stk + 0))) + 0x6C));
-    FUN_0c0e0ae0((*(int *)(((int)stk + 0))));
+    nlStoreMatrix((*(int *)(((int)stk + 0))));
     goto L_C099FB8;
     L_C099F60:;
     v0_5 = ((((short)((short)(*(signed char *)((v0_1 + 0x71F1))) * (short)0x6E0) + (0x6340 + v0_1)) + (short)((short)(*(signed char *)(((*(int *)(((int)stk + 0))) + 0x43))) * (short)0xB0)));

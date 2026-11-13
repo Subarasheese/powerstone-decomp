@@ -15,9 +15,9 @@ struct o9C_int { char p[0x9C]; int v; };
 int FUN_0c02cb4a(int);
 int FUN_0c02ced4(int, float, float);
 int FUN_0c05fb58(int, float);
-int FUN_0c0dcd20(float, float, float);
-int FUN_0c0e1240(int, int, int, float, float, float);
-int FUN_0c0e1550(int);
+int nlSetLightColor(float, float, float);
+int nlLoadMatrix(int, int, int, float, float, float);
+int nlSelectMatrixStack(int);
 int FUN_0c0e34a0(float);
 int _slow_mvn(int);
 int FUN_0c0ef980(int);
@@ -60,7 +60,7 @@ int FUN_0c02cf18(int a4)
     FUN_0c02cb4a((*(int *)((v0_1 + 0x0))));
     L_C02CF58:;
     *(unsigned char *)(((int)stk + 4)) = 0x0;
-    FUN_0c0e1550(0x1);
+    nlSelectMatrixStack(0x1);
     R10 = (0x200);
     R11 = (0x400);
     R8 = (0x800);
@@ -87,7 +87,7 @@ int FUN_0c02cf18(int a4)
     L_C02CFA2:;
     FUN_0c05fb58((*(signed char *)((v0_1 + 0x5))), F4);
     if ((((unsigned short)(*(short *)((v0_1 + 0x6))) & R10) == 0)) goto L_C02CFC0;
-    FUN_0c0dcd20(((((struct o60_float *)(v0_1))->v)), ((((struct o64_float *)(v0_1))->v)), ((((struct o68_float *)(v0_1))->v)));
+    nlSetLightColor(((((struct o60_float *)(v0_1))->v)), ((((struct o64_float *)(v0_1))->v)), ((((struct o68_float *)(v0_1))->v)));
     L_C02CFC0:;
     *(unsigned char *)(((int)stk + 0)) = 0x0;
     L_C02D132:;
@@ -95,7 +95,7 @@ int FUN_0c02cf18(int a4)
     v0_2 = *(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + v0_1)) + 0x0));
     v0_3 = (v0_2);
     if (!(((*(signed char *)((v0_2 + 0x0))) != 0))) goto L_C02D12C;
-    FUN_0c0e1240((v0_3 + 0x50), 0x0, R6, F4, F5, F6);
+    nlLoadMatrix((v0_3 + 0x50), 0x0, R6, F4, F5, F6);
     v0_2 = (0x9C);
     if ((((((struct o9C_int *)(v0_3))->v)) != 0)) goto L_C02D036;
     goto L_C02D12C;
@@ -115,7 +115,7 @@ int FUN_0c02cf18(int a4)
     FUN_0c0ef980(((((struct o9C_int *)(v0_3))->v)));
     L_C02D070:;
     if ((((unsigned short)(*(short *)((v0_3 + 0x2))) & R10) == 0)) goto L_C02D086;
-    FUN_0c0dcd20(((((struct o44_float *)(v0_3))->v)), ((((struct o48_float *)(v0_3))->v)), ((((struct o4C_float *)(v0_3))->v)));
+    nlSetLightColor(((((struct o44_float *)(v0_3))->v)), ((((struct o48_float *)(v0_3))->v)), ((((struct o4C_float *)(v0_3))->v)));
     L_C02D086:;
     if ((((unsigned short)(*(short *)((v0_3 + 0x2))) & R11) == 0)) goto L_C02D096;
     v0_2 = (0x9C);
@@ -136,7 +136,7 @@ int FUN_0c02cf18(int a4)
     FUN_0c0ef980(((((struct o9C_int *)(v0_3))->v)));
     L_C02D0C6:;
     if ((((unsigned short)(*(short *)((v0_3 + 0x2))) & R10) == 0)) goto L_C02D0DC;
-    FUN_0c0dcd20(((((struct o44_float *)(v0_3))->v)), ((((struct o48_float *)(v0_3))->v)), ((((struct o4C_float *)(v0_3))->v)));
+    nlSetLightColor(((((struct o44_float *)(v0_3))->v)), ((((struct o48_float *)(v0_3))->v)), ((((struct o4C_float *)(v0_3))->v)));
     L_C02D0DC:;
     if ((((unsigned short)(*(short *)((v0_3 + 0x2))) & R11) == 0)) goto L_C02D10C;
     v0_2 = (0x9C);

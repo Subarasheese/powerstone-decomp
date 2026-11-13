@@ -27,7 +27,7 @@ extern void FUN_0c0fb54c(int a);
 extern void FUN_0c0fb5dc(int a, int b, int c, int d);
 extern void gfx_init_background_render_state(int a);
 extern void FUN_0c0de120(int a);
-extern void FUN_0c0e31c0(float a, float b, float c, float d);
+extern void nlSetViewport(float a, float b, float c, float d);
 extern void kmSetCullingRegister(float a);
 extern void FUN_0c0fc2a6(int a);
 extern void FUN_0c0de820(int a);
@@ -84,7 +84,7 @@ void gfx_init_display_mode(int a, int b, int c)
         f7 = 480.0f;
     else
         f7 = (float)w[3];
-    FUN_0c0e31c0(z, z, f6, f7);
+    nlSetViewport(z, z, f6, f7);
     kmSetCullingRegister(0.199999988f);
     *(volatile int *)0xFF000038 = 12;
     *(volatile int *)0xFF00003C = 12;

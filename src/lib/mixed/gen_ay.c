@@ -121,7 +121,7 @@ float math_exp_float(int, int, int, int, float);
 int nlCalcPoint(int, int);
 int nlMultiMatrixRevOrder8(int);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int _modls(int);
 int _quick_odd_mvn(void);
 int gdFsReopenHn(int, int, int, int);

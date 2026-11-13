@@ -100,7 +100,7 @@ float FUN_0c0e2220(int, int);
 int _divls(void);
 int _modls(void);
 int _quick_odd_mvn(void);
-int FUN_0c0f4128(int);
+int vib_port_has_vibration(int);
 int FUN_0c0f414e(int, int, int, int);
 int FUN_0c0fbfa2(int, int, int, int);
 int FUN_0c101148(int, int);
@@ -132,7 +132,7 @@ int fx_spawn_045f9c(int a4);
 int res_load_pl_effect(int a4, int a5, int a6, int a7);
 int pl_vib_start_preset(int a4, int a5);
 int menu_vs_announce_names(int a4, int a5, int a6, int a7);
-int FUN_0c0e31c0(float f4, float f5, float f6, float f7);
+int nlSetViewport(float f4, float f5, float f6, float f7);
 int FUN_0c0fb160(int a4);
 int vmsfs_connect(int a4);
 int fx_tick_03743c(int a4);
@@ -253,7 +253,7 @@ int FUN_0c1145f4(int a4)
     return 0xA4;
 }
 
-int FUN_0c0e31c0(float f4, float f5, float f6, float f7)
+int nlSetViewport(float f4, float f5, float f6, float f7)
 {
     register float u7;
     register float u8;

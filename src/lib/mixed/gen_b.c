@@ -100,7 +100,7 @@ float math_signed_sqrt(float);
 int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int _quick_odd_mvn(int);
 int FUN_0c0ed9d4(int, int, int);
 int gdFsReadWG(int, int, int);
@@ -625,7 +625,7 @@ int FUN_0c0e6518(int a4)
             *(unsigned int *)(((t20 | 0xA0000000) + 0x0)) = ((*(int *)(((t20 | 0xA0000000) + 0x0))) & 0x7FF);
         }
         *(unsigned int *)(((t12 | 0xA0000000) + 0x0)) = ((t13 & 0x7FF) | 0x8000);
-        t30 = (FUN_0c0e5d22((*(int *)(((int)stk + 4)))));
+        t30 = (snd_send_command((*(int *)(((int)stk + 4)))));
     }
     return t30;
 }

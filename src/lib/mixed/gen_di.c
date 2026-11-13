@@ -122,7 +122,7 @@ float math_cos_angle16(int);
 float math_sin_angle16(int);
 extern int _quick_odd_mvn();
 int _slow_mvn(int);
-int FUN_0c0f4c2c(int);
+int ADXT_Stop(int);
 int FUN_0c10687c(int);
 int adxt_RcvrReplay(void);
 int buMountDisk(int, int, int);
@@ -221,7 +221,7 @@ int FUN_0c106ef4(int a4, int a5, int a6, int a7)
             t1 = *(signed char *)((a4 + 0x6D));
             if ((t1 != 1) && (t1 != 2)) {
             } else {
-                FUN_0c0f4c2c(a4);
+                ADXT_Stop(a4);
             }
             if ((*(signed char *)((a4 + 0x6D))) != 0) {
                 (((struct o60_ushort *)(a4))->v) = 0x0;
@@ -254,7 +254,7 @@ int FUN_0c106ef4(int a4, int a5, int a6, int a7)
             if (((((struct o60_short *)(a4))->v)) != 0) {
                 t1 = *(signed char *)((a4 + 0x6D));
                 if (t1 == 1) {
-                    FUN_0c0f4c2c(a4);
+                    ADXT_Stop(a4);
                 } else {
                     if (t1 == 2) {
                         adxt_RcvrReplay();
@@ -285,7 +285,7 @@ int FUN_0c106ef4(int a4, int a5, int a6, int a7)
         if (t0 == 4) {
             t0 = *(signed char *)((a4 + 0x6D));
             if (t0 == 1) {
-                FUN_0c0f4c2c(a4);
+                ADXT_Stop(a4);
             } else {
                 if (t0 == 2) {
                     adxt_RcvrReplay();

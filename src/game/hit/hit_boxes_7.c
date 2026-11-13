@@ -21,15 +21,15 @@ int _quick_odd_mvn(void);
 typedef struct { int x, y, z; } vec3i;
 struct draw_params { int head; vec3i pos; float field_16, field_20; int pad24[4]; int field_40; float field_44; int pad48; int field_52; };
 void ui_sprite_queue_add(void *, int, int, int, int, int);
-int FUN_0c0dd5d0(int a4, int a5);
+int nl_model_bind_textures(int a4, int a5);
 int nlObjPutUseViewMatrix(int);
-int FUN_0c0dcd20(float, float, float);
+int nlSetLightColor(float, float, float);
 int nlPopMatrix(int);
-int FUN_0c0e19b0(int);
+int nlPushMatrix(int);
 int nlScale(float, float, float);
-int FUN_0c0e2140(int);
+int nlTranslateV(int);
 int nlUnitMatrix(void);
-int FUN_0c0e2050(int);
+int nlScaleV(int);
 struct o27C_uchar { char p[0x27C]; unsigned char v; };
 int hit_debug_draw_object_parts(int);
 struct o0_int { int v; };
@@ -141,44 +141,44 @@ void FUN_0c023ebc(vec3i *vec)
 
 int FUN_0c024274(void)
 {
-    FUN_0c0dd5d0(0xC178D88, 0xC320008);
-    FUN_0c0dd5d0(0xC178FC0, 0xC320008);
-    return (FUN_0c0dd5d0(0xC179D00, 0xC320008));
+    nl_model_bind_textures(0xC178D88, 0xC320008);
+    nl_model_bind_textures(0xC178FC0, 0xC320008);
+    return (nl_model_bind_textures(0xC179D00, 0xC320008));
 }
 
 int FUN_0c024298(int a4, float f4, float f5, float f6, float f7, float f8)
 {
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlUnitMatrix();
-    FUN_0c0e2140(a4);
+    nlTranslateV(a4);
     nlScale(f5, f4, f5);
-    FUN_0c0dcd20(f6, f7, f8);
+    nlSetLightColor(f6, f7, f8);
     nlObjPutUseViewMatrix(0xC178FC0);
-    FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+    nlSetLightColor(1.0f, 1.0f, 1.0f);
     return nlPopMatrix(0x1);
 }
 
 int FUN_0c024300(int a4, float f4, float f5, float f6, float f7)
 {
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlUnitMatrix();
-    FUN_0c0e2140(a4);
+    nlTranslateV(a4);
     nlScale(f4, f4, f4);
-    FUN_0c0dcd20(f5, f6, f7);
+    nlSetLightColor(f5, f6, f7);
     nlObjPutUseViewMatrix(0xC179D00);
-    FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+    nlSetLightColor(1.0f, 1.0f, 1.0f);
     return nlPopMatrix(0x1);
 }
 
 int FUN_0c0243b0(int a4, int a5, float f4, float f5, float f6)
 {
-    FUN_0c0e19b0(0x0);
+    nlPushMatrix(0x0);
     nlUnitMatrix();
-    FUN_0c0e2140(a4);
-    FUN_0c0e2050(a5);
-    FUN_0c0dcd20(f4, f5, f6);
+    nlTranslateV(a4);
+    nlScaleV(a5);
+    nlSetLightColor(f4, f5, f6);
     nlObjPutUseViewMatrix(0xC178D88);
-    FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+    nlSetLightColor(1.0f, 1.0f, 1.0f);
     return nlPopMatrix(0x1);
 }
 

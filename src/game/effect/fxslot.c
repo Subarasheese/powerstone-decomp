@@ -20,8 +20,8 @@ typedef struct {
     float f116;
     char pad120[24];
 } Rec;
-int FUN_0c0e07c0(int);
-int FUN_0c0e0800(int);
+int gfx_set_fog_color(int);
+int gfx_set_fog_density(int);
 int thunk_FUN_0c0fbcf0(int);
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -114,8 +114,8 @@ int FUN_0c05f136(void)
         }
     }
     thunk_FUN_0c0fbcf0(0xC494B18);
-    FUN_0c0e07c0(0x101010);
-    return FUN_0c0e0800(0xFF09);
+    gfx_set_fog_color(0x101010);
+    return gfx_set_fog_density(0xFF09);
 }
 
 int FUN_0c05f194(void)
@@ -162,8 +162,8 @@ int FUN_0c05f194(void)
         }
     }
     thunk_FUN_0c0fbcf0(0xC494B18);
-    FUN_0c0e07c0(0x8DA295);
-    return FUN_0c0e0800(0xFF0E);
+    gfx_set_fog_color(0x8DA295);
+    return gfx_set_fog_density(0xFF0E);
 }
 
 int FUN_0c05f20e(int a4, float f4, float f5)
@@ -199,7 +199,7 @@ int FUN_0c05f20e(int a4, float f4, float f5)
         }
     }
     thunk_FUN_0c0fbcf0(0xC494B18);
-    FUN_0c0e07c0(a4);
+    gfx_set_fog_color(a4);
     return FUN_0c0e0820(f4);
 }
 

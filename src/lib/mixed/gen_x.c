@@ -123,17 +123,17 @@ float math_signed_sqrt(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int nlCalcVector(int, int);
-int FUN_0c0e1550(int);
+int nlSelectMatrixStack(int);
 int nlRotateAX(int);
 int nlRotateAY(int);
 int nlRotateAZ(int);
 int nlScale(float, float, float);
 int nlTransposeMatrix(void);
-int FUN_0c0e2110(float, float, float);
+int nlTranslate(float, float, float);
 int FUN_0c0e22e0(int, int, float);
 int syRtcGetDate(int);
 int syRtcAicaGetCount(int);
-int FUN_0c0e5d22(int);
+int snd_send_command(int);
 int FUN_0c0e66f4(int, int, int);
 int FUN_0c0e69a8(int, int, int);
 int _divls(void);
@@ -403,8 +403,8 @@ int FUN_0c0e6c78(int a4, int a5, int a6)
     if (t3 != 1) {
         return t3;
     }
-    FUN_0c0e5d22(((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 4))) << 16)) | 0xAA1));
-    return (FUN_0c0e5d22(((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 2))) << 16)) | 0xBA1)));
+    snd_send_command(((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 4))) << 16)) | 0xAA1));
+    return (snd_send_command(((((((*(short *)(((int)stk + 6))) << 8) << 2) << 2) | ((*(short *)(((int)stk + 2))) << 16)) | 0xBA1)));
 }
 
 int vmsfs_c_setfname(int a4, int a5, int a6)
