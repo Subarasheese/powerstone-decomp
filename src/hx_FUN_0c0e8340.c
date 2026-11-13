@@ -1,0 +1,542 @@
+/* INLINE-ASM: hand-written renderer routine: ftrv on the XMTRX bank, fschg pair moves, store-queue writes (QACR0/1, pref), fpul tricks; no C form */
+/* Strip renderer of the 3D model drawer: walks a display list (r4 + 24: 48-byte records with a header word, vertex,
+   UV and colour), transforms each vertex by XMTRX, scales by the perspective factor 1 / g_d648 (then resets it to 1),
+   culls against the screen, selects the texture's store-queue area (QACR0/1 from the table at *0x0C803DF4) and writes
+   the polygon parameters and vertices through the store queues; strip runs go to FUN_0c0e8700 / FUN_0c0e9160 (called
+   here through r3, which both overwrite on entry, instead of the original bsr) and special headers -2 / -3 to
+   FUN_0c0ecce0 / FUN_0c0ec180. r5 points at the draw parameters (light vector, scale, flags). */
+#pragma inline_asm(FUN_0c0e8340)
+void FUN_0c0e8340(void)
+{
+    .DATA.W H'F49D
+    .DATA.W H'7418
+    MOV.L L0C0E86BC,R7
+    .DATA.W H'F19D
+    .DATA.W H'FFFB
+    .DATA.W H'F078
+    .DATA.W H'FFEB
+    .DATA.W H'FFDB
+    .DATA.W H'F103
+    .DATA.W H'FFCB
+    .DATA.W H'2FE6
+    .DATA.W H'2FD6
+    .DATA.W H'2FC6
+    .DATA.W H'2FB6
+    .DATA.W H'2FA6
+    .DATA.W H'2F96
+    .DATA.W H'2F86
+    .DATA.W H'E000
+    .DATA.W H'4F22
+    .DATA.W H'7FC0
+    .DATA.W H'F79D
+    .DATA.W H'FF47
+    .DATA.W H'E004
+    .DATA.W H'F05D
+    .DATA.W H'FF07
+    MOV.L L0C0E86CC,R0
+    .DATA.W H'F77A
+    .DATA.W H'6102
+    MOV.L L0C0E86D4,R2
+    .DATA.W H'1F12
+    .DATA.W H'6122
+    MOV.L L0C0E86D8,R0
+    MOV.L L0C0E86D0,R2
+    .DATA.W H'1F14
+    .DATA.W H'6322
+    .DATA.W H'6102
+    .DATA.W H'1F33
+    .DATA.W H'FA59
+    .DATA.W H'1F15
+    .DATA.W H'F859
+    .DATA.W H'F959
+    .DATA.W H'6C56
+    .DATA.W H'E038
+    .DATA.W H'FFA7
+    .DATA.W H'E030
+    .DATA.W H'FF87
+    .DATA.W H'E034
+    .DATA.W H'FF97
+    .DATA.W H'FE59
+    .DATA.W H'FC59
+    .DATA.W H'FD59
+    .DATA.W H'FC12
+    .DATA.W H'6056
+    .DATA.W H'FD12
+    .DATA.W H'1F09
+    .DATA.W H'6756
+    .DATA.W H'FE12
+    MOV.L L0C0E86C0,R0
+    .DATA.W H'6106
+    .DATA.W H'6206
+    .DATA.W H'6306
+    .DATA.W H'1F16
+    .DATA.W H'1F27
+    .DATA.W H'1F38
+    MOV.L L0C0E86E8,R0
+    .DATA.W H'6506
+    .DATA.W H'1F5A
+    .DATA.W H'6606
+    .DATA.W H'1F6B
+    MOV.L L0C0E86B4,R10
+    .DATA.W H'63F3
+    .DATA.W H'6846
+    .DATA.W H'7304
+    .DATA.W H'6AA2
+    .DATA.W H'EBFF
+    .DATA.W H'FB4C
+    .DATA.W H'285B
+    .DATA.W H'F7B5
+    .DATA.W H'F249
+    .DATA.W H'6146
+    .DATA.W H'216B
+    BF/S L0C0E8426
+    .DATA.W H'F349
+    BT L0C0E8400
+L0C0E83E8:
+    .DATA.W H'53FA
+    .DATA.W H'50FB
+    .DATA.W H'283B
+    .DATA.W H'63F3
+    .DATA.W H'FB39
+    .DATA.W H'210B
+    .DATA.W H'F79D
+    .DATA.W H'F7B5
+    .DATA.W H'6043
+    .DATA.W H'7030
+    BF/S L0C0E8426
+    .DATA.W H'0083
+L0C0E8400:
+    .DATA.W H'E202
+    .DATA.W H'6013
+    .DATA.W H'4228
+    .DATA.W H'4218
+    MOV.L L0C0E86E4,R9
+    .DATA.W H'282B
+    .DATA.W H'CBC0
+    .DATA.W H'6009
+    .DATA.W H'6992
+    .DATA.W H'CB10
+    .DATA.W H'6008
+    .DATA.W H'CBFC
+    .DATA.W H'209A
+    .DATA.W H'6008
+    .DATA.W H'6009
+    .DATA.W H'322C
+    .DATA.W H'6103
+    .DATA.W H'6227
+    .DATA.W H'2829
+L0C0E8426:
+    .DATA.W H'6083
+    .DATA.W H'F449
+    .DATA.W H'4029
+    .DATA.W H'F549
+    .DATA.W H'4019
+    .DATA.W H'F649
+    .DATA.W H'C907
+    .DATA.W H'E204
+    .DATA.W H'4008
+    .DATA.W H'F5FD
+    .DATA.W H'F139
+    .DATA.W H'4218
+    .DATA.W H'F049
+    .DATA.W H'3B00
+    .DATA.W H'6B03
+    .DATA.W H'E6E0
+    .DATA.W H'F012
+    .DATA.W H'4228
+    BT/S L0C0E8460
+    .DATA.W H'05AE
+    .DATA.W H'E0FF
+    .DATA.W H'4028
+    .DATA.W H'4018
+    .DATA.W H'CB38
+    .DATA.W H'6953
+    .DATA.W H'4929
+    .DATA.W H'4919
+    .DATA.W H'2092
+    .DATA.W H'1091
+L0C0E8460:
+    .DATA.W H'72FF
+    .DATA.W H'4C5A
+    .DATA.W H'E0FE
+    .DATA.W H'F700
+    .DATA.W H'2259
+    .DATA.W H'F10D
+    .DATA.W H'4618
+    .DATA.W H'F715
+    .DATA.W H'4628
+    .DATA.W H'262B
+    .DATA.W H'F701
+    .DATA.W H'2C09
+    MOV.L L0C0E86B8,R9
+    BF/S L0C0E8504
+    .DATA.W H'F701
+    .DATA.W H'F715
+    BF/S L0C0E8504
+    .DATA.W H'7C01
+L0C0E8484:
+    .DATA.W H'6243
+    .DATA.W H'742C
+    .DATA.W H'6046
+    .DATA.W H'2682
+    .DATA.W H'6183
+    .DATA.W H'340C
+    .DATA.W H'6846
+    .DATA.W H'2888
+    BF L0C0E849C
+    BRA L0C0E8674
+    .DATA.W H'0009
+    .DATA.W H'0009
+L0C0E849C:
+    .DATA.W H'69F3
+    .DATA.W H'7918
+    .DATA.W H'F599
+    .DATA.W H'F699
+    .DATA.W H'720C
+    .DATA.W H'F799
+    .DATA.W H'6013
+    .DATA.W H'C810
+    BF/S L0C0E84FA
+    .DATA.W H'C820
+    BT L0C0E84FA
+    .DATA.W H'F029
+    .DATA.W H'F129
+    .DATA.W H'F229
+    .DATA.W H'F329
+    .DATA.W H'F0B2
+    MOV.L L0C0E86C4,R0
+    .DATA.W H'FB09
+    .DATA.W H'F152
+    .DATA.W H'F429
+    .DATA.W H'F529
+    .DATA.W H'F5B2
+    .DATA.W H'FB09
+    .DATA.W H'F262
+    .DATA.W H'F629
+    .DATA.W H'F6B2
+    .DATA.W H'FB09
+    .DATA.W H'F372
+    .DATA.W H'F729
+    .DATA.W H'F3FD
+    .DATA.W H'F7B2
+    .DATA.W H'E000
+    .DATA.W H'1601
+    .DATA.W H'1602
+    .DATA.W H'1603
+    .DATA.W H'0683
+    .DATA.W H'7640
+    .DATA.W H'F66B
+    .DATA.W H'F64B
+    .DATA.W H'60B3
+    .DATA.W H'F62B
+    .DATA.W H'7540
+    .DATA.W H'F60B
+    .DATA.W H'F3FD
+    .DATA.W H'0683
+    .DATA.W H'7620
+    .DATA.W H'0A56
+L0C0E84FA:
+    .DATA.W H'F249
+    .DATA.W H'6146
+    BRA L0C0E83E8
+    .DATA.W H'F349
+    .DATA.W H'0009
+L0C0E8504:
+    .DATA.W H'F139
+    .DATA.W H'7910
+    .DATA.W H'F04D
+    .DATA.W H'F102
+    .DATA.W H'F93B
+    .DATA.W H'6243
+    .DATA.W H'F339
+    .DATA.W H'F515
+    .DATA.W H'2916
+    .DATA.W H'F302
+    .DATA.W H'F039
+    BF/S L0C0E8484
+    .DATA.W H'F635
+    .DATA.W H'F739
+    .DATA.W H'F042
+    .DATA.W H'F011
+    BF/S L0C0E8484
+    .DATA.W H'F505
+    .DATA.W H'F539
+    .DATA.W H'F742
+    BT/S L0C0E8484
+    .DATA.W H'F92B
+    .DATA.W H'F731
+    .DATA.W H'2986
+    .DATA.W H'E108
+    .DATA.W H'F675
+    .DATA.W H'F639
+    BT L0C0E8484
+    .DATA.W H'6083
+    .DATA.W H'C810
+    .DATA.W H'8424
+    .DATA.W H'7208
+    .DATA.W H'F739
+    .DATA.W H'6803
+    .DATA.W H'FF29
+    BF/S L0C0E8584
+    .DATA.W H'7430
+    .DATA.W H'F029
+    .DATA.W H'F129
+    .DATA.W H'F229
+    .DATA.W H'F329
+    .DATA.W H'F0B2
+    MOV.L L0C0E86C4,R0
+    .DATA.W H'FB09
+    .DATA.W H'F152
+    .DATA.W H'F429
+    .DATA.W H'F529
+    .DATA.W H'F5B2
+    .DATA.W H'FB09
+    .DATA.W H'F262
+    .DATA.W H'F629
+    .DATA.W H'F6B2
+    .DATA.W H'FB09
+    .DATA.W H'F372
+    .DATA.W H'F729
+    .DATA.W H'7640
+    .DATA.W H'F7B2
+    .DATA.W H'F3FD
+    .DATA.W H'F66B
+    .DATA.W H'F64B
+    .DATA.W H'F62B
+    .DATA.W H'F60B
+    .DATA.W H'F3FD
+    .DATA.W H'76E0
+L0C0E8584:
+    .DATA.W H'4811
+    BT L0C0E85BC
+    .DATA.W H'6083
+    .DATA.W H'88FF
+    BT/S L0C0E85B8
+    .DATA.W H'88FE
+    BF L0C0E85A4
+    MOV.L L0C0E86DC,R0
+    .DATA.W H'400B
+    .DATA.W H'0009
+    BT L0C0E8674
+    .DATA.W H'F249
+    .DATA.W H'6146
+    BRA L0C0E83E8
+    .DATA.W H'F349
+    .DATA.W H'0009
+L0C0E85A4:
+    .DATA.W H'88FD
+    BF L0C0E85B8
+    MOV.L L0C0E86E0,R0
+    .DATA.W H'400B
+    .DATA.W H'0009
+    BT L0C0E8674
+    .DATA.W H'F249
+    .DATA.W H'6146
+    BRA L0C0E83E8
+    .DATA.W H'F349
+L0C0E85B8:
+    BRA L0C0E85DA
+    .DATA.W H'FF9D
+L0C0E85BC:
+    .DATA.W H'4815
+    .DATA.W H'E038
+    BF L0C0E85D4
+    .DATA.W H'FAF6
+    .DATA.W H'E030
+    .DATA.W H'F8F6
+    .DATA.W H'E034
+    .DATA.W H'F9F6
+    .DATA.W H'E009
+    .DATA.W H'480D
+    MOV.L L0C0E86EC,R0
+    .DATA.W H'380C
+L0C0E85D4:
+    .DATA.W H'E024
+    .DATA.W H'F1F6
+    .DATA.W H'FF12
+L0C0E85DA:
+    .DATA.W H'6046
+L0C0E85DC:
+    .DATA.W H'4015
+    MOV.L L0C0E86B8,R9
+    BT/S L0C0E85F4
+    .DATA.W H'4011
+    .DATA.W H'6803
+    .DATA.W H'60B3
+    .DATA.W H'0A56
+    BT L0C0E8674
+    .DATA.W H'F249
+    .DATA.W H'6146
+    BRA L0C0E83E8
+    .DATA.W H'F349
+L0C0E85F4:
+    .DATA.W H'6103
+    .DATA.W H'E2FB
+    .DATA.W H'6396
+    .DATA.W H'C940
+    .DATA.W H'402D
+    .DATA.W H'E2FD
+    .DATA.W H'2329
+    .DATA.W H'203B
+    .DATA.W H'C810
+    .DATA.W H'7420
+    BF/S L0C0E8612
+    .DATA.W H'405A
+    .DATA.W H'CB10
+    .DATA.W H'6293
+    .DATA.W H'2206
+L0C0E8612:
+    .DATA.W H'52FA
+    .DATA.W H'0329
+    .DATA.W H'6013
+    .DATA.W H'4211
+    .DATA.W H'E21B
+    BT/S L0C0E8622
+    .DATA.W H'C903
+    .DATA.W H'CA01
+L0C0E8622:
+    .DATA.W H'402D
+    .DATA.W H'4315
+    .DATA.W H'E303
+    .DATA.W H'F3FD
+    .DATA.W H'432D
+    .DATA.W H'0483
+    .DATA.W H'6337
+    .DATA.W H'6296
+    .DATA.W H'2239
+    .DATA.W H'F00D
+    .DATA.W H'220B
+    .DATA.W H'425A
+    .DATA.W H'74E0
+    .DATA.W H'F10D
+    .DATA.W H'7610
+    .DATA.W H'F299
+    .DATA.W H'F62B
+    .DATA.W H'7520
+    .DATA.W H'F60B
+    .DATA.W H'F3FD
+    .DATA.W H'0683
+    BF/S L0C0E8656
+    .DATA.W H'7620
+    .DATA.W H'0683
+    .DATA.W H'7620
+    .DATA.W H'7520
+L0C0E8656:
+    .DATA.W H'4C25
+    .DATA.W H'6013
+    BT/S L0C0E8694
+    .DATA.W H'4C00
+    .DATA.W H'C808
+    MOV.L L0C0E86C8,R13
+    BF L0C0E866C
+    MOV.L X0C0E8700,R3
+    JSR @R3
+    .DATA.W H'0009
+    BRA L0C0E85DC
+    .DATA.W H'6046
+L0C0E866C:
+    MOV.L X0C0E9160,R3
+    JSR @R3
+    .DATA.W H'0009
+    BRA L0C0E85DC
+    .DATA.W H'6046
+L0C0E8674:
+    .DATA.W H'7F40
+    .DATA.W H'4F26
+    .DATA.W H'68F6
+    .DATA.W H'69F6
+    .DATA.W H'6AF6
+    .DATA.W H'6BF6
+    .DATA.W H'6CF6
+    .DATA.W H'6DF6
+    .DATA.W H'6EF6
+    .DATA.W H'FCF9
+    .DATA.W H'FDF9
+    .DATA.W H'FEF9
+    .DATA.W H'FFF9
+    .DATA.W H'000B
+    .DATA.W H'0009
+    .DATA.W H'0009
+L0C0E8694:
+    .DATA.W H'E100
+    .DATA.W H'C840
+    .DATA.W H'3C1E
+    .DATA.W H'C810
+    MOV.L L0C0E86C8,R13
+    BT/S L0C0E86AC
+    .DATA.W H'C808
+    MOV.L X0C0E8AA0,R3
+    JSR @R3
+    .DATA.W H'C820
+    BRA L0C0E85DC
+    .DATA.W H'6046
+    .DATA.W H'0009
+L0C0E86AC:
+    MOV.L X0C0E8F60,R3
+    JSR @R3
+    .DATA.W H'C820
+    BRA L0C0E85DC
+    .DATA.W H'6046
+L0C0E86B4:
+    .DATA.W H'3DF4
+    .DATA.W H'0C80
+L0C0E86B8:
+    .DATA.W H'D240
+    .DATA.W H'0C7F
+L0C0E86BC:
+    .DATA.W H'D648
+    .DATA.W H'0C7F
+L0C0E86C0:
+    .DATA.W H'68B0
+    .DATA.W H'0C34
+L0C0E86C4:
+    .DATA.W H'68C0
+    .DATA.W H'0C34
+L0C0E86C8:
+    .DATA.W H'68D0
+    .DATA.W H'0C34
+L0C0E86CC:
+    .DATA.W H'CF68
+    .DATA.W H'0C7F
+L0C0E86D0:
+    .DATA.W H'CF6C
+    .DATA.W H'0C7F
+L0C0E86D4:
+    .DATA.W H'6AC4
+    .DATA.W H'0C34
+L0C0E86D8:
+    .DATA.W H'6AC8
+    .DATA.W H'0C34
+L0C0E86DC:
+    .DATA.W H'CCE0
+    .DATA.W H'0C0E
+L0C0E86E0:
+    .DATA.W H'C180
+    .DATA.W H'0C0E
+L0C0E86E4:
+    .DATA.W H'68E8
+    .DATA.W H'0C34
+L0C0E86E8:
+    .DATA.W H'D4C8
+    .DATA.W H'0C7F
+L0C0E86EC:
+    .DATA.W H'42AC
+    .DATA.W H'0C7F
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .DATA.W H'0009
+    .ALIGN 4
+X0C0E8700:
+    .DATA.L H'0C0E8700
+X0C0E8AA0:
+    .DATA.L H'0C0E8AA0
+X0C0E8F60:
+    .DATA.L H'0C0E8F60
+X0C0E9160:
+    .DATA.L H'0C0E9160
+}

@@ -1,0 +1,138 @@
+{
+ "dev": [
+  {
+   "about": "colour 00000000",
+   "regs": {
+    "r4": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 00123456",
+   "regs": {
+    "r4": "00123456"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 80808080",
+   "regs": {
+    "r4": "80808080"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour FFFFFFFF",
+   "regs": {
+    "r4": "FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 00800000",
+   "regs": {
+    "r4": "00800000"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 0000FFFF",
+   "regs": {
+    "r4": "0000FFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "colour 00FFFFFF",
+   "regs": {
+    "r4": "00FFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour FF000000",
+   "regs": {
+    "r4": "FF000000"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 7F00FF01",
+   "regs": {
+    "r4": "7F00FF01"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour 01020304",
+   "regs": {
+    "r4": "01020304"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour DEADBEEF",
+   "regs": {
+    "r4": "DEADBEEF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "colour FF00FF00",
+   "regs": {
+    "r4": "FF00FF00"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ]
+}

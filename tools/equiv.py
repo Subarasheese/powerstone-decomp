@@ -174,11 +174,17 @@ def outside_names(cfile, table):
 def returns(cfile):
     """The return register of each function the file defines, from its prototype: fr0 for float
     and double, nothing for void, r0 otherwise (a leftover value in the other is not a result)."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    raw = open(cfile, errors='replace').read()
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', raw, flags=re.S)
     out = {}
     for m in re.finditer(r'^((?:static\s+)?[A-Za-z_][\w \t\*]*?)\b(\w+)\s*\([^;{]*\)\s*\{', text, flags=re.M):
         t = m.group(1).replace('static', '').strip()
         out[m.group(2)] = [] if t == 'void' else ['fr0'] if t in ('float', 'double') else ['r0']
+    # `/* @out <fn> r9 fr0 ... */`: a register-convention routine (inline assembly whose results stay in registers, e.g. the
+    # renderer's clip bits in r9 and transformed vertices in fr0-fr7) is compared on the registers it names as well
+    for m in re.finditer(r'/\*\s*@out\s+(\w+)\s+((?:[rf]r?\d+\s*)+)\*/', raw):
+        if m.group(1) in out:
+            out[m.group(1)] = list(dict.fromkeys(out[m.group(1)] + m.group(2).split()))
     return out
 
 
@@ -852,11 +858,16 @@ def main(argv):
             endless = case.get('endless') and str(orig['error']).startswith('more than') and str(mine['error']).startswith('more than')
             if endless:      # a function that never returns, cut at the step limit: the calls both sides made, in order, up to the shorter run
                 orig, mine = cut_endless(orig, mine)
+            trap_re = re.compile(r'^(trapa #\d+) at [0-9A-F]{8}$')
+            trapped = (case.get('same_trap') and trap_re.match(str(orig['error'])) and trap_re.match(str(mine['error']))
+                       and trap_re.match(str(orig['error'])).group(1) == trap_re.match(str(mine['error'])).group(1))
+            if trapped:      # both sides raise the same trap number (an error trap, e.g. trapa #48): what they did before it is compared, the trap's address is not
+                mine = dict(mine, error=orig['error'])
             good, diff = same(orig, mine, rets.get(fn, ['r0', 'fr0']), back, arity, indirect_arity(cfile, fn), indirect_targets(cfile, fn, table))
             faults = case.get('same_fault') and orig['error'] and orig['error'] == mine['error'] and not str(orig['error']).startswith('more than')
             if faults:       # code that cannot run as written (an unaligned constant address): both sides stop with the same fault, nothing else to compare
                 good, diff = True, ''
-            if orig['error'] and not endless and not faults:      # a case marked endless: a function that never returns by design (an error trap), both sides run to the step limit
+            if orig['error'] and not endless and not faults and not trapped:      # a case marked endless: a function that never returns by design (an error trap), both sides run to the step limit
                 good, diff = False, 'the original stopped: ' + orig['error']
             if not good:
                 ok, why = False, 'case %d: %s' % (n, diff)

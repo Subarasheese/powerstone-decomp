@@ -851,8 +851,8 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
     return {'error': error, 'steps': cpu.steps, 'calls': calls, 'sr': '%08X' % cpu.sr(),
             'writes': [['%08X' % a, s, '%0*X' % (s * 2, v)] for a, s, v in mem.writes],
             'devices': [[k, '%08X' % a, s, '%0*X' % (s * 2, v)] for k, a, s, v in mem.devices],
-            'out': {'r0': '%08X' % cpu.r[0], 'r1': '%08X' % cpu.r[1],
-                    'fr0': '%08X' % cpu.fr[0], 'fr1': '%08X' % cpu.fr[1]},
+            'out': dict({'r%d' % i: '%08X' % cpu.r[i] for i in range(16)},
+                        **{'fr%d' % i: '%08X' % cpu.fr[i] for i in range(16)}),     # every register: a register-convention routine (@out in its C) is compared on the ones it names
             'out_set': {'r0': bool(cpu.r.ever & 1)},               # False: the function never assigned r0 (a call's result counts), it returns what it was given
             'r15_balanced': cpu.r[15] == entry_r15,
             'xf': ['%08X' % v for v in cpu.xf], 'xf_changed': cpu.xf != xf_entry,

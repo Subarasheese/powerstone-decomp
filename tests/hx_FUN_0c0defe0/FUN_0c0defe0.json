@@ -1,0 +1,152 @@
+{
+ "dev": [
+  {
+   "about": "kind 1: border colour then endless loop",
+   "regs": {
+    "r4": "00000001"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "endless": true,
+   "steps": 400
+  },
+  {
+   "about": "kind 2: border colour then trap 48",
+   "regs": {
+    "r4": "00000002"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 4: border colour then trap 48",
+   "regs": {
+    "r4": "00000004"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 5: border colour then trap 48",
+   "regs": {
+    "r4": "00000005"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 2: border colour then trap 48",
+   "regs": {
+    "r4": "00000002"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 4: border colour then trap 48",
+   "regs": {
+    "r4": "00000004"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  }
+ ],
+ "holdout": [
+  {
+   "about": "kind 1 again (holdout)",
+   "regs": {
+    "r4": "00000001"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "endless": true,
+   "steps": 600
+  },
+  {
+   "about": "kind 3: border colour then trap 48",
+   "regs": {
+    "r4": "00000003"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 0: border colour then trap 48",
+   "regs": {
+    "r4": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind -1: border colour then trap 48",
+   "regs": {
+    "r4": "FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 3: border colour then trap 48",
+   "regs": {
+    "r4": "00000003"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  },
+  {
+   "about": "kind 7: border colour then trap 48",
+   "regs": {
+    "r4": "00000007"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ],
+   "same_trap": true
+  }
+ ]
+}
