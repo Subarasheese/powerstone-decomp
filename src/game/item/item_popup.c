@@ -10,7 +10,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
-int FUN_0c030aec(int, int, int, float);
+int ui_draw_world_text(int, int, int, float);
 int obj_destroy(int, int, int, int);
 int sprintf(int, int, int, int, int);
 
@@ -128,7 +128,7 @@ int item_tick_pickup_popup(int a4, int a5, int a6, int a7)
             *(int *)((int)stk + 0) = 0xC14AA34;
             sprintf(((int)stk + 4), a5, a6, a7, 0xC14AA34);
         }
-        t122 = (FUN_0c030aec((a4 + 0x20), ((int)stk + 4), 0x1, ((((struct o50_float *)(a4))->v))));
+        t122 = (ui_draw_world_text((a4 + 0x20), ((int)stk + 4), 0x1, ((((struct o50_float *)(a4))->v))));
     }
     return t122;
 }

@@ -1,0 +1,66 @@
+{
+ "dev": [
+  {
+   "about": "side 0, fighter flag 0, state 3",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "000001010300",
+    "0C7EB2B7": "00"
+   }
+  },
+  {
+   "about": "side 1, fighter flag 0, state 3",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "000101010300",
+    "0C7F2587": "00"
+   }
+  },
+  {
+   "about": "side 0, fighter flag 1, state 3",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "000001010300",
+    "0C7EB2B7": "01"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "side 1, fighter flag 5, state 3",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "000101010300",
+    "0C7F2587": "05"
+   }
+  },
+  {
+   "about": "side 0, fighter flag 0, state -2",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "00000101FE00",
+    "0C7EB2B7": "00"
+   }
+  },
+  {
+   "about": "side 1, fighter flag -1, state 7",
+   "regs": {
+    "r4": "0C400000"
+   },
+   "poke": {
+    "0C400000": "000101010700",
+    "0C7F2587": "FF"
+   }
+  }
+ ]
+}

@@ -32,13 +32,29 @@ typedef struct Fighter {
     float ground_height;             /* 0x2D4 */
     char _2D8[0x71BA - 0x2D8];
     signed char state_id;            /* 0x71BA index of the fighter state tables */
-    char _71BB[0x71F1 - 0x71BB];
+    char _71BB[0x71D4 - 0x71BB];
+    short hp;                        /* 0x71D4 0xF0 full, below 0 KO */
+    short hp_ref;                    /* 0x71D6 */
+    short hp_display;                /* 0x71D8 eased toward hp */
+    char _71DA[0x71ED - 0x71DA];
+    signed char _71ED;               /* 0x71ED 0: the HUD flashes a mark by the fighter's gauge (FUN_0c02f328) */
+    char _71EE[0x71F1 - 0x71EE];
     unsigned char power_form;        /* 0x71F1 */
-    char _71F2[0x7209 - 0x71F2];
+    char _71F2;
+    signed char _71F3;               /* 0x71F3 the HUD's power panel waits while set */
+    short power_time;                /* 0x71F4 frames of power change left (600 per HUD step) */
+    char _71F6[0x7209 - 0x71F6];
     signed char special_index;       /* 0x7209 */
-    char _720A[0x7242 - 0x720A];
+    char _720A[0x720E - 0x720A];
+    unsigned char combo_count;       /* 0x720E hits of the running combo (99 at most) */
+    char _720F[0x7230 - 0x720F];
+    signed char stones;              /* 0x7230 power stones held */
+    signed char stone_bits;          /* 0x7231 which of the three */
+    char _7232[0x7242 - 0x7232];
     signed char _7242;               /* 0x7242 2 while the camera follows a special move */
-    char _7243[0x72D0 - 0x7243];
+    char _7243[0x72B1 - 0x7243];
+    signed char combo_flag;          /* 0x72B1 */
+    char _72B2[0x72D0 - 0x72B2];
 } Fighter;
 
 GAME_CHECK(check_fighter_size, sizeof(Fighter) == 0x72D0);

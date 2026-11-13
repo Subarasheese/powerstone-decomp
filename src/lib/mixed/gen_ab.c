@@ -235,7 +235,7 @@ int vmsfs_fseek(int a4, int a5, int a6, int a7);
 int FUN_0c110462(int a4, int a5);
 int FUN_0c115880(int a4, int a5, int a6);
 int FUN_0c026c7c(void);
-int FUN_0c02d84a(void);
+int ui_reset_hud_wins(void);
 int ai_calc_dist_to_goal_obj(int a4);
 int pl_mode12_update(int a4, int a5, int a6, int a7);
 int pl_ryoma_mode07_phase0(int a4);

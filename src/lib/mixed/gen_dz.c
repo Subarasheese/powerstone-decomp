@@ -65,7 +65,7 @@ int ui_draw_element_sprite(int);
 int FUN_0c01e75e(int, int);
 float FUN_0c0211d0(float, float, float, float, float, float, float);
 int FUN_0c026554(int);
-int FUN_0c030832(int, int);
+int ui_project_fighter_to_screen(int, int);
 int fx_spawn_039ed8(int, int);
 int fx_spawn_with_params(int, float, float, float, float);
 int fx_spawn_item_sparkle(int);

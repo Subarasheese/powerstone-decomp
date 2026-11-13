@@ -23,7 +23,7 @@ extern void obj_system_init(int *dst, char *rec);
 extern void pl_place_start_positions(void);
 extern void FUN_0c041e14(int n);
 extern void ui_init_hud(void);
-extern void FUN_0c02d82c(void);
+extern void ui_disable_hud(void);
 extern void FUN_0c02d83c(void);
 extern void FUN_0c026c7c(void);
 extern void FUN_0c04c0ea(void);
@@ -107,7 +107,7 @@ void game_reset_state_block(void)
     FUN_0c041e14(0);
     FUN_0c041e14(1);
     ui_init_hud();
-    FUN_0c02d82c();
+    ui_disable_hud();
     FUN_0c02d83c();
     FUN_0c026c7c();
     FUN_0c04c0ea();

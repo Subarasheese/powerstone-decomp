@@ -1,76 +1,135 @@
-/* screen fade: start/reset/draw (full-screen coloured quad) (0c03148c-0c0318e0) */
+/* ui_fade.c: the screen fade (original file 0c03148c-0c0318e0).
+   ui_fade_start sets a fade to or from a colour over a number of frames; ui_fade_draw draws it every frame over the scene:
+   mode 0 a full-screen quad whose opacity follows the counter, mode 1 a wipe of horizontal bands. */
+#include "game/ui/ui.h"
 
-/* named globals (symbols.txt) */
-int ui_fade_draw(int a4, int a5, int a6, int a7, float f4, float f5);
-extern char g_fade_state[];
-int FUN_0c0dd5d0(int, int);
-struct o0_uchar { unsigned char v; };
-struct o1_uchar { char p[0x1]; unsigned char v; };
-struct o2_uchar { char p[0x2]; unsigned char v; };
-struct o3_uchar { char p[0x3]; unsigned char v; };
-struct o4_uint { char p[0x4]; unsigned int v; };
-struct o0_float { float v; };
-struct o0_int { int v; };
-struct o0_uint { unsigned int v; };
-struct o10_float { char p[0x10]; float v; };
-struct o14_float { char p[0x14]; float v; };
-struct o18_float { char p[0x18]; float v; };
-struct o18_int { char p[0x18]; int v; };
-struct o18_uint { char p[0x18]; unsigned int v; };
-struct o1C_float { char p[0x1C]; float v; };
-struct o20_float { char p[0x20]; float v; };
-struct o24_float { char p[0x24]; float v; };
-struct o24_int { char p[0x24]; int v; };
-struct o24_uint { char p[0x24]; unsigned int v; };
-struct o28_float { char p[0x28]; float v; };
-struct o2C_float { char p[0x2C]; float v; };
-struct o34_float { char p[0x34]; float v; };
-struct o38_float { char p[0x38]; float v; };
-struct o3C_float { char p[0x3C]; float v; };
-struct o4_float { char p[0x4]; float v; };
-struct o8_float { char p[0x8]; float v; };
-struct oC_float { char p[0xC]; float v; };
-struct oC_int { char p[0xC]; int v; };
-struct oC_uint { char p[0xC]; unsigned int v; };
-int FUN_0c0dcd20(float, float, float);
-int FUN_0c0e1550(int);
-int FUN_0c0e6fdc(int);
-extern int FUN_0c0e6fe8();
-int nlObjPutTrnsl(int, float);
-int nlUnitMatrix(void);
+typedef struct UiWord3 { int w[3]; } UiWord3;            /* a vertex, copied as three words */
+typedef struct UiWord4 { int w[4]; } UiWord4;
 
-int FUN_0c03148c(void)
+#define FADE_OBJ_VERT(n) (*(UiWord3 *)(g_ui_fade_obj + 112 + 32 * (n)))    /* the quad's four vertices in the object */
+#define FADE_OBJ_COLOUR (*(UiWord4 *)(g_ui_fade_obj + 68))
+#define FADE_OBJ_F(off) (*(float *)(g_ui_fade_obj + (off)))
+#define END_OF_STRIP(v) (*(int *)&(v).x = *(int *)&(v).x | 1)             /* a flag the renderer reads in the low bit of x */
+#define CHANNEL(c, shift) ((float)(unsigned int)(((c) >> (shift)) & 0xFF))
+#define FADE_PAUSE_A (*(signed char *)((char *)g_game_work + 0x12B))
+#define FADE_PAUSE_B (*(signed char *)((char *)g_game_work + 0x12E))
+#define FADE_HOLD (*(signed char *)0x0C494D20)
+#define FADE_HALF_STEP (*(int *)0x0C386830)
+
+extern char g_game_work[];
+
+void ui_fade_init(void)
 {
-    return FUN_0c0dd5d0(0xC321238, 0xC321330);
+    FUN_0c0dd5d0(g_ui_fade_obj, g_ui_fade_obj_data);
 }
 
-int ui_fade_start(int a4, int a5, int a6, int a7)
+/* a fade of `duration` frames in `colour` (0x00RRGGBB); mode 0 flat, 1 bands; dir 0 to the colour, 1 from it */
+void ui_fade_start(unsigned int colour, int mode, int dir, int duration)
 {
-    register int t7;
-    register int t8;
-
-    (((struct o4_uint *)g_fade_state)->v) = a4;
-    (((struct o0_uchar *)g_fade_state)->v) = a5;
-    (((struct o1_uchar *)g_fade_state)->v) = a6;
-    (((struct o2_uchar *)g_fade_state)->v) = a7;
-    (((struct o3_uchar *)g_fade_state)->v) = a7;
-    if (((*(int *)0xC386830) != 0) && ((signed char)a6 != 0)) {
-        (((struct o3_uchar *)g_fade_state)->v) = ((*(signed char *)0xC7F31CB) - 1);
-    }
-    if ((signed char)a5 != 0) {
-        (((struct o3_uchar *)g_fade_state)->v) = ((*(signed char *)0xC7F31CB) + 0x1);
-    }
-    t7 = *(signed char *)0xC7F31CA;
-    t8 = t7;
-    if (t7 == 0) {
-        (((struct o2_uchar *)g_fade_state)->v) = 0x1;
-        t8 = 0x1;
-    }
-    return t8;
+    g_fade_state.colour = colour;
+    g_fade_state.mode = mode;
+    g_fade_state.dir = dir;
+    g_fade_state.duration = duration;
+    g_fade_state.counter = duration;
+    if (FADE_HALF_STEP != 0 && (signed char)dir != 0)
+        g_fade_state.counter = g_fade_state.counter - 1;
+    if ((signed char)mode != 0)
+        g_fade_state.counter = g_fade_state.counter + 1;
+    if (g_fade_state.duration == 0)
+        g_fade_state.duration = 1;
 }
 
 void ui_fade_reset(void)
 {
-    *(unsigned char *)0xC7F31CB = 0x0;
+    g_fade_state.counter = 0;
 }
 
+void ui_fade_draw(void)
+{
+    Vec3 *v = g_ui_fade_verts;
+    float *col = g_ui_fade_colour;
+    float t, y, band;
+
+    FUN_0c0e1550(1);
+    nlUnitMatrix();
+    if (g_fade_state.counter == 0)
+        return;
+    switch (g_fade_state.mode) {
+    case 0:
+        if (g_fade_state.dir == 0)
+            t = (float)g_fade_state.counter / (float)g_fade_state.duration;
+        else
+            t = -((float)(g_fade_state.counter - 1) / (float)g_fade_state.duration) + 1.0f;
+        v[1].x = -320.0f;
+        v[0].x = -320.0f;
+        v[3].x = 320.0f;
+        v[2].x = 320.0f;
+        v[2].y = -240.0f;
+        v[0].y = -240.0f;
+        v[3].y = 240.0f;
+        v[1].y = 240.0f;
+        v[3].z = -1.0f;
+        v[2].z = -1.0f;
+        v[1].z = -1.0f;
+        v[0].z = -1.0f;
+        END_OF_STRIP(v[0]);
+        END_OF_STRIP(v[1]);
+        END_OF_STRIP(v[2]);
+        END_OF_STRIP(v[3]);
+        FADE_OBJ_VERT(0) = *(UiWord3 *)&v[0];
+        FADE_OBJ_VERT(1) = *(UiWord3 *)&v[1];
+        FADE_OBJ_VERT(2) = *(UiWord3 *)&v[2];
+        FADE_OBJ_VERT(3) = *(UiWord3 *)&v[3];
+        col[1] = CHANNEL(g_fade_state.colour, 16) / 255.0f * 0.75f;
+        col[2] = CHANNEL(g_fade_state.colour, 8) / 255.0f * 0.75f;
+        col[3] = CHANNEL(g_fade_state.colour, 0) / 255.0f * 0.75f;
+        col[0] = 1.0f;
+        FADE_OBJ_COLOUR = *(UiWord4 *)col;
+        FADE_OBJ_F(20) = 640.0f;
+        FADE_OBJ_F(52) = 640.0f;
+        FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+        nlObjPutTrnsl(g_ui_fade_obj, t);
+        break;
+    case 1:
+        if (g_fade_state.dir == 0)
+            t = (float)g_fade_state.counter / (float)g_fade_state.duration;
+        else
+            t = -((float)(g_fade_state.counter - 1) / (float)g_fade_state.duration) + 1.0f;
+        v[1].x = -320.0f;
+        v[0].x = -320.0f;
+        v[3].x = 320.0f;
+        v[2].x = 320.0f;
+        v[3].z = -100.0f;
+        v[2].z = -100.0f;
+        v[1].z = -100.0f;
+        v[0].z = -100.0f;
+        END_OF_STRIP(v[0]);
+        END_OF_STRIP(v[1]);
+        END_OF_STRIP(v[2]);
+        END_OF_STRIP(v[3]);
+        col[1] = CHANNEL(g_fade_state.colour, 16) / 255.0f;
+        col[2] = CHANNEL(g_fade_state.colour, 8) / 255.0f;
+        col[3] = CHANNEL(g_fade_state.colour, 0) / 255.0f;
+        FADE_OBJ_COLOUR = *(UiWord4 *)col;
+        FADE_OBJ_F(20) = 640.0f;
+        FADE_OBJ_F(52) = 640.0f;
+        FUN_0c0dcd20(1.0f, 1.0f, 1.0f);
+        band = t * 3.125f;
+        for (y = -37.5f; 37.5f > y; y = y + 3.125f) {
+            v[2].y = y;
+            v[0].y = y;
+            v[3].y = band + y;
+            v[1].y = band + y;
+            FADE_OBJ_VERT(0) = *(UiWord3 *)&v[0];
+            FADE_OBJ_VERT(1) = *(UiWord3 *)&v[1];
+            FADE_OBJ_VERT(2) = *(UiWord3 *)&v[2];
+            FADE_OBJ_VERT(3) = *(UiWord3 *)&v[3];
+            nlObjPut(g_ui_fade_obj);
+        }
+        break;
+    }
+    if (FADE_PAUSE_A == 0 && FADE_PAUSE_B == 0 && FADE_HOLD == 0)
+        g_fade_state.counter = g_fade_state.counter - 1;
+    if (g_fade_state.counter == 0 && g_fade_state.dir != 0)
+        g_fade_state.counter = 1;
+}

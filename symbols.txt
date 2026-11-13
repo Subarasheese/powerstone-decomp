@@ -362,3 +362,10 @@
 0c361c34 g_debug_pad
 0c7f306c g_cam_mode10_arg
 0c7f319d g_cam_view_flag
+0c321238 g_ui_fade_obj
+0c321330 g_ui_fade_obj_data
+0c366f00 g_ui_fade_verts
+0c366f30 g_ui_fade_colour
+0c149440 g_hit_fmt_2d
+0c149444 g_hit_text
+0c149448 g_hit_fmt_d

@@ -123,7 +123,7 @@ int FUN_0c024fe4(int a4, int a5, int a6);
 int FUN_0c025332(int a4, int a5, int a6);
 int FUN_0c05d0d8(int a4);
 int FUN_0c0906e6(int a4);
-int FUN_0c02fffc(int a4, float f4, float f5, float f6, float f7, float f8);
+int ui_hud_slide_text(int a4, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c0207ca(int a4, int a5);
 int FUN_0c033390(int a4);
 int FUN_0c0246b2(int a4);
@@ -1764,34 +1764,6 @@ int FUN_0c0906e6(int a4)
     return 0x74;
 }
 
-int FUN_0c02fffc(int a4, float f4, float f5, float f6, float f7, float f8)
-{
-    register float u0;
-    register float u1;
-    register float u2;
-    register float u3;
-    register float u4;
-    register float u5;
-
-    u0 = 16.0f;
-    if ((*(signed char *)((a4 + 0x3))) == 2) {
-        u0 = 32.0f;
-    }
-    if ((*(signed char *)((a4 + 0x0))) == 0) {
-        u1 = (((struct o4_float *)(a4))->v);
-        u2 = u1;
-        u2 = u2 + ((((struct o10_float *)(a4))->v)) * u0;
-        u3 = (u1 - ((((-((float)(*(signed char *)((a4 + 0x2))) / (float)(*(signed char *)((a4 + 0x1))))) + 1.0f) * u2)));
-    } else {
-        u1 = (((struct o4_float *)(a4))->v);
-        u2 = (((struct o10_float *)(a4))->v);
-        u4 = (((u0 * u2)) + u1);
-        u5 = ((-u1) - ((u0 * u2)));
-        u5 = u5 + u4 * (((-((float)(*(signed char *)((a4 + 0x2))) / (float)(*(signed char *)((a4 + 0x1))))) + 1.0f));
-        u3 = (u5 + (*(float *)0xC030318));
-    }
-    return ui_draw_text_stub((*(int *)((a4 + 0xC))), (*(signed char *)((a4 + 0x3))), u3, ((((struct o8_float *)(a4))->v)), ((((struct o14_float *)(a4))->v)), ((((struct o18_float *)(a4))->v)));
-}
 
 int FUN_0c0207ca(int a4, int a5)
 {

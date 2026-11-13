@@ -204,10 +204,20 @@ sprite queue used by every menu and HUD draw call (56-byte record, sheet descrip
 Objects using the SYUKYAKU/DEMO COMN banks (0c6649e8, 0c6649a0) with demo_attract_main; PSTONE LOGO bank (0c664a00/0c664a08) objects with
 logo_spawn_overlay (spawned by several menu modes). Not examined in detail.
 
-## game_draw_frame, game_ui_hud (0c02ca74-0c03148c)
-game_draw_frame: per frame scene render (camera matrices, split screen flag 0c7f319e, fog/clear colour screen_fade_rgb), then ui_draw_hud which calls
-ten HUD draws (gauges, time, wins, combo messages, hit counter, world numbers; ui_init_hud prepares the state). Strings seen in rodata:
-HIT, WINS, TIME, FINE!/SPLENDID!/EXCELLENT!/... (combo praise), team names; the functions that draw them are in the 0c02e*/0c030* range.
+## game_draw_frame (0c02ca74-0c02d774)
+game_draw_frame: per frame scene render (camera matrices, split screen flag 0c7f319e, fog/clear colour screen_fade_rgb), then
+ui_draw_hud.
+
+## game_ui (0c027f90-0c028030, 0c02d774-0c031496): src/game/ui/, header ui.h
+In the header form: one C file per original source file, the HUD records in ui.h (HudState g_hud_state with its clock, the
+two panels under the gauges, hit counters, gauges with their chips, the lost-bar shards and the win marks; UiSprite, the
+56-byte sprite request). ui_sprite_queue.c (the queue every 2D draw goes through; matching unit), ui_hud_init.c (setup),
+ui_hud_draw.c (text in three fonts, the round clock, the panels: name plate, power stones, power meter, and their state
+machine through a power change), ui_hud_stub_a.c / ui_hud_stub_b.c (one empty function each; matching units),
+ui_hud_indicators.c (win marks and the faces), ui_hud_gauge.c (health gauges: bars, red damage, chips, shards, glints),
+ui_hud_counter.c (the "N HITS" counter and its rating message), ui_hud_world.c (projection to the screen, text and numbers
+over items, the item radar, the HUD halves fading under a fighter, ui_draw_hud), ui_fade.c (the screen fade).
+Sprite field 0x28 is a 16-bit rotation (the shards turn it through 0x4000-0xC000).
 
 # Modules found in 0c03148c-0c05d970 (function counts are from functions.txt)
 
@@ -386,7 +396,7 @@ Mode function attract_mode_update drives attract_run_sequence: steps for TIME RA
 ADX logo and the two web addresses. Rank rows are separate objects (rank_start_*_rows allocate, rank_draw_*_rows
 update). rank_init_default_entries fills ten entries with initials CAP into the save data g_save_data.
 
-## game_ui_wins / game_result_screens / game_boot_screens (0c0d46e4-0c0d7108)
+## game_play (src/game/flow/game_play.c) / game_result_screens / game_boot_screens (0c0d46e4-0c0d7108)
 Win counter text ("%2d WINS"), pad helpers (input_get_active_pads_mask, input_get_start_pressed_pad), the
 end-of-match step sequence, CONTINUE? countdown, CHALLENGER / NO CHALLENGE / PLEASE WAIT / THE END texts, and the
 boot screens (version string with build date, per-region warning text).

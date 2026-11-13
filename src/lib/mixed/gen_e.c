@@ -173,7 +173,7 @@ int kmiCopyToFrameBuffer(int a4, int a5, int a6, int a7);
 int ADXB_ExecOneSpsd(int a4, int a5, int a6, int a7);
 int ending_spawn_obj_t03(int a4);
 int FUN_0c02002a(int a4, int a5, int a6, int a7);
-int FUN_0c030832(int a4, int a5);
+int ui_project_fighter_to_screen(int a4, int a5);
 int fx_spawn_0498c4(int a4);
 int obj_force_owner_state27(int a4, int a5);
 int nlRotateAxeSC(int a4, float f4, float f5);

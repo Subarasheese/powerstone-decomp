@@ -217,7 +217,7 @@ int FUN_0c027168(int a4, int a5);
 int FUN_0c0270c6(int a4, int a5);
 int FUN_0c0271fe(int a4, int a5);
 int FUN_0c0272a0(int a4, int a5);
-int FUN_0c02fffc(int a4, int a5, int a6, int a7, float f4);
+int ui_hud_slide_text(int a4, int a5, int a6, int a7, float f4);
 int fx_spawn_0372a8(int a4);
 int FUN_0c05fb58(int a4);
 int FUN_0c09375c(int a4, int a5, int a6, int a7);

@@ -48,7 +48,7 @@ extern void nlObjPutInit(void);
 extern void FUN_0c05eed2(void);
 extern void FUN_0c024274(void);
 extern void FUN_0c027c74(void);
-extern void FUN_0c03148c(void);
+extern void ui_fade_init(void);
 extern void snd_init_adx(void);
 extern void bgm_stop_all(void);
 extern void FUN_0c0a3062(int);
@@ -144,7 +144,7 @@ void sys_init_all(void)
     state[55] = 1;
     FUN_0c024274();
     FUN_0c027c74();
-    FUN_0c03148c();
+    ui_fade_init();
     snd_init_adx();
     bgm_stop_all();
     FUN_0c0a3062((signed char)state[46]);

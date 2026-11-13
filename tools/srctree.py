@@ -43,7 +43,7 @@ RULES = [
     ('snd_', 'sound'), ('sound', 'sound'),
     ('item', 'item'),
     ('ai_', 'ai'),
-    ('flow_', 'flow'), ('round_flow', 'flow'), ('difficulty_level', 'flow'), ('screen_mode', 'flow'),
+    ('flow_', 'flow'), ('game_play', 'flow'), ('round_flow', 'flow'), ('difficulty_level', 'flow'), ('screen_mode', 'flow'),
     ('scene_obj', 'object'), ('object_pool', 'object'), ('actor_objects', 'object'), ('actor_motion_sounds', 'object'),
     ('player_falcon', 'player/chara/falcon'), ('player_ryoma', 'player/chara/ryoma'), ('player_wangtang', 'player/chara/wangtang'),
     ('player_jack', 'player/chara/jack'), ('player_gunrock', 'player/chara/gunrock'), ('gunrock_', 'player/chara/gunrock'),

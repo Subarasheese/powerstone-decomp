@@ -2,7 +2,7 @@
 
 extern void obj_system_init(void);
 extern void ui_init_hud(void);
-extern void FUN_0c02d82c(void);
+extern void ui_disable_hud(void);
 extern void FUN_0c02d83c(void);
 extern void bgm_stop_streams(void);
 extern void res_switch_scene(int a);
@@ -45,7 +45,7 @@ void game_reset_match_screen(void)
 
     obj_system_init();
     ui_init_hud();
-    FUN_0c02d82c();
+    ui_disable_hud();
     FUN_0c02d83c();
     block[2] = 0;
     block[1] = 0;

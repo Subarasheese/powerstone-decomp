@@ -229,7 +229,7 @@ int ADXB_ExecOneWav16(int a4, int a5, int a6, int a7);
 int fmMngInit(int a4, int a5, int a6);
 int FUN_0c02842a(int a4, int a5);
 int gdFsDaPlayG(int a4, int a5, int a6, int a7);
-int FUN_0c02d8e0(void);
+int ui_reset_hud_gauges(void);
 int pl_vib_update(int a4);
 
 int FUN_0c111310(int a4, int a5, int a6)

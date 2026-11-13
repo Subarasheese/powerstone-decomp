@@ -334,7 +334,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 79
 - the cases run 14 of 72 instructions
 
-### ADXRNA_Finish (`0C105C0A`, 6 bytes, `src/lib/cri/m_0c105c04_adx_rnas.c`)
+### ADXRNA_Finish (`0C105C0A`, 6 bytes, `src/lib/mixed/gen_as.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXRNA_Finish.json`
 - case 0
 - case 1
@@ -374,7 +374,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 67
 - the cases run 3 of 3 instructions
 
-### ADXRNA_Init (`0C105C04`, 6 bytes, `src/lib/cri/m_0c105c04_adx_rnas.c`)
+### ADXRNA_Init (`0C105C04`, 6 bytes, `src/lib/mixed/gen_as.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_as/ADXRNA_Init.json`
 - case 0
 - case 1
@@ -3999,11 +3999,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 87
 - the cases run 122 of 128 instructions
 
-### FUN_0c01dee2 (`0C01DEE2`, 336 bytes, `src/game/menu/option/menu_keycfg_edit.c`)
+### FUN_0c01dee2 (`0C01DEE2`, 376 bytes, `src/game/menu/option/menu_keycfg_edit.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/menu_keycfg_edit/FUN_0c01dee2.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 80 of 102 instructions
+- the cases run 129 of 167 instructions
 
 ### FUN_0c01e05a (`0C01E05A`, 252 bytes, `src/game/menu/option/menu_keycfg_edit.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/menu_keycfg_edit/FUN_0c01e05a.json`
@@ -7181,7 +7181,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C024B10 (taken)
 - the cases run 190 of 226 instructions
 
-### FUN_0c024b5e (`0C024B5E`, 424 bytes, `src/game/hit/hit_boxes_7.c`)
+### FUN_0c024b5e (`0C024B5E`, 426 bytes, `src/game/hit/hit_boxes_7.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_7/FUN_0c024b5e.json`
 - case 18
 - case 23
@@ -7219,7 +7219,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 85
 - case 116
 - case 159
-- the cases run 211 of 211 instructions
+- the cases run 212 of 212 instructions
 
 ### FUN_0c024ea6 (`0C024EA6`, 318 bytes, `src/game/save/gen_t.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_t/FUN_0c024ea6.json`
@@ -10019,48 +10019,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 78
 - the cases run 8 of 16 instructions
 
-### FUN_0c02d82c (`0C02D82C`, 8 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud/FUN_0c02d82c.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 38
-- case 57
-- case 108
-- case 74
-- case 107
-- case 79
-- case 65
-- case 89
-- case 104
-- case 93
-- case 105
-- case 98
-- case 50
-- case 96
-- case 67
-- case 116
-- case 103
-- case 102
-- the cases run 4 of 4 instructions
-
-### FUN_0c02d834 (`0C02D834`, 8 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud/FUN_0c02d834.json`
+### FUN_0c02d834 (`0C02D834`, 8 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_init/FUN_0c02d834.json`
 - case 0
 - case 1
 - case 2
@@ -10099,8 +10059,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 73
 - the cases run 4 of 4 instructions
 
-### FUN_0c02d83c (`0C02D83C`, 8 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud/FUN_0c02d83c.json`
+### FUN_0c02d83c (`0C02D83C`, 8 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_init/FUN_0c02d83c.json`
 - case 0
 - case 1
 - case 2
@@ -10139,94 +10099,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 71
 - the cases run 4 of 4 instructions
 
-### FUN_0c02d844 (`0C02D844`, 6 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud/FUN_0c02d844.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 63
-- case 84
-- case 116
-- case 38
-- case 60
-- case 56
-- case 102
-- case 101
-- case 103
-- case 57
-- case 88
-- case 42
-- case 62
-- case 109
-- case 61
-- case 53
-- case 89
-- case 68
-- the cases run 3 of 3 instructions
-
-### FUN_0c02d84a (`0C02D84A`, 100 bytes, `src/game/ui/ui_hud_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_alt/FUN_0c02d84a.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 50 of 50 instructions
-
-### FUN_0c02d8e0 (`0C02D8E0`, 228 bytes, `src/game/ui/ui_hud_alt.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_alt/FUN_0c02d8e0.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 126
-- case 65
-- case 97
-- case 46
-- case 140
-- case 89
-- case 129
-- case 82
-- case 114
-- case 71
-- case 58
-- case 158
-- case 130
-- case 154
-- case 147
-- case 149
-- case 83
-- case 95
-- the cases run 95 of 114 instructions
-
-### FUN_0c02dc86 (`0C02DC86`, 786 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02dc86.json`
+### FUN_0c02dc86 (`0C02DC86`, 786 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_draw/FUN_0c02dc86.json`
 - infinite
 - idle no flip late frame
 - idle reset by frame
@@ -10241,8 +10115,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - flip 99
 - the cases run 346 of 346 instructions
 
-### FUN_0c02df98 (`0C02DF98`, 114 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02df98.json`
+### FUN_0c02df98 (`0C02DF98`, 114 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_draw/FUN_0c02df98.json`
 - case 86
 - case 32
 - case 24
@@ -10281,8 +10155,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 81
 - the cases run 57 of 57 instructions
 
-### FUN_0c02e00a (`0C02E00A`, 34 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e00a.json`
+### FUN_0c02e00a (`0C02E00A`, 34 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_draw/FUN_0c02e00a.json`
 - case 0
 - case 1
 - case 2
@@ -10321,8 +10195,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 65
 - the cases run 17 of 17 instructions
 
-### FUN_0c02e050 (`0C02E050`, 66 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e050.json`
+### FUN_0c02e050 (`0C02E050`, 66 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_draw/FUN_0c02e050.json`
 - case 74
 - case 8
 - case 0
@@ -10361,8 +10235,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 35
 - the cases run 33 of 33 instructions
 
-### FUN_0c02e092 (`0C02E092`, 144 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e092.json`
+### FUN_0c02e092 (`0C02E092`, 144 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 21 development and 21 holdout cases, in `tests/ui_hud_draw/FUN_0c02e092.json`
 - case 0
 - case 14
 - case 1
@@ -10381,6 +10255,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- step 0, left: set up, fighter out of the intro
+- step 1, fighter in another state
+- step 2: nothing
 - case 142
 - case 125
 - case 111
@@ -10399,10 +10276,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 133
 - case 104
 - case 126
-- the cases run 64 of 72 instructions
+- step 0, right: set up, fighter still posing
+- step 1, out of the intro
+- step -1: nothing
+- the cases run 72 of 72 instructions
 
-### FUN_0c02e144 (`0C02E144`, 346 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e144.json`
+### FUN_0c02e144 (`0C02E144`, 346 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 27 development and 27 holdout cases, in `tests/ui_hud_draw/FUN_0c02e144.json`
 - case 0
 - case 24
 - case 1
@@ -10421,6 +10301,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 14
 - case 15
 - case 16
+- step 0
+- step 1, paused: timer holds
+- step 2, plate out
+- step 2, no plate, stones closed in
+- step 2, no plate, stones still apart
+- step 3, paused
+- step 4, timer out: the meter
+- step 4, counting
+- step 5, sliding
 - case 145
 - case 60
 - case 52
@@ -10439,10 +10328,29 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 97
 - case 64
 - case 66
-- the cases run 58 of 168 instructions
+- step 1, timer runs out: the flash effect
+- step 1, timer counting
+- step 2, plate still moving
+- step 2, plate out and stones closed in
+- step 3, timer out
+- step 3, counting
+- step 4, paused
+- step 5, in place
+- step 6: nothing
+- the cases run 173 of 173 instructions
 
-### FUN_0c02e2da (`0C02E2DA`, 350 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e2da.json`
+### FUN_0c02e2bc (`0C02E2BC`, 30 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 3 development and 3 holdout cases, in `tests/ui_hud_draw/FUN_0c02e2bc.json`
+- side 0, fighter flag 0, state 3
+- side 1, fighter flag 0, state 3
+- side 0, fighter flag 1, state 3
+- side 1, fighter flag 5, state 3
+- side 0, fighter flag 0, state -2
+- side 1, fighter flag -1, state 7
+- the cases run 15 of 15 instructions
+
+### FUN_0c02e2da (`0C02E2DA`, 350 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 23 development and 23 holdout cases, in `tests/ui_hud_draw/FUN_0c02e2da.json`
 - case 3
 - case 5
 - case 1
@@ -10461,6 +10369,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- step 0 out, left
+- step 0 sliding
+- step 1 paused
+- step 2 in place
+- step 3 nothing
 - case 52
 - case 92
 - case 57
@@ -10479,10 +10392,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 148
 - case 38
 - case 140
-- the cases run 120 of 151 instructions
+- step 0 out, right
+- step 1 timer out
+- step 1 counting
+- step 2 sliding
+- step -3 nothing
+- the cases run 153 of 153 instructions
 
-### FUN_0c02e438 (`0C02E438`, 966 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02e438.json`
+### FUN_0c02e438 (`0C02E438`, 152 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 25 development and 25 holdout cases, in `tests/ui_hud_draw/FUN_0c02e438.json`
 - case 4
 - case 27
 - case 41
@@ -10501,6 +10419,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 22
 - case 28
 - case 29
+- state 0, side 0
+- state 1, side 0
+- state 2, side 0
+- state 3, side 0
+- state 4, side 0
+- state 5, side 0
+- state -1, side 0
 - case 89
 - case 100
 - case 64
@@ -10519,62 +10444,17 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 48
 - case 98
 - case 50
-- the cases run 48 of 68 instructions
+- state 0, side 1
+- state 1, side 1
+- state 2, side 1
+- state 3, side 1
+- state 4, side 1
+- state 5, side 1
+- state -1, side 1
+- the cases run 70 of 70 instructions
 
-### FUN_0c02e4d0 (`0C02E4D0`, 1224 bytes, `src/game/menu/option/gen_f.c`)
-- equivalent on 24 development and 24 holdout cases, in `tests/gen_f/FUN_0c02e4d0.json`
-- case 0
-- case 0
-- case 1
-- case 123
-- case 3
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- directed: flips 0C02E530 (taken)
-- directed: flips 0C02E94C (taken)
-- directed: flips 0C02E54A (taken)
-- directed: flips 0C02E950 (taken)
-- directed: flips 0C02E5A6 (taken)
-- directed: flips 0C02E646 (taken)
-- case 51
-- case 72
-- case 137
-- case 32
-- case 88
-- case 42
-- case 59
-- case 92
-- case 62
-- case 151
-- case 65
-- case 103
-- case 116
-- case 108
-- case 71
-- case 120
-- case 132
-- case 50
-- directed: flips 0C02E546 (taken)
-- directed: flips 0C02E968 (taken)
-- directed: flips 0C02E81A (not taken)
-- directed: flips 0C02E54E (taken)
-- directed: flips 0C02E632 (taken)
-- directed: flips 0C02E84C (taken)
-- the cases run 278 of 536 instructions
-
-### FUN_0c02e998 (`0C02E998`, 1188 bytes, `src/game/ui/ui_hud_2_alt3_equiv.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/ui_hud_2_alt3_equiv/FUN_0c02e998.json`
+### FUN_0c02e998 (`0C02E998`, 1188 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/ui_hud_draw/FUN_0c02e998.json`
 - all panels
 - char 10 hides
 - stone rule half
@@ -10587,48 +10467,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - stones all held
 - the cases run 550 of 550 instructions
 
-### FUN_0c02ee3c (`0C02EE3C`, 4 bytes, `src/game/ui/ui_hud_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/FUN_0c02ee3c.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 73
-- case 64
-- case 54
-- case 71
-- case 55
-- case 103
-- case 48
-- case 40
-- case 60
-- case 53
-- case 115
-- case 118
-- case 45
-- case 67
-- case 51
-- case 90
-- case 111
-- case 92
-- the cases run 2 of 2 instructions
-
-### FUN_0c02f328 (`0C02F328`, 126 bytes, `src/game/ui/ui_hud_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_3/FUN_0c02f328.json`
+### FUN_0c02f328 (`0C02F328`, 126 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f328.json`
 - case 0
 - case 1
 - case 2
@@ -10667,8 +10507,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 116
 - the cases run 63 of 63 instructions
 
-### FUN_0c02f3a6 (`0C02F3A6`, 76 bytes, `src/game/ui/ui_hud_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_3/FUN_0c02f3a6.json`
+### FUN_0c02f3a6 (`0C02F3A6`, 76 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 21 development and 21 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f3a6.json`
 - case 0
 - case 1
 - case 2
@@ -10687,6 +10527,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- chip y 80, gauge of slot 0 with 3 bars
+- chip y 80, gauge of slot 1 with 1 bars
+- chip y 79.5, gauge of slot 0 with 2 bars
 - case 63
 - case 92
 - case 60
@@ -10705,10 +10548,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 136
 - case 41
 - case 144
+- chip y 80, gauge of slot 1 with 5 bars
+- chip y 0, gauge of slot 0 with 1 bars
+- chip y 80, gauge of slot 0 with 2 bars
 - the cases run 38 of 38 instructions
 
-### FUN_0c02f3f2 (`0C02F3F2`, 916 bytes, `src/game/ui/ui_hud_3.c`)
-- equivalent on 14 development and 13 holdout cases, in `tests/ui_hud_3/FUN_0c02f3f2.json`
+### FUN_0c02f3f2 (`0C02F3F2`, 916 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 19 development and 16 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f3f2.json`
 - case 12
 - case 62
 - case 6
@@ -10723,6 +10569,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 77
 - directed: flips 0C02F4BE (taken)
 - directed: flips 0C02F5A4 (taken)
+- the full gauge grows back: all chips off, bars from 150
+- the full gauge grows from nothing to 0: one bar
+- loses 100 of 150: chips over three bars, one chip slot busy
+- right gauge loses 10 inside a bar
+- loses exactly a bar from 96
 - case 45
 - case 3
 - case 9
@@ -10736,10 +10587,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 72
 - directed: flips 0C02F54C (taken)
 - directed: flips 0C02F746 (taken)
-- the cases run 393 of 399 instructions
+- loses everything from 200 (more than 8 chips worth)
+- nothing lost; chips fading, paused
+- nothing lost; a chip at its last frame
+- the cases run 399 of 399 instructions
 
-### FUN_0c02f786 (`0C02F786`, 516 bytes, `src/game/demo/gen_h.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_h/FUN_0c02f786.json`
+### FUN_0c02f786 (`0C02F786`, 516 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 22 development and 20 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f786.json`
 - case 7
 - case 4
 - case 0
@@ -10758,6 +10612,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- first bar waits while the fighter stands; others start turning (left and right)
+- first bar after the KO; turning shards reaching a quarter both ways
+- falling shards: early, shrinking, done; a shard in an unknown step and one off
+- right gauge first bar after the KO, left one standing
 - case 79
 - case 51
 - case 93
@@ -10776,69 +10634,34 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 82
 - case 87
 - case 154
-- the cases run 140 of 217 instructions
+- exactly 0xC000 and 0x4000 after the turn; a shard with timer 8
+- turning past the end without landing: 0xFC00
+- the cases run 218 of 218 instructions
 
-### FUN_0c02f98a (`0C02F98A`, 1422 bytes, `src/game/ui/ui_hud_3_alt.c`)
-- equivalent on 4 development and 4 holdout cases, in `tests/ui_hud_3_alt/FUN_0c02f98a.json`
+### FUN_0c02f98a (`0C02F98A`, 1422 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f98a.json`
 - full bars
 - ko side 1
 - red only
 - hp above red
+- both standing: glints counting, one wrapping to plain
+- KO on the left: no bars, its first shard drawn; paused
 - partial bars
 - ko side 2
 - exact multiples
 - zero all
-- the cases run 616 of 624 instructions
+- a gauge at 0 hp with no bars, a shard waiting for the KO
+- red longer than a bar under a short hp
+- the cases run 624 of 624 instructions
 
-### FUN_0c02ff18 (`0C02FF18`, 228 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c02ff18.json`
+### FUN_0c02ff18 (`0C02FF18`, 228 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_counter/FUN_0c02ff18.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 112 of 114 instructions
 
-### FUN_0c02fffc (`0C02FFFC`, 198 bytes, `src/game/menu/option/gen_u.c`)
-- equivalent on 19 development and 18 holdout cases, in `tests/gen_u/FUN_0c02fffc.json`
-- case 1
-- case 0
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- directed: flips 0C030004 (taken)
-- case 58
-- case 115
-- case 49
-- case 111
-- case 42
-- case 68
-- case 119
-- case 102
-- case 59
-- case 113
-- case 65
-- case 103
-- case 112
-- case 40
-- case 36
-- case 92
-- case 96
-- case 48
-- the cases run 75 of 75 instructions
-
-### FUN_0c0301d2 (`0C0301D2`, 172 bytes, `src/game/ui/ui_hud_4_alt_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_alt_equiv/FUN_0c0301d2.json`
+### FUN_0c0301d2 (`0C0301D2`, 172 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/FUN_0c0301d2.json`
 - case 6
 - case 0
 - case 1
@@ -10877,8 +10700,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 47
 - the cases run 86 of 86 instructions
 
-### FUN_0c03027e (`0C03027E`, 56 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c03027e.json`
+### FUN_0c03027e (`0C03027E`, 56 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/FUN_0c03027e.json`
 - case 0
 - case 0
 - case 1
@@ -10917,8 +10740,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 102
 - the cases run 28 of 28 instructions
 
-### FUN_0c0302b6 (`0C0302B6`, 72 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c0302b6.json`
+### FUN_0c0302b6 (`0C0302B6`, 72 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/FUN_0c0302b6.json`
 - case 0
 - case 0
 - case 1
@@ -10957,8 +10780,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 103
 - the cases run 34 of 36 instructions
 
-### FUN_0c0302fe (`0C0302FE`, 24 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c0302fe.json`
+### FUN_0c0302fe (`0C0302FE`, 24 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/FUN_0c0302fe.json`
 - case 0
 - case 1
 - case 2
@@ -10997,66 +10820,22 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 78
 - the cases run 12 of 12 instructions
 
-### FUN_0c03082e (`0C03082E`, 4 bytes, `src/game/ui/ui_hud_4.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c03082e.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 61
-- case 117
-- case 88
-- case 103
-- case 109
-- case 93
-- case 45
-- case 89
-- case 111
-- case 66
-- case 85
-- case 79
-- case 100
-- case 42
-- case 65
-- case 94
-- case 48
-- case 58
-- the cases run 2 of 2 instructions
+### FUN_0c030920 (`0C030920`, 254 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 6 development and 4 holdout cases, in `tests/ui_hud_world/FUN_0c030920.json`
+- rescue: empty case
+- fighters at (100,50) (500,300), counters 10 10, top offset 0
+- fighters at (300,50) (100,80), counters 0 40, top offset 16
+- fighters at (300,150) (150,150), counters 39 5, top offset 0
+- fighters at (500,50) (300,300), counters 20 20, top offset -16
+- fighters at (450,200) (460,90), counters 20 0, top offset 0
+- rescue: empty case
+- fighters at (200,100) (440,100), counters 40 40, top offset 0
+- fighters at (460,20) (50,20), counters 30 30, top offset 0
+- fighters at (100,300) (300,50), counters 5 5, top offset 0
+- the cases run 127 of 127 instructions
 
-### FUN_0c030832 (`0C030832`, 184 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c030832.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 92 of 92 instructions
-
-### FUN_0c030920 (`0C030920`, 254 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c030920.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 77 of 127 instructions
-
-### FUN_0c030aec (`0C030AEC`, 150 bytes, `src/game/ui/ui_hud_4_alt_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_4_alt_equiv/FUN_0c030aec.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 16 of 74 instructions
-
-### FUN_0c031030 (`0C031030`, 78 bytes, `src/game/ui/ui_hud_4_alt3_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_alt3_equiv/FUN_0c031030.json`
+### FUN_0c031030 (`0C031030`, 78 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_world/FUN_0c031030.json`
 - case 0
 - case 1
 - case 2
@@ -11095,8 +10874,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 95
 - the cases run 39 of 39 instructions
 
-### FUN_0c03107e (`0C03107E`, 730 bytes, `src/game/demo/gen_c.c`)
-- equivalent on 20 development and 19 holdout cases, in `tests/gen_c/FUN_0c03107e.json`
+### FUN_0c03107e (`0C03107E`, 730 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 26 development and 22 holdout cases, in `tests/ui_hud_world/FUN_0c03107e.json`
 - case 1
 - case 0
 - case 2
@@ -11117,6 +10896,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 17
 - directed: flips 0C03119E (taken)
 - directed: flips 0C031202 (taken)
+- state 0: starts the radar, shows the items
+- blink off: hidden, nothing drawn
+- blink on: the slots with several items cycle to the next kind there
+- blink on, items fixed by the options
+- paused: the timer stands still
+- state 2: nothing
 - case 56
 - case 137
 - case 105
@@ -11136,10 +10921,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 136
 - case 115
 - directed: flips 0C0311FA (taken)
-- the cases run 185 of 335 instructions
+- blink on, a slot with several items but no kind bit set: the cycle runs out
+- option 5 set but no extra items: not fixed
+- running, timer not out, three in one quadrant
+- the cases run 337 of 337 instructions
 
-### FUN_0c031388 (`0C031388`, 94 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c031388.json`
+### FUN_0c031388 (`0C031388`, 94 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_world/FUN_0c031388.json`
 - case 61
 - case 0
 - case 1
@@ -11177,46 +10965,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 138
 - case 95
 - the cases run 47 of 47 instructions
-
-### FUN_0c03148c (`0C03148C`, 10 bytes, `src/game/ui/ui_fade.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_fade/FUN_0c03148c.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 77
-- case 36
-- case 107
-- case 92
-- case 115
-- case 69
-- case 57
-- case 66
-- case 46
-- case 67
-- case 70
-- case 84
-- case 71
-- case 52
-- case 110
-- case 105
-- case 75
-- case 53
-- the cases run 5 of 5 instructions
 
 ### FUN_0c032262 (`0C032262`, 1386 bytes, `src/game/menu/option/gen_av.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_av/FUN_0c032262.json`
@@ -30100,8 +29848,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 94
 - the cases run 2 of 2 instructions
 
-### FUN_0c0d479e (`0C0D479E`, 32 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d479e.json`
+### FUN_0c0d479e (`0C0D479E`, 32 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d479e.json`
 - case 0
 - case 1
 - case 8
@@ -30140,8 +29888,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 83
 - the cases run 16 of 16 instructions
 
-### FUN_0c0d487e (`0C0D487E`, 8 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d487e.json`
+### FUN_0c0d487e (`0C0D487E`, 8 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d487e.json`
 - case 0
 - case 1
 - case 2
@@ -30180,14 +29928,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 36
 - the cases run 4 of 4 instructions
 
-### FUN_0c0d48d6 (`0C0D48D6`, 14 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d48d6.json`
+### FUN_0c0d48d6 (`0C0D48D6`, 14 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/FUN_0c0d48d6.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 7 of 7 instructions
 
-### FUN_0c0d48ea (`0C0D48EA`, 18 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d48ea.json`
+### FUN_0c0d48ea (`0C0D48EA`, 18 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d48ea.json`
 - case 0
 - case 1
 - case 2
@@ -30311,8 +30059,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 34 of 71 instructions
 
-### FUN_0c0d5188 (`0C0D5188`, 14 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d5188.json`
+### FUN_0c0d5188 (`0C0D5188`, 14 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d5188.json`
 - case 0
 - case 1
 - case 2
@@ -30351,20 +30099,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 79
 - the cases run 7 of 7 instructions
 
-### FUN_0c0d51d2 (`0C0D51D2`, 80 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d51d2.json`
+### FUN_0c0d51d2 (`0C0D51D2`, 80 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/FUN_0c0d51d2.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 40 of 40 instructions
 
-### FUN_0c0d5222 (`0C0D5222`, 82 bytes, `src/game/ui/ui_wins_alt_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_alt_equiv/FUN_0c0d5222.json`
+### FUN_0c0d5222 (`0C0D5222`, 82 bytes, `src/game/flow/game_play_alt_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_alt_equiv/FUN_0c0d5222.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 26 of 40 instructions
 
-### FUN_0c0d5292 (`0C0D5292`, 24 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d5292.json`
+### FUN_0c0d5292 (`0C0D5292`, 24 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d5292.json`
 - case 0
 - case 1
 - case 2
@@ -30403,8 +30151,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 42
 - the cases run 12 of 12 instructions
 
-### FUN_0c0d52aa (`0C0D52AA`, 4 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d52aa.json`
+### FUN_0c0d52aa (`0C0D52AA`, 4 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d52aa.json`
 - case 0
 - case 1
 - case 2
@@ -30443,8 +30191,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 89
 - the cases run 2 of 2 instructions
 
-### FUN_0c0d52e8 (`0C0D52E8`, 320 bytes, `src/game/ui/ui_wins_alt_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_alt_equiv/FUN_0c0d52e8.json`
+### FUN_0c0d52e8 (`0C0D52E8`, 320 bytes, `src/game/flow/game_play_alt_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_alt_equiv/FUN_0c0d52e8.json`
 - case 0
 - case 1
 - case 2
@@ -30483,8 +30231,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 146
 - the cases run 34 of 160 instructions
 
-### FUN_0c0d5428 (`0C0D5428`, 72 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d5428.json`
+### FUN_0c0d5428 (`0C0D5428`, 72 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/FUN_0c0d5428.json`
 - case 9
 - case 0
 - case 1
@@ -30522,46 +30270,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 36
 - case 87
 - the cases run 36 of 36 instructions
-
-### FUN_0c0d54ac (`0C0D54AC`, 14 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/FUN_0c0d54ac.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 116
-- case 63
-- case 97
-- case 75
-- case 56
-- case 73
-- case 76
-- case 52
-- case 39
-- case 101
-- case 79
-- case 89
-- case 107
-- case 111
-- case 96
-- case 71
-- case 70
-- case 86
-- the cases run 7 of 7 instructions
 
 ### FUN_0c0d57a4 (`0C0D57A4`, 682 bytes, `src/game/menu/gen_bg.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bg/FUN_0c0d57a4.json`
@@ -59952,7 +59660,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 29 of 43 instructions
 
-### attract_set_step3_flag (`0C0D2DD8`, 6 bytes, `src/game/demo/attract_ranking.c`)
+### attract_set_step3_flag (`0C0D2DD8`, 6 bytes, `src/game/demo/attract_ranking_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/attract_set_step3_flag.json`
 - case 0
 - case 1
@@ -60005,7 +59713,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fresh, huge random value, player 1 flag 1
 - the cases run 166 of 166 instructions
 
-### attract_take_step3_flag (`0C0D2DDE`, 10 bytes, `src/game/demo/attract_ranking.c`)
+### attract_take_step3_flag (`0C0D2DDE`, 10 bytes, `src/game/demo/attract_ranking_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/attract_ranking_equiv/attract_take_step3_flag.json`
 - case 0
 - case 1
@@ -60691,7 +60399,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 72
 - the cases run 14 of 21 instructions
 
-### buGetVersion (`0C0F310E`, 6 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buGetVersion (`0C0F310E`, 6 bytes, `src/lib/mixed/gen_as.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_as/buGetVersion.json`
 - case 0
 - case 1
@@ -60731,7 +60439,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 94
 - the cases run 3 of 3 instructions
 
-### buSetPrintFunc (`0C0F3A84`, 6 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buSetPrintFunc (`0C0F3A84`, 6 bytes, `src/lib/mixed/gen_as.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_as/buSetPrintFunc.json`
 - case 0
 - case 1
@@ -73826,50 +73534,50 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 47
 - the cases run 15 of 15 instructions
 
-### game_play_dispatch_state (`0C0D4DEE`, 158 bytes, `src/game/ui/ui_wins_alt_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_alt_equiv/game_play_dispatch_state.json`
+### game_play_dispatch_state (`0C0D4DEE`, 158 bytes, `src/game/flow/game_play_alt_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_alt_equiv/game_play_dispatch_state.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 17 of 59 instructions
 
-### game_play_start_game_over (`0C0D4FB8`, 60 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_start_game_over.json`
+### game_play_start_game_over (`0C0D4FB8`, 60 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_start_game_over.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 27 of 29 instructions
 
-### game_play_state_00 (`0C0D4E8C`, 46 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_00.json`
+### game_play_state_00 (`0C0D4E8C`, 46 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_00.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 23 of 23 instructions
 
-### game_play_state_01 (`0C0D4EBA`, 38 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_01.json`
+### game_play_state_01 (`0C0D4EBA`, 38 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_01.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 19 of 19 instructions
 
-### game_play_state_02 (`0C0D4EE0`, 38 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_02.json`
+### game_play_state_02 (`0C0D4EE0`, 38 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_02.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 19 of 19 instructions
 
-### game_play_state_03 (`0C0D4F06`, 38 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_03.json`
+### game_play_state_03 (`0C0D4F06`, 38 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_03.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 19 of 19 instructions
 
-### game_play_state_04 (`0C0D4F2C`, 120 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_04.json`
+### game_play_state_04 (`0C0D4F2C`, 120 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_04.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 20 of 31 instructions
 
-### game_play_state_05 (`0C0D4FA4`, 20 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/game_play_state_05.json`
+### game_play_state_05 (`0C0D4FA4`, 20 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/game_play_state_05.json`
 - case 0
 - case 1
 - case 2
@@ -73908,14 +73616,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 38
 - the cases run 10 of 10 instructions
 
-### game_play_state_06 (`0C0D5164`, 202 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/game_play_state_06.json`
+### game_play_state_06 (`0C0D5164`, 202 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/game_play_state_06.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 12 of 16 instructions
 
-### game_play_state_07 (`0C0D5274`, 194 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/game_play_state_07.json`
+### game_play_state_07 (`0C0D5274`, 194 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/game_play_state_07.json`
 - case 16
 - case 0
 - case 8
@@ -77554,8 +77262,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 20 of 20 instructions
 
-### input_get_active_pads_mask (`0C0D4886`, 44 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/input_get_active_pads_mask.json`
+### input_get_active_pads_mask (`0C0D4886`, 44 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/input_get_active_pads_mask.json`
 - case 17
 - case 0
 - case 1
@@ -77594,8 +77302,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 86
 - the cases run 22 of 22 instructions
 
-### input_get_start_pressed_pad (`0C0D48B2`, 36 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/input_get_start_pressed_pad.json`
+### input_get_start_pressed_pad (`0C0D48B2`, 36 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/input_get_start_pressed_pad.json`
 - case 0
 - case 7
 - case 13
@@ -91452,7 +91160,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 16 of 32 instructions
 
-### obj_apply_accel (`0C01576C`, 44 bytes, `src/game/demo/ending_objects_unit2.c`)
+### obj_apply_accel (`0C01576C`, 44 bytes, `src/game/demo/ending_objects_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ending_objects_equiv/obj_apply_accel.json`
 - case 0
 - case 1
@@ -91492,7 +91200,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 117
 - the cases run 22 of 22 instructions
 
-### obj_apply_scale_rate (`0C0157FC`, 44 bytes, `src/game/demo/ending_objects_unit4.c`)
+### obj_apply_scale_rate (`0C0157FC`, 44 bytes, `src/game/demo/ending_objects_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ending_objects_equiv/obj_apply_scale_rate.json`
 - case 0
 - case 1
@@ -91532,7 +91240,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 56
 - the cases run 22 of 22 instructions
 
-### obj_apply_velocity (`0C015798`, 44 bytes, `src/game/demo/ending_objects_unit3.c`)
+### obj_apply_velocity (`0C015798`, 44 bytes, `src/game/demo/ending_objects_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ending_objects_equiv/obj_apply_velocity.json`
 - case 0
 - case 1
@@ -91944,7 +91652,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - weapon -1
 - the cases run 217 of 217 instructions
 
-### obj_node_scale_one (`0C099920`, 16 bytes, `src/game/player/player_setup_unit2.c`)
+### obj_node_scale_one (`0C099920`, 16 bytes, `src/game/player/player_setup_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/player_setup_equiv/obj_node_scale_one.json`
 - case 0
 - case 1
@@ -92380,7 +92088,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 93
 - the cases run 15 of 15 instructions
 
-### obj_step_pos_vel_acc (`0C015B4A`, 86 bytes, `src/game/demo/ending_scene.c`)
+### obj_step_pos_vel_acc (`0C015B4A`, 86 bytes, `src/game/demo/ending_scene_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ending_scene_equiv/obj_step_pos_vel_acc.json`
 - case 0
 - case 1
@@ -117450,8 +117158,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 137 of 241 instructions
 
-### rank_init_default_entries (`0C0D46E4`, 170 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/rank_init_default_entries.json`
+### rank_init_default_entries (`0C0D46E4`, 170 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/rank_init_default_entries.json`
 - case 0
 - case 1
 - case 2
@@ -119110,8 +118818,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - pattern 4 and stale globals
 - the cases run 244 of 244 instructions
 
-### savedata_reset_default (`0C0D478E`, 186 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_equiv/savedata_reset_default.json`
+### savedata_reset_default (`0C0D478E`, 186 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_equiv/savedata_reset_default.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 8 of 8 instructions
@@ -123501,7 +123209,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 2 of 2 instructions
 
-### sys_return_zero_098c82 (`0C098C82`, 4 bytes, `src/game/player/player_setup.c`)
+### sys_return_zero_098c82 (`0C098C82`, 4 bytes, `src/game/player/player_setup_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/player_setup_equiv/sys_return_zero_098c82.json`
 - case 0
 - case 1
@@ -124007,7 +123715,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 72 of 72 instructions
 
-### thunk_ADXRNA_Create (`0C105C10`, 6 bytes, `src/lib/cri/m_0c105c04_adx_rnas.c`)
+### thunk_ADXRNA_Create (`0C105C10`, 6 bytes, `src/lib/mixed/gen_as.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_as/thunk_ADXRNA_Create.json`
 - case 0
 - case 1
@@ -124247,8 +123955,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 74
 - the cases run 3 of 3 instructions
 
-### thunk_FUN_0c0a3180 (`0C0D48E4`, 6 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_wins_equiv/thunk_FUN_0c0a3180.json`
+### thunk_FUN_0c0a3180 (`0C0D48E4`, 6 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/game_play_equiv/thunk_FUN_0c0a3180.json`
 - case 0
 - case 1
 - case 2
@@ -124687,6 +124395,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 62
 - the cases run 3 of 3 instructions
 
+### ui_disable_hud (`0C02D82C`, 8 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_init/ui_disable_hud.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 38
+- case 57
+- case 108
+- case 74
+- case 107
+- case 79
+- case 65
+- case 89
+- case 104
+- case 93
+- case 105
+- case 98
+- case 50
+- case 96
+- case 67
+- case 116
+- case 103
+- case 102
+- the cases run 4 of 4 instructions
+
 ### ui_draw_challenger_info (`0C0D5C7E`, 556 bytes, `src/game/menu/result_screens_equiv.c`)
 - equivalent on 14 development and 18 holdout cases, in `tests/result_screens_equiv/ui_draw_challenger_info.json`
 - case 9
@@ -124765,8 +124513,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C0D6264 (taken)
 - the cases run 57 of 204 instructions
 
-### ui_draw_digit_string (`0C030BE8`, 210 bytes, `src/game/ui/ui_hud_4_alt_equiv.c`)
-- equivalent on 4 development and 3 holdout cases, in `tests/ui_hud_4_alt_equiv/ui_draw_digit_string.json`
+### ui_draw_digit_string (`0C030BE8`, 210 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/ui_hud_world/ui_draw_digit_string.json`
 - empty string
 - glyph set one
 - glyph set two
@@ -124816,8 +124564,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 70
 - the cases run 63 of 63 instructions
 
-### ui_draw_hit_counter (`0C0300C2`, 272 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 5 development and 4 holdout cases, in `tests/ui_hud_4_equiv/ui_draw_hit_counter.json`
+### ui_draw_hit_counter (`0C0300C2`, 272 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/ui_hud_counter/ui_draw_hit_counter.json`
 - a0, q>0
 - a0, q=0
 - a1, q>0
@@ -124829,8 +124577,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - a 5 negative b
 - the cases run 136 of 136 instructions
 
-### ui_draw_hud (`0C0313E6`, 84 bytes, `src/game/ui/ui_hud_4_alt_equiv.c`)
-- equivalent on 16 development and 18 holdout cases, in `tests/ui_hud_4_alt_equiv/ui_draw_hud.json`
+### ui_draw_hud (`0C0313E6`, 84 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 18 development and 20 holdout cases, in `tests/ui_hud_world/ui_draw_hud.json`
 - case 0
 - case 8
 - case 9
@@ -124847,6 +124595,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 31
 - case 34
 - case 35
+- enabled 1, no-intro flag 0
+- enabled 1, no-intro flag 1
 - case 48
 - case 56
 - case 43
@@ -124865,10 +124615,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 62
 - case 73
 - case 54
-- the cases run 0 of 32 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
+- enabled 2, no-intro flag 0
+- enabled 1, no-intro flag 5
+- the cases run 42 of 42 instructions
 
-### ui_draw_hud_cell_pair (`0C02F258`, 162 bytes, `src/game/ui/ui_hud_2_alt4_equiv.c`)
-- equivalent on 2 development and 2 holdout cases, in `tests/ui_hud_2_alt4_equiv/ui_draw_hud_cell_pair.json`
+### ui_draw_hud_cell_pair (`0C02F258`, 162 bytes, `src/game/ui/ui_hud_indicators.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/ui_hud_indicators/ui_draw_hud_cell_pair.json`
 - small bytes
 - byte wraps in extu.b (12*b>255)
 - negative b1
@@ -124955,8 +124707,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 36
 - the cases run 0 of 38 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
 
-### ui_draw_sprite_string (`0C02D9E4`, 674 bytes, `src/game/ui/ui_hud_2_alt_equiv.c`)
-- equivalent on 24 development and 6 holdout cases, in `tests/ui_hud_2_alt_equiv/ui_draw_sprite_string.json`
+### ui_draw_sprite_string (`0C02D9E4`, 674 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 24 development and 6 holdout cases, in `tests/ui_hud_draw/ui_draw_sprite_string.json`
 - mode 0 mixed
 - mode 0 empty
 - mode 1 mixed
@@ -124989,8 +124741,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - h m2 sym
 - the cases run 322 of 322 instructions
 
-### ui_draw_text_stub (`0C02D9E0`, 4 bytes, `src/game/ui/ui_hud_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_2_equiv/ui_draw_text_stub.json`
+### ui_draw_text_stub (`0C02D9E0`, 4 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_draw/ui_draw_text_stub.json`
 - case 0
 - case 1
 - case 2
@@ -125029,8 +124781,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 115
 - the cases run 2 of 2 instructions
 
-### ui_draw_win_count (`0C0D47BE`, 180 bytes, `src/game/ui/ui_wins_equiv.c`)
-- equivalent on 4 development and 4 holdout cases, in `tests/ui_wins_equiv/ui_draw_win_count.json`
+### ui_draw_win_count (`0C0D47BE`, 180 bytes, `src/game/flow/game_play_equiv.c`)
+- equivalent on 4 development and 4 holdout cases, in `tests/game_play_equiv/ui_draw_win_count.json`
 - i=0 s=5 b9=0
 - i=2 s=-3 b9=3
 - i=4 s=2 b9=-2
@@ -125041,14 +124793,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - i=4660 s=2 b9=1
 - the cases run 69 of 69 instructions
 
-### ui_draw_win_counts_both (`0C0D4872`, 12 bytes, `src/game/ui/ui_wins_alt_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_wins_alt_equiv/ui_draw_win_counts_both.json`
+### ui_draw_win_counts_both (`0C0D4872`, 12 bytes, `src/game/flow/game_play_alt_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/game_play_alt_equiv/ui_draw_win_counts_both.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 6 of 6 instructions
 
-### ui_draw_world_number (`0C030CD4`, 816 bytes, `src/game/ui/ui_hud_4_alt2_equiv.c`)
-- equivalent on 20 development and 16 holdout cases, in `tests/ui_hud_4_alt2_equiv/ui_draw_world_number.json`
+### ui_draw_world_number (`0C030CD4`, 816 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 20 development and 16 holdout cases, in `tests/ui_hud_world/ui_draw_world_number.json`
 - check fails -> return
 - b=0 c=0
 - b=0 c=1
@@ -125087,8 +124839,21 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - hold b=12
 - the cases run 386 of 387 instructions
 
-### ui_enable_hud (`0C02D814`, 24 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud/ui_enable_hud.json`
+### ui_draw_world_text (`0C030AEC`, 150 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/ui_hud_world/ui_draw_world_text.json`
+- rescue: empty case
+- mode 0, drawn, 5 chars
+- mode 1, drawn, 8 chars
+- mode 2, drawn, 4 chars
+- mode 3, drawn, 3 chars
+- rescue: empty case
+- mode 0, not drawn (FUN_0c0555c4 says no), 1 chars
+- mode 2, drawn, 0 chars
+- mode 1, drawn, 1 chars
+- the cases run 75 of 75 instructions
+
+### ui_enable_hud (`0C02D814`, 24 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_init/ui_enable_hud.json`
 - case 0
 - case 8
 - case 1
@@ -125127,11 +124892,61 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 106
 - the cases run 12 of 12 instructions
 
-### ui_fade_draw (`0C0314E4`, 1006 bytes, `src/game/menu/gen_az.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_az/ui_fade_draw.json`
+### ui_fade_draw (`0C0314E4`, 1006 bytes, `src/game/ui/ui_fade.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/ui_fade/ui_fade_draw.json`
 - rescue: empty case
+- mode 0 dir 0 duration 10 counter 5
+- mode 1 dir 0 duration 8 counter 8
+- mode 2 dir 0 duration 5 counter 3
+- mode 1 dir 1 duration 9 counter 2
+- mode 3 dir 0 duration 5 counter 2
 - rescue: empty case
-- the cases run 38 of 415 instructions
+- mode 0 dir 1 duration 10 counter 4
+- mode 1 dir 1 duration 6 counter 1
+- mode 0 dir 0 duration 4 counter 1
+- mode 0 dir 1 duration 3 counter 1
+- mode 1 dir 0 duration 12 counter 6
+- the cases run 401 of 421 instructions
+
+### ui_fade_init (`0C03148C`, 10 bytes, `src/game/ui/ui_fade.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_fade/ui_fade_init.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 77
+- case 36
+- case 107
+- case 92
+- case 115
+- case 69
+- case 57
+- case 66
+- case 46
+- case 67
+- case 70
+- case 84
+- case 71
+- case 52
+- case 110
+- case 105
+- case 75
+- case 53
+- the cases run 5 of 5 instructions
 
 ### ui_fade_reset (`0C0314DC`, 8 bytes, `src/game/ui/ui_fade.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ui_fade/ui_fade_reset.json`
@@ -125213,62 +125028,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 106
 - the cases run 35 of 35 instructions
 
-### ui_init_hud (`0C02D774`, 160 bytes, `src/game/ui/ui_hud.c`)
-- equivalent on 2 development and 2 holdout cases, in `tests/ui_hud/ui_init_hud.json`
-- flag clear, old junk
-- flag set
-- flag large
-- flag clear 2
-- the cases run 80 of 80 instructions
-
-### ui_project_world_to_screen (`0C030A1E`, 206 bytes, `src/game/ui/ui_hud_4_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_4_equiv/ui_project_world_to_screen.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 103 of 103 instructions
-
-### ui_sprite_queue_add (`0C027FA4`, 114 bytes, `src/game/ui/ui_sprite_queue_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_sprite_queue_equiv/ui_sprite_queue_add.json`
-- case 10
-- case 15
-- case 16
-- case 17
-- case 19
-- case 20
-- case 21
-- case 26
-- case 27
-- case 30
-- case 33
-- case 35
-- case 36
-- case 39
-- case 41
-- case 42
-- case 43
-- case 44
-- case 69
-- case 67
-- case 60
-- case 68
-- case 97
-- case 56
-- case 115
-- case 71
-- case 91
-- case 124
-- case 135
-- case 154
-- case 143
-- case 147
-- case 155
-- case 105
-- case 153
-- case 99
-- the cases run 18 of 57 instructions
-
-### ui_sprite_queue_reset (`0C027F90`, 20 bytes, `src/game/ui/ui_sprite_queue_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_sprite_queue_equiv/ui_sprite_queue_reset.json`
+### ui_hud_enabled (`0C02D844`, 6 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_init/ui_hud_enabled.json`
 - case 0
 - case 1
 - case 2
@@ -125287,25 +125048,138 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
-- case 108
-- case 44
-- case 41
-- case 43
-- case 72
-- case 85
-- case 82
-- case 111
-- case 58
-- case 36
-- case 110
+- case 63
+- case 84
+- case 116
+- case 38
+- case 60
+- case 56
+- case 102
+- case 101
+- case 103
+- case 57
+- case 88
+- case 42
+- case 62
+- case 109
+- case 61
+- case 53
 - case 89
-- case 51
-- case 69
-- case 80
-- case 47
-- case 40
+- case 68
+- the cases run 3 of 3 instructions
+
+### ui_hud_slide_text (`0C02FFFC`, 198 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/ui_hud_counter/ui_hud_slide_text.json`
+- case 1
+- case 0
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- directed: flips 0C030004 (taken)
+- case 58
+- case 115
+- case 49
+- case 111
+- case 42
+- case 68
+- case 119
+- case 102
+- case 59
 - case 113
-- the cases run 10 of 10 instructions
+- case 65
+- case 103
+- case 112
+- case 40
+- case 36
+- case 92
+- case 96
+- case 48
+- the cases run 75 of 75 instructions
+
+### ui_init_hud (`0C02D774`, 160 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/ui_hud_init/ui_init_hud.json`
+- flag clear, old junk
+- flag set
+- flag large
+- flag clear 2
+- the cases run 80 of 80 instructions
+
+### ui_project_fighter_to_screen (`0C030832`, 184 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_world/ui_project_fighter_to_screen.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 92 of 92 instructions
+
+### ui_project_world_to_screen (`0C030A1E`, 206 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_world/ui_project_world_to_screen.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 103 of 103 instructions
+
+### ui_reset_hud_gauges (`0C02D8E0`, 228 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 21 development and 21 holdout cases, in `tests/ui_hud_init/ui_reset_hud_gauges.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- hp_ref 240 / 0
+- hp_ref 1 / 96
+- hp_ref 97 / 48
+- case 126
+- case 65
+- case 97
+- case 46
+- case 140
+- case 89
+- case 129
+- case 82
+- case 114
+- case 71
+- case 58
+- case 158
+- case 130
+- case 154
+- case 147
+- case 149
+- case 83
+- case 95
+- hp_ref 48 / 49
+- hp_ref 0 / 240
+- hp_ref 200 / 1
+- the cases run 114 of 114 instructions
+
+### ui_reset_hud_wins (`0C02D84A`, 100 bytes, `src/game/ui/ui_hud_init.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_init/ui_reset_hud_wins.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 50 of 50 instructions
 
 ### ui_task_create (`0C0A5D96`, 56 bytes, `src/game/menu/select/menu_select.c`)
 - equivalent on 2 development and 2 holdout cases, in `tests/menu_select/ui_task_create.json`
@@ -125315,8 +125189,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - alloc fails again
 - the cases run 28 of 28 instructions
 
-### ui_update_hit_counter (`0C030368`, 1222 bytes, `src/game/ui/ui_hud_4_alt2_equiv.c`)
-- equivalent on 25 development and 23 holdout cases, in `tests/ui_hud_4_alt2_equiv/ui_update_hit_counter.json`
+### ui_update_hit_counter (`0C030368`, 1222 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 25 development and 23 holdout cases, in `tests/ui_hud_counter/ui_update_hit_counter.json`
 - not running
 - idle none
 - m2 s0 p1
@@ -125367,8 +125241,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - coverage case 10: reaches 0C03059C (+3 instructions) m2 s2 count out, result 99 -> s9 (p1)
 - the cases run 588 of 588 instructions
 
-### ui_update_hud_indicators (`0C02EE40`, 1048 bytes, `src/game/ui/ui_hud_2_alt_equiv.c`)
-- equivalent on 54 development and 10 holdout cases, in `tests/ui_hud_2_alt_equiv/ui_update_hud_indicators.json`
+### ui_update_hud_indicators (`0C02EE40`, 1048 bytes, `src/game/ui/ui_hud_indicators.c`)
+- equivalent on 54 development and 10 holdout cases, in `tests/ui_hud_indicators/ui_update_hud_indicators.json`
 - A t=1
 - A t=2
 - A t=3
@@ -125434,6 +125308,88 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - random 8
 - random 9
 - the cases run 449 of 449 instructions
+
+### ui_update_stone_effects (`0C02E4D0`, 1224 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 39 development and 39 holdout cases, in `tests/ui_hud_draw/ui_update_stone_effects.json`
+- case 0
+- case 0
+- case 1
+- case 123
+- case 3
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- directed: flips 0C02E530 (taken)
+- directed: flips 0C02E94C (taken)
+- directed: flips 0C02E54A (taken)
+- directed: flips 0C02E950 (taken)
+- directed: flips 0C02E5A6 (taken)
+- directed: flips 0C02E646 (taken)
+- chara 10: nothing
+- mode 0 step 0, two stones: on to the pulse
+- mode 0 step 1, stone lost
+- mode 0 step 2, pulsing, bits 101
+- mode 0 step 2, fixed items: two marks
+- mode 0 step 3: nothing
+- mode 1 step 1: blink flips, fade high
+- mode 1 step 1: faded out
+- mode 1 step 2: nothing
+- mode 2 step 0
+- mode 2 step 1 out
+- mode 2 step 2 pulse ends, paused
+- mode 3 step 0
+- mode 3 step 1 last frame
+- mode 4: nothing
+- case 51
+- case 72
+- case 137
+- case 32
+- case 88
+- case 42
+- case 59
+- case 92
+- case 62
+- case 151
+- case 65
+- case 103
+- case 116
+- case 108
+- case 71
+- case 120
+- case 132
+- case 50
+- directed: flips 0C02E546 (taken)
+- directed: flips 0C02E968 (taken)
+- directed: flips 0C02E81A (not taken)
+- directed: flips 0C02E54E (taken)
+- directed: flips 0C02E632 (taken)
+- directed: flips 0C02E84C (taken)
+- mode 0 step 0, one stone
+- mode 0 step 1, stones, timer counting
+- mode 0 step 2, stone lost
+- mode 0 step 2, pulse ends, paused, bits 110
+- mode 0 step 2, sin 0 exactly, bits 111
+- mode 1 step 0: blinking starts
+- mode 1 step 1: paused, fading
+- mode 1 step 1: fade at 21
+- mode 2, no meter: straight to the end
+- mode 2 step 1 counting, paused
+- mode 2 step 2 pulse
+- mode 2 step 3: nothing
+- mode 3 step 1 paused
+- mode 3 step 2: nothing
+- mode 2, no meter, step 1: nothing
+- the cases run 532 of 546 instructions
 
 ### vec3f_to_vec3s (`0C020428`, 30 bytes, `src/game/hit/hit_boxes_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/vec3f_to_vec3s.json`

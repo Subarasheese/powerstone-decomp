@@ -100,7 +100,7 @@ int FUN_0c02114c(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int hit_find_part_entry(int, int, int, int);
 int ui_draw_text_stub(void);
-int FUN_0c02fffc(int, int, int, int);
+int ui_hud_slide_text(int, int, int, int);
 int fx_spawn_effect_at_point(int, int);
 int fx_spawn_burst_slot(int, int, int, int, int, int);
 int ai_clear_op_state(void);

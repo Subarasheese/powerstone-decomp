@@ -61,7 +61,7 @@ struct oF8_int { char p[0xF8]; int v; };
 int FUN_0c0210f4(int, int, int);
 int hit_find_part_entry(int, int, int, int);
 int ui_sprite_queue_add(int, int, int, int, int, int);
-int FUN_0c02d844(void);
+int ui_hud_enabled(void);
 int fx_spawn_spark_rings(int, int, float, float);
 int ai_clear_op_state(void);
 int ai_calc_goal_angle(int, float);

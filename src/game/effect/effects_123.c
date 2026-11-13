@@ -7,7 +7,7 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int FUN_0c02d844(void);
+int ui_hud_enabled(void);
 int FUN_0c0555c4(void);
 int obj_destroy(int, int, int, int);
 int FUN_0c0e6fe8(int, int, int, int);
@@ -72,7 +72,7 @@ int fx_tick_049b7c(int a4, int a5, int a6, int a7)
                 break;
             }
         }
-        t0 = FUN_0c02d844();
+        t0 = ui_hud_enabled();
         t1 = (signed char)t0;
         if ((signed char)t0 == 0) {
             t0 = *(signed char *)((a4 + 0x8));
@@ -127,7 +127,7 @@ int fx_tick_049b7c(int a4, int a5, int a6, int a7)
                 break;
             }
         }
-        t0 = FUN_0c02d844();
+        t0 = ui_hud_enabled();
         t2 = (signed char)t0;
         if ((signed char)t0 == 0) {
             t0 = *(signed char *)((a4 + 0x8));
