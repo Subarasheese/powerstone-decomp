@@ -90,7 +90,7 @@ int fx_tick_03ef18(int a4);
 int kmiProcessVertex_06(int a4);
 int pl_ryoma_mode01_03_update_v1(int a4);
 int pl_gunrock_mode01_03_update_v1(int a4);
-int FUN_0c0f8920(int a4, int a5);
+int FUN_0c0f8920(int a4, int a5, float f4);
 
 int kmiProcessVertex_06(int a4)
 {
@@ -150,11 +150,12 @@ int kmiProcessVertex_06(int a4)
     return 0x0;
 }
 
-int FUN_0c0f8920(int a4, int a5)
+int FUN_0c0f8920(int a4, int a5, float f4)
 {
     int t19;
     register int t25;
-    register int t29;
+    register int t30;
+    register int t109;
 
     (((struct o0_uint *)0xC803D00)->v) = ((((struct o90_int *)(a4))->v));
     (((struct o10_uint *)0xC803D00)->v) = ((((struct o94_int *)(a4))->v));
@@ -178,56 +179,64 @@ int FUN_0c0f8920(int a4, int a5)
     t25 = (((struct o0_int *)0xC803D00)->v);
     *(unsigned int *)0xC803E54 = ((unsigned int)((unsigned int)(t25 & 0x7000000) >> 16) >> 8);
     if ((((unsigned int)((unsigned int)(t25 & 0x7000000) >> 16) >> 8) & 1) != 0) {
-        return ((int (*)(int, int, int, int))(0xC0F8BD4))(0xC347094, 0xC347090, 0xC803D00, 0xC803E54);
-    }
-    (((struct o4_uint *)0xC347090)->v) = ((((struct o10_int *)0xC803D00)->v));
-    (((struct o8_uint *)0xC347090)->v) = ((((struct o14_int *)0xC803D00)->v));
-    (((struct oC_uint *)0xC347090)->v) = ((((struct o18_int *)0xC803D00)->v));
-    t29 = (((struct o30_int *)0xC803D40)->v);
-    if (t29 != 0) {
-        if (t29 != 1) {
-            if (t29 != 2) {
-                if (t29 != 3) {
-                    if (t29 != 4) {
-                        if (t29 == 16) {
-                            (((struct o10_uint *)0xC347090)->v) = ((((((int)(((((struct o20_float *)0xC803D00)->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o24_float *)0xC803D00)->v)) * 255.0f) << 16)) | ((int)(((((struct o28_float *)0xC803D00)->v)) * 255.0f) << 8)) | (int)(((((struct o2C_float *)0xC803D00)->v)) * 255.0f));
-                            *(volatile float *)0xC803D30;
-                            *(volatile float *)0xC803D34;
-                            return ((int (*)(int, int, int, int, float))(0xC0F8BA8))(0xC3470A4, 0xC347090, 0xC803D00, 0xC803E54, 255.0f);
+        (((struct o4_uint *)0xC347090)->v) = ((((struct o0_int *)0xC803D40)->v));
+        t109 = 0xC3470B0;
+    } else {
+        (((struct o4_uint *)0xC347090)->v) = ((((struct o10_int *)0xC803D00)->v));
+        (((struct o8_uint *)0xC347090)->v) = ((((struct o14_int *)0xC803D00)->v));
+        (((struct oC_uint *)0xC347090)->v) = ((((struct o18_int *)0xC803D00)->v));
+        t30 = (((struct o30_int *)0xC803D40)->v);
+        t109 = 0xC3470B0;
+        if (t30 != 0) {
+            if (t30 != 1) {
+                if (t30 != 2) {
+                    if (t30 != 3) {
+                        if (t30 != 4) {
+                            t109 = 0xC3470A0;
+                            if (t30 == 16) {
+                                (((struct o10_uint *)0xC347090)->v) = ((((((int)(((((struct o20_float *)0xC803D00)->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o24_float *)0xC803D00)->v)) * 255.0f) << 16)) | ((int)(((((struct o28_float *)0xC803D00)->v)) * 255.0f) << 8)) | (int)(((((struct o2C_float *)0xC803D00)->v)) * 255.0f));
+                                (((struct o14_uint *)0xC347090)->v) = ((((((int)(((((struct o30_float *)0xC803D00)->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o34_float *)0xC803D00)->v)) * 255.0f) << 16)) | ((int)(((((struct o38_float *)0xC803D00)->v)) * 255.0f) << 8)) | (int)(((((struct o3C_float *)0xC803D00)->v)) * 255.0f));
+                                t109 = 0xC3470B0;
+                            }
+                        } else {
+                            (((struct o10_uint *)0xC347090)->v) = ((((struct o4_int *)0xC803D40)->v));
+                            (((struct o14_uint *)0xC347090)->v) = ((((struct o8_int *)0xC803D40)->v));
+                            (((struct o20_uint *)0xC347090)->v) = ((((struct o20_int *)0xC803D00)->v));
+                            (((struct o24_uint *)0xC347090)->v) = ((((struct o24_int *)0xC803D00)->v));
+                            (((struct o28_uint *)0xC347090)->v) = ((((struct o28_int *)0xC803D00)->v));
+                            (((struct o2C_uint *)0xC347090)->v) = ((((struct o2C_int *)0xC803D00)->v));
+                            (((struct o30_uint *)0xC347090)->v) = ((((struct o10_int *)0xC803D40)->v));
+                            (((struct o34_uint *)0xC347090)->v) = ((((struct o14_int *)0xC803D40)->v));
+                            (((struct o38_uint *)0xC347090)->v) = ((((struct o18_int *)0xC803D40)->v));
+                            (((struct o3C_uint *)0xC347090)->v) = ((((struct o1C_int *)0xC803D40)->v));
+                            t109 = 0xC3470D0;
                         }
-                        return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470A0, 0xC347090, 0xC803D00, 0xC803E54);
+                    } else {
+                        (((struct o10_uint *)0xC347090)->v) = ((((struct o4_int *)0xC803D40)->v));
+                        (((struct o14_uint *)0xC347090)->v) = ((((struct o8_int *)0xC803D40)->v));
+                        t109 = 0xC3470B0;
                     }
-                    (((struct o10_uint *)0xC347090)->v) = ((((struct o4_int *)0xC803D40)->v));
-                    (((struct o14_uint *)0xC347090)->v) = ((((struct o8_int *)0xC803D40)->v));
+                } else {
                     (((struct o20_uint *)0xC347090)->v) = ((((struct o20_int *)0xC803D00)->v));
                     (((struct o24_uint *)0xC347090)->v) = ((((struct o24_int *)0xC803D00)->v));
                     (((struct o28_uint *)0xC347090)->v) = ((((struct o28_int *)0xC803D00)->v));
                     (((struct o2C_uint *)0xC347090)->v) = ((((struct o2C_int *)0xC803D00)->v));
-                    (((struct o30_uint *)0xC347090)->v) = ((((struct o10_int *)0xC803D40)->v));
-                    (((struct o34_uint *)0xC347090)->v) = ((((struct o14_int *)0xC803D40)->v));
-                    (((struct o38_uint *)0xC347090)->v) = ((((struct o18_int *)0xC803D40)->v));
-                    (((struct o3C_uint *)0xC347090)->v) = ((((struct o1C_int *)0xC803D40)->v));
-                    return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470D0, 0xC347090, 0xC803D00, 0xC803E54);
+                    (((struct o30_uint *)0xC347090)->v) = ((((struct o30_int *)0xC803D00)->v));
+                    (((struct o34_uint *)0xC347090)->v) = ((((struct o34_int *)0xC803D00)->v));
+                    (((struct o38_uint *)0xC347090)->v) = ((((struct o38_int *)0xC803D00)->v));
+                    (((struct o3C_uint *)0xC347090)->v) = ((((struct o3C_int *)0xC803D00)->v));
+                    t109 = 0xC3470D0;
                 }
-                (((struct o10_uint *)0xC347090)->v) = ((((struct o4_int *)0xC803D40)->v));
-                (((struct o14_uint *)0xC347090)->v) = ((((struct o8_int *)0xC803D40)->v));
-                return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470B0, 0xC347090, 0xC803D00, 0xC803E54);
+            } else {
+                (((struct o10_uint *)0xC347090)->v) = ((((struct o20_int *)0xC803D00)->v));
+                (((struct o14_uint *)0xC347090)->v) = ((((struct o24_int *)0xC803D00)->v));
+                (((struct o18_uint *)0xC347090)->v) = ((((struct o28_int *)0xC803D00)->v));
+                (((struct o1C_uint *)0xC347090)->v) = ((((struct o2C_int *)0xC803D00)->v));
+                t109 = 0xC3470B0;
             }
-            (((struct o20_uint *)0xC347090)->v) = ((((struct o20_int *)0xC803D00)->v));
-            (((struct o24_uint *)0xC347090)->v) = ((((struct o24_int *)0xC803D00)->v));
-            (((struct o28_uint *)0xC347090)->v) = ((((struct o28_int *)0xC803D00)->v));
-            (((struct o2C_uint *)0xC347090)->v) = ((((struct o2C_int *)0xC803D00)->v));
-            (((struct o30_uint *)0xC347090)->v) = ((((struct o30_int *)0xC803D00)->v));
-            (((struct o34_uint *)0xC347090)->v) = ((((struct o34_int *)0xC803D00)->v));
-            (((struct o38_uint *)0xC347090)->v) = ((((struct o38_int *)0xC803D00)->v));
-            (((struct o3C_uint *)0xC347090)->v) = ((((struct o3C_int *)0xC803D00)->v));
-            return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470D0, 0xC347090, 0xC803D00, 0xC803E54);
         }
-        (((struct o10_uint *)0xC347090)->v) = ((((struct o20_int *)0xC803D00)->v));
-        (((struct o14_uint *)0xC347090)->v) = ((((struct o24_int *)0xC803D00)->v));
-        (((struct o18_uint *)0xC347090)->v) = ((((struct o28_int *)0xC803D00)->v));
-        (((struct o1C_uint *)0xC347090)->v) = ((((struct o2C_int *)0xC803D00)->v));
-        return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470B0, 0xC347090, 0xC803D00, 0xC803E54);
     }
-    return ((int (*)(int, int, int, int))(0xC0F8BDC))(0xC3470B0, 0xC347090, 0xC803D00, 0xC803E54);
+    (((struct o0_uint *)0xC803DE0)->v) = (*(int *)0xC803E54);
+    (((struct o4_uint *)0xC803DE0)->v) = (t109 - 0xC347090);
+    return 0x0;
 }

@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=97.8&b=96.7&m=1.6&a=62&s=0)
+![decomp progress](badges/progress.svg?p=98.0&b=96.9&m=1.5&a=62&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,18 +24,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            61.8%  the instructions the cases ran, of all instructions, over the 4973 functions that can be C; the 4625 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (97.8% complete) 107  of the 4973 functions that can be C (43 with no C form are counted apart)
-BYTES LEFT    (96.7% complete) 29706  of 895566 bytes of code that can be C
+TOTAL TEST COVERAGE            61.6%  the instructions the cases ran, of all instructions, over the 5344 functions that can be C; the 4996 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (98.0% complete) 107  of the 5344 functions that can be C (43 with no C form are counted apart)
+BYTES LEFT    (96.9% complete) 29706  of 948176 bytes of code that can be C
 FUNCTIONS                             
-  unnamed                       1861  functions still called FUN_... (1861 of 5016)
+  unnamed                       2228  functions still called FUN_... (2228 of 5387)
   Not written C                   41  12264 bytes
   Written C with errors            0  0 bytes
   Not drawn                        8  1298 bytes
   Drawn with errors               23  5668 bytes
   Checked with errors             35  10476 bytes
-  No C form                     0.9%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   58.6%  2941 named functions in docs/*.md
+  No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                   54.7%  2945 named functions in docs/*.md
 ```
 <!-- /progress -->
 

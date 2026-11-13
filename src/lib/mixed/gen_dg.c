@@ -1,3 +1,4 @@
+int FUN_0c0eb0c0(int, int, int);
 /* Straight-line functions with calls and guards (batch gen_dg): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
@@ -89,7 +90,7 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int _modlu(int);
 int _quick_odd_mvn(int, int, int, int);
-int res_texture_slot_tick_release(int, int, int, int);
+int res_texture_slot_tick_release(int);
 int FUN_0c0eae20(int, int);
 int FUN_0c0eaef0(int, int);
 int kmiBGPlaneCountWords(int);
@@ -106,7 +107,7 @@ int pl_wangtang_mode11_update(int a4);
 int FUN_0c08e704(int a4, int a5, int a6, int a7);
 int FUN_0c048314(int a4, int a5);
 int fx_tick_049b7c(int a4, int a5, int a6, int a7);
-int FUN_0c0e41bc(int a4, int a5, int a6, int a7);
+int nl_material_set_palette(int a4, int a5, int a6, int a7);
 
 int kmiProcessVertex_02(int a4)
 {
@@ -151,7 +152,11 @@ int kmiProcessVertex_02(int a4)
     return 0x0;
 }
 
-int FUN_0c0e41bc(int a4, int a5, int a6, int a7)
+/* A material's palette: a5 is a texture list, a6 the material (offset by *0x0C7FD490). When the material's texture is
+   palettised (format 5 or 6 in TCW bits 27-29), the old palette's slot is released and palette a7 is taken: its CLUT
+   bank is reused when already resident (reference count up), else allocated and loaded (FUN_0c0eae20, FUN_0c0eaef0,
+   FUN_0c0eb0c0); the bank goes into TCW bits 21-26. Returns the palette the material had; -1 with no list. */
+int nl_material_set_palette(int a4, int a5, int a6, int a7)
 {
     int stk[15];
     register int t2;
@@ -159,22 +164,12 @@ int FUN_0c0e41bc(int a4, int a5, int a6, int a7)
     register int t10;
     register int t11;
     register int t13;
-    register int t25;
-    register int t28;
-    register int t30;
-    register int t32;
-    register int t50;
-    register int t56;
-    register int t58;
-    register int t59;
-    register int t66;
-    register int t69;
-    register int t71;
-    register int t73;
-    register int t91;
-    register int t97;
-    register int t99;
-    register int t100;
+    register int t26;
+    register int t29;
+    register int t31;
+    register int t33;
+    register int t51;
+    int t19;
 
     *(unsigned int *)(((int)stk + 56)) = a4;
     *(unsigned int *)(((int)stk + 52)) = a5;
@@ -197,77 +192,41 @@ int FUN_0c0e41bc(int a4, int a5, int a6, int a7)
     *(unsigned int *)(((int)stk + 16)) = ((((t11 << 2) << 2) << 1) + t13);
     *(unsigned int *)(((int)stk + 24)) = (((unsigned int)(*(int *)((((((t11 << 2) << 2) << 1) + t13) + 0xC))) >> 27) & 0x7);
     if ((*(int *)0xC7F87C0) == 0) {
-        return ((int (*)(int, int, int, int))(0xC0E4336))(a4, a5, a6, a7);
-    }
-    if ((*(int *)(((int)stk + 24))) != 5) {
-        if ((*(int *)(((int)stk + 24))) == 6) {
-            res_texture_slot_tick_release((*(int *)(((int)stk + 28))), a5, a6, a7);
+    } else {
+        if (((*(int *)(((int)stk + 24))) != 5) && (t19 = *(int *)(((int)stk + 24)), t19 != 6)) {
+        } else {
+            res_texture_slot_tick_release((*(int *)(((int)stk + 28))));
             *(unsigned int *)(((int)stk + 28)) = (*(int *)(((int)stk + 44)));
             if ((int)(*(int *)(((int)stk + 28))) < (int)((((struct o0_short *)0xC7FD624)->v))) {
                 *(unsigned int *)(((int)stk + 12)) = ((((struct o14_int *)0xC7FD624)->v));
-                t25 = *(int *)(((int)stk + 28));
-                *(unsigned int *)(((int)stk + 8)) = ((((t25 << 1) + t25) << 2) + (*(int *)0xC7F87C0));
-                t28 = *(int *)(((int)stk + 28));
-                t30 = *(int *)(((int)stk + 12));
-                *(unsigned int *)(((int)stk + 12)) = (t30 + ((t28 << 2) << 1));
-                if ((*(short *)(((t30 + ((t28 << 2) << 1)) + 0x4))) != 0) {
-                    t32 = *(int *)(((int)stk + 12));
-                    *(unsigned short *)((t32 + 0x4)) = ((*(short *)((t32 + 0x4))) + 0x1);
+                t26 = *(int *)(((int)stk + 28));
+                *(unsigned int *)(((int)stk + 8)) = ((((t26 << 1) + t26) << 2) + (*(int *)0xC7F87C0));
+                t29 = *(int *)(((int)stk + 28));
+                t31 = *(int *)(((int)stk + 12));
+                *(unsigned int *)(((int)stk + 12)) = (t31 + ((t29 << 2) << 1));
+                if ((*(short *)(((t31 + ((t29 << 2) << 1)) + 0x4))) != 0) {
+                    t33 = *(int *)(((int)stk + 12));
+                    *(unsigned short *)((t33 + 0x4)) = ((*(short *)((t33 + 0x4))) + 0x1);
                     *(unsigned int *)(((int)stk + 4)) = (*(short *)(((*(int *)(((int)stk + 12))) + 0x0)));
-                    return ((int (*)(void))(0xC0E4322))();
+                } else {
+                    *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x2)) = (*(signed char *)(((*(int *)(((int)stk + 8))) + 0x2)));
+                    *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x3)) = ((int)((*(int *)(((*(int *)(((int)stk + 8))) + 0x8))) + 0xF) >> 4);
+                    *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x4)) = 0x1;
+                    *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x6)) = (*(short *)(((int)stk + 28)));
+                    *(unsigned int *)(((int)stk + 0)) = (*(int *)(((*(int *)(((int)stk + 8))) + 0x8)));
+                    t51 = FUN_0c0eae20((*(short *)(((*(int *)(((int)stk + 8))) + 0x2))), (*(int *)(((int)stk + 0))));
+                    *(unsigned int *)(((int)stk + 4)) = t51;
+                    if ((int)t51 >= 0) {
+                        *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x0)) = (*(int *)(((int)stk + 4)));
+                        FUN_0c0eaef0((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 0))));
+                        FUN_0c0eb0c0((((*(int *)(((int)stk + 4))) << 2) << 2), (*(int *)(((*(int *)(((int)stk + 8))) + 0x4))), (*(int *)(((int)stk + 0))));
+                    } else {
+                        *(unsigned int *)(((int)stk + 4)) = 0x0;
+                    }
                 }
-                *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x2)) = (*(signed char *)(((*(int *)(((int)stk + 8))) + 0x2)));
-                *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x3)) = ((int)((*(int *)(((*(int *)(((int)stk + 8))) + 0x8))) + 0xF) >> 4);
-                *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x4)) = 0x1;
-                *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x6)) = (*(short *)(((int)stk + 28)));
-                *(unsigned int *)(((int)stk + 0)) = (*(int *)(((*(int *)(((int)stk + 8))) + 0x8)));
-                t50 = FUN_0c0eae20((*(short *)(((*(int *)(((int)stk + 8))) + 0x2))), (*(int *)(((int)stk + 0))));
-                *(unsigned int *)(((int)stk + 4)) = t50;
-                if ((int)t50 >= 0) {
-                    *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x0)) = (*(int *)(((int)stk + 4)));
-                    FUN_0c0eaef0((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 0))));
-                    t56 = *(int *)(((int)stk + 0));
-                    t58 = *(int *)(((*(int *)(((int)stk + 8))) + 0x4));
-                    t59 = *(int *)(((int)stk + 4));
-                    return ((int (*)(int, int, int, int))(0xC0E4310))(t59, t58, t56, a7);
-                }
-                return ((int (*)(void))(0xC0E431E))();
+                *(unsigned int *)(((*(int *)(((int)stk + 16))) + 0xC)) = (((*(int *)(((*(int *)(((int)stk + 16))) + 0xC))) & 0xF81FFFFF) | ((*(int *)(((int)stk + 4))) << 21));
             }
-            return ((int (*)(void))(0xC0E4336))();
         }
-        return ((int (*)(int, int, int, int))(0xC0E4336))(a4, a5, a6, a7);
     }
-    res_texture_slot_tick_release((*(int *)(((int)stk + 28))), a5, a6, a7);
-    *(unsigned int *)(((int)stk + 28)) = (*(int *)(((int)stk + 44)));
-    if ((int)(*(int *)(((int)stk + 28))) < (int)((((struct o0_short *)0xC7FD624)->v))) {
-        *(unsigned int *)(((int)stk + 12)) = ((((struct o14_int *)0xC7FD624)->v));
-        t66 = *(int *)(((int)stk + 28));
-        *(unsigned int *)(((int)stk + 8)) = ((((t66 << 1) + t66) << 2) + (*(int *)0xC7F87C0));
-        t69 = *(int *)(((int)stk + 28));
-        t71 = *(int *)(((int)stk + 12));
-        *(unsigned int *)(((int)stk + 12)) = (t71 + ((t69 << 2) << 1));
-        if ((*(short *)(((t71 + ((t69 << 2) << 1)) + 0x4))) != 0) {
-            t73 = *(int *)(((int)stk + 12));
-            *(unsigned short *)((t73 + 0x4)) = ((*(short *)((t73 + 0x4))) + 0x1);
-            *(unsigned int *)(((int)stk + 4)) = (*(short *)(((*(int *)(((int)stk + 12))) + 0x0)));
-            return ((int (*)(void))(0xC0E4322))();
-        }
-        *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x2)) = (*(signed char *)(((*(int *)(((int)stk + 8))) + 0x2)));
-        *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x3)) = ((int)((*(int *)(((*(int *)(((int)stk + 8))) + 0x8))) + 0xF) >> 4);
-        *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x4)) = 0x1;
-        *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x6)) = (*(short *)(((int)stk + 28)));
-        *(unsigned int *)(((int)stk + 0)) = (*(int *)(((*(int *)(((int)stk + 8))) + 0x8)));
-        t91 = FUN_0c0eae20((*(short *)(((*(int *)(((int)stk + 8))) + 0x2))), (*(int *)(((int)stk + 0))));
-        *(unsigned int *)(((int)stk + 4)) = t91;
-        if ((int)t91 >= 0) {
-            *(unsigned short *)(((*(int *)(((int)stk + 12))) + 0x0)) = (*(int *)(((int)stk + 4)));
-            FUN_0c0eaef0((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 0))));
-            t97 = *(int *)(((int)stk + 0));
-            t99 = *(int *)(((*(int *)(((int)stk + 8))) + 0x4));
-            t100 = *(int *)(((int)stk + 4));
-            return ((int (*)(int, int, int, int))(0xC0E4310))(t100, t99, t97, a7);
-        }
-        return ((int (*)(void))(0xC0E431E))();
-    }
-    return ((int (*)(void))(0xC0E4336))();
+    return (*(int *)(((int)stk + 20)));
 }

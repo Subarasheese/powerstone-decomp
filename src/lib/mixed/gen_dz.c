@@ -485,32 +485,40 @@ int FUN_0c10ba20(void)
     register int t0;
     register int t1;
     register int t2;
+    register int t3;
 
-    t0 = (((struct o8_int *)0xC8426B4)->v);
-    t1 = (((struct oC_int *)0xC8426B4)->v);
+    t0 = (((struct o0_int *)0xC8426BC)->v);
+    t1 = (((struct o4_int *)0xC8426BC)->v);
     *(unsigned int *)(((((t1 << 8) + 0xC8424A8) + (((t0 << 2) << 2) << 1)) + 0x18)) = ((*(int *)(((((t1 << 8) + 0xC8424A8) + (((t0 << 2) << 2) << 1)) + 0x18))) & 0xFFFFFFFC);
-    t0 = (((struct o0_int *)0xC8426B4)->v);
-    if (((*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x18))) & 0x3) == 1) {
-        *(unsigned int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x18)) = (((*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x18))) & 0xFFFFFFFC) | 0x2);
-        (((struct o0_uint *)0xFFA00020)->v) = (*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x4)));
-        (((struct o4_uint *)0xFFA00020)->v) = (((*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0xC))) + 0xF0000000) << 1);
-        (((struct o8_uint *)0xFFA00020)->v) = ((unsigned int)((unsigned int)((unsigned int)(*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x14))) >> 2) >> 2) >> 1);
-        t1 = 0x241;
-        if (((*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x18))) & 4) == 0) {
-            t1 = 0x2C1;
+    t0 = 0x0;
+    for (;;) {
+        t1 = *(int *)((0xC8426B4 + (t0 << 2)));
+        if (((*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x18))) & 0x3) == 1) {
+            break;
         }
-        t2 = t1;
-        if (((*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x18))) & 16) != 0) {
-            t2 = (t1 | 0x1000);
+        t0 = (t0 + 0x1);
+        if ((unsigned int)t0 >= (unsigned int)0x2) {
+            return 0x0;
         }
-        (((struct oC_uint *)0xFFA00020)->v) = t2;
-        (((struct o0_uint *)0xA05F6800)->v) = (*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0xC)));
-        (((struct o4_uint *)0xA05F6800)->v) = (*(int *)(((0xC8424A8 + (((t0 << 2) << 2) << 1)) + 0x14)));
-        (((struct o8_uint *)0xA05F6800)->v) = 0x1;
-        (((struct o8_uint *)0xC8426B4)->v) = t0;
-        (((struct oC_uint *)0xC8426B4)->v) = 0x0;
-        (((struct o0_uint *)0xC8426B4)->v) = ((((((struct o0_int *)0xC8426B4)->v)) + 0x1) & 0x7);
-        return ((int (*)(int, int, int, int))(0xC10BB46))(0x0, 0xC8426B4, 0x1, 0x1);
     }
-    return ((int (*)(int, int, int, int))(0xC10BB40))(0x0, 0xC8424A8, 0x0, 0x1);
+    *(unsigned int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x18)) = (((*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x18))) & 0xFFFFFFFC) | 0x2);
+    (((struct o0_uint *)0xFFA00020)->v) = (*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x4)));
+    (((struct o4_uint *)0xFFA00020)->v) = (((*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0xC))) + 0xF0000000) << 1);
+    (((struct o8_uint *)0xFFA00020)->v) = ((unsigned int)((unsigned int)((unsigned int)(*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x14))) >> 2) >> 2) >> 1);
+    t2 = 0x241;
+    if (((*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x18))) & 4) == 0) {
+        t2 = 0x2C1;
+    }
+    t3 = t2;
+    if (((*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x18))) & 16) != 0) {
+        t3 = (t2 | 0x1000);
+    }
+    (((struct oC_uint *)0xFFA00020)->v) = t3;
+    (((struct o0_uint *)0xA05F6800)->v) = (*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0xC)));
+    (((struct o4_uint *)0xA05F6800)->v) = (*(int *)(((((t0 << 8) + 0xC8424A8) + (((t1 << 2) << 2) << 1)) + 0x14)));
+    (((struct o8_uint *)0xA05F6800)->v) = 0x1;
+    (((struct o0_uint *)0xC8426BC)->v) = t1;
+    (((struct o4_uint *)0xC8426BC)->v) = t0;
+    *(unsigned int *)((((t0 << 2) + 0xC8426B4) + 0x0)) = (((*(int *)((((t0 << 2) + 0xC8426B4) + 0x0))) + 0x1) & 0x7);
+    return 0x1;
 }

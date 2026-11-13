@@ -1,6 +1,7 @@
 /* Straight-line functions with calls and guards (batch gen_r): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int buIsFormat(int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_uchar { unsigned char v; };
@@ -84,6 +85,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
+struct o230_uint { char p[0x230]; unsigned int v; };
 int vmu_lcd_set_idle_image(void);
 int vmu_get_savefile_mask(void);
 int vmu_get_vmgame_mask(void);
@@ -216,7 +218,7 @@ int vmsfs_fisexist(int a4, int a5);
 int FUN_0c062cf4(int a4, int a5);
 int pl_try_start_pickup_touched(int a4);
 int boot_screens_update(int a4, int a5, int a6, int a7, float f4);
-int FUN_0c0faf30(int a4, int a5, int a6, int a7);
+int FUN_0c0faf30(int a4, int a5);
 int FUN_0c0fd0dc(int a4);
 float FUN_0c1156c8(int a4, int a5, int a6, int a7);
 int FUN_0c0ccf38(int a4, int a5, int a6);
@@ -481,56 +483,102 @@ int FUN_0c109c06(int a4, int a5)
 
 int vmsfs_fisexist(int a4, int a5)
 {
-    register int t0;
+    int stk[12];
+    register int t1;
+    register int t3;
+    register int t5;
+    register int t7;
 
+    *(unsigned int *)(((int)stk + 0)) = a5;
     if ((*(signed char *)(((a4 * 0x148) + 0xC80DBCA))) != 0) {
-        t0 = vmsio_isready(a4);
-        if (t0 == 0) {
+        t1 = vmsio_isready(a4);
+        if (t1 == 0) {
             vmsfs_unmount(a4);
             return 0xFFFFFF01;
         }
-        t0 = vmsio_ismount(a4);
-        if (t0 != 0) {
+        t3 = vmsio_ismount(a4);
+        if (t3 != 0) {
             if ((*(signed char *)(((a4 * 0x148) + 0xC80DBD0))) == 0) {
                 return 0xFFFFFF01;
             }
-            return ((int (*)(void))(0xC1033DC))();
+            t5 = buIsFormat(a4);
+            if ((int)t5 < 0) {
+                return 0xFFFFFF03;
+            }
+            t7 = FUN_0c104962(a4, (*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x4));
+            if ((int)t7 >= 0) {
+                return 0x0;
+            }
+            return 0xFFFFFF05;
         }
         return 0xFFFFFF01;
     }
     return 0xFFFFFF01;
 }
 
-int FUN_0c0faf30(int a4, int a5, int a6, int a7)
+int FUN_0c0faf30(int a4, int a5)
 {
-    if (a5 != 0) {
-        if (a5 != 1) {
-            if (a5 != 2) {
-                if (a5 != 3) {
-                    if (a5 != 4) {
-                        if (a5 == 5) {
-                            return ((int (*)(int, int, int, int))(0xC0FB020))(a4, a5, a6, a7);
-                        }
-                        if (a5 == 6) {
-                            return ((int (*)(int, int, int, int))(0xC0FB028))(a4, a5, a6, a7);
-                        }
-                        if (a5 == 7) {
-                            return ((int (*)(int, int, int, int))(0xC0FB030))(a4, a5, a6, a7);
-                        }
-                        if (a5 == 8) {
-                            return ((int (*)(int, int, int, int))(0xC0FB038))(a4, a5, a6, a7);
-                        }
-                        return ((int (*)(int, int, int, int))(0xC0FB03E))(a4, a5, a6, a7);
-                    }
-                    return ((int (*)(int, int, int, int))(0xC0FAFE0))(a4, a5, a6, a7);
-                }
-                return ((int (*)(int, int, int, int))(0xC0FAFD8))(a4, a5, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC0FAFD0))(a4, a5, a6, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC0FAFC8))(a4, a5, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0FAFC0))(a4, a5, a6, a7);
+
+    register int R3;
+    register int R12;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    v0_0 = a4;
+    v0_2 = a5;
+    v0_1 = (v0_2);
+    if ((v0_2 == 0)) goto L_C0FAFC0;
+    if ((v0_1 == 1)) goto L_C0FAFC8;
+    if ((v0_1 == 2)) goto L_C0FAFD0;
+    if ((v0_1 == 3)) goto L_C0FAFD8;
+    if ((v0_1 == 4)) goto L_C0FAFE0;
+    if ((v0_1 != 5)) goto L_C0FAF4E;
+    v0_1 = (0x258);
+    v0_2 = (0xC0FB464);
+    L_C0FB034:;
+    *(unsigned int *)((v0_0 + v0_1)) = v0_2;
+    L_C0FB03E:;
+    return v0_1;
+    L_C0FAF4E:;
+    if ((v0_1 != 6)) goto L_C0FAF56;
+    v0_1 = (0x260);
+    v0_2 = (0xC0FB468);
+    L_C0FB03C:;
+    *(unsigned int *)((v0_0 + v0_1)) = v0_2;
+    goto L_C0FB03E;
+    L_C0FAF56:;
+    if ((v0_1 != 7)) goto L_C0FAF5E;
+    v0_1 = (0x268);
+    v0_2 = (0xC0FB46C);
+    goto L_C0FB034;
+    L_C0FAF5E:;
+    if ((v0_1 != 8)) goto L_C0FAF66;
+    v0_1 = (0x270);
+    v0_2 = (0xC0FB470);
+    goto L_C0FB03C;
+    L_C0FAF66:;
+    goto L_C0FB03E;
+    L_C0FAFE0:;
+    v0_1 = (0x250);
+    v0_2 = (0xC0FB460);
+    goto L_C0FB03C;
+    L_C0FAFD8:;
+    v0_1 = (0x248);
+    v0_2 = (0xC0FB424);
+    goto L_C0FB034;
+    L_C0FAFD0:;
+    v0_1 = (0x240);
+    v0_2 = (0xC0FB420);
+    goto L_C0FB03C;
+    L_C0FAFC8:;
+    v0_1 = (0x238);
+    v0_2 = (0xC0FB41C);
+    goto L_C0FB034;
+    L_C0FAFC0:;
+    (((struct o230_uint *)(v0_0))->v) = 0xC0FB418;
+    v0_1 = (0x230);
+    goto L_C0FB03E;
 }
 
 int FUN_0c0fd0dc(int a4)

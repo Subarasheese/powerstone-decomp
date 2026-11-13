@@ -119,7 +119,7 @@ int FUN_0c0e09f0(int, int, int, int, float, float, float, float);
 int nlStoreMatrix(int);
 int nlStoreMatrix8(int);
 int nlLoadMatrix8(int, int, int, int);
-int FUN_0c0e12e0(int, int);
+int nlLUDecompose(int, int);
 int FUN_0c0e16c0(void);
 int FUN_0c0e1900(int);
 int nlPushMatrix(int);
@@ -825,7 +825,7 @@ int FUN_0c0e0a40(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     FUN_0c0e09f0((((int)stk + 0) + 0x4), a4, a6, a7, f4, f5, f6, f7);
-    return (FUN_0c0e12e0((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x44)));
+    return (nlLUDecompose((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x44)));
 }
 
 int gdDcfDaPlay_(int a4, int a5, int a6)

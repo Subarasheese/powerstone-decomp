@@ -156,7 +156,7 @@ int stage_gimmick_25_spawn_b(int a4, int a5);
 int fx_update_04(int a4);
 int FUN_0c0c3408(int a4, int a5);
 int FUN_0c0c9526(int a4, int a5, int a6, int a7);
-int FUN_0c0e6102(int a4, int a5, int a6, int a7);
+int FUN_0c0e6102(int a4, int a5);
 int fx_spawn_03cb28(int a4, int a5);
 int pl_enter_state_27_28(int a4, int a5);
 int version_screen_draw(int a4, int a5, int a6, int a7);
@@ -171,7 +171,7 @@ int fx31_shrink_follow_owner(int a4, float f4);
 float FUN_0c0c8460(int a4);
 int FUN_0c040938(int a4, int a5, int a6, int a7);
 
-int FUN_0c0e6102(int a4, int a5, int a6, int a7)
+int FUN_0c0e6102(int a4, int a5)
 {
     int stk[5];
     register int t0;
@@ -183,8 +183,9 @@ int FUN_0c0e6102(int a4, int a5, int a6, int a7)
     register int t15;
     register int t21;
     register int t22;
-    register int t25;
-    register int t28;
+    register int t29;
+    register int t36;
+    register int t39;
 
     *(unsigned short *)(((((int)stk + 0) + 0x12) + 0x0)) = a4;
     *(unsigned int *)(((int)stk + 12)) = a5;
@@ -219,20 +220,23 @@ int FUN_0c0e6102(int a4, int a5, int a6, int a7)
     *(unsigned short *)(((int)stk + 8)) = (unsigned char)t21;
     if ((short)(unsigned char)t21 != 0) {
         if ((short)(unsigned char)t21 != 1) {
-            if (((short)(unsigned char)t21 != 2) && ((short)(unsigned char)t21 != 3)) {
-                return ((int (*)(int, int, int, int))(0xC0E61FE))(a4, a5, a6, a7);
+            t39 = (short)(unsigned char)t21;
+            if (((short)(unsigned char)t21 == 2) || ((short)(unsigned char)t21 == 3)) {
+                t22 = *(short *)(((int)stk + 18));
+                *(unsigned short *)(((unsigned char)((((t22 << 1) + t22) << 2) << 1) + 0xC7FD112)) = 0x4;
+                t39 = 0xC7FD112;
             }
-            t22 = *(short *)(((int)stk + 18));
-            *(unsigned short *)(((unsigned char)((((t22 << 1) + t22) << 2) << 1) + 0xC7FD112)) = 0x4;
-            return ((int (*)(int, int, int, int))(0xC0E61FA))(a4, a5, a6, a7);
+        } else {
+            t29 = *(short *)(((int)stk + 18));
+            *(unsigned short *)(((unsigned char)((((t29 << 1) + t29) << 2) << 1) + 0xC7FD112)) = 0x8;
+            t39 = 0xC7FD112;
         }
-        t25 = *(short *)(((int)stk + 18));
-        *(unsigned short *)(((unsigned char)((((t25 << 1) + t25) << 2) << 1) + 0xC7FD112)) = 0x8;
-        return ((int (*)(int, int, int, int))(0xC0E61FE))(a4, a5, a6, a7);
+    } else {
+        t36 = *(short *)(((int)stk + 18));
+        *(unsigned short *)(((unsigned char)((((t36 << 1) + t36) << 2) << 1) + 0xC7FD112)) = 0x10;
+        t39 = 0xC7FD112;
     }
-    t28 = *(short *)(((int)stk + 18));
-    *(unsigned short *)(((unsigned char)((((t28 << 1) + t28) << 2) << 1) + 0xC7FD112)) = 0x10;
-    return ((int (*)(int, int, int, int))(0xC0E61FE))(a4, a5, a6, a7);
+    return t39;
 }
 
 int FUN_0c1013d8(int a4)

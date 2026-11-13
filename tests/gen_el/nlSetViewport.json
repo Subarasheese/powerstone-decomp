@@ -6,6 +6,10 @@
    "poke": {
     "0C7F88EC": "04000000"
    }
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ],
  "holdout": [
@@ -15,6 +19,10 @@
    "poke": {
     "0C7F88EC": "04000000"
    }
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ]
 }

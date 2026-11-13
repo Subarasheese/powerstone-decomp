@@ -88,14 +88,6 @@ int FUN_0c020886(int a4, int a5, int a6, int a7)
 }
 
 
-void FUN_0c020cba(int a4, int a5, int a6, int a7)
-{
-    if (a4 == 0) {
-        return;
-    }
-    ((int (*)(int, int, int, int))(0xC020C8E))(a4, a5, a6, a7);
-}
-
 void hit_load_cylinder_world_dup(char *src_obj, char *dst, char *src_vec)
 {
     math_mat_transform_point(src_vec, src_obj + 108);

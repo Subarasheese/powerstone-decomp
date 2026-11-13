@@ -1,6 +1,8 @@
 /* Straight-line functions with calls and guards (batch gen_ef): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int direntry_dirty(int, int);
+int FUN_0c104742(int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_uchar { unsigned char v; };
@@ -346,16 +348,25 @@ int vmsfs_frename(int a4, int a5, int a6)
 {
     int stk[14];
     register int t0;
+    register int t33;
     register int t3;
     register int t5;
+    register int t29;
     register int t8;
+    register int t27;
     register int t10;
+    register int t25;
     register int t12;
+    register int t24;
     register int t14;
+    register int t23;
     register int t15;
-    register int t16;
+    register int t18;
+    register int t19;
+    register int t31;
     int t6;
     register int t7;
+    register int t17;
 
     *(unsigned int *)(((int)stk + 0)) = a5;
     *(unsigned int *)(((int)stk + 4)) = a6;
@@ -363,38 +374,57 @@ int vmsfs_frename(int a4, int a5, int a6)
     *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x30)) = 0x1;
     t0 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x4));
     *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x34)) = (*(int *)((((((t0 << 2) + t0) << 2) << 2) + 0xC347220)));
+    t33 = 0xFFFFFF01;
     if ((*(signed char *)((((a4 * 0x148) + 0xC80DBC8) + 0x2))) != 0) {
         t3 = vmsio_isready(a4);
         if (t3 == 0) {
             vmsfs_unmount(a4);
-            return 0xFFFFFF01;
+            t31 = 0xFFFFFF01;
+        } else {
+            t5 = vmsio_ismount(a4);
+            t29 = 0xFFFFFF01;
+            if ((t5 != 0) && (t6 = *(int *)(((int)stk + 8)), t7 = *(signed char *)(((t6 + 0xC80DBC8) + 0x8)), t7 != 0)) {
+                t8 = buIsFormat(a4);
+                t27 = 0xFFFFFF03;
+                if ((int)t8 >= 0) {
+                    *(volatile int *)(((int)stk + 0));
+                    t10 = check_isopen();
+                    t25 = 0xFFFFFF0B;
+                    if ((int)t10 >= 0) {
+                        t12 = FUN_0c104962(a4, (*(int *)(((int)stk + 0))), (((int)stk + 0) + 0xC));
+                        t24 = 0xFFFFFF05;
+                        if ((int)t12 >= 0) {
+                            t14 = FUN_0c104962(a4, (*(int *)(((int)stk + 4))), (((int)stk + 0) + 0xC));
+                            t23 = 0xFFFFFF06;
+                            if ((int)t14 < 0) {
+                                t15 = direntry(a4, t12);
+                                t18 = (t15 + 0x4);
+                                t19 = (*(int *)(((int)stk + 4)));
+                                for (;;) {
+                                    if ((unsigned int)t18 >= (unsigned int)(t15 + 0x10)) {
+                                        break;
+                                    }
+                                    t17 = (*(signed char *)((t19 + 0x0)));
+                                    t19 = (t19 + 0x1);
+                                    *(unsigned char *)((t18 + 0x0)) = t17;
+                                    t18 = (t18 + 0x1);
+                                }
+                                direntry_dirty(a4, t12);
+                                t23 = (FUN_0c104742(a4));
+                            }
+                            t24 = t23;
+                        }
+                        t25 = t24;
+                    }
+                    t27 = t25;
+                }
+                t29 = t27;
+            }
+            t31 = t29;
         }
-        t5 = vmsio_ismount(a4);
-        if ((t5 != 0) && (t6 = *(int *)(((int)stk + 8)), t7 = *(signed char *)(((t6 + 0xC80DBC8) + 0x8)), t7 != 0)) {
-            t8 = buIsFormat(a4);
-            if ((int)t8 < 0) {
-                return 0xFFFFFF03;
-            }
-            *(volatile int *)(((int)stk + 0));
-            t10 = check_isopen();
-            if ((int)t10 < 0) {
-                return 0xFFFFFF0B;
-            }
-            t12 = FUN_0c104962(a4, (*(int *)(((int)stk + 0))), (((int)stk + 0) + 0xC));
-            if ((int)t12 < 0) {
-                return 0xFFFFFF05;
-            }
-            t14 = FUN_0c104962(a4, (*(int *)(((int)stk + 4))), (((int)stk + 0) + 0xC));
-            if ((int)t14 >= 0) {
-                return 0xFFFFFF06;
-            }
-            t15 = direntry(a4, t12);
-            t16 = *(int *)(((int)stk + 4));
-            return ((int (*)(int, int, int, int))(0xC103C26))((t15 + 0x4), t15, (t15 + 0x10), t16);
-        }
-        return 0xFFFFFF01;
+        t33 = t31;
     }
-    return 0xFFFFFF01;
+    return t33;
 }
 
 int ADXB_ExecOneWav16(int a4, int a5, int a6, int a7)

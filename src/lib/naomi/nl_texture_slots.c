@@ -51,20 +51,23 @@ int FUN_0c0eae20(int a4, int a5)
     int stk[2];
     register int t0;
     register int t1;
+    register int t2;
     int t5;
     register int t6;
     register int t7;
+    register int t12;
     register int t14;
     register int t15;
     register int t16;
+    register int t29;
+    register int t20;
     register int t24;
-    register int t25;
-    register int t26;
 
     *(unsigned int *)(((int)stk + 0)) = 0xC7FD480;
     if (a4 == 16) {
         t0 = 0x0;
         t1 = 0x0;
+        t2 = 0xFFFFFFFF;
         for (;;) {
             *(unsigned int *)(((int)stk + 4)) = ((t1 << 1) + (*(int *)(((int)stk + 0))));
             t5 = 0x1;
@@ -72,7 +75,11 @@ int FUN_0c0eae20(int a4, int a5)
             t7 = ((t1 << 2) << 2);
             for (;;) {
                 if (((*(short *)(((*(int *)(((int)stk + 4))) + 0x0))) & t5) == 0) {
+                    t12 = t0 == 0;
                     t0 = (t0 + 0x1);
+                    if (t12) {
+                        t2 = t7;
+                    }
                     if ((int)t0 < (int)((int)(a5 + 0xF) >> 4)) {
                         t6 = (t6 + 0x1);
                         t5 = (t5 + t5);
@@ -97,9 +104,8 @@ int FUN_0c0eae20(int a4, int a5)
                 break;
             }
         }
+        t20 = t2;
         t24 = t0;
-        t25 = 0x0;
-        t26 = t5;
     } else {
         t14 = (*(int *)(((int)stk + 0)));
         t15 = 0x0;
@@ -113,22 +119,46 @@ int FUN_0c0eae20(int a4, int a5)
             t14 = (t14 + 0x2);
             if ((int)t16 >= (int)0x4) {
                 if ((int)0x0 < (int)((int)(a5 + 0xF) >> 4)) {
-                    return ((int (*)(int, int, int, int))(0xC0EAED0))(0x0, ((int)(a5 + 0xF) >> 4), t14, t15);
+                    return 0xFFFFFFFF;
                 }
-                return ((int (*)(int, int, int, int))(0xC0EAED0))(0x0, ((int)(a5 + 0xF) >> 4), t14, t15);
+                return 0xFFFFFFFF;
             }
         }
+        t20 = t15;
         t24 = ((int)(a5 + 0xF) >> 4);
-        t25 = t14;
-        t26 = t15;
     }
+    t29 = t20;
     if ((int)t24 < (int)((int)(a5 + 0xF) >> 4)) {
-        return ((int (*)(int, int, int, int))(0xC0EAED0))(t24, ((int)(a5 + 0xF) >> 4), t25, t26);
+        t29 = 0xFFFFFFFF;
     }
-    return ((int (*)(int, int, int, int))(0xC0EAED0))(t24, ((int)(a5 + 0xF) >> 4), t25, t26);
+    return t29;
 }
 
-int FUN_0c0eaef0(int a4, int a5)
+void FUN_0c0eaef0(int a4, int a5)
 {
-    return ((int (*)(int, int, int, int))(0xC0EAF50))(((int)0x1 << (int)(a4 & 0xF)), ((int)(a5 + 0xF) >> 4), ((((int)a4 >> 4) << 1) + 0xC7FD480), 0x1);
+    register int t1;
+    register int t2;
+    register int t3;
+    register int t4;
+    register int t6;
+
+    t1 = ((int)a4 >> 4);
+    t2 = ((int)0x1 << (int)(a4 & 0xF));
+    t3 = ((int)(a5 + 0xF) >> 4);
+    t4 = ((((int)a4 >> 4) << 1) + 0xC7FD480);
+    for (;;) {
+        t6 = (int)t3 <= 0;
+        t3 = (t3 - 1);
+        if (t6) {
+            break;
+        }
+        t1 = (*(short *)((t4 + 0x0)));
+        t1 = (t1 | t2);
+        t2 = (t2 + t2);
+        *(unsigned short *)((t4 + 0x0)) = t1;
+        if ((int)t2 >= (int)0x10000) {
+            t2 = 0x1;
+            t4 = (t4 + 0x2);
+        }
+    }
 }

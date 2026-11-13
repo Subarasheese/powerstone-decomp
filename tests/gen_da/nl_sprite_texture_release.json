@@ -3,9 +3,17 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ],
  "holdout": [
+  {
+   "about": "rescue: empty case",
+   "regs": {}
+  },
   {
    "about": "rescue: empty case",
    "regs": {}

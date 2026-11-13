@@ -87,6 +87,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
+struct o76_ushort { char p[0x76]; unsigned short v; };
 int keycfg_menu_init(void);
 int keycfg_menu_main(void);
 int keycfg_settings_changed(void);
@@ -384,34 +385,101 @@ int snd_bank_unload(int a4)
 
 int FUN_0c101b58(int a4, int a5, int a6)
 {
-    register int t0;
+    int stk[5];
 
-    t0 = *(int *)0xC80DBC4;
-    if (a4 != 15) {
-        if (a4 != 33) {
-            if (a4 != 65) {
-                if (a4 != 122) {
-                    return 0xFFFFFF00;
-                }
-                *(unsigned int *)((t0 + 0x4)) = 0x3;
-                *(volatile int *)0xC3471EC;
-                *(volatile int *)0xC3471FC;
-                return ((int (*)(int, int, int, int))(0xC101C92))((((a4 << 8) << 1) + 0x20), 0xC3471F0, a6, t0);
-            }
-            *(unsigned int *)((t0 + 0x4)) = 0x2;
-            *(volatile int *)0xC3471E8;
-            *(volatile int *)0xC3471F8;
-            return ((int (*)(int, int, int, int))(0xC101C92))((((a4 << 8) << 1) + 0x20), 0xC3471F0, a6, t0);
-        }
-        *(unsigned int *)((t0 + 0x4)) = 0x1;
-        *(volatile int *)0xC3471F4;
-        *(volatile int *)0xC3471E4;
-        return ((int (*)(int, int, int, int))(0xC101C92))((((a4 << 8) << 1) + 0x20), 0xC3471F0, a6, t0);
-    }
-    *(unsigned int *)((t0 + 0x4)) = 0x0;
-    *(volatile int *)0xC3471E0;
-    *(volatile int *)0xC3471F0;
-    return ((int (*)(int, int, int, int))(0xC101C92))((((a4 << 8) << 1) + 0x20), 0xC3471F0, a6, t0);
+    register int R3;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    register int v0_6;
+    register int v0_7;
+    register int v0_8;
+    v0_4 = a4;
+    v0_6 = a5;
+    v0_5 = a6;
+    *(unsigned int *)(((int)stk + 4)) = v0_6;
+    v0_7 = (v0_4);
+    v0_0 = (0x1);
+    v0_3 = (0xC3471E0);
+    v0_1 = (0x0);
+    v0_2 = (0xC80DBC8);
+    v0_6 = (0xC3471F0);
+    v0_8 = ((*(int *)0xC80DBC4));
+    if ((v0_4 == 15)) goto L_C101B90;
+    if ((v0_7 == 33)) goto L_C101B98;
+    if ((v0_7 == 65)) goto L_C101BA2;
+    if ((v0_7 == 122)) goto L_C101BAC;
+    v0_7 = (0xFFFFFF00);
+    L_C101C9A:;
+    return v0_7;
+    L_C101BAC:;
+    *(unsigned int *)((v0_8 + 0x4)) = 0x3;
+    v0_7 = ((*(int *)((v0_6 + 0xC))));
+    v0_6 = ((*(int *)((v0_3 + 0xC))));
+    L_C101BB4:;
+    *(unsigned int *)(((int)stk + 16)) = v0_7;
+    L_C101BE4:;
+    *(unsigned int *)(((int)stk + 8)) = (((v0_4 << 8) << 1) + 0x20);
+    *(unsigned int *)(((int)stk + 0)) = v0_0;
+    *(unsigned int *)(((int)stk + 12)) = (((v0_6 + 0x1) << 8) << 1);
+    v0_4 = (v0_5);
+    v0_3 = (0xC0E71BC);
+    v0_3 = (v0_1);
+    L_C101C92:;
+    if (((int)v0_3 < (int)0x8)) goto L_C101C00;
+    v0_7 = (0x0);
+    goto L_C101C9A;
+    L_C101C00:;
+    if ((((*(int *)(((int)stk + 4))) & (*(int *)(((int)stk + 0)))) == 0)) goto L_C101C86;
+    *(unsigned char *)((v0_2 + 0x2)) = v0_0;
+    *(unsigned short *)((v0_2 + 0x0)) = v0_3;
+    *(unsigned int *)((v0_2 + 0x1C)) = ((v0_3 * 0x4C) + 0xC812628);
+    *(unsigned char *)((v0_2 + 0xA)) = v0_1;
+    *(unsigned char *)((v0_2 + 0xB)) = v0_1;
+    *(unsigned char *)((v0_2 + 0xC)) = v0_1;
+    *(unsigned int *)((v0_2 + 0x2C)) = v0_4;
+    *(unsigned int *)((v0_2 + 0x20)) = (v0_4 + 0x20);
+    *(unsigned int *)((v0_2 + 0x24)) = (0x220 + v0_4);
+    *(unsigned int *)((v0_2 + 0x28)) = (((*(int *)(((int)stk + 12))) + v0_4) + 0x20);
+    *(unsigned char *)((v0_2 + 0x8)) = v0_1;
+    *(unsigned char *)((v0_2 + 0x9)) = v0_1;
+    *(unsigned short *)((v0_2 + 0xE)) = v0_0;
+    *(unsigned short *)((v0_2 + 0x10)) = v0_6;
+    *(unsigned short *)((v0_2 + 0x12)) = (*(short *)(((int)stk + 16)));
+    *(unsigned short *)((v0_2 + 0x14)) = 0x20;
+    memset((v0_2 + 0x38), 0x0, 0x10);
+    memset((v0_2 + 0x48), 0x0, 0x100);
+    memset((*(int *)((v0_2 + 0x2C))), 0x47, 0x20);
+    memset((*(int *)((v0_2 + 0x20))), 0x53, 0x20);
+    memset((*(int *)((v0_2 + 0x24))), 0x46, 0x20);
+    memset((*(int *)((v0_2 + 0x28))), 0x44, 0x20);
+    v0_4 = ((v0_4 + (*(int *)(((int)stk + 8)))));
+    L_C101C86:;
+    *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) << 1);
+    v0_2 = ((v0_2 + 0x148));
+    v0_3 = ((v0_3 + 0x1));
+    goto L_C101C92;
+    L_C101BA2:;
+    *(unsigned int *)((v0_8 + 0x4)) = 0x2;
+    v0_7 = ((*(int *)((v0_6 + 0x8))));
+    v0_6 = ((*(int *)((v0_3 + 0x8))));
+    goto L_C101BB4;
+    L_C101B98:;
+    *(unsigned int *)((v0_8 + 0x4)) = v0_0;
+    v0_7 = ((*(int *)((v0_6 + 0x4))));
+    v0_6 = ((*(int *)((v0_3 + 0x4))));
+    L_C101B9E:;
+    *(unsigned int *)(((int)stk + 16)) = v0_7;
+    goto L_C101BE4;
+    L_C101B90:;
+    *(unsigned int *)((v0_8 + 0x4)) = v0_1;
+    v0_7 = ((*(int *)((v0_6 + 0x0))));
+    v0_6 = ((*(int *)((v0_3 + 0x0))));
+    goto L_C101B9E;
 }
 
 int FUN_0c1128ee(int a4, int a5, int a6)
@@ -514,8 +582,8 @@ int FUN_0c1128ee(int a4, int a5, int a6)
     }
     (((struct o70_uchar *)(a4))->v) = 0x0;
     (((struct o74_ushort *)(a4))->v) = (((unsigned char)(*(signed char *)((t2 + 0x1))) << 8) | (unsigned char)(*(signed char *)((t2 + 0x0))));
-    *(volatile signed char *)((t2 + 0x3));
-    return ((int (*)(int, int, int, int))(0xC112A1E))(a4, t2, t0, 0x0);
+    (((struct o76_ushort *)(a4))->v) = (((unsigned char)(*(signed char *)((t2 + 0x3))) << 8) | (unsigned char)(*(signed char *)((t2 + 0x2))));
+    return 0x0;
 }
 
 int FUN_0c0f1c72(int a4, int a5, int a6, int a7)

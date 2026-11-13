@@ -1,6 +1,7 @@
 /* Straight-line functions with calls and guards (batch gen_p): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int snd_send_command(int);
 struct o0_float { float v; };
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -160,7 +161,7 @@ int buIsFormat(int);
 int memset(int, int, int);
 int fmMngMcpy(void);
 int pl_change_state(int a4, int a5, int a6, int a7);
-int FUN_0c104006(int a4, int a5, int a6, int a7);
+int FUN_0c104006(int a4, int a5, int a6);
 int FUN_0c1152a4(int a4);
 int fx_spawn_035444(int a4);
 int fx_spawn_036598(int a4, int a5);
@@ -202,43 +203,72 @@ int FUN_0c09bb9e(int a4, int a5);
 int FUN_0c0c8cea(int a4, int a5, int a6, float f4);
 int FUN_0c0c99c0(int a4, int a5, int a6, float f4);
 int FUN_0c0d6104(int a4);
-int snd_send_port_command(int a4, int a5, int a6, int a7);
+int snd_send_port_command(int a4, int a5, int a6);
 int fmMngFormat(int a4, int a5, int a6);
 int FUN_0c01e4ea(int a4, float f4);
 int FUN_0c023d04(int a4, int a5);
 
-int FUN_0c104006(int a4, int a5, int a6, int a7)
+int FUN_0c104006(int a4, int a5, int a6)
 {
     int stk[11];
+    register int t39;
     register int t1;
     register int t3;
+    register int t27;
+    register int t21;
     register int t5;
-    register int t6;
+    register int t16;
+    register int t11;
+    register int t7;
+    register int t9;
+    register int t33;
+    register int t8;
 
+    t39 = 0xFFFFFF01;
     if ((*(signed char *)(((a4 * 0x148) + 0xC80DBCA))) != 0) {
         t1 = vmsio_isready(a4);
         if (t1 == 0) {
             vmsfs_unmount(a4);
-            return 0xFFFFFF01;
+            t33 = 0xFFFFFF01;
+        } else {
+            t3 = vmsio_ismount(a4);
+            t27 = 0xFFFFFF01;
+            if (t3 != 0) {
+                t21 = 0xFFFFFF01;
+                if ((*(signed char *)(((a4 * 0x148) + 0xC80DBD0))) == 0) {
+                } else {
+                    t5 = buIsFormat(a4);
+                    t16 = 0xFFFFFF03;
+                    if ((int)t5 >= 0) {
+                        t7 = search_exec_file(a4, ((int)stk + 0));
+                        t11 = 0xFFFFFF05;
+                        if ((int)t7 >= 0) {
+                            t9 = 0x0;
+                            for (;;) {
+                                if ((int)t9 >= (int)0xC) {
+                                    break;
+                                }
+                                t8 = ((int)stk + 0);
+                                t8 = (t8 + 0x10);
+                                t7 = t9;
+                                t8 = (*(signed char *)((t8 + t7)));
+                                t9 = (t9 + 0x1);
+                                *(unsigned char *)((a5 + t7)) = t8;
+                            }
+                            *(unsigned char *)((a5 + 0xC)) = 0x0;
+                            t11 = 0x0;
+                        }
+                        t16 = t11;
+                    }
+                    t21 = t16;
+                }
+                t27 = t21;
+            }
+            t33 = t27;
         }
-        t3 = vmsio_ismount(a4);
-        if (t3 != 0) {
-            if ((*(signed char *)(((a4 * 0x148) + 0xC80DBD0))) == 0) {
-                return 0xFFFFFF01;
-            }
-            t5 = buIsFormat(a4);
-            if ((int)t5 < 0) {
-                return 0xFFFFFF03;
-            }
-            t6 = search_exec_file(a4, ((int)stk + 0));
-            if ((int)t6 < 0) {
-                return 0xFFFFFF05;
-            }
-            return ((int (*)(int, int, int, int))(0xC1040AA))(0x0, 0xC, 0x0, a7);
-        }
-        return 0xFFFFFF01;
+        t39 = t33;
     }
-    return 0xFFFFFF01;
+    return t39;
 }
 
 int FUN_0c1152a4(int a4)
@@ -621,36 +651,41 @@ int ADXT_StartFname(int a4, int a5)
     return t20;
 }
 
-int snd_send_port_command(int a4, int a5, int a6, int a7)
+int snd_send_port_command(int a4, int a5, int a6)
 {
     int stk[5];
+    register int t0;
+    register int t1;
+    register int t22;
     int t3;
 
     *(unsigned short *)(((((int)stk + 0) + 0xA) + 0x0)) = a4;
     *(unsigned int *)(((int)stk + 4)) = a5;
     *(unsigned int *)(((int)stk + 0)) = a6;
-    *(volatile short *)(((int)stk + 10));
-    if (((*(int *)(((int)stk + 4))) & 0xFF00) != 0) {
+    t0 = *(short *)(((int)stk + 10));
+    t1 = *(int *)(((int)stk + 4));
+    t22 = ((((0xF & (unsigned short)t0) << 16) << 8) + t1);
+    if ((t1 & 0xFF00) != 0) {
         t3 = *(int *)(((int)stk + 4));
         if ((t3 != 0x1A0) && (t3 != 0x4A0)) {
             if ((t3 != 0x5A0) && ((t3 != 0x6A0) && (t3 != 0x7A0))) {
                 if ((t3 != 0x9A0) && ((t3 != 0xAA0) && (t3 != 0x10A0))) {
+                    t22 = ((((0xF & (unsigned short)t0) << 16) << 8) + t1);
                     if (t3 != 0x11A0) {
-                        return ((int (*)(int, int, int, int))(0xC0E5A7A))(a4, a5, a6, a7);
+                    } else {
+                        t22 = (((((0xF & (unsigned short)t0) << 16) << 8) + t1) + ((((*(int *)(((int)stk + 0))) + 0x40) & 0x7F) << 16));
                     }
-                    *(volatile int *)(((int)stk + 0));
-                    return ((int (*)(int, int, int, int))(0xC0E5A74))(a4, a5, a6, a7);
+                } else {
+                    t22 = (((((0xF & (unsigned short)t0) << 16) << 8) + t1) + (((*(int *)(((int)stk + 0))) & 0x7F) << 16));
                 }
-                *(volatile int *)(((int)stk + 0));
-                return ((int (*)(int, int, int, int))(0xC0E5A7A))(a4, a5, a6, a7);
+            } else {
+                t22 = (((((0xF & (unsigned short)t0) << 16) << 8) + t1) + ((((*(int *)(((int)stk + 0))) + 0x40) & 0x7F) << 16));
             }
-            *(volatile int *)(((int)stk + 0));
-            return ((int (*)(int, int, int, int))(0xC0E5A74))(a4, a5, a6, a7);
+        } else {
+            t22 = (((((0xF & (unsigned short)t0) << 16) << 8) + t1) + (((*(int *)(((int)stk + 0))) & 0x7F) << 16));
         }
-        *(volatile int *)(((int)stk + 0));
-        return ((int (*)(int, int, int, int))(0xC0E5A7A))(a4, a5, a6, a7);
     }
-    return ((int (*)(int, int, int, int))(0xC0E5A7A))(a4, a5, a6, a7);
+    return (snd_send_command(t22));
 }
 
 int fmMngFormat(int a4, int a5, int a6)

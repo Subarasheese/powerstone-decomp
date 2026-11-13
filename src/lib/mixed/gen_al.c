@@ -183,7 +183,7 @@ int FUN_0c1070ce(void);
 int FUN_0c107cec(int, int, int, int, int, int, int);
 int FUN_0c1084a8(void);
 int FUN_0c108768(void);
-int FUN_0c1099e0(void);
+int FUN_0c1099e0(int a4, int a5, int a6, int a7);
 int FUN_0c109fae(int, int, int, int, int, int);
 int FUN_0c10ac40(int, int);
 int FUN_0c10acec(int, int, int);
@@ -296,7 +296,7 @@ int cam_mode_25(int a4);
 int nlInitMatrixStack(int a4, int a5, int a6);
 int gfx_set_fog_color(int a4);
 int nl_sprite_set_register(int a4, int a5);
-int nl_sprite_set_release(int a4, int a5, int a6, int a7);
+int nl_sprite_set_release(int a4, int a5);
 int FUN_0c0e5178(int a4, int a5, int a6);
 int FUN_0c0e50ec(int a4, int a5, int a6);
 int FUN_0c0e67f4(int a4, int a5);
@@ -926,11 +926,12 @@ int nl_sprite_set_register(int a4, int a5)
     return t4;
 }
 
-int nl_sprite_set_release(int a4, int a5, int a6, int a7)
+int nl_sprite_set_release(int a4, int a5)
 {
     int stk[4];
     register int t1;
     register int t2;
+    register int t4;
 
     *(unsigned int *)(((int)stk + 12)) = a4;
     *(unsigned int *)(((int)stk + 8)) = a5;
@@ -939,7 +940,8 @@ int nl_sprite_set_release(int a4, int a5, int a6, int a7)
     *(unsigned int *)(((int)stk + 4)) = t1;
     t2 = 0x0;
     for (;;) {
-        if ((*(int *)(((*(int *)(((int)stk + 4))) + 0x4))) == -1) {
+        t4 = *(int *)(((*(int *)(((int)stk + 4))) + 0x4));
+        if (t4 == -1) {
             break;
         }
         nl_sprite_texture_release((*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))));
@@ -950,7 +952,7 @@ int nl_sprite_set_release(int a4, int a5, int a6, int a7)
         t2 = (t2 + 0x1);
         *(unsigned int *)(((int)stk + 0)) = t2;
     }
-    return ((int (*)(int, int, int, int))(0xC0E3BEC))(a4, a5, a6, a7);
+    return t4;
 }
 
 int FUN_0c0e5178(int a4, int a5, int a6)
@@ -1324,7 +1326,7 @@ int FUN_0c0fca52(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 20)) = a4;
     *(unsigned int *)(((int)stk + 16)) = a5;
-    t0 = FUN_0c1099e0();
+    t0 = FUN_0c1099e0(((int)stk + 0), ((int)stk + 4), ((int)stk + 8), ((int)stk + 12));
     *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x0)) = (((*(int *)(((int)stk + 0))) + (*(int *)(((int)stk + 4)))) + (*(int *)(((int)stk + 8))));
     *(unsigned int *)(((*(int *)(((int)stk + 16))) + 0x0)) = (*(int *)(((int)stk + 12)));
     return t0;

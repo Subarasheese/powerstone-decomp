@@ -3,7 +3,7 @@
 0c0101a8	vmu_lcd_set_busy_image	medium	same expansion from 2nd bitmap; called at state 0 of save/load state machines
 0c0101f0	vmu_lcd_refresh	medium	pdVmsLcdIsReady then writes LCD buffer to port from vmu_port_handles
 0c01025c	vmu_event_handler	high	switch on event ids filling 8-slot port table; buIsExistFile on POWSTONE_DAT/POWSTONE__VM, buGetDiskFree
-0c0105a2	vmu_event_callback	medium	8-byte tail jump registering vmu_event_handler through buGetVersion pointer
+0c0105a2	vmu_event_callback	medium	8-byte tail jump registering vmu_event_handler through buSetCompleteCallback pointer
 0c0105c8	vmu_init	high	memset of save buffers, resets 8 port slots, registers callback 0c0105a2
 0c010658	vmu_unmount_current	medium	buUnmount of the mounted port when slot state is 18 and idle; buMountDisk
 0c010774	vmu_get_ready_mask	medium	bitmask of ports with state 18/1 and status not busy; -1 when one is busy

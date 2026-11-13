@@ -29,7 +29,7 @@ int obj_tick_class(int, int, int, int);
 int FUN_0c0f2f7e(void);
 int buDefragDisk(int, int);
 int buLoadFileEx(int, int, int, int, int);
-int buGetVersion(int a4);
+int buSetCompleteCallback(int a4);
 struct o20_uchar { char p[0x20]; unsigned char v; };
 struct o21_uchar { char p[0x21]; unsigned char v; };
 struct o22_uchar { char p[0x22]; unsigned char v; };
@@ -402,7 +402,7 @@ int vmu_event_handler(int a4, int a5, int a6, int a7)
 
 int vmu_event_callback(void)
 {
-    return buGetVersion(0xC01025C);
+    return buSetCompleteCallback(0xC01025C);
 }
 
 int vmu_init(void)

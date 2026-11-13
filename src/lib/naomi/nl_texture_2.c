@@ -74,17 +74,16 @@ int FUN_0c0dd600(int a4)
     return t2;
 }
 
-int FUN_0c0dd6c0(int a4, int a5, int a6, int a7)
+int FUN_0c0dd6c0(int a4)
 {
     int stk[2];
-    register int t73;
+    register int t64;
     register int t3;
     int t4;
     register int t5;
     register int t7;
     register int t9;
     register int t10;
-    register int t62;
     int t2;
     register int t6;
     register int t8;
@@ -104,7 +103,7 @@ int FUN_0c0dd6c0(int a4, int a5, int a6, int a7)
 
     *(unsigned int *)(((int)stk + 4)) = 0x0;
     t4 = *(int *)((a4 + 0x0));
-    t73 = a4;
+    t64 = 0x0;
     if (((int)t4 >= 0) && (t3 = *(int *)((a4 + 0x18)), t3 != 0)) {
         t5 = 0x0;
         t7 = (a4 + 0x18);
@@ -195,15 +194,13 @@ int FUN_0c0dd6c0(int a4, int a5, int a6, int a7)
             t5 = t59;
             t4 = (*(int *)((t10 + t2)));
             t7 = (t7 + t4);
-            t62 = *(int *)((t7 + 0x0));
-            if (t62 == 0) {
+            if ((*(int *)((t7 + 0x0))) == 0) {
                 break;
             }
         }
-        *(volatile int *)(((int)stk + 4));
-        t73 = t62;
+        t64 = (*(int *)(((int)stk + 4)));
     }
-    return ((int (*)(int, int, int, int))(0xC0DD7BE))(t73, a5, a6, a7);
+    return t64;
 }
 
 void FUN_0c0dd7d0(int a4)

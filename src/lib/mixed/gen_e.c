@@ -123,7 +123,7 @@ int nlPopMatrix(int);
 int nlPushMatrix(int);
 int FUN_0c0e5178(int, int, int);
 int FUN_0c0e51d0(void);
-int FUN_0c0e51e8(int, int);
+int FUN_0c0e51e8(int, int, int, int);
 int FUN_0c0e52b6(int, int, int, int);
 int snd_send_command(int);
 int FUN_0c0e60ce(int, int);
@@ -167,9 +167,9 @@ int FUN_0c02c2d0(int a4);
 int fx_spawn_048aa0(int a4);
 int FUN_0c08c114(int a4, int a5, int a6, int a7);
 int savedata_reset_default(void);
-int snd_bank_load(int a4, int a5);
+int snd_bank_load(int a4, int a5, int a6, int a7);
 int FUN_0c0f4328(int a4, int a5, int a6, int a7, int a8, int a9);
-int kmiCopyToFrameBuffer(int a4, int a5, int a6, int a7);
+int kmiCopyToFrameBuffer(int a4, int a5, int a6);
 int ADXB_ExecOneSpsd(int a4, int a5, int a6, int a7);
 int ending_spawn_obj_t03(int a4);
 int FUN_0c02002a(int a4, int a5, int a6, int a7);
@@ -385,10 +385,11 @@ int FUN_0c1137d4(int a4)
     goto L_C11387C;
 }
 
-int snd_bank_load(int a4, int a5)
+int snd_bank_load(int a4, int a5, int a6, int a7)
 {
     int stk[7];
     register int t2;
+    register int t33;
     register int t3;
     register int t10;
     register int t13;
@@ -401,8 +402,9 @@ int snd_bank_load(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 24)) = a4;
     *(unsigned int *)(((int)stk + 20)) = a5;
-    t2 = FUN_0c0e51e8((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))));
+    t2 = FUN_0c0e51e8((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))), a6, a7);
     *(unsigned int *)(((int)stk + 4)) = t2;
+    t33 = t2;
     if (t2 == 0) {
         t3 = *(int *)(((int)stk + 24));
         *(unsigned int *)(((int)stk + 12)) = (*(int *)((t3 + 0x8)));
@@ -452,98 +454,105 @@ int snd_bank_load(int a4, int a5)
             }
         }
         (((struct o0_uint *)0xA08000B0)->v) = 0x0;
+        t33 = 0x0;
     }
-    return ((int (*)(void))(0xC0E569A))();
+    return t33;
 }
 
 int FUN_0c0f4328(int a4, int a5, int a6, int a7, int a8, int a9)
 {
-    int t0;
-    register int t1;
-    register int t2;
-
-    if ((((*(int *)((a7 + 0x0))) & 0x100) != 0) && (t0 = *(signed char *)((a6 + 0x4)), (unsigned char)t0 == 8)) {
-        t0 = *(int *)((a6 + 0x8));
-        if (a9 != 0) {
-            *(unsigned int *)((a9 + 0x0)) = (((unsigned int)((unsigned int)(unsigned char)(*(signed char *)(((t0 + 0x8) + 0x0))) >> 2) >> 2) & 0xF);
-        }
-        t1 = *(signed char *)(((t0 + 0x8) + 0x1));
-        *(unsigned char *)((a8 + 0x0)) = (((unsigned int)(unsigned char)(*(signed char *)(((t0 + 0x8) + 0x0))) >> 2) & 0x3);
-        *(unsigned char *)((a8 + 0x1)) = ((*(signed char *)(((t0 + 0x8) + 0x0))) & 0x3);
-        t2 = 0x0;
-        if ((0x80 & (unsigned char)t1) != 0) {
-            t2 = 0x1;
-        }
-        *(unsigned char *)((a8 + 0x2)) = t2;
-        t2 = 0x0;
-        if ((0x40 & (unsigned char)t1) != 0) {
-            t2 = 0x1;
-        }
-        *(unsigned char *)((a8 + 0x3)) = t2;
-        t2 = 0x0;
-        if ((0x20 & (unsigned char)t1) != 0) {
-            t2 = 0x1;
-        }
-        *(unsigned char *)((a8 + 0x4)) = t2;
-        t2 = 0x0;
-        if ((0x10 & (unsigned char)t1) != 0) {
-            t2 = 0x1;
-        }
-        *(unsigned char *)((a8 + 0x5)) = t2;
-        if ((0xF & (unsigned char)t1) != 0) {
-            if ((0xF & (unsigned char)t1) != 1) {
-                if ((0xF & (unsigned char)t1) != 15) {
-                    return ((int (*)(int, int, int, int))(0xC0F43E6))(a8, (t0 + 0x8), (unsigned char)t1, 0x0);
-                }
-                return ((int (*)(int, int, int, int))(0xC0F43E2))(a8, (t0 + 0x8), (unsigned char)t1, 0x0);
-            }
-            *(unsigned char *)((a8 + 0x6)) = (*(signed char *)((((t0 + 0x8) + 0x2) + 0x0)));
-            *(volatile signed char *)((((t0 + 0x8) + 0x2) + 0x0));
-            return ((int (*)(int, int, int, int))(0xC0F43EC))(a8, (t0 + 0x8), (unsigned char)t1, 0x0);
-        }
-        *(unsigned char *)((a8 + 0x6)) = (*(signed char *)((((t0 + 0x8) + 0x2) + 0x0)));
-        *(volatile signed char *)(((t0 + 0x8) + 0x3));
-        return ((int (*)(int, int, int, int))(0xC0F43EC))(a8, (t0 + 0x8), (unsigned char)t1, 0x0);
-    }
-    return ((int (*)(int, int, int, int))(0xC0F43F0))(0xFFFFFFFE, a5, a6, a7);
-}
-
-int kmiCopyToFrameBuffer(int a4, int a5, int a6, int a7)
-{
-    int stk[2];
     register int t0;
     register int t2;
+    register int t3;
+    register int t4;
 
-    t0 = _builtin_get_imask();
-    if ((a4 & 0x1F) == 0) {
-        if ((a5 & 0x1F) == 0) {
-            if (t0 == 0) {
-                kmiPurgeMemory(a5, a6);
-                if ((0xFFFFFFE0 & a6) != 0) {
-                    for (;;) {
-                        *(int *)((int)stk + 0) = ((int)stk + 4);
-                        t2 = FUN_0c10b7b0((0x11000000 + a4), a5, (0xFFFFFFE0 & a6), 0x18, ((int)stk + 4));
-                        if (t2 != 0x100) {
-                            break;
-                        }
-                    }
-                    (((struct o0_uint *)0xC8173E4)->v) = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
-                } else {
-                    (((struct o0_uint *)0xC8173E4)->v) = 0x0;
-                }
-                if ((a6 & 0x1F) != 0) {
-                    FUN_0c0fddbe((0xA4000000 + (a4 + (0xFFFFFFE0 & a6))), (a5 + (0xFFFFFFE0 & a6)), (a6 & 0x1F));
-                }
-                if (((((struct o4_int *)0xC8173E4)->v)) == 1) {
-                    FUN_0c10bbb4(((((struct o0_int *)0xC8173E4)->v)));
-                }
-                return 0x1;
+    t0 = 0xFFFFFFFE;
+    if (((*(int *)((a7 + 0x0))) & 0x100) != 0) {
+        t0 = 0xFFFFFFFE;
+        if ((unsigned char)(*(signed char *)((a6 + 0x4))) != 8) {
+        } else {
+            t2 = *(int *)((a6 + 0x8));
+            if (a9 != 0) {
+                *(unsigned int *)((a9 + 0x0)) = (((unsigned int)((unsigned int)(unsigned char)(*(signed char *)(((t2 + 0x8) + 0x0))) >> 2) >> 2) & 0xF);
             }
-            return ((int (*)(int, int, int, int))(0xC10E2E0))(t0, a5, a6, a7);
+            t3 = *(signed char *)(((t2 + 0x8) + 0x1));
+            *(unsigned char *)((a8 + 0x0)) = (((unsigned int)(unsigned char)(*(signed char *)(((t2 + 0x8) + 0x0))) >> 2) & 0x3);
+            *(unsigned char *)((a8 + 0x1)) = ((*(signed char *)(((t2 + 0x8) + 0x0))) & 0x3);
+            t4 = 0x0;
+            if ((0x80 & (unsigned char)t3) != 0) {
+                t4 = 0x1;
+            }
+            *(unsigned char *)((a8 + 0x2)) = t4;
+            t4 = 0x0;
+            if ((0x40 & (unsigned char)t3) != 0) {
+                t4 = 0x1;
+            }
+            *(unsigned char *)((a8 + 0x3)) = t4;
+            t4 = 0x0;
+            if ((0x20 & (unsigned char)t3) != 0) {
+                t4 = 0x1;
+            }
+            *(unsigned char *)((a8 + 0x4)) = t4;
+            t4 = 0x0;
+            if ((0x10 & (unsigned char)t3) != 0) {
+                t4 = 0x1;
+            }
+            *(unsigned char *)((a8 + 0x5)) = t4;
+            if ((0xF & (unsigned char)t3) != 0) {
+                if ((0xF & (unsigned char)t3) != 1) {
+                    if ((0xF & (unsigned char)t3) != 15) {
+                        *(unsigned char *)((a8 + 0x6)) = 0xFF;
+                        t3 = 0xFF;
+                    } else {
+                        *(unsigned char *)((a8 + 0x6)) = 0x0;
+                        t3 = 0x0;
+                    }
+                    t4 = t3;
+                } else {
+                    *(unsigned char *)((a8 + 0x6)) = (*(signed char *)((((t2 + 0x8) + 0x2) + 0x0)));
+                    t4 = (*(signed char *)((((t2 + 0x8) + 0x2) + 0x0)));
+                }
+                t3 = t4;
+            } else {
+                *(unsigned char *)((a8 + 0x6)) = (*(signed char *)((((t2 + 0x8) + 0x2) + 0x0)));
+                t3 = (*(signed char *)(((t2 + 0x8) + 0x3)));
+            }
+            *(unsigned char *)((a8 + 0x7)) = t3;
+            t0 = 0x0;
         }
-        return ((int (*)(int, int, int, int))(0xC10E2E0))(t0, a5, a6, a7);
     }
-    return ((int (*)(int, int, int, int))(0xC10E2E0))(t0, a5, a6, a7);
+    return t0;
+}
+
+int kmiCopyToFrameBuffer(int a4, int a5, int a6)
+{
+    int stk[2];
+    register int t2;
+
+    if (((a4 & 0x1F) == 0) && (((a5 & 0x1F) == 0) && ((_builtin_get_imask()) == 0))) {
+        kmiPurgeMemory(a5, a6);
+        if ((0xFFFFFFE0 & a6) != 0) {
+            for (;;) {
+                *(int *)((int)stk + 0) = ((int)stk + 4);
+                t2 = FUN_0c10b7b0((0x11000000 + a4), a5, (0xFFFFFFE0 & a6), 0x18, ((int)stk + 4));
+                if (t2 != 0x100) {
+                    break;
+                }
+            }
+            (((struct o0_uint *)0xC8173E4)->v) = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
+        } else {
+            (((struct o0_uint *)0xC8173E4)->v) = 0x0;
+        }
+        if ((a6 & 0x1F) != 0) {
+            FUN_0c0fddbe((0xA4000000 + (a4 + (0xFFFFFFE0 & a6))), (a5 + (0xFFFFFFE0 & a6)), (a6 & 0x1F));
+        }
+        if (((((struct o4_int *)0xC8173E4)->v)) == 1) {
+            FUN_0c10bbb4(((((struct o0_int *)0xC8173E4)->v)));
+        }
+    } else {
+        FUN_0c0fddbe((0xA4000000 + a4), a5, a6);
+    }
+    return 0x1;
 }
 
 int ADXB_ExecOneSpsd(int a4, int a5, int a6, int a7)

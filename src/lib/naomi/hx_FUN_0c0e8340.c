@@ -4,7 +4,7 @@
    culls against the screen, selects the texture's store-queue area (QACR0/1 from the table at *0x0C803DF4) and writes
    the polygon parameters and vertices through the store queues; strip runs go to nl_display_strip_ofst / nl_display_triangle_ofst (called
    here through r3, which both overwrite on entry, instead of the original bsr) and special headers -2 / -3 to
-   nl_objasm_draw_obj_bump / FUN_0c0ec180. r5 points at the draw parameters (light vector, scale, flags).
+   nl_objasm_draw_obj_bump / nl_objasm_draw_obj_vtxcol. r5 points at the draw parameters (light vector, scale, flags).
    Unreachable in the original: 0C0E83E6 and 0C0E8400-0C0E8424 (the fcmp/gt before them compares 1.0 with 1.0, both from fldi1). */
 #pragma inline_asm(nl_objasm_draw_obj_ofst)
 void nl_objasm_draw_obj_ofst(void)

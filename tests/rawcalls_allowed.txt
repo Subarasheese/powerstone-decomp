@@ -1,0 +1,2 @@
+# raw calls into code no function in functions.txt starts at, known when tools/8-build/rawcalls.py was
+# introduced: target, calling function, file. Each one is C still to write; the list only shrinks.

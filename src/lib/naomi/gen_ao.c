@@ -1,6 +1,11 @@
 /* Straight-line functions with calls and guards (batch gen_ao): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+static float iaFsrra(float x)
+{
+    return _builtin_fsrra(x);
+}
+extern float _builtin_sqrtf(float);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 int nlCalcPoint(int, int);
@@ -17,8 +22,8 @@ extern void _builtin_st_ext(float (*)[4]);
 float nlMultiMatrixRevOrder8(int a4);
 int math_mat_transform_point(int a4, int a5);
 int math_mat_transform_vector(int a4, int a5);
-int FUN_0c0e09f0(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7);
-int FUN_0c0e24f0(int a4, int a5, int a6, int a7);
+void FUN_0c0e09f0(int a4, int a5, int a6, float f4, float f5, float f6, float f7);
+float FUN_0c0e24f0(int a4);
 
 float nlMultiMatrixRevOrder8(int a4)
 {
@@ -177,26 +182,46 @@ float nlMultiMatrixRevOrder8(int a4)
 
 
 
-int FUN_0c0e09f0(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7)
+void FUN_0c0e09f0(int a4, int a5, int a6, float f4, float f5, float f6, float f7)
 {
+    register int t0;
+    register int t1;
+    register int t2;
+    register float u3;
+
     if (a4 == 0) {
         if (a5 != 0) {
-            return nlLoadMatrix(a5, a5, a6, f4, f5, f6, f7);
+            nlLoadMatrix(a5, a5, a6, f4, f5, f6, f7);
+    return;
         }
-        return ((int (*)(int, int, int, int))(0xC0E0A30))(a4, a5, a6, a7);
+        return;
     }
     if (a5 == 0) {
-        return nlStoreMatrix(a4);
+        nlStoreMatrix(a4);
+    return;
     }
-    return ((int (*)(int, int, int, int))(0xC0E0A22))(a4, a4, a6, a7);
+    t0 = 0x10;
+    t1 = a4;
+    t2 = a5;
+    for (;;) {
+        u3 = *(float *)((t2 + 0x0));
+        t2 = (t2 + 0x4);
+        t0 = (t0 - 0x1);
+        *(float *)((t1 + 0x0)) = u3;
+        t1 = (t1 + 0x4);
+        if (t0 == 0) {
+            break;
+        }
+    }
 }
 
-int FUN_0c0e24f0(int a4, int a5, int a6, int a7)
+float FUN_0c0e24f0(int a4)
 {
     register float u0;
     register float u1;
     register float u2;
     register float u5;
+    register float u6;
     float u3[4];
     float u4[4];
 
@@ -212,5 +237,9 @@ int FUN_0c0e24f0(int a4, int a5, int a6, int a7)
     u4[2] = u2;
     u4[3] = 0.0f;
     u5 = _builtin_fipr(u3, u4);
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0E251E))((((a4 + 0x4) + 0x4) + 0x4), (a4 + 0xC), a6, a7, u0, u1, u2, u5);
+    u6 = iaFsrra(u5);
+    *(float *)((((a4 + 0xC) - 0x4) + 0x0)) = (u2 * u6);
+    *(float *)(((((a4 + 0xC) - 0x4) - 0x4) + 0x0)) = (u1 * u6);
+    *(float *)((((((a4 + 0xC) - 0x4) - 0x4) - 0x4) + 0x0)) = (u0 * u6);
+    return _builtin_sqrtf(u5);
 }

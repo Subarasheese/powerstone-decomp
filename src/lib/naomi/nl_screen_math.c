@@ -1,5 +1,11 @@
 /* nl screen/frame buffer wrappers (0c0ddf30-0c0dfe20) */
 
+int FUN_0c0fd8c0(int, int);
+int FUN_0c0fb3fe(int);
+float math_exp_float(float x);
+float math_pow_float(float x, float y);
+float math_ln_float(float x);
+float math_ldexp_float(float value, int exp_add);
 struct o0_uint { unsigned int v; };
 struct o20_uint { char p[0x20]; unsigned int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
@@ -71,6 +77,7 @@ int kmSetColorClampValue(PACKED lo, PACKED hi);
 struct o6_short { char p[0x6]; short v; };
 int kmSetBackGroundPlane(int, int, int, int);
 struct o10_float { char p[0x10]; float v; };
+struct o20_int { char p[0x20]; int v; };
 float math_tan_reduce_quadrant(int *quadrant, float x);
 
 int nlSysMetricsReadTimer(void);
@@ -82,12 +89,33 @@ float math_floor_float(float x);
 int math_rand_next(void);
 float math_tan_angle16(int angle_arg);
 
-int FUN_0c0ddf30(void)
+void FUN_0c0ddf30(void)
 {
+    int stk[2];
+    register int t0;
+    register int t1;
+
     (((struct o0_uint *)0xFFA00020)->v) = 0x0;
     (((struct oC_uint *)0xFFA00020)->v) = 0x1201;
     (((struct o20_uint *)0xFFA00020)->v) = 0x8201;
-    return ((int (*)(int, int, int, int))(0xC0DDF6E))(0x8201, 0xFFA00040, 0x0, 0x10000);
+    t0 = 0x1201;
+    for (;;) {
+        t1 = (((struct o20_int *)0xFFA00020)->v);
+        *(unsigned int *)(((int)stk + 4)) = t1;
+        if (t1 == 0x8201) {
+            break;
+        }
+        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        for (;;) {
+            if ((int)(*(int *)(((int)stk + 0))) >= (int)0x10000) {
+                break;
+            }
+            t0 = (*(int *)(((int)stk + 0)));
+            t0 = (t0 + 0x1);
+            *(unsigned int *)(((int)stk + 0)) = t0;
+        }
+        (((struct o20_uint *)0xFFA00020)->v) = 0x8201;
+    }
 }
 
 int gfx_flip_frame_buffer(void)
@@ -340,16 +368,19 @@ void gfx_init_renderer(void)
 
 int gfx_set_display_mode(int a4, int a5, int a6, int a7)
 {
-    if (a4 != 0) {
-        if (a4 != 2) {
-            if (a4 != 4) {
-                return ((int (*)(int, int, int, int))(0xC0DE9A2))(a4, 0x20, a6, a7);
-            }
-            return ((int (*)(int, int, int, int))(0xC0DE9A0))(a4, 0x20, a6, a7);
-        }
-        return ((int (*)(int, int, int, int))(0xC0DE9A2))(a4, 0x20, a6, a7);
+    int depth;      /* the frame buffer's depth code: 32, 34 for mode 2, 36 for mode 4 */
+
+    depth = 32;
+    if (a4 == 2) {
+        depth = 34;
+    } else if (a4 == 4) {
+        depth = 36;
     }
-    return ((int (*)(int, int, int, int))(0xC0DE9A2))(a4, 0x20, a6, a7);
+    if (*(int *)0xC7F8880 == 1) {
+        *(int *)0xC7F886C = depth;
+        return 1;
+    }
+    return FUN_0c0f9c20(1, depth);
 }
 
 void FUN_0c0dea20(int a4)
@@ -357,21 +388,28 @@ void FUN_0c0dea20(int a4)
     *(unsigned int *)0xC7F887C = a4;
 }
 
-int gfx_set_vertex_buffer(int a4, int a5, int a6, int a7)
+int gfx_set_vertex_buffer(int a4)
 {
-    if ((*(int *)0xC7F8880) == 1) {
+    register int t0;
+
+    t0 = *(int *)0xC7F8880;
+    if (t0 == 1) {
         *(unsigned int *)0xC7F8834 = (0xA0000000 | a4);
-        return ((int (*)(int, int, int, int))(0xC0DEA80))(a4, a5, a6, a7);
+        return t0;
     }
-    return ((int (*)(int, int, int, int))(0xC0DEA70))(a4, a5, a6, a7);
+    return FUN_0c0fd8c0((0xA0000000 | a4), 0x0);
 }
 
 int gfx_set_list_buffers(int a4, int a5, int a6, int a7)
 {
+    register int t3;
+
     if ((*(int *)0xC7F8880) == 1) {
-        return (gfx_set_frame_time_weights(a4, a5, a6, a7));
+        t3 = (gfx_set_frame_time_weights(a4, a5, a6, a7));
+    } else {
+        t3 = (FUN_0c0de290(a4, a5, a6, a7));
     }
-    return ((int (*)(void))(0xC0DEC00))();
+    return t3;
 }
 
 int nlSysMetricsGetFrameBuffer(int a4)
@@ -544,12 +582,15 @@ void FUN_0c0df070(void)
     
 }
 
-int FUN_0c0df080(int a4, int a5, int a6, int a7)
+int FUN_0c0df080(int a4)
 {
+    register int t0;
+
+    t0 = 0xC0DF070;
     if (a4 == 0) {
-        return ((int (*)(int, int, int, int))(0xC0DF092))(0xC0DEFE0, a5, a6, a7);
+        t0 = 0xC0DEFE0;
     }
-    return ((int (*)(int, int, int, int))(0xC0DF092))(0xC0DF070, a5, a6, a7);
+    return FUN_0c0fb3fe(t0);
 }
 
 void FUN_0c0df0b0(int a4)
@@ -631,7 +672,7 @@ float math_signed_sqrt(float f4)
     return _builtin_sqrtf(f4);
 }
 
-int math_atan_angle16(int a4, int a5, int a6, int a7, float f4)
+int math_atan_angle16(float f4)
 {
     register int t0;
     register int t1;
@@ -648,12 +689,12 @@ int math_atan_angle16(int a4, int a5, int a6, int a7, float f4)
     t0 = 0xD;
     u1 = 0.0f;
     for (;;) {
-        t2 = (t0 << 1);
-        t1 = t0;
+        t1 = (t0 << 1);
+        t2 = t0;
         t0 = (t0 - 1);
-        u2 = ((float)t1 * (float)t1);
+        u2 = ((float)t2 * (float)t2);
         u3 = (u2 * u0);
-        u2 = (((float)t2 + u1) + 1.0f);
+        u2 = (((float)t1 + u1) + 1.0f);
         u1 = (u3 * u0);
         u1 = (u1 / u2);
         if ((int)t0 < (int)0x1) {
@@ -662,12 +703,12 @@ int math_atan_angle16(int a4, int a5, int a6, int a7, float f4)
     }
     u2 = ((((u0 / (u1 + 1.0f)) + 6.28318501f) * 65536.0f) / 6.28318501f);
     if (f4 > 1.0f) {
-        return ((int (*)(int, int, int, int, float, float, float, float, float))(0xC0DF3DC))(((int)(u2 + 0.5f) & 0xFFFF), 0x1, a6, a7, f4, (u0 / (u1 + 1.0f)), 1.0f, 6.28318501f, (float)t1);
+        return (unsigned short)(0x4000 - ((int)(u2 + 0.5f) & 0xFFFF));
     }
     if (-1.0f > f4) {
-        return ((int (*)(int, int, int, int, float, float, float, float, float))(0xC0DF3DC))(((int)(u2 + 0.5f) & 0xFFFF), 0x1, a6, a7, f4, (u0 / (u1 + 1.0f)), 1.0f, 6.28318501f, (float)t1);
+        return (unsigned short)(0xC000 - ((int)(u2 + 0.5f) & 0xFFFF));
     }
-    return ((int (*)(int, int, int, int, float, float, float, float, float))(0xC0DF3E0))(((int)(u2 + 0.5f) & 0xFFFF), 0x1, a6, a7, f4, (u0 / (u1 + 1.0f)), 1.0f, 6.28318501f, (float)t1);
+    return ((int)(u2 + 0.5f) & 0xFFFF);
 }
 
 float math_ceil_float(float f4)
@@ -714,36 +755,21 @@ float math_cot_angle16(int a4)
     return 3.40282347e+38f;
 }
 
-int math_exp_float(int a4, int a5, int a6, int a7, float f4)
+/* e to the power x: x = k ln 2 + r (k rounded to nearest), e^r = (2 + r + t) / (2 - r + t) with the continued fraction
+   t = r^2 / (6 + r^2 / (10 + r^2 / 14)), then scaled by 2^k */
+float math_exp_float(float x)
 {
-    register float u0;
-    register float u7;
-    register int t8;
-    register float u9;
-    register int t10;
-    register float u11;
-    register float u4;
+    float ln2 = 0.693147123f, half, t, r2;
+    int k, d;
 
-    u0 = (((struct o0_float *)0xC0DF764)->v);
-    if (!(0.0f > f4)) {
-        u4 = ((((struct o4_float *)0xC0DF764)->v));
-    } else {
-        u4 = ((((struct o8_float *)0xC0DF764)->v));
-    }
-    u7 = ((float)(int)(u4 + (f4 / u0)) * u0);
-    t8 = 0xA;
-    u9 = (((f4 - u7) * (f4 - u7)) / ((((struct oC_float *)0xC0DF764)->v)));
-    for (;;) {
-        t10 = t8;
-        t8 = (t8 - 4);
-        u11 = ((float)t10 + u9);
-        u9 = ((f4 - u7) * (f4 - u7));
-        u9 = (u9 / u11);
-        if ((int)t8 < (int)0x6) {
-            break;
-        }
-    }
-    return ((int (*)(int, int, int, int, float))(0xC0DF63A))((int)(u4 + (f4 / u0)), t8, 0x6, a7, ((f4 - u7) * (f4 - u7)));
+    half = 0.0f > x ? -0.5f : 0.5f;
+    k = (int)(x / ln2 + half);
+    x = x - (float)k * ln2;
+    r2 = x * x;
+    t = r2 / 14.0f;
+    for (d = 10; d >= 6; d -= 4)
+        t = r2 / ((float)d + t);
+    return math_ldexp_float((x + t + 2.0f) / (t - x + 2.0f), k);
 }
 
 /* floorf: largest integer value not above x (values with |x| >= 2^23 and NaN are returned unchanged). */
@@ -799,8 +825,9 @@ float math_ldexp_float(float value, int exp_add)
     return bits.as_float;
 }
 
-void math_ln_float(int a4, int a5, int a6, int a7, float f4)
+float math_ln_float(float f4)
 {
+    register int t0;
     register float u0;
     register float u1;
     register float u2;
@@ -840,52 +867,56 @@ void math_ln_float(int a4, int a5, int a6, int a7, float f4)
             u3 = u5;
             u4 = u1;
         }
+        t0 = 0x1;
         u0 = (((u3 + -1.0f) / (u3 + 1.0f)) * (1.0f + 1.0f));
-        u1 = (((u3 + -1.0f) / (u3 + 1.0f)) * ((u3 + -1.0f) / (u3 + 1.0f)));
-        u2 = ((((u3 + -1.0f) / (u3 + 1.0f)) * (1.0f + 1.0f)) / (float)0x1);
-        ((int (*)(int, int, int, int, float, float, float, float, float))(0xC0DF83A))(0x1, a5, a6, a7, (((u3 + -1.0f) / (u3 + 1.0f)) * ((u3 + -1.0f) / (u3 + 1.0f))), (u0 * u1), (u4 + u2), u4, 1.0f);
-    return;
+        u1 = u4;
+        for (;;) {
+            u2 = (((u3 + -1.0f) / (u3 + 1.0f)) * ((u3 + -1.0f) / (u3 + 1.0f)));
+            u4 = u0;
+            u0 = (u0 * u2);
+            u2 = u1;
+            u1 = (u1 + (u4 / (float)t0));
+            t0 = (t0 + 0x2);
+            if (u1 == u2) {
+                break;
+            }
+        }
+        return u1;
     }
+    return 0.0f;
 }
 
-void math_pow_float(int a4, int a5, int a6, int a7, float f4, float f5)
+/* x to the power y: whole powers by repeated squaring (a negative one through 1 / x), others as exp(y ln x); 0 for a
+   negative x, and for 0 to a positive power; 1 for 0 to any other */
+float math_pow_float(float x, float y)
 {
-    register float u1;
-    register int t4;
-    register float u5;
-    register float u6;
+    int n = (int)y;
+    float b, r;
 
-    if (f4 == 0.0f) {
-        if (!(f5 > 0.0f)) {
-            return;
-        }
-        ((int (*)(int, int, int, int, float, float))(0xC0DF8F6))((int)f5, a5, a6, a7, f4, f5);
-    return;
+    if (x == 0.0f) {
+        if (y > 0.0f)
+            return 0.0f;
+        return 1.0f;
     }
-    if (f5 == (float)(int)f5) {
-        t4 = (int)f5;
-        u1 = f4;
-        if ((int)(int)f5 < 0) {
-            t4 = (-(int)f5);
-            u1 = (1.0f / f4);
+    if ((float)n == y) {
+        b = x;
+        if (n < 0) {
+            n = -n;
+            b = 1.0f / x;
         }
-        u5 = 1.0f;
-        u6 = u1;
+        r = 1.0f;
         for (;;) {
-            if ((t4 & 0x1) != 0) {
-                u5 = (u5 * u6);
-            }
-            t4 = ((int)((unsigned int)((int)((unsigned int)t4 + (unsigned int)0x0)) + ((((int)0x0 > (int)t4)) ? 1u : 0u)));
-            t4 = (t4 >> 1);
-            if (t4 != 0) {
-                u6 = (u6 * u6);
-                continue;
-            }
-            break;
+            if (n & 1)
+                r = r * b;
+            n = (n + (0 > n)) >> 1;
+            if (n == 0)
+                return r;
+            b = b * b;
         }
-        return;
     }
-    ((int (*)(int, int, int, int, float, float))(0xC0DF8F0))((int)f5, a5, a6, a7, f4, f5);
+    if (0.0f > x)
+        return 0.0f;
+    return math_exp_float(y * math_ln_float(x));
 }
 
 int math_rand_next(void)
@@ -910,32 +941,31 @@ void math_set_rand_seed(int a4)
     *(unsigned int *)0xC346A50 = a4;
 }
 
-int math_round_away_float(int a4, int a5, int a6, int a7, float f4)
+float math_round_away_float(float f4)
 {
-    register int t2;
+    register int t0;
     register int t1;
-    register int t3;
     float s1;
 
     s1 = _builtin_fabsf(f4);
     if ((*(float *)0xC0DFAC0) > s1) {
         if ((s1 - (float)(int)s1) != 0.0f) {
-            t2 = (int)s1;
+            t0 = (int)s1;
             if (f4 > 0.0f) {
-                t2 = ((int)s1 + 0x1);
-                t3 = ((int)s1 + 0x1);
+                t0 = ((int)s1 + 0x1);
+                t0 = ((int)s1 + 0x1);
             } else {
                 t1 = (0xFFFFFFFF - (int)s1);
-                t3 = (0xFFFFFFFF - (int)s1);
+                t0 = (0xFFFFFFFF - (int)s1);
             }
-            return ((int (*)(int, int, int, int, float, float))(0xC0DFA08))(t2, a5, a6, a7, f4, (s1 - (float)(int)s1));
+            return (float)t0;
         }
-        return ((int (*)(int, int, int, int, float, float))(0xC0DFA10))((int)s1, a5, a6, a7, f4, (s1 - (float)(int)s1));
+        return f4;
     }
-    return ((int (*)(float, float))(0xC0DFA10))(f4, s1);
+    return f4;
 }
 
-int math_sin_reduce_quadrant(int a4, int a5, int a6, int a7, float f4)
+float math_sin_reduce_quadrant(int a4, float f4)
 {
     register int t0;
     register int t1;
@@ -964,7 +994,7 @@ int math_sin_reduce_quadrant(int a4, int a5, int a6, int a7, float f4)
             break;
         }
     }
-    return ((int (*)(int, int, int, int, float, float, float))(0xC0DFBF8))(t0, 0x3, a6, a7, u2, u0, (u2 * u2));
+    return (u2 / (1.0f - u0));
 }
 
 float math_tan_float(float x)

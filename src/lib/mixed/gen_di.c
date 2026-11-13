@@ -75,6 +75,7 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
+struct o68_int { char p[0x68]; int v; };
 int ADXSJD_GetDecNumSmpl(int);
 int vmu_lcd_set_idle_image(void);
 int vmu_lcd_set_busy_image(void);
@@ -310,7 +311,6 @@ int FUN_0c10c0e0(Stk29 s)
     register int t10;
     register int t11;
     register int t12;
-    int t36;
 
     stk[2] = s.w[0];
     stk[3] = s.w[1];
@@ -358,12 +358,8 @@ int FUN_0c10c0e0(Stk29 s)
     (((struct o4_uint *)0xC8172B4)->v) = (((unsigned short)(*(int *)(((((int)stk + 4) + 0x8) + 0x10))) | (((*(int *)(((((int)stk + 4) + 0x8) + 0xC))) & 0x1) << 16)) | ((((*(int *)(((((int)stk + 4) + 0x8) + 0x1C))) & 0x1) << 16) << 2));
     (((struct o10_uint *)0xC81726C)->v) = (((((struct o44_int *)((((int)stk + 4) + 0x8)))->v)) & 0x1FF);
     (((struct o18_uint *)0xC81726C)->v) = (((((*(int *)(((((int)stk + 4) + 0x8) + 0x30))) & 0x7) | ((((*(int *)(((((int)stk + 4) + 0x8) + 0x2C))) & 0x1) << 2) << 1)) | ((unsigned char)(*(int *)(((((int)stk + 4) + 0x8) + 0x34))) << 8)) | ((unsigned char)(*(int *)(((((int)stk + 4) + 0x8) + 0x38))) << 16));
-    *(volatile int *)(((((int)stk + 4) + 0x8) + 0x28));
-    *(volatile int *)(((((int)stk + 4) + 0x8) + 0x3C));
-    *(volatile int *)(((((int)stk + 4) + 0x8) + 0x20));
-    t36 = (((struct o40_int *)((((int)stk + 4) + 0x8)))->v);
-    *(volatile signed char *)(((((int)stk + 4) + 0x8) + 0x70));
-    return ((int (*)(int, int, int, int))(0xC10C234))((((int)stk + 4) + 0x8), 0x1, 0x1F, (((0x7 & t36) << 2) << 2));
+    (((struct o14_uint *)0xC81726C)->v) = (((((((((*(int *)(((((int)stk + 4) + 0x8) + 0x20))) & 0x1) | (((*(int *)(((((int)stk + 4) + 0x8) + 0x28))) & 0x1) << 1)) | (((*(int *)(((((int)stk + 4) + 0x8) + 0x3C))) & 0x3) << 2)) | (((0x7 & ((((struct o40_int *)((((int)stk + 4) + 0x8)))->v))) << 2) << 2)) | ((unsigned char)(*(signed char *)(((((int)stk + 4) + 0x8) + 0x70))) << 8)) | ((0x1F & ((((struct o68_int *)((((int)stk + 4) + 0x8)))->v))) << 16)) | ((((((struct o64_int *)((((int)stk + 4) + 0x8)))->v)) & 0x1) << 22)) | ((((((struct o6C_int *)((((int)stk + 4) + 0x8)))->v)) & 0x1) << 23));
+    return 0x6C;
 }
 
 int FUN_0c1158e6(int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
@@ -414,7 +410,8 @@ int FUN_0c1158e6(int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a1
             t12 = *(int *)((a4 + 0x24));
             *(unsigned int *)((a11 + 0x0)) = ((((unsigned char)(signed char)((unsigned int)((unsigned int)t12 >> 16) >> 8) | (((int)t12 >> 8) & 0xFF00)) | ((t12 << 8) & 0xFF0000)) | ((t12 << 16) << 8));
             t13 = *(int *)((a4 + 0x28));
-            return ((int (*)(int, int, int, int))(0xC115A38))(a4, 0xFF00, 0xFF0000, t13);
+            *(unsigned int *)((a12 + 0x0)) = ((((unsigned char)(signed char)((unsigned int)((unsigned int)t13 >> 16) >> 8) | (((int)t13 >> 8) & 0xFF00)) | ((t13 << 8) & 0xFF0000)) | ((t13 << 16) << 8));
+            return 0x0;
         }
         return 0xFFFFFFFE;
     }

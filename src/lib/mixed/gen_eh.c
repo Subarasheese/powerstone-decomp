@@ -66,6 +66,7 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
+struct o40_uint { char p[0x40]; unsigned int v; };
 int FUN_0c0158d8(void);
 int hit_build_part_shape(int, int);
 float FUN_0c02629e(int, int);
@@ -187,7 +188,7 @@ int FUN_0c085606(int a4);
 int pl_gunrock_state_enter(int a4, int a5, int a6, int a7);
 int stage_gimmick_15_spawn(void);
 int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5);
-int FUN_0c0f7d04(int a4, int a5, int a6);
+int gfx_set_frame_buffer_size(int a4, int a5, int a6);
 int FUN_0c105a14(int a4, int a5, int a6);
 int fx_tick_044250(int a4, int a5, int a6, int a7);
 int fx_tick_044e38(int a4, int a5, int a6, int a7);
@@ -316,87 +317,118 @@ int FUN_0c103e50(int a4, int a5, int a6, int a7)
 int vmsfs_fopen(int a4, int a5, int a6)
 {
     int stk[12];
-    register int t1;
-    register int t3;
-    register int t5;
-    register int t6;
-    register int t7;
-    register int t8;
-    register int t9;
 
-    *(unsigned int *)(((int)stk + 0)) = a6;
-    *(unsigned int *)((a6 + 0x0)) = 0x0;
-    if ((*(signed char *)(((a4 * 0x148) + 0xC80DBCA))) != 0) {
-        t1 = vmsio_isready(a4);
-        if (t1 == 0) {
-            vmsfs_unmount(a4);
-            return 0xFFFFFF01;
-        }
-        t3 = vmsio_ismount(a4);
-        if (t3 != 0) {
-            if ((*(signed char *)(((a4 * 0x148) + 0xC80DBD0))) == 0) {
-                return 0xFFFFFF01;
-            }
-            t5 = buIsFormat(a4);
-            if ((int)t5 < 0) {
-                return 0xFFFFFF03;
-            }
-            t6 = check_isopen();
-            if ((int)t6 >= 0) {
-                t7 = check_file_correct(a4, a5);
-                if ((int)t7 < 0) {
-                    return 0xFFFFFF41;
-                }
-                t8 = open_file_handle();
-                if (t8 == 0) {
-                    return 0xFFFFFF07;
-                }
-                t9 = FUN_0c104962(a4, a5, (((int)stk + 0) + 0x4));
-                *(unsigned int *)0xC812ACC = t9;
-                if ((int)t9 < 0) {
-                    close_file_handle(t8);
-                    return 0xFFFFFF05;
-                }
-                return ((int (*)(void))(0xC102A14))();
-            }
-            return 0xFFFFFF07;
-        }
-        return 0xFFFFFF01;
-    }
-    return 0xFFFFFF01;
+    register int R1;
+    register int R2;
+    register int R3;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    v0_5 = a4;
+    v0_3 = a5;
+    v0_4 = a6;
+    *(unsigned int *)(((int)stk + 0)) = v0_4;
+    *(unsigned int *)((v0_4 + 0x0)) = 0x0;
+    v0_2 = (v0_3);
+    v0_0 = (0x0);
+    v0_1 = (v0_5);
+    if (((*(signed char *)(((v0_5 * 0x148) + 0xC80DBCA))) == 0)) goto L_C102980;
+    v0_5 = (vmsio_isready(v0_1)) != 0;
+    if (v0_5) goto L_C102968;
+    vmsfs_unmount(v0_1);
+    L_C102980:;
+    v0_0 = (0xFFFFFF01);
+    L_C102A34:;
+    return v0_0;
+    L_C102968:;
+    v0_5 = (vmsio_ismount(v0_1)) == 0;
+    if (v0_5) goto L_C102980;
+    if (((*(signed char *)(((v0_1 * 0x148) + 0xC80DBD0))) != 0)) goto L_C102986;
+    goto L_C102980;
+    L_C102986:;
+    v0_3 = (int)(buIsFormat(v0_1)) >= 0;
+    if (v0_3) goto L_C102996;
+    v0_0 = (0xFFFFFF03);
+    goto L_C102A34;
+    L_C102996:;
+    v0_3 = (int)(check_isopen()) < 0;
+    if (v0_3) goto L_C1029C0;
+    v0_3 = (int)(check_file_correct(v0_1, v0_2)) >= 0;
+    if (v0_3) goto L_C1029B4;
+    v0_0 = (0xFFFFFF41);
+    goto L_C102A34;
+    L_C1029B4:;
+    v0_4 = open_file_handle();
+    v0_3 = (v0_4);
+    if (!((v0_4 != 0))) goto L_C1029C0;
+    v0_2 = FUN_0c104962(v0_1, v0_2, (((int)stk + 0) + 0x4));
+    *(unsigned int *)0xC812ACC = v0_2;
+    if (((int)v0_2 >= 0)) goto L_C102A14;
+    close_file_handle(v0_3);
+    v0_0 = (0xFFFFFF05);
+    goto L_C102A34;
+    L_C1029C0:;
+    v0_0 = (0xFFFFFF07);
+    goto L_C102A34;
+    L_C102A14:;
+    *(unsigned int *)((v0_3 + 0x4)) = v0_0;
+    *(unsigned int *)((v0_3 + 0x34)) = (*(int *)(((int)stk + 44)));
+    v0_2 = *(int *)(((int)stk + 16));
+    *(unsigned int *)((v0_3 + 0x38)) = v0_2;
+    (((struct o40_uint *)(v0_3))->v) = v0_2;
+    *(unsigned int *)((v0_3 + 0x28)) = v0_1;
+    *(unsigned short *)((v0_3 + 0x2)) = (*(short *)(((int)stk + 12)));
+    *(unsigned char *)((v0_3 + 0x1)) = (*(signed char *)(((int)stk + 14)));
+    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x0)) = v0_3;
+    v0_0 = (v0_0);
+    goto L_C102A34;
 }
 
-int FUN_0c0f7d04(int a4, int a5, int a6)
+/* The frame buffer's geometry for pixel format `format` (0xFF: the current one, *0x0C816FE8), into the display state at
+   0x0C803D78: the width (+0x48) is 640, or 320 in a low-resolution mode; the height (+0x4C) is 480 or 240 by the video
+   flags, or with mode 1 `lines` rounded up to 32 (which also goes into the display register copy at 0x0C817280); then
+   the bytes per pixel (+0x50, from the format's bit depth) and the buffer's size (+0x60). */
+int gfx_set_frame_buffer_size(int format, int mode, int lines)
 {
-    int stk[6];
-    register int t10;
-    int t7;
-    register int t20;
+    int bits[6];        /* bits per pixel of each format */
+    int width;
+    int height;
 
-    *(unsigned int *)((((int)stk + 0) + 0x0)) = ((((struct o0_int *)0xC15A9F8)->v));
-    *(unsigned int *)((((int)stk + 0) + 0x4)) = ((((struct o4_int *)0xC15A9F8)->v));
-    *(unsigned int *)((((int)stk + 0) + 0x8)) = ((((struct o8_int *)0xC15A9F8)->v));
-    *(unsigned int *)((((int)stk + 0) + 0xC)) = ((((struct oC_int *)0xC15A9F8)->v));
-    *(unsigned int *)((((int)stk + 0) + 0x10)) = ((((struct o10_int *)0xC15A9F8)->v));
-    *(unsigned int *)((((int)stk + 0) + 0x14)) = ((((struct o14_int *)0xC15A9F8)->v));
-    t10 = 0x280;
-    if ((((((struct o0_int *)0xC816FE0)->v)) != 1) && (t7 = (((struct o4_int *)0xC816FE0)->v), (t7 & 16) == 0)) {
-        t10 = 0x140;
+    bits[0] = ((int *)0xC15A9F8)[0];
+    bits[1] = ((int *)0xC15A9F8)[1];
+    bits[2] = ((int *)0xC15A9F8)[2];
+    bits[3] = ((int *)0xC15A9F8)[3];
+    bits[4] = ((int *)0xC15A9F8)[4];
+    bits[5] = ((int *)0xC15A9F8)[5];
+    width = 640;
+    if (*(int *)0xC816FE0 != 1 && (*(int *)0xC816FE4 & 16) == 0) {
+        width = 320;
     }
-    if (a5 == 1) {
-        *(unsigned int *)0xC817280 = ((((*(int *)0xC817280) & 0xFFA0FFFF) | (a5 << 22)) | ((((unsigned int)((unsigned int)((unsigned int)((a6 + 0x1F) & 0xFFFFFFE0) >> 2) >> 2) >> 1) & 0x1F) << 16));
-        return ((int (*)(int, int, int, int))(0xC0F7E02))(a4, (a5 << 22), ((a6 + 0x1F) & 0xFFFFFFE0), t10);
+    if (mode == 1) {
+        height = (lines + 31) & ~31;
+        *(unsigned int *)0xC817280 = (*(unsigned int *)0xC817280 & 0xFFA0FFFF) | (mode << 22)
+                                     | ((((unsigned int)height >> 5) & 31) << 16);
+    } else if (*(int *)0xC816FE0 == 1) {
+        height = 480;
+    } else if ((*(int *)0xC816FE4 & 1) != 1 && (*(int *)0xC816FE4 & 0x2C) == 32) {
+        height = 240;
+    } else if ((*(int *)0xC816FE4 & 32) != 0) {
+        height = 480;
+    } else {
+        height = 240;
     }
-    if (((((struct o0_int *)0xC816FE0)->v)) != 1) {
-        if (((((((struct o4_int *)0xC816FE0)->v)) & 0x1) != 1) && ((t20 = (((struct o4_int *)0xC816FE0)->v), (t20 & 0x2C) == 32) && (0x1 != 0))) {
-            return ((int (*)(int, int, int, int))(0xC0F7E02))(a4, 0x1, 0xF0, t10);
-        }
-        if ((((((struct o4_int *)0xC816FE0)->v)) & 32) != 0) {
-            return ((int (*)(int, int, int, int))(0xC0F7E02))(a4, 0x1, 0x1E0, t10);
-        }
-        return ((int (*)(int, int, int, int))(0xC0F7E00))(a4, 0x1, a6, t10);
+    *(int *)0xC803DC0 = width;
+    *(int *)0xC803DC4 = height;
+    if (format == 0xFF) {
+        format = *(int *)0xC816FE8;
     }
-    return ((int (*)(int, int, int, int))(0xC0F7E02))(a4, a5, 0x1E0, t10);
+    *(unsigned int *)0xC803DC8 = (unsigned int)bits[format] >> 3;
+    *(int *)0xC803DD8 = *(int *)0xC803DC0 * *(int *)0xC803DC4 * *(int *)0xC803DC8;
+    return 96;      /* r0 as the original leaves it; no caller reads it */
 }
 
 int FUN_0c105a14(int a4, int a5, int a6)

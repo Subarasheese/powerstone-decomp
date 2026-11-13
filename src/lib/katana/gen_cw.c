@@ -142,167 +142,130 @@ int FUN_0c0ff1ac(int a4, int a5, int a6, int a7);
 int vmsio_block_write(int a4, int a5, int a6)
 {
     int stk[11];
-    register int t2;
-    register int t5;
-    register int t15;
-    register int t16;
-    register int t18;
-    register int t21;
-    register int t22;
-    register int t25;
-    register int t28;
-    register int t29;
-    register int t32;
-    register int t34;
-    register int t35;
-    register int t37;
-    register int t40;
-    register int t44;
-    register int t52;
-    register int t53;
-    register int t55;
-    register int t58;
-    register int t59;
-    register int t62;
 
-    *(unsigned int *)(((int)stk + 20)) = a4;
-    *(unsigned int *)(((int)stk + 12)) = a6;
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R7;
+    register float F0;
+    register float F3;
+    register float F15;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    register int v0_6;
+    register int v0_7;
+    register int v0_8;
+    v0_2 = a4;
+    v0_0 = a5;
+    v0_1 = a6;
+    *(unsigned int *)(((int)stk + 20)) = v0_2;
+    *(unsigned int *)(((int)stk + 12)) = v0_1;
     *(unsigned int *)(((int)stk + 32)) = (((*(int *)(((int)stk + 20))) * 0x148) + 0xC80DBC8);
-    t2 = vmsio_ismount((*(int *)(((int)stk + 20))));
-    if (t2 == 0) {
-        thunk_FUN_0c1155a8();
-        return 0xFFFFFF01;
-    }
-    t5 = *(int *)((((*(int *)(((int)stk + 20))) << 2) + 0xC15B6C4));
-    kdGetDevice(t5);
+    v0_4 = (vmsio_ismount((*(int *)(((int)stk + 20))))) != 0;
+    v0_3 = (0xC100490);
+    v0_3 = (0xC100742);
+    v0_3 = (0xC112FCA);
+    v0_3 = (v0_0);
+    if (v0_4) goto L_C113374;
+    thunk_FUN_0c1155a8();
+    L_C1134D6:;
+    v0_6 = (0xFFFFFF01);
+    L_C1134D8:;
+    return v0_6;
+    L_C113374:;
+    v0_2 = *(int *)((((*(int *)(((int)stk + 20))) << 2) + 0xC15B6C4));
+    kdGetDevice(v0_2);
     *(unsigned int *)(((int)stk + 16)) = (*(int *)(((int)stk + 12)));
     *(unsigned int *)(((int)stk + 12)) = ((((struct o48_int *)((*(int *)(((*(int *)(((int)stk + 32))) + 0x1C)))))->v));
     *(unsigned int *)(((int)stk + 40)) = 0x0;
-    for (;;) {
-        if ((int)(*(int *)(((int)stk + 40))) >= (int)((((struct o40_int *)((*(int *)(((*(int *)(((int)stk + 32))) + 0x1C)))))->v))) {
-            for (;;) {
-                t15 = thunk_FUN_0c111b6e(t5);
-                if (t15 == 0) {
-                    *(int *)((int)stk + 8) = a5;
-                    t16 = kdSetGetLastError(t5, 0x2, 0x0, 0x0, a5);
-                    if ((int)t16 < 0) {
-                        thunk_FUN_0c1155a8();
-                        continue;
-                    }
-                    break;
-                }
-                return 0xFFFFFF30;
-            }
-            for (;;) {
-                t18 = thunk_FUN_0c111b54(t5, t16);
-                if (t18 == 0) {
-                    thunk_FUN_0c1155a8();
-                    continue;
-                }
-                break;
-            }
-            *(unsigned int *)(((int)stk + 16)) = (kdGetDevice(t5));
-            t21 = thunk_FUN_0c111b6e(t5);
-            if (t21 != 0) {
-                return 0xFFFFFF30;
-            }
-            t22 = *(int *)0xC347700;
-            *(unsigned int *)(((int)stk + 12)) = t22;
-            if (t22 != 0) {
-                t25 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((int)stk + 12)))))((*(int *)(((int)stk + 20))), a5, (((int)stk + 12) + 0xC), (((int)stk + 12) + 0x10), *(int *)((int)stk + 12), *(int *)((int)stk + 12 + 4), *(int *)((int)stk + 12 + 8), *(int *)((int)stk + 12 + 12), *(int *)((int)stk + 12 + 16), *(int *)((int)stk + 12 + 20), *(int *)((int)stk + 12 + 24));
-                if (t25 == 0) {
-                    *(volatile int *)(((int)stk + 16));
-                    return 0xFFFFFF01;
-                }
-                return ((int (*)(void))(0xC1134B4))();
-            }
-            *(volatile int *)(((int)stk + 16));
-            return 0xFFFFFF01;
-        }
-        t28 = 0x0;
-        for (;;) {
-            t29 = thunk_FUN_0c111b6e(t5);
-            if (t29 == 0) {
-                t32 = ((int)((int)(*(int *)(((int)stk + 12))) / (int)0x4));
-                *(int *)((int)stk + 8) = t32;
-                t34 = (*(int *)(((int)stk + 16)));
-                *(int *)((int)stk + 4) = t34;
-                *(int *)((int)stk + 0) = a5;
-                t35 = kdSetBlockWrite(t5, 0x2, 0x0, t28, a5, t34, t32);
-                if ((int)t35 < 0) {
-                    thunk_FUN_0c1155a8();
-                    continue;
-                }
-                for (;;) {
-                    t37 = thunk_FUN_0c111b54(t5, t35);
-                    if (t37 == 0) {
-                        thunk_FUN_0c1155a8();
-                        continue;
-                    }
-                    break;
-                }
-                *(unsigned int *)(((int)stk + 36)) = (kdGetDevice(t5));
-                t40 = thunk_FUN_0c111b6e(t5);
-                if (t40 == 0) {
-                    t44 = *(signed char *)(((*(int *)(((int)stk + 36))) + 0x4));
-                    if ((unsigned char)t44 != 7) {
-                        if ((unsigned char)t44 != 0xFC) {
-                            break;
-                        }
-                        continue;
-                    }
-                    t28 = (t28 + 0x1);
-                    *(unsigned int *)(((int)stk + 16)) = ((*(int *)(((int)stk + 16))) + (*(int *)(((int)stk + 12))));
-                    *(unsigned int *)(((int)stk + 40)) = ((*(int *)(((int)stk + 40))) + 0x1);
-                    if ((int)(*(int *)(((int)stk + 40))) >= (int)((((struct o40_int *)((*(int *)(((*(int *)(((int)stk + 32))) + 0x1C)))))->v))) {
-                        for (;;) {
-                            t52 = thunk_FUN_0c111b6e(t5);
-                            if (t52 == 0) {
-                                *(int *)((int)stk + 8) = a5;
-                                t53 = kdSetGetLastError(t5, 0x2, 0x0, t28, a5);
-                                if ((int)t53 < 0) {
-                                    thunk_FUN_0c1155a8();
-                                    continue;
-                                }
-                                break;
-                            }
-                            return 0xFFFFFF30;
-                        }
-                        for (;;) {
-                            t55 = thunk_FUN_0c111b54(t5, t53);
-                            if (t55 == 0) {
-                                thunk_FUN_0c1155a8();
-                                continue;
-                            }
-                            break;
-                        }
-                        *(unsigned int *)(((int)stk + 16)) = (kdGetDevice(t5));
-                        t58 = thunk_FUN_0c111b6e(t5);
-                        if (t58 != 0) {
-                            return 0xFFFFFF30;
-                        }
-                        t59 = *(int *)0xC347700;
-                        *(unsigned int *)(((int)stk + 12)) = t59;
-                        if (t59 != 0) {
-                            t62 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((int)stk + 12)))))((*(int *)(((int)stk + 20))), a5, (((int)stk + 12) + 0xC), (((int)stk + 12) + 0x10), *(int *)((int)stk + 12), *(int *)((int)stk + 12 + 4), *(int *)((int)stk + 12 + 8), *(int *)((int)stk + 12 + 12), *(int *)((int)stk + 12 + 16), *(int *)((int)stk + 12 + 20), *(int *)((int)stk + 12 + 24));
-                            if (t62 == 0) {
-                                *(volatile int *)(((int)stk + 16));
-                                return 0xFFFFFF01;
-                            }
-                            return ((int (*)(void))(0xC1134B4))();
-                        }
-                        *(volatile int *)(((int)stk + 16));
-                        return 0xFFFFFF01;
-                    }
-                    continue;
-                }
-                return 0xFFFFFF30;
-            }
-            return 0xFFFFFF30;
-        }
-        break;
-    }
-    return 0xFFFFFF01;
+    v0_4 = (v0_2);
+    v0_2 = (0x0);
+    v0_5 = (0x0);
+    L_C113414:;
+    if (((int)(*(int *)(((int)stk + 40))) < (int)((((struct o40_int *)((*(int *)(((*(int *)(((int)stk + 32))) + 0x1C)))))->v)))) goto L_C113398;
+    L_C113422:;
+    v0_6 = (thunk_FUN_0c111b6e(v0_4)) != 0;
+    if (v0_6) goto L_C11346A;
+    v0_6 = v0_3;
+    *(int *)((int)stk + 8) = v0_6;
+    v0_7 = kdSetGetLastError(v0_4, 0x2, 0x0, v0_5, v0_6);
+    v0_6 = (v0_7);
+    if (((int)v0_7 >= 0)) goto L_C113448;
+    thunk_FUN_0c1155a8();
+    goto L_C113422;
+    L_C113448:;
+    v0_7 = (thunk_FUN_0c111b54(v0_4, v0_6)) != 0;
+    if (v0_7) goto L_C11345A;
+    thunk_FUN_0c1155a8();
+    goto L_C113448;
+    L_C11345A:;
+    *(unsigned int *)(((int)stk + 16)) = (kdGetDevice(v0_4));
+    v0_6 = (thunk_FUN_0c111b6e(v0_4)) == 0;
+    if (!(v0_6)) goto L_C11346A;
+    v0_6 = *(int *)0xC347700;
+    *(unsigned int *)(((int)stk + 12)) = v0_6;
+    if ((v0_6 == 0)) goto L_C1134A8;
+    v0_6 = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((int)stk + 12)))))((*(int *)(((int)stk + 20))), v0_3, (((int)stk + 12) + 0xC), (((int)stk + 12) + 0x10), *(int *)((int)stk + 12), *(int *)((int)stk + 12 + 4), *(int *)((int)stk + 12 + 8), *(int *)((int)stk + 12 + 12), *(int *)((int)stk + 12 + 16), *(int *)((int)stk + 12 + 20), *(int *)((int)stk + 12 + 24))) != 0;
+    if (v0_6) goto L_C1134B4;
+    goto L_C1134A8;
+    L_C11346A:;
+    v0_6 = (0xFFFFFF30);
+    goto L_C1134D8;
+    L_C1134A8:;
+    *(unsigned char *)(((int)stk + 24)) = (*(signed char *)(((*(int *)(((int)stk + 16))) + 0x4)));
+    *(unsigned int *)(((int)stk + 28)) = (*(int *)(((*(int *)(((int)stk + 16))) + 0xC)));
+    L_C1134B4:;
+    v0_7 = *(signed char *)(((int)stk + 24));
+    v0_6 = ((unsigned char)v0_7);
+    if (((unsigned char)v0_7 == 7)) goto L_C1134CC;
+    if ((v0_6 == 0xFC)) goto L_C113422;
+    if ((v0_6 == 0xFB)) goto L_C1134D0;
+    goto L_C1134D6;
+    L_C1134D0:;
+    v0_6 = (0xFFFFFF40);
+    goto L_C1134D8;
+    L_C1134CC:;
+    v0_6 = (0x0);
+    goto L_C1134D8;
+    L_C113398:;
+    v0_7 = thunk_FUN_0c111b6e(v0_4);
+    v0_6 = (v0_7);
+    if ((v0_7 != 0)) goto L_C11346A;
+    v0_6 = ((int)((int)(*(int *)(((int)stk + 12))) / (int)0x4));
+    *(int *)((int)stk + 8) = v0_6;
+    v0_7 = (*(int *)(((int)stk + 16)));
+    *(int *)((int)stk + 4) = v0_7;
+    v0_8 = v0_3;
+    *(int *)((int)stk + 0) = v0_8;
+    v0_7 = kdSetBlockWrite(v0_4, 0x2, 0x0, v0_5, v0_8, v0_7, v0_6);
+    v0_6 = (v0_7);
+    if (((int)v0_7 >= 0)) goto L_C1133CE;
+    thunk_FUN_0c1155a8();
+    goto L_C113398;
+    L_C1133CE:;
+    v0_7 = (thunk_FUN_0c111b54(v0_4, v0_6)) != 0;
+    if (v0_7) goto L_C1133E0;
+    thunk_FUN_0c1155a8();
+    goto L_C1133CE;
+    L_C1133E0:;
+    *(unsigned int *)(((int)stk + 36)) = (kdGetDevice(v0_4));
+    v0_6 = (thunk_FUN_0c111b6e(v0_4)) != 0;
+    if (v0_6) goto L_C11346A;
+    v0_7 = *(signed char *)(((*(int *)(((int)stk + 36))) + 0x4));
+    v0_6 = ((unsigned char)v0_7);
+    if (((unsigned char)v0_7 == 7)) goto L_C113404;
+    if ((v0_6 == 0xFC)) goto L_C113398;
+    goto L_C1134D6;
+    L_C113404:;
+    *(unsigned int *)(((int)stk + 16)) = ((*(int *)(((int)stk + 16))) + (*(int *)(((int)stk + 12))));
+    *(unsigned int *)(((int)stk + 40)) = ((*(int *)(((int)stk + 40))) + 0x1);
+    v0_5 = ((v0_5 + 0x1));
+    goto L_C113414;
 }
 
 int FUN_0c0fd660(int a4, int a5, int a6, int a7)
@@ -427,9 +390,6 @@ int FUN_0c0ff1ac(int a4, int a5, int a6, int a7)
     register int t4;
     int t5;
     register int t8;
-    register int t80;
-    register int t81;
-    register int t82;
     register int t48;
     register int t3;
     int t6;
@@ -461,18 +421,12 @@ int FUN_0c0ff1ac(int a4, int a5, int a6, int a7)
         }
         break;
     }
-    t80 = t5;
-    t81 = 0x100;
-    t82 = 0x80000000;
     if ((unsigned int)t8 >= (unsigned int)0x100) {
         t79 = 0x0;
     } else {
         if ((t4 == 0) && (t5 == 0)) {
             if ((int)t1 < (int)0x900) {
                 (((struct o200_uint *)((((int)_builtin_get_vbr()) + ((((0xFFFFFE00 + t1) >> 1) >> 1) >> 1))))->v) = 0xC0FF35A;
-                t80 = t5;
-                t81 = 0x100;
-                t82 = 0x80000000;
             } else {
                 if (t1 == 0x900) {
                     FUN_0c0fb0da(0xC0FF37E, 0x0);
@@ -481,9 +435,6 @@ int FUN_0c0ff1ac(int a4, int a5, int a6, int a7)
                         FUN_0c0fb0fc(0xC0FF3C8, 0x0);
                     } else {
                         (((struct o22C_uint *)(((int)_builtin_get_vbr())))->v) = 0xC0FF3EE;
-                        t80 = t5;
-                        t81 = 0x100;
-                        t82 = 0x80000000;
                     }
                 }
             }
@@ -511,12 +462,9 @@ int FUN_0c0ff1ac(int a4, int a5, int a6, int a7)
             *(unsigned int *)(((((t8 << 2) << 2) + 0xC803EA8) + 0x0)) = (*(int *)(((int)stk + 0)));
             *(unsigned int *)(((((t8 << 2) << 2) + 0xC803EA8) + 0x8)) = a7;
             *(unsigned int *)(((((t8 << 2) << 2) + 0xC803EA8) + 0xC)) = (a6 | 0x80000000);
-            t80 = t5;
-            t81 = 0x100;
-            t82 = 0x80000000;
         }
         t79 = t8;
     }
-    *(volatile short *)(((int)stk + 8));
-    return ((int (*)(int, int, int, int))(0xC0FF332))(t79, t80, t81, t82);
+    _builtin_set_imask(((unsigned int)((((unsigned short)(*(short *)(((int)stk + 8))) & 0xF) << 2) << 2) >> 4));
+    return t79;
 }

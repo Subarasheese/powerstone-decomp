@@ -238,7 +238,7 @@ int cam_mode_22(int a4, int a5, int a6, int a7);
 int FUN_0c0ddc70(int a4, int a5, int a6, int a7);
 int gdFsReopenHn(int a4, int a5, int a6, int a7);
 int syCfgGetSoundMode(int a4, int a5, int a6);
-int FUN_0c0f7e80(int a4, int a5, int a6, int a7);
+int FUN_0c0f7e80(int a4);
 int FUN_0c1042ba(int a4, int a5, int a6, int a7);
 int fmMngNum2Bit(int a4, int a5, int a6);
 int vmu_lcd_refresh(int a4);
@@ -625,24 +625,50 @@ int syCfgGetSoundMode(int a4, int a5, int a6)
     return 0xFFFFFFFF;
 }
 
-int FUN_0c0f7e80(int a4, int a5, int a6, int a7)
+int FUN_0c0f7e80(int a4)
 {
-    if (a4 == 8) {
-        return ((int (*)(int, int, int, int))(0xC0F7EFC))(0x0, a5, a6, a7);
-    }
-    if (a4 == 16) {
-        return ((int (*)(int, int, int, int))(0xC0F7EFC))(0x1, a5, a6, a7);
-    }
-    if (a4 == 32) {
-        return ((int (*)(int, int, int, int))(0xC0F7EFC))(0x2, a5, a6, a7);
-    }
-    if (a4 == 64) {
-        return ((int (*)(int, int, int, int))(0xC0F7EFC))(0x3, a5, a6, a7);
-    }
-    if (a4 == 0x80) {
-        return ((int (*)(int, int, int, int))(0xC0F7EFC))(0x4, a5, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0F7EE0))(a4, a5, a6, a7);
+
+    register int R0;
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R4;
+    register int T_;
+    R4 = a4;
+    R0 = (R4);
+    if ((R4 != 8)) goto L_C0F7E8A;
+    R4 = (0x0);
+    L_C0F7EFC:;
+    return R4;
+    L_C0F7E8A:;
+    if ((R0 != 16)) goto L_C0F7E92;
+    R4 = (0x1);
+    goto L_C0F7EFC;
+    L_C0F7E92:;
+    R0 = (R4);
+    if ((R4 != 32)) goto L_C0F7E9C;
+    R4 = (0x2);
+    goto L_C0F7EFC;
+    L_C0F7E9C:;
+    if ((R0 != 64)) goto L_C0F7EA4;
+    R4 = (0x3);
+    goto L_C0F7EFC;
+    L_C0F7EA4:;
+    if ((R4 != 0x80)) goto L_C0F7EE0;
+    R4 = (0x4);
+    goto L_C0F7EFC;
+    L_C0F7EE0:;
+    if ((R4 != 0x100)) goto L_C0F7EEA;
+    R4 = (0x5);
+    goto L_C0F7EFC;
+    L_C0F7EEA:;
+    if ((R4 != 0x200)) goto L_C0F7EF4;
+    R4 = (0x6);
+    goto L_C0F7EFC;
+    L_C0F7EF4:;
+    if ((R4 != 0x400)) goto L_C0F7EFC;
+    R4 = (0x7);
+    goto L_C0F7EFC;
 }
 
 int FUN_0c1042ba(int a4, int a5, int a6, int a7)

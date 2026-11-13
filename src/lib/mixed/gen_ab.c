@@ -691,7 +691,7 @@ int FUN_0c0e56a0(int a4, int a5, int a6)
     (((struct o4_uint *)0xC7FD0F8)->v) = (*(int *)(((int)stk + 16)));
     (((struct o8_uint *)0xC7FD0F8)->v) = (*(int *)(((int)stk + 12)));
     (((struct oC_uint *)0xC7FD0F8)->v) = (*(int *)(((int)stk + 0)));
-    return ((int (*)(void))(0xC0E5702))();
+    return 0x0;
 }
 
 float FUN_0c0fddd4(int a4, int a5, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11)
