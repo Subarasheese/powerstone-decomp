@@ -30,13 +30,16 @@ GAME_FLAGS = ['-std=gnu89', '-O1', '-g', '-w', '-fno-pie', '-fno-pic', '-fwrapv'
               '-include', os.path.join(ROOT, 'port', 'runtime', 'prelude.h')]
 HOST_FLAGS = ['-std=gnu11', '-O2', '-g', '-Wall', '-fno-pie', '-fno-pic', '-I' + os.path.join(ROOT, 'port', 'runtime'),
               '-I' + os.path.join(ROOT, 'port', 'third_party', 'sa_numeric')]
-RUNTIME = ['port/runtime/runner.c', 'port/runtime/shim.c']
+RUNTIME = ['port/runtime/runner.c', 'port/runtime/shim.c', 'port/runtime/files.c', 'port/runtime/platform.c',
+           'port/runtime/render.c', 'port/runtime/draw.c', 'port/runtime/sound.c', 'port/runtime/system.c',
+           'port/runtime/sound_api.c', 'port/runtime/adx.c', 'port/runtime/aica.c', 'port/runtime/video.c']
 NUMERIC = ['port/third_party/sa_numeric/math.c']
 
 
 def game_sources(only):
+    """the game's C and the library's (src/lib: its definitions go weak, so the port's host code overrides any of them)"""
     out = []
-    for d, _, fs in os.walk(os.path.join(ROOT, 'src', 'game')):
+    for d, _, fs in [w for top in ('game', 'lib') for w in os.walk(os.path.join(ROOT, 'src', top))]:
         for f in fs:
             if f.endswith('.c') and (not only or re.search(only, os.path.join(d, f))):
                 out.append(os.path.join(d, f))
@@ -48,9 +51,11 @@ ASM_BODIES = {
     'ia_getsr': 'return port_sr;', 'get_sr': 'return port_sr;',
     'ia_setsr': 'port_sr = v;', 'set_sr': 'port_sr = v;',
     'getfr15': 'return port_fr15;',             # the caller's leftover fr15, truncated: see port/README.md
-    'mvn208': 'memcpy(d, s, 208);',
+    'mvn208': '__builtin_memcpy(d, s, 208);',
+    'masksr': 'port_sr = (port_sr | 0xF0) ^ 0x10;', 'unmasksr': 'port_sr &= ~0xF0;',
+    'setgbr': '(void)v;', 'iaOcbp': '(void)p;', 'iaOcbwb': '(void)p;', 'trapa48': '', 'trapa65': '',
 }
-ASM_PROLOGUE = 'extern int port_sr, port_fr15;\nvoid *memcpy(void *, const void *, unsigned);\n'
+ASM_PROLOGUE = 'extern int port_sr, port_fr15;\nvoid port_asm_unimplemented(const char *);\n'
 
 
 def native_text(src):
@@ -60,9 +65,10 @@ def native_text(src):
         return None
     def body(m):
         name = m.group(1)
-        if name not in ASM_BODIES:
-            raise SystemExit('%s: no host body for inline assembly %s (port/tools/native_build.py ASM_BODIES)' % (src, name))
-        return '%s\n{ %s }' % (m.group(2).strip(), ASM_BODIES[name])
+        # inline assembly with no host body (the library's renderer kernels and hardware access, which the port
+        # replaces at the API): it reports itself when reached
+        body = ASM_BODIES.get(name, 'port_asm_unimplemented("%s");' % name)
+        return '%s\n{ %s }' % (m.group(2).strip(), body)
     t = re.sub(r'#pragma inline_asm\((\w+)\)\s*\n((?:static\s+)?[^\n{;]*\b\1\s*\([^)]*\))\s*\{.*?\n\}', body, t, flags=re.S)
     return ASM_PROLOGUE + t
 
@@ -73,7 +79,7 @@ def obj_of(src):
 
 def compile_one(src):
     o = obj_of(src)
-    if os.path.exists(o) and os.path.getmtime(o) > max(os.path.getmtime(src), os.path.getmtime(PRELUDE)):
+    if os.path.exists(o) and os.path.getmtime(o) > max(os.path.getmtime(src), os.path.getmtime(PRELUDE), os.path.getmtime(__file__)):
         return src, 0, ''
     text = native_text(src)
     if text is not None:
@@ -199,8 +205,32 @@ def main():
             for s in ss:
                 if s != win:
                     weaken.setdefault(s, []).append(n)
+    # the library's C: every definition weak, so that port/runtime's host code for a library function wins over it
+    for s in built:
+        if os.sep + 'lib' + os.sep in s:
+            lib_defs = [n for n in nm(obj_of(s))[0]]
+            if lib_defs:
+                weaken.setdefault(s, []).extend(n for n in lib_defs if n not in weaken.get(s, []))
+    # a definition named like a host C library function (memcpy, strlen, sprintf...) stays local to its object: the
+    # host's code must reach glibc's, and the game's calls go there too (glibc takes the game's 32-bit pointers)
+    libc_names = host_libc()
+    localize = {}
+    for n, ss in definers.items():
+        if n in libc_names and not n.startswith('FUN_'):
+            for s in ss:
+                localize.setdefault(s, []).append(n)
+    for s, names in localize.items():
+        subprocess.run(['objcopy'] + ['--localize-symbol=' + n for n in names] + [obj_of(s)], check=True)
+        for n in names:
+            defined.discard(n)
+            if s in weaken and n in weaken[s]:
+                weaken[s].remove(n)
+    if localize:
+        print('host libc: %d definitions kept local (%s)' % (sum(map(len, localize.values())),
+                                                         ' '.join(sorted({n for v in localize.values() for n in v}))))
     for s, names in weaken.items():
-        subprocess.run(['objcopy'] + ['--weaken-symbol=' + n for n in names] + [obj_of(s)], check=True)
+        if names:
+            subprocess.run(['objcopy'] + ['--weaken-symbol=' + n for n in names] + [obj_of(s)], check=True)
     if weaken:
         print('duplicates: %d names defined twice; the matching unit\'s or the first definition kept' % sum(map(len, weaken.values())))
     hobjs, runtime_defined = [], set()
@@ -219,12 +249,19 @@ def main():
     with open(gen, 'w') as f:
         f.write('/* generated by port/tools/native_build.py: stubs for the functions no C defines yet, and the dispatch table */\n')
         f.write('#include "port.h"\n\n')
-        for n in stub_fns + other:
+        data_like = [n for n in other if re.match(r'^(g_|REG_)|Error$', n)]
+        for n in data_like:
+            f.write('char %s[1024] __attribute__((aligned(4)));   /* data the library names that no file defines */\n' % n)
+        for n in stub_fns + [n for n in other if n not in data_like]:
             f.write('long port_stub_%s(void) __asm__("%s");\nlong port_stub_%s(void) { port_unimplemented("%s", 0x%08XU); return 0; }\n'
                     % (n, n, n, n, fns.get(n, 0)))
         f.write('\n')
         have = defined | runtime_defined | set(libc)
         table = sorted((addr, n) for n, addr in fns.items() if n in have or n in stub_fns)
+        # host code for raw entry points inside library functions (a tail the C jumps into): port_entry_<address>
+        listed = {a for a, _ in table}
+        table = sorted(table + [(int(m.group(1), 16), n) for n in runtime_defined
+                                for m in [re.match(r'port_entry_([0-9a-f]{8})$', n)] if m and int(m.group(1), 16) not in listed])
         for i, (addr, n) in enumerate(table):
             f.write('extern char port_fn_%d[] __asm__("%s");\n' % (i, n))
         f.write('\nconst struct port_entry port_table[] = {\n')
@@ -245,7 +282,7 @@ def main():
     with open(rsp, 'w') as f:
         f.write('\n'.join(objs + hobjs + defsyms))
     exe = os.path.join(OUT, 'powerstone')
-    r = subprocess.run([CC, '-no-pie', '-g', '-o', exe, '@' + rsp, '-lm'], capture_output=True, text=True)
+    r = subprocess.run([CC, '-no-pie', '-g', '-o', exe, '@' + rsp, '-lSDL3', '-lGL', '-lm'], capture_output=True, text=True)
     if r.returncode:
         open(os.path.join(OUT, 'link_errors.txt'), 'w').write(r.stderr)
         sys.exit('link failed (build/native/link_errors.txt):\n' + '\n'.join(r.stderr.splitlines()[:20]))

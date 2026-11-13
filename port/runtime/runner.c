@@ -20,18 +20,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>
+#include <sys/personality.h>
 #include <ucontext.h>
 #include <unistd.h>
+#include <pthread.h>
 #include <xmmintrin.h>
 
 #include "port.h"
 
-int port_sr = 0x700000F0, port_fr15;
+int port_sr = 0x600000F0, port_fr15; /* privileged, register bank 1, interrupts masked (15); BL clear, as start-up leaves it */
 
 #define GAME_STACK 0x20000000u
 #define GAME_STACK_SIZE 0x00800000u
 
-static const char *image_path = "1ST_READ.BIN";
+static const char *image_path;
+extern const char *port_data_dir;
+extern int port_headless;
+int port_platform_init(void);
+int port_data_path(const char *name, char *out, size_t size);
 static int strict, trace_calls;
 static unsigned max_seconds;
 
@@ -41,8 +47,16 @@ static void die(const char *what)
     exit(2);
 }
 
+static char **saved_argv;
+
 static void map_fixed(uint64_t at, size_t size, int fd, const char *what)
 {
+    /* something of the host's (its heap, with address randomization) can sit where the console's memory goes: run
+       again once without the randomization */
+    if (!(personality(0xffffffff) & ADDR_NO_RANDOMIZE) && msync((void *)(uintptr_t)(at & ~0xFFFull), 4096, MS_ASYNC) == 0) {
+        personality(personality(0xffffffff) | ADDR_NO_RANDOMIZE);
+        execv("/proc/self/exe", saved_argv);
+    }
     void *p = mmap((void *)at, size, PROT_READ | PROT_WRITE, MAP_FIXED_NOREPLACE | (fd < 0 ? MAP_PRIVATE | MAP_ANONYMOUS : MAP_SHARED),
                    fd, 0);
     if (p != (void *)at)
@@ -70,6 +84,15 @@ static void map_machine(void)
 
 static void load_image(void)
 {
+    static char path[1024];
+    if (!image_path) {
+        if (!port_data_path("1ST_READ.BIN", path, sizeof path)) {
+            fprintf(stderr, "powerstone: no 1ST_READ.BIN in the data folder %s (give it with --data DIR: a folder holding the "
+                            "files of your Power Stone disc)\n", port_data_dir);
+            exit(2);
+        }
+        image_path = path;
+    }
     FILE *f = fopen(image_path, "rb");
     if (!f)
         die(image_path);
@@ -143,17 +166,76 @@ static void on_fault(int sig, siginfo_t *si, void *ctx)
             uc->uc_mcontext.gregs[REG_RIP] = (greg_t)(uintptr_t)e->fn;
             return;
         }
-        report_fault("call to a console address with no function", rip, (uint64_t)(uintptr_t)si->si_addr);
-        _exit(4);
+        /* a jump into the middle of library code (Kamui's hardware routines, reached by raw address): it returns 0 */
+        static uint32_t warned[64];
+        int seen = 0;
+        for (int i = 0; i < 64 && warned[i]; i++)
+            seen |= warned[i] == target;
+        if (!seen) {
+            for (int i = 0; i < 64; i++)
+                if (!warned[i]) { warned[i] = target; break; }
+            char line[120];
+            int n = snprintf(line, sizeof line, "powerstone: call to 0x%08X (no function there) returns 0\n", target);
+            if (write(2, line, n) < 0)
+                _exit(3);
+        }
+        uint64_t *sp = (uint64_t *)(uintptr_t)uc->uc_mcontext.gregs[REG_RSP];
+        uc->uc_mcontext.gregs[REG_RIP] = (greg_t)sp[0];
+        uc->uc_mcontext.gregs[REG_RSP] += 8;
+        uc->uc_mcontext.gregs[REG_RAX] = 0;
+        return;
     }
     report_fault(sig == SIGSEGV ? "memory fault" : sig == SIGILL ? "illegal instruction" : sig == SIGFPE ? "arithmetic fault" : "bus error",
                  rip, (uint64_t)(uintptr_t)si->si_addr);
     _exit(4);
 }
 
+/* the watchdog: when no frame ends for 3 seconds, the game thread reports where it is (a spin on hardware the port
+   doesn't give, most often) */
+extern unsigned long port_frames;
+static pthread_t game_thread;
+
+static void on_watchdog(int sig, siginfo_t *si, void *ctx)
+{
+    (void)sig;
+    (void)si;
+    ucontext_t *uc = ctx;
+    uint64_t rip = uc->uc_mcontext.gregs[REG_RIP], rbp = uc->uc_mcontext.gregs[REG_RBP];
+    char line[200];
+    int n = snprintf(line, sizeof line, "powerstone: no frame for 3 s; at rip=%#lx, callers", (unsigned long)rip);
+    for (int i = 0; i < 6 && rbp > 0x1000 && rbp < 0x7fffffffffffull && !(rbp & 3); i++) {
+        uint64_t ret = *(uint64_t *)(rbp + 8);
+        n += snprintf(line + n, sizeof line - n, " %#lx", (unsigned long)ret);
+        rbp = *(uint64_t *)rbp;
+        if (n > 180)
+            break;
+    }
+    line[n++] = '\n';
+    if (write(2, line, n) < 0)
+        _exit(3);
+}
+
+static void *watchdog(void *arg)
+{
+    (void)arg;
+    unsigned long last = (unsigned long)-1;
+    int still = 0;
+    for (;;) {
+        sleep(1);
+        if (port_frames == last) {
+            if (++still == 3)
+                pthread_kill(game_thread, SIGUSR1);
+        } else {
+            still = 0;
+            last = port_frames;
+        }
+    }
+    return 0;
+}
+
 static void install_handlers(void)
 {
-    static char altstack[1 << 16];
+    static char altstack[1 << 20]; /* below 4 GB with the host binary: the vsync runs the game's handler here */
     stack_t ss = {.ss_sp = altstack, .ss_size = sizeof altstack};
     sigaltstack(&ss, 0);
     struct sigaction sa;
@@ -164,6 +246,12 @@ static void install_handlers(void)
     sigaction(SIGBUS, &sa, 0);
     sigaction(SIGILL, &sa, 0);
     sigaction(SIGFPE, &sa, 0);
+    sa.sa_sigaction = on_watchdog;
+    sa.sa_flags = SA_SIGINFO | SA_ONSTACK | SA_RESTART;
+    sigaction(SIGUSR1, &sa, 0);
+    game_thread = pthread_self();
+    pthread_t w;
+    pthread_create(&w, 0, watchdog, 0);
 }
 
 /* --- the unimplemented ---------------------------------------------------------------------------------------------- */
@@ -231,6 +319,7 @@ static void on_alarm(int sig)
 
 int main(int argc, char **argv)
 {
+    saved_argv = argv;
     for (int i = 1; i < argc; i++) {
         if (!strcmp(argv[i], "--strict"))
             strict = 1;
@@ -238,16 +327,36 @@ int main(int argc, char **argv)
             trace_calls = 1;
         else if (!strcmp(argv[i], "--seconds") && i + 1 < argc)
             max_seconds = (unsigned)atoi(argv[++i]);
-        else if (argv[i][0] != '-')
-            image_path = argv[i];
+        else if (!strcmp(argv[i], "--data") && i + 1 < argc)
+            port_data_dir = argv[++i];
+        else if (!strcmp(argv[i], "--screenshot") && i + 2 < argc) {
+            extern unsigned long port_shot_frame;
+            extern const char *port_shot_file;
+            port_shot_frame = strtoul(argv[++i], 0, 10);
+            port_shot_file = argv[++i];
+        } else if (!strcmp(argv[i], "--screenshot-every") && i + 2 < argc) {
+            extern unsigned long port_shot_every;
+            extern const char *port_shot_file;
+            port_shot_every = strtoul(argv[++i], 0, 10);
+            port_shot_file = argv[++i];
+        } else if (!strcmp(argv[i], "--press") && i + 1 < argc) {
+            extern unsigned long port_press_frame;
+            port_press_frame = strtoul(argv[++i], 0, 10);
+        } else if (!strcmp(argv[i], "--headless"))
+            port_headless = 1;
+        else if (!strcmp(argv[i], "--image") && i + 1 < argc)
+            image_path = argv[++i];
         else {
-            fprintf(stderr, "usage: powerstone [--strict] [--trace-calls] [--seconds N] [1ST_READ.BIN]\n");
+            fprintf(stderr, "usage: powerstone [--data DIR] [--headless] [--strict] [--trace-calls] [--seconds N] [--image FILE]\n"
+                            "  DIR: a folder holding the files of your Power Stone disc (1ST_READ.BIN, COMMON.BIN, ...)\n");
             return 2;
         }
     }
     map_machine();
     load_image();
     install_handlers();
+    if (!port_platform_init())
+        return 2;
     atexit(report_unimplemented);
     if (max_seconds) {
         signal(SIGALRM, on_alarm);
