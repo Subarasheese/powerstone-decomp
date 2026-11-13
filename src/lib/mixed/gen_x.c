@@ -180,7 +180,7 @@ int pl_hitreact_phase4_update(int a4, int a5, int a6, int a7);
 int FUN_0c092a58(int a4, int a5, int a6, int a7);
 int FUN_0c09dd88(int a4);
 int FUN_0c0a2830(int a4);
-int FUN_0c0d8fe8(int a4, int a5);
+int cam_request_mode_25(int a4, int a5);
 int syRtcGetAndCheckCount(int a4, int a5, int a6, int a7);
 int FUN_0c0e6c78(int a4, int a5, int a6);
 int vmsfs_c_setfname(int a4, int a5, int a6);

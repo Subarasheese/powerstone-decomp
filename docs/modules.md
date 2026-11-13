@@ -395,11 +395,16 @@ boot screens (version string with build date, per-region warning text).
 Option menu: state machine on c7f4724, seven item handlers in a jump table c33f970 (sound mode calls syCfgSetSoundMode
 and saves the config); entered after the attract step-3 flag.
 
-## game_camera (0c0d80d4-0c0dca60)
-Two camera records (g_cam_records, 0x1fc each). cam_update_by_mode dispatches on the mode byte (29 modes, modes 0 has
-5 variants chosen by cam_select_mode0_variant); gameplay code switches modes with cam_request_mode(mode, target,
-priority). cam_update_view_matrices builds nlLookAt matrices per record. cam_compute_follow (3.6 KB) is the shared
-eye/target computation; mode 24 is the stage-select cursor camera and mode 27 the debug free camera.
+## game_camera (0c0d80d4-0c0dca60): src/game/camera/, header camera.h
+Converted to the header form (the pilot): one C file per original source file (cam_view.c, cam_request.c, cam_follow.c,
+cam_mode0.c, cam_mode0_v2.c, cam_mode0_v4.c, cam_shake.c, cam_mode19.c), the types CamRecord / CamKey / Fighter in
+camera.h and src/game/game.h, every camera function declared once. Two camera records (g_cam_records, 0x1fc each);
+cam_update_by_mode dispatches on the mode byte (29 modes; mode 0 has 5 variants chosen by cam_select_mode0_variant).
+Gameplay code asks for a mode with cam_request_mode(mode, target, priority) or cam_force_mode. A mode moves the eye and
+the look-at point toward their goals with cam_compute_follow, from the record's own key or a keyframe script
+(cam_step_keyframe_script; cam_near_goal ends a key early). cam_update_view_matrices builds the view matrices; the shake
+(cam_reset_shake / cam_apply_shake) moves eye and look-at up and down. Mode 24 is the stage select camera, mode 27 the
+debug free camera (cam_enter_debug_free / cam_update_debug_free, not called by the game).
 
 ## game_nl_* (0c0dca60-0c0e0790) and game_nl_objasm_* (0c0e7240-0c0ed750)
 Ninja-library style 3D layer of the executable. 0c0dcae0 nlObjPut family; 0c0dd310-0c0dd880 texture/strip slot

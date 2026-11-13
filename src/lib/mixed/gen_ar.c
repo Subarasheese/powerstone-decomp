@@ -133,7 +133,7 @@ int FUN_0c0d71fa(void);
 int cam_request_mode(int, int, int);
 int cam_force_mode(int, int, int);
 int cam_step_keyframe_script(int, int);
-int FUN_0c0dc994(void);
+int cam_reset_to_default(void);
 int nlInvLightVectorUseViewMatrix(void);
 int nlobjput_sub(int);
 int nlMakeModelViewProjectMatrix_objput(void);

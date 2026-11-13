@@ -141,7 +141,7 @@ int FUN_0c0e5b20(int a4, int a5, int a6);
 int FUN_0c01fc44(int a4);
 int FUN_0c02a4e0(int a4, int a5, int a6, int a7);
 int pl_load_motion_prev_key(int a4, int a5);
-int cam_push_keyframe_history(int a4, int a5, int a6, int a7);
+int cam_near_goal(int a4, int a5, int a6, int a7);
 int nl_display_strip_spd(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
 int FUN_0c01dde2(int a4);
 int FUN_0c02743c(int a4, int a5);

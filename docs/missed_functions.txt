@@ -451,9 +451,9 @@ F 0c0d3f6e 0 FUN_0c0d3f6e
 F 0c0d40cc 0 FUN_0c0d40cc
 F 0c0d50c0 0 FUN_0c0d50c0
 F 0c0d7d1c 0 FUN_0c0d7d1c
-F 0c0d8f60 0 FUN_0c0d8f60
-F 0c0dac72 0 FUN_0c0dac72
-F 0c0dacb4 0 FUN_0c0dacb4
+F 0c0d8f60 0 cam_force_mode_dup
+F 0c0dac72 0 cam_enter_debug_free
+F 0c0dacb4 0 cam_update_debug_free
 F 0c0dcdb0 0 FUN_0c0dcdb0
 F 0c0dcdf0 0 FUN_0c0dcdf0
 F 0c0dce80 0 FUN_0c0dce80

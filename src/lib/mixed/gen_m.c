@@ -206,7 +206,7 @@ int FUN_0c098c86(int a4);
 int pl_reset_pose(int a4);
 int FUN_0c0a2666(int a4, int a5, int a6);
 int item_director_pick_kind(int a4, int a5, int a6, int a7);
-float FUN_0c0d827e(int a4);
+float cam_publish_heading(int a4);
 int gfx_init_background_render_state(int a4);
 int FUN_0c0f9872(int a4);
 int FUN_0c113d5c(int a4, int a5, int a6, int a7);

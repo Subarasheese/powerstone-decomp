@@ -168,10 +168,32 @@ def compile_link(cfile, defines):
     return open('build/equiv/%s.bin' % stem, 'rb').read(), syms
 
 
+_INCLUDE = re.compile(r'^[ \t]*#[ \t]*include[ \t]*"([^"]+)"', re.M)
+
+
+def source_text(cfile):
+    """The C file's text with its own headers (#include "x.h", found next to the file or under src/) put in place, once each: what
+    the compiler reads, so the names, prototypes and declarations a header gives count as the file's."""
+    seen = set()
+
+    def expand(text, here):
+        def put(m):
+            for d in (here, 'src'):
+                p = os.path.normpath(os.path.join(d, m.group(1)))
+                if os.path.exists(p):
+                    if p in seen:
+                        return ''
+                    seen.add(p)
+                    return expand(open(p, errors='replace').read(), os.path.dirname(p))
+            return m.group(0)
+        return _INCLUDE.sub(put, text)
+    return expand(open(cfile, errors='replace').read(), os.path.dirname(cfile))
+
+
 def outside_names(cfile, table):
     """Every identifier the file uses that the game names: the linker gets it at the game's address,
     unless the file defines it (a function body or a global with a definition here)."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     defined = set(re.findall(r'^[A-Za-z_][\w \t\*]*?\b(\w+)\s*\([^;{]*\)\s*\{', text, flags=re.M))
     defined |= set(re.findall(r'^(?!extern)[A-Za-z_][\w \t\*]*?\b(\w+)\s*(?:\[[^\]]*\])?\s*=', text, flags=re.M))
     used = set(re.findall(r'\b[A-Za-z_]\w*\b', text))
@@ -250,7 +272,7 @@ def param_kinds(params, structs):
 def prototypes(cfile):
     """The argument registers each function this file declares or defines takes, from its prototype:
     {name: (ints and pointers, floats)}; a name starting with an underscore is a runtime helper: (0, 0)."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     structs = struct_words(text)
     out = {}
     for m in re.finditer(r'^(?:extern\s+|static\s+)?[A-Za-z_][\w \t\*]*?\b(\w+)\s*\(([^;{)]*)\)\s*[;{]', text, flags=re.M):
@@ -311,7 +333,7 @@ STACKN = {}      # {address: integer arguments passed on the stack (past the fou
 def stack_args(cfile):
     """{name: words passed on the stack (integer arguments past the fourth, structures by value), at most 4} for the functions this
     file declares."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     structs = struct_words(text)
     out = {}
     for m in re.finditer(r'^(?:extern\s+|static\s+)?[A-Za-z_][\w \t\*]*?\b(\w+)\s*\(([^;{)]*)\)\s*[;{]', text, flags=re.M):
@@ -564,7 +586,7 @@ def indirect_targets(cfile, fn, table=None):
     """{address: integer arguments} for the calls the C of one function makes through a cast on a literal address
     ((int (*)(int))(0xAC01193A)(x) is {0x0C01193A: 1}), or on a function's name (one declared with () because its call sites
     pass different arguments); the most when one address is called with different counts."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     m = re.search(r'\b%s\s*\([^;{)]*\)\s*\{' % re.escape(fn), text)
     if not m:
         return {}
@@ -591,7 +613,7 @@ def indirect_targets(cfile, fn, table=None):
 def indirect_arity(cfile, fn):
     """How many integer arguments the C of one function passes in calls through a pointer, from the function-pointer casts in its body
     ((int (*)(int, int))(p)(a, b) is 2): the most of them, None when it has no such call."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     m = re.search(r'\b%s\s*\([^;{)]*\)\s*\{' % re.escape(fn), text)
     if not m:
         return None
@@ -609,7 +631,7 @@ def indirect_arity(cfile, fn):
 def calls_printf(cfile, fn):
     """Does the C of one function call a printf-style function (the stack words of such a call are compared up to its format's
     conversions, a change that acts only on those calls)."""
-    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', open(cfile, errors='replace').read(), flags=re.S)
+    text = re.sub(r'/\*.*?\*/|//[^\n]*', ' ', source_text(cfile), flags=re.S)
     m = re.search(r'\b%s\s*\([^;{)]*\)\s*\{' % re.escape(fn), text)
     if not m:
         return False

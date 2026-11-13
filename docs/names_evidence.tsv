@@ -2252,7 +2252,7 @@
 0c0dc18e	cam_set_shake_ramp	medium	writes quotient a/b and b into both camera records at +0x174
 0c0dc1c0	cam_reset_shake	medium	clears +0x174..+0x180 of camera records in a loop
 0c0dc27c	cam_apply_shake	medium	called by cam_set_view_matrix; random offsets scaled by +0x174..0x17C
-0c0dc3d4	cam_push_keyframe_history	medium	only caller cam_step_keyframe_script; shifts history of vectors at +176/+224
+0c0dc3d4	cam_near_goal	medium	only caller cam_step_keyframe_script; shifts history of vectors at +176/+224
 0c0dc9d4	cam_mode_19	medium	dispatch case 19 (then common tail)
 0c0ddf80	gfx_flip_frame_buffer	medium	sets a busy flag, runs helper, calls kmFlipFrameBuffer, clears flag
 0c0de1e0	gfx_init_background_render_state	medium	fills a render-state block with defaults then calls kmSetBackGroundRenderState

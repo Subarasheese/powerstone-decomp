@@ -85,7 +85,7 @@ int pl_hitreact_update(int a4, int a5, int a6, int a7)
         FUN_0c08e4bc(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4));
         if ((*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x5))) == 0) {
             if ((*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x13))) == 0) {
-                FUN_0c0d905e();
+                cam_nop();
             } else {
                 cam_request_mode_04((*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x13))), (*(signed char *)((a4 + 0x3))));
             }

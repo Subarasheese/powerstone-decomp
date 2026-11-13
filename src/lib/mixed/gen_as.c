@@ -715,7 +715,7 @@ void FUN_0c0d2a84(void);
 void FUN_0c0d4696(void);
 int thunk_FUN_0c0d45fe(void);
 void FUN_0c0d52aa(void);
-void FUN_0c0d905e(void);
+void cam_nop(void);
 int FUN_0c0e48a0(void);
 void FUN_0c0eacf0(void);
 void FUN_0c0f283e(void);

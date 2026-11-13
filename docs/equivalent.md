@@ -32256,8 +32256,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 74
 - the cases run 12 of 12 instructions
 
-### FUN_0c0d811e (`0C0D811E`, 208 bytes, `src/game/camera/camera.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera/FUN_0c0d811e.json`
+### FUN_0c0d9078 (`0C0D9078`, 350 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/cam_request/FUN_0c0d9078.json`
 - case 0
 - case 1
 - case 2
@@ -32276,132 +32276,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
-- case 37
-- case 89
-- case 129
-- case 58
-- case 39
-- case 118
-- case 112
-- case 44
-- case 154
-- case 125
-- case 97
-- case 70
-- case 62
-- case 148
-- case 135
-- case 107
-- case 104
-- case 59
-- the cases run 102 of 104 instructions
-
-### FUN_0c0d827e (`0C0D827E`, 152 bytes, `src/game/camera/camera.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/camera/FUN_0c0d827e.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 65 of 76 instructions
-
-### FUN_0c0d8fe8 (`0C0D8FE8`, 118 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/FUN_0c0d8fe8.json`
-- case 25
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 90
-- case 43
-- case 56
-- case 53
-- case 96
-- case 84
-- case 110
-- case 66
-- case 64
-- case 48
-- case 117
-- case 45
-- case 62
-- case 86
-- case 118
-- case 38
-- case 93
-- case 75
-- the cases run 59 of 59 instructions
-
-### FUN_0c0d905e (`0C0D905E`, 4 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/FUN_0c0d905e.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 91
-- case 116
-- case 63
-- case 110
-- case 111
-- case 61
-- case 81
-- case 74
-- case 117
-- case 40
-- case 38
-- case 44
-- case 94
-- case 85
-- case 58
-- case 68
-- case 92
-- case 60
-- the cases run 2 of 2 instructions
-
-### FUN_0c0d9078 (`0C0D9078`, 350 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/FUN_0c0d9078.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
+- coverage case 1: reaches 0C0D9090 (+88 instructions)
+- coverage case 3: reaches 0C0D90AC (+2 instructions)
 - case 152
 - case 46
 - case 57
@@ -32420,10 +32296,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 93
 - case 146
 - case 97
-- the cases run 24 of 159 instructions
+- coverage case 2: reaches 0C0D90BC (+46 instructions)
+- the cases run 160 of 162 instructions
 
-### FUN_0c0d91d6 (`0C0D91D6`, 136 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/FUN_0c0d91d6.json`
+### FUN_0c0d91d6 (`0C0D91D6`, 136 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 19 development and 19 holdout cases, in `tests/cam_request/FUN_0c0d91d6.json`
 - case 0
 - case 1
 - case 2
@@ -32442,6 +32319,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- coverage case 1: reaches 0C0D91F4 (+51 instructions)
 - case 68
 - case 126
 - case 62
@@ -32460,10 +32338,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 59
 - case 134
 - case 46
-- the cases run 15 of 68 instructions
+- coverage case 2: reaches 0C0D9202 (+2 instructions)
+- the cases run 68 of 68 instructions
 
-### FUN_0c0da5b2 (`0C0DA5B2`, 104 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/FUN_0c0da5b2.json`
+### FUN_0c0da5b2 (`0C0DA5B2`, 134 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/cam_follow/FUN_0c0da5b2.json`
 - case 12
 - case 0
 - case 1
@@ -32482,6 +32361,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- coverage case 1: reaches 0C0DA5EC (+21 instructions)
+- coverage case 3: reaches 0C0DA612 (+2 instructions)
 - case 59
 - case 56
 - case 60
@@ -32500,10 +32381,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 51
 - case 125
 - case 103
-- the cases run 14 of 33 instructions
+- coverage case 2: reaches 0C0DA616 (+12 instructions)
+- the cases run 52 of 52 instructions
 
-### FUN_0c0da8c0 (`0C0DA8C0`, 116 bytes, `src/game/camera/camera_3_alt2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3_alt2/FUN_0c0da8c0.json`
+### FUN_0c0da8c0 (`0C0DA8C0`, 116 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 19 holdout cases, in `tests/cam_follow/FUN_0c0da8c0.json`
 - case 2
 - case 1
 - case 3
@@ -32522,6 +32404,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 19
 - case 23
 - case 24
+- coverage case 1: reaches 0C0DA8D6 (+15 instructions)
 - case 65
 - case 84
 - case 110
@@ -32540,63 +32423,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 57
 - case 37
 - case 118
-- the cases run 39 of 57 instructions
+- coverage case 2: reaches 0C0DA904 (+4 instructions)
+- the cases run 58 of 58 instructions
 
-### FUN_0c0da990 (`0C0DA990`, 174 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 5 development and 4 holdout cases, in `tests/camera_3/FUN_0c0da990.json`
-- a3=0 b=0 cnt=50 f=0.0
-- a3=2 b=1 cnt=96 f=0.99
-- a3=0 b=0 cnt=200 f=0.25
-- a3=5 b=2 cnt=10 f=0.75
-- huge random value
-- a3=1 b=2 cnt=97 f=0.3
-- a3=-1 b=3 cnt=0 f=0.5
-- a3=3 b=-1 cnt=100 f=1.0
-- a3=1 b=1 cnt=255 f=0.1
-- the cases run 87 of 87 instructions
-
-### FUN_0c0daa3e (`0C0DAA3E`, 96 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/FUN_0c0daa3e.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 90
-- case 109
-- case 95
-- case 56
-- case 108
-- case 96
-- case 53
-- case 79
-- case 81
-- case 49
-- case 67
-- case 37
-- case 80
-- case 70
-- case 54
-- case 75
-- case 44
-- case 76
-- the cases run 48 of 48 instructions
-
-### FUN_0c0dab5e (`0C0DAB5E`, 52 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/FUN_0c0dab5e.json`
+### FUN_0c0dab5e (`0C0DAB5E`, 52 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/FUN_0c0dab5e.json`
 - case 2
 - case 0
 - case 1
@@ -32634,33 +32465,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 44
 - case 107
 - the cases run 26 of 26 instructions
-
-### FUN_0c0dabd0 (`0C0DABD0`, 46 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 2 development and 1 holdout cases, in `tests/camera_3/FUN_0c0dabd0.json`
-- positive
-- negative byte
-- other
-- the cases run 23 of 23 instructions
-
-### FUN_0c0dc4e8 (`0C0DC4E8`, 1196 bytes, `src/game/camera/camera_7.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/camera_7/FUN_0c0dc4e8.json`
-- near, angle first slot
-- angle below all
-- off axis wide
-- negative atan masked
-- big zoom gets clamped height
-- far apart, 2nd slot
-- vertical fit wins
-- off axis near
-- zero midpoint z
-- y difference negative
-- the cases run 512 of 512 instructions
-
-### FUN_0c0dc994 (`0C0DC994`, 32 bytes, `src/game/camera/camera_7_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/camera_7_alt/FUN_0c0dc994.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 16 of 16 instructions
 
 ### FUN_0c0dca60 (`0C0DCA60`, 94 bytes, `src/lib/naomi/nl_layer.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/nl_layer_equiv/FUN_0c0dca60.json`
@@ -60863,48 +60667,68 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 92
 - the cases run 3 of 3 instructions
 
-### cam_apply_shake (`0C0DC27C`, 304 bytes, `src/game/camera/camera_7.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_7/cam_apply_shake.json`
-- case 86
-- case 86
-- case 17
+### cam_apply_shake (`0C0DC27C`, 340 bytes, `src/game/camera/cam_shake.c`)
+- equivalent on 8 development and 8 holdout cases, in `tests/cam_shake/cam_apply_shake.json`
+- kind 0 count 0 amp 5 rand 0
+- kind 0 count 4 amp -6 rand 0
+- kind 1 count 5 amp 8 rand 0
+- kind 2 count 0 amp 4 rand 3
+- kind 2 count 6 amp -2 rand 7
+- kind 3 count 4 amp 5 rand 0
+- kind 0 count 1 amp 100000 rand 0
+- kind 2 count 8 amp 3 rand 2
+- kind 0 count 3 amp 7 rand 0
+- kind 1 count 0 amp 9 rand 0
+- kind 1 count 2 amp -3 rand 0
+- kind 2 count 3 amp 6 rand 5
+- kind 2 count 1 amp 10 rand 1
+- kind 99 count 2 amp 5 rand 0
+- kind 1 count 7 amp 1 rand 0
+- kind 5 count 1 amp 1 rand 1
+- the cases run 146 of 152 instructions
+
+### cam_calc_fighter_dir (`0C0D811E`, 208 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_view/cam_calc_fighter_dir.json`
 - case 0
-- case 38
-- case 51
 - case 1
 - case 2
 - case 3
 - case 4
 - case 5
+- case 6
 - case 7
+- case 8
 - case 9
 - case 10
 - case 11
 - case 12
 - case 13
 - case 14
-- case 140
-- case 105
-- case 157
-- case 149
+- case 15
+- case 16
+- case 17
+- case 37
+- case 89
+- case 129
+- case 58
+- case 39
+- case 118
+- case 112
 - case 44
-- case 35
-- case 81
-- case 90
+- case 154
+- case 125
+- case 97
+- case 70
+- case 62
+- case 148
 - case 135
-- case 65
-- case 47
-- case 142
-- case 80
-- case 102
-- case 95
-- case 42
-- case 155
-- case 101
-- the cases run 75 of 118 instructions
+- case 107
+- case 104
+- case 59
+- the cases run 102 of 104 instructions
 
-### cam_calc_side_of_targets (`0C0D821C`, 98 bytes, `src/game/camera/camera.c`)
-- equivalent on 2 development and 3 holdout cases, in `tests/camera/cam_calc_side_of_targets.json`
+### cam_calc_side_of_targets (`0C0D821C`, 98 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 2 development and 3 holdout cases, in `tests/cam_view/cam_calc_side_of_targets.json`
 - second > first
 - second < first
 - equal
@@ -60912,8 +60736,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - negatives 2
 - the cases run 49 of 49 instructions
 
-### cam_compute_follow (`0C0D9288`, 3950 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 43 development and 43 holdout cases, in `tests/camera_3/cam_compute_follow.json`
+### cam_compute_follow (`0C0D9288`, 3950 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 43 development and 43 holdout cases, in `tests/cam_follow/cam_compute_follow.json`
 - free la0 eye0 ip0
 - free la0 eye10 ip2
 - free la0 eye40 ip2
@@ -61002,8 +60826,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - coverage case 8: reaches 0C0D9870 (+2 instructions)
 - the cases run 1788 of 1818 instructions
 
-### cam_force_mode (`0C0D8F10`, 80 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/cam_force_mode.json`
+### cam_enter_debug_free (`0C0DAC72`, 66 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/cam_follow/cam_enter_debug_free.json`
+- coverage case 1: reaches 0C0DAC72 (+33 instructions)
+- coverage case 3
+- coverage case 2
+- the cases run 33 of 33 instructions
+
+### cam_force_mode (`0C0D8F10`, 80 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_request/cam_force_mode.json`
 - case 0
 - case 1
 - case 2
@@ -61042,8 +60873,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 87
 - the cases run 40 of 40 instructions
 
-### cam_force_mode_10 (`0C0DAFD2`, 28 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_force_mode_10.json`
+### cam_force_mode_10 (`0C0DAFD2`, 28 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_force_mode_10.json`
 - case 0
 - case 1
 - case 2
@@ -61082,8 +60913,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 132
 - the cases run 14 of 14 instructions
 
-### cam_force_mode_14 (`0C0DA934`, 30 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_force_mode_14.json`
+### cam_force_mode_14 (`0C0DA934`, 30 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_force_mode_14.json`
 - case 0
 - case 1
 - case 2
@@ -61122,8 +60953,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 143
 - the cases run 15 of 15 instructions
 
-### cam_force_mode_23 (`0C0DB0CA`, 30 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_force_mode_23.json`
+### cam_force_mode_23 (`0C0DB0CA`, 30 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_force_mode_23.json`
 - case 0
 - case 1
 - case 2
@@ -61162,6 +60993,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 137
 - the cases run 15 of 15 instructions
 
+### cam_force_mode_dup (`0C0D8F60`, 80 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_request/cam_force_mode_dup.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 72
+- case 55
+- case 114
+- case 73
+- case 45
+- case 56
+- case 107
+- case 68
+- case 82
+- case 74
+- case 50
+- case 78
+- case 59
+- case 38
+- case 36
+- case 65
+- case 57
+- case 87
+- the cases run 40 of 40 instructions
+
 ### cam_frame_stage_corners (`0C041E84`, 704 bytes, `src/game/effect/effects_92.c`)
 - equivalent on 4 development and 4 holdout cases, in `tests/effects_92/cam_frame_stage_corners.json`
 - state0, f replaces both
@@ -61181,14 +61052,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - other object, other vectors
 - the cases run 45 of 45 instructions
 
-### cam_init_records (`0C0D8348`, 126 bytes, `src/game/camera/camera.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/camera/cam_init_records.json`
+### cam_init_records (`0C0D8348`, 126 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/cam_view/cam_init_records.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 63 of 63 instructions
 
-### cam_mode_00_variant0 (`0C0DB1C0`, 2086 bytes, `src/game/camera/camera_4.c`)
-- equivalent on 6 development and 6 holdout cases, in `tests/camera_4/cam_mode_00_variant0.json`
+### cam_mode_00_variant0 (`0C0DB1C0`, 2086 bytes, `src/game/camera/cam_mode0.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/cam_mode0/cam_mode_00_variant0.json`
 - enter slot 2
 - enter zero z
 - follow off axis
@@ -61203,8 +61074,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - other state
 - the cases run 842 of 911 instructions
 
-### cam_mode_00_variant1 (`0C0DB9E6`, 526 bytes, `src/game/camera/camera_4.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/camera_4/cam_mode_00_variant1.json`
+### cam_mode_00_variant1 (`0C0DB9E6`, 526 bytes, `src/game/camera/cam_mode0.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/cam_mode0/cam_mode_00_variant1.json`
 - sel 1, A=p0 high
 - same positions gives tiny direction
 - zoom below 10
@@ -61217,8 +61088,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - zoom at 100
 - the cases run 217 of 226 instructions
 
-### cam_mode_00_variant2 (`0C0DBE30`, 306 bytes, `src/game/camera/camera_5.c`)
-- equivalent on 4 development and 4 holdout cases, in `tests/camera_5/cam_mode_00_variant2.json`
+### cam_mode_00_variant2 (`0C0DBE30`, 306 bytes, `src/game/camera/cam_mode0_v2.c`)
+- equivalent on 4 development and 4 holdout cases, in `tests/cam_mode0_v2/cam_mode_00_variant2.json`
 - idx 0 normal
 - idx 1 eye low
 - identical points: eye+400 equals target y
@@ -61229,8 +61100,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - idx -1
 - the cases run 153 of 153 instructions
 
-### cam_mode_00_variant3 (`0C0DBBF4`, 572 bytes, `src/game/camera/camera_4.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/camera_4/cam_mode_00_variant3.json`
+### cam_mode_00_variant3 (`0C0DBBF4`, 572 bytes, `src/game/camera/cam_mode0.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/cam_mode0/cam_mode_00_variant3.json`
 - sel 1, A=p0 high
 - same positions gives tiny direction
 - zoom below 10
@@ -61243,8 +61114,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - zoom at 100
 - the cases run 235 of 237 instructions
 
-### cam_mode_00_variant4 (`0C0DBF94`, 506 bytes, `src/game/camera/camera_6.c`)
-- equivalent on 4 development and 5 holdout cases, in `tests/camera_6/cam_mode_00_variant4.json`
+### cam_mode_00_variant4 (`0C0DBF94`, 506 bytes, `src/game/camera/cam_mode0_v4.c`)
+- equivalent on 4 development and 5 holdout cases, in `tests/cam_mode0_v4/cam_mode_00_variant4.json`
 - k=0, distance < 500
 - k=1, distance > 500
 - identical points -> epsilon direction; zoom floor
@@ -61256,8 +61127,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - both far below ground, second higher: y clamp, d.y = 0 and result below ground is floored
 - the cases run 229 of 230 instructions
 
-### cam_mode_01 (`0C0DA4F0`, 54 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_01.json`
+### cam_mode_01 (`0C0DA4F0`, 54 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_01.json`
 - case 0
 - case 2
 - case 1
@@ -61296,8 +61167,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 57
 - the cases run 27 of 27 instructions
 
-### cam_mode_02 (`0C0DA54A`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_02.json`
+### cam_mode_02 (`0C0DA54A`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_02.json`
 - case 0
 - case 1
 - case 2
@@ -61336,8 +61207,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 105
 - the cases run 9 of 9 instructions
 
-### cam_mode_03 (`0C0DAB24`, 58 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_03.json`
+### cam_mode_03 (`0C0DAB24`, 58 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_03.json`
 - case 1
 - case 0
 - case 2
@@ -61376,8 +61247,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - the cases run 29 of 29 instructions
 
-### cam_mode_04 (`0C0DABBE`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_04.json`
+### cam_mode_04 (`0C0DABBE`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_04.json`
 - case 0
 - case 1
 - case 2
@@ -61416,8 +61287,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 75
 - the cases run 9 of 9 instructions
 
-### cam_mode_05 (`0C0DA57E`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_05.json`
+### cam_mode_05 (`0C0DA57E`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_05.json`
 - case 0
 - case 1
 - case 2
@@ -61456,8 +61327,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 9 of 9 instructions
 
-### cam_mode_06 (`0C0DA638`, 538 bytes, `src/game/camera/camera_3_alt3.c`)
-- equivalent on 16 development and 5 holdout cases, in `tests/camera_3_alt3/cam_mode_06.json`
+### cam_mode_06 (`0C0DA638`, 538 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 16 development and 5 holdout cases, in `tests/cam_follow/cam_mode_06.json`
 - state 0 not done
 - state 0 done
 - state 0 done, diff above 32768
@@ -61481,8 +61352,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - state 0 done, negative everything
 - the cases run 234 of 234 instructions
 
-### cam_mode_07 (`0C0DA874`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_07.json`
+### cam_mode_07 (`0C0DA874`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_07.json`
 - case 0
 - case 1
 - case 2
@@ -61521,8 +61392,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 128
 - the cases run 9 of 9 instructions
 
-### cam_mode_08_09 (`0C0DAFCC`, 6 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_08_09.json`
+### cam_mode_08_09 (`0C0DAFCC`, 6 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_08_09.json`
 - case 0
 - case 1
 - case 2
@@ -61561,8 +61432,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 3 of 3 instructions
 
-### cam_mode_10 (`0C0DAFEE`, 46 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_10.json`
+### cam_mode_10 (`0C0DAFEE`, 46 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/cam_follow/cam_mode_10.json`
 - case 0
 - case 1
 - case 2
@@ -61581,6 +61452,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 22
 - case 24
 - case 29
+- coverage case 1: reaches 0C0DB000 (+4 instructions)
 - case 95
 - case 67
 - case 71
@@ -61599,10 +61471,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - case 94
 - case 155
-- the cases run 19 of 23 instructions
+- the cases run 23 of 23 instructions
 
-### cam_mode_11_12 (`0C0D87F6`, 1638 bytes, `src/game/camera/camera_alt2.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/camera_alt2/cam_mode_11_12.json`
+### cam_mode_11_12 (`0C0D87F6`, 1638 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/cam_view/cam_mode_11_12.json`
 - near ease out
 - off axis
 - small yaw gap
@@ -61615,8 +61487,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - wrap back
 - the cases run 690 of 703 instructions
 
-### cam_mode_13 (`0C0DA886`, 6 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_13.json`
+### cam_mode_13 (`0C0DA886`, 6 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_13.json`
 - case 0
 - case 1
 - case 2
@@ -61655,8 +61527,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 41
 - the cases run 3 of 3 instructions
 
-### cam_mode_14 (`0C0DA952`, 6 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_14.json`
+### cam_mode_14 (`0C0DA952`, 6 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_14.json`
 - case 0
 - case 1
 - case 2
@@ -61695,8 +61567,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 113
 - the cases run 3 of 3 instructions
 
-### cam_mode_15 (`0C0DAF52`, 104 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 12 development and 12 holdout cases, in `tests/camera_3/cam_mode_15.json`
+### cam_mode_15 (`0C0DAF52`, 122 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 13 development and 13 holdout cases, in `tests/cam_follow/cam_mode_15.json`
 - case 13
 - case 1
 - case 4
@@ -61709,6 +61581,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 22
 - case 25
 - case 28
+- coverage case 1: reaches 0C0DAF78 (+9 instructions)
 - case 2
 - case 3
 - case 5
@@ -61721,10 +61594,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 23
 - case 27
 - case 29
-- the cases run 10 of 10 instructions
+- coverage case 2: reaches 0C0DAFA8 (+3 instructions)
+- the cases run 52 of 52 instructions
 
-### cam_mode_16 (`0C0DA43C`, 84 bytes, `src/game/camera/camera_3_alt2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3_alt2/cam_mode_16.json`
+### cam_mode_16 (`0C0DA43C`, 84 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 19 holdout cases, in `tests/cam_follow/cam_mode_16.json`
 - case 2
 - case 1
 - case 3
@@ -61743,6 +61617,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 20
 - case 21
 - case 22
+- coverage case 1: reaches 0C0DA452 (+15 instructions)
 - case 117
 - case 65
 - case 115
@@ -61761,10 +61636,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 103
 - case 35
 - case 110
-- the cases run 26 of 41 instructions
+- coverage case 2: reaches 0C0DA480 (+1 instructions)
+- the cases run 42 of 42 instructions
 
-### cam_mode_17 (`0C0DABFE`, 72 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_17.json`
+### cam_mode_17 (`0C0DABFE`, 116 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_17.json`
 - case 0
 - case 2
 - case 1
@@ -61801,10 +61677,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - case 53
 - case 77
-- the cases run 9 of 9 instructions
+- the cases run 36 of 36 instructions
 
-### cam_mode_18 (`0C0DA8AE`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_18.json`
+### cam_mode_18 (`0C0DA8AE`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_18.json`
 - case 0
 - case 1
 - case 2
@@ -61843,8 +61719,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 49
 - the cases run 9 of 9 instructions
 
-### cam_mode_19 (`0C0DC9D4`, 140 bytes, `src/game/camera/camera_8.c`)
-- equivalent on 5 development and 4 holdout cases, in `tests/camera_8/cam_mode_19.json`
+### cam_mode_19 (`0C0DC9D4`, 140 bytes, `src/game/camera/cam_mode19.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/cam_mode19/cam_mode_19.json`
 - kind 0
 - kind 17
 - kind 18 -> table 4*(b-32)
@@ -61856,14 +61732,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - kind 127
 - the cases run 41 of 41 instructions
 
-### cam_mode_20 (`0C0DAA9E`, 42 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/camera_3/cam_mode_20.json`
+### cam_mode_20 (`0C0DAA9E`, 42 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/cam_follow/cam_mode_20.json`
 - rescue: empty case
+- coverage case 1: reaches 0C0DAAC2 (+3 instructions)
 - rescue: empty case
-- the cases run 18 of 20 instructions
+- the cases run 21 of 21 instructions
 
-### cam_mode_21 (`0C0DB01C`, 34 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_21.json`
+### cam_mode_21 (`0C0DB01C`, 34 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/cam_follow/cam_mode_21.json`
 - case 0
 - case 1
 - case 2
@@ -61882,6 +61759,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- coverage case 1: reaches 0C0DB038 (+3 instructions)
 - case 95
 - case 47
 - case 85
@@ -61900,10 +61778,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 128
 - case 71
 - case 52
-- the cases run 14 of 17 instructions
+- the cases run 17 of 17 instructions
 
-### cam_mode_22 (`0C0DB03E`, 78 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_22.json`
+### cam_mode_22 (`0C0DB03E`, 140 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/cam_follow/cam_mode_22.json`
 - case 2
 - case 0
 - case 1
@@ -61922,6 +61800,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- coverage case 1: reaches 0C0DB0C0 (+3 instructions)
 - case 97
 - case 75
 - case 106
@@ -61940,10 +61819,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 105
 - case 112
 - case 67
-- the cases run 8 of 8 instructions
+- the cases run 39 of 39 instructions
 
-### cam_mode_23 (`0C0DB0E8`, 18 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_23.json`
+### cam_mode_23 (`0C0DB0E8`, 18 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_23.json`
 - case 0
 - case 1
 - case 2
@@ -61982,8 +61861,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 122
 - the cases run 9 of 9 instructions
 
-### cam_mode_24_stage_select (`0C0DB0FA`, 80 bytes, `src/game/camera/camera_3_alt2.c`)
-- equivalent on 4 development and 3 holdout cases, in `tests/camera_3_alt2/cam_mode_24_stage_select.json`
+### cam_mode_24_stage_select (`0C0DB0FA`, 80 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/cam_follow/cam_mode_24_stage_select.json`
 - state 0 idx 0
 - state 0 idx 3
 - state 1
@@ -61993,8 +61872,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - state 5
 - the cases run 40 of 40 instructions
 
-### cam_mode_25 (`0C0DB14A`, 58 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_25.json`
+### cam_mode_25 (`0C0DB14A`, 58 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/cam_follow/cam_mode_25.json`
 - case 0
 - case 1
 - case 2
@@ -62013,6 +61892,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 16
 - case 17
 - case 18
+- coverage case 1: reaches 0C0DB16E (+7 instructions)
 - case 145
 - case 36
 - case 86
@@ -62031,10 +61911,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 148
 - case 134
 - case 153
-- the cases run 22 of 29 instructions
+- the cases run 29 of 29 instructions
 
-### cam_mode_26 (`0C0DB184`, 6 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_mode_26.json`
+### cam_mode_26 (`0C0DB184`, 6 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_26.json`
 - case 0
 - case 1
 - case 2
@@ -62073,8 +61953,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 83
 - the cases run 3 of 3 instructions
 
-### cam_mode_27_debug_free (`0C0DACDC`, 630 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 38 development and 9 holdout cases, in `tests/camera_3/cam_mode_27_debug_free.json`
+### cam_mode_27_debug_free (`0C0DACDC`, 630 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 38 development and 9 holdout cases, in `tests/cam_follow/cam_mode_27_debug_free.json`
 - state0 pad0
 - state1 pad0
 - state2
@@ -62124,8 +62004,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - Vh 3
 - the cases run 263 of 277 instructions
 
-### cam_mode_28 (`0C0DA434`, 8 bytes, `src/game/camera/camera_3_alt2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3_alt2/cam_mode_28.json`
+### cam_mode_28 (`0C0DA434`, 8 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_28.json`
 - case 0
 - case 1
 - case 2
@@ -62164,8 +62044,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 77
 - the cases run 4 of 4 instructions
 
-### cam_mode_default (`0C0DA42C`, 8 bytes, `src/game/camera/camera_3_alt2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3_alt2/cam_mode_default.json`
+### cam_mode_default (`0C0DA42C`, 8 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_mode_default.json`
 - case 0
 - case 1
 - case 2
@@ -62204,33 +62084,48 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 103
 - the cases run 4 of 4 instructions
 
-### cam_publish_active_position (`0C0D80D4`, 74 bytes, `src/game/camera/camera.c`)
-- equivalent on 12 development and 9 holdout cases, in `tests/camera/cam_publish_active_position.json`
-- flag=0 idx=0
-- flag=0 idx=1
-- flag=0 idx=-1
-- flag=0 idx=127
-- flag=1 idx=0
-- flag=1 idx=1
-- flag=1 idx=-1
-- flag=1 idx=127
-- flag=128 idx=0
-- flag=128 idx=1
-- flag=128 idx=-1
-- flag=128 idx=127
-- flag=0 idx=2
-- flag=0 idx=5
-- flag=0 idx=-128
-- flag=1 idx=2
-- flag=1 idx=5
-- flag=1 idx=-128
-- flag=128 idx=2
-- flag=128 idx=5
-- flag=128 idx=-128
-- the cases run 37 of 37 instructions
+### cam_mode_default_dup (`0C0DC9B4`, 8 bytes, `src/game/camera/cam_shake.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_shake/cam_mode_default_dup.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 109
+- case 112
+- case 115
+- case 39
+- case 36
+- case 51
+- case 74
+- case 62
+- case 73
+- case 99
+- case 91
+- case 102
+- case 52
+- case 101
+- case 96
+- case 40
+- case 87
+- case 103
+- the cases run 4 of 4 instructions
 
-### cam_push_keyframe_history (`0C0DC3D4`, 260 bytes, `src/game/camera/camera_7.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_7/cam_push_keyframe_history.json`
+### cam_near_goal (`0C0DC3D4`, 276 bytes, `src/game/camera/cam_shake.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_shake/cam_near_goal.json`
 - case 64
 - case 15
 - case 112
@@ -62267,10 +62162,81 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - case 80
 - case 55
-- the cases run 118 of 118 instructions
+- the cases run 130 of 130 instructions
 
-### cam_request_mode (`0C0D8E6E`, 102 bytes, `src/game/camera/camera.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera/cam_request_mode.json`
+### cam_nop (`0C0D905E`, 4 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_request/cam_nop.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 91
+- case 116
+- case 63
+- case 110
+- case 111
+- case 61
+- case 81
+- case 74
+- case 117
+- case 40
+- case 38
+- case 44
+- case 94
+- case 85
+- case 58
+- case 68
+- case 92
+- case 60
+- the cases run 2 of 2 instructions
+
+### cam_publish_active_position (`0C0D80D4`, 74 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 12 development and 9 holdout cases, in `tests/cam_view/cam_publish_active_position.json`
+- flag=0 idx=0
+- flag=0 idx=1
+- flag=0 idx=-1
+- flag=0 idx=127
+- flag=1 idx=0
+- flag=1 idx=1
+- flag=1 idx=-1
+- flag=1 idx=127
+- flag=128 idx=0
+- flag=128 idx=1
+- flag=128 idx=-1
+- flag=128 idx=127
+- flag=0 idx=2
+- flag=0 idx=5
+- flag=0 idx=-128
+- flag=1 idx=2
+- flag=1 idx=5
+- flag=1 idx=-128
+- flag=128 idx=2
+- flag=128 idx=5
+- flag=128 idx=-128
+- the cases run 37 of 37 instructions
+
+### cam_publish_heading (`0C0D827E`, 152 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/cam_view/cam_publish_heading.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 65 of 76 instructions
+
+### cam_request_mode (`0C0D8E6E`, 102 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_view/cam_request_mode.json`
 - case 0
 - case 1
 - case 2
@@ -62309,8 +62275,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 85
 - the cases run 51 of 51 instructions
 
-### cam_request_mode_01 (`0C0DA490`, 36 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_01.json`
+### cam_request_mode_01 (`0C0DA490`, 36 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_01.json`
 - case 0
 - case 1
 - case 2
@@ -62349,8 +62315,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 100
 - the cases run 18 of 18 instructions
 
-### cam_request_mode_02 (`0C0DA526`, 36 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_02.json`
+### cam_request_mode_02 (`0C0DA526`, 36 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_02.json`
 - case 0
 - case 1
 - case 2
@@ -62389,8 +62355,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 148
 - the cases run 18 of 18 instructions
 
-### cam_request_mode_03 (`0C0DAAF8`, 44 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_03.json`
+### cam_request_mode_03 (`0C0DAAF8`, 44 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_03.json`
 - case 0
 - case 1
 - case 2
@@ -62429,8 +62395,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 152
 - the cases run 22 of 22 instructions
 
-### cam_request_mode_04 (`0C0DAB92`, 44 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_04.json`
+### cam_request_mode_04 (`0C0DAB92`, 44 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_04.json`
 - case 1
 - case 0
 - case 2
@@ -62469,8 +62435,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 151
 - the cases run 22 of 22 instructions
 
-### cam_request_mode_05 (`0C0DA55C`, 34 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_05.json`
+### cam_request_mode_05 (`0C0DA55C`, 34 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_05.json`
 - case 2
 - case 0
 - case 1
@@ -62509,8 +62475,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 84
 - the cases run 17 of 17 instructions
 
-### cam_request_mode_06 (`0C0DA590`, 34 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_06.json`
+### cam_request_mode_06 (`0C0DA590`, 34 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_06.json`
 - case 0
 - case 1
 - case 2
@@ -62549,8 +62515,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 150
 - the cases run 17 of 17 instructions
 
-### cam_request_mode_07 (`0C0DA852`, 34 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_07.json`
+### cam_request_mode_07 (`0C0DA852`, 34 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_07.json`
 - case 2
 - case 0
 - case 1
@@ -62589,8 +62555,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 60
 - the cases run 17 of 17 instructions
 
-### cam_request_mode_18 (`0C0DA88C`, 34 bytes, `src/game/camera/camera_3.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_3/cam_request_mode_18.json`
+### cam_request_mode_17 (`0C0DABD0`, 46 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/cam_follow/cam_request_mode_17.json`
+- positive
+- negative byte
+- other
+- the cases run 23 of 23 instructions
+
+### cam_request_mode_18 (`0C0DA88C`, 34 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_18.json`
 - case 3
 - case 0
 - case 1
@@ -62629,8 +62602,101 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 55
 - the cases run 17 of 17 instructions
 
-### cam_request_mode_with_args (`0C0D8FB0`, 56 bytes, `src/game/camera/camera_2.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_2/cam_request_mode_with_args.json`
+### cam_request_mode_19 (`0C0DA990`, 174 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/cam_follow/cam_request_mode_19.json`
+- a3=0 b=0 cnt=50 f=0.0
+- a3=2 b=1 cnt=96 f=0.99
+- a3=0 b=0 cnt=200 f=0.25
+- a3=5 b=2 cnt=10 f=0.75
+- huge random value
+- a3=1 b=2 cnt=97 f=0.3
+- a3=-1 b=3 cnt=0 f=0.5
+- a3=3 b=-1 cnt=100 f=1.0
+- a3=1 b=1 cnt=255 f=0.1
+- the cases run 87 of 87 instructions
+
+### cam_request_mode_20 (`0C0DAA3E`, 96 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_follow/cam_request_mode_20.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 90
+- case 109
+- case 95
+- case 56
+- case 108
+- case 96
+- case 53
+- case 79
+- case 81
+- case 49
+- case 67
+- case 37
+- case 80
+- case 70
+- case 54
+- case 75
+- case 44
+- case 76
+- the cases run 48 of 48 instructions
+
+### cam_request_mode_25 (`0C0D8FE8`, 118 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_request/cam_request_mode_25.json`
+- case 25
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 90
+- case 43
+- case 56
+- case 53
+- case 96
+- case 84
+- case 110
+- case 66
+- case 64
+- case 48
+- case 117
+- case 45
+- case 62
+- case 86
+- case 118
+- case 38
+- case 93
+- case 75
+- the cases run 59 of 59 instructions
+
+### cam_request_mode_with_args (`0C0D8FB0`, 56 bytes, `src/game/camera/cam_request.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_request/cam_request_mode_with_args.json`
 - case 0
 - case 2
 - case 1
@@ -62669,8 +62735,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 118
 - the cases run 28 of 28 instructions
 
-### cam_reset_shake (`0C0DC1C0`, 138 bytes, `src/game/camera/camera_6.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_6/cam_reset_shake.json`
+### cam_reset_shake (`0C0DC1C0`, 138 bytes, `src/game/camera/cam_mode0_v4.c`)
+- equivalent on 22 development and 22 holdout cases, in `tests/cam_mode0_v4/cam_reset_shake.json`
 - case 0
 - case 11
 - case 1
@@ -62689,6 +62755,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 15
 - case 16
 - case 17
+- kind 0 amp 100 count 4
+- kind 1 amp 7 count 5
+- kind 99 amp 5 count 5
+- kind 2 amp 12 count 3
 - case 74
 - case 45
 - case 38
@@ -62707,10 +62777,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 119
 - case 68
 - case 99
-- the cases run 56 of 69 instructions
+- kind 0 amp -90 count 3
+- kind 2 amp 8 count 6
+- kind 7 amp 3 count 2
+- kind 1 amp 1 count 1
+- the cases run 69 of 69 instructions
 
-### cam_select_mode0_variant (`0C0D83C6`, 116 bytes, `src/game/camera/camera.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera/cam_select_mode0_variant.json`
+### cam_reset_to_default (`0C0DC994`, 32 bytes, `src/game/camera/cam_shake.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/cam_shake/cam_reset_to_default.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 16 of 16 instructions
+
+### cam_select_mode0_variant (`0C0D83C6`, 116 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_view/cam_select_mode0_variant.json`
 - case 0
 - case 16
 - case 14
@@ -62749,8 +62829,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 94
 - the cases run 54 of 58 instructions
 
-### cam_set_priority (`0C0D8E5C`, 18 bytes, `src/game/camera/camera.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera/cam_set_priority.json`
+### cam_set_priority (`0C0D8E5C`, 18 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_view/cam_set_priority.json`
 - case 0
 - case 1
 - case 2
@@ -62789,8 +62869,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 106
 - the cases run 9 of 9 instructions
 
-### cam_set_shake_ramp (`0C0DC18E`, 50 bytes, `src/game/camera/camera_6.c`)
-- equivalent on 3 development and 2 holdout cases, in `tests/camera_6/cam_set_shake_ramp.json`
+### cam_set_shake_ramp (`0C0DC18E`, 50 bytes, `src/game/camera/cam_mode0_v4.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/cam_mode0_v4/cam_set_shake_ramp.json`
 - 100/7
 - negative
 - neg divisor
@@ -62798,14 +62878,28 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - big
 - the cases run 25 of 25 instructions
 
-### cam_set_view_matrix (`0C0D873A`, 112 bytes, `src/game/camera/camera.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/camera/cam_set_view_matrix.json`
+### cam_set_view_matrix (`0C0D873A`, 112 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/cam_view/cam_set_view_matrix.json`
 - normal
 - other
 - the cases run 56 of 56 instructions
 
-### cam_step_keyframe_script (`0C0DA1F6`, 566 bytes, `src/game/camera/camera_3_alt.c`)
-- equivalent on 6 development and 7 holdout cases, in `tests/camera_3_alt/cam_step_keyframe_script.json`
+### cam_snap_mode0 (`0C0DC4E8`, 1196 bytes, `src/game/camera/cam_shake.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/cam_shake/cam_snap_mode0.json`
+- near, angle first slot
+- angle below all
+- off axis wide
+- negative atan masked
+- big zoom gets clamped height
+- far apart, 2nd slot
+- vertical fit wins
+- off axis near
+- zero midpoint z
+- y difference negative
+- the cases run 512 of 512 instructions
+
+### cam_step_keyframe_script (`0C0DA1F6`, 566 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 6 development and 7 holdout cases, in `tests/cam_follow/cam_step_keyframe_script.json`
 - random 539 phase 1
 - random 0 phase 1
 - random 5 phase 4
@@ -62821,8 +62915,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - random 430 phase 0
 - the cases run 246 of 253 instructions
 
-### cam_update_by_mode (`0C0D8468`, 722 bytes, `src/game/camera/camera_alt.c`)
-- equivalent on 36 development and 34 holdout cases, in `tests/camera_alt/cam_update_by_mode.json`
+### cam_update_by_mode (`0C0D8468`, 722 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 36 development and 34 holdout cases, in `tests/cam_view/cam_update_by_mode.json`
 - state 0, r=0
 - state 0, r=1
 - state 0, r=2
@@ -62895,8 +62989,17 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - state 100 (default)
 - the cases run 274 of 274 instructions
 
-### cam_update_view_matrices (`0C0D87AA`, 72 bytes, `src/game/camera/camera_alt.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/camera_alt/cam_update_view_matrices.json`
+### cam_update_debug_free (`0C0DACB4`, 40 bytes, `src/game/camera/cam_follow.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/cam_follow/cam_update_debug_free.json`
+- coverage case 1: reaches 0C0DACB4 (+13 instructions)
+- coverage case 3: reaches 0C0DACD8 (+2 instructions)
+- coverage case 5
+- coverage case 2: reaches 0C0DACBE (+5 instructions)
+- coverage case 4
+- the cases run 20 of 20 instructions
+
+### cam_update_view_matrices (`0C0D87AA`, 72 bytes, `src/game/camera/cam_view.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/cam_view/cam_update_view_matrices.json`
 - case 0
 - case 1
 - case 2

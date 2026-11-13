@@ -185,7 +185,7 @@ int pl_special_b_start(int a4);
 int FUN_0c0497fc(int a4);
 int FUN_0c0e2650(float f4, float f5, float f6, float f7, float f8, float f9);
 int pl_kraken_mode13_update_v1(int a4);
-int FUN_0c0da990(int a4, int a5);
+int cam_request_mode_19(int a4, int a5);
 int stage_gimmick_21_update_b(int a4, int a5, int a6, int a7);
 int stage_type11_update(int a4, int a5, int a6, int a7);
 void FUN_0c0f1aec(int a4, int a5, int a6, int a7);

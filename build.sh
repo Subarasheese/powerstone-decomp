@@ -26,7 +26,7 @@ mkdir -p build/obj
   printf '%s\n' elf "start P($BASE)" "output build\\out.elf"
   python3 tools/1-2-baseline/units.py objects.txt | while read -r o; do printf 'input %s\n' "$o"; done
   if [ -n "$(find src -name '*.c' -print -quit)" ]; then
-    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -rl --include='*.c' '@unit' src 2>/dev/null) /dev/null | sort -u > build/c_idents.txt || true
+    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -rl --include='*.c' '@unit' src 2>/dev/null) $(find src -name '*.h') /dev/null | sort -u > build/c_idents.txt || true
     [ -f symbols.txt ] && awk 'NR==FNR{u[$1]=1; next} !/^#/ && NF==2 && ($2 in u) {printf "define _%s(%s)\n", $2, $1}' build/c_idents.txt symbols.txt
   fi
   printf '%s\n' exit

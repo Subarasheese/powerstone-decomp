@@ -5,10 +5,10 @@ struct B { int w[13]; };
 struct E { char pad[32]; struct V v; };
 struct P { signed char k; char pad[391]; struct V a; struct V b; struct V *pa; struct V *pb; struct B t; };
 extern char g_players[];
-extern struct B g_tab155394;
+extern struct B g_cam_key_v2;
 extern void FUN_0c0e24f0(struct V *);
 extern void cam_compute_follow(struct P *, void *);
-extern void FUN_0c0d827e(struct P *);
+extern void cam_publish_heading(struct P *);
 void cam_mode_00_variant2(struct P *p0)
 {
     struct V d, v1, v0;
@@ -36,7 +36,7 @@ void cam_mode_00_variant2(struct P *p0)
     p->b = *q1;
     p->pa = &p->a;
     p->pb = &p->b;
-    p->t = g_tab155394;
+    p->t = g_cam_key_v2;
     cam_compute_follow(p, &p->t);
-    FUN_0c0d827e(p);
+    cam_publish_heading(p);
 }

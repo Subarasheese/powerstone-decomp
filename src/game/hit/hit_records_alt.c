@@ -19,7 +19,7 @@ void FUN_0c08e704(char *o);
 void pl_hitreact_start_vibration(char *o);
 void FUN_0c08e980(char *o);
 void FUN_0c08e4bc(char *o);
-void FUN_0c0d905e(int sound);
+void cam_nop(int sound);
 void cam_request_mode_04(int voice, int side);
 #define F(o, n) (*(float *)((o) + (n)))
 struct o24_float { char p[0x24]; float v; };
@@ -201,7 +201,7 @@ void pl_hitreact_update(char *o)
         w = *(signed char **)(o + 0xF8);
         if (w[5] == 0) {
             if ((*(signed char **)(o + 0xF8))[19] == 0)
-                FUN_0c0d905e(10);
+                cam_nop(10);
             else
                 cam_request_mode_04((*(signed char **)(o + 0xF8))[19], B(o, 3));
         }

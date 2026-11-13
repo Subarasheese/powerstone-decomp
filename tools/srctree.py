@@ -52,7 +52,7 @@ RULES = [
     ('player_state', 'player/state'),
     ('player_', 'player'), ('fighter_update', 'player'), ('weapon_pose', 'player'), ('vibration', 'player'),
     ('stage_gimmicks', 'stage/gimmick'), ('stage_', 'stage'),
-    ('camera', 'camera'),
+    ('camera', 'camera'), ('cam_', 'camera'),
     ('dbg', 'debug'),
 ]
 GENERIC = re.compile(r'(gen|fy|fx|m|hand|hx)_')

@@ -242,7 +242,7 @@ int FUN_0c0efba0(int a4);
 int pdVibMxSetStopTime(int a4, int a5);
 int FUN_0c0fcb28(int a4, int a5, int a6, int a7);
 int ending_obj_update_t04(int a4, int a5, int a6, int a7);
-int FUN_0c0daa3e(int a4);
+int cam_request_mode_20(int a4);
 
 int nlRotateV(int a4, int a5)
 {

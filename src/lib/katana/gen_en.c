@@ -160,7 +160,7 @@ int pl_mode15_cls05_07_f0(int a4);
 int FUN_0c098b9c(int a4);
 int fx_spawn_03(int a4, int a5, int a6, float f4);
 float FUN_0c0c07bc(int a4, int a5, int a6, int a7, float f4);
-float FUN_0c0d811e(int a4);
+float cam_calc_fighter_dir(int a4);
 int opt_page1_tick_cursor_pulse(int a4);
 int FUN_0c023680(int a4, int a5);
 int opt_page4_main(int a4);

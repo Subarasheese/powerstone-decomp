@@ -23,7 +23,7 @@ int pl_apply_acceleration(int);
 int pl_landed(int);
 int pl_change_state(int, int, int, int);
 struct o107_uchar { char p[0x107]; unsigned char v; };
-int FUN_0c0d8fe8(int, int);
+int cam_request_mode_25(int, int);
 struct o54_float { char p[0x54]; float v; };
 struct o44_float { char p[0x44]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
@@ -241,7 +241,7 @@ int FUN_0c098e0a(int a4, int a5, int a6, int a7)
         return FUN_0c02f328((*(signed char *)((a4 + 0x3))));
     }
     *(unsigned char *)((a4 + 0xC)) = 0x1;
-    FUN_0c0d8fe8((*(signed char *)((a4 + 0x3))), 0x3);
+    cam_request_mode_25((*(signed char *)((a4 + 0x3))), 0x3);
     pl_start_motion(a4, 0x2, 0x98);
     (((struct o38_float *)(a4))->v) = 0.0f;
     (((struct o3C_float *)(a4))->v) = 0.0f;

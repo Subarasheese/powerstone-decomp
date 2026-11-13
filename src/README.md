@@ -35,5 +35,9 @@ with `tools/srcfiles.py`. A tool that writes a new file puts it at the top of `s
 | `lib/libc` | C runtime: mem/str functions, printf core, compiler math helpers |
 | `lib/mixed` | generated library C whose functions come from several libraries (written by the generator in batches, not by source file) |
 
+Headers: `game/game.h` holds the types the modules share (Vec3, Fighter); a module converted to the header form has its
+own header (`game/camera/camera.h`: types, data and every function of the module declared once) and one C file per original
+source file. Include them from `src` (`#include "game/camera/camera.h"`; the build passes `-include=src`).
+
 File names: `m_<start>[_<what>].c` are byte-matching units (built); `gen_*.c` generated Equivalent C; `fy_`, `fx_`, `hx_`, `hand_`
 hand-written Equivalent C; `_alt` / `_equiv` files hold a module's Equivalent-only functions apart from its matching unit.

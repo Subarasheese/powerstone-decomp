@@ -304,18 +304,8 @@ pos (0..11) float x,y,z; normal (12..23); u (24), v (28). Cursors at 0xc439dc8..
 | 0x2DD | u8 | child type | alloc switch 0/1/2 |
 | 0x2E0.. | ptr[] | child sprite objects (kid0 at 0x2E0, kid1 at 0x2E4) | fx_burst_update `kid0`,`kid1` |
 
-## Camera record (`g_cam_records`, symbol g_29f8; 2 records, stride 0x1fc)
-| off | type | name | evidence |
-|---|---|---|---|
-| 0x00 | u8 | record index | cam_init_records stores loop index |
-| 0x02 | s8 | camera mode (0..28) | cam_update_by_mode switch |
-| 0x03..0x06 | u8 | sub-state counters (reset by mode requests) | cam_request_mode clears +3..+5 and +6 |
-| 0x18..0x28 | f32 x5 | default eye/target parameters | cam_init_records float stores |
-| 0xAC | u8 | priority of current mode | cam_set_priority, cam_request_mode compare |
-| 0x174 | s32 | fade/shake quotient (a/b) | 0c0dc18e / 0c0dc1c0 write 0x174..0x180 |
-| 0x178..0x180 | s32 | companion values | same |
-| 0x184 | u8 | target player index | cam_request_mode writes arg r5 |
-| 0x1a0/0x1a4 | ptr | pointers to target position (player+32) | cam_request_mode |
+## Camera record (`g_cam_records`)
+Now defined in C: `CamRecord` and `CamKey` in src/game/camera/camera.h (offsets in the field comments).
 
 ## Mode work record (`g_game_work`, symbol g_0c7f2ee0; shared by all screen modes)
 | off | type | name | evidence |
