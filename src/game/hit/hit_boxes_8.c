@@ -8,7 +8,7 @@ extern char g_obj_list_heads[];
 struct o2A8_uchar { char p[0x2A8]; unsigned char v; };
 int FUN_0c0246b2(int);
 float FUN_0c02649a(int, int);
-int thunk_FUN_0c020cba(void);
+int thunk_FUN_0c020cba(int);
 extern int FUN_0c0235ca(int, int);
 extern int FUN_0c0235ce(int, int);
 extern int FUN_0c023680(int, int);
@@ -90,15 +90,11 @@ int FUN_0c0259ee(int a4, int a5)
 
 int FUN_0c025f50(void)
 {
-    thunk_FUN_0c020cba();
-    *(volatile int *)g_obj_list_heads;
-    thunk_FUN_0c020cba();
-    *(volatile int *)0xC7E4078;
-    thunk_FUN_0c020cba();
-    *(volatile int *)0xC7E407C;
-    thunk_FUN_0c020cba();
-    *(volatile int *)0xC7E4080;
-    return thunk_FUN_0c020cba();
+    thunk_FUN_0c020cba(0xC7E40C4);              /* the players, then the object classes' lists */
+    thunk_FUN_0c020cba(*(int *)0xC7E4074);
+    thunk_FUN_0c020cba(*(int *)0xC7E4078);
+    thunk_FUN_0c020cba(*(int *)0xC7E407C);
+    return thunk_FUN_0c020cba(*(int *)0xC7E4080);
 }
 
 int hit_dispatch_shape_pair(int kind, int subkind, int arg_c, int arg_d)
