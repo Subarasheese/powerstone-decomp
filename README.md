@@ -1,11 +1,9 @@
-# POWER STONE decomp
+# Power Stone decomp
 
 ![decomp progress](badges/progress.svg?p=98.5&b=97.6&a=62&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
-**Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
-
-A decompilation of the Dreamcast **POWER STONE**, in progress. It rebuilds the game's executable byte for byte.
+A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
 A function is **done** when its C behaves like the original (Equivalent);
 byte-identical C (Matching) is the bonus tier.
 
