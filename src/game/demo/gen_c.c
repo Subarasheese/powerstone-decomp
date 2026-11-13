@@ -84,7 +84,7 @@ int pl_load_motion_prev_key(int, int);
 int pl_play_voice_at_frame(int, int, int);
 int pl_start_motion(int, int, int);
 int res_switch_scene(int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int thunk_FUN_0c05fff4(void);
 int thunk_FUN_0c062242(int, int);
 int ui_sprite_queue_add(int, int, int, int, int, int);
@@ -111,29 +111,29 @@ int dbgedit_work_player_menu(int a4, int a5, int a6, int a7)
                     if ((*(signed char *)((a4 + 0x4))) == 2) {
                         dbgedit_select_stage_object(a4);
                     } else {
-                        sprintf(0xC7F36B8, a5, a6, a7, 0xC15443C);
+                        sprintf(0xC7F36B8, 0xC15443C);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 120.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543D0);
+                        sprintf(0xC7F36B8, 0xC1543D0);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xA) << 2) << 1), (float)((((*(signed char *)((a4 + 0x6))) + 0x11) << 2) << 1));
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15444C);
+                        sprintf(0xC7F36B8, 0xC15444C);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 136.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154454);
+                        sprintf(0xC7F36B8, 0xC154454);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 144.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15445C);
+                        sprintf(0xC7F36B8, 0xC15445C);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 152.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154464);
+                        sprintf(0xC7F36B8, 0xC154464);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 160.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154470);
+                        sprintf(0xC7F36B8, 0xC154470);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 168.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154478);
+                        sprintf(0xC7F36B8, 0xC154478);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 176.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154484);
+                        sprintf(0xC7F36B8, 0xC154484);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 184.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15448C);
+                        sprintf(0xC7F36B8, 0xC15448C);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 192.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154494);
+                        sprintf(0xC7F36B8, 0xC154494);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 200.0f);
-                        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15449C);
+                        sprintf(0xC7F36B8, 0xC15449C);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 208.0f);
                         if ((0x10 & ((((struct o48_int *)(a4))->v))) != 0) {
                             t2 = *(signed char *)((a4 + 0x6));
@@ -174,7 +174,7 @@ int dbgedit_work_player_menu(int a4, int a5, int a6, int a7)
                     return t3;
                 }
                 if (t1 == 2) {
-                    sprintf(0xC7F36B8, a5, a6, a7, 0xC1544A4);
+                    sprintf(0xC7F36B8, 0xC1544A4);
                     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 120.0f);
                     if ((*(signed char *)((a4 + 0x4))) == 2) {
                         FUN_0c062da6();
@@ -191,7 +191,7 @@ int dbgedit_work_player_menu(int a4, int a5, int a6, int a7)
                 } else {
                     t3 = t1;
                     if (t1 == 3) {
-                        sprintf(0xC7F36B8, a5, a6, a7, 0xC1544AC);
+                        sprintf(0xC7F36B8, 0xC1544AC);
                         dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 120.0f);
                         if ((*(signed char *)((a4 + 0x4))) == 2) {
                             FUN_0c062d78();
@@ -206,15 +206,15 @@ int dbgedit_work_player_menu(int a4, int a5, int a6, int a7)
                 }
                 return t2;
             }
-            sprintf(0xC7F36B8, a5, a6, a7, 0xC154404);
+            sprintf(0xC7F36B8, 0xC154404);
             dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 120.0f);
-            sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543D0);
+            sprintf(0xC7F36B8, 0xC1543D0);
             dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xA) << 2) << 1), (float)((((*(signed char *)((a4 + 0x4))) + 0x11) << 2) << 1));
-            sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154410);
+            sprintf(0xC7F36B8, 0xC154410);
             dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 136.0f);
-            sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15441C);
+            sprintf(0xC7F36B8, 0xC15441C);
             dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 144.0f);
-            sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154430);
+            sprintf(0xC7F36B8, 0xC154430);
             dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 152.0f);
             if ((0x10 & ((((struct o48_int *)(a4))->v))) != 0) {
                 t1 = *(signed char *)((a4 + 0x4));
@@ -246,15 +246,15 @@ int dbgedit_work_player_menu(int a4, int a5, int a6, int a7)
         }
         return t0;
     }
-    sprintf(0xC7F36B8, a5, a6, a7, 0xC1543D0);
+    sprintf(0xC7F36B8, 0xC1543D0);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xA) << 2) << 1), (float)((((*(signed char *)((a4 + 0x3))) + 0xF) << 2) << 1));
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543D4);
+    sprintf(0xC7F36B8, 0xC1543D4);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 120.0f);
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543E4);
+    sprintf(0xC7F36B8, 0xC1543E4);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 128.0f);
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543F4);
+    sprintf(0xC7F36B8, 0xC1543F4);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 136.0f);
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1543FC);
+    sprintf(0xC7F36B8, 0xC1543FC);
     dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0xC) << 2) << 1), 144.0f);
     if ((0x10 & ((((struct o48_int *)(a4))->v))) != 0) {
         t0 = *(signed char *)((a4 + 0x3));

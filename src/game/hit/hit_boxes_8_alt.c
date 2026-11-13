@@ -26,8 +26,8 @@ int hit_find_part_entry(int, int, int, int);
 int hit_get_sphere_entry(int, int, int);
 int hit_get_cylinder_entry(int, int, int);
 int hit_get_box_entry(int, int, int);
-int FUN_0c026220(int, int, int);
-int FUN_0c026334(int, int, int);
+float FUN_0c026220(int, int, int);
+float FUN_0c026334(int, int, int);
 struct vec3_float { float x, y, z; };
 extern signed char g_game_state[];
 int stage_point_in_box(struct vec3_float *, char *);
@@ -140,13 +140,13 @@ int FUN_0c026076(int a4, int a5, int a6, int a7, int a8)
     return t88;
 }
 
-int FUN_0c02649a(int a4, int a5)
+float FUN_0c02649a(int a4, int a5)
 {
     int stk[16];
     register int t1;
     register int t2;
     register int t16;
-    register int t23;
+    register float t23;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
     t1 = hit_find_part_entry(a4, 0x1, (*(signed char *)((a4 + 0x102))), 0x0);

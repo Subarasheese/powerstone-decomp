@@ -10,7 +10,7 @@ int FUN_0c0d6212(int);
 int ui_draw_continue_countdown(int);
 int ui_draw_text_stub(int, int, float, float, float, float);
 float FUN_0c0d5bc0(void);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int FUN_0c0d7032(int, int);
 int FUN_0c0d7054(int);
 int FUN_0c0d7076(void);
@@ -51,8 +51,7 @@ int FUN_0c0d6874(int a4, int a5, int a6, int a7)
     register float u1;
     register float u2;
 
-    *(volatile int *)((0xC33F8B0 + ((*(signed char *)((a4 + 0x6))) << 2)));
-    sprintf(0xC7F36B8, a5, a6, a7, 0xC155108);
+    sprintf(0xC7F36B8, 0xC155108, (int)*(int *)((0xC33F8B0 + ((*(signed char *)((a4 + 0x6))) << 2))));
     u0 = *(float *)0xC0D6A18;
     u1 = FUN_0c0d5bc0();
     u2 = (float)(((short)(*(signed char *)((a4 + 0x9))) * (short)0x1E) + 0x1);
@@ -77,7 +76,7 @@ int FUN_0c0d6874(int a4, int a5, int a6, int a7)
                 } else {
                     t1 = (*(signed char *)((((a4 + 0x68) + t5) + 0x0)));
                     t4 = 0xC7F36B8;
-                    sprintf(t4, 0x0, 0x0, 0x0, 0xC15510C);
+                    sprintf(t4, 0xC15510C, t1);
                     u1 = FUN_0c0d5bc0();
                     t1 = 0x1E;
                     t4 = 0xC7F36B8;
@@ -100,8 +99,7 @@ int FUN_0c0d6874(int a4, int a5, int a6, int a7)
         if ((t1 & 8) == 0) {
             t1 = 0x0;
             for (;;) {
-                *(volatile signed char *)((((a4 + 0x68) + t1) + 0x0));
-                sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC15510C);
+                sprintf(0xC7F36B8, 0xC15510C, (int)*(signed char *)((((a4 + 0x68) + t1) + 0x0)));
                 u1 = FUN_0c0d5bc0();
                 u2 = (float)((((short)(*(signed char *)((a4 + 0x9))) * (short)0x1E) + t1) + 0x5);
                 t3 = ui_draw_text_stub(0xC7F36B8, 0x0, (u2 * u0), (u1 + u0), 1.0f, 1.0f);

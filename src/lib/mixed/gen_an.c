@@ -146,7 +146,7 @@ int FUN_0c0d708c(int);
 int cam_step_keyframe_script(int, int);
 int cam_force_mode_10(int, int);
 int cam_reset_shake(int, int, int);
-int nlobjput_sub_trnsl(int);
+int nlobjput_sub_trnsl(int, float);
 float math_rand_float(void);
 int dbg_print_string(int);
 int dbg_set_cursor_cell(int);

@@ -684,11 +684,14 @@ class CPU:
             bank = self.xf if k & 1 else self.fr
             bank[k & 14], bank[(k & 14) + 1] = hi, lo
 
-        def load(a):                     # little endian: the low word first in memory
-            return rd(a + 4, 4), rd(a, 4)
+        # a pair move keeps the singles' order: FR(2n) (or XF(2n)) goes to and from the lower address, as two fmov.s
+        # would, in either endianness (hardware and Flycast; KallistiOS loads a natural float[4][4] into XMTRX this way).
+        # Only a double's value has FR(2n) as its high word, and this code, built -fpu=single, moves pairs only as data.
+        def load(a):
+            return rd(a, 4), rd(a + 4, 4)
 
-        def store(a, hi, lo):
-            wr(a, 4, lo); wr(a + 4, 4, hi)
+        def store(a, first, second):
+            wr(a, 4, first); wr(a + 4, 4, second)
         if lo4 == 0xc: put(n, *get(m_)); return
         if lo4 == 8: put(n, *load(r[m_])); return
         if lo4 == 6: put(n, *load(r[m_] + r[0])); return

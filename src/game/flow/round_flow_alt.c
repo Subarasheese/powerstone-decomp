@@ -18,7 +18,7 @@ int item_director_phase4(void);
 int FUN_0c0ccb60(void);
 struct o118_int { char p[0x118]; int v; };
 struct o2E0_int { char p[0x2E0]; int v; };
-int FUN_0c02649a(int, int);
+float FUN_0c02649a(int, int);
 int _divls(void);
 int _modls(void);
 int _quick_odd_mvn(int, int, int, int, float, float, float, float, float, float, float);

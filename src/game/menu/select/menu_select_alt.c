@@ -19,7 +19,7 @@ int menu_ui_spawn_13(int);
 int menu_ui_spawn_14(int);
 float math_rand_float(void);
 int _modlu(void);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 void item_clear_state(void);
 void FUN_0c058f44(void);
 void obj_system_init(void);
@@ -486,7 +486,7 @@ void menu_player_select_slot_update(int a4, int a5, int a6, int a7)
             }
             *(int *)((int)stk + 4) = (((((struct o60_short *)(((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))->v)));
             *(int *)((int)stk + 0) = 0xC152A78;
-            sprintf(0xC7F36B8, t190, t191, t192, 0xC152A78);
+            sprintf(0xC7F36B8, 0xC152A78, *(int *)((int)stk + 4));      /* "%2d": the slot's countdown */
             t220 = 0x190;
             if ((*(signed char *)((a4 + 0x3))) == 0) {
                 t220 = 0xD0;
@@ -629,7 +629,7 @@ void menu_player_select_slot_update(int a4, int a5, int a6, int a7)
             }
             *(int *)((int)stk + 4) = (((((struct o60_short *)(((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))->v)));
             *(int *)((int)stk + 0) = 0xC152A78;
-            sprintf(0xC7F36B8, 0x0, t0, 0x14, 0xC152A78);
+            sprintf(0xC7F36B8, 0xC152A78, *(int *)((int)stk + 4));      /* "%2d": the slot's countdown */
             t379 = 0x190;
             if ((*(signed char *)((a4 + 0x3))) == 0) {
                 t379 = 0xF0;

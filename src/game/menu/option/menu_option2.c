@@ -152,7 +152,7 @@ int FUN_0c01a928(int a4)
     register int t5;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t5 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01A8C8;
@@ -210,7 +210,7 @@ int opt_page2_spawn_bg_scroll(int a4)
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x2, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01A9A4;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -254,7 +254,7 @@ int FUN_0c01ab4c(int a4)
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x2, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01AB12;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -300,7 +300,7 @@ int FUN_0c01ac74(int a4)
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01AC0E;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -342,7 +342,7 @@ int FUN_0c01ad40(int a4)
     register int t5;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t5 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01ACFC;

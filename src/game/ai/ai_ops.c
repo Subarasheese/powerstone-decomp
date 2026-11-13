@@ -8,7 +8,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int ai_clear_op_state(void);
 int dbg_print_at(int, float, float);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 struct o26_ushort { char p[0x26]; unsigned short v; };
 
 int ai_op52_print(int a4, int a5, int a6, int a7)
@@ -18,8 +18,7 @@ int ai_op52_print(int a4, int a5, int a6, int a7)
 
     t0 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t0 + 0x2);
-    *(volatile short *)((((t0 + 0x2) - 2) + 0x0));
-    sprintf(0xC7F36B8, a5, a6, a7, 0xC14AB80);
+    sprintf(0xC7F36B8, 0xC14AB80, (int)*(short *)((((t0 + 0x2) - 2) + 0x0)));
     *(volatile float *)0xC04EA9C;
     u0 = ((((struct o8_float *)0xC04EAA0)->v));
     u0 = u0 + ((((struct oC_float *)0xC04EAA0)->v)) * (float)(unsigned char)(*(signed char *)0xC3673EE);

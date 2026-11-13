@@ -29,7 +29,7 @@ struct o4_float { char p[0x4]; float v; };
 struct oC_short { char p[0xC]; short v; };
 struct oC_ushort { char p[0xC]; unsigned short v; };
 int dbg_print_at(int, float, float);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 typedef struct { char pad0[5]; unsigned char counter_5, field_6, field_7; char pad1[8]; short timer_16; short pad_18; short field_20; } state_rec;
 int dbg_set_text_color(int);
 
@@ -99,15 +99,15 @@ int version_screen_draw(int a4, int a5, int a6, int a7)
         (((struct o1_uchar *)0xC7F2EE4)->v) = 0x0;
         t0 = 0x0;
     } else {
-        sprintf(0xC7F36B8, 0xC361BF0, 0x604, a7, 0xC154878);
+        sprintf(0xC7F36B8, 0xC154878);
         *(volatile float *)0xC0D56D8;
         dbg_print_at(0xC7F36B8, ((((struct o4_float *)0xC0D56DC)->v)), ((((struct o0_float *)0xC0D56DC)->v)));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154884);
+        sprintf(0xC7F36B8, 0xC154884, 0xC154888);
         u0 = (((struct o10_float *)0xC0D56DC)->v);
         dbg_print_at(0xC7F36B8, u0, ((((struct o14_float *)0xC0D56DC)->v)));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC154884);
+        sprintf(0xC7F36B8, 0xC154884, 0xC154894);
         dbg_print_at(0xC7F36B8, u0, ((((struct o1C_float *)0xC0D56DC)->v)));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1548A0);
+        sprintf(0xC7F36B8, 0xC1548A0);
         t0 = (dbg_print_at(0xC7F36B8, ((((struct o1C_float *)0xC0D56DC)->v)), u0));
     }
     return t0;

@@ -8,7 +8,7 @@ struct vec3i { int x, y, z; };
 int nlPushMatrix(int);
 int nlCalcPoint(struct vec3i *, struct vec3i *);
 int nlPopMatrix(int);
-int math_mat_row_length(int, int, float);
+float math_mat_row_length(int, int, float);
 
 float math_vec3_normalize(int a4, float f4)
 {
@@ -54,17 +54,17 @@ void math_mat_transform_point(struct vec3i *point, int matrix_idx)
     nlPopMatrix(1);
 }
 
-int math_mat_row0_length(int a4, float f4)
+float math_mat_row0_length(int a4, float f4)
 {
     return (math_mat_row_length(a4, 0x0, f4));
 }
 
-int math_mat_row1_length(int a4, float f4)
+float math_mat_row1_length(int a4, float f4)
 {
     return (math_mat_row_length(a4, 0x1, f4));
 }
 
-int math_mat_row2_length(int a4, float f4)
+float math_mat_row2_length(int a4, float f4)
 {
     return (math_mat_row_length(a4, 0x2, f4));
 }

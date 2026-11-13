@@ -3,12 +3,12 @@
 
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
-int math_signed_sqrt(float);
+float math_signed_sqrt(float);
 int FUN_0c1070a0(int);
 int FUN_0c10796a(int, int);
 int mwRnaErrCallFunc(int, int, int, int);
 int FUN_0c107482(int a4, int a5, int a6, int a7);
-int math_mat_row_length(int a4, int a5);
+float math_mat_row_length(int a4, int a5);
 
 int FUN_0c107482(int a4, int a5, int a6, int a7)
 {

@@ -29,7 +29,7 @@ int fx_spawn_036fe4(int a4, int a5)
     register float u2;
     register int t3;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t10 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

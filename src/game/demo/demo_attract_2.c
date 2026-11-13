@@ -30,7 +30,7 @@ int demo_spawn_keyframe_mover(int a4, int a5, float f4)
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned int *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t14 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC028524;

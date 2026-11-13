@@ -11,8 +11,8 @@ struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 int menu_ui_spawn_23(int);
 int menu_stage_select_spawn_marker(int);
-int menu_ui_spawn_26(void);
-int menu_ui_spawn_30(void);
+int menu_ui_spawn_26(int);
+int menu_ui_spawn_30(int);
 struct o0_float { float v; };
 struct o0_uint { unsigned int v; };
 struct o10_float { char p[0x10]; float v; };
@@ -92,7 +92,7 @@ struct o6_ushort { char p[0x6]; unsigned short v; };
 struct o8_short { char p[0x8]; short v; };
 struct o8_ushort { char p[0x8]; unsigned short v; };
 int ui_draw_text_stub(int, int, float, float, float, float);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 struct o74_uchar { char p[0x74]; unsigned char v; };
 int menu_ui_spawn_25(int, int, int);
 int menu_ui_spawn_36(int);
@@ -400,8 +400,8 @@ int menu_stage_select_spawn_ui(void)
     if (t0 != 0) {
         menu_ui_spawn_23(t0);
         menu_stage_select_spawn_marker(t0);
-        menu_ui_spawn_26();
-        return menu_ui_spawn_30();
+        menu_ui_spawn_26(t0);
+        return menu_ui_spawn_30(t0);
     }
     return t0;
 }
@@ -707,8 +707,7 @@ int FUN_0c0a5240(int a4)
             t5 = t7;
             t6 = t8;
         }
-        *(volatile short *)0xC7F303C;
-        sprintf(0xC7F36B8, t0, t5, t6, 0xC152A78);
+        sprintf(0xC7F36B8, 0xC152A78, (int)*(short *)0xC7F303C);
     } else {
         (((struct o1_uchar *)0xC7F2EE6)->v) = ((*(signed char *)0xC7F2EE7) + 0x1);
         (((struct o2_uchar *)0xC7F2EE6)->v) = 0x0;
@@ -865,8 +864,7 @@ int FUN_0c0a5240(int a4)
             t0 = t3;
             t2 = t5;
         }
-        *(volatile short *)0xC7F303C;
-        sprintf(0xC7F36B8, t0, t1, t2, 0xC152A78);
+        sprintf(0xC7F36B8, 0xC152A78, (int)*(short *)0xC7F303C);
     }
     t0 = 0x17C;
     if ((signed char)a4 == 0) {

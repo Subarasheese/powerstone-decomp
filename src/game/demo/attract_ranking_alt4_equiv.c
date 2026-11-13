@@ -1,30 +1,26 @@
 /* attract sequence: ranking screens (time/1P points/VS) (0c0d2dd8-0c0d46e4) */
 
-int ui_draw_text_stub(void);
+void ui_draw_text_stub(char *str, int mode, float x, float y, float scale_x, float scale_y);
 int attract_setup_demo_round(void);
 int attract_ranking_step(void);
 int FUN_0c0d44c4(void);
 
-int attract_screen_urls(void)
+/* The attract sequence's demo-round state (set-up, ranking step, end), then the web address at the bottom of the screen:
+   the Japanese one for language 0, the other one for the rest */
+void attract_screen_urls(void)
 {
-    register int t0;
+    unsigned char state = *(unsigned char *)0xC7F2EE6;
 
-    t0 = *(signed char *)0xC7F2EE6;
-    if ((unsigned char)t0 != 0) {
-        if ((unsigned char)t0 != 1) {
-            FUN_0c0d44c4();
-        } else {
-            attract_ranking_step();
-        }
-    } else {
+    if (state == 0) {
         attract_setup_demo_round();
-    }
-    if ((*(signed char *)0xC7F2F08) == 0) {
-        *(volatile float *)0xC0D4560;
-        *(volatile float *)0xC0D4564;
+    } else if (state == 1) {
+        attract_ranking_step();
     } else {
-        *(volatile float *)0xC0D4560;
-        *(volatile float *)0xC0D4564;
+        FUN_0c0d44c4();
     }
-    return ui_draw_text_stub();
+    if (*(char *)0xC7F2F08 == 0) {
+        ui_draw_text_stub((char *)0xC1546DC, 1, 64.0f, 416.0f, 1.0f, 1.0f);
+    } else {
+        ui_draw_text_stub((char *)0xC1546F8, 1, 64.0f, 416.0f, 1.0f, 1.0f);
+    }
 }

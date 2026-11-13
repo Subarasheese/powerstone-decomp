@@ -60,7 +60,7 @@ int pl_apply_motion_translation(int);
 int pl_end_action_choose_state(int);
 int pl_find_opponent_in_hit_list(int);
 int pl_step_motion(int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int testmode_adjust_option_value(int, int, int);
 int testmode_check_exit_combo(void);
 int testmode_draw_text_table(int, int);
@@ -457,19 +457,15 @@ int FUN_0c0cdb70(float f4)
 
     testmode_draw_title_and_footer((*(int *)0xC33EC64));
     testmode_draw_text_table(0xC33EE34, 0x4);
-    *(volatile int *)0xC7F2F28;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F28);
     dbg_print_at(0xC7F36B8, 400.0f, 64.0f);
-    *(volatile int *)0xC7F2F2C;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F2C);
     dbg_print_at(0xC7F36B8, 400.0f, 80.0f);
-    *(volatile int *)0xC7F2F30;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F30);
     dbg_print_at(0xC7F36B8, 400.0f, 96.0f);
     t0 = 0x0;
     for (;;) {
-        *(volatile int *)((((t0 << 2) + 0xC7F2F34) + 0x0));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153488);
+        sprintf(0xC7F36B8, 0xC153488, t0, *(int *)((t0 << 2) + 0xC7F2F34));
         dbg_print_at(0xC7F36B8, 112.0f, (float)(((t0 + 0xF) << 2) << 1));
         t0 = (t0 + 0x1);
         if ((int)t0 >= (int)0xB) {
@@ -478,8 +474,7 @@ int FUN_0c0cdb70(float f4)
     }
     t0 = 0x0;
     for (;;) {
-        *(volatile int *)((((t0 << 2) + 0xC7F2FB8) + 0x0));
-        sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153498);
+        sprintf(0xC7F36B8, 0xC153498, t0, *(int *)((t0 << 2) + 0xC7F2FB8));
         dbg_print_at(0xC7F36B8, 112.0f, (float)(((t0 + 0x1E) << 2) << 1));
         t0 = (t0 + 0x1);
         if ((int)t0 >= (int)0x9) {

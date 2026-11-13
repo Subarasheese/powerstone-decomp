@@ -23,7 +23,7 @@ int obj_spawn_037848(int a4)
     register int t3;
     register int t4;
 
-    t0 = obj_create(0x1, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x1, 0x1, 0x2, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

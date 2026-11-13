@@ -188,7 +188,7 @@ int FUN_0c01ef8e(int a4, int a5, int a6, int a7)
         t1 = t0;
         if (t0 != 1) {
         } else {
-            t0 = vmu_menu_poll_confirm_cancel(0x3060E);
+            t0 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);
             t2 = (signed char)t0;
             if ((signed char)t0 != 0) {
                 t0 = ((int (*)(void))(vmu_menu_update_objs))();
@@ -263,7 +263,7 @@ int FUN_0c01f164(int a4, int a5, int a6, int a7)
         t1 = t0;
         if (t0 != 1) {
         } else {
-            t0 = vmu_menu_poll_confirm_cancel(0x3060E);
+            t0 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);
             t2 = (signed char)t0;
             if ((signed char)t0 != 0) {
                 *(unsigned char *)((a4 + 0x2)) = 0x0;
@@ -299,7 +299,7 @@ int FUN_0c01f248(int a4, int a5, int a6, int a7)
         t1 = t0;
         if (t0 != 1) {
         } else {
-            t0 = vmu_menu_poll_confirm_cancel(0x3060E);
+            t0 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);
             t2 = (signed char)t0;
             if ((signed char)t0 != 0) {
                 *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
@@ -339,7 +339,7 @@ int FUN_0c01f350(int a4, int a5, int a6, int a7)
         t1 = t0;
         if (t0 != 1) {
         } else {
-            t0 = vmu_menu_poll_confirm_cancel(0x3060E);
+            t0 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);
             t2 = (signed char)t0;
             if ((signed char)t0 != 0) {
                 t0 = ((int (*)(void))(vmu_menu_update_objs))();

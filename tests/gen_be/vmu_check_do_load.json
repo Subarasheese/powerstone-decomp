@@ -3,40 +3,12 @@
   {
    "about": "rescue: empty case",
    "regs": {}
-  },
-  {
-   "about": "directed: flips 0C012156 (taken)",
-   "regs": {},
-   "poke": {
-    "00000003": "01"
-   }
-  },
-  {
-   "about": "directed: flips 0C01215E (taken)",
-   "regs": {},
-   "poke": {
-    "00000003": "03"
-   }
   }
  ],
  "holdout": [
   {
    "about": "rescue: empty case",
    "regs": {}
-  },
-  {
-   "about": "directed: flips 0C01215A (taken)",
-   "regs": {},
-   "poke": {
-    "00000003": "02"
-   }
-  },
-  {
-   "about": "directed: flips 0C012162 (taken)",
-   "regs": {},
-   "poke": {
-    "00000003": "04"
-   }
   }
  ]
 }

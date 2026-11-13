@@ -44,7 +44,7 @@ int FUN_0c029ec4(void)
 
     t0 = 0x5;
     for (;;) {
-        t2 = obj_create(0x5, 0x1, 0xA);
+        t2 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0xA, 0x0);
         t6 = t2;
         if (t2 != 0) {
             *(unsigned int *)((t2 + 0x10)) = 0xC029BC0;

@@ -1446,7 +1446,7 @@ int FUN_0c0187a8(int a4)
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC018776;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1480,7 +1480,7 @@ int FUN_0c018b96(int a4, int a5)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned short *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x8);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x8, 0x0);
     t31 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC018830;
@@ -1630,7 +1630,7 @@ int FUN_0c018ed0(int a4, int a5)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned short *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x8);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x8, 0x0);
     t31 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC018CCA;
@@ -1727,7 +1727,7 @@ int FUN_0c019204(int a4, int a5)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned short *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x6);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x6, 0x0);
     t24 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01901C;
@@ -1806,7 +1806,7 @@ int FUN_0c0193b2(int a4, int a5)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned short *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t17 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC019334;
@@ -1863,7 +1863,7 @@ int FUN_0c0194dc(int a4, int a5)
     register float u5;
 
     *(unsigned short *)(((int)stk + 0)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t13 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC019488;

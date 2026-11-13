@@ -97,7 +97,7 @@ int nlPopMatrix(int);
 int obj_create(int, int, int, int);
 int pl_play_side_se_at_frame(int, int, int);
 int snd_play_side_se(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int ui_draw_text_stub(int, int, float, float, float, float);
 int vmu_defrag_disk(int);
 int vmu_lcd_refresh(int);
@@ -2994,7 +2994,7 @@ int ui_draw_continue_countdown(int a4)
     *(int *)((int)stk + 0) = 0xC155094;
     *(unsigned int *)(((int)stk + 0)) = 0xC155094;
     L_C0D63A8:;
-    sprintf(0xC7F36B8, v0_3, v0_2, v0_4, *(int *)((int)stk + 0));
+    sprintf(0xC7F36B8, *(int *)((int)stk + 0), *(int *)((int)stk + 4));      /* "CONTINUE? %1d": the countdown digit */
     w0_2 = FUN_0c0d5bc0();
     w0_3 = (float)(((short)(*(signed char *)((v0_0 + 0x9))) * (short)0x13) + 0x1);
     ui_draw_text_stub(0xC7F36B8, 0x0, (w0_3 * w0_1), (w0_2 + w0_1), w0_0, w0_0);

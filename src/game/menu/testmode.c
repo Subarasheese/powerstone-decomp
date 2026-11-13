@@ -14,7 +14,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int dbg_print_at(int, float, float);
 int nl_sprite_draw(int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 struct o0_short { short v; };
 struct o0_uchar { unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -135,7 +135,7 @@ int testmode_memory_check_screen(float f4)
     v0_0 = (*(int *)((R12 + (R11 << 2)))) != 0;
     if (v0_0) goto L_C0CE39E;
     L_C0CE3A2:;
-    sprintf(R9, R5, R6, R7, 0xC1534A8);
+    sprintf(R9, 0xC1534A8, R11, *(int *)((R12 + (R11 << 2))) != 0 ? 0xC1534BC : 0xC1534B8);      /* "ROM %2d   %s": "NG" or "OK" */
     R10 = ((R11 - 10));
     R5 = (0x7);
     w0_0 = (F15);
@@ -745,20 +745,17 @@ int testmode_game_data_screen(void)
     register int t27;
 
     FUN_0c0ce910(0xC33F548, 0x6);
-    *(volatile int *)0xC7F2F28;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC1535A4);
+    /* "%02d:%02d:%02d" given the same counter three times, as the original does */
+    sprintf(0xC7F36B8, 0xC1535A4, *(int *)0xC7F2F28, *(int *)0xC7F2F28, *(int *)0xC7F2F28);
     *(volatile float *)0xC0CF21C;
     *(volatile float *)0xC0CF220;
     u8 = (((struct o0_float *)0xC0CF224)->v);
     dbg_print_at(0xC7F36B8, u8, ((((struct o8_float *)0xC0CF224)->v)));
-    *(volatile int *)0xC7F2F28;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F28);
     dbg_print_at(0xC7F36B8, u8, ((((struct o10_float *)0xC0CF224)->v)));
-    *(volatile int *)0xC7F2F2C;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F2C);
     dbg_print_at(0xC7F36B8, u8, ((((struct o14_float *)0xC0CF224)->v)));
-    *(volatile int *)0xC7F2F30;
-    sprintf(0xC7F36B8, 0x0, 0x0, 0x0, 0xC153480);
+    sprintf(0xC7F36B8, 0xC153480, (int)*(int *)0xC7F2F30);
     dbg_print_at(0xC7F36B8, u8, ((((struct o18_float *)0xC0CF224)->v)));
     t26 = testmode_check_start_shot1();
     t27 = (signed char)t26;

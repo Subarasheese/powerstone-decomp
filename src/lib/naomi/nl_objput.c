@@ -6,7 +6,7 @@ int nlMultiMatrixRevOrder8(int);
 int nlInvLightVector(void);
 int nlInvLightVectorUseViewMatrix(void);
 int nlobjput_sub(int);
-int nlobjput_sub_trnsl(int);
+int nlobjput_sub_trnsl(int, float);
 int nlMakeModelViewProjectMatrix_objput(void);
 int nlPushMatrix(int);
 struct o4_float { char p[0x4]; float v; };
@@ -86,7 +86,7 @@ int nlObjPutTrnsl(int a4, float f4)
     }
     nlPushMatrix(0x0);
     nlMultiMatrixRevOrder8(0xC7FCF80);
-    return nlobjput_sub_trnsl(a4);
+    return nlobjput_sub_trnsl(a4, f4);
 }
 
 int nlObjPutUseViewMatrixTrnsl(int a4, float f4)
@@ -95,7 +95,7 @@ int nlObjPutUseViewMatrixTrnsl(int a4, float f4)
         nlInvLightVectorUseViewMatrix();
     }
     nlMakeModelViewProjectMatrix_objput();
-    return nlobjput_sub_trnsl(a4);
+    return nlobjput_sub_trnsl(a4, f4);
 }
 
 void nlObjPutSetGlobalAmbience(float f4)

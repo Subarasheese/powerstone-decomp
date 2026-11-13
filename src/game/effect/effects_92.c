@@ -18,7 +18,7 @@ int FUN_0c041e14(int a4)
     register int t0;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)(((int)stk + 0)));

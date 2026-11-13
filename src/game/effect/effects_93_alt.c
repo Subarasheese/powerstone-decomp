@@ -24,7 +24,7 @@ int FUN_0c0421ee(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x8);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x8, 0x0);
     if (t0 != 0) {
         return fx_init_subblock_effect(t0, (*(int *)(((int)stk + 0))), (*(signed char *)(((int)stk + 4))), 0x1);
     }
@@ -38,7 +38,7 @@ int FUN_0c042222(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x8);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x8, 0x0);
     if (t0 != 0) {
         return fx_init_subblock_effect(t0, (*(int *)(((int)stk + 0))), (*(signed char *)(((int)stk + 4))), 0x0);
     }

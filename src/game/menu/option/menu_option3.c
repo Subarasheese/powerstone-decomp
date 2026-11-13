@@ -182,7 +182,7 @@ int opt_page3_spawn_bg_scroll(int a4)
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01B360;
         *(unsigned char *)((t0 + 0x0)) = 0x1;

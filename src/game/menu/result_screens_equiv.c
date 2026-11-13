@@ -5,7 +5,7 @@ struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
 struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
-int ui_draw_text_stub(void);
+int ui_draw_text_stub(char *str, int mode, float x, float y, float scale_x, float scale_y);
 struct o6C_int { char p[0x6C]; int v; };
 int snd_play_side_se(int, int);
 int FUN_0c0d5f6a(int);
@@ -50,36 +50,26 @@ float FUN_0c0d5bc0(void)
     return 0.0f;
 }
 
+/* "please wait" on player `slot`'s half of the screen, unless 0x0C494D28 hides it; one unit (*0x0C0D5DF4) down, lower
+   while FUN_0c0d5bc0's offset applies */
 void ui_draw_please_wait(int a4)
 {
-    int stk[1];
+    signed char slot = (signed char)a4;
+    float unit = *(float *)0xC0D5DF4;
 
-    *(unsigned char *)(((int)stk + 0)) = a4;
-    if ((*(signed char *)0xC494D28) == 0) {
-        FUN_0c0d5bc0();
-        *(volatile signed char *)(((int)stk + 0));
-        *(volatile float *)0xC0D5DF4;
-        *(volatile float *)0xC0D5DF4;
-        ui_draw_text_stub();
-    return;
+    if (*(signed char *)0xC494D28 == 0) {
+        ui_draw_text_stub((char *)0xC154F98, 0, (float)(slot * 27 + 1) * unit, FUN_0c0d5bc0() + unit, 1.0f, 1.0f);
     }
 }
 
+/* "no challenger" on player `slot`'s half, when that player has not joined (g_select_player_mode bit slot+1 clear) */
 void ui_draw_no_challenge(int a4)
 {
-    int stk[1];
+    signed char slot = (signed char)a4;
+    float unit = *(float *)0xC0D5DF4;
 
-    *(unsigned char *)(((int)stk + 0)) = a4;
-    if (((unsigned char)(*(signed char *)0xC7F3071) & ((*(signed char *)(((int)stk + 0))) + 0x1)) == 0) {
-        if ((*(signed char *)0xC494D28) == 0) {
-            FUN_0c0d5bc0();
-            *(volatile signed char *)(((int)stk + 0));
-            *(volatile float *)0xC0D5DF4;
-            *(volatile float *)0xC0D5DF4;
-            ui_draw_text_stub();
-    return;
-        }
-        return;
+    if ((*(unsigned char *)0xC7F3071 & (slot + 1)) == 0 && *(signed char *)0xC494D28 == 0) {
+        ui_draw_text_stub((char *)0xC154FA4, 0, (float)(slot * 26 + 1) * unit, FUN_0c0d5bc0() + unit, 1.0f, 1.0f);
     }
 }
 
@@ -109,20 +99,12 @@ int FUN_0c0d6098(int a4)
     return 0x1;
 }
 
+/* text item a5 of table row a4 (12-byte entries at 0x0C155034: x, y, string), lowered by FUN_0c0d5bc0's offset */
 int FUN_0c0d609e(int a4, int a5)
 {
-    int stk[2];
-    register int t0;
+    char *e = (char *)(0xC155034 + (signed char)(((signed char)a4 * 4 + a5) * 12));
 
-    *(unsigned char *)(((int)stk + 4)) = a4;
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    t0 = *(signed char *)(((int)stk + 4));
-    FUN_0c0d5bc0();
-    *(volatile float *)((((signed char)(((((t0 << 2) + a5) << 1) + ((t0 << 2) + a5)) << 2) + 0xC155034) + 0x0));
-    *(volatile float *)((((signed char)(((((t0 << 2) + a5) << 1) + ((t0 << 2) + a5)) << 2) + 0xC155034) + 0x4));
-    *(volatile float *)0xC0D6270;
-    *(volatile int *)((((signed char)(((((t0 << 2) + a5) << 1) + ((t0 << 2) + a5)) << 2) + 0xC155034) + 0x8));
-    return ui_draw_text_stub();
+    return ui_draw_text_stub(*(char **)(e + 8), 0, *(float *)e, *(float *)(e + 4) + FUN_0c0d5bc0(), 0.75f, 1.0f);
 }
 
 int FUN_0c0d60e2(int a4)
@@ -189,7 +171,7 @@ void FUN_0c0d6190(int a4)
     register int t2;
 
     if ((*(signed char *)0xC7F306E) == 0) {
-        t2 = FUN_0c0d708c((*(signed char *)((a4 + 0x9))));
+        t2 = ((int (*)(int, int))FUN_0c0d708c)((*(signed char *)((a4 + 0x9))), 0x0);
         if (t2 != 0) {
             snd_play_side_se(0x0, 0x43);
     return;
@@ -689,11 +671,9 @@ int FUN_0c0d6ef6(int a4)
                     *(unsigned char *)((a4 + 0x1)) = 0x0;
                     return 0x0;
                 }
-                FUN_0c0d5bc0();
-                *(volatile float *)0xC0D70E8;
-                *(volatile signed char *)((a4 + 0x9));
-                *(volatile float *)0xC0D70E8;
-                return ui_draw_text_stub();
+                /* the message under player a4[9]'s half */
+                return ui_draw_text_stub((char *)0xC155110, 0, (float)(*(signed char *)(a4 + 0x9) * 31 + 1) * *(float *)0xC0D70E8,
+                                         FUN_0c0d5bc0() + *(float *)0xC0D70E8, 1.0f, 1.0f);
             }
             *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
             *(unsigned short *)((a4 + 0xA)) = 0xB4;

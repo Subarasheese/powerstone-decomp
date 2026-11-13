@@ -6,7 +6,7 @@ extern char g_ai_react_slots[];
 int pl_play_side_se_at_frame(int, int, int);
 int FUN_0c0a3824(int);
 int math_vec3_sub(int, int, int);
-int math_signed_sqrt(float);
+float math_signed_sqrt(float);
 int memset(int, int, int);
 struct variant_obj {
     char pad_00[7];
@@ -76,7 +76,7 @@ int ai_difficulty_tier(void)
     return (0x3 & (((signed char)t0 >> 1) >> 1));
 }
 
-int ai_dist_to_opponent(int a4)
+float ai_dist_to_opponent(int a4)
 {
     int stk[6];
     register float u2;

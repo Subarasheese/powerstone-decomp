@@ -80,7 +80,7 @@ struct o3_uchar { char p[0x3]; unsigned char v; };
 struct oA_short { char p[0xA]; short v; };
 struct oA_ushort { char p[0xA]; unsigned short v; };
 int ui_sprite_queue_add(int, int, int, int, int, int);
-int ui_draw_text_stub(void);
+int ui_draw_text_stub(char *str, int mode, float x, float y, float scale_x, float scale_y);
 struct o0_uint { unsigned int v; };
 struct o0_ushort { unsigned short v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -1587,7 +1587,7 @@ int ending_spawn_obj_typed(int a4, int a5, int a6, int a7)
     *(unsigned char *)(((int)stk + 12)) = a5;
     *(unsigned char *)(((int)stk + 0)) = a6;
     *(unsigned char *)(((int)stk + 4)) = a7;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)(((int)stk + 8)));
@@ -1632,7 +1632,7 @@ int ending_spawn_obj_t02(int a4)
     register int t0;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
@@ -1713,7 +1713,7 @@ int ending_spawn_obj_t05(int a4)
     register int t11;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x2, 0x0);
     t12 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1752,7 +1752,7 @@ int ending_spawn_obj_t04(int a4)
     register int t0;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x4;
@@ -1777,7 +1777,7 @@ int ending_spawn_obj_t06(int a4)
     register int t0;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x6;
@@ -1800,7 +1800,7 @@ int ending_spawn_obj_t07(void)
 {
     register int t0;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x7;
@@ -1828,7 +1828,7 @@ int ending_spawn_obj_t08(void)
     register int t8;
     register int t10;
 
-    t0 = obj_create(0x5, 0x1, 0x3);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x3, 0x0);
     t11 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1869,7 +1869,7 @@ int ending_spawn_obj_typed_b(int a4, int a5, int a6)
     *(unsigned char *)(((int)stk + 8)) = a4;
     *(unsigned char *)(((int)stk + 0)) = a5;
     *(unsigned char *)(((int)stk + 4)) = a6;
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     t10 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1897,7 +1897,7 @@ int ending_spawn_obj_t0a(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1918,7 +1918,7 @@ int ending_spawn_obj_t0b(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -1939,7 +1939,7 @@ int ending_spawn_obj_t0e(int a4)
     register int t2;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x0);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x0, 0x0);
     t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -2067,8 +2067,7 @@ int ending_show_mail_screen(void)
             if (((((struct oA_short *)0xC7F302C)->v)) == 0) {
                 (((struct o3_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302F) + 0x1);
             }
-            *(volatile int *)0xC17AFB0;
-            ui_draw_text_stub();
+            ui_draw_text_stub(*(char **)0xC17AFB0, 1, 104.0f, 440.0f, 1.0f, 1.0f);
             *(float *)(((int)stk + 12)) = 0.0f;
             *(float *)(((int)stk + 16)) = 0.0f;
             *(float *)(((int)stk + 20)) = 8.0f;
@@ -2087,8 +2086,7 @@ int ending_show_mail_screen(void)
         if (((((struct oA_short *)0xC7F302C)->v)) == 0) {
             (((struct o3_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302F) + 0x1);
         }
-        *(volatile int *)0xC17AFB0;
-        ui_draw_text_stub();
+        ui_draw_text_stub(*(char **)0xC17AFB0, 1, 104.0f, 440.0f, 1.0f, 1.0f);
         *(float *)(((int)stk + 12)) = 0.0f;
         *(float *)(((int)stk + 16)) = 0.0f;
         *(float *)(((int)stk + 20)) = 8.0f;

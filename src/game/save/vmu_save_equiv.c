@@ -1162,7 +1162,7 @@ int vmu_check_create_obj(void)
 {
     register int t0;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;

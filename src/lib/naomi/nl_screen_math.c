@@ -9,8 +9,8 @@ float math_ldexp_float(float value, int exp_add);
 struct o0_uint { unsigned int v; };
 struct o20_uint { char p[0x20]; unsigned int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
-int math_sin_angle16(int);
-int math_sin_float(float);
+float math_sin_angle16(int);
+float math_sin_float(float);
 int kmFlipFrameBuffer(void);
 int FUN_0c0f61c0(void);
 int FUN_0c0f9bb2(void);
@@ -719,7 +719,7 @@ float math_ceil_float(float f4)
     return (-t0);
 }
 
-int math_cos_angle16(int a4)
+float math_cos_angle16(int a4)
 {
     register int t1;
 
@@ -730,7 +730,7 @@ int math_cos_angle16(int a4)
     return math_sin_angle16((0x4000 - t1));
 }
 
-int math_cos_float(float f4)
+float math_cos_float(float f4)
 {
     return math_sin_float(((-_builtin_fabsf(f4)) + 1.57079625f));
 }
