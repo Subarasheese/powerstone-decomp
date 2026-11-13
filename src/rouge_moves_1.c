@@ -1,5 +1,7 @@
 /* Rouge (char 7) frame hook, move init stubs and attack dispatch (part 1 of 2 of the same module) (0c080ff4-0c081130) */
 
+/* named globals (symbols.txt) */
+extern char g_rouge_move_init_tab[];
 struct o2DC_int { char p[0x2DC]; int v; };
 struct o72BC_uchar { char p[0x72BC]; unsigned char v; };
 int pl_rouge_play_motion_sounds(int);
@@ -45,7 +47,7 @@ int pl_rouge_frame_hook(int a4)
 
 void pl_rouge_attack_init(struct Obj *obj)
 {
-    void (**handlers)(struct Obj *) = (void (**)(struct Obj *))0xC337810;
+    void (**handlers)(struct Obj *) = (void (**)(struct Obj *))((int)g_rouge_move_init_tab);
     signed char mode_val = obj->mode;
     if (mode_val == 0 || mode_val == 2) {
         obj->field_f0 = 0;

@@ -1,5 +1,7 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c028dec-0c029268) */
 
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 struct o28_float { char p[0x28]; float v; };
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
@@ -48,7 +50,7 @@ int FUN_0c028f48(int a4)
                     *(unsigned char *)((t6 + 0x0)) = 0x1;
                     *(unsigned char *)((t6 + 0x1)) = 0x0;
                     *(unsigned short *)((t6 + 0x2)) = 0x100F;
-                    FUN_0c06233a(t6, 0xC6649E8, (*(int *)((a4 + 0x4))));
+                    FUN_0c06233a(t6, ((int)g_res_syukyaku), (*(int *)((a4 + 0x4))));
                     u1 = ((((struct o50_float *)(t3))->v));
                     (((struct o98_float *)(t6))->v) = u1;
                     u1 = ((((struct o98_float *)(t6))->v));
@@ -89,7 +91,7 @@ int FUN_0c028f48(int a4)
                     *(unsigned char *)((t5 + 0x0)) = 0x1;
                     *(unsigned char *)((t5 + 0x1)) = 0x0;
                     *(unsigned short *)((t5 + 0x2)) = 0x100F;
-                    FUN_0c06233a(t5, 0xC6649E8, (-(*(int *)((a4 + 0x4)))));
+                    FUN_0c06233a(t5, ((int)g_res_syukyaku), (-(*(int *)((a4 + 0x4)))));
                     u0 = ((((struct o50_float *)(t2))->v));
                     (((struct o98_float *)(t5))->v) = u0;
                     u0 = ((((struct o98_float *)(t5))->v));

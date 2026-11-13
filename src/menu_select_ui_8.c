@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a99d0-0c0a9d9c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ksel[];
 struct o0_float { float v; };
 struct o10_float { char p[0x10]; float v; };
 struct o14_float { char p[0x14]; float v; };
@@ -32,11 +34,11 @@ int menu_ui_task_24_bind_models(int a4, int a5)
     register int t10;
 
     if ((signed char)a5 == 0) {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), 0xC664A78, 0x24);
+        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o0_float *)0xC0A9AE0)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     } else {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), 0xC664A78, 0x25);
+        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x25);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o4_float *)0xC0A9AE0)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     }

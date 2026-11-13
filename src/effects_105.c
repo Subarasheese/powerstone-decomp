@@ -1,5 +1,8 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04512c-0c0454b4) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o24_float { char p[0x24]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
@@ -39,7 +42,7 @@ int fx_spawn_04512c(int a4, int a5, int a6)
     *(unsigned int *)(((int)stk + 4)) = a4;
     *(unsigned int *)(((int)stk + 8)) = a5;
     *(unsigned char *)(((int)stk + 0)) = a6;
-    math_vec3_sub((((int)stk + 0) + 0xC), 0xC7F2AB4, (*(int *)(((int)stk + 4))));
+    math_vec3_sub((((int)stk + 0) + 0xC), ((int)g_camera_pos), (*(int *)(((int)stk + 4))));
     t2 = math_vec3_length((((int)stk + 0) + 0xC));
     if (!(t2 > 300.0f)) {
         return 0xC045188;
@@ -65,7 +68,7 @@ int fx_spawn_04512c(int a4, int a5, int a6)
     FUN_0c0e6fe8();
     FUN_0c0e6fe8();
     t13 = (((struct o2E0_int *)(t7))->v);
-    FUN_0c06233a(t13, 0xC4CFA68, 0x69);
+    FUN_0c06233a(t13, ((int)g_res_kyoutsuu), 0x69);
     *(unsigned char *)((t13 + 0x0)) = 0x1;
     *(unsigned short *)((t13 + 0x2)) = 0x218;
     math_rand_float();
@@ -90,7 +93,7 @@ int fx_spawn_04512c(int a4, int a5, int a6)
         t35 = *(int *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 0)) = (t35 + 0x4);
         t36 = *(int *)((((t35 + 0x4) - 4) + 0x0));
-        FUN_0c06233a(t36, 0xC4CFA68, 0x7A);
+        FUN_0c06233a(t36, ((int)g_res_kyoutsuu), 0x7A);
         *(unsigned char *)((t36 + 0x0)) = 0x1;
         *(unsigned short *)((t36 + 0x2)) = 0x21C;
         *(unsigned int *)((t36 + 0x14)) = 0x8000;
@@ -119,7 +122,7 @@ int fx_tick_04512c(int a4)
             (((struct o1C_float *)(t3))->v) = (((((struct o1C_float *)(t3))->v)) + 0.399999976f);
             (((struct o20_float *)(t3))->v) = (((((struct o20_float *)(t3))->v)) + 0.399999976f);
             (((struct o24_float *)(t3))->v) = (((((struct o24_float *)(t3))->v)) + 0.399999976f);
-            FUN_0c06231c(t3, 0xC4CFA68, ((t0 & 0x1) + 0x7A));
+            FUN_0c06231c(t3, ((int)g_res_kyoutsuu), ((t0 & 0x1) + 0x7A));
             if ((*(signed char *)((a4 + 0x8))) == 2) {
                 (((struct o44_float *)(t3))->v) = (((((struct o44_float *)(t3))->v)) - 0.099999994f);
                 (((struct o48_float *)(t3))->v) = (((((struct o48_float *)(t3))->v)) - 0.099999994f);

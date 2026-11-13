@@ -1,5 +1,7 @@
 /* character 1 (Ryoma) (0c069a98-0c06ce50) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_ryoma_special_tbl[];
 int pl_ryoma_motion_sfx(int);
 struct o2D9_uchar { char p[0x2D9]; unsigned char v; };
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
@@ -1080,6 +1082,6 @@ int pl_ryoma_special_move_dispatch(int a4, int a5, int a6, int a7)
 {
     register int t1;
 
-    t1 = *(int *)((((*(signed char *)((a4 + 0x7209))) << 2) + 0xC336D54));
+    t1 = *(int *)((((*(signed char *)((a4 + 0x7209))) << 2) + ((int)g_pl_ryoma_special_tbl)));
     return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
 }

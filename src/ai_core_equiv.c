@@ -1,5 +1,10 @@
 /* CPU fighter AI: slot helpers, debug overlay, script runner/selector, ai_think, first opcode handlers (0c04bfd0-0c04e94c) */
 
+/* named globals (symbols.txt) */
+extern char g_ai_script_group[];
+extern char g_obj_class_head[];
+extern char g_tab_ai_ops[];
+extern char g_tab_char_radius[];
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 int math_atan_angle16(float);
@@ -92,7 +97,7 @@ int ai_calc_gap_to_target(int a4)
     u0 = math_signed_sqrt(u4);
     t1 = (int)u0;
     if ((*(signed char *)((t0 + 0x2))) == 0) {
-        t1 = ((int)u0 - (*(short *)((0xC32D6FC + ((*(signed char *)((t0 + 0x4))) << 1)))));
+        t1 = ((int)u0 - (*(short *)((((int)g_tab_char_radius) + ((*(signed char *)((t0 + 0x4))) << 1)))));
     }
     return t1;
 }
@@ -145,7 +150,7 @@ int ai_run_script(int a4, int a5, int a6, int a7)
             t2 = (*(short *)((t2 + 0x0)));
             t2 = (unsigned short)t2;
             t2 = (t2 << 2);
-            t2 = (((int (*)(int, int, int, int))((*(int *)((0xC32D7F8 + t2)))))(a4, a5, a6, a7));
+            t2 = (((int (*)(int, int, int, int))((*(int *)((((int)g_tab_ai_ops) + t2)))))(a4, a5, a6, a7));
             continue;
         }
         break;
@@ -226,7 +231,7 @@ int FUN_0c04cb50(int a4)
 
 struct actor *ai_find_incoming_threat(void)
 {
-    struct actor_table *table = (struct actor_table *)0xC7E4070;
+    struct actor_table *table = (struct actor_table *)g_obj_class_head;
     unsigned char player_id = *(unsigned char *)0xC3673EE;
     struct actor *cur;
     struct actor *next;
@@ -327,7 +332,7 @@ void ai_select_script(char *player, unsigned char group, unsigned char entry)
     unsigned char pick;
     int **tbl_b;
 
-    level_idx = *(unsigned char *)0xC3673EF;
+    level_idx = *(unsigned char *)g_ai_script_group;
     if (player[0x71F3] == 0) {
         if ((*(char **)(player + 28))[0x71F3] != 0) {
             tbl3 = *(unsigned char ****)(0xC32D6A4 + level_idx * 4);
@@ -399,7 +404,7 @@ int ai_op9_goto_script(int a4)
     register int t3;
 
     (((struct o2C_ushort *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F40)))->v) = (*(short *)((((((struct o0_int *)0xC3673E8)->v)) + 0x0)));
-    t0 = *(signed char *)0xC3673EF;
+    t0 = *(signed char *)g_ai_script_group;
     if ((*(signed char *)((a4 + 0x71F3))) == 0) {
         t1 = 0xC32D620;
         if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71F3))) == 0) {
@@ -429,7 +434,7 @@ int ai_op10_call_script(int a4)
     register float u0;
 
     (((struct o2C_ushort *)(((short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254) + 0xC366F40)))->v) = (*(short *)((((((struct o0_int *)0xC3673E8)->v)) + 0x0)));
-    t0 = *(signed char *)0xC3673EF;
+    t0 = *(signed char *)g_ai_script_group;
     if ((*(signed char *)((a4 + 0x71F3))) == 0) {
         t1 = 0xC32D620;
         if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71F3))) == 0) {

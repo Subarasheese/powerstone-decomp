@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c042728-0c043384) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } S12;
 typedef struct { float x, y, z; } V3;
 extern char *fx_spawn_burst_slot(int, int, int, S12 *, int, S12 *);
@@ -101,7 +103,7 @@ int FUN_0c043132(int a4, int a5, int a6, int a7)
                     t2 = (t2 + t5);
                     *(unsigned char *)((t2 + 0x0)) = 0x3;
                     t4 = t6;
-                    FUN_0c06231c(t4, 0xC4CFA68, ((*(signed char *)((((0x308 + a4) + t5) + 0x0))) + 0x21));
+                    FUN_0c06231c(t4, ((int)g_res_kyoutsuu), ((*(signed char *)((((0x308 + a4) + t5) + 0x0))) + 0x21));
                     t3 = (0x308 + a4);
                     t3 = (t3 + t5);
                     t22 = *(signed char *)((t3 + 0x0));

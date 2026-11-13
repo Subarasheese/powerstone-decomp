@@ -1,5 +1,8 @@
 /* debug work/player/stage editor (CHAR/EDIT/MENU mode); not a resource loader (0c0cfe04-0c0d24ec) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_table_desc[];
+extern char g_res_kyoutsuu[];
 int FUN_0c0282cc(void);
 int FUN_0c02d420(void);
 int game_reset_objects(void);
@@ -183,7 +186,7 @@ void dbgedit_select_stage_object(char *menu)
         *(Vec12 *)(target + 44) = *(Vec12 *)(*(char **)((char *)0x0C350B7C + (short)((unsigned char)menu[158] * 52)) + (unsigned short)*(short *)(menu + 156) * 12);
         name_src = (char *)0x0C664958;
     } else {
-        name_src = (char *)0x0C4CFA68;
+        name_src = (char *)g_res_kyoutsuu;
     }
     FUN_0c06233a(*(char **)(target + 0x2E0), name_src, *(short *)(menu + 156));
     sprintf(text, (const char *)0x0C1544E0);
@@ -201,7 +204,7 @@ int FUN_0c0d1c96(int a4)
     register int t0;
     register int t1;
 
-    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o80_short *)(a4))->v)) * (unsigned short)((((struct o64_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + 0xC7D08E0) + 0x0)))) + ((unsigned short)((((struct o86_short *)(a4))->v)) << 2));
+    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o80_short *)(a4))->v)) * (unsigned short)((((struct o64_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x0)))) + ((unsigned short)((((struct o86_short *)(a4))->v)) << 2));
     t0 = (((struct o44_int *)(a4))->v);
     if ((t0 == 16) || ((t0 == 32) || ((t0 == 64) || (t0 == 0x80)))) {
         t0 = (((struct o84_short *)(a4))->v);
@@ -262,7 +265,7 @@ int FUN_0c0d1c96(int a4)
     }
     (((struct o9A_ushort *)(a4))->v) = (*(short *)((0xC33F628 + ((*(signed char *)((((((struct o8C_int *)(a4))->v)) + 0x1))) << 1))));
     t0 = (((struct o8C_int *)(a4))->v);
-    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)((0xC33F628 + ((*(signed char *)((t0 + 0x1))) << 1)))) * (unsigned short)(*(short *)((t0 + 0x2)))) << 1) + (*(int *)(((0xC7D08E0 + ((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1)) + 0x8))));
+    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)((0xC33F628 + ((*(signed char *)((t0 + 0x1))) << 1)))) * (unsigned short)(*(short *)((t0 + 0x2)))) << 1) + (*(int *)(((((int)g_hit_table_desc) + ((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1)) + 0x8))));
     if ((0x2 & ((((struct o48_int *)(a4))->v))) != 0) {
         (((struct o56_ushort *)(a4))->v) = 0x1;
     }
@@ -280,7 +283,7 @@ int FUN_0c0d2018(int a4)
     register int t0;
     register int t1;
 
-    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o82_short *)(a4))->v)) * (unsigned short)((((struct o68_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + 0xC7D08E0) + 0x4)))) + ((unsigned short)((((struct o8A_short *)(a4))->v)) << 2));
+    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o82_short *)(a4))->v)) * (unsigned short)((((struct o68_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x4)))) + ((unsigned short)((((struct o8A_short *)(a4))->v)) << 2));
     t0 = (((struct o44_int *)(a4))->v);
     if ((t0 == 16) || ((t0 == 32) || ((t0 == 64) || (t0 == 0x80)))) {
         t0 = (((struct o88_short *)(a4))->v);
@@ -342,7 +345,7 @@ int FUN_0c0d2018(int a4)
     (((struct o9A_ushort *)(a4))->v) = (*(short *)((0xC33F62E + ((*(signed char *)((((((struct o8C_int *)(a4))->v)) + 0x1))) << 1))));
     t0 = (((struct o8C_int *)(a4))->v);
     t1 = *(signed char *)((t0 + 0x1));
-    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)(((t1 << 1) + 0xC33F62E))) * (unsigned short)(*(short *)((t0 + 0x2)))) << 1) + (*(int *)((((0xC7D08E0 + ((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1)) + (t1 << 2)) + 0xC))));
+    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)(((t1 << 1) + 0xC33F62E))) * (unsigned short)(*(short *)((t0 + 0x2)))) << 1) + (*(int *)((((((int)g_hit_table_desc) + ((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1)) + (t1 << 2)) + 0xC))));
     if ((0x2 & ((((struct o48_int *)(a4))->v))) != 0) {
         (((struct o54_ushort *)(a4))->v) = 0x1;
         (((struct o56_ushort *)(a4))->v) = 0x1;
@@ -364,11 +367,11 @@ int FUN_0c0d22a0(int a4, int a5, int a6, int a7)
     if ((((((struct o48_int *)(a4))->v)) & 0x2) != 0) {
         (((struct o56_ushort *)(a4))->v) = 0x2;
     }
-    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o80_short *)(a4))->v)) * (unsigned short)((((struct o64_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + 0xC7D08E0) + 0x0)))) + ((unsigned short)((((struct o86_short *)(a4))->v)) << 2));
+    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o80_short *)(a4))->v)) * (unsigned short)((((struct o64_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x0)))) + ((unsigned short)((((struct o86_short *)(a4))->v)) << 2));
     t9 = (((struct oA0_short *)(a4))->v);
     t11 = (((struct o8C_int *)(a4))->v);
-    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)((0xC33F628 + ((*(signed char *)((t11 + 0x1))) << 1)))) * (unsigned short)(*(short *)((t11 + 0x2)))) << 1) + (*(int *)(((0xC7D08E0 + ((((unsigned short)t9 << 2) << 2) << 1)) + 0x8))));
-    return ((int (*)(int, int, int, int))(0xC0D21FC))(a4, t11, (0xC7D08E0 + ((((unsigned short)t9 << 2) << 2) << 1)), a7);
+    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)((0xC33F628 + ((*(signed char *)((t11 + 0x1))) << 1)))) * (unsigned short)(*(short *)((t11 + 0x2)))) << 1) + (*(int *)(((((int)g_hit_table_desc) + ((((unsigned short)t9 << 2) << 2) << 1)) + 0x8))));
+    return ((int (*)(int, int, int, int))(0xC0D21FC))(a4, t11, (((int)g_hit_table_desc) + ((((unsigned short)t9 << 2) << 2) << 1)), a7);
 }
 
 int FUN_0c0d2398(int a4)
@@ -380,19 +383,19 @@ int FUN_0c0d2398(int a4)
     if ((((((struct o48_int *)(a4))->v)) & 0x2) != 0) {
         (((struct o56_ushort *)(a4))->v) = 0x2;
     }
-    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o82_short *)(a4))->v)) * (unsigned short)((((struct o68_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + 0xC7D08E0) + 0x4)))) + ((unsigned short)((((struct o8A_short *)(a4))->v)) << 2));
+    (((struct o8C_uint *)(a4))->v) = (((((unsigned short)((((struct o82_short *)(a4))->v)) * (unsigned short)((((struct o68_short *)(a4))->v))) << 2) + (*(int *)(((((((unsigned short)((((struct oA0_short *)(a4))->v)) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x4)))) + ((unsigned short)((((struct o8A_short *)(a4))->v)) << 2));
     t9 = (((struct oA0_short *)(a4))->v);
     t11 = (((struct o8C_int *)(a4))->v);
     t12 = *(signed char *)((t11 + 0x1));
-    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)(((t12 << 1) + 0xC33F62E))) * (unsigned short)(*(short *)((t11 + 0x2)))) << 1) + (*(int *)((((0xC7D08E0 + ((((unsigned short)t9 << 2) << 2) << 1)) + (t12 << 2)) + 0xC))));
-    return ((int (*)(int, int, int, int))(0xC0D21FC))(a4, t12, t11, ((0xC7D08E0 + ((((unsigned short)t9 << 2) << 2) << 1)) + (t12 << 2)));
+    (((struct o90_uint *)(a4))->v) = ((((unsigned short)(*(short *)(((t12 << 1) + 0xC33F62E))) * (unsigned short)(*(short *)((t11 + 0x2)))) << 1) + (*(int *)((((((int)g_hit_table_desc) + ((((unsigned short)t9 << 2) << 2) << 1)) + (t12 << 2)) + 0xC))));
+    return ((int (*)(int, int, int, int))(0xC0D21FC))(a4, t12, t11, ((((int)g_hit_table_desc) + ((((unsigned short)t9 << 2) << 2) << 1)) + (t12 << 2)));
 }
 
 void FUN_0c0d2424(unsigned char *obj)
 {
     struct handler_tbl handlers;
     short *frame_tbl = (short *)0xC33F5EC;
-    struct row_ptrs *row_tbl = (struct row_ptrs *)0xC7D08E0;
+    struct row_ptrs *row_tbl = (struct row_ptrs *)g_hit_table_desc;
 
     handlers = *(struct handler_tbl *)0xC1544F0;
     *(short *)(obj + 0x80) = frame_tbl[(signed char)obj[4]];

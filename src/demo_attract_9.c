@@ -1,5 +1,7 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c02a1f4-0c02afc4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -100,7 +102,7 @@ int demo_spawn_jitter_sparkle(int a4, int a5)
                 *(unsigned char *)((t16 + 0x0)) = 0x1;
                 *(unsigned char *)((t16 + 0x1)) = 0x0;
                 *(unsigned short *)((t16 + 0x2)) = 0xF;
-                FUN_0c06233a(t16, 0xC6649E8, (0x53 - t13));
+                FUN_0c06233a(t16, ((int)g_res_syukyaku), (0x53 - t13));
                 t14 = (t14 + 0x1);
             }
             t18 = 0x2DC;
@@ -139,7 +141,7 @@ int demo_spawn_jitter_sparkle(int a4, int a5)
             *(unsigned char *)((t27 + 0x0)) = 0x1;
             *(unsigned char *)((t27 + 0x1)) = 0x0;
             *(unsigned short *)((t27 + 0x2)) = 0xF;
-            FUN_0c06233a(t27, 0xC6649E8, (*(int *)(((*(int *)(((int)stk + 0))) + 0xC148EE8))));
+            FUN_0c06233a(t27, ((int)g_res_syukyaku), (*(int *)(((*(int *)(((int)stk + 0))) + 0xC148EE8))));
             t26 = (t26 + 0x1);
             u28 = (*(float *)(((*(int *)(((int)stk + 0))) + 0xC148EF0)));
             (((struct oC_float *)(t27))->v) = u28;
@@ -237,7 +239,7 @@ int FUN_0c02a5e4(void)
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned char *)((t3 + 0x1)) = 0x0;
             *(unsigned short *)((t3 + 0x2)) = 0xF;
-            FUN_0c06233a(t3, 0xC6649E8, 0x56);
+            FUN_0c06233a(t3, ((int)g_res_syukyaku), 0x56);
             t1 = (t1 + 0x1);
         }
         t5 = 0x2DC;
@@ -288,7 +290,7 @@ int FUN_0c02a6c4(void)
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned char *)((t3 + 0x1)) = 0x0;
             *(unsigned short *)((t3 + 0x2)) = 0xF;
-            FUN_0c06233a(t3, 0xC6649E8, 0x57);
+            FUN_0c06233a(t3, ((int)g_res_syukyaku), 0x57);
             t1 = (t1 + 0x1);
         }
         (((struct oEC_ushort *)(t0))->v) = 0x2;

@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0aba84-0c0abd20) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ksel[];
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o40_float { char p[0x40]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -113,7 +115,7 @@ int menu_ui_task_38(int a4, int a5, int a6, int a7, float f4)
     *(unsigned char *)((a4 + 0x5)) = 0x19;
     t0 = 0x0;
     for (;;) {
-        FUN_0c0623a6((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A78, (t0 + 0x6));
+        FUN_0c0623a6((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), ((int)g_res_csel_ksel), (t0 + 0x6));
         *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x0)) = 0x1;
         *(unsigned short *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x2)) = 0xF;
         t1 = (t0 << 2);

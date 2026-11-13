@@ -1,5 +1,7 @@
 /* VMU save/load menu UI (handlers over the vmu_step_* state machines) (0c01e798-0c020258) */
 
+/* named globals (symbols.txt) */
+extern char g_res_system_font[];
 int memset(int, int, int);
 struct o0_uchar { unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -406,7 +408,7 @@ int vmu_menu_spawn_message(int a4)
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t6 = *(signed char *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 4)) = (((t6 << 2) << 2) + 0xC11C644);
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_system_font), (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
         *(volatile int *)((t0 + 0x2E0));
         *(volatile int *)(((int)stk + 4));
         t13 = (FUN_0c0e6fe8());
@@ -450,7 +452,7 @@ int FUN_0c01f874(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x2)) = 0x40F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))), 0xC664B08, ((0x1 & t3) + 0xC));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))), ((int)g_res_system_font), ((0x1 & t3) + 0xC));
             t3 = (t3 + 0x1);
             if ((int)t3 >= (int)0x8) {
                 break;
@@ -459,7 +461,7 @@ int FUN_0c01f874(int a4)
         *(unsigned char *)((((((struct o300_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o300_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o300_int *)(t0))->v)) + 0x2)) = 0x40F;
-        FUN_0c06233a(((((struct o300_int *)(t0))->v)), 0xC664B08, 0x23);
+        FUN_0c06233a(((((struct o300_int *)(t0))->v)), ((int)g_res_system_font), 0x23);
         t15 = (((struct o300_int *)(t0))->v);
         *(int *)((int)stk + 0) = (0x40 + t15);
         u20 = ((((struct o0_float *)0xC01F9E4)->v));

@@ -1,5 +1,7 @@
 /* per-player motion data and sound pointer table setup, model utilities (0c062b1c-0c062de8) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_table_desc[];
 extern int res_load_file_raw(int);
 extern void *memcpy(void *, const void *, unsigned int);
 struct o0_uint { unsigned int v; };
@@ -50,18 +52,18 @@ int res_load_pl_motion_data(char slot_idx, char stage)
 
 int FUN_0c062cf4(int a4, int a5)
 {
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x0)) = (*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0)));
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x4)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x640);
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x8)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x1900);
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0xC)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x1F40);
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x10)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x20D0);
-    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x14)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x22C4);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0x0)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x251C);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0x4)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x26AC);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0x8)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2904);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0xC)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2C24);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0x10)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2DB4);
-    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + 0xC7D08E0) + 0x20) + 0x14)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2FA8);
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x0)) = (*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0)));
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x4)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x640);
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x8)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x1900);
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0xC)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x1F40);
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x10)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x20D0);
+    *(unsigned int *)((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x14)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x22C4);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0x0)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x251C);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0x4)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x26AC);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0x8)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2904);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0xC)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2C24);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0x10)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2DB4);
+    *(unsigned int *)(((((((((signed char)a4 << 1) << 2) << 2) << 1) + ((int)g_hit_table_desc)) + 0x20) + 0x14)) = ((*(int *)(((((signed char)a5 << 2) + 0xC336660) + 0x0))) + 0x2FA8);
     return 0x0;
 }
 

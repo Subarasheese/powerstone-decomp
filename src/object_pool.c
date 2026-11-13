@@ -1,5 +1,15 @@
 /* object pool, class lists, part pools, obj_create/obj_destroy/obj_tick_class (0c058ef4-0c059718) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_class_tail[];
+extern char g_obj_free_list[];
+extern char g_part0_free_count[];
+extern char g_part0_free_stack[];
+extern char g_part1_free_count[];
+extern char g_part1_free_stack[];
+extern char g_part2_free_count[];
+extern char g_part2_free_stack[];
 typedef struct block_t { char pad0[3]; char player_index; char pad4[16]; struct block_t *link_20; struct block_t *link_24; struct block_t *link_28; } block_t;
 extern void *memset(void *, int, unsigned int);
 int obj_release(int);
@@ -37,11 +47,11 @@ int obj_pool_pop(void)
 {
     register int t0;
 
-    t0 = *(int *)0xC7E40C0;
+    t0 = *(int *)g_obj_free_list;
     if (t0 == 0) {
         return 0x0;
     }
-    *(unsigned int *)0xC7E40C0 = (*(int *)((t0 + 0x14)));
+    *(unsigned int *)g_obj_free_list = (*(int *)((t0 + 0x14)));
     return t0;
 }
 
@@ -54,7 +64,7 @@ int obj_release_all(void)
     register int t4;
     register int t5;
 
-    t0 = 0xC7E4070;
+    t0 = ((int)g_obj_class_head);
     t1 = 0x0;
     t2 = 0x0;
     for (;;) {
@@ -70,9 +80,9 @@ int obj_release_all(void)
             t5 = t4;
         }
         t3 = t1;
-        *(unsigned int *)((0xC7E4070 + t3)) = 0x0;
+        *(unsigned int *)((((int)g_obj_class_head) + t3)) = 0x0;
         t2 = (t2 + 0x1);
-        t3 = 0xC7E4098;
+        t3 = ((int)g_obj_class_tail);
         *(unsigned int *)((t1 + t3)) = 0x0;
         t1 = (t1 + 0x4);
         if ((int)(short)t2 >= (int)0xA) {
@@ -87,7 +97,7 @@ int obj_release_class(int a4)
     register int t3;
     register int t2;
 
-    t3 = (*(int *)(((a4 << 2) + 0xC7E4070)));
+    t3 = (*(int *)(((a4 << 2) + ((int)g_obj_class_head))));
     for (;;) {
         if (t3 == 0) {
             break;
@@ -96,9 +106,9 @@ int obj_release_class(int a4)
         obj_release(t3);
         t3 = t2;
     }
-    *(unsigned int *)(((a4 << 2) + 0xC7E4070)) = 0x0;
-    *(unsigned int *)(((a4 << 2) + 0xC7E4098)) = 0x0;
-    return 0xC7E4098;
+    *(unsigned int *)(((a4 << 2) + ((int)g_obj_class_head))) = 0x0;
+    *(unsigned int *)(((a4 << 2) + ((int)g_obj_class_tail))) = 0x0;
+    return ((int)g_obj_class_tail);
 }
 
 int obj_release_all_but_class(int a4)
@@ -116,7 +126,7 @@ int obj_release_all_but_class(int a4)
             t2 = (short)t4;
             t2 = (t2 << 2);
             t0 = t2;
-            t1 = (*(int *)((0xC7E4070 + t0)));
+            t1 = (*(int *)((((int)g_obj_class_head) + t0)));
             for (;;) {
                 if (t1 == 0) {
                     break;
@@ -126,8 +136,8 @@ int obj_release_all_but_class(int a4)
                 t1 = t3;
             }
             t0 = t2;
-            *(unsigned int *)((0xC7E4070 + t0)) = 0x0;
-            *(unsigned int *)((0xC7E4098 + t0)) = 0x0;
+            *(unsigned int *)((((int)g_obj_class_head) + t0)) = 0x0;
+            *(unsigned int *)((((int)g_obj_class_tail) + t0)) = 0x0;
         }
         t4 = (t4 + 0x1);
         if ((int)(short)t4 >= (int)0xA) {
@@ -165,29 +175,29 @@ int obj_create(int a4, int a5, int a6, int a7)
         if (a5 != 0) {
             if (a5 != 1) {
             } else {
-                t2 = *(int *)((((a4 << 2) + 0xC7E4098) + 0x0));
+                t2 = *(int *)((((a4 << 2) + ((int)g_obj_class_tail)) + 0x0));
                 *(unsigned int *)((t0 + 0x14)) = t2;
-                *(unsigned int *)((((a4 << 2) + 0xC7E4098) + 0x0)) = t0;
+                *(unsigned int *)((((a4 << 2) + ((int)g_obj_class_tail)) + 0x0)) = t0;
                 *(unsigned int *)((t0 + 0x18)) = 0x0;
                 if (t2 == 0) {
-                    *(unsigned int *)((0xC7E4070 + (a4 << 2))) = t0;
+                    *(unsigned int *)((((int)g_obj_class_head) + (a4 << 2))) = t0;
                 } else {
                     *(unsigned int *)((t2 + 0x18)) = t0;
                 }
-                t2 = ((a4 << 2) + 0xC7E4098);
+                t2 = ((a4 << 2) + ((int)g_obj_class_tail));
             }
             t3 = t2;
         } else {
-            t2 = *(int *)((((a4 << 2) + 0xC7E4070) + 0x0));
+            t2 = *(int *)((((a4 << 2) + ((int)g_obj_class_head)) + 0x0));
             *(unsigned int *)((t0 + 0x18)) = t2;
-            *(unsigned int *)((((a4 << 2) + 0xC7E4070) + 0x0)) = t0;
+            *(unsigned int *)((((a4 << 2) + ((int)g_obj_class_head)) + 0x0)) = t0;
             *(unsigned int *)((t0 + 0x14)) = 0x0;
             if (t2 == 0) {
-                *(unsigned int *)((0xC7E4098 + (a4 << 2))) = t0;
+                *(unsigned int *)((((int)g_obj_class_tail) + (a4 << 2))) = t0;
             } else {
                 *(unsigned int *)((t2 + 0x14)) = t0;
             }
-            t3 = ((a4 << 2) + 0xC7E4070);
+            t3 = ((a4 << 2) + ((int)g_obj_class_head));
         }
         (((struct o2DD_uchar *)(t0))->v) = a7;
         t2 = t0;
@@ -195,8 +205,8 @@ int obj_create(int a4, int a5, int a6, int a7)
             t4 = a7;
             t5 = t3;
             t3 = (0x2E0 + t0);
-            t6 = 0xC7E4098;
-            t7 = 0xC7E4070;
+            t6 = ((int)g_obj_class_tail);
+            t7 = ((int)g_obj_class_head);
             t8 = 0x0;
             t9 = (0x2E0 + t0);
             t10 = (0x2E0 + t0);
@@ -312,23 +322,23 @@ int obj_destroy(int a4, int a5, int a6, int a7)
     }
     if ((*(int *)((a4 + 0x14))) == 0) {
         t0 = *(int *)((a4 + 0x18));
-        *(unsigned int *)(((0xC7E4070 + ((*(signed char *)((a4 + 0x2))) << 2)) + 0x0)) = t0;
+        *(unsigned int *)(((((int)g_obj_class_head) + ((*(signed char *)((a4 + 0x2))) << 2)) + 0x0)) = t0;
         if (t0 == 0) {
-            *(unsigned int *)((0xC7E4098 + ((*(signed char *)((a4 + 0x2))) << 2))) = 0x0;
+            *(unsigned int *)((((int)g_obj_class_tail) + ((*(signed char *)((a4 + 0x2))) << 2))) = 0x0;
         } else {
             *(unsigned int *)((t0 + 0x14)) = 0x0;
         }
     } else {
         if ((*(int *)((a4 + 0x18))) == 0) {
             t0 = *(int *)((a4 + 0x14));
-            *(unsigned int *)((0xC7E4098 + ((*(signed char *)((a4 + 0x2))) << 2))) = t0;
+            *(unsigned int *)((((int)g_obj_class_tail) + ((*(signed char *)((a4 + 0x2))) << 2))) = t0;
             *(unsigned int *)((t0 + 0x18)) = 0x0;
         } else {
             *(unsigned int *)(((*(int *)((a4 + 0x14))) + 0x18)) = (*(int *)((a4 + 0x18)));
             *(unsigned int *)(((*(int *)((a4 + 0x18))) + 0x14)) = (*(int *)((a4 + 0x14)));
         }
     }
-    return ((int (*)(int, int, int, int))(0xC0593DA))(a4, 0xC7E4098, a6, a7);
+    return ((int (*)(int, int, int, int))(0xC0593DA))(a4, ((int)g_obj_class_tail), a6, a7);
 }
 
 int FUN_0c0593e0(int a4)
@@ -341,9 +351,9 @@ int FUN_0c0593e0(int a4)
     register int t4;
     register int t17;
 
-    t1 = 0xC7E4070;
+    t1 = ((int)g_obj_class_head);
     t3 = a4;
-    t5 = (*(int *)(((a4 << 2) + 0xC7E4070)));
+    t5 = (*(int *)(((a4 << 2) + ((int)g_obj_class_head))));
     for (;;) {
         if (t5 == 0) {
             break;
@@ -373,7 +383,7 @@ int FUN_0c0593e0(int a4)
 
 int FUN_0c05941e(int a4, int a5, int a6, int a7)
 {
-    *(volatile int *)(((a4 << 2) + 0xC7E4070));
+    *(volatile int *)(((a4 << 2) + ((int)g_obj_class_head)));
     return ((int (*)(int, int, int, int))(0xC05947C))(a4, a5, a6, a7);
 }
 
@@ -386,9 +396,9 @@ int obj_tick_class(int a4, int a5, int a6, int a7)
     register int t9;
     register int t10;
 
-    t1 = 0xC7E4070;
+    t1 = ((int)g_obj_class_head);
     t3 = a4;
-    t4 = (*(int *)(((a4 << 2) + 0xC7E4070)));
+    t4 = (*(int *)(((a4 << 2) + ((int)g_obj_class_head))));
     for (;;) {
         if (t4 == 0) {
             break;
@@ -412,10 +422,10 @@ int part_alloc0(void)
 {
     register int t1;
 
-    if ((*(int *)0xC3738E0) != 0) {
-        t1 = *(int *)0xC3738E0;
-        *(unsigned int *)0xC3738E0 = (t1 - 1);
-        return (*(int *)((0xC373430 + ((t1 - 1) << 2))));
+    if ((*(int *)g_part0_free_count) != 0) {
+        t1 = *(int *)g_part0_free_count;
+        *(unsigned int *)g_part0_free_count = (t1 - 1);
+        return (*(int *)((((int)g_part0_free_stack) + ((t1 - 1) << 2))));
     }
     return 0x0;
 }
@@ -424,10 +434,10 @@ int part_alloc1(void)
 {
     register int t1;
 
-    if ((*(int *)0xC37CAE8) != 0) {
-        t1 = *(int *)0xC37CAE8;
-        *(unsigned int *)0xC37CAE8 = (t1 - 1);
-        return (*(int *)((0xC37CAAC + ((t1 - 1) << 2))));
+    if ((*(int *)g_part1_free_count) != 0) {
+        t1 = *(int *)g_part1_free_count;
+        *(unsigned int *)g_part1_free_count = (t1 - 1);
+        return (*(int *)((((int)g_part1_free_stack) + ((t1 - 1) << 2))));
     }
     return 0x0;
 }
@@ -436,10 +446,10 @@ int part_alloc2(void)
 {
     register int t1;
 
-    if ((*(int *)0xC37E1E4) != 0) {
-        t1 = *(int *)0xC37E1E4;
-        *(unsigned int *)0xC37E1E4 = (t1 - 1);
-        return (*(int *)((0xC37E16C + ((t1 - 1) << 2))));
+    if ((*(int *)g_part2_free_count) != 0) {
+        t1 = *(int *)g_part2_free_count;
+        *(unsigned int *)g_part2_free_count = (t1 - 1);
+        return (*(int *)((((int)g_part2_free_stack) + ((t1 - 1) << 2))));
     }
     return 0x0;
 }

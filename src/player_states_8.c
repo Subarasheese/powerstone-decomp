@@ -1,5 +1,8 @@
 /* state update functions of the player state machine (table 0xC3390D4) (part 8 of 14 of the same module) (0c095430-0c095ef8) */
 
+/* named globals (symbols.txt) */
+extern char g_char_state21_update_tab[];
+extern char g_char_state22_update_tab[];
 int pl_step_motion(int);
 int pl_apply_motion_translation(int);
 int pl_end_action_choose_state(int);
@@ -59,14 +62,14 @@ int pl_state21_update(int a4, int a5, int a6, int a7)
 {
     register int t1;
 
-    t1 = *(int *)((0xC3391D8 + ((*(signed char *)((a4 + 0x4))) << 2)));
+    t1 = *(int *)((((int)g_char_state21_update_tab) + ((*(signed char *)((a4 + 0x4))) << 2)));
     return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
 }
 
 /* Dispatcher: tail-calls the handler picked by byte 4 of the object from a table */
 void pl_state22_update(char *obj)
 {
-    void (**handlers)(char *) = (void (**)(char *))0xC339204;
+    void (**handlers)(char *) = (void (**)(char *))((int)g_char_state22_update_tab);
     handlers[obj[4]](obj);
 }
 

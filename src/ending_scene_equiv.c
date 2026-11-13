@@ -1,5 +1,8 @@
 /* ending scene state, groups of ending sprites, staff roll controller (same ending mode) (0c0158d8-0c01628c) */
 
+/* named globals (symbols.txt) */
+extern char g_ending_scene_work[];
+extern char g_res_eyecatch[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o10_float { char p[0x10]; float v; };
@@ -33,15 +36,15 @@ int FUN_0c0161d8(void);
 
 int FUN_0c0158d8(void)
 {
-    (((struct o0_uchar *)0xC361C78)->v) = 0x2;
-    (((struct o1_uchar *)0xC361C78)->v) = 0x0;
+    (((struct o0_uchar *)g_ending_scene_work)->v) = 0x2;
+    (((struct o1_uchar *)g_ending_scene_work)->v) = 0x0;
     return 0x0;
 }
 
 int FUN_0c0158e4(void)
 {
-    (((struct o1_uchar *)0xC361C78)->v) = 0x0;
-    (((struct o0_uchar *)0xC361C78)->v) = 0x0;
+    (((struct o1_uchar *)g_ending_scene_work)->v) = 0x0;
+    (((struct o0_uchar *)g_ending_scene_work)->v) = 0x0;
     return 0x0;
 }
 
@@ -74,7 +77,7 @@ int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     register int t105;
 
     *(unsigned int *)(((int)stk + 12)) = 0x0;
-    t0 = *(signed char *)0xC361C78;
+    t0 = *(signed char *)g_ending_scene_work;
     if ((unsigned char)t0 != 0) {
         if ((unsigned char)t0 == 1) {
             t1 = ((int (*)(int, int, int, int, float, float, float, float, float, float, float))(FUN_0c016238))(a4, a5, a6, a7, f4, f5, f6, f7, f8, f9, f10);
@@ -85,32 +88,32 @@ int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                         if ((unsigned char)t5 != 2) {
                         } else {
                             if ((*(signed char *)0xC7F3082) == 0) {
-                                (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                                (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                             }
                         }
                     } else {
-                        t18 = (((struct o4_short *)0xC361C78)->v);
-                        (((struct o4_ushort *)0xC361C78)->v) = (t18 - 1);
+                        t18 = (((struct o4_short *)g_ending_scene_work)->v);
+                        (((struct o4_ushort *)g_ending_scene_work)->v) = (t18 - 1);
                         if ((int)(short)(t18 - 1) >= 0) {
                         } else {
-                            (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                            (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                         }
                     }
                 } else {
-                    (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
-                    (((struct o4_ushort *)0xC361C78)->v) = 0x1A;
-                    t27 = (((struct o4_short *)0xC361C78)->v);
-                    (((struct o4_ushort *)0xC361C78)->v) = (t27 - 1);
+                    (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                    (((struct o4_ushort *)g_ending_scene_work)->v) = 0x1A;
+                    t27 = (((struct o4_short *)g_ending_scene_work)->v);
+                    (((struct o4_ushort *)g_ending_scene_work)->v) = (t27 - 1);
                     if ((int)(short)(t27 - 1) >= 0) {
                     } else {
-                        (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                        (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                     }
                 }
-                t35 = (((struct o2_short *)0xC361C78)->v);
-                (((struct o2_ushort *)0xC361C78)->v) = (t35 - 1);
+                t35 = (((struct o2_short *)g_ending_scene_work)->v);
+                (((struct o2_ushort *)g_ending_scene_work)->v) = (t35 - 1);
                 if ((short)(t35 - 1) == 0) {
                     *(unsigned int *)(((int)stk + 12)) = 0x1;
-                    (((struct o0_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C78) + 0x1);
+                    (((struct o0_uchar *)g_ending_scene_work)->v) = ((*(signed char *)g_ending_scene_work) + 0x1);
                 }
                 t160 = 0xC361C79;
                 t161 = 0xC361C7C;
@@ -121,9 +124,9 @@ int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
             t161 = a5;
         }
     } else {
-        (((struct o0_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C78) + 0x1);
-        (((struct o2_ushort *)0xC361C78)->v) = 0x12C;
-        (((struct o6_ushort *)0xC361C78)->v) = 0x63;
+        (((struct o0_uchar *)g_ending_scene_work)->v) = ((*(signed char *)g_ending_scene_work) + 0x1);
+        (((struct o2_ushort *)g_ending_scene_work)->v) = 0x12C;
+        (((struct o6_ushort *)g_ending_scene_work)->v) = 0x63;
         FUN_0c0161d8();
         t58 = 0x14;
         t59 = 0xC17E9C0;
@@ -176,32 +179,32 @@ int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                     if ((unsigned char)t110 != 2) {
                     } else {
                         if ((*(signed char *)0xC7F3082) == 0) {
-                            (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                            (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                         }
                     }
                 } else {
-                    t123 = (((struct o4_short *)0xC361C78)->v);
-                    (((struct o4_ushort *)0xC361C78)->v) = (t123 - 1);
+                    t123 = (((struct o4_short *)g_ending_scene_work)->v);
+                    (((struct o4_ushort *)g_ending_scene_work)->v) = (t123 - 1);
                     if ((int)(short)(t123 - 1) >= 0) {
                     } else {
-                        (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                        (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                     }
                 }
             } else {
-                (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
-                (((struct o4_ushort *)0xC361C78)->v) = 0x1A;
-                t132 = (((struct o4_short *)0xC361C78)->v);
-                (((struct o4_ushort *)0xC361C78)->v) = (t132 - 1);
+                (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                (((struct o4_ushort *)g_ending_scene_work)->v) = 0x1A;
+                t132 = (((struct o4_short *)g_ending_scene_work)->v);
+                (((struct o4_ushort *)g_ending_scene_work)->v) = (t132 - 1);
                 if ((int)(short)(t132 - 1) >= 0) {
                 } else {
-                    (((struct o1_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C79) + 0x1);
+                    (((struct o1_uchar *)g_ending_scene_work)->v) = ((*(signed char *)0xC361C79) + 0x1);
                 }
             }
-            t140 = (((struct o2_short *)0xC361C78)->v);
-            (((struct o2_ushort *)0xC361C78)->v) = (t140 - 1);
+            t140 = (((struct o2_short *)g_ending_scene_work)->v);
+            (((struct o2_ushort *)g_ending_scene_work)->v) = (t140 - 1);
             if ((short)(t140 - 1) == 0) {
                 *(unsigned int *)(((int)stk + 12)) = 0x1;
-                (((struct o0_uchar *)0xC361C78)->v) = ((*(signed char *)0xC361C78) + 0x1);
+                (((struct o0_uchar *)g_ending_scene_work)->v) = ((*(signed char *)g_ending_scene_work) + 0x1);
             }
             t160 = 0xC361C79;
             t161 = 0xC361C7C;
@@ -229,7 +232,7 @@ int FUN_0c015ac8(int a4)
     *(int *)((int)stk + 4) = 0x0;
     t12 = (*(signed char *)((a4 + 0xC)));
     *(int *)((int)stk + 0) = t12;
-    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), 0xC17FE4C, (unsigned char)(*(signed char *)((a4 + 0x4))), (*(short *)((t0 + 0x0))), t12, 0x0));
+    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), ((int)g_res_eyecatch), (unsigned char)(*(signed char *)((a4 + 0x4))), (*(short *)((t0 + 0x0))), t12, 0x0));
 }
 
 int obj_step_pos_vel_acc(int a4)
@@ -273,14 +276,14 @@ int FUN_0c015fda(int a4, int a5, int a6, int a7)
         if ((unsigned char)t0 != 1) {
             if ((unsigned char)t0 != 2) {
                 if ((unsigned char)t0 == 3) {
-                    return ((int (*)(int, int, int, int, float))(0xC016194))(0xC361C78, a5, a6, a7, 0.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC016194))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
                 }
-                return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
             }
             t0 = *(signed char *)((a4 + 0x2));
             if ((unsigned char)t0 != 0) {
                 if ((unsigned char)t0 != 1) {
-                    return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
                 }
             } else {
                 *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
@@ -301,7 +304,7 @@ int FUN_0c015fda(int a4, int a5, int a6, int a7)
         t0 = *(signed char *)((a4 + 0x2));
         if ((unsigned char)t0 != 0) {
             if ((unsigned char)t0 != 1) {
-                return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
             }
             t0 = *(int *)((a4 + 0x8));
             *(unsigned int *)((a4 + 0x8)) = (t0 - 1);
@@ -311,7 +314,7 @@ int FUN_0c015fda(int a4, int a5, int a6, int a7)
                 *(unsigned char *)((a4 + 0x2)) = 0x0;
                 return ((int (*)(int, int, int, int, float))(0xC0161A8))(a4, a5, a6, a7, 0.0f);
             }
-            return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
         }
         if ((unsigned char)(*(signed char *)0xC361C79) == 3) {
             *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
@@ -320,11 +323,11 @@ int FUN_0c015fda(int a4, int a5, int a6, int a7)
             *(unsigned int *)((a4 + 0x8)) = ((FUN_0c0e6f24()) + 0x1);
             return ((int (*)(void))(0xC0161A8))();
         }
-        return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+        return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
     }
     (((struct o10_float *)(a4))->v) = (((((struct o10_float *)(a4))->v)) + 0.0384615362f);
     if ((unsigned char)(*(signed char *)0xC361C79) != 2) {
-        return ((int (*)(int, int, int, int, float))(0xC0161A8))(0xC361C78, a5, a6, a7, 0.0f);
+        return ((int (*)(int, int, int, int, float))(0xC0161A8))(((int)g_ending_scene_work), a5, a6, a7, 0.0f);
     }
     *(unsigned char *)((a4 + 0x1)) = ((*(signed char *)((a4 + 0x1))) + 0x1);
     *(unsigned char *)((a4 + 0x3)) = 0x0;

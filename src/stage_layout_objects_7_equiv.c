@@ -1,5 +1,11 @@
 /* stage placement records: spawners and update/mode handlers for record types 1 2 3 4 8 11 12 and debris (0c0ad15c-0c0ae1b4) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
+extern char g_proj_char_offset_tbl[];
+extern char g_proj_def_tbl[];
+extern char g_vec3_gravity_339fa8[];
+extern char g_vec3_zero_339f90[];
 struct o0_float { float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -112,9 +118,9 @@ float obj_update_distance_cull(int a4)
     float s1;
 
     u0 = (((struct o20_float *)(a4))->v);
-    u1 = (((struct o0_float *)0xC7F2AB4)->v);
+    u1 = (((struct o0_float *)g_camera_pos)->v);
     u2 = (((struct o28_float *)(a4))->v);
-    u3 = (((struct o8_float *)0xC7F2AB4)->v);
+    u3 = (((struct o8_float *)g_camera_pos)->v);
     u4 = (((struct o0_float *)0xC0AD2B0)->v);
     u5 = ((u3 - u2) * (u3 - u2));
     u5 = u5 + ((u1 - u0)) * ((u1 - u0));
@@ -159,8 +165,8 @@ void FUN_0c0ad1fa(Obj *obj)
     obj->cnt = obj->cnt + 1;
     obj->f44 = 0;
     obj->f52 = 0;
-    obj->s56 = *(Vec3i *)0x0c339f90;
-    obj->s68 = *(Vec3i *)0x0c339fa8;
+    obj->s56 = *(Vec3i *)g_vec3_zero_339f90;
+    obj->s68 = *(Vec3i *)g_vec3_gravity_339fa8;
     obj->w280 = 0;
     obj->b729 = 0;
     kind_rec = obj->p776;
@@ -188,13 +194,13 @@ int FUN_0c0ad254(char *obj)
 void stage_type01_calc_throw_vec(struct Obj_r6 *obj)
 {
     struct Own *owner_rec = obj->owner;
-    signed char *rec = (signed char *)(0xC33BFD8 + obj->kind * 10);
+    signed char *rec = (signed char *)(((int)g_proj_def_tbl) + obj->kind * 10);
     float *scaled_src = (float *)(0xC339EE8 + (signed char)(rec[8] * 12));
     signed char *rec_b;
     obj->dir[0] = scaled_src[0] * owner_rec->scale;
     obj->dir[1] = scaled_src[1] * owner_rec->scale;
     obj->dir[2] = scaled_src[2] * owner_rec->scale;
-    rec_b = (signed char *)(0xC33BFD8 + obj->kind * 10);
+    rec_b = (signed char *)(((int)g_proj_def_tbl) + obj->kind * 10);
     obj->vec = *(struct Vec3i_r5 *)(0xC339F3C + (signed char)(rec_b[8] * 12));
 }
 
@@ -212,7 +218,7 @@ void stage_type01_init_thrown_from_owner(char *obj)
     obj[8]++;
     obj[3] = owner[3];
     *(int *)(obj + 280) = 0;
-    kind_row = (signed char *)(0xC33BFD8 + (signed char)obj[788] * 10);
+    kind_row = (signed char *)(((int)g_proj_def_tbl) + (signed char)obj[788] * 10);
     obj[0x101] = kind_row[1];
     obj[0x102] = kind_row[2];
     obj_set_record(obj, kind_row[0]);
@@ -228,12 +234,12 @@ void stage_type01_init_thrown_from_owner(char *obj)
         height_off = 120.0f;
     *(float *)(obj + 36) += height_off * *(float *)(owner + 0x7298);
     *(struct vec3_int *)(obj + 44) = *(struct vec3_int *)(owner + 44);
-    *(struct vec3_int *)(obj + 68) = *(struct vec3_int *)0xC339F90;
+    *(struct vec3_int *)(obj + 68) = *(struct vec3_int *)g_vec3_zero_339f90;
     type_off = ((signed char *)owner)[4] * 24;
     if (kind_row[7] != 0)
-        FUN_0c0c07bc(obj + 56, owner + 32, *(char **)(owner + 28) + 32, *(int *)(owner + 48), *(float *)(0xC33C05C + type_off + 4));
+        FUN_0c0c07bc(obj + 56, owner + 32, *(char **)(owner + 28) + 32, *(int *)(owner + 48), *(float *)(((int)g_proj_char_offset_tbl) + type_off + 4));
     else
-        FUN_0c0c07bc(obj + 56, owner + 32, *(char **)(owner + 28) + 32, *(int *)(owner + 48), *(float *)(0xC33C05C + type_off));
+        FUN_0c0c07bc(obj + 56, owner + 32, *(char **)(owner + 28) + 32, *(int *)(owner + 48), *(float *)(((int)g_proj_char_offset_tbl) + type_off));
 }
 
 int FUN_0c0ad7a4(int a4)
@@ -277,7 +283,7 @@ void stage_type01_init_kind_row(char *obj)
     *(short *)(obj + 238) = 0;
     *(short *)(obj + 240) = 0;
     obj[729] = 0;
-    kind_row = (signed char *)(0xC33BFD8 + (signed char)obj[788] * 10);
+    kind_row = (signed char *)(((int)g_proj_def_tbl) + (signed char)obj[788] * 10);
     obj[0x101] = kind_row[4];
     obj[0x102] = kind_row[5];
     obj_set_record(obj, kind_row[3]);
@@ -287,13 +293,13 @@ void stage_type01_init_kind_row(char *obj)
     *(struct Vec3i_r9 *)(obj + 44) = *(struct Vec3i_r9 *)(*(char **)(obj + 28) + 44);
     owner = *(signed char **)(obj + 28);
     if (kind_row[7] != 0)
-        speed = *(float *)(0xC33C05C + owner[4] * 24 + 12);
+        speed = *(float *)(((int)g_proj_char_offset_tbl) + owner[4] * 24 + 12);
     else
-        speed = *(float *)(0xC33C05C + (*(signed char **)(obj + 28))[4] * 24 + 8);
+        speed = *(float *)(((int)g_proj_char_offset_tbl) + (*(signed char **)(obj + 28))[4] * 24 + 8);
     *(float *)(obj + 56) = math_cos_angle16(0x14000 - *(int *)(obj + 48)) * speed;
     *(float *)(obj + 60) = 0.0f;
     *(float *)(obj + 64) = math_sin_angle16(0x14000 - *(int *)(obj + 48)) * speed;
-    *(struct Vec3i_r9 *)(obj + 68) = *(struct Vec3i_r9 *)0xC339FA8;
+    *(struct Vec3i_r9 *)(obj + 68) = *(struct Vec3i_r9 *)g_vec3_gravity_339fa8;
     stage_type01_spawn_ground_fx(obj);
 }
 
@@ -309,12 +315,12 @@ void stage_type01_reset_anim_from_kind(char *actor)
     *(short *)(actor + 0xEE) = 0;
     *(short *)(actor + 0xF0) = 0;
     actor[0x2D9] = 0;
-    anim_entry = (signed char *)0xC33BFD8 + (signed char)actor[0x314] * 10;
+    anim_entry = (signed char *)g_proj_def_tbl + (signed char)actor[0x314] * 10;
     actor[0x101] = anim_entry[4];
     actor[0x102] = anim_entry[5];
     obj_set_record(actor, anim_entry[3]);
     *(S12 *)(actor + 44) = *(S12 *)(*(char **)(actor + 28) + 44);
-    speed_row = (signed char *)0xC33C05C + (*(signed char **)(actor + 28))[4] * 24;
+    speed_row = (signed char *)g_proj_char_offset_tbl + (*(signed char **)(actor + 28))[4] * 24;
     if (anim_entry[7] != 0) {
         speed = *(float *)(speed_row + 12);
     } else {
@@ -323,7 +329,7 @@ void stage_type01_reset_anim_from_kind(char *actor)
     *(float *)(actor + 56) = -(math_cos_angle16(0x14000 - *(int *)(actor + 48)) * speed);
     *(float *)(actor + 60) = 0.0f;
     *(float *)(actor + 64) = -(math_sin_angle16(0x14000 - *(int *)(actor + 48)) * speed);
-    *(S12 *)(actor + 68) = *(S12 *)0xC339FA8;
+    *(S12 *)(actor + 68) = *(S12 *)g_vec3_gravity_339fa8;
     stage_type01_spawn_ground_fx(actor);
 }
 

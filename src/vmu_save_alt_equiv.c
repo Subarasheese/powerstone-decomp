@@ -1,5 +1,14 @@
 /* VMU save/load: port table, LCD image, save pack/unpack, state machines, VMS CHECK boot screen (0c010160-0c012568) */
 
+/* named globals (symbols.txt) */
+extern char g_vmu_check_work[];
+extern char g_vmu_ctl[];
+extern char g_vmu_file_image[];
+extern char g_vmu_mounted_port[];
+extern char g_vmu_op_pending[];
+extern char g_vmu_port_slots[];
+extern char g_vmu_step_state[];
+extern char g_vmu_wanted_port[];
 int vmu_make_save_image(void);
 int syRtcGetDate(int);
 int buSaveExecFile(int, int, int, int, int, int);
@@ -60,7 +69,7 @@ int vmu_write_save_file(int a4)
     *(unsigned char *)(((int)stk + 23)) = (*(signed char *)(((int)stk + 31)));
     *(int *)((int)stk + 4) = 0x80000000;
     *(int *)((int)stk + 0) = (((int)stk + 4) + 0xC);
-    return (buSaveFile((*(int *)(((int)stk + 8))), 0xC116210, 0xC351A40, (*(int *)(((int)stk + 12))), (((int)stk + 4) + 0xC), 0x80000000));
+    return (buSaveFile((*(int *)(((int)stk + 8))), 0xC116210, ((int)g_vmu_file_image), (*(int *)(((int)stk + 12))), (((int)stk + 4) + 0xC), 0x80000000));
 }
 
 int vmu_write_icondata_file(int a4)
@@ -111,17 +120,17 @@ int vmu_step_save(int a4, int a5, int a6)
     v0_5 = a4;
     v0_0 = a5;
     v0_0 = a6;
-    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)0xC361BA0)->v));
-    *(unsigned int *)(((int)stk + 4)) = 0xC361A60;
-    v0_7 = *(signed char *)0xC361BC0;
+    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)g_vmu_ctl)->v));
+    *(unsigned int *)(((int)stk + 4)) = ((int)g_vmu_port_slots);
+    v0_7 = *(signed char *)g_vmu_step_state;
     v0_6 = (v0_7);
-    v0_8 = (0xC361BAC);
+    v0_8 = (((int)g_vmu_wanted_port));
     v0_1 = (0x1);
-    v0_4 = (0xC361BA8);
-    v0_0 = (0xC361BC0);
-    v0_2 = (0xC361BA4);
-    v0_9 = (((((struct o8_int *)0xC361BA0)->v)));
-    v0_3 = (0xC361A60);
+    v0_4 = (((int)g_vmu_mounted_port));
+    v0_0 = (((int)g_vmu_step_state));
+    v0_2 = (((int)g_vmu_op_pending));
+    v0_9 = (((((struct o8_int *)g_vmu_ctl)->v)));
+    v0_3 = (((int)g_vmu_port_slots));
     if ((v0_7 == 0)) goto L_C01119C;
     if ((v0_6 == 1)) goto L_C0111AA;
     if ((v0_6 == 2)) goto L_C011200;
@@ -144,7 +153,7 @@ int vmu_step_save(int a4, int a5, int a6)
     vmu_lcd_set_idle_image();
     vmu_lcd_refresh((*(int *)((v0_8 + 0x0))));
     *(unsigned char *)((v0_0 + 0x0)) = 0x0;
-    (((struct o0_uint *)0xC361BA0)->v) = 0x0;
+    (((struct o0_uint *)g_vmu_ctl)->v) = 0x0;
     *(volatile int *)((v0_8 + 0x0));
     goto L_C011302;
     L_C011198:;
@@ -194,7 +203,7 @@ int vmu_step_save(int a4, int a5, int a6)
     *(unsigned char *)((v0_0 + 0x0)) = 0x2;
     goto L_C011302;
     L_C01119C:;
-    (((struct o0_uint *)0xC361BA0)->v) = v0_1;
+    (((struct o0_uint *)g_vmu_ctl)->v) = v0_1;
     *(unsigned int *)((v0_8 + 0x0)) = v0_5;
     vmu_lcd_set_busy_image();
     vmu_lcd_refresh((*(int *)((v0_8 + 0x0))));
@@ -248,7 +257,7 @@ int vmu_check_step(int a4, int a5, int a6, int a7)
                     (((struct o1F_uchar *)0xC361BC9)->v) = 0x1;
                     return obj_tick_class(0x5, a5, a6, a7);
                 }
-                return vmu_check_dispatch(0xC361BC8, a5, a6, a7);
+                return vmu_check_dispatch(((int)g_vmu_check_work), a5, a6, a7);
             }
             (((struct o20_uchar *)0xC361BC9)->v) = 0x0;
             obj_tick_class(0x5, a5, a6, a7);
@@ -257,7 +266,7 @@ int vmu_check_step(int a4, int a5, int a6, int a7)
             (((struct o2_uchar *)0xC361BC9)->v) = 0x0;
             return 0x0;
         }
-        vmu_check_dispatch(0xC361BC8, a5, a6, a7);
+        vmu_check_dispatch(((int)g_vmu_check_work), a5, a6, a7);
         (((struct o20_uchar *)0xC361BC9)->v) = 0x0;
         return 0x21;
     }

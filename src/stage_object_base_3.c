@@ -1,5 +1,7 @@
 /* stage object helpers: layout position load contact lists mode/owner setters (0c0abf64-0c0ac7f0) */
 
+/* named globals (symbols.txt) */
+extern char g_proj_def_tbl[];
 float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
 float FUN_0c02649a(char *obj, int top);
@@ -11,7 +13,7 @@ extern float _builtin_fabsf(float);
 #define B(o, n) (*(signed char *)((o) + (n)))
 #define F(o, n) (*(float *)((o) + (n)))
 #define NEXT(n) (*(char **)((n) + 24))
-#define TYPE(n, k) (*(unsigned char *)((char *)0x0C33BFD8 + B(n, 0x314) * 10 + (k)))
+#define TYPE(n, k) (*(unsigned char *)((char *)g_proj_def_tbl + B(n, 0x314) * 10 + (k)))
 
 void obj_collect_slot_contacts(char *o)
 {

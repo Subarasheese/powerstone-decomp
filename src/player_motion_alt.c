@@ -1,5 +1,7 @@
 /* motion engine: start/step motion, key tables, attack record load (0c09a808-0c09b068) */
 
+/* named globals (symbols.txt) */
+extern char g_attack_record_tab[];
 struct o7198_short { char p[0x7198]; short v; };
 struct o719A_ushort { char p[0x719A]; unsigned short v; };
 struct o719C_uchar { char p[0x719C]; unsigned char v; };
@@ -134,7 +136,7 @@ int pl_load_motion_attack_record(int a4, int a5, int a6)
         } else {
             (((struct o100_uchar *)(a4))->v) = (*(signed char *)(((((((unsigned short)((((struct o71A0_short *)(a4))->v)) << 2) << 1) + (0xAC288 + (0xC664B50 + ((*(signed char *)((a5 + 0x3))) * 0xB5EC8)))) + (((unsigned char)(*(signed char *)((a4 + 0x71A2))) << 2) << 1)) + 0x2)));
             t2 = *(signed char *)(((0x100 + a4) + 0x0));
-            (((struct oF4_uint *)(a4))->v) = ((((t2 << 2) + t2) << 2) + (*(int *)((0xC338A98 + ((*(signed char *)((a4 + 0x4))) << 2)))));
+            (((struct oF4_uint *)(a4))->v) = ((((t2 << 2) + t2) << 2) + (*(int *)((((int)g_attack_record_tab) + ((*(signed char *)((a4 + 0x4))) << 2)))));
             (((struct o108_uchar *)(a4))->v) = 0x0;
             t2 = (0x11C + a4);
             t3 = 0x0;

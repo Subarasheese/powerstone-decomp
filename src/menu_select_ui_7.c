@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a8d6c-0c0a99d0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ssel[];
 typedef struct { int a, b, c; } vec12;
 extern char *obj_create(int, int, int, int);
 void obj_destroy(char *e, int a);
@@ -75,7 +77,7 @@ void menu_ui_task_23(char *e)
         B(e, 5) = 25;
         for (s.i = 0; s.i < 8; s.i++) {
             s.k = s.i * 4;
-            FUN_0c0623a6(MDL(e, s.i), (void *)0x0C664A60, 0);
+            FUN_0c0623a6(MDL(e, s.i), (void *)g_res_csel_ssel, 0);
             H(MDL(e, s.i), 2) = 15;
             *(VEC3 *)(MDL(e, s.i) + 28) = s.scale;
             t = (float *)((char *)0x0C152970 + (unsigned char)(s.i * 12));
@@ -83,11 +85,11 @@ void menu_ui_task_23(char *e)
             F(MDL(e, s.i), 8) = t[1] + 650.0f;
             F(MDL(e, s.i), 12) = t[2];
         }
-        FUN_0c0623a6(MDL(e, 8), (void *)0x0C664A60, 8);
+        FUN_0c0623a6(MDL(e, 8), (void *)g_res_csel_ssel, 8);
         H(MDL(e, 8), 2) = 47;
         *(VEC3 *)(MDL(e, 8) + 28) = s.scale;
         F(MDL(e, 8), 8) = F(MDL(e, 8), 8) + 650.0f;
-        FUN_0c0623a6(MDL(e, 9), (void *)0x0C664A60, 9);
+        FUN_0c0623a6(MDL(e, 9), (void *)g_res_csel_ssel, 9);
         H(MDL(e, 9), 2) = 15;
         *(VEC3 *)(MDL(e, 9) + 28) = s.scale;
         F(MDL(e, 9), 4) = -485.0f;
@@ -234,7 +236,7 @@ void menu_ui_setup_subobject(struct Obj *obj, int n, int flag)
         type = 35;
     else
         type = *(signed char *)(0xC152C2C + n * 16) + obj->kind4;
-    FUN_0c06233a(obj->sub[n], 0xC664A60, type);
+    FUN_0c06233a(obj->sub[n], ((int)g_res_csel_ssel), type);
     obj->sub[n]->field_00 = 1;
     obj->sub[n]->field_02 = 287;
     obj->sub[n]->rec = *(struct V3 *)(0xC152C20 + n * 16);

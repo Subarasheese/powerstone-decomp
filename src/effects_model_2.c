@@ -1,5 +1,7 @@
 /* generic model effect (node table, linked to owner record); same module as neighbours (0c046830-0c0469fa) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int fx_spawn_model_effect(int, int, int, int, int, int, int, int, int);
 
@@ -42,7 +44,7 @@ int fx_spawn_on_player_part(int a4, int a5, int a6, int a7, int a8, int a9, int 
     *(int *)((int)stk + 4) = ((short)(a8 >> 0));
     v0_5 = *(signed char *)(((int)stk + 20));
     *(int *)((int)stk + 0) = (((v0_5 << 2) << 2) + 0xC14A7A8);
-    v0_1 = fx_spawn_model_effect(v0_2, ((v0_1 + (v0_4 + v0_3)) + v0_0), 0xC4CFA68, 0x3, (((v0_5 << 2) << 2) + 0xC14A7A8), ((short)(a8 >> 0)), ((signed char)(a9 >> 0)), a10, a11);
+    v0_1 = fx_spawn_model_effect(v0_2, ((v0_1 + (v0_4 + v0_3)) + v0_0), ((int)g_res_kyoutsuu), 0x3, (((v0_5 << 2) << 2) + 0xC14A7A8), ((short)(a8 >> 0)), ((signed char)(a9 >> 0)), a10, a11);
     v0_5 = (v0_1);
     v0_0 = (v0_1);
     if ((v0_1 == 0)) goto L_C04690E;

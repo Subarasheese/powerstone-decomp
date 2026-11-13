@@ -1,5 +1,7 @@
 /* ending sequence: scripted objects, update table, spawners, ending state/script (0c0128a0-0c0158d8) */
 
+/* named globals (symbols.txt) */
+extern char g_game_substate[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -47,7 +49,7 @@ int ending_obj_update_t08(int a4, int a5, int a6, int a7)
         if (t0 != 1) {
             if (t0 != 2) {
                 if (t0 != 3) {
-                    if ((*(signed char *)0xC7F302D) != 6) {
+                    if ((*(signed char *)g_game_substate) != 6) {
                         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                     }
                     t0 = 0x0;

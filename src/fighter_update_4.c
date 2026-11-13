@@ -1,5 +1,8 @@
 /* input snapshot, round-level update of the two fighters, per-player update (part 4 of 4 of the same module) (0c093254-0c093998) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_char_frame_hook_tbl[];
+extern char g_pl_char_param_ptr_tbl[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -261,7 +264,7 @@ int pl_update_frame(int a4)
     (((struct o72A2_ushort *)(R14))->v) = (int)w0_0;
     FPUL_ = ((int)w0_0);
     L_C09363E:;
-    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((0xC339070 + ((*(signed char *)((R14 + 0x4))) << 2))))))(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((int)g_pl_char_frame_hook_tbl) + ((*(signed char *)((R14 + 0x4))) << 2))))))(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
     v0_1 = *(signed char *)((R14 + 0x9));
     v0_0 = (v0_1);
     if ((v0_1 == 0)) goto L_C093660;
@@ -269,7 +272,7 @@ int pl_update_frame(int a4)
     if ((v0_0 == 2)) goto L_C09369E;
     if ((v0_0 == 3)) goto L_C0936A8;
     L_C0936AE:;
-    FUN_0c09bb9e(R14, (*(int *)((((*(signed char *)((R14 + 0x4))) << 2) + 0xC3390A4))));
+    FUN_0c09bb9e(R14, (*(int *)((((*(signed char *)((R14 + 0x4))) << 2) + ((int)g_pl_char_param_ptr_tbl)))));
     FUN_0c09bcbc(R14);
     (((struct o71FC_uint *)(R14))->v) = ((((struct o71F8_int *)(R14))->v));
     (((struct o71F8_uint *)(R14))->v) = ((((struct o2E4_int *)(R14))->v));

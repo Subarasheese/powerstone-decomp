@@ -1,5 +1,7 @@
 /* scene render per frame (cameras, split screen), then HUD (0c02ca74-0c02d774) */
 
+/* named globals (symbols.txt) */
+extern char g_cam_split_flag[];
 int dbg_set_cell_size(int, int);
 int dbg_set_cursor_cell(int, int);
 int dbg_set_text_color(int);
@@ -118,7 +120,7 @@ void FUN_0c02cb4a(int *base)
     int *rec;
     int masked;
 
-    if (*(signed char *)0xC7F319E != 0) {
+    if (*(signed char *)g_cam_split_flag != 0) {
         rec = (int *)((char *)base + 24);
         while (*rec < 0) {
             masked = *rec & 0xFFFCFFFF;
@@ -244,7 +246,7 @@ int game_draw_frame(void)
         }
     } else {
         gfx_set_background_color(((((struct o0_int *)0xC7F31BC)->v)), ((((struct o4_int *)0xC7F31BC)->v)), ((((struct o8_int *)0xC7F31BC)->v)));
-        if ((*(signed char *)0xC7F319E) == 0) {
+        if ((*(signed char *)g_cam_split_flag) == 0) {
             *(unsigned int *)0xC321190 = 0x0;
             FUN_0c0e1550(0x3);
             nlUnitMatrix();

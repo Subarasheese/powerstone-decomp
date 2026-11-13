@@ -1,5 +1,7 @@
 /* battle round flow record g_round_flow (init (0c0cc074-0c0ccefc) */
 
+/* named globals (symbols.txt) */
+extern char g_cam_split_flag[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 int FUN_0c0555c4(void);
@@ -34,7 +36,7 @@ int item_director_tick(void)
     t1 = FUN_0c0555c4();
     t2 = t1;
     if (t1 != 0) {
-        if ((*(signed char *)0xC7F319E) == 0) {
+        if ((*(signed char *)g_cam_split_flag) == 0) {
             FUN_0c0ccbca();
         }
         if (((*(signed char *)0xC7E40C8) == 10) && (t0 = *(signed char *)0xC7EB398, t0 == 10)) {

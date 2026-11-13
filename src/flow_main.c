@@ -1,5 +1,8 @@
 /* start-button poll, per-frame update, mode handlers 0..4 (0c052708-0c053680) */
 
+/* named globals (symbols.txt) */
+extern char g_game_substate[];
+extern char g_tab_game_mode_handlers[];
 struct o0_uchar { unsigned char v; };
 struct o2_short { char p[0x2]; short v; };
 struct o2_ushort { char p[0x2]; unsigned short v; };
@@ -92,7 +95,7 @@ int game_frame_update(int a4, int a5, int a6, int a7)
     register int t40;
     register int t41;
 
-    t2 = ((int (*)(void))((*(int *)((((*(signed char *)0xC7F302C) << 2) + 0xC32DE40)))))();
+    t2 = ((int (*)(void))((*(int *)((((*(signed char *)0xC7F302C) << 2) + ((int)g_tab_game_mode_handlers))))))();
     if ((*(signed char *)0xC7F302C) != 0) {
         (((struct o0_uchar *)0xC7F3192)->v) = 0x0;
         if ((*(signed char *)0xC7EB2F6) != 0) {
@@ -231,12 +234,12 @@ int game_mode_handler_0(int a4, int a5, int a6, int a7)
 {
     register int t5;
 
-    if ((*(signed char *)0xC7F302D) == 0) {
-        (((struct o1_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302D) + 0x1);
+    if ((*(signed char *)g_game_substate) == 0) {
+        (((struct o1_uchar *)0xC7F302C)->v) = ((*(signed char *)g_game_substate) + 0x1);
         game_reset_match_screen();
         FUN_0c052b9e();
     } else {
-        t5 = 0xC7F302D;
+        t5 = ((int)g_game_substate);
     }
     if ((*(signed char *)0xC7F2F03) != 0) {
         return ((int (*)(int, int, int, int))(0xC052DA0))(t5, a5, a6, a7);
@@ -252,7 +255,7 @@ int game_mode_handler_1(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
@@ -273,7 +276,7 @@ int game_mode_handler_2(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     if (t0 != 0) {
         if (t0 != 1) {
             (((struct o0_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302C) + 0x1);

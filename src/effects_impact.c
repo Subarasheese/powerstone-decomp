@@ -1,5 +1,7 @@
 /* short-lived effect objects spawned with position/angle/slot arguments (hit sparks etc) (0c0b5d60-0c0b5f78) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o0_float { float v; };
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
@@ -67,11 +69,11 @@ int fx_spawn_01(int a4, int a5, int a6)
         (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B5E60;
         t14 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t14, 0xC4CFA68, 0x38);
+        FUN_0c06233a(t14, ((int)g_res_kyoutsuu), 0x38);
         *(unsigned char *)((t14 + 0x0)) = 0x1;
         *(unsigned short *)((t14 + 0x2)) = 0x1;
         t16 = (((struct o2E4_int *)(t0))->v);
-        FUN_0c06233a(t16, 0xC4CFA68, 0x32);
+        FUN_0c06233a(t16, ((int)g_res_kyoutsuu), 0x32);
         *(unsigned char *)((t16 + 0x0)) = 0x1;
         *(unsigned short *)((t16 + 0x2)) = 0x11;
         (((struct oC_float *)(t16))->v) = ((((struct o18_float *)0xC0B5EB0)->v));

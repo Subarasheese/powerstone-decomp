@@ -1,5 +1,7 @@
 /* stage gimmicks (record types 13/15): spawner table 0xC33A09C with their update functions (0c0aeca8-0c0aed9c) */
 
+/* named globals (symbols.txt) */
+extern char g_stage_gimmick_spawn_tbl[];
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o2D9_uchar { char p[0x2D9]; unsigned char v; };
@@ -17,7 +19,7 @@ int stage_spawn_gimmick_by_kind(int a4, int a5, int a6, int a7)
 {
     register int t1;
 
-    t1 = *(int *)((0xC33A09C + ((*(signed char *)((a4 + 0x7))) << 2)));
+    t1 = *(int *)((((int)g_stage_gimmick_spawn_tbl) + ((*(signed char *)((a4 + 0x7))) << 2)));
     return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
 }
 

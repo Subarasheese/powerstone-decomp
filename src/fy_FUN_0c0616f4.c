@@ -1,5 +1,7 @@
 /* INLINE-ASM: reads and writes the status register (stc sr / ldc sr), which C cannot express; the rest is C */
 /* Main-loop step of the title / menu flow (state bytes at 0xC7F2EE0 + 35 / 36 / 37 / 38 / 317 / 319): runs the per-frame services, lowers the interrupt mask, follows the state and, when the soft-reset pad combination is held, calls the reset helpers. */
+/* named globals (symbols.txt) */
+extern char g_vmu_ctl[];
 #pragma inline_asm(get_sr)
 int get_sr(void)
 {
@@ -16,7 +18,7 @@ struct pad_state { char gap0[8]; unsigned short bits_8; char gap1[2]; unsigned s
 #define ALL5(pad) (((pad)->bits_12 & 8) && ((pad)->bits_8 & 4) && ((pad)->bits_8 & 2) && ((pad)->bits_8 & 0x400) && ((pad)->bits_8 & 0x200))
 #define COMBO (ALL5(P1) || ALL5(P2))
 #define G ((char *)0xC7F2EE0)
-#define PV (*(int *)0xC361BA0)
+#define PV (*(int *)g_vmu_ctl)
 #define CLR4() (G[3] = 0, G[2] = 0, G[1] = 0, G[0] = 0)
 void FUN_0c0f250a(void);
 void syRtcExecServer(void);

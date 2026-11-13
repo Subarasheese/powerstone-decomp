@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c042150-0c042514) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } vec3_int;
 extern void FUN_0c042304(void);
 extern void FUN_0c06233a(char *, char *, int);
@@ -31,7 +33,7 @@ void fx_init_subblock_effect(char *obj, vec3_int *pos_ptr, char arg_byte, short 
         *sub_blk = 0;
         sub_blk = ((char **)(obj + 0x2E0))[i];
         *(short *)(sub_blk + 2) = 31;
-        FUN_0c06233a(((char **)(obj + 0x2E0))[i], (char *)0x0C4CFA68, i + 58);
+        FUN_0c06233a(((char **)(obj + 0x2E0))[i], (char *)g_res_kyoutsuu, i + 58);
     }
 }
 

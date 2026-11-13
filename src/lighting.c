@@ -1,5 +1,7 @@
 /* light/ambient helpers (vector sub/normalize, nlObjPutSetGlobalAmbience) using the slot records (0c05f6d8-0c05fc50) */
 
+/* named globals (symbols.txt) */
+extern char g_fxslots[];
 struct o4_float { char p[0x4]; float v; };
 struct o70_float { char p[0x70]; float v; };
 int math_vec3_add(int, int, int);
@@ -128,7 +130,7 @@ int FUN_0c05fb58(int a4)
     t0 = a4;
     t1 = 0x7;
     for (;;) {
-        if ((((unsigned char)t0 & 0x80) != 0) && (t2 = (int)(((unsigned int)(t1 << 2)) >> 31), t3 = *(signed char *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238)), t3 != 0)) {
+        if ((((unsigned char)t0 & 0x80) != 0) && (t2 = (int)(((unsigned int)(t1 << 2)) >> 31), t3 = *(signed char *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))), t3 != 0)) {
             break;
         }
         t1 = (t1 - 1);
@@ -137,9 +139,9 @@ int FUN_0c05fb58(int a4)
             return (FUN_0c0dcd20(1.0f, 1.0f, 1.0f));
         }
     }
-    nlObjPutSetGlobalAmbience(((((struct o7C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238)))->v)));
-    FUN_0c0dccd0((((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238) + 0x44));
-    return (FUN_0c0dcd20((((((struct o84_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238)))->v)) * 1.0f), (((((struct o88_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238)))->v)) * 1.0f), (((((struct o8C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + 0xC7F3238)))->v)) * 1.0f)));
+    nlObjPutSetGlobalAmbience(((((struct o7C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)));
+    FUN_0c0dccd0((((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots)) + 0x44));
+    return (FUN_0c0dcd20((((((struct o84_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o88_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f), (((((struct o8C_float *)(((short)(((((t1 << 2) << 1) + t1) << 2) << 2) + ((int)g_fxslots))))->v)) * 1.0f)));
 }
 
 int FUN_0c05fbee(int a4)

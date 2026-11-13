@@ -1,5 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c025958-0c026c7c) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_list_heads[];
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 struct o8_int { char p[0x8]; int v; };
@@ -40,16 +42,16 @@ int FUN_0c025d10(int a4, int a5, int a6)
     register int t0;
     register int t1;
 
-    t0 = (((struct o0_int *)0xC7E4074)->v);
+    t0 = (((struct o0_int *)g_obj_list_heads)->v);
     t1 = ((int (*)(int, int, int))(FUN_0c025a0e))(t0, t0, a6);
-    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o0_int *)0xC7E4074)->v)), ((((struct o4_int *)0xC7E4074)->v)));
-    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o0_int *)0xC7E4074)->v)), 0xC7E40C4);
-    t0 = (((struct o8_int *)0xC7E4074)->v);
+    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o0_int *)g_obj_list_heads)->v)), ((((struct o4_int *)g_obj_list_heads)->v)));
+    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o0_int *)g_obj_list_heads)->v)), 0xC7E40C4);
+    t0 = (((struct o8_int *)g_obj_list_heads)->v);
     t1 = ((int (*)(int, int))(FUN_0c025a0e))(t0, t0);
-    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o4_int *)0xC7E4074)->v)), ((((struct o8_int *)0xC7E4074)->v)));
-    t0 = (((struct o4_int *)0xC7E4074)->v);
+    t0 = ((int (*)(int, int))(FUN_0c025a0e))(((((struct o4_int *)g_obj_list_heads)->v)), ((((struct o8_int *)g_obj_list_heads)->v)));
+    t0 = (((struct o4_int *)g_obj_list_heads)->v);
     t1 = ((int (*)(int, int))(FUN_0c025a0e))(t0, t0);
-    t0 = ((int (*)(int, int))(FUN_0c025a0e))(0xC7E40C4, ((((struct o4_int *)0xC7E4074)->v)));
+    t0 = ((int (*)(int, int))(FUN_0c025a0e))(0xC7E40C4, ((((struct o4_int *)g_obj_list_heads)->v)));
     return ((int (*)(int, int))(FUN_0c025a0e))(0xC7E40C4, 0xC7E40C4);
 }
 

@@ -1,6 +1,9 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c05923a.json (synthetic). */
 /* Allocates an actor node from the free list, links it before/after `at` in list `list` (heads at 0xC7E4070 / 0xC7E4098), then fills its n child slots from the pool selected by `kind`. Returns the node or 0. */
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_class_tail[];
 struct Node *obj_pool_pop(void);
 int obj_destroy(struct Node *);
 int part_alloc0(void);
@@ -34,7 +37,7 @@ struct Node *obj_create_beside(int list, struct Node *at, int where, int n, int 
     if (where == 0) {
         p = at->prev;
         if (p == 0) {
-            ((struct Node **)0xC7E4070)[list] = x;
+            ((struct Node **)g_obj_class_head)[list] = x;
         } else {
             p->next = x;
         }
@@ -44,7 +47,7 @@ struct Node *obj_create_beside(int list, struct Node *at, int where, int n, int 
     } else if (where == 1) {
         p = at->next;
         if (p == 0) {
-            ((struct Node **)0xC7E4098)[list] = x;
+            ((struct Node **)g_obj_class_tail)[list] = x;
         } else {
             p->prev = x;
         }

@@ -1,12 +1,15 @@
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_class_tail[];
 char *obj_create(int a, int b, int c, int d)
 {
     char *o;
     int *slot;
     int *head;
     int i;
-    int *t5 = (int *)0xC7E4098;
-    int *t6 = (int *)0xC7E4070;
+    int *t5 = (int *)g_obj_class_tail;
+    int *t6 = (int *)g_obj_class_head;
 
     o = (char *)obj_pool_pop();
     if (o == 0)

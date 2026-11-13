@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c044e38-0c04512c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } vec3i;
 extern char *obj_create(int, int, int, int);
 extern void FUN_0c06233a(int owner_id, int b, int c);
@@ -42,7 +44,7 @@ void fx_spawn_044e38(char owner_id)
     *(float *)(effect + 80) = 1.0f;
     player_base = (char *)(0xC7E40C4 + (unsigned short)(owner_id * 29392));
     for (i = 0; i < 8; i++) {
-        FUN_0c06233a(*(int *)(effect + 736 + i * 4), 0xC4CFA68, 92);
+        FUN_0c06233a(*(int *)(effect + 736 + i * 4), ((int)g_res_kyoutsuu), 92);
         row = player_base[0x71F1];
         thunk_FUN_0c062242((int)(player_base + 768 + (short)(row * 3520) + (short)(block_tbl[i] * 176)), pos);
         pos[0] = pos[0] + ((float)((unsigned)(math_rand_float() * rand_scale) % 30) + jitter_min);
@@ -87,7 +89,7 @@ int fx_tick_044e38(int a4, int a5, int a6, int a7)
             for (;;) {
                 t2 = *(int *)((t1 + 0x0));
                 t1 = (t1 + 0x4);
-                FUN_0c06231c(t2, 0xC4CFA68, ((*(signed char *)((a4 + 0xEE))) + 0x5C));
+                FUN_0c06231c(t2, ((int)g_res_kyoutsuu), ((*(signed char *)((a4 + 0xEE))) + 0x5C));
                 t0 = (t0 + 0x1);
                 if ((int)(signed char)t0 >= (int)0x8) {
                     break;

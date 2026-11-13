@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c05600c-0c056340) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct Vec3 { float x, y, z; };
 struct TaskObj {
     char live;
@@ -53,12 +55,12 @@ void fx_tick_056340(char *effect)
         *(short *)(effect + 6) = 31;
         effect[5] = 25;
         row = (char *)0xC14AE58 + (signed char)((short)PARAM4 * 28);
-        FUN_0c06233a(PART1, 0xC4CFA80, row[24]);
+        FUN_0c06233a(PART1, ((int)g_res_font), row[24]);
         *PART1 = 0;
         *(vec3i *)(PART1 + 4) = *(vec3i *)row;
         *(vec3i *)(PART1 + 28) = *(vec3i *)(row + 12);
         *(short *)(PART1 + 2) = 0x11F;
-        FUN_0c06233a(PART2, 0xC4CFA80, row[25]);
+        FUN_0c06233a(PART2, ((int)g_res_font), row[25]);
         *PART2 = 0;
         *(vec3i *)(PART2 + 4) = *(vec3i *)row;
         *(vec3i *)(PART2 + 28) = *(vec3i *)(row + 12);

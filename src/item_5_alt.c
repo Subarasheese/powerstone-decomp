@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05b6dc-0c05c1c0) */
 
+/* named globals (symbols.txt) */
+extern char g_proj_char_offset_tbl[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 int item_init_hold_pose(int);
 struct o0_float { float v; };
@@ -114,7 +116,7 @@ void obj_tick_owner_projectile(char *obj)
         *(float *)(obj + 36) = *(float *)(obj + 36) + 180.0f * scale;
         *(float *)(obj + 40) = *(float *)(obj + 40) + 100.0f * (math_sin_angle16(0x14000 - *(int *)(owner + 48)) * scale);
         *(struct v3 *)(obj + 44) = *(struct v3 *)(owner + 44);
-        table = (float *)(0xC33C05C + 24 * owner[4]);
+        table = (float *)(((int)g_proj_char_offset_tbl) + 24 * owner[4]);
         if (obj[0x30C] == 9)
             scale = table[1];
         else

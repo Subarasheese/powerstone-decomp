@@ -1,5 +1,9 @@
 /* stage placement records: spawners and update/mode handlers for record types 1 2 3 4 8 11 12 and debris (0c0ad15c-0c0ae1b4) */
 
+/* named globals (symbols.txt) */
+extern char g_proj_char_offset_tbl[];
+extern char g_proj_def_tbl[];
+extern char g_vec3_gravity_339fa8[];
 struct o105_uchar { char p[0x105]; unsigned char v; };
 struct o106_uchar { char p[0x106]; unsigned char v; };
 struct o107_uchar { char p[0x107]; unsigned char v; };
@@ -86,26 +90,26 @@ int stage_type01_init_move_vector(int obj)
     (((struct at_f0_ushort *)(obj))->field_f0) = 0x0;
     (((struct at_2d9_uchar *)(obj))->field_2d9) = 0x0;
     tbl_idx = *(signed char *)((obj + 0x314));
-    (((struct at_101_uchar *)(obj))->field_101) = (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + 0xC33BFD8) + 0x4)));
-    (((struct at_102_uchar *)(obj))->field_102) = (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + 0xC33BFD8) + 0x5)));
-    obj_set_record(obj, (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + 0xC33BFD8) + 0x3))));
+    (((struct at_101_uchar *)(obj))->field_101) = (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + ((int)g_proj_def_tbl)) + 0x4)));
+    (((struct at_102_uchar *)(obj))->field_102) = (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + ((int)g_proj_def_tbl)) + 0x5)));
+    obj_set_record(obj, (*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + ((int)g_proj_def_tbl)) + 0x3))));
     (((struct at_105_uchar *)(obj))->field_105) = 0x0;
     (((struct at_106_uchar *)(obj))->field_106) = 0x0;
     (((struct at_107_uchar *)(obj))->field_107) = 0x0;
-    if ((*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + 0xC33BFD8) + 0x7))) != 0) {
+    if ((*(signed char *)((((((tbl_idx << 2) + tbl_idx) << 1) + ((int)g_proj_def_tbl)) + 0x7))) != 0) {
         tbl_idx = *(signed char *)(((*(int *)((obj + 0x1C))) + 0x4));
         field_off = 0x14;
-        row_base = (0xC33C05C + ((((tbl_idx << 1) + tbl_idx) << 2) << 1));
+        row_base = (((int)g_proj_char_offset_tbl) + ((((tbl_idx << 1) + tbl_idx) << 2) << 1));
     } else {
         tbl_idx = *(signed char *)(((*(int *)((obj + 0x1C))) + 0x4));
         field_off = 0x10;
-        row_base = (0xC33C05C + ((((tbl_idx << 1) + tbl_idx) << 2) << 1));
+        row_base = (((int)g_proj_char_offset_tbl) + ((((tbl_idx << 1) + tbl_idx) << 2) << 1));
     }
     speed = *(float *)((row_base + field_off));
     (((struct at_38_float *)(obj))->field_38) = ((math_cos_angle16(((-(*(int *)(((*(int *)((obj + 0x1C))) + 0x30)))) + 0x14000))) * speed);
     (((struct at_3c_float *)(obj))->field_3c) = 0.0f;
     (((struct at_40_float *)(obj))->field_40) = ((math_sin_angle16(((-(*(int *)(((*(int *)((obj + 0x1C))) + 0x30)))) + 0x14000))) * speed);
-    *(struct Vec3 *)(obj + 0x44) = *(struct Vec3 *)0xC339FA8;
+    *(struct Vec3 *)(obj + 0x44) = *(struct Vec3 *)g_vec3_gravity_339fa8;
     return stage_type01_spawn_ground_fx(obj);
 }
 

@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a8388-0c0a84d4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ksel[];
 struct Vec12 { int x, y, z; };
 extern void FUN_0c0623a6(char *p, int q, int n);
 extern void obj_destroy(char *obj);
@@ -16,7 +18,7 @@ void menu_ui_task_17(char *obj)
         *(short *)(obj + 6) = 15;
         obj[5] = 25;
         for (part = 0; part < 10; part++) {
-            FUN_0c0623a6(*(char **)(obj + 736 + part * 4), 0xC664A78, part + 48);
+            FUN_0c0623a6(*(char **)(obj + 736 + part * 4), ((int)g_res_csel_ksel), part + 48);
             if (part != 8 && part != 9)
                 **(char **)(obj + 736 + part * 4) = 1;
             *(short *)(*(char **)(obj + 736 + part * 4) + 2) = 15;

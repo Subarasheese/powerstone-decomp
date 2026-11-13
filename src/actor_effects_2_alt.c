@@ -1,5 +1,7 @@
 /* actor objects: reset/update routines sharing the entity header (counter byte 8, rotation 44..52, velocity 56..64); exact class not identified (0c05dd00-0c05e20c) */
 
+/* named globals (symbols.txt) */
+extern char g_item_state[];
 typedef struct { int x, y, z; } vec3i;
 extern void item_init_hold_pose(char *);
 
@@ -21,7 +23,7 @@ void FUN_0c05deec(char *effect)
     *(float *)(*(char **)(effect + 0x2E0) + 36) = 1.0f;
     *(char **)(effect + 0x118) = owner + 0x300 + (short)(owner[0x71F1] * 3520) + 0x580;
     if (effect[11] == 0) {
-        game_rec = (char *)0x0C7F2664;
+        game_rec = (char *)g_item_state;
         game_rec[0x315] = effect[13];
         game_rec[0x316] = 1;
         effect[11] = 1;

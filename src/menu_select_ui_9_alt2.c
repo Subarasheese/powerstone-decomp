@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a9d9c-0c0aba84) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 typedef struct { int x, y, z; } Vec12;
 extern int FUN_0c0d5188(void);
 extern void FUN_0c06233a(void *, int, int);
@@ -29,7 +31,7 @@ void menu_ui_task_33(char *obj)
         obj[5] = 25;
         cfg = (char *)0xC152C8C + (signed char)(BYTE4 * 28);
         for (i = 0; i < 2; i++) {
-            FUN_0c06233a(CHILD(i), 0xC4CFA80, cfg[24] + i);
+            FUN_0c06233a(CHILD(i), ((int)g_res_font), cfg[24] + i);
             *CHILD(i) = 0;
             *(Vec12 *)(CHILD(i) + 4) = *(Vec12 *)cfg;
             *(Vec12 *)(CHILD(i) + 28) = *(Vec12 *)(cfg + 12);

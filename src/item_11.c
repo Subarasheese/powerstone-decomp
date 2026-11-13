@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05d338-0c05d536) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o105_uchar { char p[0x105]; unsigned char v; };
@@ -72,7 +74,7 @@ int item_create(int a4, int a5)
         t18 = 0x0;
         t19 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t19) + 0x0))), 0xC4CFA68, (*(signed char *)(((signed char)t18 + 0xC336374))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t19) + 0x0))), ((int)g_res_kyoutsuu), (*(signed char *)(((signed char)t18 + 0xC336374))));
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t19) + 0x0))) + 0x0)) = 0x0;
             t24 = *(int *)(((int)stk + 4));
             t25 = *(int *)((((0x2E0 + t0) + t19) + 0x0));

@@ -1,5 +1,9 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02ff18-0c03148c) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_counter_slots[];
+extern char g_hud_state[];
+extern char g_res_cockpit_faces[];
 struct o0_float { float v; };
 struct o10_float { char p[0x10]; float v; };
 struct o14_float { char p[0x14]; float v; };
@@ -56,7 +60,7 @@ int FUN_0c02ff18(void)
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
     t10 = *(signed char *)0xC7E40C8;
-    ui_sprite_queue_add((((int)stk + 0) + 0x8), ((unsigned char)(((t10 << 1) + t10) << 2) + 0xC17FDC8), 0x0, (t7 + 0x1), 0x0, 0x0);
+    ui_sprite_queue_add((((int)stk + 0) + 0x8), ((unsigned char)(((t10 << 1) + t10) << 2) + ((int)g_res_cockpit_faces)), 0x0, (t7 + 0x1), 0x0, 0x0);
     *(float *)(((int)stk + 12)) = ((((struct o20_float *)0xC030048)->v));
     *(float *)(((int)stk + 52)) = (((((struct o14_float *)0xC366A74)->v)) * 1.0f);
     t18 = 0x0;
@@ -66,7 +70,7 @@ int FUN_0c02ff18(void)
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
     t20 = *(signed char *)0xC7EB398;
-    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), ((unsigned char)(((t20 << 1) + t20) << 2) + 0xC17FDC8), 0x0, (t18 + 0x1), 0x0, 0x0));
+    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), ((unsigned char)(((t20 << 1) + t20) << 2) + ((int)g_res_cockpit_faces)), 0x0, (t18 + 0x1), 0x0, 0x0));
 }
 
 int FUN_0c02fffc(int a4, int a5, int a6, int a7, float f4)
@@ -101,7 +105,7 @@ void ui_draw_hit_counter(int slot_idx, int max_value, int arg_c, int arg_d, floa
     float bar_pos;
     float y_lo, y_hi;
 
-    slot_rec = (char *)0xC366A9C + (signed char)(slot_idx * 24);
+    slot_rec = (char *)g_hit_counter_slots + (signed char)(slot_idx * 24);
     tens = slot_rec[9] / 10;
     bar_pos = (float)(signed char)slot_rec[8] * 112.0f / (float)(signed char)max_value;
     if ((signed char)slot_idx == 0) {
@@ -129,15 +133,15 @@ int FUN_0c03027e(int a4)
     register int t5;
     register int t8;
 
-    *(unsigned char *)(((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0x8) + 0x2)) = ((*(signed char *)(((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0x8) + 0x1))) - 4);
-    if ((int)(*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA))) < 0) {
-        *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA)) = 0x63;
+    *(unsigned char *)(((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0x8) + 0x2)) = ((*(signed char *)(((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0x8) + 0x1))) - 4);
+    if ((int)(*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA))) < 0) {
+        *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA)) = 0x63;
         t8 = 0x63;
     } else {
-        t5 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+        t5 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
         t8 = t5;
         if ((int)t5 > (int)0xC) {
-            *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA)) = 0xC;
+            *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA)) = 0xC;
             t8 = 0xC;
         }
     }
@@ -150,13 +154,13 @@ int FUN_0c0302b6(int a4)
     register int t1;
     register int t2;
 
-    t0 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+    t0 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
     if (t0 != 99) {
         if ((signed char)a4 == 0) {
-            t1 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+            t1 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
             t2 = ((((int)((unsigned int)((int)((unsigned int)t1 + (unsigned int)0x0)) + ((((int)0x0 > (int)t1)) ? 1u : 0u))) >> 1) + 0xB);
         } else {
-            t1 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+            t1 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
             t2 = ((((int)((unsigned int)((int)((unsigned int)t1 + (unsigned int)0x0)) + ((((int)0x0 > (int)t1)) ? 1u : 0u))) >> 1) + 0x21);
         }
         return FUN_0c0a3f30(t2);
@@ -166,8 +170,8 @@ int FUN_0c0302b6(int a4)
 
 int FUN_0c0302fe(int a4, int a5, int a6, int a7)
 {
-    *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA)) = 0xE;
-    return FUN_0c0301d2(a4, a5, ((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C), a7);
+    *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA)) = 0xE;
+    return FUN_0c0301d2(a4, a5, ((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)), a7);
 }
 
 void FUN_0c03082e(void)
@@ -223,7 +227,7 @@ int FUN_0c030920(void)
     FUN_0c030832((*(signed char *)0xC7E40C7), (((int)stk + 0) + 0x8));
     FUN_0c030832((*(signed char *)0xC7EB397), ((int)stk + 0));
     w0_2 = (((struct o0_float *)0xC030B90)->v);
-    v0_0 = (0xC366A70);
+    v0_0 = (((int)g_hud_state));
     w0_1 = (w0_2);
     w0_0 = (((((struct o4_float *)0xC030B90)->v)));
     if (((*(float *)(((int)stk + 8))) > w0_2)) goto L_C030960;

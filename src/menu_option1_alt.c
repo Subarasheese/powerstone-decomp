@@ -1,5 +1,7 @@
 /* OPTION group screen 1 (0c019bf4-0c01a42c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_model[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -134,7 +136,7 @@ int opt_page1_spawn_cursor_pulse(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664AC0, (*(signed char *)((t3 + 0xC))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_art_model), (*(signed char *)((t3 + 0xC))));
             t11 = *(int *)((((0x2E0 + t0) + t4) + 0x0));
             (((struct o24_float *)(t11))->v) = 1.0f;
             (((struct o20_float *)(t11))->v) = 1.0f;

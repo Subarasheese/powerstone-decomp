@@ -1,5 +1,8 @@
 /* game settings screen (7 option bytes, defaults item) (0c0195f0-0c019bf4) */
 
+/* named globals (symbols.txt) */
+extern char g_opt_game_settings_work[];
+extern char g_opt_unlock_flags[];
 int memset(int, int, int);
 struct opt_block { char bytes[11]; };
 extern void snd_play_side_se(int, int);
@@ -13,7 +16,7 @@ extern void ui_sprite_queue_add(void *, int, int, int, int, int);
 
 int opt_game_settings_init(void)
 {
-    return memset(0xC362310, 0x0, 0x8);
+    return memset(((int)g_opt_game_settings_work), 0x0, 0x8);
 }
 
 int opt_game_settings_changed(void)
@@ -50,8 +53,8 @@ void opt_game_settings_main(void)
     signed char option_max;
     char *saved_opts;
 
-    menu = (char *)0xC362310;
-    options = (char *)0xC7F4744;
+    menu = (char *)g_opt_game_settings_work;
+    options = (char *)g_opt_unlock_flags;
     option_max = 0;
     option_ptr = 0;
     switch (menu[0]) {

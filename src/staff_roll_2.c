@@ -1,5 +1,7 @@
 /* staff roll: fade object and credit line spawner (0c0172e0-0c017a24) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct o18_float { char p[0x18]; float v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -127,7 +129,7 @@ int staffroll_spawn_line(int a4, int a5)
                                 }
                                 (((struct o18_float *)(((int)stk + 0)))->v) = (*(float *)((((signed char)t20 << 2) + 0xC117300)));
                                 u18 = (*(float *)((((signed char)t20 << 2) + 0xC117500)));
-                                FUN_0c06233a((*(int *)((((0x2E0 + t14) + t17) + 0x0))), 0xC4CFA80, (*(short *)((((signed char)t20 << 1) + 0xC117200))));
+                                FUN_0c06233a((*(int *)((((0x2E0 + t14) + t17) + 0x0))), ((int)g_res_font), (*(short *)((((signed char)t20 << 1) + 0xC117200))));
                                 *(unsigned short *)(((*(int *)((((0x2E0 + t14) + t17) + 0x0))) + 0x2)) = 0x31F;
                                 (((struct o4_float *)((*(int *)((((0x2E0 + t14) + t17) + 0x0)))))->v) = (*(float *)(((int)stk + 0)));
                                 (((struct o8_float *)((*(int *)((((0x2E0 + t14) + t17) + 0x0)))))->v) = 0.0f;
@@ -198,7 +200,7 @@ int staffroll_spawn_line(int a4, int a5)
                                 }
                                 (((struct o18_float *)(((int)stk + 0)))->v) = (*(float *)((0xC117300 + (t107 << 2))));
                                 *(volatile float *)((0xC117500 + (t107 << 2)));
-                                FUN_0c06233a(((((struct o2E0_int *)(t95))->v)), 0xC4CFA80, (*(short *)((((*(signed char *)(((int)stk + 12))) << 1) + 0xC117200))));
+                                FUN_0c06233a(((((struct o2E0_int *)(t95))->v)), ((int)g_res_font), (*(short *)((((*(signed char *)(((int)stk + 12))) << 1) + 0xC117200))));
                                 *(unsigned short *)((((((struct o2E0_int *)(t95))->v)) + 0x2)) = 0x31F;
                                 (((struct o4_float *)(((((struct o2E0_int *)(t95))->v))))->v) = (*(float *)(((int)stk + 0)));
                                 (((struct o8_float *)(((((struct o2E0_int *)(t95))->v))))->v) = 0.0f;

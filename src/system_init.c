@@ -1,5 +1,7 @@
 /* boot/init/shutdown of the system, file loader with retry (gd error handler), boot sequence returning the next scene (0c061094-0c0612f4) */
 
+/* named globals (symbols.txt) */
+extern char g_vmu_ctl[];
 int gfx_flip_frame_buffer(void);
 int dbg_set_cursor_cell(void);
 int dbg_printf(int, int, int, int, int, int);
@@ -57,7 +59,7 @@ int sys_load_file_adx(int file_id, int dest, int *out_len)
             }
         }
         last_frame = *frame;
-        if (*(int *)0x0C361BA0 == 0 && FUN_0c06148a() != 0) {
+        if (*(int *)g_vmu_ctl == 0 && FUN_0c06148a() != 0) {
             ADXF_Stop(handle);
             FUN_0c0f5570(handle);
             FUN_0c06144e();

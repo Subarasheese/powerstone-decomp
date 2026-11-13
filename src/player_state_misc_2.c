@@ -1,5 +1,8 @@
 /* state 41/42 phases, defaults, Valgas/boss specific handlers and setup helpers (part 2 of 2 of the same module) (0c098160-0c098c48) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_special_move_tbl[];
+extern char g_pl_victim_tbl[];
 struct u8_at_00 { unsigned char byte_00; };
 struct u8_at_01 { char p[0x1]; unsigned char byte_01; };
 struct float_at_20 { char p[0x20]; float pos_x; };
@@ -74,7 +77,7 @@ int pl_state28_sub0_update(int player, int arg5, int arg6, int arg7)
     register float ftmp_4;
     tmp_b = player;
     tmp_a = arg5;
-    tmp_a = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((0xC339310 + ((*(signed char *)((tmp_b + 0x4))) << 2))))))(tmp_b, tmp_a, arg6, arg7, *(int *)((int)stack_args + 0), *(int *)((int)stack_args + 0 + 4), *(int *)((int)stack_args + 0 + 8), *(int *)((int)stack_args + 0 + 12), *(int *)((int)stack_args + 0 + 16), *(int *)((int)stack_args + 0 + 20), *(int *)((int)stack_args + 0 + 24));
+    tmp_a = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((int)g_pl_special_move_tbl) + ((*(signed char *)((tmp_b + 0x4))) << 2))))))(tmp_b, tmp_a, arg6, arg7, *(int *)((int)stack_args + 0), *(int *)((int)stack_args + 0 + 4), *(int *)((int)stack_args + 0 + 8), *(int *)((int)stack_args + 0 + 12), *(int *)((int)stack_args + 0 + 16), *(int *)((int)stack_args + 0 + 20), *(int *)((int)stack_args + 0 + 24));
     tmp_d = *(signed char *)((tmp_b + 0x4));
     tmp_c = (tmp_d);
     tmp_a = (tmp_b);
@@ -264,7 +267,7 @@ int FUN_0c0989ea(int a4, int a5, int a6, int a7)
 {
     register int t2;
 
-    t2 = *(int *)((0xC339338 + ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x4))) << 2)));
+    t2 = *(int *)((((int)g_pl_victim_tbl) + ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x4))) << 2)));
     return ((int (*)(int, int, int, int))(t2))(a4, a5, a6, a7);
 }
 
@@ -304,7 +307,7 @@ int FUN_0c098ac8(int a4, int a5, int a6, int a7)
 {
     register int t1;
 
-    t1 = *(int *)((0xC339338 + ((*(signed char *)((a4 + 0x4))) << 2)));
+    t1 = *(int *)((((int)g_pl_victim_tbl) + ((*(signed char *)((a4 + 0x4))) << 2)));
     return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
 }
 

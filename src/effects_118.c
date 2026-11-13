@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c049408-0c0496f0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 int FUN_0c06231c(int, int, int);
 float math_rand_float(void);
 
@@ -11,7 +13,7 @@ void fx_init_perturbed_rows(char *effect)
     int i;
 
     effect[0] = 0;
-    FUN_0c06231c((int)effect, 0xC4CFA68, effect[0x11] + 0x21);
+    FUN_0c06231c((int)effect, ((int)g_res_kyoutsuu), effect[0x11] + 0x21);
     row = (float *)0xC14A928 + effect[0x14] * 6;
     pos = (float *)(effect + 4);
     for (i = 0; i < 3; i++) {

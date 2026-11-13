@@ -1,5 +1,7 @@
 /* short-lived effect objects spawned with position/angle/slot arguments (hit sparks etc) (0c0b6568-0c0b68b4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int rand_angle, y, z; } vec3i;
 extern char *obj_create(int, int, int, int);
 extern float math_cos_angle16(int);
@@ -50,7 +52,7 @@ void fx_spawn_heading_shot(vec3i *src_pos, vec3i *src_angle, char char_id, char 
     *(int *)(shot + 0x118) = 0;
     *(void (**)(void))(shot + 16) = fx_update_heading_shot;
     child = *(char **)(shot + 0x2E0);
-    FUN_0c06233a(child, (char *)0xC4CFA68, 72);
+    FUN_0c06233a(child, (char *)g_res_kyoutsuu, 72);
     child[0] = 1;
     *(short *)(child + 2) = 569;
     rand_angle = math_rand_next();

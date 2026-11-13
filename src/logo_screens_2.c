@@ -1,5 +1,7 @@
 /* PSTONE LOGO bank objects and logo screens (0c02b0dc-0c02b884) */
 
+/* named globals (symbols.txt) */
+extern char g_res_pstone_logo[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -68,7 +70,7 @@ int FUN_0c02b0dc(void)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664A00, 0x2);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.5f;
         (((struct o20_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.5f;
         t8 = 0x20;
@@ -345,7 +347,7 @@ int FUN_0c02b724(void)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x2)) = 0x1F;
-            t8 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t2) + 0x0))), 0xC664A00, (*(int *)((t2 + 0xC1490B4))));
+            t8 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t2) + 0x0))), ((int)g_res_pstone_logo), (*(int *)((t2 + 0xC1490B4))));
             t1 = (t1 + 0x1);
             t2 = (t2 + 0x4);
             if ((int)t1 >= (int)0x4) {

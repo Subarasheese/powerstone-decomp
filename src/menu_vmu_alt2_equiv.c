@@ -1,5 +1,7 @@
 /* VMU save/load menu UI (handlers over the vmu_step_* state machines) (0c01e798-0c020258) */
 
+/* named globals (symbols.txt) */
+extern char g_res_system_font[];
 int vmu_menu_update_objs(void);
 int vmu_menu_spawn_message(int arg);
 signed char vmu_menu_poll_yes_no(signed char *sm);
@@ -199,7 +201,7 @@ int vmu_menu_spawn_choice_cursor(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = t6;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x40F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, 0xF);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_system_font), 0xF);
         u15 = ((((struct o0_float *)0xC01F794)->v));
         u15 = u15 + ((((struct o4_float *)0xC01F794)->v)) * (float)(*(signed char *)((t0 + 0xF)));
         (((struct o4_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u15;

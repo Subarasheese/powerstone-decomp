@@ -1,5 +1,8 @@
 /* PSTONE LOGO bank objects and logo screens (0c02b884-0c02ca74) */
 
+/* named globals (symbols.txt) */
+extern char g_menu_option_cursor[];
+extern char g_res_pstone_logo[];
 struct o0_float { float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o4_float { char p[0x4]; float v; };
@@ -176,7 +179,7 @@ int logo_spawn_overlay(float f4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x41F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664A00, 0x2);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
         u7 = (((struct oC_float *)0xC02BC7C)->v);
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u7;
         (((struct o20_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u7;
@@ -184,7 +187,7 @@ int logo_spawn_overlay(float f4)
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x0;
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x41F;
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664A00, 0x6);
+        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x6);
         (((struct o40_float *)(((((struct o2E4_int *)(t0))->v))))->v) = 0.0f;
         (((struct o1C_float *)(((((struct o2E4_int *)(t0))->v))))->v) = u7;
         (((struct o20_float *)(((((struct o2E4_int *)(t0))->v))))->v) = u7;
@@ -499,7 +502,7 @@ int FUN_0c02c2d0(int a4)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
             t8 = *(signed char *)((t3 + 0x0));
             t3 = (t3 + 0x1);
-            t10 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664A00, t8);
+            t10 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_pstone_logo), t8);
             t2 = (t2 + 0x1);
             t4 = (t4 + 0x4);
             if ((int)t2 >= (int)0x4) {
@@ -518,11 +521,11 @@ int FUN_0c02c38a(int a4)
     t0 = (((struct o2EC_int *)(a4))->v);
     *(unsigned short *)((t0 + 0x2)) = 0x401;
     *(unsigned char *)((t0 + 0x0)) = 0x1;
-    FUN_0c06231c(t0, 0xC664A00, ((*(signed char *)0xC7F4738) + 0xC));
+    FUN_0c06231c(t0, ((int)g_res_pstone_logo), ((*(signed char *)g_menu_option_cursor) + 0xC));
     t0 = (((struct o2F0_int *)(a4))->v);
     *(unsigned short *)((t0 + 0x2)) = 0x401;
     *(unsigned char *)((t0 + 0x0)) = 0x1;
-    return FUN_0c06231c(t0, 0xC664A00, ((*(signed char *)0xC7F4738) + 0x12));
+    return FUN_0c06231c(t0, ((int)g_res_pstone_logo), ((*(signed char *)g_menu_option_cursor) + 0x12));
 }
 
 int FUN_0c02c3c4(int a4, int a5, int a6, int a7, float f4)
@@ -572,13 +575,13 @@ int FUN_0c02c3c4(int a4, int a5, int a6, int a7, float f4)
                                 *(unsigned char *)((t1 + 0x0)) = 0x1;
                                 (((struct o40_float *)(t1))->v) = ((((struct o5C_float *)(a4))->v));
                                 if ((*(signed char *)0xC7F4739) != 0) {
-                                    FUN_0c06231c(t1, 0xC664A00, 0xB);
-                                    *(unsigned int *)((t1 + 0x10)) = (-((short)(*(signed char *)0xC7F4738) * (short)0x2AAA));
+                                    FUN_0c06231c(t1, ((int)g_res_pstone_logo), 0xB);
+                                    *(unsigned int *)((t1 + 0x10)) = (-((short)(*(signed char *)g_menu_option_cursor) * (short)0x2AAA));
                                 } else {
-                                    if ((int)(*(signed char *)0xC7F4738) < (int)0x3) {
-                                        *(unsigned int *)((t1 + 0x10)) = (-((short)(*(signed char *)0xC7F4738) * (short)0x3333));
+                                    if ((int)(*(signed char *)g_menu_option_cursor) < (int)0x3) {
+                                        *(unsigned int *)((t1 + 0x10)) = (-((short)(*(signed char *)g_menu_option_cursor) * (short)0x3333));
                                     } else {
-                                        *(unsigned int *)((t1 + 0x10)) = (-(((*(signed char *)0xC7F4738) - 1) * 0x3333));
+                                        *(unsigned int *)((t1 + 0x10)) = (-(((*(signed char *)g_menu_option_cursor) - 1) * 0x3333));
                                     }
                                 }
                                 FUN_0c02c38a(a4);
@@ -704,12 +707,12 @@ int FUN_0c02c3c4(int a4, int a5, int a6, int a7, float f4)
                             t5 = (((struct o2F4_int *)(a4))->v);
                             if ((*(signed char *)0xC7F4739) != 0) {
                                 *(unsigned int *)((t5 + 0x34)) = 0x444;
-                                *(unsigned int *)((t5 + 0x38)) = (-((short)(*(signed char *)0xC7F4738) * (short)0x2AAA));
+                                *(unsigned int *)((t5 + 0x38)) = (-((short)(*(signed char *)g_menu_option_cursor) * (short)0x2AAA));
                             } else {
                                 *(unsigned int *)((t5 + 0x34)) = 0x51E;
-                                t6 = *(signed char *)0xC7F4738;
+                                t6 = *(signed char *)g_menu_option_cursor;
                                 t4 = t6;
-                                if ((int)(*(signed char *)0xC7F4738) >= (int)0x3) {
+                                if ((int)(*(signed char *)g_menu_option_cursor) >= (int)0x3) {
                                     t4 = (t6 - 1);
                                 }
                                 *(unsigned int *)((t5 + 0x38)) = (-(t4 * 0x3333));
@@ -792,13 +795,13 @@ int FUN_0c02c3c4(int a4, int a5, int a6, int a7, float f4)
                 *(unsigned char *)((t2 + 0x0)) = 0x1;
                 (((struct o40_float *)(t2))->v) = ((((struct o5C_float *)(a4))->v));
                 if ((*(signed char *)0xC7F4739) != 0) {
-                    FUN_0c06231c(t2, 0xC664A00, 0xB);
-                    *(unsigned int *)((t2 + 0x10)) = (-((short)(*(signed char *)0xC7F4738) * (short)0x2AAA));
+                    FUN_0c06231c(t2, ((int)g_res_pstone_logo), 0xB);
+                    *(unsigned int *)((t2 + 0x10)) = (-((short)(*(signed char *)g_menu_option_cursor) * (short)0x2AAA));
                 } else {
-                    if ((int)(*(signed char *)0xC7F4738) < (int)0x3) {
-                        *(unsigned int *)((t2 + 0x10)) = (-((short)(*(signed char *)0xC7F4738) * (short)0x3333));
+                    if ((int)(*(signed char *)g_menu_option_cursor) < (int)0x3) {
+                        *(unsigned int *)((t2 + 0x10)) = (-((short)(*(signed char *)g_menu_option_cursor) * (short)0x3333));
                     } else {
-                        *(unsigned int *)((t2 + 0x10)) = (-(((*(signed char *)0xC7F4738) - 1) * 0x3333));
+                        *(unsigned int *)((t2 + 0x10)) = (-(((*(signed char *)g_menu_option_cursor) - 1) * 0x3333));
                     }
                 }
                 FUN_0c02c38a(a4);
@@ -844,7 +847,7 @@ int FUN_0c02c830(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x2)) = 0x41F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A00, (*(signed char *)((t2 + 0xC14915E))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((int)g_res_pstone_logo), (*(signed char *)((t2 + 0xC14915E))));
             *(volatile int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0));
             FUN_0c0e6fe8();
             t12 = (t2 << 2);

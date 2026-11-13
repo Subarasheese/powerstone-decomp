@@ -1,5 +1,7 @@
 /* Kraken attack update, class handlers and state updates (part 1 of 7 of the same module) (0c084310-0c084d0c) */
 
+/* named globals (symbols.txt) */
+extern char g_kraken_move_update_tab[];
 int pl_mode01_03_update(char *player);
 int pl_mode05_update(char *player);
 int pl_mode06_update(char *player);
@@ -81,7 +83,7 @@ int pl_kraken_attack_update(char *player)
     case 15:
         return pl_mode15_update(player);
     default:
-        return ((int (*)(char *))(*(int *)(0xC337B50 + *(unsigned char *)(player + 0x7238) * 4)))(player);
+        return ((int (*)(char *))(*(int *)(((int)g_kraken_move_update_tab) + *(unsigned char *)(player + 0x7238) * 4)))(player);
     }
 }
 

@@ -1,5 +1,8 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a80c4-0c0a8388) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_csel[];
+extern char g_select_ready_mask[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -38,7 +41,7 @@ int menu_ui_task_16(int a4, int a5, int a6, int a7, float f4)
         *(unsigned short *)((a4 + 0x6)) = 0xF;
         *(unsigned char *)((a4 + 0x5)) = 0x19;
         *(unsigned char *)((a4 + 0x4)) = (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)));
-        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A48, (((*(signed char *)((a4 + 0x3))) << 1) + 0xB));
+        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_csel), (((*(signed char *)((a4 + 0x3))) << 1) + 0xB));
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
         (((struct o28_float *)(a4))->v) = 0.0f;
@@ -63,7 +66,7 @@ int menu_ui_task_16(int a4, int a5, int a6, int a7, float f4)
         t1 = 0x1;
     }
     *(unsigned char *)((a4 + 0x1)) = t1;
-    if (((*(signed char *)0xC7F3074) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
+    if (((*(signed char *)g_select_ready_mask) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     }
     if ((*(signed char *)((a4 + 0x4))) != (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)))) {

@@ -1,5 +1,7 @@
 /* sound/BGM layer: ADX stream control bgm_play_* and snd_play_* table lookups (0c0a2eec-0c0a4030) */
 
+/* named globals (symbols.txt) */
+extern char g_bgm_by_index_tbl[];
 int bgm_start_file(int, int);
 int FUN_0c0f4db4(int, int);
 int FUN_0c0f4f28(int, int);
@@ -133,7 +135,7 @@ void bgm_play_by_index(int a4)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     if ((int)(unsigned char)(*(signed char *)(((int)stk + 0))) <= (int)0x2A) {
-        bgm_start_file(0x0, (*(int *)((((unsigned char)(*(signed char *)(((int)stk + 0))) << 2) + 0xC151C58))));
+        bgm_start_file(0x0, (*(int *)((((unsigned char)(*(signed char *)(((int)stk + 0))) << 2) + ((int)g_bgm_by_index_tbl)))));
         t5 = *(int *)0xC494048;
         t6 = 0xFFFFFFE7;
         if ((*(signed char *)0xC7F2F0E) != 0) {

@@ -1,5 +1,7 @@
 /* stage object helpers: layout position load contact lists mode/owner setters (0c0abe44-0c0abf64) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
 struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -84,7 +86,7 @@ void obj_clear_slot_contact(int a4)
     t6 = (0x0 + t1);
     t7 = 0x0;
     for (;;) {
-        t10 = (*(int *)((0xC7E4070 + ((*(signed char *)((t6 + 0x0))) << 2))));
+        t10 = (*(int *)((((int)g_obj_class_head) + ((*(signed char *)((t6 + 0x0))) << 2))));
         for (;;) {
             if (t10 == 0) {
                 break;

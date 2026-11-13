@@ -1,5 +1,8 @@
 /* actor objects: reset/update routines sharing the entity header (counter byte 8, rotation 44..52, velocity 56..64); exact class not identified (0c05e20c-0c05ec26) */
 
+/* named globals (symbols.txt) */
+extern char g_item_state[];
+extern char g_res_item[];
 struct Vec12 { int x, y, z; };
 extern void item_init_hold_pose(void *obj);
 void FUN_0c0624c4(char *model, void *table, int kind);
@@ -49,8 +52,8 @@ void FUN_0c05e424(char *obj)
         **(char **)(obj + 736 + i * 4 + 0) = 0;
     *(int *)(obj + 0x118) = (int)owner + 0x300 + 0x580 + (short)((signed char)owner[0x71f1] * 3520);
     if (obj[11] == 0) {
-        *(char *)(0xC7F2664 + 0x315) = obj[13];
-        *(char *)(0xC7F2664 + 0x316) = 1;
+        *(char *)(((int)g_item_state) + 0x315) = obj[13];
+        *(char *)(((int)g_item_state) + 0x316) = 1;
         obj[11] = 1;
     }
 }
@@ -69,7 +72,7 @@ void FUN_0c05e59e(char *e)
     f = *(char **)(e + 28);
     I(MDL(e, 0x2E4), 24) = I(MDL(e, 0x2E4), 24) + 10923;
     if (*(int *)0x0C7F307C & 1) {
-        FUN_0c0624c4(MDL(e, 0x2F4) + 156, (void *)0x0C664988, B(e, 0xF0) + 25);
+        FUN_0c0624c4(MDL(e, 0x2F4) + 156, (void *)g_res_item, B(e, 0xF0) + 25);
         H(e, 0xF0) = H(e, 0xF0) + 1;
         if (H(e, 0xF0) >= 4)
             H(e, 0xF0) = 0;

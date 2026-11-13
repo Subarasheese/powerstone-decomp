@@ -1,5 +1,8 @@
 /* OPTION group screen 1 (0c019bf4-0c01a42c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_art[];
+extern char g_res_art_model[];
 struct oF2_short { char p[0xF2]; short v; };
 int memset(int, int, int);
 struct byte_at_00 { unsigned char value; };
@@ -171,15 +174,15 @@ int opt_page1_tick_menu_rows(int a4)
         *(unsigned char *)((a4 + 0xF)) = t0;
         *(volatile signed char *)0xC36232F;
         t1 = FUN_0c0e6e5c(t0);
-        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), 0xC664AC0, (t1 + 0xC));
+        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), ((int)g_res_art_model), (t1 + 0xC));
         *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = ((((int)((*(signed char *)0xC36232F) + 0x1) >= (int)0xA)) ? 1 : 0);
         *(volatile signed char *)0xC36232F;
         t0 = FUN_0c0e6d00();
-        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), 0xC664AC0, (t0 + 0xC));
+        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), ((int)g_res_art_model), (t0 + 0xC));
         t0 = *(signed char *)0xC36232E;
         if (t0 == 0) {
             t1 = *(signed char *)0xC36232F;
-            FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), 0xC664AC0, (*(signed char *)((((signed char)((t1 << 1) + t1) + 0xC11BA78) + 0x0))));
+            FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), ((int)g_res_art_model), (*(signed char *)((((signed char)((t1 << 1) + t1) + 0xC11BA78) + 0x0))));
             t1 = *(signed char *)0xC36232F;
             if ((*(signed char *)((a4 + 0xE))) != (*(signed char *)((((signed char)((t1 << 1) + t1) + 0xC11BA78) + 0x2)))) {
                 t1 = *(signed char *)0xC36232F;
@@ -192,7 +195,7 @@ int opt_page1_tick_menu_rows(int a4)
             t1 = *(signed char *)0xC36232F;
             t2 = (*(signed char *)((((signed char)((t1 << 1) + t1) + 0xC11BA78) + 0x1)));
         } else {
-            FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), 0xC664AC0, ((*(signed char *)((0xC17FEB4 + t0))) + (*(signed char *)0xC36232F)));
+            FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), ((int)g_res_art_model), ((*(signed char *)((0xC17FEB4 + t0))) + (*(signed char *)0xC36232F)));
             *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x1;
             if ((*(signed char *)((a4 + 0xE))) == 99) {
                 *(unsigned char *)((a4 + 0xE)) = 0x0;
@@ -202,7 +205,7 @@ int opt_page1_tick_menu_rows(int a4)
             *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x1;
             t2 = (*(signed char *)0xC36232F);
         }
-        FUN_0c06233a(((((struct o2F4_int *)(a4))->v)), 0xC664AD8, t2);
+        FUN_0c06233a(((((struct o2F4_int *)(a4))->v)), ((int)g_res_art_art), t2);
     }
     t0 = opt_page1_obj_in_mask(a4);
     if ((signed char)t0 != 0) {
@@ -247,7 +250,7 @@ int opt_page1_spawn_menu_rows(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC664AC0, (*(signed char *)((t5 + 0xC))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), ((int)g_res_art_model), (*(signed char *)((t5 + 0xC))));
             t13 = *(int *)((((0x2E0 + t0) + t6) + 0x0));
             (((struct o24_float *)(t13))->v) = 1.0f;
             (((struct o20_float *)(t13))->v) = 1.0f;
@@ -310,7 +313,7 @@ int opt_page1_tick_cursor_pulse(int a4)
             break;
         }
     }
-    FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), 0xC664AC0, ((*(signed char *)0xC36232E) + 0x5));
+    FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), ((int)g_res_art_model), ((*(signed char *)0xC36232E) + 0x5));
     t0 = opt_page1_obj_in_mask(a4);
     if ((signed char)t0 != 0) {
         return obj_destroy(a4);
@@ -368,7 +371,7 @@ int opt_page1_spawn_bg_scroll(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, 0x4);
+        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0x4);
     }
     return t0;
 }

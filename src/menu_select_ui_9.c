@@ -1,5 +1,8 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a9d9c-0c0aba84) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ksel[];
+extern char g_res_csel_ssel[];
 struct o24_float { char p[0x24]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -209,7 +212,7 @@ int menu_ui_task_25(int a4, int a5, int a6, int a7)
         t2 = (t2 + t5);
         t5 = 0xC0623A6;
         t2 = (signed char)t2;
-        t2 = (FUN_0c0623a6((*(int *)((((0x2E0 + a4) + t4) + 0x0))), 0xC664A78, ((*(signed char *)((((0xC1525BF + t2) + t0) + 0x0))) + 0x3A)));
+        t2 = (FUN_0c0623a6((*(int *)((((0x2E0 + a4) + t4) + 0x0))), ((int)g_res_csel_ksel), ((*(signed char *)((((0xC1525BF + t2) + t0) + 0x0))) + 0x3A)));
         t2 = 0xF2;
         if ((int)t0 < (int)(*(short *)((a4 + t2)))) {
             t5 = 0x2E0;
@@ -352,7 +355,7 @@ int menu_ui_task_26(int a4, int a5, int a6, int a7)
         *(unsigned char *)((a4 + 0x1)) = 0x1;
         *(unsigned short *)((a4 + 0x6)) = 0xF;
         *(unsigned char *)((a4 + 0x5)) = 0x19;
-        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x20);
+        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), 0x20);
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
         *(volatile int *)((a4 + 0x2E0));
@@ -438,7 +441,7 @@ int menu_ui_task_28(int a4, int a5, int a6, int a7)
         *(unsigned char *)((a4 + 0x1)) = 0x1;
         *(unsigned short *)((a4 + 0x6)) = 0xF;
         *(unsigned char *)((a4 + 0x5)) = 0x19;
-        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x1E);
+        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), 0x1E);
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
     }
@@ -502,7 +505,7 @@ int menu_ui_task_29(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x21);
+    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), 0x21);
     (((struct o94_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
@@ -557,7 +560,7 @@ int menu_ui_task_30(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x1F);
+    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), 0x1F);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
     return (FUN_0c0e6fe8());
@@ -599,7 +602,7 @@ int menu_ui_task_31(int a4, int a5, int a6, int a7, float f4, float f5)
         if ((*(signed char *)0xC7F3052) == 8) {
             t0 = 0x8;
         }
-        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A60, t0);
+        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), t0);
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x1F;
         t0 = *(signed char *)0xC7F3052;
@@ -722,7 +725,7 @@ int FUN_0c0aa93c(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x9);
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ssel), 0x9);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x1F;
     return 0x1F;
@@ -842,11 +845,11 @@ int menu_ui_task_34_bind_models(int a4, int a5)
     register int t12;
 
     if ((signed char)a5 == 0) {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), 0xC664A78, 0x24);
+        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o0_float *)0xC0AB29C)->v));
         t12 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     } else {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), 0xC664A78, ((*(signed char *)(((unsigned char)((unsigned short)((*(signed char *)0xC7F3071) + 0xFF) * (unsigned short)0x78) + 0xC7F2E46))) + 0x26));
+        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), ((*(signed char *)(((unsigned char)((unsigned short)((*(signed char *)0xC7F3071) + 0xFF) * (unsigned short)0x78) + 0xC7F2E46))) + 0x26));
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct oC_float *)0xC0AB29C)->v));
         t12 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     }
@@ -969,7 +972,7 @@ int menu_ui_task_35(int a4, int a5, int a6, int a7)
         (((struct oF2_ushort *)(a4))->v) = 0x0;
         t0 = 0x0;
         for (;;) {
-            FUN_0c0623a6((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A60, (*(signed char *)((t0 + 0xC339C88))));
+            FUN_0c0623a6((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), ((int)g_res_csel_ssel), (*(signed char *)((t0 + 0xC339C88))));
             *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x2)) = 0x1F;
             *(volatile signed char *)((a4 + 0x3));
@@ -1183,7 +1186,7 @@ int menu_ui_task_36(int a4, int a5, int a6, int a7, float f4)
         }
         t1 = t0;
         t1 = (t1 << 2);
-        FUN_0c0623a6((*(int *)((((0x2E0 + a4) + t1) + 0x0))), 0xC664A78, 0x44);
+        FUN_0c0623a6((*(int *)((((0x2E0 + a4) + t1) + 0x0))), ((int)g_res_csel_ksel), 0x44);
         *(unsigned char *)(((*(int *)((((0x2E0 + a4) + t1) + 0x0))) + 0x0)) = 0x1;
         *(unsigned short *)(((*(int *)((((0x2E0 + a4) + t1) + 0x0))) + 0x2)) = 0x1F;
         *(volatile int *)((((0x2E0 + a4) + t1) + 0x0));
@@ -1256,7 +1259,7 @@ int menu_ui_task_37(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664A78, 0x4);
+    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ksel), 0x4);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x11F;
     (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;

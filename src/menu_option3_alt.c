@@ -1,5 +1,7 @@
 /* OPTION group screen 3 (0c01ae48-0c01b66c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_model[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -48,7 +50,7 @@ int FUN_0c01b274(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664AC0, (*(signed char *)((t3 + 0xC))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_art_model), (*(signed char *)((t3 + 0xC))));
             t11 = *(int *)((((0x2E0 + t0) + t4) + 0x0));
             (((struct o24_float *)(t11))->v) = 1.0f;
             (((struct o20_float *)(t11))->v) = 1.0f;

@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c057128-0c057850) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct Vec3i { int x, y, z; };
 struct Obj { char used; char pad[3]; char index; char pad1[11]; void *handler; char pad2[60]; struct Vec3i offset; char pad3[150]; short owner; };
 extern int fx_tick_0574d2(void);
@@ -59,9 +61,9 @@ void fx_tick_0577ca(char *actor)
         *(short *)(actor + 6) = 31;
         actor[5] = 25;
         row = (char *)0xC14B8A0 + (unsigned char)((unsigned short)(signed char)actor[4] * 28);
-        FUN_0c06233a(O1, 0xC4CFA80, row[24]);
+        FUN_0c06233a(O1, ((int)g_res_font), row[24]);
         setup(O1, row);
-        FUN_0c06233a(O2, 0xC4CFA80, row[25] + 1);
+        FUN_0c06233a(O2, ((int)g_res_font), row[25] + 1);
         setup(O2, row);
         CNT = 1;
         ST = ST + 1;

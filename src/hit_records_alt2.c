@@ -1,5 +1,7 @@
 /* attack records, hit data setup, hit-stop shake, combo counter, damage helpers (0c08d644-0c09111e) */
 
+/* named globals (symbols.txt) */
+extern char g_attack_record_tab[];
 struct o71BD_uchar { char p[0x71BD]; unsigned char v; };
 struct o71DD_uchar { char p[0x71DD]; unsigned char v; };
 struct o7294_uint { char p[0x7294]; unsigned int v; };
@@ -21,7 +23,7 @@ int obj_set_owner_hit_record(int a4, int a5)
 
     (((struct o71BD_uchar *)((*(int *)((a4 + 0x1C)))))->v) = a5;
     (((struct o7294_uint *)((*(int *)((a4 + 0x1C)))))->v) = a4;
-    (((struct oF8_uint *)((*(int *)((a4 + 0x1C)))))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((0xC338A98 + ((*(signed char *)((a4 + 0x4))) << 2)))));
+    (((struct oF8_uint *)((*(int *)((a4 + 0x1C)))))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((((int)g_attack_record_tab) + ((*(signed char *)((a4 + 0x4))) << 2)))));
     pl_inc_owner_combo((*(int *)((a4 + 0x1C))));
     *(volatile int *)((a4 + 0x1C));
     FUN_0c08dfa4();

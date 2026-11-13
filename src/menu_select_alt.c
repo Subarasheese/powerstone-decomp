@@ -1,5 +1,7 @@
 /* player-select and stage-select flow (init update and VS announce); pad button helpers (0c0a41a0-0c0a71c4) */
 
+/* named globals (symbols.txt) */
+extern char g_select_ready_mask[];
 struct o55_uchar { char p[0x55]; unsigned char v; };
 struct o5A_uchar { char p[0x5A]; unsigned char v; };
 struct o5E_uchar { char p[0x5E]; unsigned char v; };
@@ -147,7 +149,7 @@ int menu_player_select_slot_update(int a4, int a5, int a6, int a7)
     register int t338;
     int t345;
 
-    t0 = *(signed char *)0xC7F3074;
+    t0 = *(signed char *)g_select_ready_mask;
     t2 = *(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x5A) + 0x0));
     if (t2 != 0) {
         if (t2 == 1) {
@@ -424,7 +426,7 @@ int menu_player_select_slot_update(int a4, int a5, int a6, int a7)
     (((struct o5A_uchar *)(((unsigned char)((unsigned short)t384 * (unsigned short)0x78) + 0xC7F2DF0)))->v) = ((*(signed char *)(((((unsigned char)((unsigned short)t384 * (unsigned short)0x78) + 0xC7F2DF0) + 0x5A) + 0x0))) + 0x1);
     (((struct o60_ushort *)(((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))->v) = 0x14;
     (((struct o62_ushort *)(((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))->v) = 0x3C;
-    if (((*(signed char *)0xC7F3074) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
+    if (((*(signed char *)g_select_ready_mask) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
         (((struct o64_uchar *)(((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))->v) = (*(signed char *)((0xC152624 + (*(signed char *)((a4 + 0x4))))));
     } else {
         if ((*(signed char *)((0x4C + ((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0)))) == 0) {

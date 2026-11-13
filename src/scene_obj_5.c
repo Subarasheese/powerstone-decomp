@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c0567c4-0c056bb4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct vec3_int { int x, y, z; };
 struct spawn_obj { char used; char pad[3]; char index; char pad1[11]; void *handler; char pad2[60]; struct vec3_int vec; };
 extern int fx_tick_0567c4(void);
@@ -45,7 +47,7 @@ void fx_tick_056b2c(char *obj)
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
         layout_row = (char *)0xC14B020 + (unsigned char)((unsigned short)ROW_INDEX * 28);
-        FUN_0c06233a(ACTOR_A, 0xC4CFA80, layout_row[24]);
+        FUN_0c06233a(ACTOR_A, ((int)g_res_font), layout_row[24]);
         *ACTOR_A = 0;
         *(Vec3i *)(ACTOR_A + 4) = *(Vec3i *)layout_row;
         *(Vec3i *)(ACTOR_A + 28) = *(Vec3i *)(layout_row + 12);
@@ -59,7 +61,7 @@ void fx_tick_056b2c(char *obj)
             *(float *)(ACTOR_A + 72) = 0.29999998211860657f;
             *(float *)(ACTOR_A + 76) = 0.0f;
         }
-        FUN_0c06233a(ACTOR_B, 0xC4CFA80, layout_row[25] + 1);
+        FUN_0c06233a(ACTOR_B, ((int)g_res_font), layout_row[25] + 1);
         *ACTOR_B = 0;
         *(Vec3i *)(ACTOR_B + 4) = *(Vec3i *)layout_row;
         *(Vec3i *)(ACTOR_B + 28) = *(Vec3i *)(layout_row + 12);

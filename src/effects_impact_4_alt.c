@@ -1,5 +1,7 @@
 /* short-lived effect objects spawned with position/angle/slot arguments (hit sparks etc) (0c0b6568-0c0b68b4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -28,7 +30,7 @@ int fx_update_heading_shot(int a4, int a5, int a6, int a7)
         t0 = (((struct o2E0_int *)(a4))->v);
         *(volatile short *)((a4 + 0xEC));
         t1 = FUN_0c0e6d00();
-        FUN_0c0624c4((0x9C + t0), 0xC4CFA68, (t1 + 0x48));
+        FUN_0c0624c4((0x9C + t0), ((int)g_res_kyoutsuu), (t1 + 0x48));
         t1 = *(signed char *)((a4 + 0x9));
         if (t1 != 0) {
             if (t1 != 1) {

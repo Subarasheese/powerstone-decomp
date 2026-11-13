@@ -1,5 +1,8 @@
 /* KEY CFG screen (two player columns, settings and button maps) (0c017a24-0c0195f0) */
 
+/* named globals (symbols.txt) */
+extern char g_keycfg_work[];
+extern char g_res_key_cfg[];
 extern void snd_play_side_se(int, int);
 extern void keycfg_edit_button_value(int, int);
 extern void keycfg_reset_player_keys(int);
@@ -30,7 +33,7 @@ void keycfg_step_cursor_row(int slot_idx)
     unsigned short pad_bits;
 
     pad_state = (char *)0xC361BF0;
-    cursor = (char *)0xC3622C0 + 42 + ((signed char)slot_idx << 4);
+    cursor = (char *)g_keycfg_work + 42 + ((signed char)slot_idx << 4);
     cursor[3] = cursor[2];
     if (*(unsigned short *)(pad_state + (signed char)(cursor[1] * 20) + 12) & 16) {
         cursor[2] = cursor[2] - 1;
@@ -133,14 +136,14 @@ int FUN_0c018830(int a4, float f4)
     v0_4 = *(signed char *)((v0_5 + 0x3));
     v0_1 = (0x0);
     v0_2 = (v0_4);
-    v0_3 = (0xC3622C0);
+    v0_3 = (((int)g_keycfg_work));
     v0_0 = (v0_5);
     w0_0 = (1.0f);
     if (((*(signed char *)((((((signed char)v0_4 << 2) << 2) + 0xC3622EA) + 0x2))) == (*(signed char *)((((((signed char)v0_4 << 2) << 2) + 0xC3622EA) + 0x3))))) goto L_C0188AA;
     *(unsigned int *)(((int)stk + 4)) = (((signed char)v0_2 << 2) << 2);
     v0_4 = *(signed char *)((((((signed char)v0_2 << 2) << 2) + (v0_3 + 0x2A)) + 0x3));
     *(unsigned char *)(((int)stk + 0)) = v0_4;
-    FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + v0_0)) + 0x0))), 0xC664AF0, (*(signed char *)((((signed char)v0_4 << 1) + 0xC11B764))));
+    FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + v0_0)) + 0x0))), ((int)g_res_key_cfg), (*(signed char *)((((signed char)v0_4 << 1) + 0xC11B764))));
     (((struct o40_float *)((*(int *)(((0x2E0 + v0_0) + ((*(signed char *)((((v0_3 + 0x2A) + (*(int *)(((int)stk + 4)))) + 0x3))) << 2))))))->v) = w0_0;
     *(unsigned char *)((v0_0 + 0x8)) = v0_1;
     *(unsigned char *)((v0_0 + 0x9)) = v0_1;
@@ -153,7 +156,7 @@ int FUN_0c018830(int a4, float f4)
     *(unsigned char *)((v0_0 + 0xF)) = ((-(*(signed char *)((v0_0 + 0xF)))) + 0x1);
     v0_4 = *(signed char *)((((((signed char)v0_2 << 2) << 2) + (v0_3 + 0x2A)) + 0x2));
     *(unsigned char *)(((int)stk + 0)) = v0_4;
-    FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + v0_0)) + 0x0))), 0xC664AF0, (*(signed char *)(((((signed char)v0_4 << 1) + (*(signed char *)((v0_0 + 0xF)))) + 0xC11B764))));
+    FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + v0_0)) + 0x0))), ((int)g_res_key_cfg), (*(signed char *)(((((signed char)v0_4 << 1) + (*(signed char *)((v0_0 + 0xF)))) + 0xC11B764))));
     *(unsigned char *)((v0_0 + 0x8)) = v0_1;
     goto L_C0189B4;
     L_C0189B4:;

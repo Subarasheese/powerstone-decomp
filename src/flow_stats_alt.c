@@ -1,5 +1,7 @@
 /* play-time/max-combo stats and mode handlers (0c053680-0c054114) */
 
+/* named globals (symbols.txt) */
+extern char g_game_substate[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -15,7 +17,7 @@ int game_mode_handler_3(void)
 {
     register int t0;
 
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     if (t0 != 0) {
         if (t0 != 1) {
             (((struct o0_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302C) + 0x1);
@@ -36,7 +38,7 @@ int game_mode_handler_4(void)
     register int t1;
 
     FUN_0c053dcc();
-    t1 = *(signed char *)0xC7F302D;
+    t1 = *(signed char *)g_game_substate;
     if (t1 != 0) {
         if (t1 != 1) {
             if (t1 != 2) {

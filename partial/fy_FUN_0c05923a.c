@@ -1,4 +1,7 @@
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_class_tail[];
 char *obj_create_beside(int a, char *e, int mode, int n, int c)
 {
     char *obj;
@@ -13,7 +16,7 @@ char *obj_create_beside(int a, char *e, int mode, int n, int c)
     if (mode == 0) {
         p = *(char **)(e + 20);
         if (p == 0)
-            ((char **)0x0C7E4070)[a] = obj;
+            ((char **)g_obj_class_head)[a] = obj;
         else
             *(char **)(p + 24) = obj;
         *(char **)(obj + 20) = p;
@@ -22,7 +25,7 @@ char *obj_create_beside(int a, char *e, int mode, int n, int c)
     } else if (mode == 1) {
         p = *(char **)(e + 24);
         if (p == 0)
-            ((char **)0x0C7E4098)[a] = obj;
+            ((char **)g_obj_class_tail)[a] = obj;
         else
             *(char **)(p + 20) = obj;
         *(char **)(obj + 24) = p;

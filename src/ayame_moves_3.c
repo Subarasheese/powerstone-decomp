@@ -1,5 +1,7 @@
 /* Ayame (char 6) frame hook, move init stubs, attack init dispatch (part 3 of 3 of the same module) (0c07e930-0c07eb60) */
 
+/* named globals (symbols.txt) */
+extern char g_ayame_move_init_tab[];
 struct Obj {
     char pad0[0x71A8];
     char flag_71a8;
@@ -31,7 +33,7 @@ void pl_ayame_attack_init(struct Obj *obj)
     switch (obj->mode) {
     case 0:
     case 2:
-        (*(void (**)(struct Obj *))(0xC337374 + (obj->sel << 2)))(obj);
+        (*(void (**)(struct Obj *))(((int)g_ayame_move_init_tab) + (obj->sel << 2)))(obj);
         break;
     case 1:
     case 3:

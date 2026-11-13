@@ -1,5 +1,8 @@
 /* effect object constructor and update pairs for character special moves (unidentified kinds) (0c0c8acc-0c0c964c) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
+extern char g_res_kyoutsuu[];
 typedef struct { int x, y, zero; } S12;
 extern char *obj_create(int, int, int, int);
 extern void FUN_0c06233a(char *, char *, int);
@@ -81,7 +84,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
     child = *(char **)(puff + 0x2EC);
-    FUN_0c06233a(child, (char *)0xC4CFA68, 106);
+    FUN_0c06233a(child, (char *)g_res_kyoutsuu, 106);
     child[0] = 0;
     *(short *)(child + 2) = 543;
     *(float *)(child + 36) = 0.125f;
@@ -352,7 +355,7 @@ int FUN_0c0c9526(int a4, int a5, int a6, int a7)
         (((struct o24_float *)(t0))->v) = u40;
         (((struct o20_float *)(t0))->v) = u40;
         (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) / ((((struct o58_float *)(a4))->v)));
-        math_vec3_sub(((int)stk + 0), 0xC7F2AB4, (t0 + 0x4));
+        math_vec3_sub(((int)stk + 0), ((int)g_camera_pos), (t0 + 0x4));
         math_vec3_length(((int)stk + 0));
         return 0xC0C9648;
     }

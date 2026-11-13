@@ -1,5 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c6094-0c0c6658) */
 
+/* named globals (symbols.txt) */
+extern char g_res_item[];
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o24_float { char p[0x24]; float v; };
@@ -89,7 +91,7 @@ int FUN_0c0c6094(int a4, int a5)
         t13 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t13 + 0x0)) = 0x1;
         *(unsigned short *)((t13 + 0x2)) = 0xF;
-        FUN_0c06233a(t13, 0xC664988, 0x9);
+        FUN_0c06233a(t13, ((int)g_res_item), 0x9);
         FUN_0c0c63c4(t0, 0x0);
         u16 = *(float *)0xC494D1C;
         t17 = *(int *)((a4 + 0x1C));
@@ -194,12 +196,12 @@ int FUN_0c0c63c4(int a4, int a5)
     (((struct o28_float *)(t1))->v) = 0.0f;
     *(unsigned char *)((t1 + 0x0)) = 0x1;
     *(unsigned short *)((t1 + 0x2)) = 0xF;
-    FUN_0c06233a(t1, 0xC664988, (*(signed char *)((((*(signed char *)(((int)stk + 4))) << 1) + 0xC33C7A8))));
+    FUN_0c06233a(t1, ((int)g_res_item), (*(signed char *)((((*(signed char *)(((int)stk + 4))) << 1) + 0xC33C7A8))));
     t7 = (((struct o2E8_int *)((*(int *)(((int)stk + 0)))))->v);
     (((struct o30_float *)(t7))->v) = 0.0f;
     (((struct o2C_float *)(t7))->v) = 0.0f;
     (((struct o28_float *)(t7))->v) = 0.0f;
     *(unsigned char *)((t7 + 0x0)) = 0x0;
     *(unsigned short *)((t7 + 0x2)) = 0x21F;
-    return FUN_0c06233a(t7, 0xC664988, 0xF);
+    return FUN_0c06233a(t7, ((int)g_res_item), 0xF);
 }

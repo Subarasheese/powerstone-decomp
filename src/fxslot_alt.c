@@ -1,5 +1,7 @@
 /* 8 record slots (144 bytes) at 0xc7f3238: clear, start by priority level, HUD/effect sprite helpers (0c05eea0-0c05f6d8) */
 
+/* named globals (symbols.txt) */
+extern char g_fxslots[];
 int fxslot_start(int, int, int, int, int, int, float);
 struct o0_uchar { unsigned char v; };
 struct o4_uchar { char p[0x4]; unsigned char v; };
@@ -29,7 +31,7 @@ int FUN_0c05ef8c(int player_idx)
     val = *(signed char *)(0xC14D817 + sel + 2 * *(signed char *)(rec + 4));
     if (val == -1) {
         fxslot_start(slot_ids[idx], 0x80, 3, 0, 0xC14D7D8, *(int *)0xC336548, 1.0f);
-        *(unsigned char *)((short)(slot_ids[idx] * 144) + 0xC7F3238 + 4) = 1;
+        *(unsigned char *)((short)(slot_ids[idx] * 144) + ((int)g_fxslots) + 4) = 1;
         return 1;
     }
     if (val == -2) {
@@ -38,7 +40,7 @@ int FUN_0c05ef8c(int player_idx)
     } else {
         fxslot_start(slot_ids[idx], 0x80, 3, 0, 0xC14D7D8, *(int *)(0xC336548 + 4 * val), 1.0f);
     }
-    *(unsigned char *)((short)(slot_ids[idx] * 144) + 0xC7F3238 + 4) = 0;
+    *(unsigned char *)((short)(slot_ids[idx] * 144) + ((int)g_fxslots) + 4) = 0;
     return 0;
 }
 
@@ -59,7 +61,7 @@ int FUN_0c05f0b8(int a4)
             *(int *)((int)stk + 4) = t4;
             *(int *)((int)stk + 0) = 0xC14D7D8;
             fxslot_start(0x0, 0x80, (*(signed char *)((((t0 << 1) + 0xC14D837) + 0x1))), 0x0, 0xC14D7D8, t4, 1.0f);
-            (((struct o4_uchar *)0xC7F3238)->v) = 0x1;
+            (((struct o4_uchar *)g_fxslots)->v) = 0x1;
         } else {
             t8 = (*(int *)((0xC336510 + ((signed char)t2 << 2))));
             *(int *)((int)stk + 4) = t8;
@@ -67,7 +69,7 @@ int FUN_0c05f0b8(int a4)
             fxslot_start(0x0, 0x80, (*(signed char *)((((t0 << 1) + 0xC14D837) + 0x1))), 0x0, 0xC14D7D8, t8, 1.0f);
         }
     } else {
-        (((struct o0_uchar *)0xC7F3238)->v) = 0x0;
+        (((struct o0_uchar *)g_fxslots)->v) = 0x0;
     }
     *(float *)0xC7F32B4 = (*(float *)((((*(signed char *)(((int)stk + 8))) << 2) + 0xC14D858)));
     return 0x7C;

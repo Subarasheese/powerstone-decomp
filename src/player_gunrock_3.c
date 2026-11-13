@@ -1,5 +1,7 @@
 /* character 4 (Gunrock) (0c079386-0c07a1e4) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_gunrock_special_tbl[];
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
 struct o71A9_uchar { char p[0x71A9]; unsigned char v; };
 int pl_start_motion(int, int, int);
@@ -113,7 +115,7 @@ int pl_gunrock_check_special_input(int a4)
 /* Dispatches through a handler table indexed by the byte at offset 0x7209 of the object, passing the object on. */
 void pl_gunrock_special_move_dispatch(char *obj)
 {
-    void (**handlers)(char *) = (void (**)(char *))0xC3371AC;
+    void (**handlers)(char *) = (void (**)(char *))((int)g_pl_gunrock_special_tbl);
     handlers[(unsigned char)obj[0x7209]](obj);
 }
 

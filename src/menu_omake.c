@@ -1,5 +1,8 @@
 /* OMAKE menu screens and unlock query (0c01b9f4-0c01d254) */
 
+/* named globals (symbols.txt) */
+extern char g_menu_option_work[];
+extern char g_res_omake[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -114,7 +117,7 @@ int FUN_0c01b9f4(int a4, int a5, int a6, int a7)
     v0_4 = *(signed char *)((v0_0 + 0x4));
     v0_2 = (v0_4);
     R11 = (v0_3);
-    R12 = (0xC7F4724);
+    R12 = (((int)g_menu_option_work));
     R5 = (0xC1801B8);
     if ((v0_4 == 0)) goto L_C01BAAE;
     if ((v0_2 == 1)) goto L_C01BAAE;
@@ -945,7 +948,7 @@ int FUN_0c01c850(int index, int variant)
             (((struct field_40_float *)((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0)))))->field_40) = 1.0f;
             if (child_idx != 4) {
                 if (child_idx != 5) {
-                    bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), 0xC664AA8, (*(signed char *)((child_idx + 0xC18051C)))));
+                    bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), ((int)g_res_omake), (*(signed char *)((child_idx + 0xC18051C)))));
                 } else {
                     flag_b = omake_is_item_unlocked(variant);
                     if ((signed char)flag_b != 0) {
@@ -953,7 +956,7 @@ int FUN_0c01c850(int index, int variant)
                     } else {
                         name_b = (*(int *)(((int)frame_buf + 4)));
                     }
-                    bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), 0xC664AA8, (*(signed char *)((name_b + 0x0)))));
+                    bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), ((int)g_res_omake), (*(signed char *)((name_b + 0x0)))));
                 }
             } else {
                 flag_a = omake_is_item_unlocked(variant);
@@ -962,7 +965,7 @@ int FUN_0c01c850(int index, int variant)
                 } else {
                     name_a = (*(int *)(((int)frame_buf + 12)));
                 }
-                bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), 0xC664AA8, (*(signed char *)((name_a + 0x0)))));
+                bind_result = (FUN_0c06233a((*(int *)((((child_idx << 2) + (0x2E0 + task)) + 0x0))), ((int)g_res_omake), (*(signed char *)((name_a + 0x0)))));
             }
             child_idx = (child_idx + 0x1);
             if ((int)child_idx >= (int)0x6) {
@@ -996,7 +999,7 @@ int FUN_0c01cab6(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t8 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AA8, 0x39));
+        t8 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_omake), 0x39));
     }
     return t8;
 }
@@ -1023,7 +1026,7 @@ int FUN_0c01cb1e(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t8 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AA8, 0x39));
+        t8 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_omake), 0x39));
     }
     return t8;
 }

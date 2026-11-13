@@ -1,5 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c0203d0-0c022228) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_list_heads[];
 int FUN_0c020cba(int);
 int FUN_0c062d78(void);
 struct o4_float { char p[0x4]; float v; };
@@ -86,11 +88,11 @@ int FUN_0c0203f6(void)
 {
     FUN_0c02078c();
     FUN_0c020886(0xC7E40C4);
-    FUN_0c020886(((((struct o0_int *)0xC7E4074)->v)));
-    FUN_0c020886(((((struct o4_int *)0xC7E4074)->v)));
+    FUN_0c020886(((((struct o0_int *)g_obj_list_heads)->v)));
+    FUN_0c020886(((((struct o4_int *)g_obj_list_heads)->v)));
     FUN_0c020998(0xC7E40C4);
-    FUN_0c020998(((((struct o0_int *)0xC7E4074)->v)));
-    return FUN_0c020998(((((struct o4_int *)0xC7E4074)->v)));
+    FUN_0c020998(((((struct o0_int *)g_obj_list_heads)->v)));
+    return FUN_0c020998(((((struct o4_int *)g_obj_list_heads)->v)));
 }
 
 int vec3f_to_vec3s(int a4, int a5)

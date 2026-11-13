@@ -1,5 +1,7 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02ff18-0c03148c) */
 
+/* named globals (symbols.txt) */
+extern char g_hud_state[];
 int FUN_0c0555c4(void);
 void FUN_0c03027e(int side);
 void FUN_0c0302b6(int side);
@@ -35,7 +37,7 @@ void FUN_0c030368(void)
     if (FUN_0c0555c4() == 0)
         return;
     for (i = 0; (signed char)i < 2; i++) {
-        p = (signed char *)0x0C366A70 + 44 + (signed char)(i * 24);
+        p = (signed char *)g_hud_state + 44 + (signed char)(i * 24);
         pl = (signed char *)0xC7E40C4 + (unsigned short)((unsigned short)(signed char)i * (unsigned short)0x72D0);
         c6 = 30;
         switch (p[4]) {

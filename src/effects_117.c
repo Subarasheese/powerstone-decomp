@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c049288-0c049408) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -63,7 +65,7 @@ int fx_spawn_0492a4(int a4)
         t2 = 0x0;
         t3 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), 0xC4CFA68, 0x21);
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), ((int)g_res_kyoutsuu), 0x21);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x2)) = 0x639;
             *(volatile int *)((((0x2E0 + t0) + t3) + 0x0));

@@ -1,5 +1,7 @@
 /* state update functions of the player state machine (table 0xC3390D4) (part 4 of 14 of the same module) (0c09468c-0c094950) */
 
+/* named globals (symbols.txt) */
+extern char g_char_attack_update_tab[];
 struct o24_float { char p[0x24]; float v; };
 struct o274_float { char p[0x274]; float v; };
 struct o71E4_float { char p[0x71E4]; float v; };
@@ -103,7 +105,7 @@ int pl_state_attack_update(int a4, int a5, int a6, int a7)
     FUN_0c044408((*(signed char *)((v0_2 + 0x3))), 0x0, v0_1);
     L_C0948CC:;
     (((struct o7206_uchar *)(v0_2))->v) = ((*(signed char *)((v0_2 + 0x7206))) + 0x1);
-    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((0xC339180 + ((*(signed char *)((v0_2 + 0x4))) << 2))))))(v0_2, v0_0, v0_1, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((int)g_char_attack_update_tab) + ((*(signed char *)((v0_2 + 0x4))) << 2))))))(v0_2, v0_0, v0_1, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
     if (((*(signed char *)((v0_2 + 0x71BC))) == 2)) goto L_C09491A;
     if ((((((struct o274_float *)(v0_2))->v)) > 0.0f)) goto L_C09491A;
     if (((*(signed char *)((v0_2 + 0x2D9))) == 2)) goto L_C09491A;

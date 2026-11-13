@@ -1,6 +1,9 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c059132.json (synthetic). */
 /* Allocates a node, links it at the head of one of two per-queue lists, then fills its slots by a type-selected constructor. */
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_class_tail[];
 struct nd { char p0[2]; unsigned char q; char p1[0x11]; struct nd *next; struct nd *prev;
             char p2[0x2DC - 0x1C]; signed char cnt; signed char type; char p3[2]; int slot[1]; };
 struct nd *obj_pool_pop(void);
@@ -19,8 +22,8 @@ struct nd *obj_create(int a4, int a5, int a6, int a7)
     if (n == 0)
         return 0;
     n->q = a4;
-    pa = (struct nd **)0xC7E4070 + a4;
-    pb = (struct nd **)0xC7E4098 + a4;
+    pa = (struct nd **)g_obj_class_head + a4;
+    pb = (struct nd **)g_obj_class_tail + a4;
     if (a5 == 0) {
         h = *pa;
         n->prev = h;

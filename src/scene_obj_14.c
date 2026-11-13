@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c05876c-0c0588d8) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
 int FUN_0c06233a(int, int, int);
@@ -43,7 +45,7 @@ int fx_tick_0588d8(int a4, int a5, int a6, int a7)
     if (((int)(*(signed char *)((v0_4 + 0x4))) <= (int)R5)) goto L_C05880E;
     *(unsigned char *)((v0_4 + 0x4)) = v0_5;
     L_C05880E:;
-    FUN_0c06233a((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))), 0xC4CFA80, ((*(signed char *)((v0_4 + 0x4))) + v0_6));
+    FUN_0c06233a((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))), ((int)g_res_font), ((*(signed char *)((v0_4 + 0x4))) + v0_6));
     *(unsigned char *)(((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))) + 0x0)) = v0_2;
     v0_5 = (int)(v0_6 + 0x1) < (int)v0_0;
     *(unsigned short *)(((*(int *)((((v0_6 << 2) + (0x2E0 + v0_4)) + 0x0))) + 0x2)) = v0_1;
@@ -59,7 +61,7 @@ int fx_tick_0588d8(int a4, int a5, int a6, int a7)
     if (((int)(*(signed char *)((v0_4 + 0x4))) >= 0)) goto L_C05885E;
     *(unsigned char *)((v0_4 + 0x4)) = R5;
     L_C05885E:;
-    FUN_0c06233a((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))), 0xC4CFA80, ((*(signed char *)((v0_4 + 0x4))) + v0_6));
+    FUN_0c06233a((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))), ((int)g_res_font), ((*(signed char *)((v0_4 + 0x4))) + v0_6));
     *(unsigned char *)(((*(int *)((((0x2E0 + v0_4) + (v0_6 << 2)) + 0x0))) + 0x0)) = v0_2;
     v0_5 = (int)(v0_6 + 0x1) < (int)v0_0;
     *(unsigned short *)(((*(int *)((((v0_6 << 2) + (0x2E0 + v0_4)) + 0x0))) + 0x2)) = v0_1;
@@ -77,7 +79,7 @@ int fx_tick_0588d8(int a4, int a5, int a6, int a7)
     L_C0587B4:;
     v0_3 = *(signed char *)((v0_4 + 0x4));
     *(unsigned int *)(((int)stk + 0)) = (v0_6 << 2);
-    FUN_0c06233a((*(int *)((((v0_6 << 2) + (0x2E0 + v0_4)) + 0x0))), 0xC4CFA80, (v0_3 + v0_6));
+    FUN_0c06233a((*(int *)((((v0_6 << 2) + (0x2E0 + v0_4)) + 0x0))), ((int)g_res_font), (v0_3 + v0_6));
     *(unsigned char *)(((*(int *)((((0x2E0 + v0_4) + (*(int *)(((int)stk + 0)))) + 0x0))) + 0x0)) = v0_2;
     v0_3 = (int)(v0_6 + 0x1) < (int)v0_0;
     *(unsigned short *)(((*(int *)((((0x2E0 + v0_4) + (*(int *)(((int)stk + 0)))) + 0x0))) + 0x2)) = v0_1;

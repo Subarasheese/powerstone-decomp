@@ -1,5 +1,8 @@
 /* ending sequence: scripted objects, update table, spawners, ending state/script (0c0128a0-0c0158d8) */
 
+/* named globals (symbols.txt) */
+extern char g_ending_character[];
+extern char g_game_substate[];
 struct o0_float { float v; };
 struct o10_float { char p[0x10]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -196,12 +199,12 @@ int ending_exec_command(int a4, int a5, int a6, int a7)
 
     t0 = *(signed char *)((a4 + 0x3));
     if ((unsigned char)t0 == 1) {
-        (((struct o17_ushort *)0xC7F302D)->v) = 0x0;
+        (((struct o17_ushort *)g_game_substate)->v) = 0x0;
         if ((*(signed char *)0xC7F2F08) == 0) {
             t1 = *(signed char *)((a4 + 0x5));
             return ((int (*)(int, int, int, int))(0xC014FA4))(0x1, 0xC7F3046, t1, 0x0);
         }
-        t1 = *(signed char *)0xC7F3081;
+        t1 = *(signed char *)g_ending_character;
         *(volatile signed char *)((t1 + 0xC17AFB4));
         *(volatile signed char *)((a4 + 0x5));
         return ((int (*)(int, int, int, int))(0xC014FA0))(0x1, 0xC7F3046, t1, 0x0);
@@ -249,16 +252,16 @@ int ending_exec_command(int a4, int a5, int a6, int a7)
                                             if ((unsigned char)t0 != 0xFF) {
                                                 return ((int (*)(int, int, int, int))(0xC014FB2))(0x1, 0xC7F3046, 0x0, a7);
                                             }
-                                            (((struct o2_uchar *)0xC7F302D)->v) = ((*(signed char *)0xC7F302F) + 0x1);
+                                            (((struct o2_uchar *)g_game_substate)->v) = ((*(signed char *)0xC7F302F) + 0x1);
                                             return ((int (*)(int, int, int, int))(0xC014FC4))(0x1, 0xC7F3046, 0x0, a7);
                                         }
-                                        (((struct o19_ushort *)0xC7F302D)->v) = 0x0;
+                                        (((struct o19_ushort *)g_game_substate)->v) = 0x0;
                                         return ((int (*)(int, int, int, int))(0xC014FC4))(0x1, 0xC7F3046, 0x0, a7);
                                     }
-                                    (((struct o19_ushort *)0xC7F302D)->v) = 0x1;
+                                    (((struct o19_ushort *)g_game_substate)->v) = 0x1;
                                     return ((int (*)(int, int, int, int))(0xC014FC4))(0x1, 0xC7F3046, 0x0, a7);
                                 }
-                                (((struct o0_uchar *)0xC7F302D)->v) = (*(signed char *)((a4 + 0x4)));
+                                (((struct o0_uchar *)g_game_substate)->v) = (*(signed char *)((a4 + 0x4)));
                                 if ((unsigned char)(*(signed char *)((a4 + 0x4))) == 6) {
                                     ending_spawn_obj_t08();
                                     return ((int (*)(void))(0xC014FC4))();
@@ -276,7 +279,7 @@ int ending_exec_command(int a4, int a5, int a6, int a7)
                             ending_spawn_obj_t0e((*(signed char *)((a4 + 0x4))));
                             return ((int (*)(void))(0xC014FC4))();
                         }
-                        FUN_0c0a3fa4((*(signed char *)0xC7F3081), (*(signed char *)((a4 + 0x4))));
+                        FUN_0c0a3fa4((*(signed char *)g_ending_character), (*(signed char *)((a4 + 0x4))));
                         return ((int (*)(void))(0xC014FC4))();
                     }
                     FUN_0c0a3eec((*(signed char *)((a4 + 0x4))));
@@ -286,10 +289,10 @@ int ending_exec_command(int a4, int a5, int a6, int a7)
                 bgm_play_by_index((*(signed char *)0xC361C5D));
                 return ((int (*)(void))(0xC014FC4))();
             }
-            (((struct o13_ushort *)0xC7F302D)->v) = 0x1;
+            (((struct o13_ushort *)g_game_substate)->v) = 0x1;
             return ((int (*)(int, int, int, int))(0xC014FC4))(0x1, 0xC7F3046, 0x0, a7);
         }
-        (((struct o15_ushort *)0xC7F302D)->v) = 0x1;
+        (((struct o15_ushort *)g_game_substate)->v) = 0x1;
         return ((int (*)(int, int, int, int))(0xC014FC4))(0x1, 0xC7F3046, 0x0, a7);
     }
     game_reset_objects();

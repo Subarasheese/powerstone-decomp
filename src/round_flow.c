@@ -1,5 +1,10 @@
 /* battle round flow record g_round_flow (init (0c0cc074-0c0ccefc) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
+extern char g_item_player_flags[];
+extern char g_item_state[];
+extern char g_res_kyoutsuu[];
 struct o0_uchar { unsigned char v; };
 struct o0_uint { unsigned int v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -53,7 +58,7 @@ int FUN_0c0cc074(int a4, int a5, int a6, int a7)
     (((struct oB_uchar *)0xC7F2665)->v) = 0x0;
     t1 = 0x0;
     for (;;) {
-        t2 = (0xC7F2974 + t1);
+        t2 = (((int)g_item_player_flags) + t1);
         t1 = (t1 + 0x1);
         *(unsigned char *)((t2 + 0x0)) = 0x0;
         if ((int)t1 >= (int)0x3) {
@@ -76,13 +81,13 @@ int FUN_0c0cc074(int a4, int a5, int a6, int a7)
             break;
         }
         t0 = 0x32E;
-        t0 = (t0 + 0xC7F2664);
+        t0 = (t0 + ((int)g_item_state));
         t0 = (t0 + t1);
         *(unsigned char *)((t0 + 0x0)) = 0x0;
         t2 = (t1 << 2);
         t1 = (t1 + 0x1);
         t0 = 0x318;
-        t0 = (t0 + 0xC7F2664);
+        t0 = (t0 + ((int)g_item_state));
         *(unsigned int *)(((t2 + t0) + 0x0)) = 0x0;
     }
     if ((int)(*(signed char *)0xC7F2990) > (int)0x3) {
@@ -159,7 +164,7 @@ int item_director_count_free_slots(void)
     t0 = 0x0;
     t1 = 0x0;
     for (;;) {
-        t2 = *(signed char *)((((signed char)t0 + 0xC7F2974) + 0x0));
+        t2 = *(signed char *)((((signed char)t0 + ((int)g_item_player_flags)) + 0x0));
         t0 = (t0 + 0x1);
         if (t2 == 0) {
             t1 = (t1 + 0x1);
@@ -380,9 +385,9 @@ int item_director_pick_spot(int a4, int a5, int a6, int a7)
             t86 = 0x0;
             for (;;) {
                 t87 = *(signed char *)((t85 + 0x0));
-                if ((*(signed char *)((((signed char)t87 + 0xC7F2974) + 0x0))) == 0) {
+                if ((*(signed char *)((((signed char)t87 + ((int)g_item_player_flags)) + 0x0))) == 0) {
                     t83 = 0x315;
-                    if ((signed char)t87 != (*(signed char *)((0xC7F2664 + t83)))) {
+                    if ((signed char)t87 != (*(signed char *)((((int)g_item_state) + t83)))) {
                         break;
                     }
                     t86 = (t86 + 0x1);
@@ -480,7 +485,7 @@ int item_director_pick_spot(int a4, int a5, int a6, int a7)
         t139 = (0x0 + (((int)stk + 4) + 0xC));
         t140 = 0x0;
         for (;;) {
-            if ((*(signed char *)((((*(signed char *)((t139 + 0x0))) + 0xC7F2974) + 0x0))) == 0) {
+            if ((*(signed char *)((((*(signed char *)((t139 + 0x0))) + ((int)g_item_player_flags)) + 0x0))) == 0) {
                 break;
             }
             t140 = (t140 + 0x1);
@@ -494,7 +499,7 @@ int item_director_pick_spot(int a4, int a5, int a6, int a7)
     }
     t144 = 0x0;
     for (;;) {
-        if ((*(signed char *)(((0xC7F2974 + t144) + 0x0))) == 0) {
+        if ((*(signed char *)(((((int)g_item_player_flags) + t144) + 0x0))) == 0) {
             break;
         }
         t144 = (t144 + 0x1);
@@ -551,7 +556,7 @@ int FUN_0c0cc7fc(int a4)
 void item_director_spawn_queued(char arg)
 {
     vec3 entry;
-    char *block = (char *)0x0C7F2664;
+    char *block = (char *)g_item_state;
     char *queue;
     int set_idx = *(signed char *)0x0C7F3051;
 
@@ -717,8 +722,8 @@ int FUN_0c0ccb60(int a4, int a5, int a6, int a7)
     register int t2;
     register int t9;
 
-    u0 = (((struct o0_float *)0xC7F2AB4)->v);
-    u1 = (((struct o8_float *)0xC7F2AB4)->v);
+    u0 = (((struct o0_float *)g_camera_pos)->v);
+    u1 = (((struct o8_float *)g_camera_pos)->v);
     t2 = *(signed char *)0xC7F3051;
     t9 = 0x0;
     if (!((*(float *)(((((t2 << 2) << 2) + 0xC33CF8C) + 0x0))) > u0)) {
@@ -758,7 +763,7 @@ int FUN_0c0ccbfe(void)
         t4 = 0x0;
         for (;;) {
             t5 = *(int *)((((t4 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t5, 0xC4CFA68, (t4 + 0x1));
+            FUN_0c06233a(t5, ((int)g_res_kyoutsuu), (t4 + 0x1));
             t4 = (t4 + 0x1);
             *(unsigned short *)((t5 + 0x2)) = 0x1;
             if ((int)t4 >= (int)0x2) {

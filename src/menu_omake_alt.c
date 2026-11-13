@@ -1,5 +1,7 @@
 /* OMAKE menu screens and unlock query (0c01b9f4-0c01d254) */
 
+/* named globals (symbols.txt) */
+extern char g_res_omake[];
 struct at_1c_float { char pad[0x1C]; float field_1c; };
 struct at_20_float { char pad[0x20]; float field_20; };
 struct at_24_float { char pad[0x24]; float field_24; };
@@ -147,12 +149,12 @@ void FUN_0c01c99e(char arg_byte, int variant)
         *(short *)(*(char **)(obj + 0x2E0 + 4 * i) + 2) = 0x41F;
         *(float *)(*(char **)(obj + 0x2E0 + 4 * i) + 64) = 1.0f;
         if (i < 4) {
-            FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)0x0C664AA8, ((signed char *)0x0C180542)[i]);
+            FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, ((signed char *)0x0C180542)[i]);
         } else {
             if (omake_is_item_unlocked(variant) != 0)
-                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)0x0C664AA8, *tbl_b);
+                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_b);
             else
-                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)0x0C664AA8, *tbl_a);
+                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_a);
         }
     }
 }

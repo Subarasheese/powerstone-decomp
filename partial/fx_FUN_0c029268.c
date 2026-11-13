@@ -1,6 +1,8 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c029268.json (synthetic). */
 /* Lays out and animates a ring of linked sprite objects (count at +732): state 0 places them on a circle (mode +4 == 0) or at one spot, then every frame spins them, steps their colour index (table at 0xC148DF4) and tracks the largest scale in +152 until the life counter at +236 runs out. */
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 typedef struct { int a, b, c; } S12;
 extern void math_vec3_add(void *, void *, void *);
 extern float math_sin_angle16(int);
@@ -68,7 +70,7 @@ void FUN_0c029268(char *e)
         E240 = (E240 + 1) & 7;
         for (i = 0; i < N; i++) {
             p = OBJ(i);
-            *(int *)(p + 156) = *(int *)(*(int *)(0xC6649E8 + 8) + 4 * ((int *)0xC148DF4)[E240]);
+            *(int *)(p + 156) = *(int *)(*(int *)(((int)g_res_syukyaku) + 8) + 4 * ((int *)0xC148DF4)[E240]);
         }
     }
     F(152) = F(28);

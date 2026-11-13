@@ -1,5 +1,8 @@
 /* character 4 (Gunrock) (0c07746c-0c079386) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_gunrock_start_action_tbl[];
+extern char g_pl_gunrock_update_action_tbl[];
 extern void pl_gunrock_mode01_03_enter(char *obj);
 extern void pl_gunrock_mode04_enter(char *obj);
 extern void pl_mode05_enter(char *obj);
@@ -105,7 +108,7 @@ void pl_gunrock_state_enter(char *obj)
     case 0:
     case 2:
         *(short *)(obj + 240) = 0;
-        (*(void (**)(char *))(0xC337110 + obj[0x7238] * 4))(obj);
+        (*(void (**)(char *))(((int)g_pl_gunrock_start_action_tbl) + obj[0x7238] * 4))(obj);
         break;
     case 1:
     case 3:
@@ -237,7 +240,7 @@ int pl_gunrock_state_update(int a4, int a5, int a6, int a7)
             case 0:
             case 4:
             {
-                t3 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + 0xC337140));
+                t3 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + ((int)g_pl_gunrock_update_action_tbl)));
                 return ((int (*)(int, int, int, int))(t3))(a4, a5, a6, a7);
             }
             case 2:

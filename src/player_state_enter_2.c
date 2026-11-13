@@ -1,5 +1,7 @@
 /* player state enter handlers (table 0xC339490) and state-specific helpers; same module as the following rows up to 0c0a18f8 (0c09f8e0-0c09fe58) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_char_param_tbl[];
 struct o2FC_short { char p[0x2FC]; short v; };
 struct o2FE_short { char p[0x2FE]; short v; };
 struct o38_float { char p[0x38]; float v; };
@@ -31,7 +33,7 @@ float FUN_0c09f8e0(int a4, int a5, float f4, float f5)
     register float u1;
     register float u2;
 
-    (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + 0xC339540) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v));
+    (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v));
     if (!(80.0f > (*(float *)0xC494D1C))) {
         if (((((struct o2FC_short *)(a4))->v)) != 0) {
             u0 = (((struct o7254_float *)(a4))->v);
@@ -40,8 +42,8 @@ float FUN_0c09f8e0(int a4, int a5, float f4, float f5)
             u2 = u2 + 0.399999976f * u0;
             (((struct o7254_float *)(a4))->v) = u2;
         }
-        if (((((struct o7254_float *)(a4))->v)) > ((((struct o3C_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + 0xC339540) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v))) {
-            (((struct o7254_float *)(a4))->v) = ((((struct o3C_float *)(((0xC339540 + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)) + (unsigned char)((unsigned short)(*(signed char *)((a4 + 0x71F1))) * (unsigned short)0x4C))))->v));
+        if (((((struct o7254_float *)(a4))->v)) > ((((struct o3C_float *)(((((short)(*(signed char *)((a4 + 0x4))) * (short)0x98) + ((int)g_pl_char_param_tbl)) + (unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C))))->v))) {
+            (((struct o7254_float *)(a4))->v) = ((((struct o3C_float *)(((((int)g_pl_char_param_tbl) + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)) + (unsigned char)((unsigned short)(*(signed char *)((a4 + 0x71F1))) * (unsigned short)0x4C))))->v));
         }
     }
     (((struct o38_float *)(a4))->v) = ((math_cos_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))) * ((((struct o7254_float *)(a4))->v)));

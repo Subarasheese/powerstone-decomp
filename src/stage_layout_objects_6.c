@@ -1,5 +1,8 @@
 /* stage placement records: spawners and update/mode handlers for record types 1 2 3 4 8 11 12 and debris (0c0ace1c-0c0ad15c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_stage_c[];
+extern char g_stage_obj_se_cue_tbl[];
 int fx_spawn_with_params(int, float, float, float, float);
 int snd_play_stage_obj_se(int, int, int);
 struct o308_int { char p[0x308]; int v; };
@@ -80,7 +83,7 @@ int fx_spawn_debris_sprites(int a4, int a5)
         t7 = *(signed char *)(((int)stk + 4));
         for (;;) {
             t9 = *(int *)((((t8 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t9, 0xC664970, (t8 + ((t7 << 2) + t7)));
+            FUN_0c06233a(t9, ((int)g_res_stage_c), (t8 + ((t7 << 2) + t7)));
             *(unsigned char *)((t9 + 0x0)) = 0x1;
             *(unsigned short *)((t9 + 0x2)) = 0x1F;
             (((struct o1C_float *)(t9))->v) = u6;
@@ -104,7 +107,7 @@ int stage_obj_play_break_se(int a4)
     t1 = *(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3));
     if (t1 != -1) {
         t2 = *(signed char *)0xC7F3051;
-        return snd_play_stage_obj_se(t2, (*(signed char *)((a4 + 0x3))), (*(signed char *)(((0xC339DC0 + (((signed char)t2 << 2) << 2)) + (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3)))))));
+        return snd_play_stage_obj_se(t2, (*(signed char *)((a4 + 0x3))), (*(signed char *)(((((int)g_stage_obj_se_cue_tbl) + (((signed char)t2 << 2) << 2)) + (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3)))))));
     }
     return t1;
 }

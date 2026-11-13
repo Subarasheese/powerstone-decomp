@@ -1,5 +1,9 @@
 /* player object setup: list search, tint, scale, spawn positions, model nodes (0c098c48-0c099c08) */
 
+/* named globals (symbols.txt) */
+extern char g_model_scale_tab[];
+extern char g_spawn_pos_tab[];
+extern char g_start_pos_tab[];
 typedef struct { int w0, w1, w2; } vec3i;
 extern char g_save_options[];
 extern char g_7f304b;
@@ -100,7 +104,7 @@ void pl_place_start_positions(void)
     signed char idx;
 
     idx = *(signed char *)(0xC7F302C + 37);
-    start_tbl = (char *)0xC3458F4;
+    start_tbl = (char *)g_start_pos_tab;
     player0 = (char *)0xC7E40C4;
     *(struct vec12 *)(player0 + 32) = *(struct vec12 *)(start_tbl + (unsigned char)(idx * 12));
     player1 = player0 + 0x72D0;
@@ -116,11 +120,11 @@ int pl_set_spawn_position(int a4)
     register int t0;
 
     t0 = *(signed char *)((a4 + 0x3));
-    (((struct o20_float *)(a4))->v) = (*(float *)((0xC150A98 + (signed char)(((t0 << 1) + t0) << 2))));
+    (((struct o20_float *)(a4))->v) = (*(float *)((((int)g_spawn_pos_tab) + (signed char)(((t0 << 1) + t0) << 2))));
     t0 = *(signed char *)((a4 + 0x3));
-    (((struct o24_float *)(a4))->v) = ((((struct o4_float *)(((signed char)(((t0 << 1) + t0) << 2) + 0xC150A98)))->v));
+    (((struct o24_float *)(a4))->v) = ((((struct o4_float *)(((signed char)(((t0 << 1) + t0) << 2) + ((int)g_spawn_pos_tab))))->v));
     t0 = *(signed char *)((a4 + 0x3));
-    (((struct o28_float *)(a4))->v) = ((((struct o8_float *)((0xC150A98 + (signed char)(((t0 << 1) + t0) << 2))))->v));
+    (((struct o28_float *)(a4))->v) = ((((struct o8_float *)((((int)g_spawn_pos_tab) + (signed char)(((t0 << 1) + t0) << 2))))->v));
     t0 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)((a4 + 0x2C)) = (*(int *)((0xC150AB0 + (signed char)(((t0 << 1) + t0) << 2))));
     t0 = *(signed char *)((a4 + 0x3));
@@ -134,7 +138,7 @@ int pl_reset_scale(int a4)
 {
     register float u3;
 
-    u3 = *(float *)(((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + (0xC150C60 + (((*(signed char *)((a4 + 0x4))) << 2) << 1))) + 0x0));
+    u3 = *(float *)(((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + (((int)g_model_scale_tab) + (((*(signed char *)((a4 + 0x4))) << 2) << 1))) + 0x0));
     (((struct o58_float *)(a4))->v) = u3;
     (((struct o54_float *)(a4))->v) = u3;
     (((struct o50_float *)(a4))->v) = u3;

@@ -1,5 +1,10 @@
 /* NAOMI-style test mode (colour test (0c0cdac0-0c0cf408) */
 
+/* named globals (symbols.txt) */
+extern char g_game_config[];
+extern char g_tbl_testmode_value_strings[];
+extern char g_testmode_game_config_view[];
+extern char g_testmode_system_config[];
 struct o0_float { float v; };
 struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -287,7 +292,7 @@ int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5)
     register float u1;
 
     if (((unsigned short)(*(short *)0xC361BFC) & 16) != 0) {
-        if (((unsigned char)(*(signed char *)0xC4948A0) == 17) && (t0 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t0 == 3)) {
+        if (((unsigned char)(*(signed char *)g_testmode_system_config) == 17) && (t0 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t0 == 3)) {
             *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = 0x2;
         }
         t0 = (0xFF + a6);
@@ -299,7 +304,7 @@ int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5)
     }
     t0 = a6;
     if (((unsigned short)(*(short *)0xC361BFC) & 32) != 0) {
-        if (((unsigned char)(*(signed char *)0xC4948A0) == 17) && (t1 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t1 == 1)) {
+        if (((unsigned char)(*(signed char *)g_testmode_system_config) == 17) && (t1 = *(signed char *)((a7 + 0xC7F2EE4)), (unsigned char)t1 == 1)) {
             *(unsigned char *)(((0xC7F2EE4 + a7) + 0x0)) = 0x2;
         }
         if ((unsigned char)(*(signed char *)(((0xC7F2EE4 + a7) + 0x0))) == (a6 - 1)) {
@@ -312,7 +317,7 @@ int FUN_0c0ce530(int a4, int a5, int a6, int a7, float f4, float f5)
     *(volatile signed char *)(((a7 + 0xC7F2EE4) + 0x0));
     u0 = (((struct o0_float *)0xC0CE7AC)->v);
     u1 = (((struct o4_float *)0xC0CE7AC)->v);
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0CE612))(0x2, 0xC361BF0, t0, 0xC4948A0, f4, f5, u1, u0);
+    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0CE612))(0x2, 0xC361BF0, t0, ((int)g_testmode_system_config), f4, f5, u1, u0);
 }
 
 int FUN_0c0ce634(int a4, int a5, int a6)
@@ -334,11 +339,11 @@ int FUN_0c0ce634(int a4, int a5, int a6)
         t2 = 0x0;
         t3 = 0xC33EF7C;
         t4 = (0x0 + a5);
-        t5 = 0xC4948A0;
+        t5 = ((int)g_testmode_system_config);
         for (;;) {
             t6 = *(signed char *)((t5 + 0x0));
             t5 = (t5 + 0x1);
-            t9 = dbg_print_at((*(int *)((0xC33EE54 + (((*(signed char *)((t3 + 0x0))) + (unsigned char)t6) << 2)))), ((float)a4 * u0), ((float)t4 * u1));
+            t9 = dbg_print_at((*(int *)((((int)g_tbl_testmode_value_strings) + (((*(signed char *)((t3 + 0x0))) + (unsigned char)t6) << 2)))), ((float)a4 * u0), ((float)t4 * u1));
             t2 = (t2 + 0x1);
             t3 = (t3 + 0x2);
             t4 = (t4 + 0x2);
@@ -370,11 +375,11 @@ int FUN_0c0ce6b0(int a4, int a5, int a6)
         t2 = 0x0;
         t3 = 0xC33EF8A;
         t4 = (0x0 + a5);
-        t5 = 0xC4948A0;
+        t5 = ((int)g_testmode_system_config);
         for (;;) {
             t6 = *(signed char *)((t5 + 0x0));
             t5 = (t5 + 0x1);
-            t9 = dbg_print_at((*(int *)((0xC33EE54 + (((*(signed char *)((t3 + 0x0))) + (unsigned char)t6) << 2)))), ((float)a4 * u0), ((float)t4 * u1));
+            t9 = dbg_print_at((*(int *)((((int)g_tbl_testmode_value_strings) + (((*(signed char *)((t3 + 0x0))) + (unsigned char)t6) << 2)))), ((float)a4 * u0), ((float)t4 * u1));
             t2 = (t2 + 0x1);
             t3 = (t3 + 0x2);
             t4 = (t4 + 0x2);
@@ -402,11 +407,11 @@ int FUN_0c0ce72c(int a4, int a5, int a6)
         t0 = 0x0;
         t1 = 0xC33EF9A;
         t2 = (0x0 + a5);
-        t3 = 0xC4948AA;
+        t3 = ((int)g_testmode_game_config_view);
         for (;;) {
             t4 = *(signed char *)((t3 + 0x0));
             t3 = (t3 + 0x1);
-            t7 = dbg_print_at((*(int *)((0xC33EE54 + (((*(signed char *)((t1 + 0x0))) + (unsigned char)t4) << 2)))), ((float)a4 * 16.0f), ((float)t2 * 8.0f));
+            t7 = dbg_print_at((*(int *)((((int)g_tbl_testmode_value_strings) + (((*(signed char *)((t1 + 0x0))) + (unsigned char)t4) << 2)))), ((float)a4 * 16.0f), ((float)t2 * 8.0f));
             t0 = (t0 + 0x1);
             t1 = (t1 + 0x2);
             t2 = (t2 + 0x2);
@@ -562,7 +567,7 @@ int FUN_0c0ce99a(int a4, int a5, int a6, int a7)
                     t0 = (t0 << 2);
                     t0 = (t0 << 1);
                     t0 = (t0 + a5);
-                    t18 = (dbg_print_at((*(int *)(((((*(signed char *)((t0 + 0x16))) + (*(signed char *)(((0xC49491C + t1) + 0x0)))) << 2) + 0xC33F474))), 152.0f, ((float)(*(signed char *)((t0 + 0x15))) * 8.0f)));
+                    t18 = (dbg_print_at((*(int *)(((((*(signed char *)((t0 + 0x16))) + (*(signed char *)(((((int)g_game_config) + t1) + 0x0)))) << 2) + 0xC33F474))), 152.0f, ((float)(*(signed char *)((t0 + 0x15))) * 8.0f)));
                 }
             }
             t1 = (t1 + 0x1);
@@ -623,22 +628,22 @@ int FUN_0c0cea90(int a4, int a5, int a6, int a7, float f4, float f5)
         if ((((unsigned short)t0 & 0xF0) != 64) && ((0x4 & (unsigned short)t0) == 0)) {
             t5 = *(short *)0xC361BFC;
             if (((0xF0 & (unsigned short)t5) == 0x80) || ((0x2 & (unsigned short)t5) != 0)) {
-                *(unsigned char *)(((0xC49491C + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((0xC49491C + (unsigned char)t1) + 0x0))) + 0x1);
-                if ((int)(*(signed char *)(((0xC49491C + (unsigned char)t1) + 0x0))) > (int)((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1)) {
-                    *(unsigned char *)(((0xC49491C + (unsigned char)t1) + 0x0)) = 0x0;
+                *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) + 0x1);
+                if ((int)(*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) > (int)((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1)) {
+                    *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = 0x0;
                 }
             }
             t3 = (0xF0 & (unsigned short)t5);
             t4 = (unsigned short)t5;
         } else {
-            *(unsigned char *)(((0xC49491C + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((0xC49491C + (unsigned char)t1) + 0x0))) - 1);
-            if ((int)(*(signed char *)(((0xC49491C + (unsigned char)t1) + 0x0))) < 0) {
-                *(unsigned char *)(((0xC49491C + (unsigned char)t1) + 0x0)) = ((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1);
+            *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) - 1);
+            if ((int)(*(signed char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0))) < 0) {
+                *(unsigned char *)(((((int)g_game_config) + (unsigned char)t1) + 0x0)) = ((*(signed char *)((((((((unsigned char)t1 << 1) + (unsigned char)t1) << 2) << 1) + a5) + 0x17))) - 1);
             }
             t3 = 0xF0;
             t4 = (unsigned short)t0;
         }
-        t2 = (0xC49491C + (unsigned char)t1);
+        t2 = (((int)g_game_config) + (unsigned char)t1);
     }
     u0 = (((struct o0_float *)0xC0CECD8)->v);
     u1 = (((struct o4_float *)0xC0CECD8)->v);
@@ -650,18 +655,18 @@ int testmode_game_config_commit(void)
 {
     register int t10;
 
-    (((struct o0_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F0D);
-    (((struct o1_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F0E);
-    (((struct o2_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F0F);
-    (((struct o3_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F10);
-    (((struct o4_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F11);
-    (((struct o5_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F12);
-    (((struct o6_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F13);
-    (((struct o7_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F14);
-    (((struct o8_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F15);
-    (((struct o9_uchar *)0xC49491C)->v) = (*(signed char *)0xC7F2F16);
+    (((struct o0_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F0D);
+    (((struct o1_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F0E);
+    (((struct o2_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F0F);
+    (((struct o3_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F10);
+    (((struct o4_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F11);
+    (((struct o5_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F12);
+    (((struct o6_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F13);
+    (((struct o7_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F14);
+    (((struct o8_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F15);
+    (((struct o9_uchar *)g_game_config)->v) = (*(signed char *)0xC7F2F16);
     t10 = *(signed char *)0xC7F2F17;
-    (((struct oA_uchar *)0xC49491C)->v) = t10;
+    (((struct oA_uchar *)g_game_config)->v) = t10;
     return t10;
 }
 
@@ -669,7 +674,7 @@ int testmode_game_config_load(void)
 {
     register int t10;
 
-    (((struct o0_uchar *)0xC7F2F0D)->v) = (*(signed char *)0xC49491C);
+    (((struct o0_uchar *)0xC7F2F0D)->v) = (*(signed char *)g_game_config);
     (((struct o1_uchar *)0xC7F2F0D)->v) = (*(signed char *)0xC49491D);
     (((struct o2_uchar *)0xC7F2F0D)->v) = (*(signed char *)0xC49491E);
     (((struct o3_uchar *)0xC7F2F0D)->v) = (*(signed char *)0xC49491F);

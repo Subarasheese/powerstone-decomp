@@ -1,5 +1,7 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02d774-0c02d9e0) */
 
+/* named globals (symbols.txt) */
+extern char g_hud_state[];
 int memset(int, int, int);
 struct o71D4_short { char p[0x71D4]; short v; };
 struct o71D6_short { char p[0x71D6]; short v; };
@@ -42,7 +44,7 @@ int FUN_0c02d8e0(void)
     register int t8;
     register int t9;
 
-    t1 = 0xC366A70;
+    t1 = ((int)g_hud_state);
     t2 = 0x0;
     t3 = 0x0;
     for (;;) {

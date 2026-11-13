@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c055d38-0c05600c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 typedef struct { int x, y, z; } vec3_int;
 extern int FUN_0c0d5188(void);
 extern void FUN_0c06233a(void *, int, int);
@@ -34,9 +36,9 @@ void fx_tick_05600c(char *obj)
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
         row = (char *)0xC14AD88 + (unsigned char)((unsigned short)(signed char)obj[4] * 28);
-        FUN_0c06233a(CHILD1, 0xC4CFA80, row[24]);
+        FUN_0c06233a(CHILD1, ((int)g_res_font), row[24]);
         setup(CHILD1, row);
-        FUN_0c06233a(CHILD2, 0xC4CFA80, row[25] + 1);
+        FUN_0c06233a(CHILD2, ((int)g_res_font), row[25] + 1);
         setup(CHILD2, row);
         COUNTER = 1;
         STATE = STATE + 1;

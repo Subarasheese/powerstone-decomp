@@ -1,5 +1,7 @@
 /* player state enter handlers (table 0xC339490) and state-specific helpers; same module as the following rows up to 0c0a18f8 (0c09f6a8-0c09f8e0) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_char_param_tbl[];
 extern float math_cos_angle16(int);
 extern float math_sin_angle16(int);
 extern int pl_angle_to_opponent(char *);
@@ -37,7 +39,7 @@ void pl_enter_state_07(char *actor, int move_id)
         anim_id = 0x29;
     } else {
         player_idx = *(signed char *)(actor + 0x71F1);
-        row = (char *)0xC339540 + actor[4] * 152 + (unsigned char)((unsigned short)player_idx * 76);
+        row = (char *)g_pl_char_param_tbl + actor[4] * 152 + (unsigned char)((unsigned short)player_idx * 76);
         *(short *)(actor + 0xEC) = *(short *)(row + 72);
         ang = (unsigned short)((dir_idx << 13) + *(short *)0xC7F31E0);
         inv_ang = 0x14000 - ang;

@@ -1,5 +1,8 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c046360-0c046798) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -50,7 +53,7 @@ int fx_spawn_046360(int a4)
     FUN_0c0e6fe8();
     t1 = (((struct o2E0_int *)(t0))->v);
     memset((t1 + 0x34), 0x0, 0xC);
-    FUN_0c06233a(t1, 0xC4CFA68, ((*(signed char *)(((t1 + 0x34) + 0x6))) + 0x75));
+    FUN_0c06233a(t1, ((int)g_res_kyoutsuu), ((*(signed char *)(((t1 + 0x34) + 0x6))) + 0x75));
     *(unsigned char *)((t1 + 0x0)) = 0x1;
     *(unsigned short *)((t1 + 0x2)) = 0x31;
     math_rand_float();
@@ -102,7 +105,7 @@ int fx_tick_046360(int a4)
         t4 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4);
         thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
-        math_vec3_sub((((int)stk + 0) + 0x4), (((((struct o2E0_int *)(a4))->v)) + 0x4), 0xC7F2AB4);
+        math_vec3_sub((((int)stk + 0) + 0x4), (((((struct o2E0_int *)(a4))->v)) + 0x4), ((int)g_camera_pos));
         FUN_0c0e24f0((((int)stk + 0) + 0x4));
         *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) * 30.0f);
         *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) * 30.0f);
@@ -147,7 +150,7 @@ int fx_tick_046360(int a4)
                 *(unsigned char *)(((t58 + 0x34) + 0x5)) = 0x2;
                 *(volatile signed char *)(((t58 + 0x34) + 0x6));
                 *(unsigned char *)(((t58 + 0x34) + 0x6)) = (FUN_0c0e6e5c((0x2E0 + a4)));
-                FUN_0c06231c(t58, 0xC4CFA68, ((*(signed char *)(((t58 + 0x34) + 0x6))) + 0x75));
+                FUN_0c06231c(t58, ((int)g_res_kyoutsuu), ((*(signed char *)(((t58 + 0x34) + 0x6))) + 0x75));
             }
             if (((((struct oEE_short *)(a4))->v)) != 0) {
                 if ((*(signed char *)(((t58 + 0x34) + 0x9))) == 0) {

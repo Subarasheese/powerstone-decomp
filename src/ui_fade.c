@@ -1,5 +1,7 @@
 /* screen fade: start/reset/draw (full-screen coloured quad) (0c03148c-0c0318e0) */
 
+/* named globals (symbols.txt) */
+extern char g_fade_state[];
 int FUN_0c0dd5d0(int, int);
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -46,21 +48,21 @@ int ui_fade_start(int a4, int a5, int a6, int a7)
     register int t7;
     register int t8;
 
-    (((struct o4_uint *)0xC7F31C8)->v) = a4;
-    (((struct o0_uchar *)0xC7F31C8)->v) = a5;
-    (((struct o1_uchar *)0xC7F31C8)->v) = a6;
-    (((struct o2_uchar *)0xC7F31C8)->v) = a7;
-    (((struct o3_uchar *)0xC7F31C8)->v) = a7;
+    (((struct o4_uint *)g_fade_state)->v) = a4;
+    (((struct o0_uchar *)g_fade_state)->v) = a5;
+    (((struct o1_uchar *)g_fade_state)->v) = a6;
+    (((struct o2_uchar *)g_fade_state)->v) = a7;
+    (((struct o3_uchar *)g_fade_state)->v) = a7;
     if (((*(int *)0xC386830) != 0) && ((signed char)a6 != 0)) {
-        (((struct o3_uchar *)0xC7F31C8)->v) = ((*(signed char *)0xC7F31CB) - 1);
+        (((struct o3_uchar *)g_fade_state)->v) = ((*(signed char *)0xC7F31CB) - 1);
     }
     if ((signed char)a5 != 0) {
-        (((struct o3_uchar *)0xC7F31C8)->v) = ((*(signed char *)0xC7F31CB) + 0x1);
+        (((struct o3_uchar *)g_fade_state)->v) = ((*(signed char *)0xC7F31CB) + 0x1);
     }
     t7 = *(signed char *)0xC7F31CA;
     t8 = t7;
     if (t7 == 0) {
-        (((struct o2_uchar *)0xC7F31C8)->v) = 0x1;
+        (((struct o2_uchar *)g_fade_state)->v) = 0x1;
         t8 = 0x1;
     }
     return t8;
@@ -89,7 +91,7 @@ int ui_fade_draw(int a4, int a5, int a6, int a7, float f4, float f5)
         return t3;
     }
     t3 = *(signed char *)0xC7F31CA;
-    t4 = *(signed char *)0xC7F31C8;
+    t4 = *(signed char *)g_fade_state;
     if (t4 != 0) {
         if (t4 == 1) {
             if ((*(signed char *)0xC7F31C9) == 0) {

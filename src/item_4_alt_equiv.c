@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05ae26-0c05b6dc) */
 
+/* named globals (symbols.txt) */
+extern char g_item_state[];
 typedef struct { int a, b, c; } vec12;
 typedef struct {
     char pad0[8];
@@ -122,8 +124,8 @@ void item_attach_to_hand(char *obj)
         (*(struct Sub **)(obj + 0x2e0))->s2 = 15;
     *(int *)(obj + 0x118) = (short)(link->sel * 3520) + (int)((char *)link + 0x300) + 0x580;
     if (obj[11] == 0) {
-        *(char *)(0xC7F2664 + 0x315) = obj[13];
-        *(char *)(0xC7F2664 + 0x316) = 1;
+        *(char *)(((int)g_item_state) + 0x315) = obj[13];
+        *(char *)(((int)g_item_state) + 0x316) = 1;
         obj[11] = 1;
     }
 }

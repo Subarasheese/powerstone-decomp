@@ -1,5 +1,7 @@
 /* key config editing screen (state 0c362378, reset keys) (0c01d304-0c01e798) */
 
+/* named globals (symbols.txt) */
+extern char g_key_config[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
@@ -182,7 +184,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                 t15 = t18;
                                                 t17 = (FUN_0c01e75e(t15, (*(signed char *)(((0xC362380 + t19) + 0x0)))));
                                                 t17 = (signed char)t17;
-                                                t17 = (t17 + (0xC7F476D + (((signed char)t18 << 2) << 1)));
+                                                t17 = (t17 + (((int)g_key_config) + (((signed char)t18 << 2) << 1)));
                                                 t21 = t17;
                                                 t17 = 0xC7F4750;
                                                 t17 = (t17 + 0x1D);
@@ -222,7 +224,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                         t15 = t18;
                                                         t17 = (FUN_0c01e75e(t15, (*(signed char *)(((0xC362380 + t19) + 0x0)))));
                                                         t17 = (signed char)t17;
-                                                        t17 = (t17 + (0xC7F476D + (((signed char)t18 << 2) << 1)));
+                                                        t17 = (t17 + (((int)g_key_config) + (((signed char)t18 << 2) << 1)));
                                                         *(unsigned char *)((t17 + 0x0)) = 0x8;
                                                     }
                                                 }
@@ -378,7 +380,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                             t1 = t3;
                                             t2 = (FUN_0c01e75e(t1, (*(signed char *)(((0xC362380 + t15) + 0x0)))));
                                             t2 = (signed char)t2;
-                                            t2 = (t2 + (0xC7F476D + (((signed char)t3 << 2) << 1)));
+                                            t2 = (t2 + (((int)g_key_config) + (((signed char)t3 << 2) << 1)));
                                             t17 = t2;
                                             t2 = 0xC7F4750;
                                             t2 = (t2 + 0x1D);
@@ -418,7 +420,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                     t1 = t3;
                                                     t2 = (FUN_0c01e75e(t1, (*(signed char *)(((0xC362380 + t15) + 0x0)))));
                                                     t2 = (signed char)t2;
-                                                    t2 = (t2 + (0xC7F476D + (((signed char)t3 << 2) << 1)));
+                                                    t2 = (t2 + (((int)g_key_config) + (((signed char)t3 << 2) << 1)));
                                                     *(unsigned char *)((t2 + 0x0)) = 0x8;
                                                 }
                                             }
@@ -782,7 +784,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                 t1 = t4;
                                                 t3 = (FUN_0c01e75e(t1, (*(signed char *)(((0xC362380 + t5) + 0x0)))));
                                                 t3 = (signed char)t3;
-                                                t3 = (t3 + (0xC7F476D + (((signed char)t4 << 2) << 1)));
+                                                t3 = (t3 + (((int)g_key_config) + (((signed char)t4 << 2) << 1)));
                                                 t14 = t3;
                                                 t3 = 0xC7F4750;
                                                 t3 = (t3 + 0x1D);
@@ -822,7 +824,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                         t1 = t4;
                                                         t3 = (FUN_0c01e75e(t1, (*(signed char *)(((0xC362380 + t5) + 0x0)))));
                                                         t3 = (signed char)t3;
-                                                        t3 = (t3 + (0xC7F476D + (((signed char)t4 << 2) << 1)));
+                                                        t3 = (t3 + (((int)g_key_config) + (((signed char)t4 << 2) << 1)));
                                                         *(unsigned char *)((t3 + 0x0)) = 0x8;
                                                     }
                                                 }
@@ -979,7 +981,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                             t4 = t6;
                                             t5 = (FUN_0c01e75e(t4, (*(signed char *)(((0xC362380 + t7) + 0x0)))));
                                             t5 = (signed char)t5;
-                                            t5 = (t5 + (0xC7F476D + (((signed char)t6 << 2) << 1)));
+                                            t5 = (t5 + (((int)g_key_config) + (((signed char)t6 << 2) << 1)));
                                             t9 = t5;
                                             t5 = 0xC7F4750;
                                             t5 = (t5 + 0x1D);
@@ -1019,7 +1021,7 @@ int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                                                     t4 = t6;
                                                     t5 = (FUN_0c01e75e(t4, (*(signed char *)(((0xC362380 + t7) + 0x0)))));
                                                     t5 = (signed char)t5;
-                                                    t5 = (t5 + (0xC7F476D + (((signed char)t6 << 2) << 1)));
+                                                    t5 = (t5 + (((int)g_key_config) + (((signed char)t6 << 2) << 1)));
                                                     *(unsigned char *)((t5 + 0x0)) = 0x8;
                                                 }
                                             }
@@ -1628,7 +1630,7 @@ float FUN_0c01dee2(int a4)
             t30 = *(signed char *)((a4 + 0x6));
             *(unsigned char *)(((int)stk + 4)) = t30;
             *(unsigned int *)(((int)stk + 0)) = (unsigned char)t30;
-            t36 = *(signed char *)(((0xC7F476D + (((unsigned char)t30 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 4))), (*(signed char *)(((0xC362380 + (*(int *)(((int)stk + 0)))) + 0x0)))))));
+            t36 = *(signed char *)(((((int)g_key_config) + (((unsigned char)t30 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 4))), (*(signed char *)(((0xC362380 + (*(int *)(((int)stk + 0)))) + 0x0)))))));
             (((struct o14_float *)(a4))->v) = (*(float *)(((0xC180A34 + ((t36 << 2) << 1)) + 0x0)));
             u46 = ((((struct o4_float *)((0xC180A34 + ((t36 << 2) << 1))))->v));
         }
@@ -1662,7 +1664,7 @@ int FUN_0c01e05a(int a4)
         *(unsigned char *)((a4 + 0xC)) = 0x0;
         t2 = *(signed char *)((a4 + 0x6));
         *(unsigned char *)(((int)stk + 0)) = t2;
-        *(unsigned int *)((a4 + 0x2C)) = (*(int *)(((((*(signed char *)(((0xC7F476D + (((unsigned char)t2 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 0))), (*(signed char *)((a4 + 0x5)))))))) << 2) + 0xC1807C8) + 0x0)));
+        *(unsigned int *)((a4 + 0x2C)) = (*(int *)(((((*(signed char *)(((((int)g_key_config) + (((unsigned char)t2 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 0))), (*(signed char *)((a4 + 0x5)))))))) << 2) + 0xC1807C8) + 0x0)));
         t9 = *(signed char *)((a4 + 0x6));
         t12 = *(signed char *)((a4 + 0x5));
         (((struct o1C_float *)(a4))->v) = (*(float *)(((((unsigned char)(((((t9 << 2) << 1) + t9) << 2) << 1) + 0xC180A7C) + (signed char)(((t12 << 1) + t12) << 2)) + 0x0)));
@@ -1676,7 +1678,7 @@ int FUN_0c01e05a(int a4)
         if ((t26 == 1) || (t26 == 2)) {
             t27 = *(signed char *)((a4 + 0x6));
             *(unsigned char *)(((int)stk + 0)) = t27;
-            *(unsigned int *)((a4 + 0x2C)) = (*(int *)(((((*(signed char *)(((0xC7F476D + (((unsigned char)t27 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 0))), (*(signed char *)((a4 + 0x5)))))))) << 2) + 0xC1807C8) + 0x0)));
+            *(unsigned int *)((a4 + 0x2C)) = (*(int *)(((((*(signed char *)(((((int)g_key_config) + (((unsigned char)t27 << 2) << 1)) + (signed char)(FUN_0c01e75e((*(signed char *)(((int)stk + 0))), (*(signed char *)((a4 + 0x5)))))))) << 2) + 0xC1807C8) + 0x0)));
             (((struct o10_float *)(a4))->v) = 1.0f;
         }
     } else {

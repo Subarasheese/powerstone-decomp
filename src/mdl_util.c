@@ -1,5 +1,14 @@
 /* node transform defaults, table getter, model vertex cursor (mdl_vtx_*) (0c06231c-0c062b1c) */
 
+/* named globals (symbols.txt) */
+extern char g_mdl_vtx_count[];
+extern char g_mdl_vtx_dst_cursor[];
+extern char g_mdl_vtx_dst_save[];
+extern char g_mdl_vtx_in_strip[];
+extern char g_mdl_vtx_limit[];
+extern char g_mdl_vtx_src_cursor[];
+extern char g_mdl_vtx_src_save[];
+extern char g_res_pl_textures[];
 struct o18_float { char p[0x18]; float v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o9C_int { char p[0x9C]; int v; };
@@ -9,7 +18,7 @@ void *FUN_0c0ccf38(char *pl, int kind, int index);
 typedef struct { float x, y, z; } VEC3;
 #define B(o, n) (*(signed char *)((o) + (n)))
 #define I(o, n) (*(int *)((o) + (n)))
-#define TABLE(pl, k, n) (*(int **)((char *)0x0C4CFAB0 + (short)(B(pl, 3) * 240) + (signed char)((k) * 24) + (n)))
+#define TABLE(pl, k, n) (*(int **)((char *)g_res_pl_textures + (short)(B(pl, 3) * 240) + (signed char)((k) * 24) + (n)))
 struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
 struct o10_uint { char p[0x10]; unsigned int v; };
@@ -17,13 +26,13 @@ struct o4_uint { char p[0x4]; unsigned int v; };
 struct o8_int { char p[0x8]; int v; };
 struct o8_uint { char p[0x8]; unsigned int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
-#define CURSOR_A    (*(int *)0xC439DC8)
-#define SAVED_A  (*(int *)0xC439DCC)
-#define CURSOR_B   (*(int *)0xC439DD0)
-#define SAVED_B  (*(int *)0xC439DD4)
-#define ACTIVE   (*(int *)0xC439DD8)
-#define COUNT  (*(int *)0xC439DDC)
-#define LIMIT  (*(int *)0xC439DE0)
+#define CURSOR_A    (*(int *)g_mdl_vtx_src_cursor)
+#define SAVED_A  (*(int *)g_mdl_vtx_src_save)
+#define CURSOR_B   (*(int *)g_mdl_vtx_dst_cursor)
+#define SAVED_B  (*(int *)g_mdl_vtx_dst_save)
+#define ACTIVE   (*(int *)g_mdl_vtx_in_strip)
+#define COUNT  (*(int *)g_mdl_vtx_count)
+#define LIMIT  (*(int *)g_mdl_vtx_limit)
 typedef struct { int a, b, c; } vec12;
 typedef struct { int x, y, z; } vec3i;
 
@@ -211,11 +220,11 @@ void FUN_0c0624ea(char *pl, char *c0, char *c1)
 
 int mdl_vtx_iter_begin(int a4, int a5)
 {
-    (((struct o0_uint *)0xC439DC8)->v) = (a4 + 0x18);
-    (((struct o8_uint *)0xC439DC8)->v) = (a5 + 0x18);
-    (((struct o4_uint *)0xC439DC8)->v) = ((((struct o0_int *)0xC439DC8)->v));
-    (((struct oC_uint *)0xC439DC8)->v) = ((((struct o8_int *)0xC439DC8)->v));
-    (((struct o10_uint *)0xC439DC8)->v) = 0x0;
+    (((struct o0_uint *)g_mdl_vtx_src_cursor)->v) = (a4 + 0x18);
+    (((struct o8_uint *)g_mdl_vtx_src_cursor)->v) = (a5 + 0x18);
+    (((struct o4_uint *)g_mdl_vtx_src_cursor)->v) = ((((struct o0_int *)g_mdl_vtx_src_cursor)->v));
+    (((struct oC_uint *)g_mdl_vtx_src_cursor)->v) = ((((struct o8_int *)g_mdl_vtx_src_cursor)->v));
+    (((struct o10_uint *)g_mdl_vtx_src_cursor)->v) = 0x0;
     return 0x0;
 }
 
@@ -267,20 +276,20 @@ int mdl_vtx_iter_next(void)
 
 int mdl_vtx_get_pos(vec12 *dst)
 {
-    *dst = **(vec12 **)0xC439DC8;
+    *dst = **(vec12 **)g_mdl_vtx_src_cursor;
     return 0;
 }
 
 int mdl_vtx_get_uv(int a4, int a5)
 {
-    *(float *)((a4 + 0x0)) = ((((struct o18_float *)((*(int *)0xC439DC8)))->v));
-    *(float *)((a5 + 0x0)) = ((((struct o1C_float *)((*(int *)0xC439DC8)))->v));
+    *(float *)((a4 + 0x0)) = ((((struct o18_float *)((*(int *)g_mdl_vtx_src_cursor)))->v));
+    *(float *)((a5 + 0x0)) = ((((struct o1C_float *)((*(int *)g_mdl_vtx_src_cursor)))->v));
     return 0x0;
 }
 
 int mdl_vtx_set_pos(vec3i *src)
 {
-    vec3i **target_pp = (vec3i **)0xC439DD0;
+    vec3i **target_pp = (vec3i **)g_mdl_vtx_dst_cursor;
     **target_pp = *src;
     *(unsigned int *)*target_pp |= 1;
     return 0;
@@ -290,9 +299,9 @@ int mdl_vtx_set_uv(int a4, int a5)
 {
     register int t4;
 
-    (((struct o18_float *)((*(int *)0xC439DD0)))->v) = (*(float *)((a4 + 0x0)));
-    (((struct o1C_float *)((*(int *)0xC439DD0)))->v) = (*(float *)((a5 + 0x0)));
-    t4 = *(int *)0xC439DD0;
+    (((struct o18_float *)((*(int *)g_mdl_vtx_dst_cursor)))->v) = (*(float *)((a4 + 0x0)));
+    (((struct o1C_float *)((*(int *)g_mdl_vtx_dst_cursor)))->v) = (*(float *)((a5 + 0x0)));
+    t4 = *(int *)g_mdl_vtx_dst_cursor;
     *(unsigned int *)((t4 + 0x1C)) = ((*(int *)((t4 + 0x1C))) | 0x1);
     return 0x0;
 }

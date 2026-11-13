@@ -1,5 +1,8 @@
 /* AI goal/angle helpers and movement/pick opcodes (0c04fed8-0c050edc) */
 
+/* named globals (symbols.txt) */
+extern char g_tab_char_radius[];
+extern char g_tab_pad_dir_bits[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -109,7 +112,7 @@ int ai_calc_dist_to_goal_obj(int a4)
     u0 = math_signed_sqrt(u4);
     t1 = (int)u0;
     if ((*(signed char *)((t0 + 0x2))) == 0) {
-        t1 = ((int)u0 - (*(short *)((0xC32D6FC + ((*(signed char *)((t0 + 0x4))) << 1)))));
+        t1 = ((int)u0 - (*(short *)((((int)g_tab_char_radius) + ((*(signed char *)((t0 + 0x4))) << 1)))));
     }
     return t1;
 }
@@ -135,7 +138,7 @@ int ai_calc_dist_to_goal_point(int a4)
 
 short ai_angle_to_pad_dir(int angle)
 {
-    short *sector_tbl = (short *)0xC32D7E8;
+    short *sector_tbl = (short *)g_tab_pad_dir_bits;
     int sector = (unsigned short)(angle - g_cam_yaw16 + 0xD000) / 0x2000;
     return sector_tbl[sector & 7];
 }

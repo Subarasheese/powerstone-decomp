@@ -1,5 +1,8 @@
 /* resource loader: file load/unpack, texture and model register/release, per-scene sets, per-player model load (0c05fc50-0c061094) */
 
+/* named globals (symbols.txt) */
+extern char g_res_stage_a[];
+extern char g_res_stage_c[];
 int res_load_pl_effect(int, int);
 int res_load_pl_models(int);
 int res_load_pl_motion_data(int, int);
@@ -27,9 +30,9 @@ void res_stage_load(char model_id)
     int *unused_list2;
     int *list3;
     int i, j, k;
-    struct draw_rec *rec_a = (struct draw_rec *)0xC664940;
+    struct draw_rec *rec_a = (struct draw_rec *)g_res_stage_a;
     struct draw_rec *rec_b = (struct draw_rec *)0xC664958;
-    struct draw_rec *rec_c = (struct draw_rec *)0xC664970;
+    struct draw_rec *rec_c = (struct draw_rec *)g_res_stage_c;
     int size = res_load_file_raw_d(((int *)0xC14DDD8)[model_id]);
     memcpy((void *)0xC618940, (void *)0xCC00000, size);
     rec_a->list_ptr = (int)ptr_table;

@@ -1,5 +1,7 @@
 /* stage placement records: spawners and update/mode handlers for record types 1 2 3 4 8 11 12 and debris (0c0ae1b4-0c0ae77c) */
 
+/* named globals (symbols.txt) */
+extern char g_camera_pos[];
 struct o0_float { float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -49,9 +51,9 @@ float obj_update_distance_cull_b(int a4)
     register float u4;
 
     u0 = (((struct o20_float *)(a4))->v);
-    u1 = (((struct o0_float *)0xC7F2AB4)->v);
+    u1 = (((struct o0_float *)g_camera_pos)->v);
     u2 = (((struct o28_float *)(a4))->v);
-    u3 = (((struct o8_float *)0xC7F2AB4)->v);
+    u3 = (((struct o8_float *)g_camera_pos)->v);
     u4 = ((u3 - u2) * (u3 - u2));
     u4 = u4 + ((u1 - u0)) * ((u1 - u0));
     u0 = math_signed_sqrt(u4);

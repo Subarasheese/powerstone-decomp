@@ -1,5 +1,7 @@
 /* camera records (0c0d80d4-0c0d8f10) */
 
+/* named globals (symbols.txt) */
+extern char g_cam_split_flag[];
 int FUN_0c0d811e(char *obj);
 int cam_calc_side_of_targets(char *obj);
 int cam_select_mode0_variant(char *obj);
@@ -171,7 +173,7 @@ int cam_update_view_matrices(float f4)
     register int t1;
     register int t2;
 
-    if ((*(signed char *)0xC7F319E) != 0) {
+    if ((*(signed char *)g_cam_split_flag) != 0) {
         t1 = 0x0;
         for (;;) {
             t2 = cam_set_view_matrix(((short)((short)t1 * (short)0x1FC) + 0xC7F29F8), f4);

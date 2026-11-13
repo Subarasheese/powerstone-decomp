@@ -1,5 +1,7 @@
 /* motion-id sound table of the secondary actors (0c08c864-0c08d644) */
 
+/* named globals (symbols.txt) */
+extern char g_ai_react_slots[];
 int pl_play_side_se_at_frame(int, int, int);
 int FUN_0c0a3824(int);
 int math_vec3_sub(int, int, int);
@@ -189,10 +191,10 @@ int ai_reset_slot(int a4)
     register int t0;
 
     t0 = *(signed char *)((a4 + 0x3));
-    memset(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC439E38), 0x0, 0x24);
-    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC439E38) + 0x6)) = 0x63;
-    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC439E38) + 0x4)) = (*(signed char *)((a4 + 0x3)));
-    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC439E38) + 0x5)) = 0x0;
+    memset(((signed char)((((t0 << 2) << 1) + t0) << 2) + ((int)g_ai_react_slots)), 0x0, 0x24);
+    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + ((int)g_ai_react_slots)) + 0x6)) = 0x63;
+    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + ((int)g_ai_react_slots)) + 0x4)) = (*(signed char *)((a4 + 0x3)));
+    *(unsigned char *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + ((int)g_ai_react_slots)) + 0x5)) = 0x0;
     return 0x0;
 }
 
@@ -666,9 +668,9 @@ int ai_update_slot(int a4, int a5, int a6, int a7)
             (((struct o2DC_uint *)(a4))->v) = 0x0;
             (((struct o2E4_uint *)(a4))->v) = 0x0;
             (((struct o7204_uchar *)(a4))->v) = 0x0;
-            ai_pick_reaction(((signed char)((((t3 << 2) << 1) + t3) << 2) + 0xC439E38), a4);
-            t7 = *(int *)((((*(signed char *)((((signed char)((((t3 << 2) << 1) + t3) << 2) + 0xC439E38) + 0x0))) << 2) + 0xC338534));
-            return ((int (*)(int, int, int, int))(t7))(((signed char)((((t3 << 2) << 1) + t3) << 2) + 0xC439E38), a4, a6, a7);
+            ai_pick_reaction(((signed char)((((t3 << 2) << 1) + t3) << 2) + ((int)g_ai_react_slots)), a4);
+            t7 = *(int *)((((*(signed char *)((((signed char)((((t3 << 2) << 1) + t3) << 2) + ((int)g_ai_react_slots)) + 0x0))) << 2) + 0xC338534));
+            return ((int (*)(int, int, int, int))(t7))(((signed char)((((t3 << 2) << 1) + t3) << 2) + ((int)g_ai_react_slots)), a4, a6, a7);
         }
         return 0x10B;
     }

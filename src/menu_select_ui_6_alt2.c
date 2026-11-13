@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a8600-0c0a8d6c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_csel[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -40,7 +42,7 @@ int menu_ui_task_21(int a4, int a5, int a6, int a7)
         if ((*(signed char *)((a4 + 0x3))) == 0) {
             t0 = 0x1A;
         }
-        return FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), 0xC664A48, (t0 + (*(signed char *)((a4 + 0xF0)))));
+        return FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_csel), (t0 + (*(signed char *)((a4 + 0xF0)))));
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     *(unsigned char *)((a4 + 0x9)) = 0x0;
@@ -58,7 +60,7 @@ int menu_ui_task_21(int a4, int a5, int a6, int a7)
     if ((*(signed char *)((a4 + 0x3))) == 0) {
         t0 = 0x1A;
     }
-    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A48, t0);
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_csel), t0);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
     return 0xF;

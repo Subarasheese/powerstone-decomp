@@ -1,5 +1,7 @@
 /* stage gimmicks (record types 13/15): spawner table 0xC33A09C with their update functions (0c0b5308-0c0b5420) */
 
+/* named globals (symbols.txt) */
+extern char g_cam_split_flag[];
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int);
@@ -48,7 +50,7 @@ int stage_gimmick_37_spawn(int a4)
 
 void stage_gimmick_37_update(void)
 {
-    if ((*(signed char *)0xC7F319E) == 0) {
+    if ((*(signed char *)g_cam_split_flag) == 0) {
         ((int (*)(void))(0xC0B5298))();
     return;
     }

@@ -1,5 +1,10 @@
 /* KEY CFG screen (two player columns, settings and button maps) (0c017a24-0c0195f0) */
 
+/* named globals (symbols.txt) */
+extern char g_key_config[];
+extern char g_keycfg_work[];
+extern char g_res_key_cfg[];
+extern char g_vib_disabled[];
 struct oF2_short { char p[0xF2]; short v; };
 struct o0_short { short v; };
 struct o0_uchar { unsigned char v; };
@@ -74,7 +79,7 @@ int keycfg_obj_in_mask(int a4);
 
 void keycfg_menu_init(void)
 {
-    *(unsigned char *)0xC3622C0 = 0x0;
+    *(unsigned char *)g_keycfg_work = 0x0;
 }
 
 int keycfg_menu_main(int a4, int a5, int a6, int a7)
@@ -212,7 +217,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
     int t701;
     int t819;
 
-    t0 = *(signed char *)0xC3622C0;
+    t0 = *(signed char *)g_keycfg_work;
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 == 2) {
@@ -228,7 +233,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                     break;
                                 }
                                 t2 = t6;
-                                t4 = 0xC3622C0;
+                                t4 = ((int)g_keycfg_work);
                                 t2 = (t2 << 2);
                                 t4 = (t4 + 0x2A);
                                 t2 = (t2 << 2);
@@ -248,7 +253,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                     t2 = (unsigned short)t2;
                                     if ((t2 & 0x2) != 0) {
                                         t3 = t6;
-                                        t4 = 0xC3622C0;
+                                        t4 = ((int)g_keycfg_work);
                                         t3 = (t3 << 2);
                                         t4 = (t4 + 0x2A);
                                         t3 = (t3 << 2);
@@ -268,15 +273,15 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                 t2 = (pad_get_type(t5));
                                 if (t2 == 0) {
                                     t5 = t6;
-                                    t3 = 0xC3622C0;
+                                    t3 = ((int)g_keycfg_work);
                                     t5 = (t5 << 2);
                                     t3 = (t3 + 0x2A);
                                     t5 = (t5 << 2);
                                     t3 = (t3 + t5);
                                     t2 = 0x1;
-                                    t4 = 0xC3622C0;
+                                    t4 = ((int)g_keycfg_work);
                                     *(unsigned char *)((t3 + 0xF)) = t2;
-                                    t3 = 0xC3622C0;
+                                    t3 = ((int)g_keycfg_work);
                                     t4 = (t4 + 0x2A);
                                     t3 = (t3 + 0x2A);
                                     t4 = (t4 + t5);
@@ -292,7 +297,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                 t3 = t26;
                                 t4 = t27;
                                 t5 = t28;
-                                t4 = 0xC3622C0;
+                                t4 = ((int)g_keycfg_work);
                                 t2 = (t2 << 2);
                                 t4 = (t4 + 0x2A);
                                 t2 = (t2 << 2);
@@ -303,7 +308,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                     t2 = (pad_get_type(t5));
                                     if (t2 != 0) {
                                         t3 = t6;
-                                        t4 = 0xC3622C0;
+                                        t4 = ((int)g_keycfg_work);
                                         t3 = (t3 << 2);
                                         t4 = (t4 + 0x2A);
                                         t3 = (t3 << 2);
@@ -313,7 +318,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                         t2 = 0x1;
                                         t4 = 0xC01958C;
                                         t5 = t6;
-                                        (((struct o8_uchar *)0xC3622C0)->v) = t2;
+                                        (((struct o8_uchar *)g_keycfg_work)->v) = t2;
                                         t5 = (t5 + 0x1);
                                         t2 = (((int (*)(int))(keycfg_run_objects_in_mask))(t5));
                                     }
@@ -329,7 +334,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                             }
                             if ((*(signed char *)0xC3622EA) == 0) {
                                 if ((*(signed char *)0xC3622FA) == 0) {
-                                    (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) - 1);
+                                    (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) - 1);
                                     t43 = ((int (*)(int, int, int, int))(keycfg_run_objects_in_mask))(0x4, a5, a6, a7);
                                     t44 = ((int (*)(int))(keycfg_run_objects_in_mask))(0x1);
                                     return ((int (*)(int))(keycfg_run_objects_in_mask))(0x2);
@@ -341,7 +346,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         return t1;
                     }
                     t45 = *(signed char *)0xC3622C8;
-                    (((struct o8_uchar *)0xC3622C0)->v) = (t45 + 0x1);
+                    (((struct o8_uchar *)g_keycfg_work)->v) = (t45 + 0x1);
                     t46 = (t45 + 0x1);
                     t47 = 0xC3622C8;
                     t48 = 0x0;
@@ -419,7 +424,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                             break;
                         }
                         t70 = t74;
-                        t72 = 0xC3622C0;
+                        t72 = ((int)g_keycfg_work);
                         t70 = (t70 << 2);
                         t72 = (t72 + 0x2A);
                         t70 = (t70 << 2);
@@ -439,7 +444,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                             t70 = (unsigned short)t70;
                             if ((t70 & 0x2) != 0) {
                                 t71 = t74;
-                                t72 = 0xC3622C0;
+                                t72 = ((int)g_keycfg_work);
                                 t71 = (t71 << 2);
                                 t72 = (t72 + 0x2A);
                                 t71 = (t71 << 2);
@@ -458,15 +463,15 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         t70 = (pad_get_type(t73));
                         if (t70 == 0) {
                             t73 = t74;
-                            t71 = 0xC3622C0;
+                            t71 = ((int)g_keycfg_work);
                             t73 = (t73 << 2);
                             t71 = (t71 + 0x2A);
                             t73 = (t73 << 2);
                             t71 = (t71 + t73);
                             t70 = 0x1;
-                            t72 = 0xC3622C0;
+                            t72 = ((int)g_keycfg_work);
                             *(unsigned char *)((t71 + 0xF)) = t70;
-                            t71 = 0xC3622C0;
+                            t71 = ((int)g_keycfg_work);
                             t72 = (t72 + 0x2A);
                             t71 = (t71 + 0x2A);
                             t72 = (t72 + t73);
@@ -482,7 +487,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         t71 = t96;
                         t72 = t97;
                         t73 = t98;
-                        t72 = 0xC3622C0;
+                        t72 = ((int)g_keycfg_work);
                         t70 = (t70 << 2);
                         t72 = (t72 + 0x2A);
                         t70 = (t70 << 2);
@@ -493,7 +498,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                             t70 = (pad_get_type(t73));
                             if (t70 != 0) {
                                 t71 = t74;
-                                t72 = 0xC3622C0;
+                                t72 = ((int)g_keycfg_work);
                                 t71 = (t71 << 2);
                                 t72 = (t72 + 0x2A);
                                 t71 = (t71 << 2);
@@ -502,7 +507,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                                 *(unsigned char *)((t71 + 0xF)) = t70;
                                 t70 = 0x1;
                                 t73 = t74;
-                                (((struct o8_uchar *)0xC3622C0)->v) = t70;
+                                (((struct o8_uchar *)g_keycfg_work)->v) = t70;
                                 t73 = (t73 + 0x1);
                                 t70 = (((int (*)(int))(keycfg_run_objects_in_mask))(t73));
                             }
@@ -518,7 +523,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                     }
                     if ((*(signed char *)0xC3622EA) == 0) {
                         if ((*(signed char *)0xC3622FA) == 0) {
-                            (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) - 1);
+                            (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) - 1);
                             t113 = ((int (*)(int))(keycfg_run_objects_in_mask))(0x4);
                             t114 = ((int (*)(int))(keycfg_run_objects_in_mask))(0x1);
                             return ((int (*)(int))(keycfg_run_objects_in_mask))(0x2);
@@ -527,16 +532,16 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                     }
                     return t70;
                 }
-                (((struct o8_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C8) + 0x1);
-                (((struct o2A_uchar *)0xC3622C0)->v) = 0x0;
-                (((struct o3A_uchar *)0xC3622C0)->v) = 0x0;
-                (((struct o39_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o8_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C8) + 0x1);
+                (((struct o2A_uchar *)g_keycfg_work)->v) = 0x0;
+                (((struct o3A_uchar *)g_keycfg_work)->v) = 0x0;
+                (((struct o39_uchar *)g_keycfg_work)->v) = 0x0;
                 *(unsigned char *)0xC362309 = 0x0;
-                (((struct o2C_uchar *)0xC3622C0)->v) = 0x7;
-                (((struct o3C_uchar *)0xC3622C0)->v) = 0x7;
+                (((struct o2C_uchar *)g_keycfg_work)->v) = 0x7;
+                (((struct o3C_uchar *)g_keycfg_work)->v) = 0x7;
                 FUN_0c0187a8(0x4);
                 t117 = *(signed char *)0xC3622C8;
-                (((struct o8_uchar *)0xC3622C0)->v) = (t117 + 0x1);
+                (((struct o8_uchar *)g_keycfg_work)->v) = (t117 + 0x1);
                 t118 = (t117 + 0x1);
                 t119 = 0x0;
                 for (;;) {
@@ -589,7 +594,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         break;
                     }
                     t137 = t142;
-                    t139 = 0xC3622C0;
+                    t139 = ((int)g_keycfg_work);
                     t137 = (t137 << 2);
                     t139 = (t139 + 0x2A);
                     t137 = (t137 << 2);
@@ -609,7 +614,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         t137 = (unsigned short)t137;
                         if ((t137 & 0x2) != 0) {
                             t138 = t142;
-                            t139 = 0xC3622C0;
+                            t139 = ((int)g_keycfg_work);
                             t138 = (t138 << 2);
                             t139 = (t139 + 0x2A);
                             t138 = (t138 << 2);
@@ -628,15 +633,15 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                     t137 = (pad_get_type(t141));
                     if (t137 == 0) {
                         t141 = t142;
-                        t138 = 0xC3622C0;
+                        t138 = ((int)g_keycfg_work);
                         t141 = (t141 << 2);
                         t138 = (t138 + 0x2A);
                         t141 = (t141 << 2);
                         t138 = (t138 + t141);
                         t137 = 0x1;
-                        t139 = 0xC3622C0;
+                        t139 = ((int)g_keycfg_work);
                         *(unsigned char *)((t138 + 0xF)) = t137;
-                        t138 = 0xC3622C0;
+                        t138 = ((int)g_keycfg_work);
                         t139 = (t139 + 0x2A);
                         t138 = (t138 + 0x2A);
                         t139 = (t139 + t141);
@@ -652,7 +657,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                     t138 = t164;
                     t139 = t165;
                     t141 = t166;
-                    t139 = 0xC3622C0;
+                    t139 = ((int)g_keycfg_work);
                     t137 = (t137 << 2);
                     t139 = (t139 + 0x2A);
                     t137 = (t137 << 2);
@@ -663,7 +668,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                         t137 = (pad_get_type(t141));
                         if (t137 != 0) {
                             t138 = t142;
-                            t139 = 0xC3622C0;
+                            t139 = ((int)g_keycfg_work);
                             t138 = (t138 << 2);
                             t139 = (t139 + 0x2A);
                             t138 = (t138 << 2);
@@ -672,7 +677,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                             *(unsigned char *)((t138 + 0xF)) = t137;
                             t137 = 0x1;
                             t141 = t142;
-                            (((struct o8_uchar *)0xC3622C0)->v) = t137;
+                            (((struct o8_uchar *)g_keycfg_work)->v) = t137;
                             t141 = (t141 + 0x1);
                             t137 = (((int (*)(int))(keycfg_run_objects_in_mask))(t141));
                         }
@@ -688,7 +693,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
                 }
                 if ((*(signed char *)0xC3622EA) == 0) {
                     if ((*(signed char *)0xC3622FA) == 0) {
-                        (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) - 1);
+                        (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) - 1);
                         t181 = ((int (*)(int))(keycfg_run_objects_in_mask))(0x4);
                         t182 = ((int (*)(int))(keycfg_run_objects_in_mask))(0x1);
                         return ((int (*)(int))(keycfg_run_objects_in_mask))(0x2);
@@ -702,121 +707,121 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x10) == 0) && (t185 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t185 & 0x10) == 0)) {
         } else {
             snd_play_side_se(0x0, 0x4B);
-            (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) - 1);
+            (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) - 1);
             t188 = vib_is_any_active();
             if ((t188 == 0) && (t189 = *(signed char *)0xC3622C1, t189 == 5)) {
-                (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) - 1);
+                (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) - 1);
             }
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x20) == 0) && (t196 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t196 & 0x20) == 0)) {
         } else {
             snd_play_side_se(0x0, 0x4B);
-            (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+            (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
             t199 = vib_is_any_active();
             if ((t199 == 0) && (t200 = *(signed char *)0xC3622C1, t200 == 5)) {
-                (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+                (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
             }
         }
         if ((int)(*(signed char *)0xC3622C1) < 0) {
-            (((struct o1_uchar *)0xC3622C0)->v) = 0x7;
+            (((struct o1_uchar *)g_keycfg_work)->v) = 0x7;
         }
         if ((int)(*(signed char *)0xC3622C1) > (int)0x7) {
-            (((struct o1_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o1_uchar *)g_keycfg_work)->v) = 0x0;
         }
         t211 = *(signed char *)0xC3622C1;
         switch (t211) {
         case 0:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t372 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t372 & 64) == 0)) {
             } else {
-                (((struct o2_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C2) - 1);
+                (((struct o2_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C2) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t380 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t380 & 128) == 0)) {
             } else {
-                (((struct o2_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C2) + 0x1);
+                (((struct o2_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C2) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C2) < 0) {
-                (((struct o2_uchar *)0xC3622C0)->v) = 0x7;
+                (((struct o2_uchar *)g_keycfg_work)->v) = 0x7;
             }
             if ((int)(*(signed char *)0xC3622C2) <= (int)0x7) {
             } else {
-                (((struct o2_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o2_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 1:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t346 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t346 & 64) == 0)) {
             } else {
-                (((struct o3_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C3) - 1);
+                (((struct o3_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C3) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t354 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t354 & 128) == 0)) {
             } else {
-                (((struct o3_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C3) + 0x1);
+                (((struct o3_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C3) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C3) < 0) {
-                (((struct o3_uchar *)0xC3622C0)->v) = 0x4;
+                (((struct o3_uchar *)g_keycfg_work)->v) = 0x4;
             }
             if ((int)(*(signed char *)0xC3622C3) <= (int)0x4) {
             } else {
-                (((struct o3_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o3_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 2:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t219 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t219 & 64) == 0)) {
             } else {
-                (((struct o4_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C4) - 1);
+                (((struct o4_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C4) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t227 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t227 & 128) == 0)) {
             } else {
-                (((struct o4_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C4) + 0x1);
+                (((struct o4_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C4) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C4) < 0) {
-                (((struct o4_uchar *)0xC3622C0)->v) = 0x3;
+                (((struct o4_uchar *)g_keycfg_work)->v) = 0x3;
             }
             if ((int)(*(signed char *)0xC3622C4) <= (int)0x3) {
             } else {
-                (((struct o4_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o4_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 3:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t240 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t240 & 64) == 0)) {
             } else {
-                (((struct o5_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C5) - 1);
+                (((struct o5_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C5) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t248 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t248 & 128) == 0)) {
             } else {
-                (((struct o5_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C5) + 0x1);
+                (((struct o5_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C5) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C5) < 0) {
-                (((struct o5_uchar *)0xC3622C0)->v) = 0x3;
+                (((struct o5_uchar *)g_keycfg_work)->v) = 0x3;
             }
             if ((int)(*(signed char *)0xC3622C5) <= (int)0x3) {
             } else {
-                (((struct o5_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o5_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 4:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t262 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t262 & 64) == 0)) {
             } else {
-                (((struct o6_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C6) - 1);
+                (((struct o6_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C6) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t270 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t270 & 128) == 0)) {
             } else {
-                (((struct o6_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C6) + 0x1);
+                (((struct o6_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C6) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C6) < 0) {
-                (((struct o6_uchar *)0xC3622C0)->v) = 0x1;
+                (((struct o6_uchar *)g_keycfg_work)->v) = 0x1;
             }
             if ((int)(*(signed char *)0xC3622C6) > (int)0x1) {
-                (((struct o6_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o6_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 5:
@@ -824,30 +829,30 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
             if (t283 != 0) {
                 if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t287 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t287 & 64) == 0)) {
                 } else {
-                    (((struct o7_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C7) - 1);
+                    (((struct o7_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C7) - 1);
                     snd_play_side_se(0x0, 0x4C);
                 }
                 if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t292 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t292 & 128) == 0)) {
                 } else {
-                    (((struct o7_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C7) + 0x1);
+                    (((struct o7_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C7) + 0x1);
                     snd_play_side_se(0x0, 0x4C);
                 }
                 if ((int)(*(signed char *)0xC3622C7) < 0) {
-                    (((struct o7_uchar *)0xC3622C0)->v) = 0x1;
+                    (((struct o7_uchar *)g_keycfg_work)->v) = 0x1;
                 }
                 if ((int)(*(signed char *)0xC3622C7) > (int)0x1) {
-                    (((struct o7_uchar *)0xC3622C0)->v) = 0x0;
+                    (((struct o7_uchar *)g_keycfg_work)->v) = 0x0;
                 }
             } else {
-                (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+                (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
             }
             break;
         case 6:
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 4) == 0) && (t306 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t306 & 4) == 0)) {
             } else {
                 snd_play_side_se(0x0, 0x4D);
-                (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) + 0x1);
-                (((struct o8_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) + 0x1);
+                (((struct o8_uchar *)g_keycfg_work)->v) = 0x0;
             }
             break;
         case 7:
@@ -883,11 +888,11 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
         t421 = *(signed char *)0xC3622C1;
         *(unsigned char *)(((int)stk + 0)) = t421;
         keycfg_queue_table_sprite_scaled(((*(signed char *)(((int)stk + 0))) + 0x35), (*(float *)((0xC11B6C4 + (t421 << 2)))), u420);
-        (((struct oD_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CD) + 0x1);
-        (((struct oD_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CD) & 0x1);
+        (((struct oD_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CD) + 0x1);
+        (((struct oD_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CD) & 0x1);
         if ((*(signed char *)0xC3622CD) == 0) {
-            (((struct oC_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CC) + 0x1);
-            (((struct oC_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CC) & 0xF);
+            (((struct oC_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CC) + 0x1);
+            (((struct oC_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CC) & 0xF);
         }
         t433 = 0x25;
         if ((int)(*(signed char *)0xC3622C2) >= 0) {
@@ -960,135 +965,135 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x8) == 0) && (t498 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t498 & 0x8) == 0)) {
         } else {
             t500 = snd_play_side_se(0x0, 0x4D);
-            (((struct o0_uchar *)0xC3622C0)->v) = 0xFFFFFFFF;
+            (((struct o0_uchar *)g_keycfg_work)->v) = 0xFFFFFFFF;
         }
         return t500;
     }
-    (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) + 0x1);
-    (((struct o1_uchar *)0xC3622C0)->v) = 0x0;
-    (((struct oC_uchar *)0xC3622C0)->v) = 0x0;
-    (((struct oD_uchar *)0xC3622C0)->v) = 0x0;
-    (((struct oE_uchar *)0xC3622C0)->v) = 0x0;
-    (((struct oF_uchar *)0xC3622C0)->v) = 0x0;
+    (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) + 0x1);
+    (((struct o1_uchar *)g_keycfg_work)->v) = 0x0;
+    (((struct oC_uchar *)g_keycfg_work)->v) = 0x0;
+    (((struct oD_uchar *)g_keycfg_work)->v) = 0x0;
+    (((struct oE_uchar *)g_keycfg_work)->v) = 0x0;
+    (((struct oF_uchar *)g_keycfg_work)->v) = 0x0;
     keycfg_load_settings_to_screen();
     if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x10) == 0) && (t506 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t506 & 0x10) == 0)) {
     } else {
         snd_play_side_se(0x0, 0x4B);
-        (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) - 1);
+        (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) - 1);
         t509 = vib_is_any_active();
         if ((t509 == 0) && (t510 = *(signed char *)0xC3622C1, t510 == 5)) {
-            (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) - 1);
+            (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) - 1);
         }
     }
     if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x20) == 0) && (t517 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t517 & 0x20) == 0)) {
     } else {
         snd_play_side_se(0x0, 0x4B);
-        (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+        (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
         t520 = vib_is_any_active();
         if ((t520 == 0) && (t521 = *(signed char *)0xC3622C1, t521 == 5)) {
-            (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+            (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
         }
     }
     if ((int)(*(signed char *)0xC3622C1) < 0) {
-        (((struct o1_uchar *)0xC3622C0)->v) = 0x7;
+        (((struct o1_uchar *)g_keycfg_work)->v) = 0x7;
     }
     if ((int)(*(signed char *)0xC3622C1) > (int)0x7) {
-        (((struct o1_uchar *)0xC3622C0)->v) = 0x0;
+        (((struct o1_uchar *)g_keycfg_work)->v) = 0x0;
     }
     t532 = *(signed char *)0xC3622C1;
     switch (t532) {
     case 0:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t693 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t693 & 64) == 0)) {
         } else {
-            (((struct o2_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C2) - 1);
+            (((struct o2_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C2) - 1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t701 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t701 & 128) == 0)) {
         } else {
-            (((struct o2_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C2) + 0x1);
+            (((struct o2_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C2) + 0x1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((int)(*(signed char *)0xC3622C2) < 0) {
-            (((struct o2_uchar *)0xC3622C0)->v) = 0x7;
+            (((struct o2_uchar *)g_keycfg_work)->v) = 0x7;
         }
         if ((int)(*(signed char *)0xC3622C2) <= (int)0x7) {
         } else {
-            (((struct o2_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o2_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 1:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t667 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t667 & 64) == 0)) {
         } else {
-            (((struct o3_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C3) - 1);
+            (((struct o3_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C3) - 1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t675 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t675 & 128) == 0)) {
         } else {
-            (((struct o3_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C3) + 0x1);
+            (((struct o3_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C3) + 0x1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((int)(*(signed char *)0xC3622C3) < 0) {
-            (((struct o3_uchar *)0xC3622C0)->v) = 0x4;
+            (((struct o3_uchar *)g_keycfg_work)->v) = 0x4;
         }
         if ((int)(*(signed char *)0xC3622C3) <= (int)0x4) {
         } else {
-            (((struct o3_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o3_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 2:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t540 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t540 & 64) == 0)) {
         } else {
-            (((struct o4_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C4) - 1);
+            (((struct o4_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C4) - 1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t548 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t548 & 128) == 0)) {
         } else {
-            (((struct o4_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C4) + 0x1);
+            (((struct o4_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C4) + 0x1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((int)(*(signed char *)0xC3622C4) < 0) {
-            (((struct o4_uchar *)0xC3622C0)->v) = 0x3;
+            (((struct o4_uchar *)g_keycfg_work)->v) = 0x3;
         }
         if ((int)(*(signed char *)0xC3622C4) <= (int)0x3) {
         } else {
-            (((struct o4_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o4_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 3:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t561 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t561 & 64) == 0)) {
         } else {
-            (((struct o5_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C5) - 1);
+            (((struct o5_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C5) - 1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t569 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t569 & 128) == 0)) {
         } else {
-            (((struct o5_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C5) + 0x1);
+            (((struct o5_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C5) + 0x1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((int)(*(signed char *)0xC3622C5) < 0) {
-            (((struct o5_uchar *)0xC3622C0)->v) = 0x3;
+            (((struct o5_uchar *)g_keycfg_work)->v) = 0x3;
         }
         if ((int)(*(signed char *)0xC3622C5) <= (int)0x3) {
         } else {
-            (((struct o5_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o5_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 4:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t583 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t583 & 64) == 0)) {
         } else {
-            (((struct o6_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C6) - 1);
+            (((struct o6_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C6) - 1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t591 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t591 & 128) == 0)) {
         } else {
-            (((struct o6_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C6) + 0x1);
+            (((struct o6_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C6) + 0x1);
             snd_play_side_se(0x0, 0x4C);
         }
         if ((int)(*(signed char *)0xC3622C6) < 0) {
-            (((struct o6_uchar *)0xC3622C0)->v) = 0x1;
+            (((struct o6_uchar *)g_keycfg_work)->v) = 0x1;
         }
         if ((int)(*(signed char *)0xC3622C6) > (int)0x1) {
-            (((struct o6_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o6_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 5:
@@ -1096,30 +1101,30 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
         if (t604 != 0) {
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 64) == 0) && (t608 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t608 & 64) == 0)) {
             } else {
-                (((struct o7_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C7) - 1);
+                (((struct o7_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C7) - 1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 128) == 0) && (t613 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t613 & 128) == 0)) {
             } else {
-                (((struct o7_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C7) + 0x1);
+                (((struct o7_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C7) + 0x1);
                 snd_play_side_se(0x0, 0x4C);
             }
             if ((int)(*(signed char *)0xC3622C7) < 0) {
-                (((struct o7_uchar *)0xC3622C0)->v) = 0x1;
+                (((struct o7_uchar *)g_keycfg_work)->v) = 0x1;
             }
             if ((int)(*(signed char *)0xC3622C7) > (int)0x1) {
-                (((struct o7_uchar *)0xC3622C0)->v) = 0x0;
+                (((struct o7_uchar *)g_keycfg_work)->v) = 0x0;
             }
         } else {
-            (((struct o1_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C1) + 0x1);
+            (((struct o1_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622C1) + 0x1);
         }
         break;
     case 6:
         if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 4) == 0) && (t627 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t627 & 4) == 0)) {
         } else {
             snd_play_side_se(0x0, 0x4D);
-            (((struct o0_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622C0) + 0x1);
-            (((struct o8_uchar *)0xC3622C0)->v) = 0x0;
+            (((struct o0_uchar *)g_keycfg_work)->v) = ((*(signed char *)g_keycfg_work) + 0x1);
+            (((struct o8_uchar *)g_keycfg_work)->v) = 0x0;
         }
         break;
     case 7:
@@ -1155,11 +1160,11 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
     t742 = *(signed char *)0xC3622C1;
     *(unsigned char *)(((int)stk + 0)) = t742;
     keycfg_queue_table_sprite_scaled(((*(signed char *)(((int)stk + 0))) + 0x35), (*(float *)((0xC11B6C4 + (t742 << 2)))), u741);
-    (((struct oD_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CD) + 0x1);
-    (((struct oD_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CD) & 0x1);
+    (((struct oD_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CD) + 0x1);
+    (((struct oD_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CD) & 0x1);
     if ((*(signed char *)0xC3622CD) == 0) {
-        (((struct oC_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CC) + 0x1);
-        (((struct oC_uchar *)0xC3622C0)->v) = ((*(signed char *)0xC3622CC) & 0xF);
+        (((struct oC_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CC) + 0x1);
+        (((struct oC_uchar *)g_keycfg_work)->v) = ((*(signed char *)0xC3622CC) & 0xF);
     }
     t754 = 0x25;
     if ((int)(*(signed char *)0xC3622C2) >= 0) {
@@ -1232,7 +1237,7 @@ int keycfg_menu_main(int a4, int a5, int a6, int a7)
     if ((((unsigned short)((((struct o0_short *)0xC361BFC)->v)) & 0x8) == 0) && (t819 = (((struct o14_short *)0xC361BFC)->v), ((unsigned short)t819 & 0x8) == 0)) {
     } else {
         t821 = snd_play_side_se(0x0, 0x4D);
-        (((struct o0_uchar *)0xC3622C0)->v) = 0xFFFFFFFF;
+        (((struct o0_uchar *)g_keycfg_work)->v) = 0xFFFFFFFF;
     }
     return t821;
 }
@@ -1350,7 +1355,7 @@ int keycfg_reset_system_settings(void)
     (((struct o2_uchar *)0xC3622C2)->v) = (*(signed char *)0xC7F2F14);
     (((struct o3_uchar *)0xC3622C2)->v) = (*(signed char *)0xC7F2F12);
     (((struct o4_uchar *)0xC3622C2)->v) = (*(signed char *)0xC7F2F0E);
-    t6 = *(signed char *)0xC7F2F19;
+    t6 = *(signed char *)g_vib_disabled;
     (((struct o5_uchar *)0xC3622C2)->v) = t6;
     return t6;
 }
@@ -1364,7 +1369,7 @@ int keycfg_reset_player_keys(int a4)
     opt_reset_key_config((signed char)a4);
     t2 = 0x0;
     for (;;) {
-        t3 = *(signed char *)((t2 + (0xC7F476D + (((signed char)a4 << 2) << 1))));
+        t3 = *(signed char *)((t2 + (((int)g_key_config) + (((signed char)a4 << 2) << 1))));
         t4 = (((0xC3622EA + (((signed char)a4 << 2) << 2)) + 0x4) + t2);
         t2 = (t2 + 0x1);
         *(unsigned char *)((t4 + 0x0)) = t3;
@@ -1372,7 +1377,7 @@ int keycfg_reset_player_keys(int a4)
             break;
         }
     }
-    return (0xC7F476D + (((signed char)a4 << 2) << 1));
+    return (((int)g_key_config) + (((signed char)a4 << 2) << 1));
 }
 
 int keycfg_settings_changed(int a4, int a5, int a6, int a7)
@@ -1459,7 +1464,7 @@ int FUN_0c0187a8(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AF0, 0x1A);
+        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1A);
     }
     return t0;
 }
@@ -1511,14 +1516,14 @@ int FUN_0c018b96(int a4, int a5)
                 break;
             }
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AF0, 0x1);
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664AF0, 0x2);
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), 0xC664AF0, 0x3);
-        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), 0xC664AF0, 0x4);
-        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), 0xC664AF0, 0x5);
-        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), 0xC664AF0, 0x6);
-        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), 0xC664AF0, 0x0);
-        t31 = (FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), 0xC664AF0, 0x0));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1);
+        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x2);
+        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x3);
+        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x4);
+        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x5);
+        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x6);
+        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0);
+        t31 = (FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0));
     }
     return t31;
 }
@@ -1542,7 +1547,7 @@ int FUN_0c018cca(int a4)
     if ((*(signed char *)(((0xC3622EA + (((signed char)t0 << 2) << 2)) + 0x2))) != (*(signed char *)(((0xC3622EA + (((signed char)t0 << 2) << 2)) + 0x3)))) {
         t3 = *(signed char *)(((0xC3622EA + (((signed char)t0 << 2) << 2)) + 0x3));
         *(unsigned char *)(((int)stk + 0)) = t3;
-        FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + a4)) + 0x0))), 0xC664AF0, (*(signed char *)((((signed char)t3 << 1) + 0xC11B774))));
+        FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + a4)) + 0x0))), ((int)g_res_key_cfg), (*(signed char *)((((signed char)t3 << 1) + 0xC11B774))));
         (((struct o40_float *)((*(int *)(((0x2E0 + a4) + ((*(signed char *)(((0xC3622EA + (((signed char)t0 << 2) << 2)) + 0x3))) << 2))))))->v) = 1.0f;
         *(unsigned char *)((a4 + 0x8)) = 0x0;
     }
@@ -1576,7 +1581,7 @@ int FUN_0c018cca(int a4)
         *(unsigned char *)((a4 + 0xF)) = ((-(*(signed char *)((a4 + 0xF)))) + 0x1);
         t20 = *(signed char *)(((0xC3622EA + (((signed char)t0 << 2) << 2)) + 0x2));
         *(unsigned char *)(((int)stk + 0)) = t20;
-        FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + a4)) + 0x0))), 0xC664AF0, (*(signed char *)(((((signed char)t20 << 1) + (*(signed char *)((a4 + 0xF)))) + 0xC11B774))));
+        FUN_0c06231c((*(int *)(((((*(signed char *)(((int)stk + 0))) << 2) + (0x2E0 + a4)) + 0x0))), ((int)g_res_key_cfg), (*(signed char *)(((((signed char)t20 << 1) + (*(signed char *)((a4 + 0xF)))) + 0xC11B774))));
         *(unsigned char *)((a4 + 0x8)) = 0x0;
         break;
     }
@@ -1660,14 +1665,14 @@ int FUN_0c018ed0(int a4, int a5)
                 break;
             }
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AF0, 0xE);
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664AF0, 0xF);
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), 0xC664AF0, 0x10);
-        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), 0xC664AF0, 0x11);
-        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), 0xC664AF0, 0x12);
-        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), 0xC664AF0, 0x13);
-        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), 0xC664AF0, 0xD);
-        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), 0xC664AF0, 0xD);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0xE);
+        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0xF);
+        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x10);
+        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x11);
+        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x12);
+        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x13);
+        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
+        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
         *(unsigned char *)((((((struct o2FC_int *)(t0))->v)) + 0x0)) = 0x0;
         t31 = 0x2FC;
     }
@@ -1679,21 +1684,21 @@ int FUN_0c01901c(int a4)
     register int t0;
 
     if ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0xD))) == 0) {
-        FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x4))) + 0x1E));
-        FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x5))) + 0x1E));
-        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x6))) + 0x1E));
-        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x7))) + 0x1E));
-        FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x8))) + 0x1E));
+        FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x4))) + 0x1E));
+        FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x5))) + 0x1E));
+        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x6))) + 0x1E));
+        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x7))) + 0x1E));
+        FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x8))) + 0x1E));
         t0 = (*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x9)));
     } else {
-        FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x4))) + 0x1E));
-        FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x5))) + 0x1E));
-        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0xA))) + 0x1E));
-        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x6))) + 0x1E));
-        FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), 0xC664AF0, ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x7))) + 0x1E));
+        FUN_0c06231c(((((struct o2E0_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x4))) + 0x1E));
+        FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x5))) + 0x1E));
+        FUN_0c06231c(((((struct o2E8_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0xA))) + 0x1E));
+        FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x6))) + 0x1E));
+        FUN_0c06231c(((((struct o2F0_int *)(a4))->v)), ((int)g_res_key_cfg), ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x7))) + 0x1E));
         t0 = (*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0xB)));
     }
-    FUN_0c06231c(((((struct o2F4_int *)(a4))->v)), 0xC664AF0, (t0 + 0x1E));
+    FUN_0c06231c(((((struct o2F4_int *)(a4))->v)), ((int)g_res_key_cfg), (t0 + 0x1E));
     if ((*(signed char *)((((((*(signed char *)((a4 + 0x3))) << 2) << 2) + 0xC3622EA) + 0x0))) == 0) {
         (((struct o5C_float *)(a4))->v) = 0.5f;
     }
@@ -1744,7 +1749,7 @@ int FUN_0c019204(int a4, int a5)
         t5 = 0xC11B784;
         t6 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC664AF0, 0x1E);
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), ((int)g_res_key_cfg), 0x1E);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x2)) = 0xF;
@@ -1818,7 +1823,7 @@ int FUN_0c0193b2(int a4, int a5)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         (((struct oF2_ushort *)(t0))->v) = (*(short *)(((int)stk + 4)));
         (((struct o5C_float *)(t0))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AF0, 0x1D);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1D);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
@@ -1881,7 +1886,7 @@ int FUN_0c0194dc(int a4, int a5)
             u5 = ((((struct o4_float *)0xC0195D4)->v));
         }
         (((struct o20_float *)(t0))->v) = u5;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AF0, ((*(signed char *)(((((signed char)a4 << 2) << 2) + 0xC3622F7))) + 0x1B));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), ((*(signed char *)(((((signed char)a4 << 2) << 2) + 0xC3622F7))) + 0x1B));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;

@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c057128-0c057850) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 typedef struct { int x, y, z; } Vec12;
 extern char *obj_create(int, int, int, int);
 struct o24_float { char p[0x24]; float v; };
@@ -216,7 +218,7 @@ int fx_tick_0574d2(int a4, int a5, int a6, int a7)
         t2 = 0x18;
         t4 = 0xC06233A;
         t5 = (t5 << 2);
-        t2 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t3) + t2))) + t0)));
+        t2 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), ((int)g_res_font), ((*(signed char *)(((t6 + t3) + t2))) + t0)));
         t1 = 0x2E0;
         t1 = (t1 + a4);
         t1 = (t1 + t5);

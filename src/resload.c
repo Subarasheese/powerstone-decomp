@@ -1,5 +1,33 @@
 /* resource loader: file load/unpack, texture and model register/release, per-scene sets, per-player model load (0c05fc50-0c061094) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_art[];
+extern char g_res_art_model[];
+extern char g_res_capcom_logo[];
+extern char g_res_capcom_model[];
+extern char g_res_cockpit_faces[];
+extern char g_res_csel_csel[];
+extern char g_res_csel_ksel[];
+extern char g_res_csel_open[];
+extern char g_res_csel_ssel[];
+extern char g_res_demo_comn[];
+extern char g_res_ending[];
+extern char g_res_eyecatch[];
+extern char g_res_font[];
+extern char g_res_font_model[];
+extern char g_res_item[];
+extern char g_res_key_cfg[];
+extern char g_res_kyoutsuu[];
+extern char g_res_omake[];
+extern char g_res_omake_model[];
+extern char g_res_pl_textures[];
+extern char g_res_pstone_logo[];
+extern char g_res_stage_a[];
+extern char g_res_stage_c[];
+extern char g_res_system_font[];
+extern char g_res_syukyaku[];
+extern char g_res_test_tex[];
+extern char g_res_vms_check[];
 int sys_load_file(int, int);
 int FUN_0c0100b0(int, int);
 int FUN_0c0612f4(int, int, int);
@@ -181,7 +209,7 @@ int res_load_pl_effect(int a4, int a5, int a6, int a7)
 
 int res_cockpit_face_release(int a4)
 {
-    return res_model_release(((unsigned char)(((a4 << 1) + a4) << 2) + 0xC17FDC8));
+    return res_model_release(((unsigned char)(((a4 << 1) + a4) << 2) + ((int)g_res_cockpit_faces)));
 }
 
 int res_cockpit_faces_release_all(void)
@@ -208,7 +236,7 @@ int res_cockpit_face_load(int a4)
     *(unsigned char *)(((int)stk + 0)) = a4;
     res_load_file_unpack((*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC14D9E8))));
     t3 = *(signed char *)(((int)stk + 0));
-    return res_model_register(((unsigned char)(((t3 << 1) + t3) << 2) + 0xC17FDC8));
+    return res_model_register(((unsigned char)(((t3 << 1) + t3) << 2) + ((int)g_res_cockpit_faces)));
 }
 
 int res_pl_textures_release(int a4)
@@ -221,7 +249,7 @@ int res_pl_textures_release(int a4)
     for (;;) {
         t3 = 0x0;
         for (;;) {
-            t5 = res_textures_release((((unsigned char)((((t3 << 1) + t3) << 2) << 2) + ((short)((short)(signed char)a4 * (short)0xF0) + 0xC4CFAB0)) + (signed char)((((t0 << 1) + t0) << 2) << 1)));
+            t5 = res_textures_release((((unsigned char)((((t3 << 1) + t3) << 2) << 2) + ((short)((short)(signed char)a4 * (short)0xF0) + ((int)g_res_pl_textures))) + (signed char)((((t0 << 1) + t0) << 2) << 1)));
             t3 = (t3 + 0x1);
             if ((int)t3 >= (int)0x5) {
                 break;
@@ -264,10 +292,10 @@ int res_load_pl_models(int a4)
     t1 = *(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x4));
     t2 = *(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71EC));
     t4 = *(signed char *)(((int)stk + 8));
-    *(unsigned int *)(((int)stk + 0)) = (0xC4CFAB0 + (short)((short)(signed char)t4 * (short)0xF0));
+    *(unsigned int *)(((int)stk + 0)) = (((int)g_res_pl_textures) + (short)((short)(signed char)t4 * (short)0xF0));
     *(unsigned int *)(((int)stk + 68)) = (0xC14DA54 + ((t1 << 2) << 1));
     *(unsigned int *)(((int)stk + 20)) = (0xC4D02D0 + ((signed char)t4 * 0x98000));
-    *(unsigned int *)(((int)stk + 64)) = (0xC4CFAB0 + (short)((short)(signed char)t4 * (short)0xF0));
+    *(unsigned int *)(((int)stk + 64)) = (((int)g_res_pl_textures) + (short)((short)(signed char)t4 * (short)0xF0));
     *(unsigned int *)(((int)stk + 52)) = (0xC4CFC90 + (short)((short)(signed char)t4 * (short)0x320));
     *(unsigned int *)(((int)stk + 56)) = ((0xC14DACC + ((t1 << 2) << 2)) + ((((-(0x1 & t2)) + 0x1) << 2) << 1));
     *(unsigned int *)(((int)stk + 60)) = ((0xC14DBBC + ((t1 << 2) << 2)) + ((((-(0x1 & t2)) + 0x1) << 2) << 1));
@@ -287,14 +315,14 @@ int res_player_release(int a4)
 
 int res_stage_release(void)
 {
-    res_textures_release(0xC664940);
+    res_textures_release(((int)g_res_stage_a));
     res_textures_release(0xC664958);
-    return res_textures_release(0xC664970);
+    return res_textures_release(((int)g_res_stage_c));
 }
 
 int res_item_release(void)
 {
-    return res_textures_release(0xC664988);
+    return res_textures_release(((int)g_res_item));
 }
 
 int res_cockpit_release(void)
@@ -310,55 +338,55 @@ int res_cockpit_load(void)
 
 int res_eyecatch_release(void)
 {
-    return res_model_release(0xC17FE4C);
+    return res_model_release(((int)g_res_eyecatch));
 }
 
 int res_eyecatch_load(void)
 {
     res_load_file_unpack(0x7F);
-    return res_model_register(0xC17FE4C);
+    return res_model_register(((int)g_res_eyecatch));
 }
 
 int res_test_tex_release(void)
 {
-    return res_model_release(0xC17FE64);
+    return res_model_release(((int)g_res_test_tex));
 }
 
 int res_test_tex_load(int a4, int a5, int a6, int a7)
 {
     res_load_file_unpack(0xC2);
-    return res_model_register(0xC17FE64);
+    return res_model_register(((int)g_res_test_tex));
 }
 
 int res_font_release(void)
 {
-    res_model_release(0xC17FDBC);
-    return res_textures_release(0xC4CFA80);
+    res_model_release(((int)g_res_font_model));
+    return res_textures_release(((int)g_res_font));
 }
 
 int res_pstone_logo_release(void)
 {
-    return res_textures_release(0xC664A00);
+    return res_textures_release(((int)g_res_pstone_logo));
 }
 
 int res_csel_open_release(void)
 {
-    return res_textures_release(0xC664A30);
+    return res_textures_release(((int)g_res_csel_open));
 }
 
 int res_csel_ksel_release(void)
 {
-    return res_textures_release(0xC664A78);
+    return res_textures_release(((int)g_res_csel_ksel));
 }
 
 int res_csel_csel_release(void)
 {
-    return res_textures_release(0xC664A48);
+    return res_textures_release(((int)g_res_csel_csel));
 }
 
 int res_csel_ssel_release(void)
 {
-    return res_textures_release(0xC664A60);
+    return res_textures_release(((int)g_res_csel_ssel));
 }
 
 int res_csel_release_all(void)
@@ -371,21 +399,21 @@ int res_csel_release_all(void)
 
 int res_demo_comn_release(void)
 {
-    res_textures_release(0xC6649E8);
-    return res_textures_release(0xC6649A0);
+    res_textures_release(((int)g_res_syukyaku));
+    return res_textures_release(((int)g_res_demo_comn));
 }
 
 int res_ending_release(void)
 {
-    res_textures_release(0xC6649B8);
+    res_textures_release(((int)g_res_ending));
     res_textures_release(0xC6649D0);
     return res_model_release(0xC17FE70);
 }
 
 int res_omake_release(void)
 {
-    res_textures_release(0xC664AA8);
-    return res_model_release(0xC17FE98);
+    res_textures_release(((int)g_res_omake));
+    return res_model_release(((int)g_res_omake_model));
 }
 
 int res_option_release(void)
@@ -401,37 +429,37 @@ int res_option_load(void)
 
 int res_art_model_release(void)
 {
-    return res_textures_release(0xC664AC0);
+    return res_textures_release(((int)g_res_art_model));
 }
 
 int res_art_art_release(void)
 {
-    return res_textures_release(0xC664AD8);
+    return res_textures_release(((int)g_res_art_art));
 }
 
 int res_key_cfg_release(void)
 {
-    return res_textures_release(0xC664AF0);
+    return res_textures_release(((int)g_res_key_cfg));
 }
 
 int res_vms_check_release(void)
 {
-    return res_textures_release(0xC664B20);
+    return res_textures_release(((int)g_res_vms_check));
 }
 
 int res_system_font_release(void)
 {
-    return res_textures_release(0xC664B08);
+    return res_textures_release(((int)g_res_system_font));
 }
 
 int res_capcom_logo_release(void)
 {
-    res_textures_release(0xC664A18);
-    return res_model_release(0xC17FE58);
+    res_textures_release(((int)g_res_capcom_logo));
+    return res_model_release(((int)g_res_capcom_model));
 }
 
 int res_kyoutsuu_release(void)
 {
-    res_textures_release(0xC4CFA68);
+    res_textures_release(((int)g_res_kyoutsuu));
     return res_model_release(0xC33F66C);
 }

@@ -1,5 +1,7 @@
 /* stage placement records: spawners and update/mode handlers for record types 1 2 3 4 8 11 12 and debris (0c0acaf8-0c0acc54) */
 
+/* named globals (symbols.txt) */
+extern char g_res_stage_c[];
 struct o4_float { char p[0x4]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -34,7 +36,7 @@ int fx_spawn_burst_sprites(int a4)
         t2 = t0;
         for (;;) {
             t0 = *(int *)((((t2 << 2) + (0x2E0 + t1)) + 0x0));
-            FUN_0c06233a(t0, 0xC664970, (t2 + 0xF));
+            FUN_0c06233a(t0, ((int)g_res_stage_c), (t2 + 0xF));
             *(unsigned char *)((t0 + 0x0)) = 0x1;
             *(unsigned short *)((t0 + 0x2)) = 0x401;
             t3 = ((int (*)(void))(FUN_0c0e6fe8))();

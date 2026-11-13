@@ -1,4 +1,6 @@
 
+/* named globals (symbols.txt) */
+extern char g_hit_reaction_tab[];
 int pl_hitreact_update(int a4, int a5, int a6, int a7)
 {
     int stk[3];
@@ -51,7 +53,7 @@ int pl_hitreact_update(int a4, int a5, int a6, int a7)
         if (((signed char)t26 != 0) && (t27 = *(signed char *)((a4 + 0x72AC)), t27 == 0)) {
             (((struct o72AC_uchar *)(a4))->v) = 0x5;
         }
-        t32 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + 0xC338FF8)))))(a4, a5, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
+        t32 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + ((int)g_hit_reaction_tab))))))(a4, a5, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
     } else {
         *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
         *(unsigned char *)((a4 + 0xD)) = 0x0;
@@ -110,7 +112,7 @@ int pl_hitreact_update(int a4, int a5, int a6, int a7)
         if (((signed char)t89 != 0) && (t90 = *(signed char *)((a4 + 0x72AC)), t90 == 0)) {
             (((struct o72AC_uchar *)(a4))->v) = 0x5;
         }
-        t95 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + 0xC338FF8)))))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
+        t95 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + ((int)g_hit_reaction_tab))))))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
     }
     if (((((struct o72A4_short *)(a4))->v)) != 0) {
         (((struct o72A4_ushort *)(a4))->v) = (((((struct o72A4_short *)(a4))->v)) - 1);

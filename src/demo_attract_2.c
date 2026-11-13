@@ -1,5 +1,7 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c028a4c-0c028c88) */
 
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -48,7 +50,7 @@ int demo_spawn_keyframe_mover(int a4, int a5, float f4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x101F;
         (((struct o98_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649E8, (*(int *)(((int)stk + 0))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_syukyaku), (*(int *)(((int)stk + 0))));
         *(unsigned char *)((t0 + 0x8)) = 0x0;
         t14 = *(signed char *)(((int)stk + 4));
         *(unsigned char *)((t0 + 0xA)) = t14;

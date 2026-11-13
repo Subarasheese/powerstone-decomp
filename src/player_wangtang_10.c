@@ -1,5 +1,7 @@
 /* character 2 (Wang Tang) (0c07164c-0c071b2c) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_wangtang_special_tbl[];
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
 struct o71A9_uchar { char p[0x71A9]; unsigned char v; };
 int pl_start_motion(int, int, int);
@@ -135,7 +137,7 @@ int pl_wangtang_check_special_input(int a4)
 
 int pl_wangtang_special_move_dispatch(char *obj, int arg1, int arg2, int arg3)
 {
-    return ((Handler *)0xC336F74)[*(signed char *)(obj + 0x7209)](obj, arg1, arg2, arg3);
+    return ((Handler *)g_pl_wangtang_special_tbl)[*(signed char *)(obj + 0x7209)](obj, arg1, arg2, arg3);
 }
 
 int pl_wangtang_special0_start(int a4)

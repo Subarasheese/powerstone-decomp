@@ -1,5 +1,7 @@
 /* velocity/acceleration/gravity, angle to opponent, stick direction (part 2 of 3 of the same module) (0c09da1c-0c09db78) */
 
+/* named globals (symbols.txt) */
+extern char g_model_scale_tab[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -32,8 +34,8 @@ float pl_apply_motion_translation(int a4)
     *(float *)(((int)stk + 8)) = (((float)(short)(((int)(0xFF00 & (short)t7) >> 8) | ((unsigned char)(short)t7 << 8)) / 16.0f) * (1.0f / (float)(unsigned char)(*(signed char *)((a4 + 0x71A7)))));
     if ((*(signed char *)((a4 + 0x71B4))) != 0) {
         t10 = *(int *)((a4 + 0x1C));
-        u14 = *(float *)((((*(signed char *)(((0x71F1 + t10) + 0x0))) << 2) + ((((*(signed char *)((t10 + 0x4))) << 2) << 1) + 0xC150C60)));
-        u18 = *(float *)((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + ((((*(signed char *)((a4 + 0x4))) << 2) << 1) + 0xC150C60)));
+        u14 = *(float *)((((*(signed char *)(((0x71F1 + t10) + 0x0))) << 2) + ((((*(signed char *)((t10 + 0x4))) << 2) << 1) + ((int)g_model_scale_tab))));
+        u18 = *(float *)((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + ((((*(signed char *)((a4 + 0x4))) << 2) << 1) + ((int)g_model_scale_tab))));
         math_vec3_mul_xyz(((int)stk + 0), (u14 / u18), (u14 / u18), (u14 / u18));
     }
     t35 = math_sin_angle16((*(int *)((a4 + 0x30))));

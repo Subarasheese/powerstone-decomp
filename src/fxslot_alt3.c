@@ -1,5 +1,7 @@
 /* 8 record slots (144 bytes) at 0xc7f3238: clear, start by priority level, HUD/effect sprite helpers (0c05eea0-0c05f6d8) */
 
+/* named globals (symbols.txt) */
+extern char g_fxslots[];
 struct Vec12 { int x, y, z; };
 extern char *fxslot_start(signed char slot_kind, int score, signed char aux, int z, int arg_w, int v);
 
@@ -12,7 +14,7 @@ void FUN_0c05f59c(int score, char aux, int arg_w, struct Vec12 *blk, short half_
 {
     struct Vec12 const_blk;
     signed char *slot_kind = (signed char *)0xC383808;
-    unsigned char *limits = (unsigned char *)0xC7F3238;
+    unsigned char *limits = (unsigned char *)g_fxslots;
     char *rec;
     const_blk = *(struct Vec12 *)0xC14D94C;
     if (*slot_kind == 3) {

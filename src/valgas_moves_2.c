@@ -1,5 +1,8 @@
 /* Valgas (chars 9/10) frame hook, attack dispatch, move init stubs (part 2 of 2 of the same module) (0c087d60-0c08975c) */
 
+/* named globals (symbols.txt) */
+extern char g_valgas_move_init_tab[];
+extern char g_valgas_move_update_tab[];
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
 struct o71A9_uchar { char p[0x71A9]; unsigned char v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
@@ -61,7 +64,7 @@ int pl_valgas_attack_init(int a4, int a5, int a6, int a7)
             case 4:
             {
                 (((struct oF0_ushort *)(a4))->v) = 0x0;
-                t0 = ((int (*)(int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + 0xC337FF8)))))(a4, a5, a6, a7);
+                t0 = ((int (*)(int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + ((int)g_valgas_move_init_tab))))))(a4, a5, a6, a7);
             }
                 break;
             case 2:
@@ -203,7 +206,7 @@ int pl_valgas_attack_update(int a4, int a5, int a6, int a7)
             case 0:
             case 4:
             {
-                t3 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + 0xC338024));
+                t3 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + ((int)g_valgas_move_update_tab)));
                 return ((int (*)(int, int, int, int))(t3))(a4, a5, a6, a7);
             }
             case 2:

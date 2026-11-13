@@ -1,5 +1,7 @@
 /* motion length, key stream readers, angle deltas (part 2 of 2 of the same module) (0c09b0f8-0c09b7a4) */
 
+/* named globals (symbols.txt) */
+extern char g_model_scale_tab[];
 #define SLOT ((signed char)player[0x71F1])
 #define SEG_REC(b) (player + 768 + (short)(SLOT * 3520) + (short)((signed char)(b) * 176))
 #define WORD_AT(p) (*(int *)(p))
@@ -27,7 +29,7 @@ void pl_blend_motion_pose(char *player)
         WORD_AT(buf_bytes) = WORD_AT(player + 0x718C) + 6;
         mot_read_vec3_scaled(player + 0x7134, buf_bytes);
         mot_read_vec3_float(player + 0x711C, buf_bytes);
-        FLOAT_AT(player + 0x7120) = FLOAT_AT(player + 0x7120) * (FLOAT_AT(0xC150C60 + player[4] * 8 + SLOT * 4) * FLOAT_AT(player + 84));
+        FLOAT_AT(player + 0x7120) = FLOAT_AT(player + 0x7120) * (FLOAT_AT(((int)g_model_scale_tab) + player[4] * 8 + SLOT * 4) * FLOAT_AT(player + 84));
         seg_order = (signed char *)0xC150D50;
         for (idx = 0; idx < 19; idx++) {
             mot_read_vec3_scaled(SEG_REC(*seg_order) + 84, buf_bytes);

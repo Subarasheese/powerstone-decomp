@@ -1,5 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c023d04-0c025958) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_list_heads[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -197,10 +199,10 @@ int FUN_0c02440e(int a4)
 int FUN_0c024426(void)
 {
     FUN_0c02440e(0xC7E40C4);
-    FUN_0c02440e(((((struct o0_int *)0xC7E4074)->v)));
-    FUN_0c02440e(((((struct o4_int *)0xC7E4074)->v)));
-    FUN_0c02440e(((((struct o8_int *)0xC7E4074)->v)));
-    return FUN_0c02440e(((((struct oC_int *)0xC7E4074)->v)));
+    FUN_0c02440e(((((struct o0_int *)g_obj_list_heads)->v)));
+    FUN_0c02440e(((((struct o4_int *)g_obj_list_heads)->v)));
+    FUN_0c02440e(((((struct o8_int *)g_obj_list_heads)->v)));
+    return FUN_0c02440e(((((struct oC_int *)g_obj_list_heads)->v)));
 }
 
 int FUN_0c024446(int a4, int a5, int a6, int a7)
@@ -218,10 +220,10 @@ int hit_world_reset(void)
     *(unsigned char *)0xC7E4340 = 0x0;
     *(unsigned char *)0xC7EB610 = 0x0;
     FUN_0c02466e(0xC7E40C4);
-    FUN_0c02466e(((((struct o0_int *)0xC7E4074)->v)));
-    FUN_0c02466e(((((struct o4_int *)0xC7E4074)->v)));
-    FUN_0c02466e(((((struct o8_int *)0xC7E4074)->v)));
-    return FUN_0c02466e(((((struct oC_int *)0xC7E4074)->v)));
+    FUN_0c02466e(((((struct o0_int *)g_obj_list_heads)->v)));
+    FUN_0c02466e(((((struct o4_int *)g_obj_list_heads)->v)));
+    FUN_0c02466e(((((struct o8_int *)g_obj_list_heads)->v)));
+    return FUN_0c02466e(((((struct oC_int *)g_obj_list_heads)->v)));
 }
 
 int FUN_0c0246b2(int a4, int a5, int a6, int a7)

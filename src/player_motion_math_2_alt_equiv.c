@@ -1,5 +1,7 @@
 /* motion length, key stream readers, angle deltas (part 2 of 2 of the same module) (0c09b0f8-0c09b7a4) */
 
+/* named globals (symbols.txt) */
+extern char g_model_scale_tab[];
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -103,7 +105,7 @@ float FUN_0c09b74c(int a4)
     mot_read_vec3_scaled((((int)stk + 0) + 0x10), ((int)stk + 0));
     mot_read_vec3_float((((int)stk + 0) + 0x4), ((int)stk + 0));
     u8 = *(float *)(((int)stk + 8));
-    u9 = ((*(float *)(((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + (0xC150C60 + (((*(signed char *)((a4 + 0x4))) << 2) << 1))) + 0x0))) * ((((struct o54_float *)(a4))->v)));
+    u9 = ((*(float *)(((((*(signed char *)(((0x71F1 + a4) + 0x0))) << 2) + (((int)g_model_scale_tab) + (((*(signed char *)((a4 + 0x4))) << 2) << 1))) + 0x0))) * ((((struct o54_float *)(a4))->v)));
     *(float *)(((int)stk + 8)) = (u8 * u9);
     return (u8 * u9);
 }

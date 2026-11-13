@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c045968-0c045f9c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_capcom_logo[];
 struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
 struct o24_float { char p[0x24]; float v; };
@@ -221,7 +223,7 @@ void fx_tick_0457d0(int a4, int a5, int a6, int a7)
                 (((struct o8_uint *)0xC7F31BC)->v) = (((((struct o8_int *)0xC7F31BC)->v)) + 0x11111111);
                 if (((((struct o0_int *)0xC7F31BC)->v)) == -1) {
                     *(unsigned char *)((((((struct o2EC_int *)(a4))->v)) + 0x0)) = 0x1;
-                    FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), 0xC664A18, 0x6);
+                    FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), ((int)g_res_capcom_logo), 0x6);
                     *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x0;
                 }
             }

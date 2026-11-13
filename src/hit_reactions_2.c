@@ -1,5 +1,7 @@
 /* hit reaction handlers (table indexed by +71DD) and dispatcher (part 2 of 2 of the same module) (0c09153c-0c092814) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_reaction_tab[];
 struct o106_uchar { char p[0x106]; unsigned char v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
@@ -327,7 +329,7 @@ int FUN_0c091eee(int a4, int a5, int a6, int a7)
     register int t2;
 
     sys_return_zero_098c82();
-    t2 = *(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + 0xC338FF8));
+    t2 = *(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + ((int)g_hit_reaction_tab)));
     return ((int (*)(int, int, int, int))(t2))(a4, a5, a6, a7);
 }
 

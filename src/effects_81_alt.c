@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03f434-0c03fab4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -79,7 +81,7 @@ int fx_tick_03f2c8(int a4)
                 *(unsigned char *)((t0 + 0x0)) = 0x1;
                 *(unsigned short *)((t0 + 0x2)) = 0x211;
                 t2 = ((int (*)(int))(FUN_0c0e6fe8))(t0);
-                FUN_0c06231c(0x0, 0xC4CFA68, ((*(signed char *)((a4 + 0xEC))) + 0x70));
+                FUN_0c06231c(0x0, ((int)g_res_kyoutsuu), ((*(signed char *)((a4 + 0xEC))) + 0x70));
                 *(volatile short *)((a4 + 0xEC));
                 t0 = FUN_0c0e6e5c();
                 (((struct oEC_ushort *)(a4))->v) = t0;
@@ -89,7 +91,7 @@ int fx_tick_03f2c8(int a4)
         }
         if (t1 == 3) {
             t0 = (((struct o304_int *)(a4))->v);
-            FUN_0c06231c(t0, 0xC4CFA68, (((*(signed char *)((a4 + 0xEC))) << 1) + 0x70));
+            FUN_0c06231c(t0, ((int)g_res_kyoutsuu), (((*(signed char *)((a4 + 0xEC))) << 1) + 0x70));
             *(volatile short *)((a4 + 0xEC));
             (((struct oEC_ushort *)(a4))->v) = (FUN_0c0e6e5c());
             (((struct o1C_float *)(t0))->v) = (((((struct o1C_float *)(t0))->v)) + 0.099999994f);

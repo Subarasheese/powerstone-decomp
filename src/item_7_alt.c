@@ -1,5 +1,8 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05c6e0-0c05ca54) */
 
+/* named globals (symbols.txt) */
+extern char g_item_player_flags[];
+extern char g_proj_char_offset_tbl[];
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o107_uchar { char p[0x107]; unsigned char v; };
@@ -61,7 +64,7 @@ int FUN_0c05c728(int a4)
         return obj_destroy(a4);
     }
     if ((*(signed char *)((a4 + 0xB))) == 0) {
-        *(unsigned char *)(((0xC7F2974 + (*(signed char *)((a4 + 0xD)))) + 0x0)) = 0x1;
+        *(unsigned char *)(((((int)g_item_player_flags) + (*(signed char *)((a4 + 0xD)))) + 0x0)) = 0x1;
     }
     t8 = *(signed char *)((a4 + 0x30D));
     if (t8 != 0) {
@@ -142,7 +145,7 @@ int FUN_0c05c728(int a4)
                 (((struct o28_float *)(a4))->v) = u52;
                 t53 = ((int (*)(void))(FUN_0c0e6fe8))();
                 t54 = *(signed char *)((t37 + 0x4));
-                *(float *)(((int)stk + 20)) = (*(float *)((0xC33C05C + ((((t54 << 1) + t54) << 2) << 1))));
+                *(float *)(((int)stk + 20)) = (*(float *)((((int)g_proj_char_offset_tbl) + ((((t54 << 1) + t54) << 2) << 1))));
                 t58 = ((int (*)(void))(FUN_0c0e6fe8))();
                 t59 = *(signed char *)((t37 + 0x3));
                 *(unsigned int *)(((int)stk + 24)) = ((unsigned short)((unsigned short)((-t59) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);

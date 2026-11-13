@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c056340-0c0567c4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 typedef struct { int x, y, z; } S12;
 extern char *obj_create(int, int, int, int);
 extern void fx_tick_056340(void);
@@ -38,12 +40,12 @@ void fx_tick_0565b4(char *obj)
         obj[1] = 1;
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
-        FUN_0c06233a(*(char **)(obj + 736), 0xC4CFA80, ((signed char *)0xC14AE9C)[(unsigned char)(obj[4] * 28) + 24]);
+        FUN_0c06233a(*(char **)(obj + 736), ((int)g_res_font), ((signed char *)0xC14AE9C)[(unsigned char)(obj[4] * 28) + 24]);
         **(char **)(obj + 736) = 1;
         *(struct vec12 *)(*(char **)(obj + 736) + 4) = *(struct vec12 *)(0xC14AE9C + (unsigned char)(obj[4] * 28));
         *(struct vec12 *)(*(char **)(obj + 736) + 28) = *(struct vec12 *)(0xC14AE9C + (unsigned char)(obj[4] * 28) + 12);
         *(short *)(*(char **)(obj + 736) + 2) = 287;
-        FUN_0c06233a(*(char **)(obj + 740), 0xC4CFA80, ((signed char *)0xC14AE9C)[(unsigned char)(obj[4] * 28) + 25] + 1);
+        FUN_0c06233a(*(char **)(obj + 740), ((int)g_res_font), ((signed char *)0xC14AE9C)[(unsigned char)(obj[4] * 28) + 25] + 1);
         **(char **)(obj + 740) = 1;
         *(struct vec12 *)(*(char **)(obj + 740) + 4) = *(struct vec12 *)(0xC14AE9C + (unsigned char)(obj[4] * 28));
         *(struct vec12 *)(*(char **)(obj + 740) + 28) = *(struct vec12 *)(0xC14AE9C + (unsigned char)(obj[4] * 28) + 12);
@@ -116,7 +118,7 @@ void fx_tick_0567c4(char *obj)
         obj[1] = 1;
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
-        FUN_0c06233a(*(char **)(obj + 736), 0xC4CFA80, ((signed char *)0xC14AF50)[(unsigned char)(obj[4] * 28) + 24]);
+        FUN_0c06233a(*(char **)(obj + 736), ((int)g_res_font), ((signed char *)0xC14AF50)[(unsigned char)(obj[4] * 28) + 24]);
         **(char **)(obj + 736) = 1;
         *(struct Vec3i *)(*(char **)(obj + 736) + 4) = *(struct Vec3i *)(0xC14AF50 + (unsigned char)(obj[4] * 28));
         *(struct Vec3i *)(*(char **)(obj + 736) + 28) = *(struct Vec3i *)(0xC14AF50 + (unsigned char)(obj[4] * 28) + 12);

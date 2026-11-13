@@ -1,5 +1,7 @@
 /* character 0 (Falcon): frame hook, state dispatchers, start-action wrappers, specials, victim hooks (0c067d4c-0c068e10) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_falcon_special_tbl[];
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2D4_float { char p[0x2D4]; float v; };
@@ -650,6 +652,6 @@ int pl_falcon_special_move_dispatch(int obj, int arg1, int arg2, int arg3)
 {
     register int handler;
 
-    handler = *(int *)((((*(signed char *)((obj + 0x7209))) << 2) + 0xC3369C4));
+    handler = *(int *)((((*(signed char *)((obj + 0x7209))) << 2) + ((int)g_pl_falcon_special_tbl)));
     return ((int (*)(int, int, int, int))(handler))(obj, arg1, arg2, arg3);
 }

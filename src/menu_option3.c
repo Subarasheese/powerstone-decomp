@@ -1,5 +1,7 @@
 /* OPTION group screen 3 (0c01ae48-0c01b66c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_model[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct oF2_short { char p[0xF2]; short v; };
@@ -302,7 +304,7 @@ int FUN_0c01b144(int a4, int a5)
         if ((short)t5 != 0) {
             t8 = (*(signed char *)(((((signed char)a5 << 2) << 2) + 0xC11C17C)));
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, t8);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), t8);
         t12 = (((struct o2E0_int *)(t0))->v);
         (((struct o24_float *)(t12))->v) = 1.0f;
         (((struct o20_float *)(t12))->v) = 1.0f;
@@ -323,7 +325,7 @@ int FUN_0c01b206(int a4)
     if ((short)t0 != 0) {
         t1 = ((*(signed char *)0xC362350) + 0xE);
     }
-    FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), 0xC664AC0, t1);
+    FUN_0c06231c(((((struct o2E4_int *)(a4))->v)), ((int)g_res_art_model), t1);
     t0 = opt_page3_obj_in_mask(a4);
     if ((signed char)t0 != 0) {
         return obj_destroy(a4);
@@ -381,7 +383,7 @@ int opt_page3_spawn_bg_scroll(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, 0xD);
+        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0xD);
     }
     return t0;
 }

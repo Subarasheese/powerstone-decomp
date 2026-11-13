@@ -1,5 +1,8 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02d9e0-0c02f328) */
 
+/* named globals (symbols.txt) */
+extern char g_hud_state[];
+extern char g_res_font_model[];
 extern void ui_sprite_queue_add(float *, int, int, int, int, int);
 #define EF(off) (*(float *)(ind + (off)))
 #define ES(off) (*(short *)(ind + (off)))
@@ -31,7 +34,7 @@ void ui_draw_sprite_string(signed char *str, int mode, float x_origin, float pos
                     }
                 }
                 sprite[1] = x_origin + 16.0f * ((float)idx * scale_x);
-                ui_sprite_queue_add(sprite, 0xC17FDBC, 0, (signed char)glyph - 32, 0, 0);
+                ui_sprite_queue_add(sprite, ((int)g_res_font_model), 0, (signed char)glyph - 32, 0, 0);
             }
             idx++;
         }
@@ -55,7 +58,7 @@ void ui_draw_sprite_string(signed char *str, int mode, float x_origin, float pos
                 }
                 if ((signed char)glyph != 0 || (chr_s >= 0x30 && chr_s <= 0x39) || (chr_s >= 0x41 && chr_s <= 0x5A) || (chr_s >= 0x61 && chr_s <= 0x7A)) {
                     sprite[1] = x_origin + 16.0f * ((float)idx * scale_x);
-                    ui_sprite_queue_add(sprite, 0xC17FDBC, 1, (signed char)glyph, 0, 0);
+                    ui_sprite_queue_add(sprite, ((int)g_res_font_model), 1, (signed char)glyph, 0, 0);
                 }
             }
             idx++;
@@ -80,7 +83,7 @@ void ui_draw_sprite_string(signed char *str, int mode, float x_origin, float pos
                 }
                 if ((signed char)glyph != 0 || (chr_s >= 0x30 && chr_s <= 0x39) || (chr_s >= 0x41 && chr_s <= 0x5A) || (chr_s >= 0x61 && chr_s <= 0x7A)) {
                     sprite[1] = x_origin + 32.0f * ((float)idx * scale_x);
-                    ui_sprite_queue_add(sprite, 0xC17FDBC, 2, (signed char)glyph, 0, 0);
+                    ui_sprite_queue_add(sprite, ((int)g_res_font_model), 2, (signed char)glyph, 0, 0);
                 }
             }
             idx++;
@@ -110,7 +113,7 @@ void ui_update_hud_indicators(void)
     int *icon_tbl;
     signed char cur_val;
 
-    hud = (char *)0xC366A70;
+    hud = (char *)g_hud_state;
     game = (char *)0xC7F2EE0;
     icon_tbl = (int *)0xC1493C4;
     decay_bits = 0x3EE66666;

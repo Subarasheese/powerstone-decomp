@@ -1,5 +1,7 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c029ec4-0c02a1f4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -66,7 +68,7 @@ int FUN_0c029ec4(void)
                 *(unsigned char *)((t4 + 0x0)) = 0x1;
                 *(unsigned char *)((t4 + 0x1)) = 0x0;
                 *(unsigned short *)((t4 + 0x2)) = 0x1F;
-                FUN_0c06233a(t4, 0xC6649E8, 0x49);
+                FUN_0c06233a(t4, ((int)g_res_syukyaku), 0x49);
                 t1 = (t1 + 0x1);
             }
             t6 = 0x2DC;

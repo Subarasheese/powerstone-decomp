@@ -1,5 +1,12 @@
 /* debug text printing (dbg_set_cursor_cell (0c0dfe20-0c0e0790) */
 
+/* named globals (symbols.txt) */
+extern char g_dbg_cell_h[];
+extern char g_dbg_cell_w[];
+extern char g_dbg_cursor_x[];
+extern char g_dbg_cursor_y[];
+extern char g_dbg_text_color[];
+extern char g_dbg_text_flags[];
 struct o0_uint { unsigned int v; };
 struct o0_ushort { unsigned short v; };
 struct o10_float { char p[0x10]; float v; };
@@ -34,14 +41,14 @@ int FUN_0c0dfe20(void)
     register int t3;
     register float u5;
 
-    (((struct o4_uint *)0xC7F8BF0)->v) = 0x0;
-    (((struct o8_uint *)0xC7F8BF0)->v) = 0x0;
-    (((struct o14_uint *)0xC7F8BF0)->v) = 0x0;
+    (((struct o4_uint *)g_dbg_text_flags)->v) = 0x0;
+    (((struct o8_uint *)g_dbg_text_flags)->v) = 0x0;
+    (((struct o14_uint *)g_dbg_text_flags)->v) = 0x0;
     (((struct o4_uint *)0xC7F8C38)->v) = 0xFFFFFFFF;
     (((struct o0_ushort *)0xC7F8C38)->v) = 0x8;
-    (((struct oC_uint *)0xC7F8BF0)->v) = 0x8;
-    (((struct o10_uint *)0xC7F8BF0)->v) = 0x8;
-    (((struct o0_uint *)0xC7F8BF0)->v) = 0x0;
+    (((struct oC_uint *)g_dbg_text_flags)->v) = 0x8;
+    (((struct o10_uint *)g_dbg_text_flags)->v) = 0x8;
+    (((struct o0_uint *)g_dbg_text_flags)->v) = 0x0;
     (((struct o8_float *)0xC7F8C38)->v) = 0.0f;
     (((struct oC_float *)0xC7F8C38)->v) = 1.0f;
     (((struct o10_float *)0xC7F8C38)->v) = 0.0078125f;
@@ -100,8 +107,8 @@ int *dbg_emit_glyph_quad(int px, int py, int shade, int *out)
     int *vtx;
     short *uv_tab;
 
-    width = *(int *)0xC7F8BFC;
-    height = *(int *)0xC7F8C00;
+    width = *(int *)g_dbg_cell_w;
+    height = *(int *)g_dbg_cell_h;
     uv_tab = (short *)0xC7F8C8C + (signed char)shade;
     gray = (signed char)shade;
     vtx = out;
@@ -192,15 +199,15 @@ int FUN_0c0e0580(void)
 {
     register int t0;
 
-    t0 = *(int *)0xC7F8BF0;
-    *(unsigned int *)0xC7F8BF0 = (t0 | 0x1);
+    t0 = *(int *)g_dbg_text_flags;
+    *(unsigned int *)g_dbg_text_flags = (t0 | 0x1);
     return (t0 | 0x1);
 }
 
 void dbg_set_cell_size(int a4, int a5)
 {
-    (((struct o0_uint *)0xC7F8BFC)->v) = a4;
-    (((struct o4_uint *)0xC7F8BFC)->v) = a5;
+    (((struct o0_uint *)g_dbg_cell_w)->v) = a4;
+    (((struct o4_uint *)g_dbg_cell_w)->v) = a5;
 }
 
 int dbg_print_string(int a4, int a5, int a6, int a7)
@@ -213,9 +220,9 @@ int dbg_print_string(int a4, int a5, int a6, int a7)
         t1 = 0x0;
     }
     t4 = *(int *)(((t1 << 2) + (*(int *)0xC803DF4)));
-    *(volatile int *)0xC7F8BF0;
-    *(volatile int *)0xC7F8BF4;
-    *(volatile int *)0xC7F8BF8;
+    *(volatile int *)g_dbg_text_flags;
+    *(volatile int *)g_dbg_cursor_x;
+    *(volatile int *)g_dbg_cursor_y;
     (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0x0)) = ((((struct o0_int *)0xC7F8C4C)->v));
@@ -231,14 +238,14 @@ int dbg_set_cursor_cell(int a4, int a5)
 {
     register int t0;
 
-    t0 = (((struct o8_int *)0xC7F8BF4)->v);
-    (((struct o0_uint *)0xC7F8BF4)->v) = (t0 * a4);
-    (((struct o10_uint *)0xC7F8BF4)->v) = (t0 * a4);
-    (((struct o4_uint *)0xC7F8BF4)->v) = (((((struct oC_int *)0xC7F8BF4)->v)) * a5);
-    return 0xC7F8C00;
+    t0 = (((struct o8_int *)g_dbg_cursor_x)->v);
+    (((struct o0_uint *)g_dbg_cursor_x)->v) = (t0 * a4);
+    (((struct o10_uint *)g_dbg_cursor_x)->v) = (t0 * a4);
+    (((struct o4_uint *)g_dbg_cursor_x)->v) = (((((struct oC_int *)g_dbg_cursor_x)->v)) * a5);
+    return ((int)g_dbg_cell_h);
 }
 
 void dbg_set_text_color(int a4)
 {
-    *(unsigned int *)0xC7F8C5C = a4;
+    *(unsigned int *)g_dbg_text_color = a4;
 }

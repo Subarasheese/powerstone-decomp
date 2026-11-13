@@ -1,5 +1,10 @@
 /* player state change (pl_change_state) power form flags input chords and character move hooks (0c0a18f8-0c0a2ee8) */
 
+/* named globals (symbols.txt) */
+extern char g_char_attack_init_tab[];
+extern char g_move_cmd_list_tab[];
+extern char g_pl_state_enter_tbl[];
+extern char g_pl_state_flags_tbl[];
 struct o710A_uchar { char p[0x710A]; unsigned char v; };
 struct o710B_uchar { char p[0x710B]; unsigned char v; };
 struct o710C_uchar { char p[0x710C]; unsigned char v; };
@@ -83,9 +88,9 @@ int pl_enter_state_10(int a4, int a5, int a6, int a7)
     (((struct o71F0_uchar *)(v0_1))->v) = 0x6;
     (((struct o7206_uchar *)(v0_1))->v) = 0x1;
     (((struct o7239_uchar *)(v0_1))->v) = R13;
-    (((struct o7234_uchar *)(v0_1))->v) = (*(signed char *)((((*(int *)((0xC338E4C + ((*(signed char *)((v0_1 + 0x4))) << 2)))) + (((*(signed char *)((v0_1 + 0x7238))) << 2) << 2)) + 0xC)));
+    (((struct o7234_uchar *)(v0_1))->v) = (*(signed char *)((((*(int *)((((int)g_move_cmd_list_tab) + ((*(signed char *)((v0_1 + 0x4))) << 2)))) + (((*(signed char *)((v0_1 + 0x7238))) << 2) << 2)) + 0xC)));
     v0_3 = *(signed char *)((v0_1 + 0x721F));
-    v0_2 = (0xC338E4C);
+    v0_2 = (((int)g_move_cmd_list_tab));
     v0_0 = (v0_3);
     if ((v0_3 == 0)) goto L_C0A1B68;
     if ((v0_0 == 2)) goto L_C0A1B68;
@@ -120,7 +125,7 @@ int pl_enter_state_10(int a4, int a5, int a6, int a7)
     L_C0A1D50:;
     v0_2 = *(signed char *)((v0_1 + 0x4));
     *(volatile int *)((int)stk + 0);
-    v0_2 = *(int *)((0xC339468 + (v0_2 << 2)));
+    v0_2 = *(int *)((((int)g_char_attack_init_tab) + (v0_2 << 2)));
     *(volatile int *)((int)stk + 4);
     return ((int (*)(int, int, int, int))(v0_2))(v0_1, v0_0, R6, a7);
     L_C0A1D38:;
@@ -226,9 +231,9 @@ int pl_change_state(int a4, int a5, int a6, int a7)
     pl_timer_arm_forever(a4);
     t8 = *(signed char *)(((int)stk + 0));
     *(unsigned int *)(((int)stk + 8)) = (t8 << 2);
-    (((struct o7216_uchar *)(a4))->v) = (*(signed char *)(((t8 << 2) + 0xC338D38)));
+    (((struct o7216_uchar *)(a4))->v) = (*(signed char *)(((t8 << 2) + ((int)g_pl_state_flags_tbl))));
     if ((*(signed char *)0xC7F304A) == 0) {
-        t12 = *(int *)(((*(int *)(((int)stk + 8))) + 0xC339490));
+        t12 = *(int *)(((*(int *)(((int)stk + 8))) + ((int)g_pl_state_enter_tbl)));
         t13 = *(signed char *)(((int)stk + 4));
         return ((int (*)(int, int, int, int))(t12))(a4, t13, a6, a7);
     }

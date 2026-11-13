@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a84d4-0c0a8600) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_csel[];
 struct vec3 { float x, y, z; };
 struct Sub {
     char live;
@@ -39,7 +41,7 @@ void menu_ui_task_18(struct Obj *obj)
         obj->size = 31;
         obj->field_05 = 25;
         for (idx = 0; idx < 2; idx++) {
-            FUN_0c0623a6(obj->sub[idx], 0xC664A48, idx + 14);
+            FUN_0c0623a6(obj->sub[idx], ((int)g_res_csel_csel), idx + 14);
             obj->sub[idx]->live = 1;
             obj->sub[idx]->size = 31;
         }

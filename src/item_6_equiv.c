@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05c1c0-0c05c6e0) */
 
+/* named globals (symbols.txt) */
+extern char g_item_state[];
 typedef struct { int x, y, z; } Vec3i;
 typedef struct {
     char pad0[8];
@@ -104,7 +106,7 @@ void FUN_0c05c3be(unsigned char *obj)
     *(struct Vec3i_r3 *)(*(unsigned char **)(obj + 0x2E0) + 16) = *(struct Vec3i_r3 *)0xC3362EC;
     *(unsigned char **)(obj + 280) = owner + 768 + (short)((signed char)owner[0x71F1] * 3520) + 1408;
     if (obj[11] == 0) {
-        global_block = (unsigned char *)0xC7F2664;
+        global_block = (unsigned char *)g_item_state;
         global_block[789] = obj[13];
         global_block[790] = 1;
         obj[11] = 1;

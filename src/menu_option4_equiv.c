@@ -1,5 +1,7 @@
 /* OPTION group screen 4 (0c01b66c-0c01b9f4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_art_model[];
 int memset(int, int, int);
 struct o0_uchar { unsigned char v; };
 struct o0_uint { unsigned int v; };
@@ -138,7 +140,7 @@ int FUN_0c01b788(int a4)
         *(unsigned int *)((t0 + 0x34)) = 0x0;
         *(unsigned int *)((t0 + 0x30)) = 0x0;
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C24C))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C24C))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
@@ -181,7 +183,7 @@ int FUN_0c01b898(void)
         *(unsigned int *)((t0 + 0x34)) = 0x0;
         *(unsigned int *)((t0 + 0x30)) = 0x0;
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C26C))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C26C))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;

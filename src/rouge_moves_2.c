@@ -1,5 +1,7 @@
 /* Rouge (char 7) frame hook, move init stubs and attack dispatch (part 2 of 2 of the same module) (0c081130-0c081a46) */
 
+/* named globals (symbols.txt) */
+extern char g_rouge_move_update_tab[];
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
@@ -199,6 +201,6 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
         }
         return t54;
     }
-    t59 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + 0xC33785C));
+    t59 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + ((int)g_rouge_move_update_tab)));
     return ((int (*)(int, int, int, int))(t59))(a4, a5, a6, a7);
 }

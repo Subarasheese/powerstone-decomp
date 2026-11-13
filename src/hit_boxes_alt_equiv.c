@@ -1,5 +1,8 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c0203d0-0c022228) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
+extern char g_obj_list_heads[];
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 int FUN_0c02067e(int);
@@ -28,8 +31,8 @@ extern void FUN_0c021178(struct Vec3f *out, struct Vec3f body_a, struct Vec3f bo
 int FUN_0c02078c(void)
 {
     FUN_0c02067e(0xC7E40C4);
-    FUN_0c02067e(((((struct o0_int *)0xC7E4074)->v)));
-    return FUN_0c02067e(((((struct o4_int *)0xC7E4074)->v)));
+    FUN_0c02067e(((((struct o0_int *)g_obj_list_heads)->v)));
+    return FUN_0c02067e(((((struct o4_int *)g_obj_list_heads)->v)));
 }
 
 int FUN_0c020886(int a4, int a5, int a6, int a7)
@@ -44,7 +47,7 @@ int FUN_0c020886(int a4, int a5, int a6, int a7)
     register int t7;
     register int t9;
 
-    t0 = 0xC7E4070;
+    t0 = ((int)g_obj_class_head);
     t1 = a4;
     for (;;) {
         if (t1 == 0) {
@@ -60,9 +63,9 @@ int FUN_0c020886(int a4, int a5, int a6, int a7)
                 t0 = t1;
                 t2 = (((int (*)(int, int, int, int))(FUN_0c0207ca))(t0, 0xC7E40C4, a6, a7));
                 t0 = t1;
-                t2 = (((int (*)(int, int))(FUN_0c0207ca))(t0, ((((struct o0_int *)0xC7E4074)->v))));
+                t2 = (((int (*)(int, int))(FUN_0c0207ca))(t0, ((((struct o0_int *)g_obj_list_heads)->v))));
                 t0 = t1;
-                t2 = (((int (*)(int, int))(FUN_0c0207ca))(t0, ((((struct o4_int *)0xC7E4074)->v))));
+                t2 = (((int (*)(int, int))(FUN_0c0207ca))(t0, ((((struct o4_int *)g_obj_list_heads)->v))));
             } else {
                 t6 = t3;
                 t7 = t5;

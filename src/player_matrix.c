@@ -1,5 +1,7 @@
 /* model matrix building from euler angles and scale (0c099c08-0c09a808) */
 
+/* named globals (symbols.txt) */
+extern char g_model_scale_tab[];
 int nlRotateAX(int);
 int nlRotateAY(int);
 int nlRotateAZ(int);
@@ -90,15 +92,15 @@ float pl_build_model_matrix(int a4)
     if (((*(signed char *)((v0_4 + 0x71B4))) == 0)) goto L_C099D12;
     FUN_0c0e6fe8(v0_4, R5, R6, R7, F4, F5, F6);
     v0_2 = *(int *)((v0_1 + 0x1C));
-    w0_0 = *(float *)(((((*(signed char *)(((0x71F1 + v0_2) + 0x0))) << 2) + (0xC150C60 + (((*(signed char *)((v0_2 + 0x4))) << 2) << 1))) + 0x0));
-    w0_1 = *(float *)(((((*(signed char *)(((0x71F1 + v0_1) + 0x0))) << 2) + (0xC150C60 + (((*(signed char *)((v0_1 + 0x4))) << 2) << 1))) + 0x0));
+    w0_0 = *(float *)(((((*(signed char *)(((0x71F1 + v0_2) + 0x0))) << 2) + (((int)g_model_scale_tab) + (((*(signed char *)((v0_2 + 0x4))) << 2) << 1))) + 0x0));
+    w0_1 = *(float *)(((((*(signed char *)(((0x71F1 + v0_1) + 0x0))) << 2) + (((int)g_model_scale_tab) + (((*(signed char *)((v0_1 + 0x4))) << 2) << 1))) + 0x0));
     math_vec3_mul_xyz((((int)stk + 0) + 0x2C), (w0_0 / w0_1), (w0_0 / w0_1), (w0_0 / w0_1));
     R5 = ((((int)stk + 0) + 0x2C));
     L_C099D16:;
     draw_set_euler_rotation((0x7134 + v0_1), R5);
     v0_2 = FUN_0c0e0ae0((((int)stk + 0) + 0x44));
     *(unsigned int *)(((((int)stk + 0) + 0x38) + 0x0)) = v0_0;
-    *(unsigned int *)(((int)stk + 12)) = 0xC150C60;
+    *(unsigned int *)(((int)stk + 12)) = ((int)g_model_scale_tab);
     v0_5 = (v0_2);
     v0_2 = ((((int)stk + 0) + 0x38));
     v0_3 = (((((int)stk + 0) + 0x38) + 0x4));

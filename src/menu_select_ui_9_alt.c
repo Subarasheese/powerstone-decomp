@@ -1,5 +1,8 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a9d9c-0c0aba84) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ksel[];
+extern char g_res_csel_ssel[];
 int obj_destroy(int);
 int FUN_0c0623a6(int, int, int);
 struct V3 { float x, y, z; };
@@ -65,7 +68,7 @@ void menu_ui_task_27(struct Obj *obj)
         obj->field_1 = 1;
         obj->flags = 0x1F;
         obj->field_5 = 25;
-        FUN_0c0623a6((int)obj->kid, 0xC664A60, 0x22);
+        FUN_0c0623a6((int)obj->kid, ((int)g_res_csel_ssel), 0x22);
         obj->kid->on = 1;
         obj->kid->flags = 0x1F;
         obj->kid->scale = 0.0f;
@@ -108,7 +111,7 @@ void menu_ui_task_32_layout(struct hud_obj *hud)
                 model = 71;
             else
                 model = model_table[hud->mode] + 15;
-            FUN_0c06233a(hud->parts[i], 0xC664A78, model);
+            FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), model);
             hud->parts[i]->facing = hud->side == 0 ? 0x8000 : 0;
             hud->parts[i]->offset_x = (float)(hud->side == 0 ? 50 : -50);
             hud->parts[i]->offset_y = 50.0f;
@@ -120,13 +123,13 @@ void menu_ui_task_32_layout(struct hud_obj *hud)
             hud->parts[i]->scale_y = -(hud->scale * 0.699999988f) / 480.0f;
         } else {
             if (*(char *)0xC7F2F08 != 0 && hud->mode == 0) {
-                FUN_0c06233a(hud->parts[i], 0xC664A78, 3);
+                FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), 3);
             } else {
                 if (hud->mode == 10)
                     model = 70;
                 else
                     model = model_table[hud->mode] + 25;
-                FUN_0c06233a(hud->parts[i], 0xC664A78, model);
+                FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), model);
             }
             hud->parts[i]->offset_x = (float)(hud->side == 0 ? 50 : -50);
             hud->parts[i]->offset_y = -80.0f;

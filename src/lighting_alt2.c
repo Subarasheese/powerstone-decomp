@@ -1,5 +1,7 @@
 /* light/ambient helpers (vector sub/normalize, nlObjPutSetGlobalAmbience) using the slot records (0c05f6d8-0c05fc50) */
 
+/* named globals (symbols.txt) */
+extern char g_fxslots[];
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
@@ -64,7 +66,7 @@ int FUN_0c05f952(int a4, int a5)
         t2 = (t2 << 2);
         t2 = (t2 << 2);
         t2 = (short)t2;
-        t2 = (t2 + 0xC7F3238);
+        t2 = (t2 + ((int)g_fxslots));
         u36 = u3;
         u37 = u4;
         if ((*(signed char *)((t2 + 0x0))) != 0) {
@@ -126,7 +128,7 @@ int FUN_0c05f952(int a4, int a5)
         t45 = (t45 << 2);
         t45 = (t45 << 2);
         t45 = (short)t45;
-        t45 = (t45 + 0xC7F3238);
+        t45 = (t45 + ((int)g_fxslots));
         t44 = (*(signed char *)((t45 + 0x0)));
         if (t44 != 0) {
             *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = 0x0;
@@ -136,7 +138,7 @@ int FUN_0c05f952(int a4, int a5)
                     break;
                 }
                 t58 = (*(int *)((((int)stk + 0) + 0x0)));
-                if ((t58 != t44) && (t71 = *(int *)(((((int)stk + 0) + 0x4) + 0x0)), t46 = t71, t72 = (t58 == t44), t58 = t46, t46 = (t46 << 2), t73 = (int)(((unsigned int)t46) >> 31), t46 = (t46 << 1), t46 = (t46 + t58), t46 = (t46 << 2), t46 = (t46 << 2), t46 = (short)t46, t46 = (t46 + 0xC7F3238), t74 = *(signed char *)((t46 + 0x0)), t44 = t74, t44 != 0)) {
+                if ((t58 != t44) && (t71 = *(int *)(((((int)stk + 0) + 0x4) + 0x0)), t46 = t71, t72 = (t58 == t44), t58 = t46, t46 = (t46 << 2), t73 = (int)(((unsigned int)t46) >> 31), t46 = (t46 << 1), t46 = (t46 + t58), t46 = (t46 << 2), t46 = (t46 << 2), t46 = (short)t46, t46 = (t46 + ((int)g_fxslots)), t74 = *(signed char *)((t46 + 0x0)), t44 = t74, t44 != 0)) {
                     t42 = 0x78;
                     u47 = (*(float *)((t45 + t42)));
                     u48 = (*(float *)((t46 + t42)));
@@ -176,7 +178,7 @@ int FUN_0c05f952(int a4, int a5)
         t92 = (t92 << 2);
         t92 = (t92 << 2);
         t92 = (short)t92;
-        t92 = (t92 + 0xC7F3238);
+        t92 = (t92 + ((int)g_fxslots));
         if ((*(signed char *)((t92 + 0x0))) != 0) {
             t90 = 0x78;
             u94 = (*(float *)((t92 + t90)));

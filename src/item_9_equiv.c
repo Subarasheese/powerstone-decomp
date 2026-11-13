@@ -1,5 +1,7 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05cd68-0c05d254) */
 
+/* named globals (symbols.txt) */
+extern char g_item_player_flags[];
 int FUN_0c0555dc(void);
 int obj_destroy(int);
 int FUN_0c05cdb2(int);
@@ -39,7 +41,7 @@ int obj_tick_05ca54(int a4)
     t1 = t0;
     if (t0 != -1) {
         t0 = *(signed char *)((a4 + 0xD));
-        *(unsigned char *)(((0xC7F2974 + t0) + 0x0)) = 0x1;
+        *(unsigned char *)(((((int)g_item_player_flags) + t0) + 0x0)) = 0x1;
         t1 = t0;
     }
     return t1;

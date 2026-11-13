@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c0457d0-0c045968) */
 
+/* named globals (symbols.txt) */
+extern char g_res_capcom_logo[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o308_float { char p[0x308]; float v; };
 struct o50_float { char p[0x50]; float v; };
@@ -39,7 +41,7 @@ int fx_spawn_0457d0(void)
         t4 = ((int (*)(void))(FUN_0c0e6fe8))();
         t4 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t2) + (t4 << 2)) + 0x0))), 0xC664A18, t4);
+            FUN_0c06233a((*(int *)((((0x2E0 + t2) + (t4 << 2)) + 0x0))), ((int)g_res_capcom_logo), t4);
             *(unsigned char *)(((*(int *)((((0x2E0 + t2) + (t4 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t2) + (t4 << 2)) + 0x0))) + 0x2)) = 0xF;
             *(volatile int *)((((0x2E0 + t2) + (t4 << 2)) + 0x0));
@@ -53,7 +55,7 @@ int fx_spawn_0457d0(void)
         }
         t0 = 0x6;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t2) + (t0 << 2)) + 0x0))), 0xC664A18, 0x3);
+            FUN_0c06233a((*(int *)((((0x2E0 + t2) + (t0 << 2)) + 0x0))), ((int)g_res_capcom_logo), 0x3);
             *(unsigned char *)(((*(int *)((((0x2E0 + t2) + (t0 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t2) + (t0 << 2)) + 0x0))) + 0x2)) = 0xF;
             *(volatile int *)((((0x2E0 + t2) + (t0 << 2)) + 0x0));

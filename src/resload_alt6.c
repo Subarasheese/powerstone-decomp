@@ -1,5 +1,9 @@
 /* resource loader: file load/unpack, texture and model register/release, per-scene sets, per-player model load (0c05fc50-0c061094) */
 
+/* named globals (symbols.txt) */
+extern char g_menu_option_work[];
+extern char g_res_art_model[];
+extern char g_res_ending[];
 struct Row { int w0; short h4; short h6; int w8; int w12; int w16; };
 struct Out { short h0; short h2; int w4; int w8; int w12; int w16; int w20; };
 extern void res_load_file_unpack(int a);
@@ -12,7 +16,7 @@ void res_ending_load(void)
 {
     signed char *slot_sel = (signed char *)(0xC7F302C + 85);
     struct Row *row_table = (struct Row *)0xC31FD20;
-    struct Out *out1 = (struct Out *)0xC6649B8;
+    struct Out *out1 = (struct Out *)g_res_ending;
     struct Out *out2;
     struct Row *row2;
     if (*slot_sel == 10) {
@@ -44,8 +48,8 @@ void res_art_model_load(void)
 {
     struct Ent *entries = (struct Ent *)0xC14DF30;
     struct Row *row_table = (struct Row *)0xC31FD20;
-    struct Out *out = (struct Out *)0xC664AC0;
-    signed char *sel_ptr = (signed char *)(0xC7F4724 + 27);
+    struct Out *out = (struct Out *)g_res_art_model;
+    signed char *sel_ptr = (signed char *)(((int)g_menu_option_work) + 27);
     res_load_file_unpack(entries[*sel_ptr].a);
     out->w8 = row_table[entries[*sel_ptr].k].w0;
     out->h2 = row_table[entries[*sel_ptr].k].h4;

@@ -1,5 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c023d04-0c025958) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_list_heads[];
 int FUN_0c0210c8(int, int, int);
 int FUN_0c0210f4(int, int, int);
 int FUN_0c021120(int, int, int);
@@ -391,9 +393,9 @@ int FUN_0c025706(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
         t1 = (*(int *)(((t3 << 2) + 0xC33EB60)));
         t2 = (t2 + (*(int *)(((t3 << 2) + 0xC33EB20))));
         t1 = (t1 + (t0 << 1));
-        t3 = ((int (*)(int, int, int, float))(hit_update_object_list))(t1, t2, ((((struct o8_int *)0xC7E4074)->v)), f4);
-        t3 = ((int (*)(int, int, int))(hit_update_object_list))(t1, t2, ((((struct o4_int *)0xC7E4074)->v)));
-        t3 = ((int (*)(int, int, int))(hit_update_object_list))(t1, t2, ((((struct o0_int *)0xC7E4074)->v)));
+        t3 = ((int (*)(int, int, int, float))(hit_update_object_list))(t1, t2, ((((struct o8_int *)g_obj_list_heads)->v)), f4);
+        t3 = ((int (*)(int, int, int))(hit_update_object_list))(t1, t2, ((((struct o4_int *)g_obj_list_heads)->v)));
+        t3 = ((int (*)(int, int, int))(hit_update_object_list))(t1, t2, ((((struct o0_int *)g_obj_list_heads)->v)));
         t3 = ((int (*)(int, int, int))(hit_update_object_list))(t1, t2, 0xC7E40C4);
         t0 = (t0 + 0x1);
     }
@@ -413,11 +415,11 @@ int FUN_0c025706(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
         t3 = (*(int *)(((t2 << 2) + 0xC33EAE0)));
         t1 = (t1 + (*(int *)(((t2 << 2) + 0xC33EAA0))));
         t3 = (t3 + (t0 << 1));
-        t2 = ((int (*)(int, int, int, int, float, float, float, float, float, float, float))(FUN_0c0255ae))(t3, t1, ((((struct o8_int *)0xC7E4074)->v)), a7, f4, f5, f6, f7, f8, f9, f10);
-        t2 = ((int (*)(int, int, int))(FUN_0c0255ae))(t3, t1, ((((struct o4_int *)0xC7E4074)->v)));
-        t2 = ((int (*)(int, int, int))(FUN_0c0255ae))(t3, t1, ((((struct o0_int *)0xC7E4074)->v)));
+        t2 = ((int (*)(int, int, int, int, float, float, float, float, float, float, float))(FUN_0c0255ae))(t3, t1, ((((struct o8_int *)g_obj_list_heads)->v)), a7, f4, f5, f6, f7, f8, f9, f10);
+        t2 = ((int (*)(int, int, int))(FUN_0c0255ae))(t3, t1, ((((struct o4_int *)g_obj_list_heads)->v)));
+        t2 = ((int (*)(int, int, int))(FUN_0c0255ae))(t3, t1, ((((struct o0_int *)g_obj_list_heads)->v)));
         t2 = ((int (*)(int, int, int))(FUN_0c0255ae))(t3, t1, 0xC7E40C4);
         t0 = (t0 + 0x1);
     }
-    return ((int (*)(int, int, int, int))(0xC02588A))(0xC7E4074, a5, a6, a7);
+    return ((int (*)(int, int, int, int))(0xC02588A))(((int)g_obj_list_heads), a5, a6, a7);
 }

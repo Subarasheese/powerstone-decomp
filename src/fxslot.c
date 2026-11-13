@@ -1,5 +1,7 @@
 /* 8 record slots (144 bytes) at 0xc7f3238: clear, start by priority level, HUD/effect sprite helpers (0c05eea0-0c05f6d8) */
 
+/* named globals (symbols.txt) */
+extern char g_fxslots[];
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 struct o7C_float { char p[0x7C]; float v; };
@@ -44,8 +46,8 @@ int fxslot_clear_all(void)
 
     t0 = 0x0;
     for (;;) {
-        *(unsigned char *)((((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + 0xC7F3238) + 0x0)) = 0x0;
-        t2 = ((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + 0xC7F3238);
+        *(unsigned char *)((((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + ((int)g_fxslots)) + 0x0)) = 0x0;
+        t2 = ((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + ((int)g_fxslots));
         t0 = (t0 + 0x1);
         *(unsigned char *)((t2 + 0x1)) = 0x0;
         if ((int)t0 >= (int)0x8) {
@@ -66,7 +68,7 @@ int FUN_0c05eed2(void)
     t0 = 0x0;
     for (;;) {
         u2 = *(float *)((0xC14D7E8 + (t0 << 2)));
-        t3 = ((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + 0xC7F3238);
+        t3 = ((short)(((((t0 << 2) << 1) + t0) << 2) << 2) + ((int)g_fxslots));
         t0 = (t0 + 0x1);
         (((struct o7C_float *)(t3))->v) = u2;
         if ((int)t0 >= (int)0x8) {
@@ -78,7 +80,7 @@ int FUN_0c05eed2(void)
 
 Rec *fxslot_start(int idx, int level, int b3, int w8, float f, S16 *src, signed char *tbl)
 {
-    Rec *r = (Rec *)(0x0C7F3238 + (short)((signed char)idx * 144));
+    Rec *r = (Rec *)(((int)g_fxslots) + (short)((signed char)idx * 144));
     if ((unsigned char)level >= (unsigned char)r->b1) {
         r->b0 = 1;
         r->b4 = 0;

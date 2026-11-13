@@ -1,5 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c6094-0c0c6658) */
 
+/* named globals (symbols.txt) */
+extern char g_res_item[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -69,7 +71,7 @@ int FUN_0c0c6424(int a4, int a5, int a6, int a7, float f4)
     }
     t28 = (((struct o2E4_int *)(a4))->v);
     if ((int)((((struct o28_float *)(t28))->v)) == 0) {
-        FUN_0c0624c4((0x9C + t28), 0xC664988, (*(signed char *)(((((signed char)a5 << 1) + (*(signed char *)(((int)stk + 0)))) + 0xC33C7A8))));
+        FUN_0c0624c4((0x9C + t28), ((int)g_res_item), (*(signed char *)(((((signed char)a5 << 1) + (*(signed char *)(((int)stk + 0)))) + 0xC33C7A8))));
         (((struct o28_float *)(t28))->v) = (((((struct o28_float *)(t28))->v)) + 1.0f);
     } else {
         t38 = a4;

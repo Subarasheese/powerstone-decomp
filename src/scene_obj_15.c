@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c0588d8-0c058ba4) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct vec3 { float x, y, z; };
 struct spawned {
     char live;
@@ -136,7 +138,7 @@ int fx_tick_058ba4(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC4CFA80, (*(signed char *)((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x4))) * (unsigned short)0x1C) + 0xC14BEC0) + 0x18))));
+    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_font), (*(signed char *)((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x4))) * (unsigned short)0x1C) + 0xC14BEC0) + 0x18))));
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x0;
     *(volatile int *)((a4 + 0x2E0));
     *(volatile signed char *)((a4 + 0x4));
@@ -148,7 +150,7 @@ int fx_tick_058ba4(int a4, int a5, int a6, int a7)
     (((struct o44_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;
     (((struct o48_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;
     (((struct o4C_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 1.0f;
-    FUN_0c06233a(((((struct o2E4_int *)(a4))->v)), 0xC4CFA80, ((*(signed char *)((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x4))) * (unsigned short)0x1C) + 0xC14BEC0) + 0x19))) + 0x1));
+    FUN_0c06233a(((((struct o2E4_int *)(a4))->v)), ((int)g_res_font), ((*(signed char *)((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x4))) * (unsigned short)0x1C) + 0xC14BEC0) + 0x19))) + 0x1));
     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
     *(volatile int *)((a4 + 0x2E4));
     *(volatile signed char *)((a4 + 0x4));

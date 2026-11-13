@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04aa24-0c04add0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o2E4_int { char p[0x2E4]; int v; };
@@ -43,14 +45,14 @@ int fx_spawn_04aa24(int a4, int a5)
         (((struct o118_uint *)(t1))->v) = 0x0;
         FUN_0c0e6fe8();
         t2 = (((struct o2E0_int *)(t1))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x60);
+        FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x60);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x231;
         (((struct o44_float *)(t2))->v) = 1.0f;
         (((struct o48_float *)(t2))->v) = 1.0f;
         (((struct o4C_float *)(t2))->v) = 1.0f;
         t2 = (((struct o2E4_int *)(t1))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x60);
+        FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x60);
         *(unsigned char *)((t2 + 0x0)) = 0x0;
         *(unsigned short *)((t2 + 0x2)) = 0x231;
         (((struct o44_float *)(t2))->v) = 1.0f;
@@ -58,14 +60,14 @@ int fx_spawn_04aa24(int a4, int a5)
         (((struct o4C_float *)(t2))->v) = 1.0f;
         if ((signed char)a5 == 0) {
             t2 = (((struct o2E8_int *)(t1))->v);
-            FUN_0c06233a(t2, 0xC4CFA68, 0x61);
+            FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x61);
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned short *)((t2 + 0x2)) = 0x214;
             (((struct o44_float *)(t2))->v) = 1.0f;
             (((struct o48_float *)(t2))->v) = 1.0f;
             (((struct o4C_float *)(t2))->v) = 1.0f;
             t2 = (((struct o2EC_int *)(t1))->v);
-            FUN_0c06233a(t2, 0xC4CFA68, 0x61);
+            FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x61);
             *(unsigned char *)((t2 + 0x0)) = 0x0;
             *(unsigned short *)((t2 + 0x2)) = 0x214;
             (((struct o44_float *)(t2))->v) = 1.0f;

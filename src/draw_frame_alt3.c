@@ -1,5 +1,7 @@
 /* scene render per frame (cameras, split screen), then HUD (0c02ca74-0c02d774) */
 
+/* named globals (symbols.txt) */
+extern char g_obj_class_head[];
 struct o40_float { char p[0x40]; float v; };
 struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
@@ -70,7 +72,7 @@ int FUN_0c02cf18(int a4)
     v0_1 = *(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))));
     v0_2 = (v0_1);
     if ((v0_1 == -1)) goto L_C02D19E;
-    v0_1 = ((*(int *)((((*(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))))) << 2) + 0xC7E4070))));
+    v0_1 = ((*(int *)((((*(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))))) << 2) + ((int)g_obj_class_head)))));
     L_C02D184:;
     if ((v0_1 == 0)) goto L_C02D18C;
     if (!(((*(signed char *)((v0_1 + 0x0))) != 0))) goto L_C02D182;

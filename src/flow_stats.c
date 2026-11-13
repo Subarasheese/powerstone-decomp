@@ -1,5 +1,8 @@
 /* play-time/max-combo stats and mode handlers (0c053680-0c054114) */
 
+/* named globals (symbols.txt) */
+extern char g_game_substate[];
+extern char g_select_ready_mask[];
 struct o46_uchar { char p[0x46]; unsigned char v; };
 struct o0_short { short v; };
 struct o0_ushort { unsigned short v; };
@@ -305,20 +308,20 @@ int FUN_0c053b62(void)
     register int t2;
     register int t3;
 
-    (((struct o0_uchar *)0xC7F302D)->v) = ((*(signed char *)0xC7F302D) + 0x1);
-    (((struct o1_uchar *)0xC7F302D)->v) = 0x0;
-    (((struct o23_uchar *)0xC7F302D)->v) = 0x0;
+    (((struct o0_uchar *)g_game_substate)->v) = ((*(signed char *)g_game_substate) + 0x1);
+    (((struct o1_uchar *)g_game_substate)->v) = 0x0;
+    (((struct o23_uchar *)g_game_substate)->v) = 0x0;
     FUN_0c053910();
     t1 = *(signed char *)0xC7F304C;
     if (((int)(*(signed char *)0xC7F2E3F) >= (int)t1) && (t0 = *(signed char *)0xC7F2EB7, (int)t0 >= (int)t1)) {
-        (((struct o27_uchar *)0xC7F302D)->v) = 0x3;
+        (((struct o27_uchar *)g_game_substate)->v) = 0x3;
     } else {
         t0 = *(signed char *)0xC7F304C;
         if ((int)(*(signed char *)0xC7F2E3F) >= (int)t0) {
-            (((struct o27_uchar *)0xC7F302D)->v) = 0x1;
+            (((struct o27_uchar *)g_game_substate)->v) = 0x1;
         } else {
             if ((int)(*(signed char *)0xC7F2EB7) >= (int)t0) {
-                (((struct o27_uchar *)0xC7F302D)->v) = 0x2;
+                (((struct o27_uchar *)g_game_substate)->v) = 0x2;
             }
         }
     }
@@ -345,7 +348,7 @@ int FUN_0c053b62(void)
                     *(unsigned char *)0xC7F2EB6 = 0x1;
                 }
                 (((struct o0_uchar *)0xC7F3071)->v) = ((*(signed char *)0xC7F3071) & 0xFC);
-                (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)0xC7F3074);
+                (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)g_select_ready_mask);
                 t2 = *(signed char *)0xC7F3071;
                 (((struct o3_uchar *)0xC7F3071)->v) = t2;
                 (((struct o1_uchar *)0xC7F3071)->v) = t2;
@@ -370,7 +373,7 @@ int FUN_0c053b62(void)
                         *(unsigned char *)0xC7F2EB6 = 0x1;
                     }
                     (((struct o0_uchar *)0xC7F3071)->v) = ((*(signed char *)0xC7F3071) & 0xFC);
-                    (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)0xC7F3074);
+                    (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)g_select_ready_mask);
                     t0 = *(signed char *)0xC7F3071;
                     (((struct o3_uchar *)0xC7F3071)->v) = t0;
                     (((struct o1_uchar *)0xC7F3071)->v) = t0;
@@ -380,7 +383,7 @@ int FUN_0c053b62(void)
             }
             t0 = t2;
         } else {
-            (((struct o22_uchar *)0xC7F302D)->v) = ((*(signed char *)0xC7F3054) - 1);
+            (((struct o22_uchar *)g_game_substate)->v) = ((*(signed char *)0xC7F3054) - 1);
             t2 = *(signed char *)0xC7F304F;
             t3 = *(signed char *)0xC7F3071;
             if ((unsigned char)t3 != 0) {
@@ -413,7 +416,7 @@ int FUN_0c053b62(void)
                 (((struct o4E_uchar *)((0xC7F2DF0 + (unsigned char)((unsigned short)((-(*(signed char *)0xC7F304F)) + 0x1) * (unsigned short)0x78))))->v) = 0x1;
             }
             (((struct o0_uchar *)0xC7F3071)->v) = ((*(signed char *)0xC7F3071) & (*(signed char *)0xC7F3054));
-            (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)0xC7F3074);
+            (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)g_select_ready_mask);
             t2 = *(signed char *)0xC7F3071;
             (((struct o3_uchar *)0xC7F3071)->v) = t2;
             (((struct o1_uchar *)0xC7F3071)->v) = t2;
@@ -426,7 +429,7 @@ int FUN_0c053b62(void)
         t1 = *(signed char *)0xC7F3054;
         t2 = t1;
         if ((t1 & 15) != 0) {
-            (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)0xC7F3074);
+            (((struct o4_uchar *)0xC7F3071)->v) = (*(signed char *)g_select_ready_mask);
             (((struct o3_uchar *)0xC7F3071)->v) = 0x0;
             (((struct o1_uchar *)0xC7F3071)->v) = 0x0;
             (((struct o0_uchar *)0xC7F3071)->v) = 0x0;

@@ -1,5 +1,7 @@
 /* hit effect spawners (04B6B8..04BEF2) and kind dispatchers (0c04b6b8-0c04bfd0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o44_float { char p[0x44]; float v; };
@@ -71,7 +73,7 @@ int fx_tick_04b6b8(int a4, int a5, int a6, int a7)
 
     if ((*(signed char *)((a4 + 0x8))) == 0) {
         t1 = (((struct o2E0_int *)(a4))->v);
-        FUN_0c06233a(t1, 0xC4CFA68, (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC32203C))));
+        FUN_0c06233a(t1, ((int)g_res_kyoutsuu), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC32203C))));
         u5 = *(float *)0xC04B8F8;
         (((struct o1C_float *)(t1))->v) = u5;
         (((struct o20_float *)(t1))->v) = u5;

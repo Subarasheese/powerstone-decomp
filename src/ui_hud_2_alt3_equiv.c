@@ -1,10 +1,12 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02d9e0-0c02f328) */
 
+/* named globals (symbols.txt) */
+extern char g_hud_state[];
 void FUN_0c02e438(char *panel, int side);
 void FUN_0c02e4d0(char *panel);
 typedef struct { int a0; float x; float y; float w; float sx; float sy; int p24[4]; int i40; float f44; int p48; int i52; } SPR;
 void ui_sprite_queue_add(SPR *s, void *tex, int mode, int frame, int side, int zero);
-#define HUD ((char *)0x0C366A70)
+#define HUD ((char *)g_hud_state)
 #define XOFF ((float *)(HUD + 12))
 #define TEX ((void *)0x0C17FDB0)
 #define PLB(i, n) (*(signed char *)((char *)0xC7E40C4 + (unsigned short)((unsigned short)(i) * (unsigned short)0x72D0) + (n)))

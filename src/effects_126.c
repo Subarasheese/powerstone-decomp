@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04a4c4-0c04a8ec) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o2FC_int { char p[0x2FC]; int v; };
 struct o50_float { char p[0x50]; float v; };
@@ -47,7 +49,7 @@ int fx_spawn_04a4c4(int a4)
         (((struct o58_float *)(t0))->v) = 1.0f;
         (((struct o54_float *)(t0))->v) = 1.0f;
         (((struct o50_float *)(t0))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), 0xC4CFA68, 0x62);
+        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x62);
         *(unsigned char *)((((((struct o2FC_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2FC_int *)(t0))->v)) + 0x2)) = 0x5;
         t6 = 0x0;
@@ -166,7 +168,7 @@ int fx_tick_04a4c4(int a4)
     v0_4 = (0x2);
     goto L_C04A8C0;
     L_C04A84C:;
-    FUN_0c06231c(v0_2, 0xC4CFA68, ((*(signed char *)((v0_6 + 0x0))) + 0x65));
+    FUN_0c06231c(v0_2, ((int)g_res_kyoutsuu), ((*(signed char *)((v0_6 + 0x0))) + 0x65));
     goto L_C04A856;
     L_C04A644:;
     if (((*(signed char *)((v0_1 + 0x12))) == 0)) goto L_C04A650;
@@ -176,7 +178,7 @@ int fx_tick_04a4c4(int a4)
     *(unsigned char *)((v0_5 + 0x0)) = 0x1;
     *(unsigned char *)((((*(signed char *)((v0_1 + 0x10))) + (v0_1 + 0x8)) + 0x0)) = v0_3;
     *(unsigned char *)((((*(signed char *)((v0_1 + 0x10))) + v0_1) + 0x0)) = v0_4;
-    FUN_0c06231c(v0_5, 0xC4CFA68, ((*(signed char *)((((*(signed char *)((v0_1 + 0x10))) + (v0_1 + 0x8)) + 0x0))) + 0x65));
+    FUN_0c06231c(v0_5, ((int)g_res_kyoutsuu), ((*(signed char *)((((*(signed char *)((v0_1 + 0x10))) + (v0_1 + 0x8)) + 0x0))) + 0x65));
     v0_6 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + 0xC7E40C4);
     thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));

@@ -1,5 +1,7 @@
 /* option menu: state machine and item handler table (0c0d71f4-0c0d7f30) */
 
+/* named globals (symbols.txt) */
+extern char g_menu_option_work[];
 struct o0_uchar { unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
 struct o4_uchar { char p[0x4]; unsigned char v; };
@@ -59,7 +61,7 @@ int FUN_0c0d7318(int a4, int a5, int a6, int a7, float f4)
     (((struct o6_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o5_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o4_uchar *)0xC7F2EE0)->v) = 0x0;
-    memset(0xC7F4724, 0x0, 0x2C);
+    memset(((int)g_menu_option_work), 0x0, 0x2C);
     game_clear_win_records();
     game_reset_objects();
     cam_init_records();
@@ -83,9 +85,9 @@ int FUN_0c0d75bc(int a4, int a5, int a6, int a7, float f4)
                         if ((*(signed char *)0xC7F4729) != 0) {
                             return (*(signed char *)0xC7F4725);
                         }
-                        return ((int (*)(int, int, int, int))(0xC0D770A))(0xC7F4724, a5, a6, a7);
+                        return ((int (*)(int, int, int, int))(0xC0D770A))(((int)g_menu_option_work), a5, a6, a7);
                     }
-                    return ((int (*)(int, int, int, int))(0xC0D770A))(0xC7F4724, a5, a6, a7);
+                    return ((int (*)(int, int, int, int))(0xC0D770A))(((int)g_menu_option_work), a5, a6, a7);
                 }
                 return t0;
             }

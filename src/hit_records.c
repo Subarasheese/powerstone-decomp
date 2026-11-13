@@ -1,6 +1,9 @@
 /* INLINE-ASM: getfr15 */
 /* attack records, hit data setup, hit-stop shake, combo counter, damage helpers (0c08d644-0c09111e) */
 
+/* named globals (symbols.txt) */
+extern char g_attack_record_tab[];
+extern char g_hit_reaction_tab[];
 struct o7228_ushort { char p[0x7228]; unsigned short v; };
 int fx_spawn_hit_effect_set(int, int);
 struct o38_float { char p[0x38]; float v; };
@@ -218,7 +221,7 @@ int FUN_0c08d6ec(int a4, int a5, int a6, int a7)
     t0 = (((struct oF4_int *)(a4))->v);
     (((struct oF8_uint *)(a5))->v) = t0;
     if (t0 == 0) {
-        (((struct oF8_uint *)(a5))->v) = (*(int *)0xC338A98);
+        (((struct oF8_uint *)(a5))->v) = (*(int *)g_attack_record_tab);
     }
     (((struct o71DC_uchar *)(a5))->v) = (*(signed char *)((a4 + 0x103)));
     (((struct o71BD_uchar *)(a5))->v) = (*(signed char *)((a4 + 0x100)));
@@ -351,7 +354,7 @@ int FUN_0c08d6ec(int a4, int a5, int a6, int a7)
 
 int FUN_0c08dacc(int a4, int a5)
 {
-    (((struct oF8_uint *)(a4))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)(((0xC338A98 + ((*(signed char *)((0xC7E40C8 + (unsigned short)((unsigned short)((-(*(signed char *)((a4 + 0x3)))) + 0x1) * (unsigned short)0x72D0)))) << 2)) + 0x0))));
+    (((struct oF8_uint *)(a4))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)(((((int)g_attack_record_tab) + ((*(signed char *)((0xC7E40C8 + (unsigned short)((unsigned short)((-(*(signed char *)((a4 + 0x3)))) + 0x1) * (unsigned short)0x72D0)))) << 2)) + 0x0))));
     (((struct o71BD_uchar *)(a4))->v) = a5;
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     (((struct o10A_uchar *)(a4))->v) = 0x1;
@@ -389,7 +392,7 @@ int FUN_0c08dbc8(int a4, int a5)
     t0 = (((struct oF4_int *)(a4))->v);
     (((struct oF8_uint *)(a5))->v) = t0;
     if (t0 == 0) {
-        (((struct oF8_uint *)(a5))->v) = (*(int *)0xC338A98);
+        (((struct oF8_uint *)(a5))->v) = (*(int *)g_attack_record_tab);
     }
     (((struct o10A_uchar *)(a5))->v) = 0x1;
     (((struct o108_uchar *)(a4))->v) = 0x1;
@@ -419,7 +422,7 @@ int FUN_0c08dc24(int a4, int a5)
     t12 = (((struct oF4_int *)(a4))->v);
     (((struct oF8_uint *)(a5))->v) = t12;
     if (t12 == 0) {
-        (((struct oF8_uint *)(a5))->v) = (*(int *)0xC338A98);
+        (((struct oF8_uint *)(a5))->v) = (*(int *)g_attack_record_tab);
     }
     t12 = obj_can_interact(a5, 0xA, ((*(signed char *)((a4 + 0x3))) & 0x1));
     if (t12 == 0) {
@@ -496,7 +499,7 @@ int obj_force_owner_state27(int a4, int a5)
     (((struct o71BA_uchar *)(t0))->v) = 0x1B;
     (((struct o100_uchar *)(a4))->v) = a5;
     (((struct o71BD_uchar *)(t0))->v) = a5;
-    (((struct oF8_uint *)(t0))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((0xC338A98 + ((*(signed char *)((a4 + 0x4))) << 2)))));
+    (((struct oF8_uint *)(t0))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((((int)g_attack_record_tab) + ((*(signed char *)((a4 + 0x4))) << 2)))));
     (((struct o71DE_uchar *)(t0))->v) = (*(signed char *)((t0 + 0x71DD)));
     (((struct o71DD_uchar *)(t0))->v) = (*(signed char *)((((((struct oF8_int *)(t0))->v)) + 0x0)));
     (((struct o7211_uchar *)(t0))->v) = (*(signed char *)((((((struct oF8_int *)(t0))->v)) + 0xD)));
@@ -1084,7 +1087,7 @@ int pl_hitreact_step(int a4, int a5, int a6, int a7)
     if (((signed char)t0 != 0) && (t1 = *(signed char *)((a4 + 0x72AC)), t1 == 0)) {
         (((struct o72AC_uchar *)(a4))->v) = 0x5;
     }
-    t0 = ((int (*)(int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + 0xC338FF8)))))(a4, a5, a6, a7);
+    t0 = ((int (*)(int, int, int, int))((*(int *)((((*(signed char *)((a4 + 0x71DD))) << 2) + ((int)g_hit_reaction_tab))))))(a4, a5, a6, a7);
     if (((((struct o72A4_short *)(a4))->v)) != 0) {
         (((struct o72A4_ushort *)(a4))->v) = (((((struct o72A4_short *)(a4))->v)) - 1);
     }

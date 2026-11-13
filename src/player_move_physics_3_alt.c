@@ -1,5 +1,7 @@
 /* velocity/acceleration/gravity, angle to opponent, stick direction (part 3 of 3 of the same module) (0c09db78-0c09f6a8) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_char_param_tbl[];
 extern float math_cos_angle16(int);
 extern float math_sin_angle16(int);
 int pl_stick_dir_angle(char *);
@@ -36,7 +38,7 @@ void pl_set_velocity_toward_target(char *obj)
         diff |= 0xffff0000;
     if (diff >= -5461 && diff <= 5461)
         heading = pl_angle_to_opponent(obj);
-    row = (float *)(0xC339540 + (signed char)obj[4] * 152 + (unsigned char)(obj[0x71f1] * 76));
+    row = (float *)(((int)g_pl_char_param_tbl) + (signed char)obj[4] * 152 + (unsigned char)(obj[0x71f1] * 76));
     if (obj[0x71ef] == 4) {
         *(float *)(obj + 76) = 0.0f;
         *(float *)(obj + 68) = 0.0f;

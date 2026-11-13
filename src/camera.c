@@ -1,5 +1,7 @@
 /* camera records (0c0d80d4-0c0d8f10) */
 
+/* named globals (symbols.txt) */
+extern char g_cam_split_flag[];
 typedef struct { int x, y, z; } vec3i;
 struct o1E0_float { char p[0x1E0]; float v; };
 struct o1E4_float { char p[0x1E4]; float v; };
@@ -42,7 +44,7 @@ void cam_publish_active_position(int record_idx)
 {
     char *records = (char *)0x0C7F29F8;
     char *rec;
-    if (*(char *)0x0C7F319E)
+    if (*(char *)g_cam_split_flag)
         rec = records + (short)((signed char)record_idx * 508);
     else
         rec = records;
@@ -195,7 +197,7 @@ int cam_select_mode0_variant(int a4)
         t0 = t1;
     } else {
         t1 = 0x0;
-        if ((*(signed char *)0xC7F319E) != 0) {
+        if ((*(signed char *)g_cam_split_flag) != 0) {
             t2 = 0x4;
             if ((*(signed char *)((0xC7E40C8 + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x0))) * (unsigned short)0x72D0)))) == 10) {
                 t2 = 0x2;

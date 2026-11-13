@@ -1,5 +1,8 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05ca54-0c05cd68) */
 
+/* named globals (symbols.txt) */
+extern char g_item_state[];
+extern char g_res_kyoutsuu[];
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o105_uchar { char p[0x105]; unsigned char v; };
@@ -22,7 +25,7 @@ float math_sin_angle16(int angle);
 void fx_spawn_0498c4(char *e);
 void snd_play_side_se(int side, int action);
 typedef struct { float x, y, z; } VEC3;
-#define G ((char *)0x0C7F2664)
+#define G ((char *)g_item_state)
 #define SLOT(i) (((char **)(G + 0x318))[i])
 #define H(o, n) (*(short *)((o) + (n)))
 #define F(o, n) (*(float *)((o) + (n)))
@@ -64,10 +67,10 @@ int obj_spawn_05ca54(int a4)
         (((struct o105_uchar *)(t0))->v) = t5;
         (((struct o106_uchar *)(t0))->v) = t5;
         (((struct o107_uchar *)(t0))->v) = t5;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, ((*(signed char *)(((int)stk + 0))) + 0x59));
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC4CFA68, 0x35);
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), 0xC4CFA68, 0x36);
-        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), 0xC4CFA68, 0x37);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_kyoutsuu), ((*(signed char *)(((int)stk + 0))) + 0x59));
+        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x35);
+        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x36);
+        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x37);
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x15;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x7;
         *(unsigned short *)((((((struct o2E8_int *)(t0))->v)) + 0x2)) = 0x20;
@@ -115,7 +118,7 @@ void FUN_0c05cb46(VEC3 *pos, char kind, char dir)
     H(e, 0xEC) = 0;
     H(e, 0xEE) = 0;
     *(VEC3 *)(e + 32) = *pos;
-    FUN_0c0624c4(MDL(e, 0) + 156, (void *)0x0C4CFA68, kind + 89);
+    FUN_0c0624c4(MDL(e, 0) + 156, (void *)g_res_kyoutsuu, kind + 89);
     if (s.dir == -1) {
         a = 0x14000 - s.ang;
         F(e, 32) = F(e, 32) + 100.0f * math_cos_angle16(a);

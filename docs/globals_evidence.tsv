@@ -1,4 +1,4 @@
-# address	proposed name	type guess	evidence (globals not yet in symbols.txt)
+# address	name (in symbols.txt)	type guess	evidence
 0c150a98	g_spawn_pos_tab	float[3] per slot	pl_set_spawn_position copies tab[slot*12]
 0c150c60	g_model_scale_tab	float[11][2]	pl_reset_scale: +50,+54,+58 = tab[char*8+form*4]
 0c151c58	g_bgm_by_index_tbl	u32[43]	file ids 0x101..0x12B in order; used by bgm_play_by_index
@@ -43,9 +43,9 @@
 0c3390a4	g_pl_char_param_ptr_tbl	void*[11]	per-character data pointers read in FUN_0c093254 (r5 of FUN_0c09bb9e)
 0c3390d4	g_pl_state_update_tbl	fn*[43]	called every frame as table[+71BA state] (pl_update_frame region, state machine)
 0c339180	g_char_attack_update_tab	void(*[11])(Player*)	per-character state-update dispatcher, called by the fighter step FUN_0c09468c | other readings: g_char_attack_update_tab: used by state 10 update (pl_state_attack_update)
-0c3391d8	g_char_state21_update_tab	void(*[11])(Player*)	per-character hook behind the state-11 thunk FUN_0c095452 | other readings: g_char_state21_update_tab: used by state 21 update
-0c339204	g_char_state22_update_tab	void(*[11])(Player*)	per-character hook behind the state-12 thunk FUN_0c095462 | other readings: g_char_state22_update_tab: used by state 22 update
-0c339230	g_char_state31_update_tab	void(*[11])(Player*)	per-character hook indexed by char id from FUN_0c096484 (role not identified) | other readings: g_char_state31_update_tab: used by state 31 update
+0c3391d8	g_char_state21_update_tab	void(*[11])(Player*)	per-character hook called by pl_state21_update (state table 0c3390d4 entry 21)
+0c339204	g_char_state22_update_tab	void(*[11])(Player*)	per-character hook called by pl_state22_update (state table 0c3390d4 entry 22)
+0c339230	g_char_state31_update_tab	void(*[11])(Player*)	entries are pl_<character>_state31_update; jumped through by char id (+4) from the dispatcher at 0c096454
 0c339310	g_pl_special_move_tbl	void(*[11])(Player*)	per-character special-move dispatch (index = byte +0x7209)
 0c339338	g_pl_victim_tbl	void(*[11])(Player*)	per-character victim-side hook, indexed by the OPPONENT's char id in FUN_0c0989ea | other readings: pl_char_fn_tbl_c: indexed by o[4] and by other object's o[4]; per-character fu
 0c3393e0	g_pl_check_special_input_tbl	signed char(*[11])(Player*)	per-character input matcher: returns special index 0..2 or 99 | other readings: g_char_state28_action_tab: used by 0xC0A2C02 to pick the state 28 action; pl_char_special_fn_tbl: indexed by character id o[4]; called by pl_try_char_special_

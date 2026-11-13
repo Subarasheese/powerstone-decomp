@@ -1,5 +1,7 @@
 /* hit effect spawners (04B6B8..04BEF2) and kind dispatchers (0c04b6b8-0c04bfd0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct V3 { int x, y, z; };
 struct Sub {
     char field_00;
@@ -99,7 +101,7 @@ void fx_spawn_random_offset_task(char *parent, int unused, struct V3 *pos, struc
     }
     for (i = 0; i < 8; i++) {
         sub_obj = task->sub[i];
-        FUN_0c06233a(sub_obj, 0xC4CFA68, 25);
+        FUN_0c06233a(sub_obj, ((int)g_res_kyoutsuu), 25);
         sub_obj->field_00 = 1;
         sub_obj->field_02 = 561;
         sub_obj->scale_x = 0.299999982f;
@@ -149,7 +151,7 @@ void fx_spawn_04baa6(char *parent, int unused, struct Vec3i *pos, int kind)
     }
     for (i = 0; i < 8; i++) {
         sub_obj = task->sub[i];
-        FUN_0c06233a(sub_obj, 0xC4CFA68, 26);
+        FUN_0c06233a(sub_obj, ((int)g_res_kyoutsuu), 26);
         sub_obj->b0 = 1;
         sub_obj->s2 = 0x21E;
         sub_obj->w16 = math_rand_next() % 0x10000;

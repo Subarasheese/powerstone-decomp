@@ -1,5 +1,7 @@
 /* debug text printing (dbg_set_cursor_cell (0c0dfe20-0c0e0790) */
 
+/* named globals (symbols.txt) */
+extern char g_dbg_vsprintf_buf[];
 int printf_hex_digits(void);
 int FUN_0c0e0210(int, int);
 int vsprintf(char *buf, const char *fmt, char *ap);
@@ -24,7 +26,7 @@ int FUN_0c0e02c0(int a4, int a5)
     register int v0_8;
     v0_6 = a4;
     v0_7 = a5;
-    v0_0 = (0xC7F89F0);
+    v0_0 = (((int)g_dbg_vsprintf_buf));
     v0_1 = (0x0);
     v0_2 = (0xC7F8C08);
     R13 = (0x3);
@@ -194,7 +196,7 @@ int FUN_0c0e02c0(int a4, int a5)
 
 int dbg_printf(int a, int b, int c, int d, const char *fmt, int arg1)
 {
-    vsprintf((char *)0xC7F89F0, fmt, (char *)&arg1);
-    dbg_print_string((char *)0xC7F89F0);
+    vsprintf((char *)g_dbg_vsprintf_buf, fmt, (char *)&arg1);
+    dbg_print_string((char *)g_dbg_vsprintf_buf);
     return 0;
 }

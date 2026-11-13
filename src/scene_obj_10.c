@@ -1,5 +1,7 @@
 /* class-6 scene objects (spawn+tick pairs, table 0C4CFA80 parts); consecutive rows are one module (0c057b3c-0c057e28) */
 
+/* named globals (symbols.txt) */
+extern char g_res_font[];
 struct vec3i { int w0, w1, w2; };
 extern int FUN_0c0d5188(void);
 extern void FUN_0c06233a(char *p, int q, int n);
@@ -16,7 +18,7 @@ void fx_tick_057da8(char *effect)
         effect[1] = 1;
         *(short *)(effect + 6) = 31;
         effect[5] = 25;
-        FUN_0c06233a(*(char **)(effect + 736), 0xC4CFA80, ((signed char *)0xC14BA40)[(unsigned char)(effect[4] * 28) + 24]);
+        FUN_0c06233a(*(char **)(effect + 736), ((int)g_res_font), ((signed char *)0xC14BA40)[(unsigned char)(effect[4] * 28) + 24]);
         **(char **)(effect + 736) = 0;
         *(struct vec3i *)(*(char **)(effect + 736) + 4) = *(struct vec3i *)(0xC14BA40 + (unsigned char)(effect[4] * 28));
         *(struct vec3i *)(*(char **)(effect + 736) + 28) = *(struct vec3i *)(0xC14BA40 + (unsigned char)(effect[4] * 28) + 12);
@@ -24,7 +26,7 @@ void fx_tick_057da8(char *effect)
         *(float *)(*(char **)(effect + 736) + 68) = 0.0f;
         *(float *)(*(char **)(effect + 736) + 72) = 0.0f;
         *(float *)(*(char **)(effect + 736) + 76) = 1.0f;
-        FUN_0c06233a(*(char **)(effect + 740), 0xC4CFA80, ((signed char *)0xC14BA40)[(unsigned char)(effect[4] * 28) + 25] + 1);
+        FUN_0c06233a(*(char **)(effect + 740), ((int)g_res_font), ((signed char *)0xC14BA40)[(unsigned char)(effect[4] * 28) + 25] + 1);
         **(char **)(effect + 740) = 0;
         *(struct vec3i *)(*(char **)(effect + 740) + 4) = *(struct vec3i *)(0xC14BA40 + (unsigned char)(effect[4] * 28));
         *(struct vec3i *)(*(char **)(effect + 740) + 28) = *(struct vec3i *)(0xC14BA40 + (unsigned char)(effect[4] * 28) + 12);

@@ -1,5 +1,7 @@
 /* win counter text (0c0d46e4-0c0d54c0) */
 
+/* named globals (symbols.txt) */
+extern char g_select_ready_mask[];
 int memset(int, int, int);
 extern int sprintf(char *, const char *, ...);
 extern float FUN_0c0d5bc0(void);
@@ -458,8 +460,8 @@ int game_play_step(int a4, int a5, int a6, int a7)
     (((struct o6_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o5_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o4_uchar *)0xC7F2EE0)->v) = 0x0;
-    (((struct o1_uchar *)0xC7F3074)->v) = 0x0;
-    (((struct o0_uchar *)0xC7F3074)->v) = 0x0;
+    (((struct o1_uchar *)g_select_ready_mask)->v) = 0x0;
+    (((struct o0_uchar *)g_select_ready_mask)->v) = 0x0;
     (((struct o29_uchar *)0xC7F3028)->v) = 0x0;
     game_reset_objects();
     thunk_FUN_0c062d78();

@@ -1,5 +1,7 @@
 /* NAOMI-style test mode (colour test (0c0cdac0-0c0cf408) */
 
+/* named globals (symbols.txt) */
+extern char g_game_config[];
 int testmode_draw_text_table(int, int);
 int FUN_0c0ce99a(int, int, int, int);
 int FUN_0c0cea90(int, int, int, int);
@@ -60,7 +62,7 @@ int testmode_game_config_screen(int a4, int a5)
     FUN_0c0ce99a(0xD, R5, v0_2, v0_3);
     v0_4 = *(signed char *)((v0_0 + 0x8));
     v0_2 = ((unsigned char)v0_4);
-    v0_3 = (0xC49491C);
+    v0_3 = (((int)g_game_config));
     R11 = (0x4);
     v0_5 = (0xC33F1CC);
     if (((unsigned char)v0_4 == 11)) goto L_C0CED74;

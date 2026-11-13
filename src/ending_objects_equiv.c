@@ -1,5 +1,11 @@
 /* ending sequence: scripted objects, update table, spawners, ending state/script (0c0128a0-0c0158d8) */
 
+/* named globals (symbols.txt) */
+extern char g_ending_character[];
+extern char g_ending_event_script_tab[];
+extern char g_ending_script_tab[];
+extern char g_game_substate[];
+extern char g_res_ending[];
 int bgm_play_by_index(int, int, int, int);
 int FUN_0c0a3eec(int);
 struct Cmd {
@@ -119,7 +125,7 @@ void ending_obj_run_script(char *obj, int param_a, int param_b, int param_c)
     char *child;
     int done;
 
-    cmd = (struct Cmd *)(*(char **)(0xC17E3B0 + obj[4] * 4) + obj[0xD] * 20);
+    cmd = (struct Cmd *)(*(char **)(((int)g_ending_script_tab) + obj[4] * 4) + obj[0xD] * 20);
     done = 0;
     do {
         *(short *)(obj + 0xEE) = cmd->wait;
@@ -736,7 +742,7 @@ int ending_obj_update_t05(int a4, int a5, int a6, int a7)
     v0_3 = ((v0_3 + 0x1));
     if (((int)(v0_4 + 0x1) < (int)v0_2)) goto L_C0135BC;
     L_C0136DE:;
-    if (((*(signed char *)0xC7F302D) != 3)) goto L_C0136F8;
+    if (((*(signed char *)g_game_substate) != 3)) goto L_C0136F8;
     v0_2 = (((struct oEC_short *)(v0_0))->v);
     (((struct oEC_ushort *)(v0_0))->v) = (v0_2 + 0x1);
     v0_1 = (0xEC);
@@ -950,7 +956,7 @@ int ending_obj_update_t07(int a4, int a5, int a6, int a7)
     }
     (((struct o50_float *)(a4))->v) = (((((struct o50_float *)(a4))->v)) + 0.0124999993f);
     (((struct o54_float *)(a4))->v) = (((((struct o54_float *)(a4))->v)) + 0.0124999993f);
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     t1 = t0;
     if (t0 != 5) {
         t0 = *(signed char *)((a4 + 0x8));
@@ -1532,7 +1538,7 @@ int ending_spawn_obj_typed(int a4, int a5, int a6, int a7)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         if ((*(signed char *)(((int)stk + 12))) != 0) {
-            t10 = 0xC6649B8;
+            t10 = ((int)g_res_ending);
             t11 = (*(signed char *)(((int)stk + 0)));
         } else {
             t10 = 0xC6649D0;
@@ -1801,7 +1807,7 @@ int ending_spawn_obj_typed_b(int a4, int a5, int a6)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t10 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649B8, (*(signed char *)(((int)stk + 4)))));
+        t10 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_ending), (*(signed char *)(((int)stk + 4)))));
     }
     return t10;
 }
@@ -1965,10 +1971,10 @@ int ending_state_run_script(void)
             (((struct o0_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302C) + 0x1);
             return t0;
         }
-        return ending_script_update((*(int *)((((*(signed char *)0xC7F3081) << 2) + 0xC17CA88))));
+        return ending_script_update((*(int *)((((*(signed char *)g_ending_character) << 2) + ((int)g_ending_event_script_tab)))));
     }
     (((struct o3_uchar *)0xC7F302C)->v) = ((*(signed char *)0xC7F302F) + 0x1);
-    return ending_script_update((*(int *)((((*(signed char *)0xC7F3081) << 2) + 0xC17CA88))));
+    return ending_script_update((*(int *)((((*(signed char *)g_ending_character) << 2) + ((int)g_ending_event_script_tab)))));
 }
 
 int ending_show_mail_screen(void)
@@ -2056,7 +2062,7 @@ int ending_main(int a4, int a5, int a6, int a7)
         if (((unsigned short)(*(short *)((0xC361BFC + (signed char)(((t6 << 2) + t6) << 2)))) & 8) != 0) {
             (((struct o1C_ushort *)0xC7F302C)->v) = 0x1;
         }
-        t6 = *(signed char *)0xC7F302D;
+        t6 = *(signed char *)g_game_substate;
         if (t6 != 0) {
             if (t6 != 1) {
                 if (t6 == 2) {
@@ -2315,7 +2321,7 @@ int ending_main(int a4, int a5, int a6, int a7)
         (((struct o4_uint *)0xC7F31BC)->v) = 0x0;
         (((struct o0_uint *)0xC7F31BC)->v) = 0x0;
         res_switch_scene(0x9);
-        FUN_0c0a3308((*(signed char *)0xC7F3081));
+        FUN_0c0a3308((*(signed char *)g_ending_character));
         *(unsigned char *)0xC7F3082 = 0x0;
         if (((((struct o16_short *)0xC7F302C)->v)) != 0) {
             (((struct o16_ushort *)0xC7F302C)->v) = (((((struct o16_short *)0xC7F302C)->v)) - 1);
@@ -2327,7 +2333,7 @@ int ending_main(int a4, int a5, int a6, int a7)
         if (((unsigned short)(*(short *)((0xC361BFC + (signed char)(((t0 << 2) + t0) << 2)))) & 8) != 0) {
             (((struct o1C_ushort *)0xC7F302C)->v) = 0x1;
         }
-        t0 = *(signed char *)0xC7F302D;
+        t0 = *(signed char *)g_game_substate;
         if (t0 != 0) {
             if (t0 != 1) {
                 if (t0 == 2) {
@@ -2555,7 +2561,7 @@ int ending_main(int a4, int a5, int a6, int a7)
             return ((int (*)(int, int, int, int, float))(0xC015630))(0xC7F302E, 0x14, 0x1E, a7, 1.0f);
         }
     }
-    t0 = *(signed char *)0xC7F3081;
+    t0 = *(signed char *)g_ending_character;
     if ((t0 != 0) && ((t0 != 1) && ((t0 != 2) && ((t0 != 3) && ((t0 != 4) && ((t0 != 5) && ((t0 != 6) && ((t0 != 7) && ((t0 != 8) && (t0 != 9)))))))))) {
         if (t0 != 10) {
             t0 = 0x14;

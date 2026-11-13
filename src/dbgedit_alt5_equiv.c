@@ -1,5 +1,7 @@
 /* debug work/player/stage editor (CHAR/EDIT/MENU mode); not a resource loader (0c0cfe04-0c0d24ec) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int a, b, c; } vec12;
 extern int sprintf(char *, int, int, int, const char *, int);
 extern void FUN_0c06233a(int a, int b, int c);
@@ -27,7 +29,7 @@ void dbgedit_select_object(char *obj)
         *(vec12 *)(owner + 44) = *(vec12 *)(row + (unsigned short)*(short *)(obj + 156) * 12);
         FUN_0c06233a(*(int *)(owner + 736), 0xC664958, *(short *)(obj + 156));
     } else {
-        FUN_0c06233a(*(int *)(owner + 736), 0xC4CFA68, *(short *)(obj + 156));
+        FUN_0c06233a(*(int *)(owner + 736), ((int)g_res_kyoutsuu), *(short *)(obj + 156));
     }
     buf = (char *)0xC7F36B8;
     sprintf(buf, 0, 0, 0, (const char *)0xC1544D0, 0);

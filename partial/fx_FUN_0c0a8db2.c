@@ -1,6 +1,8 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c0a8db2.json (synthetic). */
 /* Menu-cursor sprite set (eight objects at +736.. plus two at +768/+772): state 0 spawns/initialises them from a table, state 1 slides them out by 30.0 per frame (selected by a mode byte at 0xC7F302C+69), state 2 waits for the screen to be ready and pulses the last one, state 3 slides everything out again; other states hand over to obj_destroy. */
+/* named globals (symbols.txt) */
+extern char g_res_csel_ssel[];
 typedef struct { int a, b, c; } S12;
 extern void FUN_0c0623a6(void *, int, int);
 extern int obj_destroy(void *);
@@ -36,7 +38,7 @@ void menu_ui_task_23(char *e)
         e[5] = 25;
         k650 = 650.0f;
         for (i = 0; i < 8; i++) {
-            FUN_0c0623a6(OB(i), 0xC664A60, 0);
+            FUN_0c0623a6(OB(i), ((int)g_res_csel_ssel), 0);
             *(short *)(OB(i) + 2) = 15;
             *(S12 *)(OB(i) + 28) = l2;
             s = (char *)0xC152970 + (unsigned char)(i * 12);
@@ -44,11 +46,11 @@ void menu_ui_task_23(char *e)
             OF(i, 8) = *(float *)(s + 4) + k650;
             OF(i, 12) = *(float *)(s + 8);
         }
-        FUN_0c0623a6(OB(8), 0xC664A60, 8);
+        FUN_0c0623a6(OB(8), ((int)g_res_csel_ssel), 8);
         *(short *)(OB(8) + 2) = 47;
         *(S12 *)(OB(8) + 28) = l2;
         OF(8, 8) = OF(8, 8) + k650;
-        FUN_0c0623a6(OB(9), 0xC664A60, 9);
+        FUN_0c0623a6(OB(9), ((int)g_res_csel_ssel), 9);
         *(short *)(OB(9) + 2) = 15;
         *(S12 *)(OB(9) + 28) = l2;
         OF(9, 4) = -485.0f;

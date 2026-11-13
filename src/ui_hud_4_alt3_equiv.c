@@ -1,5 +1,7 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02ff18-0c03148c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_eyecatch[];
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -19,5 +21,5 @@ int FUN_0c031030(void)
     *(unsigned int *)(((int)stk + 60)) = 0x100A;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), 0xC17FE4C, 0x1));
+    return (ui_sprite_queue_add((((int)stk + 0) + 0x8), ((int)g_res_eyecatch), 0x1));
 }

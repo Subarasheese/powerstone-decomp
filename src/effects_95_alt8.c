@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c042728-0c043384) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } Vec3i;
 extern char *obj_create(int, int, int, int);
 extern void FUN_0c06233a(char *, char *, int);
@@ -32,7 +34,7 @@ char *fx_spawn_burst_slot(char owner_idx, char child_count, char kind_byte, Vec3
     if (count > 0) {
         idx = 0;
         do {
-            FUN_0c06233a(*(char **)(slot + 0x2E0 + (signed char)idx * 4), (char *)0xC4CFA68, 33);
+            FUN_0c06233a(*(char **)(slot + 0x2E0 + (signed char)idx * 4), (char *)g_res_kyoutsuu, 33);
             child = *(char **)(slot + 0x2E0 + (signed char)idx * 4);
             child[0] = 0;
             child = *(char **)(slot + 0x2E0 + (signed char)idx * 4);

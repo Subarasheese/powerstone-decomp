@@ -1,5 +1,8 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05b6dc-0c05c1c0) */
 
+/* named globals (symbols.txt) */
+extern char g_item_player_flags[];
+extern char g_item_state[];
 typedef struct { int x, y, z; } S12;
 extern int FUN_0c0555dc(void);
 extern int obj_destroy(void *);
@@ -56,7 +59,7 @@ void item_tick(char *actor)
         }
     }
     if (MODE == 16 || MODE == 0) {
-        *(char *)(0xC7F2974 + actor[13]) = 1;
+        *(char *)(((int)g_item_player_flags) + actor[13]) = 1;
     }
     switch (MODE) {
     case 0:
@@ -86,8 +89,8 @@ void item_tick(char *actor)
                 TIMER = TIMER + 1;
                 if (TIMER >= 300) {
                     if (TIMER > 360) {
-                        *(char *)(0xC7F2664 + 789) = actor[13];
-                        *(char *)(0xC7F2664 + 790) = 1;
+                        *(char *)(((int)g_item_state) + 789) = actor[13];
+                        *(char *)(((int)g_item_state) + 790) = 1;
                         obj_set_mode_owner(actor, 3, 2);
                         return;
                     }

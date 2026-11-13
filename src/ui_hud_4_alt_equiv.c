@@ -1,5 +1,9 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02ff18-0c03148c) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_counter_slots[];
+extern char g_hud_state[];
+extern char g_res_font_model[];
 struct o0_float { float v; };
 struct o18_float { char p[0x18]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -38,29 +42,29 @@ int FUN_0c0301d2(int a4, int a5, int a6, int a7)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 1)) = a5;
-    *(unsigned char *)(((int)stk + 2)) = (*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xB)));
+    *(unsigned char *)(((int)stk + 2)) = (*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xB)));
     *(unsigned char *)(((int)stk + 3)) = 0x1;
     *(float *)(((int)stk + 4)) = ((((struct o18_float *)0xC030340)->v));
     *(float *)(((int)stk + 8)) = ((((struct o0_float *)0xC030340)->v));
-    if ((*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0x3))) == 0) {
-        t6 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+    if ((*(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0x3))) == 0) {
+        t6 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
         t8 = (int)((unsigned int)((int)((unsigned int)t6 + (unsigned int)0x0)) + ((((int)0x0 > (int)t6)) ? 1u : 0u));
         *(unsigned int *)(((int)stk + 12)) = (*(int *)((((signed char)((((t8 >> 1) << 1) + (t8 >> 1)) << 2) + 0xC149290) + 0x8)));
-        t13 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+        t13 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
         t15 = (int)((unsigned int)((int)((unsigned int)t13 + (unsigned int)0x0)) + ((((int)0x0 > (int)t13)) ? 1u : 0u));
         t24 = (((t15 >> 1) << 1) + (t15 >> 1));
         t27 = 0xC149290;
     } else {
-        t19 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+        t19 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
         *(unsigned int *)(((int)stk + 12)) = (*(int *)((((signed char)(((t19 << 1) + t19) << 2) + 0xC1492F0) + 0x8)));
-        t22 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA));
+        t22 = *(signed char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)) + 0xA));
         t24 = ((t22 << 1) + t22);
         t27 = 0xC1492F0;
     }
     *(float *)(((int)stk + 16)) = ((((struct o4_float *)((t27 + (signed char)(t24 << 2))))->v));
     *(float *)(((int)stk + 20)) = 1.0f;
     *(float *)(((int)stk + 24)) = 1.0f;
-    return (FUN_0c02fffc(((int)stk + 0), a5, ((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C), a7));
+    return (FUN_0c02fffc(((int)stk + 0), a5, ((signed char)((((a4 << 1) + a4) << 2) << 1) + ((int)g_hit_counter_slots)), a7));
 }
 
 int FUN_0c030aec(int a4, int a5, int a6, float f4)
@@ -121,12 +125,12 @@ void ui_draw_digit_string(struct vec3i *pos, char *text, float scale)
     while ((ch = *text++) != 0) {
         if (ch >= 48 && ch <= 51) {
             ch -= 48;
-            ui_sprite_queue_add(&req, 0xC17FDBC, 2, ch, 0, 0);
+            ui_sprite_queue_add(&req, ((int)g_res_font_model), 2, ch, 0, 0);
             req.x += adv_wide;
         }
         if (ch >= 52 && ch <= 57) {
             ch -= 48;
-            ui_sprite_queue_add(&req, 0xC17FDBC, 3, ch, 0, 0);
+            ui_sprite_queue_add(&req, ((int)g_res_font_model), 3, ch, 0, 0);
             req.x += adv_narrow;
         }
     }
@@ -134,7 +138,7 @@ void ui_draw_digit_string(struct vec3i *pos, char *text, float scale)
 
 void ui_draw_hud(void)
 {
-    if ((*(signed char *)0xC366A70) != 0) {
+    if ((*(signed char *)g_hud_state) != 0) {
         FUN_0c030920();
         FUN_0c02f98a();
         FUN_0c02dc86();

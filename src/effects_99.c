@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c043bdc-0c044094) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct Vec12 { int a, b, c; };
 struct Rec { float f0; char b4, b5, b6, b7; int w8; };
 struct Sub {
@@ -63,7 +65,7 @@ void fx_spawn_043bdc(char *src)
         part = task->sub[idx];
         rec = &part->rec;
         memset(rec, 0, 12);
-        FUN_0c06233a(part, 0xC4CFA68, rec->b6 + 117);
+        FUN_0c06233a(part, ((int)g_res_kyoutsuu), rec->b6 + 117);
         part->b0 = 1;
         part->s2 = 49;
         part->f36 = (float)((unsigned int)(math_rand_float() * 255.0f) % 10u + 1) / 10.0f + 1.0f;

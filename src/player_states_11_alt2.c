@@ -1,5 +1,7 @@
 /* state update functions of the player state machine (table 0xC3390D4) (part 11 of 14 of the same module) (0c096484-0c0975c8) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_char_param_tbl[];
 struct o0_float { float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o274_float { char p[0x274]; float v; };
@@ -419,7 +421,7 @@ int pl_state39_phase2(int a4)
             }
         }
         *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) & 0xFFFF);
-        (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C) + (0xC339540 + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)))))->v));
+        (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C) + (((int)g_pl_char_param_tbl) + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)))))->v));
         *(unsigned int *)(((int)stk + 0)) = (0x14000 - t10);
         (((struct o38_float *)(a4))->v) = ((math_cos_angle16((0x14000 - t10))) * ((((struct o7254_float *)(a4))->v)));
         (((struct o40_float *)(a4))->v) = ((math_sin_angle16((*(int *)(((int)stk + 0))))) * ((((struct o7254_float *)(a4))->v)));

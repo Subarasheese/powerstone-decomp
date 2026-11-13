@@ -1,5 +1,7 @@
 /* input snapshot, round-level update of the two fighters, per-player update (part 4 of 4 of the same module) (0c093254-0c093998) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_state_update_tbl[];
 struct o24_float { char p[0x24]; float v; };
 struct o71F0_uchar { char p[0x71F0]; unsigned char v; };
 int FUN_0c0555c4(void);
@@ -54,7 +56,7 @@ int FUN_0c09375c(int a4, int a5, int a6, int a7)
                     }
                 }
             }
-            t1 = *(int *)((((*(signed char *)((a4 + 0x71BA))) << 2) + 0xC3390D4));
+            t1 = *(int *)((((*(signed char *)((a4 + 0x71BA))) << 2) + ((int)g_pl_state_update_tbl)));
             return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
         }
         return (signed char)t0;
@@ -73,7 +75,7 @@ int FUN_0c09375c(int a4, int a5, int a6, int a7)
             }
         }
     }
-    t0 = *(int *)((((*(signed char *)((a4 + 0x71BA))) << 2) + 0xC3390D4));
+    t0 = *(int *)((((*(signed char *)((a4 + 0x71BA))) << 2) + ((int)g_pl_state_update_tbl)));
     return ((int (*)(int, int, int, int))(t0))(a4, a5, a6, a7);
 }
 

@@ -1,5 +1,7 @@
 /* attract/demo screen objects (bank SYUKYAKU/DEMO COMN) (0c029268-0c029660) */
 
+/* named globals (symbols.txt) */
+extern char g_res_syukyaku[];
 float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
 void math_vec3_add(float *a, float *b, float *c);
@@ -82,7 +84,7 @@ void FUN_0c029268(char *o)
     if (H(o, 0xEC) & 1) {
         H(o, 0xF0) = H(o, 0xF0) + 1;
         H(o, 0xF0) = H(o, 0xF0) & 7;
-        anim = (int **)0x0C6649E8;
+        anim = (int **)g_res_syukyaku;
         for (i = 0; i < B(o, 0x2DC); i++) {
             e = PART(o, i);
             *(int *)(e + 0x9C) = anim[2][((int *)0x0C148DF4)[H(o, 0xF0)]];
@@ -137,7 +139,7 @@ void demo_spawn_effect_actors(int kind, int sprite_count)
                 child->active = 1;
                 child->field_1 = 0;
                 child->flags = 0x101F;
-                FUN_0c06233a((int)child, 0xC6649E8, 0x1C);
+                FUN_0c06233a((int)child, ((int)g_res_syukyaku), 0x1C);
                 j++;
             } while (j < child_count);
         }

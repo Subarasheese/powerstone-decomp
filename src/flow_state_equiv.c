@@ -1,5 +1,7 @@
 /* mode 5..9 handlers, state predicates, HP gauge tick (0c054114-0c0559bc) */
 
+/* named globals (symbols.txt) */
+extern char g_game_substate[];
 int FUN_0c041e14(int);
 int obj_release_class(int);
 int FUN_0c0cc074(void);
@@ -62,7 +64,7 @@ int game_mode_handler_5(void)
 {
     register int t0;
 
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
@@ -85,7 +87,7 @@ int game_mode_handler_6(void)
 {
     register int t0;
 
-    t0 = *(signed char *)0xC7F302D;
+    t0 = *(signed char *)g_game_substate;
     if (t0 != 0) {
         if (t0 != 1) {
             return ((int (*)(void))(0xC054DD0))();
@@ -147,7 +149,7 @@ int FUN_0c0555c4(void)
 {
     int t1;
 
-    if (((*(signed char *)0xC7F302C) == 3) && (t1 = *(signed char *)0xC7F302D, t1 == 0)) {
+    if (((*(signed char *)0xC7F302C) == 3) && (t1 = *(signed char *)g_game_substate, t1 == 0)) {
         return 0x1;
     }
     return 0x0;
@@ -168,7 +170,7 @@ int FUN_0c055634(void)
 {
     int t1;
 
-    if (((*(signed char *)0xC7F302C) == 5) && (t1 = *(signed char *)0xC7F302D, (int)t1 <= (int)0x1)) {
+    if (((*(signed char *)0xC7F302C) == 5) && (t1 = *(signed char *)g_game_substate, (int)t1 <= (int)0x1)) {
         return 0x0;
     }
     return 0x1;
@@ -178,7 +180,7 @@ int FUN_0c05564e(void)
 {
     int t1;
 
-    if (((*(signed char *)0xC7F302C) == 5) && (t1 = *(signed char *)0xC7F302D, t1 == 3)) {
+    if (((*(signed char *)0xC7F302C) == 5) && (t1 = *(signed char *)g_game_substate, t1 == 3)) {
         *(unsigned char *)0xC7F319B = 0x1;
     }
     return (*(signed char *)0xC7F319B);

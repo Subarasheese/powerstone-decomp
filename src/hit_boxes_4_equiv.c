@@ -1,5 +1,7 @@
 /* hit box data converters, per-frame object lists, hit edit draw (0c0228ac-0c02380c) */
 
+/* named globals (symbols.txt) */
+extern char g_hit_table_desc[];
 struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -87,7 +89,7 @@ int hit_find_part_entry(int a4, int a5, int a6, int a7)
         }
         t1 = (t2 << 1);
     }
-    return (((*(int *)((((signed char)a5 << 2) + ((((t1 << 2) << 2) << 1) + 0xC7D08E0)))) + (((short)(unsigned char)a6 * (short)(*(signed char *)((((signed char)a5 + (0xC320034 + ((*(signed char *)((a4 + 0x2))) << 1))) + 0x0)))) << 2)) + (a7 << 2));
+    return (((*(int *)((((signed char)a5 << 2) + ((((t1 << 2) << 2) << 1) + ((int)g_hit_table_desc))))) + (((short)(unsigned char)a6 * (short)(*(signed char *)((((signed char)a5 + (0xC320034 + ((*(signed char *)((a4 + 0x2))) << 1))) + 0x0)))) << 2)) + (a7 << 2));
 }
 
 int FUN_0c0229d8(int a4, int a5, int a6, int a7)

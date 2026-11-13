@@ -1,5 +1,11 @@
 /* option menu: state machine and item handler table (0c0d71f4-0c0d7f30) */
 
+/* named globals (symbols.txt) */
+extern char g_key_config[];
+extern char g_menu_option_cursor[];
+extern char g_menu_option_work[];
+extern char g_tbl_menu_option_item_handlers[];
+extern char g_vib_disabled[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o13_uchar { char p[0x13]; unsigned char v; };
@@ -130,7 +136,7 @@ int FUN_0c0d724a(int a4, float f4)
     (((struct o6_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o5_uchar *)0xC7F2EE0)->v) = 0x0;
     (((struct o4_uchar *)0xC7F2EE0)->v) = 0x0;
-    memset(0xC7F4724, 0x0, 0x2C);
+    memset(((int)g_menu_option_work), 0x0, 0x2C);
     game_clear_win_records();
     game_reset_objects();
     cam_init_records();
@@ -138,25 +144,25 @@ int FUN_0c0d724a(int a4, float f4)
     (((struct o8_uint *)0xC7F31BC)->v) = 0x0;
     (((struct o4_uint *)0xC7F31BC)->v) = 0x0;
     (((struct o0_uint *)0xC7F31BC)->v) = 0x0;
-    (((struct o0_uchar *)0xC7F4724)->v) = 0x1;
-    (((struct o1_uchar *)0xC7F4724)->v) = 0x4;
-    (((struct o4_uchar *)0xC7F4724)->v) = 0x0;
-    (((struct o3_uchar *)0xC7F4724)->v) = 0x0;
+    (((struct o0_uchar *)g_menu_option_work)->v) = 0x1;
+    (((struct o1_uchar *)g_menu_option_work)->v) = 0x4;
+    (((struct o4_uchar *)g_menu_option_work)->v) = 0x0;
+    (((struct o3_uchar *)g_menu_option_work)->v) = 0x0;
     (((struct o0_uchar *)0xC7F4768)->v) = 0x0;
     (((struct o1_uchar *)0xC7F4768)->v) = 0x0;
     cam_reset_shake(0x0, 0x0, 0x63, 0x0);
     t7 = *(signed char *)0xC7F4755;
-    (((struct o15_uchar *)0xC7F4724)->v) = t7;
+    (((struct o15_uchar *)g_menu_option_work)->v) = t7;
     if (t7 != 0) {
-        (((struct o20_uchar *)0xC7F4724)->v) = 0x1;
-        (((struct o21_uchar *)0xC7F4724)->v) = 0x1;
-        (((struct o22_uchar *)0xC7F4724)->v) = 0x1;
-        (((struct o23_uchar *)0xC7F4724)->v) = 0x1;
+        (((struct o20_uchar *)g_menu_option_work)->v) = 0x1;
+        (((struct o21_uchar *)g_menu_option_work)->v) = 0x1;
+        (((struct o22_uchar *)g_menu_option_work)->v) = 0x1;
+        (((struct o23_uchar *)g_menu_option_work)->v) = 0x1;
     }
-    (((struct o16_uchar *)0xC7F4724)->v) = 0x1;
+    (((struct o16_uchar *)g_menu_option_work)->v) = 0x1;
     opt_page_leave_reset();
-    (((struct o14_uchar *)0xC7F4724)->v) = 0x5;
-    (((struct o1A_uchar *)0xC7F4724)->v) = ((*(signed char *)(((int)stk + 0))) + 0x4);
+    (((struct o14_uchar *)g_menu_option_work)->v) = 0x5;
+    (((struct o1A_uchar *)g_menu_option_work)->v) = ((*(signed char *)(((int)stk + 0))) + 0x4);
     return 0x1A;
 }
 
@@ -165,7 +171,7 @@ int menu_option_update(int a4, int a5, int a6, int a7, float f4)
     register int t0;
     register int t1;
 
-    t0 = *(signed char *)0xC7F4724;
+    t0 = *(signed char *)g_menu_option_work;
     if (t0 != 0) {
         if (t0 != 1) {
             t1 = t0;
@@ -195,15 +201,15 @@ int menu_option_update(int a4, int a5, int a6, int a7, float f4)
             return FUN_0c0d75bc(a4, a5, a6, a7);
         }
         game_reset_objects();
-        (((struct o1_uchar *)0xC7F4724)->v) = ((*(signed char *)0xC7F4725) + 0x1);
-        (((struct o2_uchar *)0xC7F4724)->v) = 0x0;
-        (((struct o3_uchar *)0xC7F4724)->v) = 0x0;
-        (((struct o4_uchar *)0xC7F4724)->v) = 0x0;
+        (((struct o1_uchar *)g_menu_option_work)->v) = ((*(signed char *)0xC7F4725) + 0x1);
+        (((struct o2_uchar *)g_menu_option_work)->v) = 0x0;
+        (((struct o3_uchar *)g_menu_option_work)->v) = 0x0;
+        (((struct o4_uchar *)g_menu_option_work)->v) = 0x0;
         t0 = attract_take_step3_flag();
         t1 = t0;
         if (t0 != 0) {
-            (((struct o1_uchar *)0xC7F4724)->v) = ((*(signed char *)0xC7F4725) + 0x1);
-            (((struct o16_uchar *)0xC7F4724)->v) = 0x1;
+            (((struct o1_uchar *)g_menu_option_work)->v) = ((*(signed char *)0xC7F4725) + 0x1);
+            (((struct o16_uchar *)g_menu_option_work)->v) = 0x1;
             t1 = 0x16;
         }
         return t1;
@@ -212,16 +218,16 @@ int menu_option_update(int a4, int a5, int a6, int a7, float f4)
     (((struct o8_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
     (((struct o4_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
     (((struct o0_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
-    (((struct o0_uchar *)0xC7F4724)->v) = 0x1;
-    (((struct o4_uchar *)0xC7F4724)->v) = 0x0;
-    return ((int (*)(int, int, int, int))(0xC0D7528))(0xC7F4724, 0x0, 0x63, 0x0);
+    (((struct o0_uchar *)g_menu_option_work)->v) = 0x1;
+    (((struct o4_uchar *)g_menu_option_work)->v) = 0x0;
+    return ((int (*)(int, int, int, int))(0xC0D7528))(((int)g_menu_option_work), 0x0, 0x63, 0x0);
 }
 
 int FUN_0c0d7566(int a4, int a5, int a6, int a7)
 {
     int t0;
 
-    t0 = *(signed char *)0xC7F4738;
+    t0 = *(signed char *)g_menu_option_cursor;
     if ((t0 != 2) && (t0 != 3)) {
         if (t0 != 5) {
             if (t0 != 6) {
@@ -331,44 +337,44 @@ int FUN_0c0d78fa(void)
     int t28;
 
     if ((*(signed char *)0xC7F473B) == 0) {
-        if (((*(signed char *)0xC7F4738) == 1) && ((t5 = (((struct o0_int *)0xC361BF0)->v), t5 == 0) || (t6 = (((struct o14_int *)0xC361BF0)->v), t6 == 0))) {
+        if (((*(signed char *)g_menu_option_cursor) == 1) && ((t5 = (((struct o0_int *)0xC361BF0)->v), t5 == 0) || (t6 = (((struct o14_int *)0xC361BF0)->v), t6 == 0))) {
             t7 = *(signed char *)0xC7F472D;
-            (((struct o3_uchar *)0xC7F4738)->v) = t7;
+            (((struct o3_uchar *)g_menu_option_cursor)->v) = t7;
             if (t7 == 1) {
-                (((struct o0_uchar *)0xC7F4738)->v) = 0x0;
+                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x0;
                 return 0x14;
             }
-            (((struct o0_uchar *)0xC7F4738)->v) = 0x2;
+            (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x2;
             return 0x14;
         }
-        *(unsigned char *)(((int)stk + 0)) = (*(signed char *)0xC7F4738);
+        *(unsigned char *)(((int)stk + 0)) = (*(signed char *)g_menu_option_cursor);
         if ((((unsigned short)((((struct oC_short *)0xC361BF0)->v)) & 0x10) == 0) && (t10 = (((struct o20_short *)0xC361BF0)->v), ((unsigned short)t10 & 0x10) == 0)) {
         } else {
-            (((struct o0_uchar *)0xC7F4738)->v) = ((*(signed char *)0xC7F4738) - 1);
-            (((struct o3_uchar *)0xC7F4738)->v) = 0x1;
-            if ((int)(*(signed char *)0xC7F4738) < 0) {
-                (((struct o0_uchar *)0xC7F4738)->v) = 0x5;
+            (((struct o0_uchar *)g_menu_option_cursor)->v) = ((*(signed char *)g_menu_option_cursor) - 1);
+            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x1;
+            if ((int)(*(signed char *)g_menu_option_cursor) < 0) {
+                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x5;
             }
-            if (((*(signed char *)0xC7F4738) == 3) && (t16 = *(signed char *)0xC7F4739, t16 == 0)) {
-                (((struct o0_uchar *)0xC7F4738)->v) = 0x2;
+            if (((*(signed char *)g_menu_option_cursor) == 3) && (t16 = *(signed char *)0xC7F4739, t16 == 0)) {
+                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x2;
             }
         }
         if ((((unsigned short)((((struct oC_short *)0xC361BF0)->v)) & 32) == 0) && (t23 = (((struct o20_short *)0xC361BF0)->v), ((unsigned short)t23 & 32) == 0)) {
         } else {
-            (((struct o0_uchar *)0xC7F4738)->v) = ((*(signed char *)0xC7F4738) + 0x1);
-            (((struct o3_uchar *)0xC7F4738)->v) = 0x2;
-            if ((int)(*(signed char *)0xC7F4738) > (int)0x5) {
-                (((struct o0_uchar *)0xC7F4738)->v) = 0x0;
+            (((struct o0_uchar *)g_menu_option_cursor)->v) = ((*(signed char *)g_menu_option_cursor) + 0x1);
+            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x2;
+            if ((int)(*(signed char *)g_menu_option_cursor) > (int)0x5) {
+                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x0;
             }
-            if (((*(signed char *)0xC7F4738) == 3) && (t28 = *(signed char *)0xC7F4739, t28 == 0)) {
-                (((struct o0_uchar *)0xC7F4738)->v) = 0x4;
+            if (((*(signed char *)g_menu_option_cursor) == 3) && (t28 = *(signed char *)0xC7F4739, t28 == 0)) {
+                (((struct o0_uchar *)g_menu_option_cursor)->v) = 0x4;
             }
         }
-        if ((*(signed char *)(((int)stk + 0))) == (*(signed char *)0xC7F4738)) {
-            (((struct o3_uchar *)0xC7F4738)->v) = 0x0;
+        if ((*(signed char *)(((int)stk + 0))) == (*(signed char *)g_menu_option_cursor)) {
+            (((struct o3_uchar *)g_menu_option_cursor)->v) = 0x0;
             return 0x17;
         }
-        return ((int (*)(int, int, int, int))(0xC0D79F4))(0xC7F4724, 0xC361BF0, 0x0, 0xC361BF0);
+        return ((int (*)(int, int, int, int))(0xC0D79F4))(((int)g_menu_option_work), 0xC361BF0, 0x0, 0xC361BF0);
     }
     return 0x17;
 }
@@ -407,7 +413,7 @@ int FUN_0c0d7a44(int a4)
 
 int FUN_0c0d7a7c(void)
 {
-    *(unsigned char *)0xC7F4724 = 0x2;
+    *(unsigned char *)g_menu_option_work = 0x2;
     *(unsigned char *)0xC7F301C = 0x0;
     (((struct o0_uchar *)0xC7F4768)->v) = 0x0;
     (((struct o1_uchar *)0xC7F4768)->v) = 0x0;
@@ -417,7 +423,7 @@ int FUN_0c0d7a7c(void)
 
 int FUN_0c0d7a9c(void)
 {
-    *(unsigned char *)0xC7F4724 = 0x2;
+    *(unsigned char *)g_menu_option_work = 0x2;
     *(unsigned char *)0xC7F301C = 0x1;
     (((struct o0_uchar *)0xC7F4768)->v) = 0x0;
     (((struct o1_uchar *)0xC7F4768)->v) = 0x0;
@@ -454,10 +460,10 @@ int menu_option_item_sound_mode(int a4, int a5, int a6)
                     FUN_0c0a3062((*(signed char *)0xC7F2F0E));
                 }
                 (((struct oB_uchar *)0xC7F2F0E)->v) = (*(signed char *)0xC7F4711);
-                memcpy(0xC7F476D, 0xC7F4714, 0x10);
+                memcpy(((int)g_key_config), 0xC7F4714, 0x10);
                 t0 = keycfg_settings_changed();
                 if ((signed char)t0 != 0) {
-                    (((struct o1B_uchar *)0xC7F470C)->v) = (*(signed char *)0xC7F4738);
+                    (((struct o1B_uchar *)0xC7F470C)->v) = (*(signed char *)g_menu_option_cursor);
                     (((struct o2C_uchar *)0xC7F470C)->v) = 0x6;
                 } else {
                     (((struct o19_uchar *)0xC7F470C)->v) = 0x2;
@@ -477,8 +483,8 @@ int menu_option_item_sound_mode(int a4, int a5, int a6)
         (((struct o2_uchar *)0xC7F470C)->v) = (*(signed char *)0xC7F2F14);
         (((struct o3_uchar *)0xC7F470C)->v) = (*(signed char *)0xC7F2F12);
         (((struct o4_uchar *)0xC7F470C)->v) = (*(signed char *)0xC7F2F0E);
-        (((struct o5_uchar *)0xC7F470C)->v) = (*(signed char *)0xC7F2F19);
-        memcpy(0xC7F4714, 0xC7F476D, 0x10);
+        (((struct o5_uchar *)0xC7F470C)->v) = (*(signed char *)g_vib_disabled);
+        memcpy(0xC7F4714, ((int)g_key_config), 0x10);
     }
     keycfg_menu_main();
     obj_tick_class(0x5);
@@ -505,7 +511,7 @@ int FUN_0c0d7bf0(void)
                 (((struct o8_uchar *)0xC7F4764)->v) = (*(signed char *)0xC7F474E);
                 t0 = opt_game_settings_changed();
                 if ((signed char)t0 != 0) {
-                    (((struct o2_uchar *)0xC7F4725)->v) = (*(signed char *)0xC7F4738);
+                    (((struct o2_uchar *)0xC7F4725)->v) = (*(signed char *)g_menu_option_cursor);
                     (((struct o13_uchar *)0xC7F4725)->v) = 0x6;
                 } else {
                     (((struct o0_uchar *)0xC7F4725)->v) = 0x2;
@@ -599,6 +605,6 @@ int menu_option_run_item(void)
 {
     register int t1;
 
-    t1 = *(int *)((((*(signed char *)0xC7F4738) << 2) + 0xC33F970));
+    t1 = *(int *)((((*(signed char *)g_menu_option_cursor) << 2) + ((int)g_tbl_menu_option_item_handlers)));
     return ((int (*)(void))(t1))();
 }

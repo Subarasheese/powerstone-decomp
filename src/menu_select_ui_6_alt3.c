@@ -1,5 +1,7 @@
 /* UI task objects (spawn/update pairs) of the player-select and stage-select screens (0c0a8600-0c0a8d6c) */
 
+/* named globals (symbols.txt) */
+extern char g_res_csel_ssel[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -37,7 +39,7 @@ int menu_ui_task_22(int a4, int a5, int a6, int a7)
             if ((int)t0 < (int)0x2) {
                 t1 = 0x1;
             }
-            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A60, (t1 + 0x25));
+            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), ((int)g_res_csel_ssel), (t1 + 0x25));
             *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x2)) = 0x3F;
             *(volatile int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0));

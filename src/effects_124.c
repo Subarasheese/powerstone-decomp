@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04a13c-0c04a294) */
 
+/* named globals (symbols.txt) */
+extern char g_res_item[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o60_float { char p[0x60]; float v; };
@@ -55,7 +57,7 @@ int fx_tick_04a13c(int a4, int a5, int a6, int a7)
     register int t1;
 
     if ((*(signed char *)((a4 + 0x8))) == 0) {
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664988, (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC321854))));
+        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_item), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC321854))));
         if ((int)((((struct oEC_short *)(a4))->v)) >= (int)0x6) {
             (((struct o60_float *)(a4))->v) = (((((struct o60_float *)(a4))->v)) - 0.199999988f);
             (((struct o64_float *)(a4))->v) = (((((struct o64_float *)(a4))->v)) - 0.199999988f);

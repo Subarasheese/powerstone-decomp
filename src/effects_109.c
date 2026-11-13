@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c045f9c-0c046360) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -43,7 +45,7 @@ int fx_spawn_045f9c(int a4)
         FUN_0c0e6fe8();
         *(unsigned int *)((t0 + 0x1C)) = a4;
         t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x7C);
+        FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x7C);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x1F;
         FUN_0c0e6fe8();
@@ -55,7 +57,7 @@ int fx_spawn_045f9c(int a4)
         for (;;) {
             t3 = *(int *)((t2 + 0x0));
             t2 = (t2 + 0x4);
-            FUN_0c06233a(t3, 0xC4CFA68, 0x7C);
+            FUN_0c06233a(t3, ((int)g_res_kyoutsuu), 0x7C);
             *(unsigned char *)((t3 + 0x0)) = 0x0;
             t0 = (t0 + 0x1);
             *(unsigned short *)((t3 + 0x2)) = 0x21F;
@@ -136,7 +138,7 @@ int fx_tick_045f9c(int a4)
     if (((signed char)(v0_7 - 1) != 0)) goto L_C04619C;
     *(unsigned char *)((v0_4 + 0x1)) = v0_2;
     *(unsigned char *)((v0_4 + 0x0)) = ((*(signed char *)((v0_4 + 0x0))) ^ 0x1);
-    FUN_0c06231c(v0_6, 0xC4CFA68, ((*(signed char *)((v0_4 + 0x0))) + 0x7C));
+    FUN_0c06231c(v0_6, ((int)g_res_kyoutsuu), ((*(signed char *)((v0_4 + 0x0))) + 0x7C));
     L_C04619C:;
     if ((((((struct o1C_float *)(v0_6))->v)) > 0.0f)) goto L_C0461AE;
     *(unsigned char *)((v0_6 + 0x0)) = v0_1;
@@ -153,7 +155,7 @@ int fx_tick_045f9c(int a4)
     (((struct oEC_ushort *)(v0_0))->v) = v0_2;
     (((struct oEE_ushort *)(v0_0))->v) = (((((struct oEE_short *)(v0_0))->v)) - 1);
     *(unsigned char *)((v0_6 + 0x0)) = v0_5;
-    FUN_0c06231c(v0_6, 0xC4CFA68, (((*(signed char *)((v0_4 + 0x2))) << 1) + 0x70));
+    FUN_0c06231c(v0_6, ((int)g_res_kyoutsuu), (((*(signed char *)((v0_4 + 0x2))) << 1) + 0x70));
     (((struct o24_float *)(v0_6))->v) = 0.125f;
     (((struct o20_float *)(v0_6))->v) = 0.125f;
     (((struct o1C_float *)(v0_6))->v) = 0.125f;

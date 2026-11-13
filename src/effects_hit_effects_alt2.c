@@ -1,5 +1,7 @@
 /* hit effect spawners (04B6B8..04BEF2) and kind dispatchers (0c04b6b8-0c04bfd0) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o118_uint { char p[0x118]; unsigned int v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -48,7 +50,7 @@ int fx_spawn_04bc94(int a4, int a5, int a6, int a7, float f4)
             }
             t0 = ((int (*)(int))(FUN_0c0e6fe8))(t2);
             t0 = (((struct o2E0_int *)(t3))->v);
-            FUN_0c06233a(t0, 0xC4CFA68, 0x1B);
+            FUN_0c06233a(t0, ((int)g_res_kyoutsuu), 0x1B);
             *(unsigned char *)((t0 + 0x0)) = 0x1;
             *(unsigned short *)((t0 + 0x2)) = 0x211;
             (((struct o44_float *)(t0))->v) = 1.0f;

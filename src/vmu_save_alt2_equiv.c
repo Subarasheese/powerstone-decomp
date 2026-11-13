@@ -1,5 +1,13 @@
 /* VMU save/load: port table, LCD image, save pack/unpack, state machines, VMS CHECK boot screen (0c010160-0c012568) */
 
+/* named globals (symbols.txt) */
+extern char g_vmu_check_work[];
+extern char g_vmu_ctl[];
+extern char g_vmu_mounted_port[];
+extern char g_vmu_op_pending[];
+extern char g_vmu_port_slots[];
+extern char g_vmu_step_state[];
+extern char g_vmu_wanted_port[];
 int vmu_lcd_set_busy_image(void);
 void vmu_lcd_refresh(int port);
 int buUnmount(int drive);
@@ -9,12 +17,12 @@ int vmu_parse_save_image(void);
 void save_unpack_data(void);
 void save_reset_all_data(void);
 void vmu_lcd_set_idle_image(void);
-#define STATE (*(signed char *)0x0C361BC0)
-#define ACTIVE (*(int *)0x0C361BA0)
-#define WAIT (*(int *)0x0C361BA4)
-#define CUR (*(int *)0x0C361BA8)
-#define PORT (*(int *)0x0C361BAC)
-#define UNIT(p) ((int *)((char *)0x0C361A60 + (short)((p) * 40)))
+#define STATE (*(signed char *)g_vmu_step_state)
+#define ACTIVE (*(int *)g_vmu_ctl)
+#define WAIT (*(int *)g_vmu_op_pending)
+#define CUR (*(int *)g_vmu_mounted_port)
+#define PORT (*(int *)g_vmu_wanted_port)
+#define UNIT(p) ((int *)((char *)g_vmu_port_slots + (short)((p) * 40)))
 int vmu_check_run_objects(int a4, int a5, int a6, int a7);
 int vmu_check_show_message(int);
 int vmu_check_run_objects(int, int, int, int);
@@ -155,7 +163,7 @@ int vmu_check_mode_07(int a4, int a5, int a6, int a7)
 
 int vmu_check_select_port(unsigned char *req)
 {
-    unsigned char *status = (unsigned char *)0xC361BC8;
+    unsigned char *status = (unsigned char *)g_vmu_check_work;
     int handle;
 
     handle = vmu_get_ready_mask();

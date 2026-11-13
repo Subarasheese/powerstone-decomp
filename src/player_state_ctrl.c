@@ -1,5 +1,9 @@
 /* player state change (pl_change_state) power form flags input chords and character move hooks (0c0a18f8-0c0a2ee8) */
 
+/* named globals (symbols.txt) */
+extern char g_attack_record_tab[];
+extern char g_pl_check_special_input_tbl[];
+extern char g_pl_state_flags_tbl[];
 struct o2DC_int { char p[0x2DC]; int v; };
 struct o7207_uchar { char p[0x7207]; unsigned char v; };
 struct o720C_short { char p[0x720C]; short v; };
@@ -98,8 +102,8 @@ int FUN_0c0a18f8(int a4, int a5, int a6, int a7)
     register int t6;
     register int t7;
 
-    if (((*(signed char *)((a4 + 0x7236))) == 0) && ((t0 = (((struct o720C_short *)(a4))->v), t0 == 0) && ((t1 = *(int *)((a4 + 0x1C)), t2 = (((struct o720C_short *)(t1))->v), t2 == 0) && ((t3 = *(signed char *)((a4 + 0x71BA)), t4 = *(signed char *)((((t3 << 2) + 0xC338D38) + 0x1)), t4 != 0) && (t5 = *(int *)((a4 + 0x1C)), t6 = *(signed char *)((t5 + 0x71BA)), t7 = *(signed char *)((((t6 << 2) + 0xC338D38) + 0x2)), t7 != 0))))) {
-        t0 = ((int (*)(int, int, int, int))((*(int *)((0xC3393E0 + ((*(signed char *)((a4 + 0x4))) << 2))))))(a4, a5, a6, a7);
+    if (((*(signed char *)((a4 + 0x7236))) == 0) && ((t0 = (((struct o720C_short *)(a4))->v), t0 == 0) && ((t1 = *(int *)((a4 + 0x1C)), t2 = (((struct o720C_short *)(t1))->v), t2 == 0) && ((t3 = *(signed char *)((a4 + 0x71BA)), t4 = *(signed char *)((((t3 << 2) + ((int)g_pl_state_flags_tbl)) + 0x1)), t4 != 0) && (t5 = *(int *)((a4 + 0x1C)), t6 = *(signed char *)((t5 + 0x71BA)), t7 = *(signed char *)((((t6 << 2) + ((int)g_pl_state_flags_tbl)) + 0x2)), t7 != 0))))) {
+        t0 = ((int (*)(int, int, int, int))((*(int *)((((int)g_pl_check_special_input_tbl) + ((*(signed char *)((a4 + 0x4))) << 2))))))(a4, a5, a6, a7);
         if ((signed char)t0 != 99) {
             if ((((((struct o2DC_int *)(a4))->v)) & 240) != 0) {
                 t0 = *(signed char *)((a4 + 0x4));
@@ -186,7 +190,7 @@ int obj_set_record_char(int a4, int a5)
     register int t4;
 
     (((struct o100_uchar *)(a4))->v) = a5;
-    (((struct oF4_uint *)(a4))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((((*(signed char *)((0xC7E40C8 + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x72D0)))) << 2) + 0xC338A98))));
+    (((struct oF4_uint *)(a4))->v) = (((((unsigned char)a5 << 2) + (unsigned char)a5) << 2) + (*(int *)((((*(signed char *)((0xC7E40C8 + (unsigned short)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x72D0)))) << 2) + ((int)g_attack_record_tab)))));
     (((struct o108_uchar *)(a4))->v) = 0x0;
     t3 = (0x11C + a4);
     t4 = 0x0;
@@ -613,26 +617,26 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
         return ((int (*)(int, int, int, int))(0xC0A2BE2))(a4, a5, a6, a7);
     }
     if (((unsigned char)(*(signed char *)((a5 + 0x0))) == 3) && (t12 = *(int *)((a4 + 0x1C)), t13 = *(signed char *)((0x71BA + t12)), t13 == 24)) {
-        if ((*(signed char *)(((((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BA))) << 2) + 0xC338D38) + 0x2))) == 0) {
-            return ((int (*)(int, int, int, int))(0xC0A2BE2))(0xC338D38, a5, a6, a7);
+        if ((*(signed char *)(((((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BA))) << 2) + ((int)g_pl_state_flags_tbl)) + 0x2))) == 0) {
+            return ((int (*)(int, int, int, int))(0xC0A2BE2))(((int)g_pl_state_flags_tbl), a5, a6, a7);
         }
         t31 = *(signed char *)((a4 + 0x71BA));
-        if ((*(signed char *)(((0xC338D38 + (t31 << 2)) + 0x1))) == 0) {
-            return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7);
+        if ((*(signed char *)(((((int)g_pl_state_flags_tbl) + (t31 << 2)) + 0x1))) == 0) {
+            return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7);
         }
         if ((*(signed char *)((a4 + 0x71BA))) == 10) {
             if ((*(signed char *)((((*(signed char *)((a4 + 0x721F))) << 1) + 0xC338DE9))) == 0) {
-                return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7);
+                return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7);
             }
             if (((*(signed char *)((a4 + 0x71BA))) == 10) && (t51 = *(signed char *)((a4 + 0x721F)), t51 == 2)) {
-                return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7);
+                return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7);
             }
             t52 = *(signed char *)((a5 + 0x0));
             if ((unsigned char)t52 != 0) {
                 if ((unsigned char)t52 != 1) {
                     if ((unsigned char)t52 == 2) {
                         if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-                            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                         }
                         t68 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
                         if (t68 != 0) {
@@ -733,20 +737,20 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
                                 }
                                 return ((int (*)(int, int, int, int, float, float, float, float))(0xC0A2BAC))(t110, a5, a6, a7, 100.0f, u115, u116, (u115 - u116));
                             }
-                            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                         }
-                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                     }
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                 }
                 if ((*(signed char *)((a4 + 0x71BC))) != 2) {
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                 }
                 if ((*(signed char *)((0x71BC + (*(int *)((a4 + 0x1C)))))) != 2) {
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                 }
                 if (50.0f > ((((struct o24_float *)(a4))->v))) {
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                 }
                 t125 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t125 * (unsigned short)0x72D0) + 0xC7E40C4);
@@ -765,7 +769,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
                 return ((int (*)(void))(0xC0A2BDE))();
             }
             if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
             }
             t142 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
             if ((t142 != 0) && (t142 != 1)) {
@@ -810,7 +814,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
             if ((unsigned char)t159 != 1) {
                 if ((unsigned char)t159 == 2) {
                     if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                     }
                     t175 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
                     if (t175 != 0) {
@@ -911,20 +915,20 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
                             }
                             return ((int (*)(int, int, int, int, float, float, float, float))(0xC0A2BAC))(t217, a5, a6, a7, 100.0f, u222, u223, (u222 - u223));
                         }
-                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                     }
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
                 }
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
             }
             if ((*(signed char *)((a4 + 0x71BC))) != 2) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
             }
             if ((*(signed char *)((0x71BC + (*(int *)((a4 + 0x1C)))))) != 2) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
             }
             if (50.0f > ((((struct o24_float *)(a4))->v))) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
             }
             t232 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t232 * (unsigned short)0x72D0) + 0xC7E40C4);
@@ -943,7 +947,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
             return ((int (*)(void))(0xC0A2BDE))();
         }
         if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t31 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t31 << 2)), a5, a6, a7, 100.0f);
         }
         t249 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
         if ((t249 != 0) && (t249 != 1)) {
@@ -989,26 +993,26 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
     if (((((struct o720C_short *)((*(int *)((a4 + 0x1C)))))->v)) != 0) {
         return ((int (*)(int, int, int, int))(0xC0A2BE2))(a4, a5, a6, a7);
     }
-    if ((*(signed char *)(((((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BA))) << 2) + 0xC338D38) + 0x2))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC0A2BE2))(0xC338D38, a5, a6, a7);
+    if ((*(signed char *)(((((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BA))) << 2) + ((int)g_pl_state_flags_tbl)) + 0x2))) == 0) {
+        return ((int (*)(int, int, int, int))(0xC0A2BE2))(((int)g_pl_state_flags_tbl), a5, a6, a7);
     }
     t282 = *(signed char *)((a4 + 0x71BA));
-    if ((*(signed char *)(((0xC338D38 + (t282 << 2)) + 0x1))) == 0) {
-        return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7);
+    if ((*(signed char *)(((((int)g_pl_state_flags_tbl) + (t282 << 2)) + 0x1))) == 0) {
+        return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7);
     }
     if ((*(signed char *)((a4 + 0x71BA))) == 10) {
         if ((*(signed char *)((((*(signed char *)((a4 + 0x721F))) << 1) + 0xC338DE9))) == 0) {
-            return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7);
+            return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7);
         }
         if (((*(signed char *)((a4 + 0x71BA))) == 10) && (t302 = *(signed char *)((a4 + 0x721F)), t302 == 2)) {
-            return ((int (*)(int, int, int, int))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7);
+            return ((int (*)(int, int, int, int))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7);
         }
         t303 = *(signed char *)((a5 + 0x0));
         if ((unsigned char)t303 != 0) {
             if ((unsigned char)t303 != 1) {
                 if ((unsigned char)t303 == 2) {
                     if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
                     }
                     t319 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
                     if (t319 != 0) {
@@ -1109,20 +1113,20 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
                             }
                             return ((int (*)(int, int, int, int, float, float, float, float))(0xC0A2BAC))(t361, a5, a6, a7, 100.0f, u366, u367, (u366 - u367));
                         }
-                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
                     }
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
                 }
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
             }
             if ((*(signed char *)((a4 + 0x71BC))) != 2) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
             }
             if ((*(signed char *)((0x71BC + (*(int *)((a4 + 0x1C)))))) != 2) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
             }
             if (50.0f > ((((struct o24_float *)(a4))->v))) {
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
             }
             t376 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t376 * (unsigned short)0x72D0) + 0xC7E40C4);
@@ -1141,7 +1145,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
             return ((int (*)(void))(0xC0A2BDE))();
         }
         if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
         }
         t393 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
         if ((t393 != 0) && (t393 != 1)) {
@@ -1186,7 +1190,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
         if ((unsigned char)t410 != 1) {
             if ((unsigned char)t410 == 2) {
                 if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
                 }
                 t426 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
                 if (t426 != 0) {
@@ -1287,20 +1291,20 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
                         }
                         return ((int (*)(int, int, int, int, float, float, float, float))(0xC0A2BAC))(t468, a5, a6, a7, 100.0f, u473, u474, (u473 - u474));
                     }
-                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                    return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
                 }
-                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+                return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
             }
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
         }
         if ((*(signed char *)((a4 + 0x71BC))) != 2) {
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
         }
         if ((*(signed char *)((0x71BC + (*(int *)((a4 + 0x1C)))))) != 2) {
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
         }
         if (50.0f > ((((struct o24_float *)(a4))->v))) {
-            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+            return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
         }
         t483 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t483 * (unsigned short)0x72D0) + 0xC7E40C4);
@@ -1319,7 +1323,7 @@ int pl_detect_special_input(int a4, int a5, int a6, int a7)
         return ((int (*)(void))(0xC0A2BDE))();
     }
     if ((*(signed char *)((a4 + 0x71BC))) != 0) {
-        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((0xC338D38 + (t282 << 2)), a5, a6, a7, 100.0f);
+        return ((int (*)(int, int, int, int, float))(0xC0A2BE2))((((int)g_pl_state_flags_tbl) + (t282 << 2)), a5, a6, a7, 100.0f);
     }
     t500 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71BC));
     if ((t500 != 0) && (t500 != 1)) {
@@ -1369,7 +1373,7 @@ int pl_try_char_special_move(int a4, int a5, int a6, int a7)
 
     (((struct o7207_uchar *)(a4))->v) = 0x0;
     (((struct o720A_uchar *)(a4))->v) = 0x0;
-    t2 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((0xC3393E0 + ((*(signed char *)((a4 + 0x4))) << 2))))))(a4, a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t2 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((int)g_pl_check_special_input_tbl) + ((*(signed char *)((a4 + 0x4))) << 2))))))(a4, a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
     t6 = (signed char)t2;
     if ((signed char)t2 != 99) {
         pl_change_state(a4, 0x1C, t2, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16));

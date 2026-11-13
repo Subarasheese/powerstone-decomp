@@ -1,5 +1,17 @@
 /* VMU save/load: port table, LCD image, save pack/unpack, state machines, VMS CHECK boot screen (0c010160-0c012568) */
 
+/* named globals (symbols.txt) */
+extern char g_key_config[];
+extern char g_res_vms_check[];
+extern char g_save_buffer[];
+extern char g_vmu_check_work[];
+extern char g_vmu_ctl[];
+extern char g_vmu_file_image[];
+extern char g_vmu_mounted_port[];
+extern char g_vmu_op_pending[];
+extern char g_vmu_port_slots[];
+extern char g_vmu_step_state[];
+extern char g_vmu_wanted_port[];
 int FUN_0c0f2ccc(int);
 int FUN_0c0f2d38(int, int, int);
 int pdVmsLcdIsReady(int);
@@ -221,8 +233,8 @@ int vmu_event_handler(int a4, int a5, int a6, int a7)
     v0_2 = (v0_6);
     v0_3 = (0x1);
     v0_0 = (0x0);
-    v0_4 = (0xC361A60);
-    v0_9 = (((short)((((v0_5 << 2) + v0_5) << 2) << 1) + 0xC361A60));
+    v0_4 = (((int)g_vmu_port_slots));
+    v0_9 = (((short)((((v0_5 << 2) + v0_5) << 2) << 1) + ((int)g_vmu_port_slots)));
     v0_1 = (v0_5);
     v0_5 = (0x2);
     v0_10 = (0xC0F32BE);
@@ -235,13 +247,13 @@ int vmu_event_handler(int a4, int a5, int a6, int a7)
     *(unsigned int *)((v0_9 + 0x1C)) = v0_0;
     *(unsigned int *)((v0_9 + 0x20)) = v0_0;
     *(unsigned int *)((v0_9 + 0x24)) = v0_0;
-    if ((((((struct o4_int *)0xC361BA4)->v)) == v0_1)) goto L_C010404;
+    if ((((((struct o4_int *)g_vmu_op_pending)->v)) == v0_1)) goto L_C010404;
     L_C010588:;
-    (((struct o0_uint *)0xC361BA4)->v) = v0_0;
+    (((struct o0_uint *)g_vmu_op_pending)->v) = v0_0;
     L_C01058C:;
     return 0x0;
     L_C010404:;
-    (((struct o4_uint *)0xC361BA4)->v) = 0xFFFFFFFF;
+    (((struct o4_uint *)g_vmu_op_pending)->v) = 0xFFFFFFFF;
     goto L_C010588;
     L_C01029A:;
     if ((v0_2 != 9)) goto L_C0102A2;
@@ -367,7 +379,7 @@ int vmu_event_handler(int a4, int a5, int a6, int a7)
     v0_2 = *(int *)(((int)stk + 4));
     *(int *)((int)stk + 0) = (0x24 + v0_2);
     *(unsigned int *)(((0x24 + v0_2) + 0x0)) = (buGetDiskFree(v0_1, 0x1));
-    (((struct o4_uint *)0xC361BA4)->v) = v0_1;
+    (((struct o4_uint *)g_vmu_op_pending)->v) = v0_1;
     vmu_lcd_refresh(v0_1);
     goto L_C010588;
     L_C01037E:;
@@ -394,30 +406,30 @@ int vmu_init(void)
     register int t3;
     register int t6;
 
-    memset(0xC351A40, 0x0, 0x800);
+    memset(((int)g_vmu_file_image), 0x0, 0x800);
     memset(0xC352240, 0x0, 0x200);
     vmu_lcd_set_idle_image();
-    (((struct o20_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o21_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o22_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o23_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o24_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o25_uchar *)0xC361BA0)->v) = 0x0;
-    (((struct o8_uint *)0xC361BA0)->v) = 0xFFFFFFFF;
-    (((struct o0_uint *)0xC361BA0)->v) = 0x0;
-    (((struct o4_uint *)0xC361BA0)->v) = 0x0;
+    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o21_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o22_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o23_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o24_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o25_uchar *)g_vmu_ctl)->v) = 0x0;
+    (((struct o8_uint *)g_vmu_ctl)->v) = 0xFFFFFFFF;
+    (((struct o0_uint *)g_vmu_ctl)->v) = 0x0;
+    (((struct o4_uint *)g_vmu_ctl)->v) = 0x0;
     t3 = 0x0;
     for (;;) {
         t6 = (short)((((t3 << 2) + t3) << 2) << 1);
         t3 = (t3 + 0x1);
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x4)) = 0x2;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x8)) = 0xFFFF0000;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0xC)) = 0x7A;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x14)) = 0x0;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x18)) = 0x0;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x1C)) = 0x0;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x20)) = 0x0;
-        *(unsigned int *)(((t6 + 0xC361A60) + 0x24)) = 0x0;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x4)) = 0x2;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x8)) = 0xFFFF0000;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0xC)) = 0x7A;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x14)) = 0x0;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x18)) = 0x0;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x1C)) = 0x0;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x20)) = 0x0;
+        *(unsigned int *)(((t6 + ((int)g_vmu_port_slots)) + 0x24)) = 0x0;
         if ((int)t3 >= (int)0x8) {
             break;
         }
@@ -435,28 +447,28 @@ void vmu_unmount_current(int a4, int a5, int a6, int a7)
     register int t0;
     register int t1;
 
-    if (((((struct o0_int *)0xC361BA4)->v)) == 0) {
+    if (((((struct o0_int *)g_vmu_op_pending)->v)) == 0) {
         if (((((struct o0_int *)0xC361A64)->v)) == 18) {
             if (((((struct o4_int *)0xC361A64)->v)) == 0xFFFF0000) {
-                t0 = (((struct o4_int *)0xC361BA4)->v);
+                t0 = (((struct o4_int *)g_vmu_op_pending)->v);
                 if (t0 != -1) {
-                    t1 = buUnmount((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x0))));
+                    t1 = buUnmount((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))));
                     if (t1 == 0) {
-                        t0 = (((struct o4_int *)0xC361BA4)->v);
-                        *(unsigned int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4)) = 0x12;
-                        (((struct o4_uint *)0xC361BA4)->v) = 0xFFFFFFFF;
+                        t0 = (((struct o4_int *)g_vmu_op_pending)->v);
+                        *(unsigned int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4)) = 0x12;
+                        (((struct o4_uint *)g_vmu_op_pending)->v) = 0xFFFFFFFF;
                         return;
                     }
                     ((int (*)(int, int, int, int))(0xC01075A))(t1, a5, a6, a7);
     return;
                 }
-                ((int (*)(int, int, int, int))(0xC010730))(0xC361A60, a5, a6, a7);
+                ((int (*)(int, int, int, int))(0xC010730))(((int)g_vmu_port_slots), a5, a6, a7);
     return;
             }
-            ((int (*)(int, int, int, int))(0xC01075A))(0xC361A60, a5, a6, a7);
+            ((int (*)(int, int, int, int))(0xC01075A))(((int)g_vmu_port_slots), a5, a6, a7);
     return;
         }
-        ((int (*)(int, int, int, int))(0xC01075A))(0xC361A60, a5, a6, a7);
+        ((int (*)(int, int, int, int))(0xC01075A))(((int)g_vmu_port_slots), a5, a6, a7);
     return;
     }
 }
@@ -472,7 +484,7 @@ int vmu_get_ready_mask(void)
 
     t3 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t0 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x8)), t0 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t0 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t0 == 0xFFFF0000)) {
             break;
         }
         t3 = (t3 + 0x1);
@@ -480,8 +492,8 @@ int vmu_get_ready_mask(void)
             t3 = 0x0;
             t4 = 0x0;
             for (;;) {
-                t5 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x4));
-                if (((t5 == 18) || (t5 == 1)) && (t1 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x8)), t2 = t1, t2 != 0xFFFF0000)) {
+                t5 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4));
+                if (((t5 == 18) || (t5 == 1)) && (t1 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t2 = t1, t2 != 0xFFFF0000)) {
                     t5 = 0x1;
                     t5 = ((int)t5 << (int)t3);
                     t4 = (t4 | t5);
@@ -507,7 +519,7 @@ int vmu_get_savefile_mask(void)
 
     t0 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x8)), t3 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t3 == 0xFFFF0000)) {
             break;
         }
         t0 = (t0 + 0x1);
@@ -515,8 +527,8 @@ int vmu_get_savefile_mask(void)
             t0 = 0x0;
             t10 = 0x0;
             for (;;) {
-                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4));
-                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x14)), t13 != 2)) {
+                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4));
+                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x14)), t13 != 2)) {
                 } else {
                     t10 = (t10 | ((int)0x1 << (int)t0));
                 }
@@ -541,7 +553,7 @@ int vmu_get_vmgame_mask(void)
 
     t0 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x8)), t3 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t3 == 0xFFFF0000)) {
             break;
         }
         t0 = (t0 + 0x1);
@@ -549,8 +561,8 @@ int vmu_get_vmgame_mask(void)
             t0 = 0x0;
             t10 = 0x0;
             for (;;) {
-                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4));
-                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x18)), t13 != 2)) {
+                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4));
+                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x18)), t13 != 2)) {
                 } else {
                     t10 = (t10 | ((int)0x1 << (int)t0));
                 }
@@ -575,7 +587,7 @@ int vmu_get_foreign_exec_mask(void)
 
     t0 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x8)), t3 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t3 == 0xFFFF0000)) {
             break;
         }
         t0 = (t0 + 0x1);
@@ -583,8 +595,8 @@ int vmu_get_foreign_exec_mask(void)
             t0 = 0x0;
             t10 = 0x0;
             for (;;) {
-                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4));
-                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x1C)), t13 != 2)) {
+                t12 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4));
+                if (((t12 != 18) && (t12 != 1)) || (t13 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x1C)), t13 != 2)) {
                 } else {
                     t10 = (t10 | ((int)0x1 << (int)t0));
                 }
@@ -610,7 +622,7 @@ int vmu_get_free_space_mask(void)
 
     t3 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t0 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x8)), t0 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t0 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t0 == 0xFFFF0000)) {
             break;
         }
         t3 = (t3 + 0x1);
@@ -618,8 +630,8 @@ int vmu_get_free_space_mask(void)
             t3 = 0x0;
             t4 = 0x0;
             for (;;) {
-                t5 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x4));
-                if (((t5 == 18) || (t5 == 1)) && (t1 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + 0xC361A60) + 0x20)), t2 = t1, (int)t2 >= (int)0x4)) {
+                t5 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4));
+                if (((t5 == 18) || (t5 == 1)) && (t1 = *(int *)((((short)((((t3 << 2) + t3) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x20)), t2 = t1, (int)t2 >= (int)0x4)) {
                     t5 = 0x1;
                     t5 = ((int)t5 << (int)t3);
                     t4 = (t4 | t5);
@@ -642,13 +654,13 @@ int FUN_0c0109e4(void)
 
     t0 = 0x0;
     for (;;) {
-        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + 0xC361A60) + 0x8)), t3 == 0xFFFF0000)) {
+        if (((*(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x4))) == 18) && (t3 = *(int *)((((short)((((t0 << 2) + t0) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x8)), t3 == 0xFFFF0000)) {
             break;
         }
         t0 = (t0 + 0x1);
         if ((int)t0 >= (int)0x8) {
             t0 = 0x0;
-            return ((int (*)(int, int, int, int))(0xC010ABA))(0xC361A60, t0, 0x8, 0x0);
+            return ((int (*)(int, int, int, int))(0xC010ABA))(((int)g_vmu_port_slots), t0, 0x8, 0x0);
         }
     }
     return 0xFFFFFFFF;
@@ -681,14 +693,14 @@ int opt_reset_game_options(void)
 
 int opt_reset_key_config(int a4)
 {
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x0)) = 0x2;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x1)) = 0x3;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x2)) = 0x0;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x3)) = 0x1;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x4)) = 0x4;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x5)) = 0x5;
-    *(unsigned char *)(((0xC7F476D + ((a4 << 2) << 1)) + 0x6)) = 0x4;
-    *(unsigned char *)(((((a4 << 2) << 1) + 0xC7F476D) + 0x7)) = 0x5;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x0)) = 0x2;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x1)) = 0x3;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x2)) = 0x0;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x3)) = 0x1;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x4)) = 0x4;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x5)) = 0x5;
+    *(unsigned char *)(((((int)g_key_config) + ((a4 << 2) << 1)) + 0x6)) = 0x4;
+    *(unsigned char *)(((((a4 << 2) << 1) + ((int)g_key_config)) + 0x7)) = 0x5;
     return 0x5;
 }
 
@@ -715,15 +727,15 @@ int save_reset_all_data(void)
     t0 = 0x0;
     t1 = 0x0;
     for (;;) {
-        *(unsigned char *)(((0xC7F476D + t0) + 0x0)) = 0x2;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x1)) = 0x3;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x2)) = 0x0;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x3)) = 0x1;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x4)) = 0x4;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x5)) = 0x5;
-        *(unsigned char *)(((0xC7F476D + t0) + 0x6)) = 0x4;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x0)) = 0x2;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x1)) = 0x3;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x2)) = 0x0;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x3)) = 0x1;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x4)) = 0x4;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x5)) = 0x5;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x6)) = 0x4;
         t1 = (t1 + 0x1);
-        *(unsigned char *)(((0xC7F476D + t0) + 0x7)) = 0x5;
+        *(unsigned char *)(((((int)g_key_config) + t0) + 0x7)) = 0x5;
         t0 = (t0 + 0x8);
         if ((int)t1 >= (int)0x2) {
             break;
@@ -799,7 +811,7 @@ int save_reset_all_data(void)
 
 void save_pack_data(void)
 {
-    unsigned char *save_img = (unsigned char *)0xC351948;
+    unsigned char *save_img = (unsigned char *)g_save_buffer;
     unsigned char *rec_2ee0 = (unsigned char *)0xC7F2EE0;
     unsigned char *rec_4750 = (unsigned char *)0xC7F4750;
     unsigned char *rec_302c = (unsigned char *)0xC7F302C;
@@ -856,15 +868,15 @@ int vmu_make_save_image(void)
     *(unsigned short *)(((int)stk + 78)) = 0x5;
     *(unsigned int *)(((int)stk + 80)) = 0x0;
     *(unsigned short *)(((int)stk + 84)) = 0x0;
-    *(unsigned int *)(((int)stk + 88)) = 0xC351948;
+    *(unsigned int *)(((int)stk + 88)) = ((int)g_save_buffer);
     *(unsigned int *)(((int)stk + 92)) = 0xF8;
-    return (FUN_0c0f3ad4(0xC351A40, ((int)stk + 0)));
+    return (FUN_0c0f3ad4(((int)g_vmu_file_image), ((int)stk + 0)));
 }
 
 /* Loads the game state from the save image at 0xC351948: copies its fields into the globals at 0xC7F2EE0, 0xC7F4750 and 0xC7F302C. */
 void save_unpack_data(void)
 {
-    unsigned char *save = (unsigned char *)0xC351948;
+    unsigned char *save = (unsigned char *)g_save_buffer;
     unsigned char *game = (unsigned char *)0xC7F2EE0;
     unsigned char *blk_4750 = (unsigned char *)0xC7F4750;
     unsigned char *blk_302c = (unsigned char *)0xC7F302C;
@@ -915,9 +927,9 @@ int vmu_parse_save_image(void)
     if ((*(int *)0xC351A88) != 0xF8) {
         return 0xFFFFFF41;
     }
-    t1 = FUN_0c0f3d20(((int)stk + 0), 0xC351A40);
+    t1 = FUN_0c0f3d20(((int)stk + 0), ((int)g_vmu_file_image));
     if ((t1 == 0) && (t6 = *(int *)(((int)stk + 88)), t3 = *(int *)(((int)stk + 92)), (int)t3 > 0)) {
-        t4 = 0xC351948;
+        t4 = ((int)g_save_buffer);
         t5 = 0x0;
         for (;;) {
             t7 = *(signed char *)((t6 + 0x0));
@@ -941,7 +953,7 @@ int vmu_load_save_file(int a4)
     if ((int)t0 < 0) {
         return t0;
     }
-    return (buLoadFile(a4, 0xC116210, 0xC351A40, t0));
+    return (buLoadFile(a4, 0xC116210, ((int)g_vmu_file_image), t0));
 }
 
 int vmu_defrag_disk(int a4)
@@ -967,17 +979,17 @@ int vmu_step_write_vmgame(int a4, int a5)
     register int t38;
     int t39;
 
-    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)0xC361BA0)->v));
-    t1 = *(signed char *)0xC361BC0;
-    t2 = (((struct o8_int *)0xC361BA0)->v);
+    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)g_vmu_ctl)->v));
+    t1 = *(signed char *)g_vmu_step_state;
+    t2 = (((struct o8_int *)g_vmu_ctl)->v);
     if (t1 != 0) {
         if (t1 != 1) {
             if (t1 != 2) {
                 if (t1 != 3) {
                     if (t1 == 4) {
-                        if (((((struct o4_int *)0xC361BA0)->v)) == 0) {
+                        if (((((struct o4_int *)g_vmu_ctl)->v)) == 0) {
                             if (t2 == (*(int *)(((int)stk + 0)))) {
-                                vmu_write_vmgame_file((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + 0xC361A60) + 0x0))), a5);
+                                vmu_write_vmgame_file((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))), a5);
                                 return 0xFFFFFFFF;
                             }
                             return ((int (*)(void))(0xC011A24))();
@@ -989,77 +1001,77 @@ int vmu_step_write_vmgame(int a4, int a5)
                     }
                     return 0xFFFFFFFF;
                 }
-                if (((((struct o4_int *)0xC361BA0)->v)) == 0) {
-                    if ((t2 == (*(int *)(((int)stk + 0)))) && ((t37 = (int)(((unsigned int)(((t2 << 2) + t2) << 2)) >> 31), t38 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + 0xC361A60) + 0x20)), (int)t38 >= (int)0x80) && (t39 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + 0xC361A60) + 0x24)), (int)t39 < (int)0x80))) {
-                        t42 = vmu_defrag_disk((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + 0xC361A60) + 0x0))));
+                if (((((struct o4_int *)g_vmu_ctl)->v)) == 0) {
+                    if ((t2 == (*(int *)(((int)stk + 0)))) && ((t37 = (int)(((unsigned int)(((t2 << 2) + t2) << 2)) >> 31), t38 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x20)), (int)t38 >= (int)0x80) && (t39 = *(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x24)), (int)t39 < (int)0x80))) {
+                        t42 = vmu_defrag_disk((*(int *)((((short)((((t2 << 2) + t2) << 2) << 1) + ((int)g_vmu_port_slots)) + 0x0))));
                         if (t42 == 0) {
-                            (((struct o4_uint *)0xC361BA0)->v) = 0x1;
-                            (((struct o20_uchar *)0xC361BA0)->v) = 0x4;
+                            (((struct o4_uint *)g_vmu_ctl)->v) = 0x1;
+                            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x4;
                         }
                     } else {
-                        (((struct o20_uchar *)0xC361BA0)->v) = 0x4;
+                        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x4;
                     }
                 }
                 return 0xFFFFFFFF;
             }
-            if (((((struct o4_int *)0xC361BA0)->v)) != 0) {
+            if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
             } else {
                 t57 = *(int *)(((int)stk + 0));
-                *(unsigned int *)(((int)stk + 4)) = ((short)((((t57 << 2) + t57) << 2) << 1) + 0xC361A60);
-                t63 = buMountDisk((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))), 0xC352640, ((((*(int *)((((short)((((t57 << 2) + t57) << 2) << 1) + 0xC361A60) + 0xC))) << 8) << 1) + 0x20));
+                *(unsigned int *)(((int)stk + 4)) = ((short)((((t57 << 2) + t57) << 2) << 1) + ((int)g_vmu_port_slots));
+                t63 = buMountDisk((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))), 0xC352640, ((((*(int *)((((short)((((t57 << 2) + t57) << 2) << 1) + ((int)g_vmu_port_slots)) + 0xC))) << 8) << 1) + 0x20));
                 if (t63 == 0) {
-                    (((struct o4_uint *)0xC361BA0)->v) = 0x1;
-                    (((struct o20_uchar *)0xC361BA0)->v) = 0x3;
+                    (((struct o4_uint *)g_vmu_ctl)->v) = 0x1;
+                    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
                 }
             }
             return 0xFFFFFFFF;
         }
-        if (((((struct o8_int *)0xC361BA0)->v)) != ((((struct oC_int *)0xC361BA0)->v))) {
-            if (((((struct o8_int *)0xC361BA0)->v)) != -1) {
-                if (((((struct o4_int *)0xC361BA0)->v)) != 0) {
+        if (((((struct o8_int *)g_vmu_ctl)->v)) != ((((struct oC_int *)g_vmu_ctl)->v))) {
+            if (((((struct o8_int *)g_vmu_ctl)->v)) != -1) {
+                if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
                 } else {
-                    t78 = (((struct o8_int *)0xC361BA0)->v);
-                    t81 = buUnmount((*(int *)(((short)((((t78 << 2) + t78) << 2) << 1) + 0xC361A60))));
+                    t78 = (((struct o8_int *)g_vmu_ctl)->v);
+                    t81 = buUnmount((*(int *)(((short)((((t78 << 2) + t78) << 2) << 1) + ((int)g_vmu_port_slots)))));
                     if (t81 != 0) {
                     } else {
-                        t82 = (((struct o8_int *)0xC361BA0)->v);
+                        t82 = (((struct o8_int *)g_vmu_ctl)->v);
                         *(unsigned int *)(((short)((((t82 << 2) + t82) << 2) << 1) + 0xC361A64)) = 0x12;
-                        (((struct o8_uint *)0xC361BA0)->v) = 0xFFFFFFFF;
-                        (((struct o20_uchar *)0xC361BA0)->v) = 0x2;
+                        (((struct o8_uint *)g_vmu_ctl)->v) = 0xFFFFFFFF;
+                        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
                     }
                 }
             } else {
-                (((struct o20_uchar *)0xC361BA0)->v) = 0x2;
+                (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
             }
         } else {
-            (((struct o20_uchar *)0xC361BA0)->v) = 0x3;
+            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
         }
         return 0xFFFFFFFF;
     }
-    (((struct o0_uint *)0xC361BA0)->v) = 0x1;
-    (((struct oC_uint *)0xC361BA0)->v) = a4;
+    (((struct o0_uint *)g_vmu_ctl)->v) = 0x1;
+    (((struct oC_uint *)g_vmu_ctl)->v) = a4;
     vmu_lcd_set_busy_image();
-    vmu_lcd_refresh(((((struct oC_int *)0xC361BA0)->v)));
-    (((struct o20_uchar *)0xC361BA0)->v) = 0x1;
-    if (((((struct o8_int *)0xC361BA0)->v)) != ((((struct oC_int *)0xC361BA0)->v))) {
-        if (((((struct o8_int *)0xC361BA0)->v)) != -1) {
-            if (((((struct o4_int *)0xC361BA0)->v)) != 0) {
+    vmu_lcd_refresh(((((struct oC_int *)g_vmu_ctl)->v)));
+    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x1;
+    if (((((struct o8_int *)g_vmu_ctl)->v)) != ((((struct oC_int *)g_vmu_ctl)->v))) {
+        if (((((struct o8_int *)g_vmu_ctl)->v)) != -1) {
+            if (((((struct o4_int *)g_vmu_ctl)->v)) != 0) {
             } else {
-                t117 = (((struct o8_int *)0xC361BA0)->v);
-                t120 = buUnmount((*(int *)(((short)((((t117 << 2) + t117) << 2) << 1) + 0xC361A60))));
+                t117 = (((struct o8_int *)g_vmu_ctl)->v);
+                t120 = buUnmount((*(int *)(((short)((((t117 << 2) + t117) << 2) << 1) + ((int)g_vmu_port_slots)))));
                 if (t120 != 0) {
                 } else {
-                    t121 = (((struct o8_int *)0xC361BA0)->v);
+                    t121 = (((struct o8_int *)g_vmu_ctl)->v);
                     *(unsigned int *)(((short)((((t121 << 2) + t121) << 2) << 1) + 0xC361A64)) = 0x12;
-                    (((struct o8_uint *)0xC361BA0)->v) = 0xFFFFFFFF;
-                    (((struct o20_uchar *)0xC361BA0)->v) = 0x2;
+                    (((struct o8_uint *)g_vmu_ctl)->v) = 0xFFFFFFFF;
+                    (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
                 }
             }
         } else {
-            (((struct o20_uchar *)0xC361BA0)->v) = 0x2;
+            (((struct o20_uchar *)g_vmu_ctl)->v) = 0x2;
         }
     } else {
-        (((struct o20_uchar *)0xC361BA0)->v) = 0x3;
+        (((struct o20_uchar *)g_vmu_ctl)->v) = 0x3;
     }
     return 0xFFFFFFFF;
 }
@@ -1111,15 +1123,15 @@ int vmu_step_load_vmgame(int a4, int a5, int a6)
     v0_5 = a4;
     v0_0 = a5;
     v0_0 = a6;
-    v0_4 = (((struct oC_int *)0xC361BA0)->v);
-    *(unsigned int *)(((int)stk + 0)) = 0xC361A60;
-    v0_8 = *(signed char *)0xC361BC0;
+    v0_4 = (((struct oC_int *)g_vmu_ctl)->v);
+    *(unsigned int *)(((int)stk + 0)) = ((int)g_vmu_port_slots);
+    v0_8 = *(signed char *)g_vmu_step_state;
     v0_9 = (v0_8);
-    v0_1 = (0xC361A60);
-    v0_3 = (0xC361BA8);
-    v0_0 = (0xC361BC0);
-    v0_2 = (0xC361BA4);
-    v0_6 = (0xC361BAC);
+    v0_1 = (((int)g_vmu_port_slots));
+    v0_3 = (((int)g_vmu_mounted_port));
+    v0_0 = (((int)g_vmu_step_state));
+    v0_2 = (((int)g_vmu_op_pending));
+    v0_6 = (((int)g_vmu_wanted_port));
     v0_7 = (v0_4);
     v0_4 = (0x1);
     if ((v0_8 == 0)) goto L_C011B1C;
@@ -1137,7 +1149,7 @@ int vmu_step_load_vmgame(int a4, int a5, int a6)
     vmu_lcd_set_idle_image();
     vmu_lcd_refresh((*(int *)((v0_6 + 0x0))));
     *(unsigned char *)((v0_0 + 0x0)) = 0x0;
-    (((struct o0_uint *)0xC361BA0)->v) = 0x0;
+    (((struct o0_uint *)g_vmu_ctl)->v) = 0x0;
     v0_0 = *(int *)((v0_6 + 0x0));
     v0_9 = ((*(int *)((((short)((((v0_0 << 2) + v0_0) << 2) << 1) + v0_1) + 0x8))));
     goto L_C011C1A;
@@ -1176,7 +1188,7 @@ int vmu_step_load_vmgame(int a4, int a5, int a6)
     *(unsigned char *)((v0_0 + 0x0)) = 0x2;
     goto L_C011C18;
     L_C011B1C:;
-    (((struct o0_uint *)0xC361BA0)->v) = v0_4;
+    (((struct o0_uint *)g_vmu_ctl)->v) = v0_4;
     *(unsigned int *)((v0_6 + 0x0)) = v0_5;
     vmu_lcd_set_busy_image();
     vmu_lcd_refresh((*(int *)((v0_6 + 0x0))));
@@ -1212,15 +1224,15 @@ int vmu_step_rewrite_vmgame(int a4, int a5, int a6)
     v0_7 = a4;
     v0_5 = a5;
     v0_0 = a6;
-    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)0xC361BA0)->v));
-    v0_9 = *(signed char *)0xC361BC0;
+    *(unsigned int *)(((int)stk + 0)) = ((((struct oC_int *)g_vmu_ctl)->v));
+    v0_9 = *(signed char *)g_vmu_step_state;
     v0_10 = (v0_9);
-    v0_3 = (0xC361A60);
-    v0_1 = (0xC361BA4);
-    v0_4 = (0xC361BA8);
-    v0_0 = (0xC361BC0);
-    v0_8 = (0xC361BAC);
-    v0_6 = (0xC361A60);
+    v0_3 = (((int)g_vmu_port_slots));
+    v0_1 = (((int)g_vmu_op_pending));
+    v0_4 = (((int)g_vmu_mounted_port));
+    v0_0 = (((int)g_vmu_step_state));
+    v0_8 = (((int)g_vmu_wanted_port));
+    v0_6 = (((int)g_vmu_port_slots));
     v0_2 = (0x1);
     if ((v0_9 == 0)) goto L_C011C8C;
     if ((v0_10 == 1)) goto L_C011C9E;
@@ -1269,7 +1281,7 @@ int vmu_step_rewrite_vmgame(int a4, int a5, int a6)
     *(unsigned char *)((v0_0 + 0x0)) = 0x2;
     goto L_C011DC2;
     L_C011C8C:;
-    (((struct o0_uint *)0xC361BA0)->v) = v0_2;
+    (((struct o0_uint *)g_vmu_ctl)->v) = v0_2;
     *(unsigned int *)((v0_8 + 0x0)) = v0_7;
     vmu_lcd_set_busy_image();
     vmu_lcd_refresh((*(int *)((v0_8 + 0x0))));
@@ -1285,23 +1297,23 @@ int vmu_check_task(void)
     int t34;
 
     if ((*(signed char *)0xC7F2EE0) == 0) {
-        memset(0xC361BC8, 0x0, 0x24);
+        memset(((int)g_vmu_check_work), 0x0, 0x24);
         *(unsigned char *)0xC7F2EE0 = ((*(signed char *)0xC7F2EE0) + 0x1);
     }
-    t7 = *(signed char *)0xC361BC8;
+    t7 = *(signed char *)g_vmu_check_work;
     if (t7 != 0) {
         if (t7 != 1) {
             return t7;
         }
         if (((*(signed char *)0xC7F300B) == 0) && (t9 = *(signed char *)0xC7F300E, t9 == 0)) {
-            vmu_check_step(0xC361BC8, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+            vmu_check_step(((int)g_vmu_check_work), 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
             cam_update_view_matrices(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12));
             FUN_0c05f952();
             FUN_0c055562();
         }
         return game_draw_frame();
     }
-    *(unsigned char *)0xC361BC8 = ((*(signed char *)0xC361BC8) + 0x1);
+    *(unsigned char *)g_vmu_check_work = ((*(signed char *)g_vmu_check_work) + 0x1);
     gfx_set_background_color(0xFF000000, 0xFF000000, 0xFF000000);
     game_reset_objects();
     cam_init_records();
@@ -1429,7 +1441,7 @@ int vmu_check_create_obj(void)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B20, 0x10);
+        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_vms_check), 0x10);
     }
     return t0;
 }
@@ -1473,7 +1485,7 @@ int vmu_check_show_message(int a4)
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t5 = *(signed char *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 4)) = (((t5 << 2) << 2) + 0xC116240);
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B20, (*(signed char *)(((((t5 << 2) << 2) + 0xC116240) + 0xC))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_vms_check), (*(signed char *)(((((t5 << 2) << 2) + 0xC116240) + 0xC))));
         *(volatile int *)((t0 + 0x2E0));
         *(volatile int *)(((int)stk + 4));
         t12 = (FUN_0c0e6fe8());

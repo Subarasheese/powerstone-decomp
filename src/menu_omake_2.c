@@ -1,4 +1,5 @@
 /* @unit 0c01d254-0c01d304 */
+/* 0x0c17fe98 = g_res_omake_model (kept as a number: a symbol address is not shared between the two calls and the unit stops matching) */
 struct H { float h; struct E *ep; };
 struct E { unsigned char b0, b1; unsigned short s2; short s4; short s6; };
 struct O {

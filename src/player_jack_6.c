@@ -1,5 +1,7 @@
 /* character 3 (Jack) (0c076714-0c076978) */
 
+/* named globals (symbols.txt) */
+extern char g_pl_jack_special_tbl[];
 int pl_step_motion(int);
 int pl_detect_special_input(int, int);
 struct o710B_uchar { char p[0x710B]; unsigned char v; };
@@ -83,7 +85,7 @@ int pl_jack_check_special_input(int a4)
 /* Tail-dispatch: calls the handler indexed by the object's mode byte with the same object. */
 void pl_jack_special_move_dispatch(char *obj)
 {
-    void (**handlers)(char *) = (void (**)(char *))0x0C3370BC;
+    void (**handlers)(char *) = (void (**)(char *))((int)g_pl_jack_special_tbl);
     handlers[obj[0x7209]](obj);
 }
 

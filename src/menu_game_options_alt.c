@@ -1,5 +1,7 @@
 /* game settings screen (7 option bytes, defaults item) (0c0195f0-0c019bf4) */
 
+/* named globals (symbols.txt) */
+extern char g_opt_unlock_flags[];
 int ui_sprite_queue_add(int, int, int);
 int FUN_0c0e6fdc(int);
 int opt_game_settings_queue_row(int, int, int);
@@ -25,7 +27,7 @@ int opt_game_settings_move_cursor(int a4, int a5)
         if ((int)(signed char)(t8 + 0x1) > (int)0x7) {
             *(unsigned char *)((a4 + 0x1)) = 0x0;
         }
-        if (((*(signed char *)((a4 + 0x1))) == 0) && (t0 = *(signed char *)0xC7F4744, t0 == 0)) {
+        if (((*(signed char *)((a4 + 0x1))) == 0) && (t0 = *(signed char *)g_opt_unlock_flags, t0 == 0)) {
             *(unsigned char *)((a4 + 0x1)) = ((*(signed char *)((a4 + 0x1))) + 0x1);
         }
         if (((*(signed char *)((a4 + 0x1))) == 1) && (t1 = *(signed char *)0xC7F4745, t1 == 0)) {
@@ -59,7 +61,7 @@ int opt_game_settings_move_cursor(int a4, int a5)
         }
         t1 = *(signed char *)((a4 + 0x1));
         t2 = t1;
-        if ((t1 == 0) && (t7 = *(signed char *)0xC7F4744, t7 == 0)) {
+        if ((t1 == 0) && (t7 = *(signed char *)g_opt_unlock_flags, t7 == 0)) {
             *(unsigned char *)((a4 + 0x1)) = 0x7;
             t2 = 0x7;
         }

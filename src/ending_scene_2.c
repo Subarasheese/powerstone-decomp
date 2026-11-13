@@ -1,5 +1,7 @@
 /* ending scene state, groups of ending sprites, staff roll controller (same ending mode) (0c01628c-0c017240) */
 
+/* named globals (symbols.txt) */
+extern char g_ending_character[];
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -739,7 +741,7 @@ int ending_mode_frame(int a4, int a5, int a6, int a7)
     register int t1;
 
     if ((unsigned char)(*(signed char *)0xC7F2EE9) == 0) {
-        *(unsigned char *)0xC7F3081 = 0x0;
+        *(unsigned char *)g_ending_character = 0x0;
         res_switch_scene(0x9, a5, a6, a7);
         (((struct o6_uchar *)0xC7F2EE4)->v) = 0x0;
         (((struct o5_uchar *)0xC7F2EE4)->v) = ((*(signed char *)0xC7F2EE9) + 0x1);

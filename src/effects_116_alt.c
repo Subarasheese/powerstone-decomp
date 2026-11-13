@@ -1,5 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c048c18-0c049288) */
 
+/* named globals (symbols.txt) */
+extern char g_res_kyoutsuu[];
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -78,7 +80,7 @@ int fx_tick_048c18(int a4, int a5, int a6, int a7, float f4, float f5, float f6,
     v0_6 = *(short *)((v0_0 + (v0_7 + 0x2)));
     *(unsigned short *)((v0_0 + (v0_7 + 0x2))) = (v0_6 + 0x1);
     if (((int)(short)(v0_6 + 0x1) > (int)0x7)) goto L_C049094;
-    FUN_0c06231c((*(int *)(((int)stk + 4))), 0xC4CFA68, ((*(signed char *)((v0_0 + 0xEE))) + 0x48));
+    FUN_0c06231c((*(int *)(((int)stk + 4))), ((int)g_res_kyoutsuu), ((*(signed char *)((v0_0 + 0xEE))) + 0x48));
     L_C049098:;
     if (((*(signed char *)(((*(int *)(((int)stk + 4))) + 0x0))) == 0)) goto L_C0490C8;
     if (((int)((((struct oEE_short *)(v0_0))->v)) < (int)0x4)) goto L_C0490C8;
@@ -118,7 +120,7 @@ int fx_tick_048c18(int a4, int a5, int a6, int a7, float f4, float f5, float f6,
     v0_7 = *(signed char *)((v0_6 + 0x1));
     *(unsigned char *)((v0_6 + 0x1)) = (v0_7 + 0x1);
     if (((int)(signed char)(v0_7 + 0x1) > (int)0xF)) goto L_C04918C;
-    FUN_0c06231c((*(int *)(((int)stk + 8))), 0xC4CFA68, ((*(signed char *)(((*(int *)(((int)stk + 4))) + 0x1))) + 0x21));
+    FUN_0c06231c((*(int *)(((int)stk + 8))), ((int)g_res_kyoutsuu), ((*(signed char *)(((*(int *)(((int)stk + 4))) + 0x1))) + 0x21));
     goto L_C049198;
     L_C0491F2:;
     v0_6 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));

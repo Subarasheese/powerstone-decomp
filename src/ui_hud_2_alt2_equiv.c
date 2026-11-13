@@ -1,5 +1,7 @@
 /* HUD: init, gauges, combo and hit counter, win marks, per-frame draw dispatcher (0c02d9e0-0c02f328) */
 
+/* named globals (symbols.txt) */
+extern char g_hud_state[];
 struct o14_float { char p[0x14]; float v; };
 struct o18_float { char p[0x18]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -79,9 +81,9 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
             if (t4 != 0) {
                 if (t4 != 1) {
                     if (t4 == 2) {
-                        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                     }
-                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                 }
                 if ((*(int *)0xC7F3028) == 0) {
                     *(unsigned int *)(((a4 + 0x2C) + 0x4)) = ((*(int *)(((a4 + 0x2C) + 0x4))) + 0x800);
@@ -142,9 +144,9 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
                     (((struct o8_float *)((a4 + 0x2C)))->v) = ((float)(*(signed char *)(((a4 + 0x2C) + 0xF))) / 20.0f);
                 }
                 if (((((struct o8_float *)((a4 + 0x2C)))->v)) == 0.0f) {
-                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E97C))(0xC366A70, (t20 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E97C))(((int)g_hud_state), (t20 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                 }
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (t20 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (t20 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
             }
             *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
             *(unsigned char *)(((a4 + 0x2C) + 0xC)) = 0x2;
@@ -211,9 +213,9 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
                 (((struct o8_float *)((a4 + 0x2C)))->v) = ((float)(*(signed char *)(((a4 + 0x2C) + 0xF))) / 20.0f);
             }
             if (((((struct o8_float *)((a4 + 0x2C)))->v)) == 0.0f) {
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E97C))(0xC366A70, (t68 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E97C))(((int)g_hud_state), (t68 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
             }
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (t68 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (t68 << 2), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
         }
         if (t2 == 2) {
             if ((*(signed char *)((a4 + 0x1E))) == 0) {
@@ -224,9 +226,9 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
                 if (t103 != 1) {
                     if (t103 != 2) {
                         if (t103 == 3) {
-                            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                         }
-                        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                     }
                     *(unsigned int *)(((int)stk + 48)) = 0x0;
                     *(unsigned int *)(((int)stk + 60)) = 0x5;
@@ -259,7 +261,7 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
                 t129 = *(signed char *)(((a4 + 0x2C) + 0xC));
                 *(unsigned char *)(((a4 + 0x2C) + 0xC)) = (t129 - 1);
                 if ((signed char)(t129 - 1) != 0) {
-                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                 }
             } else {
                 *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
@@ -270,29 +272,29 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
                 t136 = *(signed char *)(((a4 + 0x2C) + 0xC));
                 *(unsigned char *)(((a4 + 0x2C) + 0xC)) = (t136 - 1);
                 if ((signed char)(t136 - 1) != 0) {
-                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
                 }
             }
             *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
             (((struct o8_float *)((a4 + 0x2C)))->v) = 0.0f;
             *(unsigned int *)(((a4 + 0x2C) + 0x4)) = 0x0;
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
         }
         if (t2 == 3) {
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E948))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E948))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
         }
-        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
     }
     t138 = *(signed char *)(((a4 + 0x2C) + 0x2));
     if (t138 != 0) {
         if (t138 != 1) {
             if (t138 != 2) {
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
             }
             t139 = *(signed char *)((a4 + 0x1));
             if ((int)(*(signed char *)(((0xC7E40C4 + (unsigned short)((unsigned short)t139 * (unsigned short)0x72D0)) + 0x7230))) < (int)0x2) {
                 *(unsigned char *)(((a4 + 0x2C) + 0x2)) = 0x0;
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (0xC7E40C4 + (unsigned short)((unsigned short)t139 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (0xC7E40C4 + (unsigned short)((unsigned short)t139 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
             }
             if ((*(int *)0xC7F3028) == 0) {
                 *(unsigned int *)(((a4 + 0x2C) + 0x4)) = ((*(int *)(((a4 + 0x2C) + 0x4))) + 0x400);
@@ -388,19 +390,19 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
             t194 = *(signed char *)(((a4 + 0x2C) + 0xC));
             *(unsigned char *)(((a4 + 0x2C) + 0xC)) = (t194 - 1);
             if ((signed char)(t194 - 1) != 0) {
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+                return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
             }
             *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
             (((struct o8_float *)((a4 + 0x2C)))->v) = 0.0f;
             *(unsigned int *)(((a4 + 0x2C) + 0x4)) = 0x0;
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
         }
         *(unsigned char *)(((a4 + 0x2C) + 0x2)) = 0x0;
-        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), 0xC7E40C4, 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
     }
     t196 = *(signed char *)((a4 + 0x1));
     if ((int)(*(signed char *)(((0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)) + 0x7230))) < (int)0x2) {
-        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
     }
     *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
     *(unsigned char *)(((a4 + 0x2C) + 0xC)) = 0x1;
@@ -408,13 +410,13 @@ int FUN_0c02e4d0(int a4, int a5, int a6, int a7)
         t201 = *(signed char *)(((a4 + 0x2C) + 0xC));
         *(unsigned char *)(((a4 + 0x2C) + 0xC)) = (t201 - 1);
         if ((signed char)(t201 - 1) != 0) {
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+            return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
         }
         *(unsigned char *)(((a4 + 0x2C) + 0x2)) = ((*(signed char *)(((a4 + 0x2C) + 0x2))) + 0x1);
         (((struct o8_float *)((a4 + 0x2C)))->v) = 0.0f;
         *(unsigned int *)(((a4 + 0x2C) + 0x4)) = 0x0;
-        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+        return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
     }
     *(unsigned char *)(((a4 + 0x2C) + 0x2)) = 0x0;
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(0xC366A70, (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
+    return ((int (*)(int, int, int, int, float, float, float, float))(0xC02E982))(((int)g_hud_state), (0xC7E40C4 + (unsigned short)((unsigned short)t196 * (unsigned short)0x72D0)), 0xA, 0x258, 1.0f, 7.69999886f, 436.0f, 16.0f);
 }

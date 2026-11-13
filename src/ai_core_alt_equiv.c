@@ -1,5 +1,7 @@
 /* CPU fighter AI: slot helpers, debug overlay, script runner/selector, ai_think, first opcode handlers (0c04bfd0-0c04e94c) */
 
+/* named globals (symbols.txt) */
+extern char g_ai_script_group[];
 extern int sprintf(char *s, const char *fmt, ...);
 void ai_think(char *o);
 void ai_run_script(char *o);
@@ -24,7 +26,7 @@ void ai_draw_debug_info(char *o)
     I(o, 0x2E0) = I(o, 0x2DC);
     I(o, 0x2DC) = 0;
     *(signed char *)0x0C3673EE = o[3];
-    *(signed char *)0x0C3673EF = o[4];
+    *(signed char *)g_ai_script_group = o[4];
     ai_think(o);
     ai_run_script(o);
     I(o, 0x2E4) = ~I(o, 0x2E0) & I(o, 0x2DC);
