@@ -151,7 +151,7 @@ int FUN_0c10874c(int, int);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
 int memcpy(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int opt_page3_tick_bg_scroll(int a4);
 int pl_enter_state_41(int a4);
 int stage_gimmick_28_spawn(int a4);

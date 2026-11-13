@@ -17,7 +17,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_hit_effect(int, int, int, int, int, int, int, int, int, int, int, int);
 int pl_start_motion_owner(int, int, int);
 int obj_place_linked_ahead(int, int, float);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o710A_uchar { char p[0x710A]; unsigned char v; };
 struct o719E_short { char p[0x719E]; short v; };
 struct oEE_short { char p[0xEE]; short v; };
@@ -128,7 +128,7 @@ int FUN_0c08c210(int a4)
     (((struct o710C_uchar *)((*(int *)((a4 + 0x1C)))))->v) = 0x1;
     t6 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
     fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
     (((struct o720B_uchar *)(a4))->v) = 0xA;
     obj_place_linked_ahead(a4, 0x0, 150.0f);
@@ -185,7 +185,7 @@ int FUN_0c08c304(int a4)
                     snd_play_char_voice(a4, 0x5);
                     t30 = *(signed char *)((a4 + 0x3));
                     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t30 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t30 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t30 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t30 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t30 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
                     fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
                     t61 = (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
                 }
@@ -194,7 +194,7 @@ int FUN_0c08c304(int a4)
                 obj_set_owner_hit_record(a4, 0x31);
                 t41 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t41 * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242((((((unsigned short)((unsigned short)t41 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t41 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+                thunk_FUN_0c062242((((((unsigned short)((unsigned short)t41 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t41 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
                 fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
                 t61 = (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
             }
@@ -203,7 +203,7 @@ int FUN_0c08c304(int a4)
             obj_set_owner_hit_record(a4, 0x31);
             t52 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t52 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t52 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t52 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t52 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t52 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
             fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
             t61 = (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
         }

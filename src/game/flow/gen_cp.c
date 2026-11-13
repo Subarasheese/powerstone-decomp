@@ -64,7 +64,7 @@ int pl_step_motion(int);
 int pl_step_motion_owner(int);
 int snd_play_char_voice(int, int);
 int snd_play_side_se(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int ui_disable_hud(void);
 int FUN_0c054e46(void);
 int FUN_0c0551b4(void);
@@ -298,7 +298,7 @@ int FUN_0c079b5c(int a4)
                 FUN_0c09c45a(a4);
                 t3 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+                thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (int)stk + 4);
                 fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
                 snd_play_side_se((*(signed char *)((a4 + 0x3))), 0x3);
                 snd_play_char_voice(a4, 0xC);
@@ -333,7 +333,7 @@ int FUN_0c08fea8(int a4)
 
     *(unsigned char *)((a4 + 0xB)) = ((*(signed char *)((a4 + 0xB))) + 0x1);
     t0 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
     FUN_0c08e5b4(a4);
     t0 = *(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x6));
     if ((unsigned char)t0 != 0) {
@@ -633,7 +633,7 @@ int FUN_0c090374(int a4)
     t1 = (signed char)t0;
     if ((signed char)t0 != 0) {
         t0 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
         pl_start_motion(a4, 0x2, 0x75);
         (((struct o71A9_uchar *)(a4))->v) = 0x1;
         (((struct o71A8_uchar *)(a4))->v) = 0x1;

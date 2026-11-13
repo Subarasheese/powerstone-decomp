@@ -160,7 +160,7 @@ int vmsio_isready(int);
 int vmsio_ismount(int);
 int buIsFormat(int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 float stage_type01_start_thrown_item(int a4);
 int ADXT_StartMemIdx(int a4, int a5, int a6, int a7);
 int fx_spawn_03d0d4(int a4, int a5, int a6, int a7);

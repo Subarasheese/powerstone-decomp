@@ -173,7 +173,7 @@ int nlRotateAX(int);
 int nlRotateAY(int);
 int nlUnitMatrix(void);
 int set_vmstime(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int thunk_FUN_0c0d45fe(void);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);

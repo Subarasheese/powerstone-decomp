@@ -202,7 +202,7 @@ int gdFsReopenHn(int, int, int, int);
 int mpdrv_set_dreq_ns(int);
 int mpdrv_set_end_ns(void);
 int pdVibMxStop(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

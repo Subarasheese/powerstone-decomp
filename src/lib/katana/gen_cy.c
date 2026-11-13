@@ -120,7 +120,7 @@ int _quick_odd_mvn(int, int, float);
 int FUN_0c0ffdba(void);
 int FUN_0c100260(int, int, int);
 extern int mpdrv_frame_send();
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int pl_enter_state_24(int a4, int a5);
 int fx_spawn_22(int a4);
 int FUN_0c0fffb8(int a4, int a5, int a6, int a7);

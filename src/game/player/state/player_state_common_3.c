@@ -18,7 +18,7 @@ int pl_step_motion(int);
 int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int FUN_0c064a1c(int a4)
 {
@@ -51,7 +51,7 @@ int FUN_0c064a1c(int a4)
         (((struct o71A9_uchar *)(a4))->v) = 0x1;
         (((struct o71A8_uchar *)(a4))->v) = 0x1;
         t0 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
         (((struct oEC_ushort *)(a4))->v) = 0x28;
         (((struct oF2_ushort *)(a4))->v) = 0x2;
         t0 = *(signed char *)((a4 + 0xA));

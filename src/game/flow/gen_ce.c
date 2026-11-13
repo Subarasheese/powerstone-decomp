@@ -146,7 +146,7 @@ int pl_try_dual_button_action(int, int, int);
 int pl_turn_to_opponent(int, int);
 int snd_play_char_voice(int, int);
 int sprintf(int, int, ...);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int ui_disable_hud(void);
 int ui_draw_text_stub(int, int, float, float, float, float);
 int ui_fade_start(int, int, int, int);
@@ -908,7 +908,7 @@ int FUN_0c0838f4(int a4)
             obj_set_owner_hit_record(a4, 0x34);
             t36 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t36 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t36 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t36 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)(((((((struct oEE_short *)(a4))->v)) << 2) + 0xC1504E8))) * (short)0xB0)));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t36 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t36 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)(((((((struct oEE_short *)(a4))->v)) << 2) + 0xC1504E8))) * (short)0xB0)), (int)stk + 4);
             fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
             t43 = math_rand_float();
             u46 = (t43 * 255.0f);
@@ -1171,7 +1171,7 @@ int FUN_0c091f50(int a4)
     (((struct o71A9_uchar *)(a4))->v) = 0x1;
     (((struct o71A8_uchar *)(a4))->v) = 0x1;
     t1 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
     if (((int)((((struct o71D4_short *)(a4))->v)) < 0) && (t0 = *(signed char *)((a4 + 0x71F3)), t0 != 0)) {
         pl_set_power_form_off(a4);
         (((struct o7230_uchar *)(a4))->v) = 0x0;
@@ -1361,7 +1361,7 @@ int FUN_0c0c3c68(int a4, float f4)
                 (((struct o48_float *)(a4))->v) = 0.0f;
             }
             t2 = *(signed char *)((t0 + 0x3));
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x38);
             (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + ((((((struct o38_float *)(a4))->v)) - ((((struct o20_float *)(a4))->v))) / 5.0f));
             (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + ((((((struct o3C_float *)(a4))->v)) - ((((struct o24_float *)(a4))->v))) / 5.0f));
             (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + ((((((struct o40_float *)(a4))->v)) - ((((struct o28_float *)(a4))->v))) / 5.0f));
@@ -1381,7 +1381,7 @@ int FUN_0c0c3c68(int a4, float f4)
             (((struct o48_float *)(a4))->v) = 0.0f;
         }
         t1 = *(signed char *)((t0 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x38);
         (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + ((((((struct o38_float *)(a4))->v)) - ((((struct o20_float *)(a4))->v))) / 5.0f));
         (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + ((((((struct o3C_float *)(a4))->v)) - ((((struct o24_float *)(a4))->v))) / 5.0f));
         (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + ((((((struct o40_float *)(a4))->v)) - ((((struct o28_float *)(a4))->v))) / 5.0f));

@@ -132,7 +132,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor(int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int fx_burst_create(int a4, int a5);
 int kmiProcessVertex_04(int a4);
 int ai_op5(int a4, float f4);

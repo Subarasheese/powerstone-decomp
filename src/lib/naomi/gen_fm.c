@@ -96,7 +96,7 @@ float math_sin_angle16(int);
 int _divlu(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int dbgedit_draw_editor_screen(int a4, int a5, int a6, int a7);
 int pl_state23_phase1(int a4, int a5, int a6, int a7);
 int fx_homing_shell_update(int a4);

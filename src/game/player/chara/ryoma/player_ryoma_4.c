@@ -27,7 +27,7 @@ int pl_landed(int);
 int FUN_0c0a3762(int, int);
 int snd_play_side_se(int, int);
 float math_signed_sqrt(float);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int pl_ryoma_special2_phase3(int a4)
 {
@@ -127,7 +127,7 @@ int pl_ryoma_special2_phase3(int a4)
                 obj_force_owner_state27(a4, 0x31);
                 t79 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
                 *(unsigned int *)(((int)stk + 24)) = ((unsigned short)((unsigned short)t79 * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)t79 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t79 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+                thunk_FUN_0c062242(((((unsigned short)((unsigned short)t79 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t79 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 28);
                 fx_spawn_hit_effect((((int)stk + 16) + 0xC), (a4 + 0x2C), (*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3))), 0x5, *(int *)((int)stk + 16), *(int *)((int)stk + 16 + 4), *(int *)((int)stk + 16 + 8), *(int *)((int)stk + 16 + 12), *(int *)((int)stk + 16 + 16), *(int *)((int)stk + 16 + 20), *(int *)((int)stk + 16 + 24), *(int *)((int)stk + 16 + 28));
                 pl_start_motion((*(int *)((a4 + 0x1C))), 0x2, 0x83);
                 t87 = *(int *)((a4 + 0x1C));
@@ -168,7 +168,7 @@ int pl_ryoma_special2_phase3(int a4)
         obj_force_owner_state27(a4, 0x31);
         t121 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
         *(unsigned int *)(((int)stk + 24)) = ((unsigned short)((unsigned short)t121 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242(((((unsigned short)((unsigned short)t121 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t121 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+        thunk_FUN_0c062242(((((unsigned short)((unsigned short)t121 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t121 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 28);
         fx_spawn_hit_effect((((int)stk + 16) + 0xC), (a4 + 0x2C), (*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3))), 0x5, *(int *)((int)stk + 16), *(int *)((int)stk + 16 + 4), *(int *)((int)stk + 16 + 8), *(int *)((int)stk + 16 + 12), *(int *)((int)stk + 16 + 16), *(int *)((int)stk + 16 + 20), *(int *)((int)stk + 16 + 24), *(int *)((int)stk + 16 + 28));
         pl_start_motion((*(int *)((a4 + 0x1C))), 0x2, 0x83);
         t129 = *(int *)((a4 + 0x1C));

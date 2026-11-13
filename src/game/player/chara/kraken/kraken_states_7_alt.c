@@ -17,7 +17,7 @@ int pl_start_motion(int, int, int);
 int FUN_0c0a3762(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int pl_kraken_state22_phase0(int, int, int);
 int pl_kraken_state22_phase1(int);
 
@@ -71,7 +71,7 @@ int pl_kraken_special_id3_phase2(int a4)
     if (((((struct oEC_short *)(a4))->v)) == 30) {
         t5 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 8);
         u11 = (*(float *)(((int)stk + 8)));
         u11 = u11 + 30.0f * (math_sin_angle16((*(int *)((a4 + 0x30)))));
         *(float *)(((int)stk + 8)) = u11;
@@ -87,7 +87,7 @@ int pl_kraken_special_id3_phase2(int a4)
     if (((((struct oEC_short *)(a4))->v)) == 58) {
         t26 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 8);
         u32 = (*(float *)(((int)stk + 8)));
         u32 = u32 + 30.0f * (math_sin_angle16((*(int *)((a4 + 0x30)))));
         *(float *)(((int)stk + 8)) = u32;
@@ -113,7 +113,7 @@ int pl_kraken_special_id3_phase2(int a4)
         FUN_0c085606(a4);
         t51 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t51 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t51 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t51 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t51 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t51 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 8);
         u57 = (*(float *)(((int)stk + 8)));
         u57 = u57 + 30.0f * (math_sin_angle16((*(int *)((a4 + 0x30)))));
         *(float *)(((int)stk + 8)) = u57;

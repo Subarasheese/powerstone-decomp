@@ -179,7 +179,7 @@ extern void _builtin_set_imask(int);
 extern void _builtin_st_ext(float (*)[4]);
 int gdFsClose(int);
 int gdFsGetFileSize(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int strncpy(int, int, int);
 int pdVibMxIsReady(int);
 int pl_kraken_special_id3_phase0(int a4);

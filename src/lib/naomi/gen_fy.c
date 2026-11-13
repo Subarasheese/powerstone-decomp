@@ -76,7 +76,7 @@ float math_sin_angle16(int);
 float math_tan_angle16(int);
 int FUN_0c0e3510(void);
 int nlMultiMatrix(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c0c00aa(int a4);
 int nlPerspectiveX(int a4, float f4, float f5, float f6);
 int pl_enter_state_23(int a4);

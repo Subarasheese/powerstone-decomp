@@ -12,7 +12,7 @@ int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_destroy(int, int, int, int);
 int FUN_0c0ace1c(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int fx_spawn_048aa0(int a4)
 {
@@ -74,7 +74,7 @@ int fx_tick_048aa0(int a4, int a5, int a6, int a7)
         if (t6 != 13) {
             t7 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 4);
             FUN_0c0ace1c((((int)stk + 0) + 0x4), (*(signed char *)((a4 + 0x3))));
             t12 = *(signed char *)((a4 + 0x8));
             *(unsigned char *)((a4 + 0x8)) = (t12 + 0x1);

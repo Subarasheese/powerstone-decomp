@@ -9,7 +9,7 @@ struct o4_float { char p[0x4]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o54_int { char p[0x54]; int v; };
@@ -47,7 +47,7 @@ int fx_spawn_037d88(int a4, int a5)
         (((struct oF2_ushort *)(t0))->v) = (unsigned char)(*(signed char *)(((int)stk + 0)));
         t3 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((unsigned char)(*(signed char *)(((int)stk + 0))) << 2) + 0xC321398))) * (short)0xB0)));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((unsigned char)(*(signed char *)(((int)stk + 0))) << 2) + 0xC321398))) * (short)0xB0)), t0 + 0x20);
         t8 = *(signed char *)((a4 + 0x3));
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x0);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
@@ -116,7 +116,7 @@ int fx_tick_037d88(int a4)
     if (((int)(*(signed char *)((v0_3 + 0xB))) > (int)0x5)) goto L_C037F08;
     if (!(((*(signed char *)((v0_1 + 0x71BA))) == 11))) goto L_C037F08;
     v0_1 = *(signed char *)(((*(int *)((v0_0 + 0x1C))) + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)(((((((struct oF2_short *)(v0_0))->v)) << 2) + 0xC321398))) * (short)0xB0)));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)(((((((struct oF2_short *)(v0_0))->v)) << 2) + 0xC321398))) * (short)0xB0)), v0_0 + 0x20);
     v0_1 = (0x4000);
     if (((*(int *)((0xC321398 + (((((struct oF2_short *)(v0_0))->v)) << 2)))) != 8)) goto L_C038000;
     v0_3 = *(int *)((v0_0 + 0x1C));

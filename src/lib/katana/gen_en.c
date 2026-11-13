@@ -132,7 +132,7 @@ int buIsFormat(int);
 int direntry(int, int);
 int gdFsReopenHn(int, int, int, int);
 int get_fat(int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

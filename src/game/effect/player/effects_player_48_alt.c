@@ -38,7 +38,7 @@ float math_cos_angle16(int);
 float math_pow_float(float, float);
 float math_sin_angle16(int);
 extern float _builtin_sqrtf(float);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5)
 {
@@ -115,7 +115,7 @@ float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5)
     v0_7 = ((((((unsigned short)((unsigned short)v0_4 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_4 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)) + 0x580));
     v0_8 = ((v0_1 + 0x20));
     L_C0C5D52:;
-    thunk_FUN_0c062242(v0_7);
+    thunk_FUN_0c062242(v0_7, (int)stk + 4);
     *(unsigned char *)((v0_0 + 0x0)) = v0_5;
     *(unsigned char *)((v0_1 + 0x8)) = 0x2;
     *(unsigned char *)((v0_1 + 0xA)) = v0_5;
@@ -125,7 +125,7 @@ float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5)
     L_C0C5FAC:;
     v0_3 = *(signed char *)((v0_3 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + v0_2);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)) + 0x580));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) - ((((struct o20_float *)(v0_1))->v)));
     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) - ((((struct o24_float *)(v0_1))->v)));
     *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) - ((((struct o28_float *)(v0_1))->v)));
@@ -147,7 +147,7 @@ float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5)
     *(unsigned int *)((((((struct o2E4_int *)(v0_1))->v)) + 0x10)) = v0_4;
     v0_6 = *(signed char *)((v0_3 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + v0_2);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)) + 0x580));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_6 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) - ((((struct o20_float *)(v0_1))->v)));
     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) - ((((struct o24_float *)(v0_1))->v)));
     *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) - ((((struct o28_float *)(v0_1))->v)));
@@ -243,7 +243,7 @@ float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5)
     if (((*(signed char *)(((*(int *)((v0_3 + 0x1C))) + 0x4))) == 10)) goto L_C0C5ED6;
     v0_5 = *(signed char *)(((*(int *)((v0_3 + 0x1C))) + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_2);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)));
+    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_2) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_2) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) - (((math_sin_angle16((*(int *)((v0_1 + 0x30))))) * 60.0f)));
     *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) - (((math_cos_angle16((*(int *)((v0_1 + 0x30))))) * 60.0f)));
     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) - ((((struct o20_float *)(v0_1))->v)));

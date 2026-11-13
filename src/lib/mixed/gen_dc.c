@@ -115,7 +115,7 @@ int kmiBGPlanePutColor2(int, int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int fx_thrown_object_create(int a4, int a5);
 int opt_page2_main(int a4, int a5, int a6, int a7);
 int fx_tick_0488b8(int a4);

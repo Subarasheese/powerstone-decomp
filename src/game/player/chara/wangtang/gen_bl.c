@@ -47,7 +47,7 @@ int pl_no_ground(int);
 int pl_start_motion(int, int, int);
 int pl_step_motion(int);
 int pl_step_motion_owner(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c08321c(int a4);
 int FUN_0c0942dc(int a4);
 int FUN_0c089c38(int a4);
@@ -80,7 +80,7 @@ int FUN_0c08321c(int a4)
         if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x2)) == 0) {
             t17 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t17 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t17 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t17 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t17 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t17 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
             fx_spawn_03b4d0(a4, (((int)stk + 0) + 0x4), 0xF, 0x0, 0.049999997f);
         }
     }
@@ -109,7 +109,7 @@ int FUN_0c08321c(int a4)
         if (t62 == 1) {
             t64 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t64 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t64 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t64 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t64 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t64 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 4);
             t67 = *(int *)((a4 + 0x1C));
             *(unsigned int *)(((int)stk + 0)) = t67;
             fx_spawn_hit_effect((((int)stk + 0) + 0x4), ((*(int *)(((int)stk + 0))) + 0x2C), (*(signed char *)((t67 + 0x3))), 0x1);
@@ -249,7 +249,7 @@ int FUN_0c089c38(int a4)
     } else {
         t26 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t26 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
         fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
         FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0);
     }

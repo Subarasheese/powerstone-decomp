@@ -161,7 +161,7 @@ static void iaOcbp(void *p)
 int open_file_handle(void);
 int search_exec_file(int, int);
 int search_free_dir(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

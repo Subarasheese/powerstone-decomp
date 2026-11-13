@@ -120,7 +120,7 @@ int FUN_0c10b7b0(int, int, int, int, int);
 extern void _builtin_prefetch(void *);
 extern float _builtin_sqrtf(float);
 int kmiReqRestOfDMA(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c0cb5d6(int a4);
 int kmFlipFrameBuffer(int a4, int a5, int a6, int a7);
 int pl_kraken_attack_kind2_phase3(int a4);

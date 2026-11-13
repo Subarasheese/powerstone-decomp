@@ -161,7 +161,7 @@ int gdFsClose(int);
 int kdSetSetCondition(void);
 int memset(int, int, int);
 int nlMultiMatrix(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int thunk_FUN_0c062d78(void);
 int stage_gimmick_17_spawn(void);
 int fx_spawn_05(int a4, int a5, int a6);

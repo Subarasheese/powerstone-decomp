@@ -29,7 +29,7 @@ int pl_step_motion_owner(int);
 int pl_apply_motion_translation(int);
 int FUN_0c0a3762(int, int);
 int snd_play_char_voice(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int pl_wangtang_state31_phase0(int a4);
 int pl_wangtang_state31_phase1(int a4);
@@ -204,7 +204,7 @@ int pl_wangtang_special0_update(int a4)
         } else {
             t31 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t31 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t31 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t31 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t31 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t31 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
             fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
             FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0);
             t38 = (((struct o719E_short *)(a4))->v);
@@ -222,7 +222,7 @@ int pl_wangtang_special0_update(int a4)
         if ((unsigned short)t55 == 121) {
             t57 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t57 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t57 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t57 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t57 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t57 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
             fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
             FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x3);
             t72 = (snd_play_char_voice((*(int *)((a4 + 0x1C))), 0xC));

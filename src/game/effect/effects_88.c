@@ -11,7 +11,7 @@ struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int FUN_0c041574(int a4)
 {
@@ -52,7 +52,7 @@ float FUN_0c041614(int a4)
     register float u0;
 
     t0 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), a4 + 0x20);
     t0 = (((struct o2E0_int *)(a4))->v);
     u0 = math_sin_angle16(((((struct oEC_short *)(a4))->v)));
     (((struct o20_float *)(t0))->v) = ((u0 / 2.0f) + 0.5f);

@@ -53,7 +53,7 @@ int FUN_0c10dd58(int, int);
 int FUN_0c10dd8c(int, int);
 int FUN_0c10ddb4(void);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int stage_gimmick_31_update(int a4);
 int fx_tick_04a4c4(int a4);
 int FUN_0c01be44(int a4, int a5, int a6, int a7);

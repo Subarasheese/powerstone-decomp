@@ -150,7 +150,7 @@ int fmMngChkEmptyData(int, int);
 extern int _builtin_get_imask(void);
 int buIsFormat(int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int vmsfs_fread1(int a4, int a5);
 int fx_spawn_036fe4(int a4, int a5);
 int fx_spawn_03cf50(int a4, int a5);
