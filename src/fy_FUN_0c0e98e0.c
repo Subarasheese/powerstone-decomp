@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer loop: state in registers (r3-r6, r9, r11, r12, T flag from the sibling fragments), bsr into sibling fragments, braf jump table of bra entries, fschg/ftrv/fdiv; no C form */
 /* nl_objasm: polygon clip/transform dispatcher: walks the vertex list at r4, transforms each vertex (xmtrx), tests w against r12, accumulates a clip code in r9 and branches by it (braf table) to the clip/send fragment sequences. */
-#pragma inline_asm(FUN_0c0e98e0)
-void FUN_0c0e98e0(void)
+#pragma inline_asm(nl_display_strip_nc_spd)
+void nl_display_strip_nc_spd(void)
 {
     .DATA.W H'2FA6
     .DATA.W H'2FB6

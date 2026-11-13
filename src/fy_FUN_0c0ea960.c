@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer fragment (indices in r0/r11, floats passed through r12/r7 and fpul, T flag, FPSCR.SZ toggled by fschg); no C form */
 /* nl_objasm: interpolates a clipped textured vertex (positions, uv and packed colours) between two table entries (r0&3, r11&3) at 0xC0EA180 by the ratio of r12/r7 and writes the send record at r6. */
-#pragma inline_asm(FUN_0c0ea960)
-void FUN_0c0ea960(void)
+#pragma inline_asm(nl_objasm_clip_send_vtx_spd_ofst)
+void nl_objasm_clip_send_vtx_spd_ofst(void)
 {
     .DATA.W H'C903
     .DATA.W H'4008

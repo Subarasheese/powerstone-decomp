@@ -1,7 +1,7 @@
 /* INLINE-ASM: display-list helper with its inputs in r0, r5, r6, the T flag and fr3, using fschg and clobbering r10; no C form exists. */
 /* Reads four floats from the table at 0xC0EA180 (entry r0&3, 32 bytes each), scales two by fr3 and writes the four backwards below r6+32, with a link word. */
-#pragma inline_asm(FUN_0c0ea920)
-void FUN_0c0ea920(void)
+#pragma inline_asm(nl_objasm_send_saved_vtx_spd_ofst)
+void nl_objasm_send_saved_vtx_spd_ofst(void)
 {
     and #3,r0
     mov #5,r2

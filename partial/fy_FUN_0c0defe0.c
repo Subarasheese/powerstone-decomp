@@ -1,5 +1,5 @@
 
-void FUN_0c0defe0(int kind)
+void sys_fatal_error_screen(int kind)
 {
     int color;
 

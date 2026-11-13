@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written FPU routine (vertex through XMTRX with ftrv/fipr, clip flags into r9 via the T flag, state in r8, r12, r13 and fv12) that C cannot express */
-#pragma inline_asm(FUN_0c0e8d20)
-int FUN_0c0e8d20(void)
+/* Transforms a vertex through XMTRX with ftrv/fipr and computes its clip flags. */
+#pragma inline_asm(nl_objasm_transform_vtx_ofst)
+int nl_objasm_transform_vtx_ofst(void)
 {
     MOV.L @R4,R0
     TST #1,R0

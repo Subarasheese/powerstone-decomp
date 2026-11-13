@@ -1,7 +1,7 @@
 /* INLINE-ASM: renderer hand-written assembly on registers r2, r3, r5, r6 and fr4..fr7 held by the caller, uses fschg and pref */
-/* Appends one vertex (fr4, fr5*fr7, fr6*fr7, @r2) to the store-queue-style buffer at r6 and sends it with pref; the last vertex of a strip (r3 reaches 0) also writes -1 in the header word. */
-#pragma inline_asm(FUN_0c0e8de0)
-void FUN_0c0e8de0(void)
+/* Appends one vertex to the store-queue buffer at r6 and sends it with pref; the last vertex of a strip also writes -1 in the header word. */
+#pragma inline_asm(nl_objasm_send_vtx_ofst)
+void nl_objasm_send_vtx_ofst(void)
 {
     FSCHG
     ADD #32,R6

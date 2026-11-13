@@ -2,11 +2,11 @@
 /* Strip renderer of the 3D model drawer: walks a display list (r4 + 24: 48-byte records with a header word, vertex,
    UV and colour), transforms each vertex by XMTRX, scales by the perspective factor 1 / g_d648 (then resets it to 1),
    culls against the screen, selects the texture's store-queue area (QACR0/1 from the table at *0x0C803DF4) and writes
-   the polygon parameters and vertices through the store queues; strip runs go to FUN_0c0e8700 / FUN_0c0e9160 (called
+   the polygon parameters and vertices through the store queues; strip runs go to nl_display_strip_ofst / nl_display_triangle_ofst (called
    here through r3, which both overwrite on entry, instead of the original bsr) and special headers -2 / -3 to
-   FUN_0c0ecce0 / FUN_0c0ec180. r5 points at the draw parameters (light vector, scale, flags). */
-#pragma inline_asm(FUN_0c0e8340)
-void FUN_0c0e8340(void)
+   nl_objasm_draw_obj_bump / FUN_0c0ec180. r5 points at the draw parameters (light vector, scale, flags). */
+#pragma inline_asm(nl_objasm_draw_obj_ofst)
+void nl_objasm_draw_obj_ofst(void)
 {
     .DATA.W H'F49D
     .DATA.W H'7418

@@ -1,7 +1,7 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c039fae.json (synthetic). */
 /* Per-frame check: keeps the object alive while its timer is under the limit and the owner's two bytes match its values, else releases it. */
-int FUN_0c059330(int);
+int obj_destroy(int);
 
 struct Obj {
     char p0[0x1C];
@@ -13,11 +13,11 @@ struct Obj {
     short b;                /* 0xF2 */
 };
 
-void FUN_0c039fae(struct Obj *o)
+void fx_tick_039ed8(struct Obj *o)
 {
     o->t = o->t + 1;
     if (o->t < o->limit && o->a == (signed char)o->owner[0x71A4] && o->b == (unsigned char)o->owner[0x71A5]) {
         return;
     }
-    FUN_0c059330((int)o);
+    obj_destroy((int)o);
 }

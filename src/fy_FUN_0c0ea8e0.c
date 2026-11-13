@@ -1,6 +1,7 @@
 /* INLINE-ASM: takes r11 from its caller (an assembly routine's register convention) and switches the FPU transfer size (fschg). */
-#pragma inline_asm(FUN_0c0ea8e0)
-void FUN_0c0ea8e0(void)
+/* Display-list helper writing table entries via FPU transfer-size switches (hand-written assembly). */
+#pragma inline_asm(nl_objasm_shift_vtx_spd_ofst)
+void nl_objasm_shift_vtx_spd_ofst(void)
 {
     MOV #5,R1
     MOV.L L_TBL,R10

@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
-#pragma inline_asm(FUN_0c0eab00)
-int FUN_0c0eab00(void)
+/* Hand-written routine that calls a chain of helper routines selected by a mode code, once per list entry. */
+#pragma inline_asm(nl_display_triangle_nc_spd_ofst)
+int nl_display_triangle_nc_spd_ofst(void)
 {
     MOV.L R10,@-R15
     MOV.L R11,@-R15

@@ -1,7 +1,7 @@
 /* INLINE-ASM: display-list vertex interpolation helper with its inputs in r0, r5, r6, r7, r11, r12, fr3, fr5 and the T flag, using fschg and clobbering r10; no C form exists. */
 /* Interpolates between two 24-byte vertices of the table at 0xC7FD280 (selected by r0&3 and r11&3) at the ratio (r12-v0.x)/(v1.x-v0.x) and writes the result backwards below r6+32. */
-#pragma inline_asm(FUN_0c0e7d60)
-void FUN_0c0e7d60(void)
+#pragma inline_asm(nl_objasm_clip_send_vtx)
+void nl_objasm_clip_send_vtx(void)
 {
     and #3,r0
     shll2 r0

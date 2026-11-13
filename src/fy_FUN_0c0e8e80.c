@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: its inputs are r0, r5, r6, the T flag and fr1/fr3 (live registers), FPSCR.SZ=1 (fschg), no C form. */
+/* Hand-written SH-4 fragment: writes a scaled vertex record from a table entry into the send buffer */
 #pragma inline_asm(ia_FUN_0c0e8e80)
 static void ia_FUN_0c0e8e80(void)
 {
@@ -30,7 +31,7 @@ LC0E8EAA:
     ADD     #32,R6
 }
 
-void FUN_0c0e8e80(void)
+void nl_objasm_send_saved_vtx_ofst(void)
 {
     ia_FUN_0c0e8e80();
 }

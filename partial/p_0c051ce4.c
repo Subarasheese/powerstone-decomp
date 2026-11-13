@@ -1,16 +1,16 @@
 /* @unit 0c051ce4-0c051e2c -macsave=1 */
 typedef struct E { unsigned char c0; char p1[11]; short *q; char pad1[60]; union { int i; short h; } u76; char pad2[512]; } E;
 typedef struct A { char p[3]; char c3; char p4[728]; unsigned int m732; } A;
-extern short g8_s3ec;
-extern unsigned char g8_b3ee;
-extern E g8_tab6f40[];
-extern short *g8_p3e8;
-extern int FUN_0c050068(A *);
-extern int FUN_0c050180(int);
-extern int FUN_0c05012e(A *);
-extern void FUN_0c04cdf2(void);
+extern short g_ai_run_flag;
+extern unsigned char g_ai_cur_slot;
+extern E g_ai_slots[];
+extern short *g_ai_pc;
+extern int ai_calc_angle_to_goal_point(A *);
+extern int ai_angle_to_pad_dir(int);
+extern int ai_calc_dist_to_goal_point(A *);
+extern void ai_clear_op_state(void);
 #define EN ((E *)((char *)tb + (short)(*pb * 596)))
-void FUN_0c051ce4(A *a0)
+void ai_op54(A *a0)
 {
     register E *tb;
     register int x;
@@ -20,19 +20,19 @@ void FUN_0c051ce4(A *a0)
     short s0, s4, v;
     int r, rr, vi;
     short *ps;
-    x = FUN_0c050068(a);
-    pb = &g8_b3ee;
-    tb = g8_tab6f40;
+    x = ai_calc_angle_to_goal_point(a);
+    pb = &g_ai_cur_slot;
+    tb = g_ai_slots;
     e = EN;
     if ((unsigned short)(x - e->u76.h + 4096) < 8192)
         x = e->u76.i;
     else
         e->u76.i = x;
-    s0 = FUN_0c050180(x);
-    s4 = FUN_0c050180(x + 0x8000);
-    v = *g8_p3e8++;
-    r = FUN_0c05012e(a);
-    ps = &g8_s3ec;
+    s0 = ai_angle_to_pad_dir(x);
+    s4 = ai_angle_to_pad_dir(x + 0x8000);
+    v = *g_ai_pc++;
+    r = ai_calc_dist_to_goal_point(a);
+    ps = &g_ai_run_flag;
     switch (EN->c0) {
     case 0:
         *ps = 0;
@@ -51,8 +51,8 @@ void FUN_0c051ce4(A *a0)
         break;
     case 2:
         *ps = 1;
-        FUN_0c04cdf2();
-        EN->q = g8_p3e8;
+        ai_clear_op_state();
+        EN->q = g_ai_pc;
         break;
     }
 }

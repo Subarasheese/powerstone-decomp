@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer fragment (r11 index, FPSCR.SZ toggled by fschg, pc-relative table pointer) has no C form */
 /* nl_objasm: stores fr2 loaded from table at 0xC0E95C0 (entry r11&3) into three table slots selected by r11-1, r11-2. */
-#pragma inline_asm(FUN_0c0e9d00)
-void FUN_0c0e9d00(void)
+#pragma inline_asm(nl_objasm_shift_vtx_spd)
+void nl_objasm_shift_vtx_spd(void)
 {
     .DATA.W H'E105
     mov.l L0,r10

@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: transforms a vertex strip with ftrv through XMTRX and writes clipped, lit vertices to the store queue; its inputs are r4-r6, r8 and fv12 and the T flag (live registers), FPSCR.SZ toggles, no C form. */
+/* Transforms a vertex strip through XMTRX and writes clipped, lit vertices to the store queue. */
 #pragma inline_asm(ia_FUN_0c0e8700)
 static void ia_FUN_0c0e8700(void)
 {
@@ -493,7 +494,7 @@ LC0E8A7A:
     ADD     #32,R6
 }
 
-void FUN_0c0e8700(void)
+void nl_display_strip_ofst(void)
 {
     ia_FUN_0c0e8700();
 }

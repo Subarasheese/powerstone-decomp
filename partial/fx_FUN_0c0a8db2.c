@@ -1,9 +1,9 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c0a8db2.json (synthetic). */
-/* Menu-cursor sprite set (eight objects at +736.. plus two at +768/+772): state 0 spawns/initialises them from a table, state 1 slides them out by 30.0 per frame (selected by a mode byte at 0xC7F302C+69), state 2 waits for the screen to be ready and pulses the last one, state 3 slides everything out again; other states hand over to FUN_0c059330. */
+/* Menu-cursor sprite set (eight objects at +736.. plus two at +768/+772): state 0 spawns/initialises them from a table, state 1 slides them out by 30.0 per frame (selected by a mode byte at 0xC7F302C+69), state 2 waits for the screen to be ready and pulses the last one, state 3 slides everything out again; other states hand over to obj_destroy. */
 typedef struct { int a, b, c; } S12;
 extern void FUN_0c0623a6(void *, int, int);
-extern int FUN_0c059330(void *);
+extern int obj_destroy(void *);
 
 #define ST (*(signed char *)(e + 8))
 #define SUB (*(signed char *)(e + 9))
@@ -14,7 +14,7 @@ extern int FUN_0c059330(void *);
 #define G69 (*(signed char *)(0xC7F302C + 69))
 #define SROW ((char *)0xC7F2DF0 + (unsigned char)((unsigned short)(G69 + 255) * 120))
 
-void FUN_0c0a8db2(char *e)
+void menu_ui_task_23(char *e)
 {
     S12 l2;
     float k30 = 30.0f;
@@ -24,7 +24,7 @@ void FUN_0c0a8db2(char *e)
 
     l2 = *(S12 *)0xC152C08;
     if (*(int *)(e + 28) == 0) {
-        FUN_0c059330(e);
+        obj_destroy(e);
         return;
     }
     switch (ST) {
@@ -185,7 +185,7 @@ void FUN_0c0a8db2(char *e)
         }
         break;
     default:
-        FUN_0c059330(e);
+        obj_destroy(e);
         break;
     }
 }

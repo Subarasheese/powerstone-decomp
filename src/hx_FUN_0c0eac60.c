@@ -1,8 +1,8 @@
 /* INLINE-ASM: hand-written renderer fragment: ftrv on the XMTRX bank, fpul, rotcl chains, results in r9/T for the caller; no C form */
 /* nl_objasm: transforms three vertices (inline or indirect records at r4, 32 bytes each) by the matrix and collects clip-test bits of w against r12 into r9. */
-/* @out FUN_0c0eac60 r1 r4 r9 fr0 fr1 fr2 fr3 fr4 fr5 fr6 fr7 */
-#pragma inline_asm(FUN_0c0eac60)
-void FUN_0c0eac60(void)
+/* @out nl_objasm_transform_tri_spd_ofst r1 r4 r9 fr0 fr1 fr2 fr3 fr4 fr5 fr6 fr7 */
+#pragma inline_asm(nl_objasm_transform_tri_spd_ofst)
+void nl_objasm_transform_tri_spd_ofst(void)
 {
     .DATA.W H'6143
     .DATA.W H'6042

@@ -6,11 +6,11 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oFC0_int { char p[0xFC0]; int v; };
 float FUN_0c02649a(int, int);
-int FUN_0c0427bc(int, int, int, int);
+int fx_spawn_periodic_trail(int, int, int, int);
 int FUN_0c0e6fe8(int);
 int mpdrv_dpf(int, ...);
 extern int _builtin_tas(char *);
-int FUN_0c0ad1b8(int a4);
+int stage_type01_spawn_ground_fx(int a4);
 int mpdrv_frame_recv_pre(void);
 
 

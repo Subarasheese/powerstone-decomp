@@ -1,20 +1,20 @@
 /* INLINE-ASM: hand-written display-list clipper (inputs r4, r9, r11 state, XMTRX and the T flag returned by its sibling helpers; jump targets and bsr calls between helpers); no C form exists. The bsr calls became mov.l/jsr through r14 (saved and restored) because the C is linked far from them. */
-/* Clips one strip of vertices at r4 against the view volume: tests each vertex with FUN_0c0e7be0 (outcode in T and r9), and by the accumulated outcode sends, clips or skips it through FUN_0c0e7c80 / 7cc0 / 7ce0 / 7d20 / 7d60. */
-extern void FUN_0c0e7be0(void);
-extern void FUN_0c0e7c80(void);
-extern void FUN_0c0e7cc0(void);
-extern void FUN_0c0e7d60(void);
-extern void FUN_0c0e7d20(void);
-extern void FUN_0c0e7ce0(void);
-#pragma inline_asm(FUN_0c0e7960)
-void FUN_0c0e7960(void)
+/* Display-list clipper for one vertex strip at r4: tests each vertex against the view volume and sends, clips or skips it through the sibling helpers. */
+extern void nl_objasm_transform_vtx(void);
+extern void nl_objasm_send_vtx(void);
+extern void nl_objasm_save_vtx(void);
+extern void nl_objasm_clip_send_vtx(void);
+extern void nl_objasm_send_saved_vtx(void);
+extern void nl_objasm_shift_vtx(void);
+#pragma inline_asm(nl_display_strip_nc)
+void nl_display_strip_nc(void)
 {
-    .IMPORT _FUN_0c0e7be0
-    .IMPORT _FUN_0c0e7c80
-    .IMPORT _FUN_0c0e7cc0
-    .IMPORT _FUN_0c0e7d60
-    .IMPORT _FUN_0c0e7d20
-    .IMPORT _FUN_0c0e7ce0
+    .IMPORT _nl_objasm_transform_vtx
+    .IMPORT _nl_objasm_send_vtx
+    .IMPORT _nl_objasm_save_vtx
+    .IMPORT _nl_objasm_clip_send_vtx
+    .IMPORT _nl_objasm_send_saved_vtx
+    .IMPORT _nl_objasm_shift_vtx
     mov.l r14,@-r15
     mov.l r10,@-r15
     mov.l r11,@-r15
@@ -136,17 +136,17 @@ Lc0e79f8:
     mov.l @r15+,r14
     .ALIGN 4
 PA_FUN_0c0e7be0:
-    .DATA.L _FUN_0c0e7be0
+    .DATA.L _nl_objasm_transform_vtx
 PA_FUN_0c0e7c80:
-    .DATA.L _FUN_0c0e7c80
+    .DATA.L _nl_objasm_send_vtx
 PA_FUN_0c0e7cc0:
-    .DATA.L _FUN_0c0e7cc0
+    .DATA.L _nl_objasm_save_vtx
 PA_FUN_0c0e7d60:
-    .DATA.L _FUN_0c0e7d60
+    .DATA.L _nl_objasm_clip_send_vtx
 PA_FUN_0c0e7d20:
-    .DATA.L _FUN_0c0e7d20
+    .DATA.L _nl_objasm_send_saved_vtx
 PA_FUN_0c0e7ce0:
-    .DATA.L _FUN_0c0e7ce0
+    .DATA.L _nl_objasm_shift_vtx
 Lc0e7a06:
     mov.l PB_FUN_0c0e7cc0,r14
     jsr @r14
@@ -448,15 +448,15 @@ LX10:
 
     .ALIGN 4
 PB_FUN_0c0e7be0:
-    .DATA.L _FUN_0c0e7be0
+    .DATA.L _nl_objasm_transform_vtx
 PB_FUN_0c0e7c80:
-    .DATA.L _FUN_0c0e7c80
+    .DATA.L _nl_objasm_send_vtx
 PB_FUN_0c0e7cc0:
-    .DATA.L _FUN_0c0e7cc0
+    .DATA.L _nl_objasm_save_vtx
 PB_FUN_0c0e7d60:
-    .DATA.L _FUN_0c0e7d60
+    .DATA.L _nl_objasm_clip_send_vtx
 PB_FUN_0c0e7d20:
-    .DATA.L _FUN_0c0e7d20
+    .DATA.L _nl_objasm_send_saved_vtx
 PB_FUN_0c0e7ce0:
-    .DATA.L _FUN_0c0e7ce0
+    .DATA.L _nl_objasm_shift_vtx
 }

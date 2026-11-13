@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written register-convention routine (mask in r11, pointer in r2, fr2/fr4/fr6 in; uses fschg and pre-decrement fmov stores) that C cannot express */
-#pragma inline_asm(FUN_0c0e7cc0)
-void FUN_0c0e7cc0(void)
+/* Stores a vertex's four floats into the buffer slot selected by the mask in r11 (pre-decrement fmov stores). */
+#pragma inline_asm(nl_objasm_save_vtx)
+void nl_objasm_save_vtx(void)
 {
     MOV #5,R10
     MOV R11,R0

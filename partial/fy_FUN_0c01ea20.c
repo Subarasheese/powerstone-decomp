@@ -11,10 +11,10 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
                 break;
             case 3:
                 (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-                FUN_0c01fdc8(a4, 0x0, 0xC362A50, a7);
+                vmu_menu_update_objs(a4, 0x0, 0xC362A50, a7);
                 (((struct o8_ushort *)0xC362A50)->v) = 0x1;
-                FUN_0c01f4c8(0x10);
-                FUN_0c01f628(0x10);
+                vmu_menu_spawn_message(0x10);
+                vmu_menu_spawn_choice_cursor(0x10);
                 break;
             case 4:
                 break;
@@ -23,7 +23,7 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
                     if (t0 != 6) {
                         if (t0 != 7) {
                             if (t0 != 8) {
-                                FUN_0c01fdc8(a4, 0x0, 0xC362A50, a7);
+                                vmu_menu_update_objs(a4, 0x0, 0xC362A50, a7);
                                 return 0x2;
                             }
                             return FUN_0c01ec9c(0xC362A50);
@@ -46,9 +46,9 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
             }
         } else {
             (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-            FUN_0c01fdc8(a4, 0x0, 0xC362A50, a7);
-            FUN_0c01f4c8(0xF);
-            FUN_0c01f628(0xF);
+            vmu_menu_update_objs(a4, 0x0, 0xC362A50, a7);
+            vmu_menu_spawn_message(0xF);
+            vmu_menu_spawn_choice_cursor(0xF);
         }
     } else {
         (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
@@ -57,11 +57,11 @@ int FUN_0c01ea20(int a4, int a5, int a6, int a7)
         (((struct o28_float *)0xC362A50)->v) = (*(float *)0xC01EBB4);
         (((struct o34_uchar *)0xC362A50)->v) = a4;
         (((struct o0_uchar *)0xC362A50)->v) = ((*(signed char *)0xC362A50) + 0x1);
-        FUN_0c01fdc8(a4, 0x0, 0xC362A50, a7);
-        FUN_0c01f4c8(0xF);
-        FUN_0c01f628(0xF);
+        vmu_menu_update_objs(a4, 0x0, 0xC362A50, a7);
+        vmu_menu_spawn_message(0xF);
+        vmu_menu_spawn_choice_cursor(0xF);
     }
-    t0 = FUN_0c01fefc(0xC362A50);
+    t0 = vmu_menu_poll_yes_no(0xC362A50);
     if ((signed char)t0 != 0) {
         if ((signed char)t0 != 1) {
         } else {

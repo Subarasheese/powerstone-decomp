@@ -15,8 +15,8 @@ extern void _builtin_ftrv(float *, float *);
 extern void _builtin_ld_ext(float (*)[4]);
 extern void _builtin_st_ext(float (*)[4]);
 float nlMultiMatrixRevOrder8(int a4);
-int FUN_0c062210(int a4, int a5);
-int FUN_0c0621de(int a4, int a5);
+int math_mat_transform_point(int a4, int a5);
+int math_mat_transform_vector(int a4, int a5);
 int FUN_0c0e09f0(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7);
 int FUN_0c0e24f0(int a4, int a5, int a6, int a7);
 

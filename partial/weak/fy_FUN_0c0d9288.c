@@ -1,6 +1,6 @@
 /* INLINE-ASM: verbatim copy of the original words (3950 bytes of keyframe interpolation, about 970 instructions, plus its literal pool at 0xC0DA1F6..0xC0DA244). A C form exists; it was not transcribed within the budget of this pass, so the lead should replace this file with real C when time allows. */
-#pragma inline_asm(FUN_0c0d9288)
-void FUN_0c0d9288(unsigned char *o, short *t)
+#pragma inline_asm(cam_compute_follow)
+void cam_compute_follow(unsigned char *o, short *t)
 {
     .DATA.W H'2FE6
     .DATA.W H'2FD6

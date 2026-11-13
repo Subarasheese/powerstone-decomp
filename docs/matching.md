@@ -60,7 +60,7 @@ units matched under R32 `-size` also match under R04 `-speed`.
 - A byte the original feeds straight into `mulu.w` (no `extu.b`) is a plain `char` field, not `unsigned char`.
 - `a * b + c` in one expression gives `fmac`.
 - `#pragma inline` on a `static` helper stops address sharing across calls at `-optimize=1` (at the cost of a
-  frame and dead stores): see [research/FUN_0c0101f0.md](research/FUN_0c0101f0.md).
+  frame and dead stores): see [research/vmu_lcd_refresh.md](research/vmu_lcd_refresh.md).
 - Compiler runtime helpers are linked by address and need a `symbols.txt` line and the name in the C (a comment
   is enough): `_quick_evn_mvn` 0c0e6fdc, `_quick_odd_mvn` 0c0e6fe8, `_quick_mvn`/`_slow_mvn` 0c0e7140 (name not
   confirmed), `_divls` 0c0e6d00, `_modls` 0c0e6e5c, `_modlu` 0c0e6f24, `_slow_strcpy` 0c0eb708.

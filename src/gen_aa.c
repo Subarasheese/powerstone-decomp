@@ -2,8 +2,8 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 struct o124_int { char p[0x124]; int v; };
-int FUN_0c0d8468(int, float);
-int FUN_0c0dc27c(int, int, int);
+int cam_update_by_mode(int, float);
+int cam_apply_shake(int, int, int);
 int FUN_0c0e0ae0(int);
 int nlInvertMatrix(int);
 int nlLookAt(int, int, int);
@@ -12,7 +12,7 @@ int nlUnitMatrix(void);
 int FUN_0c0e6fe8(void);
 int FUN_0c10121c(int, int, int);
 int get_fat(int, int);
-int FUN_0c0d873a(int a4, float f4);
+int cam_set_view_matrix(int a4, float f4);
 int FUN_0c1045b4(int a4);
 
 

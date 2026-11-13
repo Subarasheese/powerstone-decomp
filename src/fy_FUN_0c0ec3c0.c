@@ -1,5 +1,5 @@
 /* INLINE-ASM: renderer hand-written assembly: command pointer r4, vertex counter r3, output queue r5/r6, scratch r8/r14, FV/FR registers and FPSCR.SZ (fschg) are the interface; no C form exists */
-/* Renderer strip loop: reads vertices (inline records or through a pointer, bit 0 of the first word), transforms them by XMTRX, optionally mixes in a colour offset from the stack frame with fipr, packs the colour bytes and writes the vertex records to the queue at r6 with pref, until the end-of-strip flags of the next command. */
+/* Renderer strip loop: transforms vertices by XMTRX, optionally mixes in a colour offset, packs colour bytes and writes vertex records to the output queue at r6 until the end-of-strip flags. */
 #pragma inline_asm(FUN_0c0ec3c0)
 void FUN_0c0ec3c0(void)
 {

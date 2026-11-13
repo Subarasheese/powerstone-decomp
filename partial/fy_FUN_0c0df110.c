@@ -1,5 +1,5 @@
 
-void FUN_0c0df110(int a, int b, int c, float f)
+void gfx_set_background_plane(int a, int b, int c, float f)
 {
     V v[3];
     V *pv[3];

@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written assembly fragment of the renderer (arguments in r2, r3, r5, r6, fr4-fr7, FPSCR.SZ toggled by fschg) with no C form */
 /* nl_objasm: writes one 32-byte vertex (fr4, fr6, fr0 from @r2, fr2) through r6 with fschg double moves, scaling fr5, fr6 by fr7, then advances the pointers. */
-#pragma inline_asm(FUN_0c0ea880)
-void FUN_0c0ea880(void)
+#pragma inline_asm(nl_objasm_send_vtx_spd_ofst)
+void nl_objasm_send_vtx_spd_ofst(void)
 {
     .DATA.W H'F3FD
     .DATA.W H'7620

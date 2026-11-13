@@ -8,12 +8,12 @@ struct o13_uchar { char p[0x13]; unsigned char v; };
 struct o20_short { char p[0x20]; short v; };
 struct o20_ushort { char p[0x20]; unsigned short v; };
 struct o22_ushort { char p[0x22]; unsigned short v; };
-float FUN_0c0df340(float);
-int FUN_0c0df360(float);
+float math_signed_sqrt(float);
+int math_atan_angle16(float);
 int FUN_0c0f263a(int);
-int FUN_0c0125aa(void);
+int pad_poll_all(void);
 
-int FUN_0c0125aa(void)
+int pad_poll_all(void)
 {
     register int t0;
     register int t1;
@@ -83,7 +83,7 @@ int FUN_0c0125aa(void)
         u40 = _builtin_fabsf((float)((unsigned char)t36 - 128));
         u41 = (_builtin_fabsf((float)((unsigned char)t38 - 128)) * _builtin_fabsf((float)((unsigned char)t38 - 128)));
         u41 = u41 + u39 * u40;
-        t42 = FUN_0c0df340(u41);
+        t42 = math_signed_sqrt(u41);
         (((struct o22_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (int)t42;
         if (!((float)(unsigned short)(int)t42 > 15.0f)) {
             (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = 0x0;
@@ -99,7 +99,7 @@ int FUN_0c0125aa(void)
             }
             u49 = (float)((unsigned char)t44 - 128);
             u49 = -u49;
-            (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = ((FUN_0c0df360((u49 / u46))) & 0xFFFF);
+            (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = ((math_atan_angle16((u49 / u46))) & 0xFFFF);
             if (0.0f > u46) {
                 (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (((((struct o20_short *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v)) + 0x8000);
             }

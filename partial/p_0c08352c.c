@@ -5,21 +5,21 @@ typedef struct T {
     char p0[10]; char b10; char b11; char b12; char p1[15]; struct T *o; V pos; char p2[4]; int d48; char p3[4];
     char p4[0xec-56]; short se; short sf; char p5[0x710b-0xf0]; char c10b, c10c; char p6[0x71a8-0x710d]; char a8, a9;
 } T;
-extern void FUN_0c09a808(T *, int, int), FUN_0c09a828(T *, int, int);
+extern void pl_start_motion(T *, int, int), pl_start_motion_owner(T *, int, int);
 extern char _quick_odd_mvn;
-extern void FUN_0c09a910(T *), FUN_0c09da1c(T *), FUN_0c08eba8(T *, int), FUN_0c0dc18e(int, int), FUN_0c0a2080(T *);
-void FUN_0c08352c(T *p)
+extern void pl_step_motion(T *), pl_apply_motion_translation(T *), obj_set_owner_hit_record(T *, int), cam_set_shake_ramp(int, int), pl_end_action_choose_state(T *);
+void pl_rouge_special_id4(T *p)
 {
     if (0) {
-        FUN_0c09a910(p);
+        pl_step_motion(p);
         if (--p->sf == 0) { if (!p->o->a9) p->o->a8 = 1; }
-        FUN_0c09da1c(p); FUN_0c08eba8(p, 1); FUN_0c0dc18e(1, 1); FUN_0c0a2080(p);
+        pl_apply_motion_translation(p); obj_set_owner_hit_record(p, 1); cam_set_shake_ramp(1, 1); pl_end_action_choose_state(p);
     }
     p->o->pos = p->pos;
     p->o->d48 = (unsigned short)(p->d48 + 0x8000);
-    FUN_0c09a808(p, 4, 2);
+    pl_start_motion(p, 4, 2);
     p->a8 = p->a9 = 1;
-    FUN_0c09a828(p->o, 4, 55);
+    pl_start_motion_owner(p->o, 4, 55);
     p->o->a8 = p->o->a9 = 1;
     p->o->c10b = 1; p->o->c10c = 1;
     p->se = 0;

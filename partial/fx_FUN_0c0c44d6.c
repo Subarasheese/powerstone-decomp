@@ -4,16 +4,16 @@
 struct v3 { float x, y, z; };
 extern void thunk_FUN_0c062242(int, float *);
 extern void FUN_0c0c3408(char *, int);
-extern void FUN_0c0dc18e(int);
-extern int FUN_0c09db78(char *);
-extern void FUN_0c0c42f8(char *, int);
-extern void FUN_0c0c4fbe(char *, int, char *, float *);
-extern void FUN_0c0c4d14(char *, int);
-extern void FUN_0c0a3914(char *, int);
-extern float FUN_0c0dfa50(int);
-extern float FUN_0c0df4d0(int);
+extern void cam_set_shake_ramp(int);
+extern int pl_angle_to_opponent(char *);
+extern void fx31_steer_toward_target(char *, int);
+extern void fx_spawn_33(char *, int, char *, float *);
+extern void fx_spawn_32(char *, int);
+extern void snd_play_char_voice(char *, int);
+extern float math_sin_angle16(int);
+extern float math_cos_angle16(int);
 
-void FUN_0c0c44d6(char *o)
+void fx31_thrown_update(char *o)
 {
     char *p, *base;
     float buf[3];
@@ -46,7 +46,7 @@ void FUN_0c0c44d6(char *o)
     thunk_FUN_0c062242((int)(base + 0x300 + (short)(b * 3520) + 0x840), buf);
     *(struct v3 *)(o + 56) = *(struct v3 *)(p + 32);
     *(float *)(o + 60) = buf[1] + 100.0f;
-    step = 0;          /* 0: nothing, 1: call FUN_0c0c4fbe with v = c005 * o[80], 2: with v = c02 */
+    step = 0;          /* 0: nothing, 1: call fx_spawn_33 with v = c005 * o[80], 2: with v = c02 */
     switch (o[13]) {
     case 0:
         *(float *)(o + 88) = *(float *)(o + 88) - c01;
@@ -66,12 +66,12 @@ void FUN_0c0c44d6(char *o)
         *(int *)(o + 48) = *(int *)(o + 48) & 0xFFFF;
         *(float *)(o + 88) = *(float *)(o + 88) + c01;
         *(short *)(o + 0xF2) = *(short *)(o + 0xF2) + 1;
-        FUN_0c0dc18e(5);
+        cam_set_shake_ramp(5);
         c3 = 3.0f;
         f = *(float *)(o + 88);
         if (f > c3) {
             *(float *)(o + 88) = c3;
-            *(int *)(o + 48) = FUN_0c09db78(p);
+            *(int *)(o + 48) = pl_angle_to_opponent(p);
             *(int *)(o + 52) = 0;
             *(int *)(o + 44) = 0;
             o[13] = o[13] + 1;
@@ -89,7 +89,7 @@ void FUN_0c0c44d6(char *o)
             *(short *)(o + 0xF2) = 0;
             /* fall through */
         case 1:
-            FUN_0c0c42f8(o, 3);
+            fx31_steer_toward_target(o, 3);
             *(short *)(o + 0xF2) = *(short *)(o + 0xF2) + 1;
             if (*(short *)(o + 0xF2) == 30) {
                 o[14] = o[14] + 1;
@@ -124,7 +124,7 @@ void FUN_0c0c44d6(char *o)
             *(short *)(o + 0xF0) = 5;
             *(short *)(o + 0xF2) = 20;
         }
-        FUN_0c0c42f8(o, 3);
+        fx31_steer_toward_target(o, 3);
         *(short *)(o + 0xF2) = *(short *)(o + 0xF2) - 1;
         if (*(short *)(o + 0xF2) == 0) {
             *(short *)(o + 0xF2) = 20;
@@ -133,12 +133,12 @@ void FUN_0c0c44d6(char *o)
                 o[13] = o[13] + 1;
                 o[14] = 0;
             }
-            g = FUN_0c0dfa50(*(int *)(o + 48)) * 100.0f;
+            g = math_sin_angle16(*(int *)(o + 48)) * 100.0f;
             *(float *)(o + 32) = *(float *)(o + 32) - g;
-            g = FUN_0c0df4d0(*(int *)(o + 48)) * 100.0f;
+            g = math_cos_angle16(*(int *)(o + 48)) * 100.0f;
             *(float *)(o + 40) = *(float *)(o + 40) - g;
-            FUN_0c0c4d14(o, 0);
-            FUN_0c0a3914(p, 55);
+            fx_spawn_32(o, 0);
+            snd_play_char_voice(p, 55);
         }
         if (*(short *)(o + 0xF2) % 6 == 0)
             step = 3;
@@ -175,13 +175,13 @@ void FUN_0c0c44d6(char *o)
     if (step == 1) {
         f = *(float *)(o + 80) * c005;
         v[0] = f; v[1] = f; v[2] = f;
-        FUN_0c0c4fbe(o, 1, o + 32, v);
+        fx_spawn_33(o, 1, o + 32, v);
     } else if (step == 2) {
         v[0] = c02; v[1] = c02; v[2] = c02;
-        FUN_0c0c4fbe(o, 1, o + 32, v);
+        fx_spawn_33(o, 1, o + 32, v);
     } else if (step == 3) {
         v[0] = c02; v[1] = c02; v[2] = c02;
-        FUN_0c0c4fbe(o, 1, o + 32, v);
+        fx_spawn_33(o, 1, o + 32, v);
     }
     *(float *)(o + 32) = *(float *)(o + 32) + (*(float *)(o + 56) - *(float *)(o + 32)) / 5.0f;
     *(float *)(o + 36) = *(float *)(o + 36) + (*(float *)(o + 60) - *(float *)(o + 36)) / 5.0f;

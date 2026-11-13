@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: transforms three indirect/inline vertices with ftrv through the back-bank matrix (XMTRX) into r9 clip bits (live registers r4, r9, r12), no C form. */
+/* Hand-written: transforms three vertices through XMTRX with ftrv and accumulates clip bits in r9. */
 #pragma inline_asm(ia_FUN_0c0ea000)
 static int ia_FUN_0c0ea000(void)
 {
@@ -78,7 +79,7 @@ LC0EA06E:
     ROTCL   R9
 }
 
-int FUN_0c0ea000(void)
+int nl_objasm_transform_tri_spd(void)
 {
     return ia_FUN_0c0ea000();
 }

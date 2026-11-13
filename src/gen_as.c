@@ -95,68 +95,68 @@ int ADXB_Stop(int);
 int FUN_0c02067e(int);
 int FUN_0c020be0(int);
 int FUN_0c020cba(int);
-int FUN_0c020e3e(int, int);
-int FUN_0c023f0a(int);
+int conv_s16x5_to_f32(int, int);
+int hit_debug_draw_object_parts(int);
 int FUN_0c0240e8(int, int, int);
 int FUN_0c024446(int);
 int FUN_0c025d72(int, int);
-int FUN_0c02d9e4(int, int, float, float, float, float, float);
+int ui_draw_sprite_string(int, int, float, float, float, float, float);
 int FUN_0c0301d2(int, int, int, int);
-int FUN_0c039c78(int, int, int, int);
-int FUN_0c049b7c(void);
-int FUN_0c04be14(int, int);
+int fx_spawn_039c78(int, int, int, int);
+int fx_spawn_049b7c(void);
+int fx_spawn_hit_effect_set(int, int);
 int FUN_0c055566(int);
-int FUN_0c058ef4(void);
-int FUN_0c058fa2(void);
-int FUN_0c059330(int);
-int FUN_0c05948c(int, int, int, int);
-int FUN_0c0599fc(int);
+int pl_reset_pair(void);
+int obj_system_init(void);
+int obj_destroy(int);
+int obj_tick_class(int, int, int, int);
+int pl_adjust_power_gauge(int);
 int FUN_0c05f4cc(int, ...);
-int FUN_0c05fc68(int);
-int FUN_0c05fcf2(int);
-int FUN_0c05fd1a(int);
-int FUN_0c05fd5e(int);
-int FUN_0c05ff88(int);
-int FUN_0c05fff4(void);
-int FUN_0c061240(int, int);
-int FUN_0c06225a(int, int, float);
+int res_load_file_unpack(int);
+int res_model_release(int);
+int res_textures_release(int);
+int res_model_register(int);
+int res_pl_textures_release(int);
+int res_pl_textures_release_all(void);
+int sys_load_file(int, int);
+int math_mat_row_length(int, int, float);
 int FUN_0c0623a6(int, int, int);
 int FUN_0c0624c4(int, int, int);
 int FUN_0c062d78(void);
 int FUN_0c07743e(int);
-int FUN_0c07a1e4(int);
+int pl_gunrock_play_motion_sounds(int);
 int FUN_0c08a846(int);
-int FUN_0c0980b0(int);
-int FUN_0c0997a2(int, int, int, int);
-int FUN_0c09a808(int, int, int);
-int FUN_0c09a94c(int, int);
-int FUN_0c09bafe(void);
-int FUN_0c09da1c(int);
-int FUN_0c09db78(int);
-int FUN_0c0a2080(int);
-int FUN_0c0a2eec(int);
-int FUN_0c0a2f16(int, int);
-int FUN_0c0a2f7a(void);
-int FUN_0c0a3118(void);
-int FUN_0c0a3180(void);
-int FUN_0c0a5d96(void);
-int FUN_0c0a7160(int);
+int pl_end_action_reset(int);
+int pl_for_each_part_slot(int, int, int, int);
+int pl_start_motion(int, int, int);
+int pl_step_motion_impl(int, int);
+int vib_stop_all(void);
+int pl_apply_motion_translation(int);
+int pl_angle_to_opponent(int);
+int pl_end_action_choose_state(int);
+int snd_play_se(int);
+int bgm_start_file(int, int);
+int bgm_stop_streams(void);
+int bgm_duck(void);
+int bgm_unduck(void);
+int ui_task_create(void);
+int menu_ui_spawn_10(int);
 int FUN_0c0cdac0(void);
-int FUN_0c0ce836(void);
-int FUN_0c0ce88c(int, int);
+int testmode_check_exit_combo(void);
+int testmode_draw_text_table(int, int);
 int FUN_0c0d45fe(void);
-extern int FUN_0c0d47be();
-int FUN_0c0d5a4e(int);
+extern int ui_draw_win_count();
+int dbg_print_entry_flag_bits(int);
 int FUN_0c0d7a7c(void);
 int FUN_0c0d7a9c(void);
-int FUN_0c0d9288(int, int);
-int FUN_0c0da1f6(int, int);
+int cam_compute_follow(int, int);
+int cam_step_keyframe_script(int, int);
 int FUN_0c0dd5d0(int, int);
-int FUN_0c0de280(int, int, int, float);
-int FUN_0c0de340(int, int, int);
-int FUN_0c0df920(void);
-int FUN_0c0dfa50(int);
-int FUN_0c0dfb50(float);
+int gfx_set_background_color(int, int, int, float);
+int gfx_init_display_mode(int, int, int);
+int math_rand_next(void);
+int math_sin_angle16(int);
+int math_sin_float(float);
 int nlMultiMatrix8(int);
 int nlPopMatrix(int);
 int FUN_0c0e19b0(void);
@@ -166,7 +166,7 @@ int FUN_0c0e5d22(int);
 int FUN_0c0e6758(int, int);
 int FUN_0c0e6834(int, int, int);
 int FUN_0c0e6fe8(int);
-int FUN_0c0e7242(int, int, float);
+int nl_objasm_draw_obj(int, int, float);
 int FUN_0c0eb238(void);
 int FUN_0c0eeecc(int, int);
 int gdFsChangeDir(void);
@@ -220,8 +220,8 @@ int memcpy(int, int, int);
 int memset(int, int, int);
 int mwRnaErrCallFunc(int, int, int, int);
 void fmMngMcpy4(int a4, int a5, int a6);
-int FUN_0c064d32(int a4);
-int FUN_0c0a34be(void);
+int pl_mode08_09_enter_v0(int a4);
+int bgm_play_here(void);
 int FUN_0c0c5906(int a4, int a5);
 int vmsfs_c_settime(int a4, int a5);
 int FUN_0c10486e(int a4);
@@ -232,34 +232,34 @@ int FUN_0c10e146(int a4, int a5, int a6, int a7);
 int mpdrv_stat(int a4, int a5);
 int FUN_0c115174(int a4, int a5);
 int FUN_0c11518e(int a4, int a5, int a6);
-int FUN_0c011aa6(int a4);
-int FUN_0c012504(int a4, int a5, int a6, int a7);
-int FUN_0c0162ba(int a4, int a5);
-int FUN_0c01ae48(void);
+int vmu_load_vmgame_data(int a4);
+int vmu_check_run_objects(int a4, int a5, int a6, int a7);
+int ending_obj_set_sprite(int a4, int a5);
+int opt_page3_init(void);
 float FUN_0c0262f8(int a4);
 int FUN_0c02440e(int a4);
 int FUN_0c025f38(void);
-int FUN_0c02d814(void);
+int ui_enable_hud(void);
 int FUN_0c0302fe(int a4, int a5, int a6, int a7);
 int FUN_0c0555c4(void);
-int FUN_0c058f60(void);
+int obj_pool_pop(void);
 int FUN_0c05f56e(Stk4 s);
-int FUN_0c05fc50(int a4);
-int FUN_0c05fcaa(int a4);
-int FUN_0c05fcc2(int a4);
-int FUN_0c05fcda(int a4);
-int FUN_0c06208c(int a4, float f4, float f5, float f6);
+int res_load_file_raw(int a4);
+int res_load_file_raw_b(int a4);
+int res_load_file_raw_c(int a4);
+int res_load_file_raw_d(int a4);
+int math_vec3_mul_xyz(int a4, float f4, float f5, float f6);
 int FUN_0c061472(float f4);
-int FUN_0c062242(int a4, int a5);
+int math_mat_get_translate(int a4, int a5);
 int FUN_0c08d644(int a4, int a5);
-int FUN_0c09c506(int a4);
-int FUN_0c0a73ca(void);
-int FUN_0c0aa3aa(void);
-int FUN_0c0ac6a2(int a4, int a5);
+int pl_reset_combo_counter(int a4);
+int menu_ui_spawn_11(void);
+int menu_ui_spawn_28(void);
+int obj_touched_by_slot(int a4, int a5);
 void FUN_0c0d5292(void);
-float FUN_0c0df340(float f4);
-int FUN_0c0df4d0(int a4);
-int FUN_0c0ddf80(void);
+float math_signed_sqrt(float f4);
+int math_cos_angle16(int a4);
+int gfx_flip_frame_buffer(void);
 void nlCalcPoint44(int a4, int a5);
 void nlCalcPoint(int a4, int a5);
 void nlCalcVector(int a4, int a5);
@@ -290,28 +290,28 @@ int mpdrv_set_allstatreq_ns(int a4);
 int mpdrv_set_transagain_ns(int a4);
 int FUN_0c1135c8(int a4, int a5, int a6, int a7);
 int vmsfb_create(int a4, int a5, int a6);
-int FUN_0c0195a2(int a4);
-int FUN_0c01958c(int a4, int a5, int a6, int a7);
-int FUN_0c01a3d8(int a4);
-int FUN_0c01a3c2(int a4, int a5, int a6, int a7);
-int FUN_0c01ae08(int a4);
-int FUN_0c01b4aa(int a4, int a5, int a6, int a7);
-int FUN_0c01b4c0(int a4);
-int FUN_0c01adbc(int a4, int a5, int a6, int a7);
-int FUN_0c01d090(void);
+int keycfg_obj_in_mask(int a4);
+int keycfg_run_objects_in_mask(int a4, int a5, int a6, int a7);
+int opt_page1_obj_in_mask(int a4);
+int opt_page1_run_objects_in_mask(int a4, int a5, int a6, int a7);
+int opt_page2_obj_in_mask(int a4);
+int opt_page3_run_objects_in_mask(int a4, int a5, int a6, int a7);
+int opt_page3_obj_in_mask(int a4);
+int opt_page2_run_objects_in_mask(int a4, int a5, int a6, int a7);
+int omake_state_reset(void);
 int FUN_0c01d304(int a4);
 int FUN_0c02078c(void);
-int FUN_0c05fdc6(int a4);
-int FUN_0c062aa8(int a4, int a5);
-int FUN_0c06585e(int a4);
-int FUN_0c077428(int a4);
-int FUN_0c0c3b16(int a4);
+int res_player_entry_release(int a4);
+int mdl_vtx_get_uv(int a4, int a5);
+int pl_mode14_enter(int a4);
+int pl_gunrock_frame_hook(int a4);
+int fx31_pick_mode2_from_owner(int a4);
 int FUN_0c0d3350(void);
 int FUN_0c0d7076(void);
 int FUN_0c0d7e5e(void);
-int FUN_0c0df700(float f4);
-float FUN_0c0df940(void);
-int FUN_0c0df520(float f4);
+int math_rsqrt_float(float f4);
+float math_rand_float(void);
+int math_cos_float(float f4);
 int FUN_0c0ec102(int a4);
 void FUN_0c0f059e(int a4);
 int FUN_0c0f1766(int a4);
@@ -330,32 +330,32 @@ int kmiCopyFromPVRMemory(int a4, int a5, int a6);
 int mpdrv_frame_recv_post(void);
 int mpdrv_memset_l(int a4, int a5, int a6);
 int vmsfb_init(void);
-int FUN_0c027f90(void);
+int ui_sprite_queue_reset(void);
 int FUN_0c02aa9c(int a4);
 int FUN_0c02b7d4(int a4);
 int FUN_0c02c91a(int a4);
-int FUN_0c027b90(void);
+int fs_change_dir_ok(void);
 int FUN_0c05fc08(void);
-int FUN_0c05fefa(int a4);
-int FUN_0c0603c4(void);
-int FUN_0c0607f0(void);
-int FUN_0c062a7e(int a4);
+int res_cockpit_face_release(int a4);
+int res_stage_release(void);
+int res_ending_release(void);
+int mdl_vtx_get_pos(int a4);
 int FUN_0c062436(int a4, int a5, int a6);
-int FUN_0c09e7d2(int a4);
-int FUN_0c0a347c(void);
-int FUN_0c0a3490(void);
-int FUN_0c0a34a4(void);
-int FUN_0c0a3510(void);
-int FUN_0c0a3524(void);
-int FUN_0c0a356c(void);
-int FUN_0c0a3580(void);
-int FUN_0c0a3594(void);
+int pl_no_ground(int a4);
+int bgm_play_demo_00(void);
+int bgm_play_player_select(void);
+int bgm_play_stage_select(void);
+int bgm_play_continue(void);
+int bgm_play_game_over(void);
+int bgm_play_win(void);
+int bgm_play_hen_00(void);
+int bgm_play_hen_01(void);
 int FUN_0c0a3ea8(int a4);
-int FUN_0c0a5042(void);
+int menu_find_cursor_task(void);
 int FUN_0c0a502e(void);
-int FUN_0c0a6c9a(void);
+int menu_ui_spawn_08(void);
 int FUN_0c0d2a70(int a4);
-int FUN_0c0d4fa4(void);
+int game_play_state_05(void);
 float FUN_0c0d5bc0(void);
 int FUN_0c0d7e74(void);
 float FUN_0c0e2340(int a4);
@@ -375,26 +375,26 @@ int FUN_0c059b1a(int a4);
 int FUN_0c059b08(int a4);
 int FUN_0c059b48(int a4);
 int FUN_0c059b5a(int a4);
-int FUN_0c058f4e(void);
+int game_reset_objects(void);
 int FUN_0c05fbee(int a4);
-int FUN_0c060360(int a4);
-int FUN_0c060690(void);
+int res_player_release(int a4);
+int res_csel_release_all(void);
 int FUN_0c06b868(int a4, int a5);
-int FUN_0c07d926(int a4);
+int pl_garuda_victim_phase0(int a4);
 int FUN_0c08e382(int a4);
 int FUN_0c0989fc(int a4);
 int FUN_0c0989ea(int a4, int a5, int a6, int a7);
-int FUN_0c09a91a(int a4);
-int FUN_0c09e7a6(int a4);
+int pl_step_motion_owner(int a4);
+int pl_button_jump_pressed(int a4);
 int FUN_0c0cfeb0(void);
 int FUN_0c0d48ea(int a4);
-int FUN_0c0d8e5c(int a4, int a5);
-int FUN_0c0da54a(int a4);
-int FUN_0c0da57e(int a4);
-int FUN_0c0da874(int a4);
-int FUN_0c0da8ae(int a4);
-int FUN_0c0dabbe(int a4);
-int FUN_0c0db0e8(int a4);
+int cam_set_priority(int a4, int a5);
+int cam_mode_02(int a4);
+int cam_mode_05(int a4);
+int cam_mode_07(int a4);
+int cam_mode_18(int a4);
+int cam_mode_04(int a4);
+int cam_mode_23(int a4);
 int FUN_0c0df080(int a4, int a5, int a6, int a7);
 int FUN_0c0eb5a4(void);
 int syCfgInit(int a4);
@@ -403,16 +403,16 @@ int FUN_0c101502(void);
 int ADXSTM_Init(void);
 void FUN_0c10b434(int a4, int a5);
 int mpdrv_get_deviceinfo(int a4);
-int FUN_0c0117ec(int a4);
-int FUN_0c0121d0(int a4, int a5, int a6, int a7);
+int vmu_defrag_disk(int a4);
+int vmu_check_mode_04(int a4, int a5, int a6, int a7);
 int FUN_0c02466e(int a4);
-int FUN_0c060956(void);
+int res_option_load(void);
 int FUN_0c098ac8(int a4, int a5, int a6, int a7);
-int FUN_0c099920(int a4);
-int FUN_0c09d9e8(int a4);
+int obj_node_scale_one(int a4);
+int pl_apply_gravity(int a4);
 int FUN_0c0a2f66(int a4);
-int FUN_0c0aeca8(int a4, int a5, int a6, int a7);
-int FUN_0c0cdb24(void);
+int stage_spawn_gimmick_by_kind(int a4, int a5, int a6, int a7);
+int testmode_color_test_screen(void);
 int nlSysMetricsScaleTime(int a4);
 void nlGetTranslate(int a4);
 void FUN_0c0e2080(int a4);
@@ -446,21 +446,21 @@ int FUN_0c01d31a(void);
 int FUN_0c01d328(void);
 void FUN_0c01f48c(int a4, int a5);
 int FUN_0c0555b6(void);
-int FUN_0c060590(void);
-int FUN_0c06057c(void);
-int FUN_0c0605b4(void);
-int FUN_0c06074a(void);
-int FUN_0c06090c(void);
-int FUN_0c060bd4(void);
-int FUN_0c060c18(void);
-int FUN_0c09a7ba(int a4);
+int res_eyecatch_load(void);
+int res_cockpit_load(void);
+int res_font_release(void);
+int res_demo_comn_release(void);
+int res_omake_release(void);
+int res_capcom_logo_release(void);
+int res_kyoutsuu_release(void);
+int pl_timer_arm_forever(int a4);
 int FUN_0c0ae276(int a4);
 int FUN_0c0b146e(int a4, int a5);
 int FUN_0c0c9982(int a4);
 int FUN_0c0d5188(void);
 int FUN_0c0d54ac(void);
 int FUN_0c0d48d6(void);
-int FUN_0c0d7ecc(void);
+int menu_option_run_item(void);
 void FUN_0c0dcac0(int a4, int a5);
 int syRtcFinish(void);
 int FUN_0c0ee1fc(int a4);
@@ -481,14 +481,14 @@ int mpdrv_swapmode(int a4);
 int FUN_0c0158d8(void);
 void FUN_0c0283c4(int a4, int a5);
 int FUN_0c039c6c(int a4, int a5, int a6);
-int FUN_0c0622ae(int a4, float f4);
-int FUN_0c0622a2(int a4, float f4);
-int FUN_0c0622ba(int a4, float f4);
+int math_mat_row1_length(int a4, float f4);
+int math_mat_row0_length(int a4, float f4);
+int math_mat_row2_length(int a4, float f4);
 int FUN_0c08b8b8(int a4);
 int FUN_0c08bb46(int a4);
 int FUN_0c098136(int a4);
 int FUN_0c0d44c4(void);
-int FUN_0c0d4872(int a4, int a5, int a6, int a7);
+int ui_draw_win_counts_both(int a4, int a5, int a6, int a7);
 int FUN_0c0d5ba8(void);
 void FUN_0c0dd310(void);
 void FUN_0c0e4ac0(int a4);
@@ -512,25 +512,25 @@ int ADXSJD_GetNumLoop(int a4);
 int mpdrv_timeout(int a4);
 int mpdrv_init_memory(void);
 int FUN_0c0158e4(void);
-int FUN_0c0195f0(void);
-int FUN_0c019bf4(void);
-int FUN_0c01a42c(void);
-int FUN_0c01b66c(void);
-int FUN_0c01e7a2(void);
-int FUN_0c01e798(void);
+int opt_game_settings_init(void);
+int opt_page1_init(void);
+int opt_page2_init(void);
+int opt_page4_init(void);
+int vmu_menu_reset(void);
+int vmu_menu_init(void);
 int FUN_0c027c74(void);
 int FUN_0c03148c(void);
 int FUN_0c058f44(void);
-int FUN_0c058f3a(void);
+int item_clear_state(void);
 int FUN_0c061444(int a4);
-int FUN_0c099a88(int a4);
-int FUN_0c09a910(int a4);
+int pl_clear_tint_flag(int a4);
+int pl_step_motion(int a4);
 int FUN_0c0a2f5c(void);
-int FUN_0c0a2f52(void);
-int FUN_0c0d2dde(void);
+int bgm_stop_all(void);
+int attract_take_step3_flag(void);
 void nlObjPutSetGlobalAmbience(float f4);
 int FUN_0c0e0580(void);
-void FUN_0c0e05a0(int a4, int a5);
+void dbg_set_cell_size(int a4, int a5);
 int FUN_0c0e16c0(void);
 int FUN_0c0eb6cc(int a4, int a5, int a6);
 int FUN_0c0eb6f4(int a4, int a5, int a6);
@@ -570,26 +570,26 @@ int FUN_0c111ca6(void);
 int FUN_0c114320(int a4, int a5, int a6);
 void FUN_0c114ab8(int a4, int a5);
 int FUN_0c115a48(void);
-int FUN_0c0105a2(void);
-void FUN_0c017a24(void);
+int vmu_event_callback(void);
+void keycfg_menu_init(void);
 void FUN_0c02828e(void);
 int FUN_0c02d82c(void);
 void FUN_0c02d834(void);
 int FUN_0c02d83c(void);
-void FUN_0c0314dc(void);
+void ui_fade_reset(void);
 void FUN_0c05fc00(void);
 void FUN_0c05fc1c(void);
 int FUN_0c061434(int a4, int a5, int a6);
 int FUN_0c06143c(int a4, int a5, int a6);
-int FUN_0c0634ec(int a4);
+int pl_start_motion_10(int a4);
 int FUN_0c0645ee(int a4);
-int FUN_0c065468(int a4);
+int pl_mode12_enter(int a4);
 int FUN_0c099a1c(int a4);
-int FUN_0c09a7b2(int a4);
-int FUN_0c0a2f0e(int a4);
+int pl_timer_disable(int a4);
+int snd_play_se_raw(int a4);
 void FUN_0c0d487e(void);
-int FUN_0c0da42c(int a4);
-int FUN_0c0da434(int a4);
+int cam_mode_default(int a4);
+int cam_mode_28(int a4);
 int FUN_0c0df100(void);
 int FUN_0c0e0800(int a4);
 int FUN_0c0e4980(int a4, int a5);
@@ -614,40 +614,40 @@ int thunk_FUN_0c062d78(void);
 int FUN_0c0247d0(int a4, int a5);
 int FUN_0c02d844(void);
 int thunk_FUN_0c059330(int a4);
-int FUN_0c06058a(void);
-int FUN_0c060514(void);
-int FUN_0c060576(void);
-int FUN_0c06059e(void);
-int FUN_0c0605f0(void);
-int FUN_0c060620(void);
-int FUN_0c060684(void);
-int FUN_0c060626(void);
-int FUN_0c06068a(void);
-int FUN_0c060966(void);
-int FUN_0c060950(void);
-int FUN_0c060b5e(void);
-int FUN_0c060a12(void);
-int FUN_0c060afe(void);
-int FUN_0c060b2e(void);
+int res_eyecatch_release(void);
+int res_item_release(void);
+int res_cockpit_release(void);
+int res_test_tex_release(void);
+int res_pstone_logo_release(void);
+int res_csel_open_release(void);
+int res_csel_csel_release(void);
+int res_csel_ksel_release(void);
+int res_csel_ssel_release(void);
+int res_art_model_release(void);
+int res_option_release(void);
+int res_system_font_release(void);
+int res_art_art_release(void);
+int res_key_cfg_release(void);
+int res_vms_check_release(void);
 int FUN_0c08d65c(int a4, int a5);
 int FUN_0c098b96(void);
 int thunk_FUN_0c05fff4(void);
-int FUN_0c0a34b8(void);
-int FUN_0c0a35cc(void);
+int bgm_play_vs(void);
+int bgm_play_capcom(void);
 int FUN_0c0a375c(void);
-void FUN_0c0d2dd8(int a4);
+void attract_set_step3_flag(int a4);
 int thunk_FUN_0c0a3180(void);
 int FUN_0c0d6098(int a4);
 void FUN_0c0d71f4(int a4);
-int FUN_0c0da886(int a4);
-int FUN_0c0da952(int a4);
-int FUN_0c0dafcc(int a4);
-int FUN_0c0db184(int a4);
+int cam_mode_13(int a4);
+int cam_mode_14(int a4);
+int cam_mode_08_09(int a4);
+int cam_mode_26(int a4);
 void FUN_0c0dd9e0(int a4);
 void FUN_0c0de890(int a4);
 int nlSysMetricsReadTimer(void);
 int nlSysMetricsDiffTime(int a4, int a5);
-void FUN_0c0e0710(int a4);
+void dbg_set_text_color(int a4);
 int thunk_FUN_0c0fbcf0(int a4);
 void FUN_0c0e34a0(float f4);
 void syRtcSetServerMode(int a4);
@@ -682,10 +682,10 @@ int thunk_FUN_0c115240(int a4, int a5, int a6);
 int thunk_FUN_0c020cba(int a4);
 int FUN_0c0235ca(void);
 void FUN_0c02ee3c(void);
-int FUN_0c02d9e0(int a4, int a5, float f4, float f5, float f6, float f7);
+int ui_draw_text_stub(int a4, int a5, float f4, float f5, float f6, float f7);
 void FUN_0c03082e(void);
 int FUN_0c048ea0(int a4, int a5, int a6, int a7);
-void FUN_0c04cdee(void);
+void ai_nop(void);
 void FUN_0c055562(void);
 int FUN_0c059b04(void);
 void FUN_0c05b188(void);
@@ -700,9 +700,9 @@ int FUN_0c062da2(void);
 int FUN_0c062da6(void);
 int FUN_0c08a842(int a4);
 int FUN_0c08f76a(void);
-int FUN_0c098c82(void);
-void FUN_0c099a84(void);
-void FUN_0c09b700(void);
+int sys_return_zero_098c82(void);
+void sys_nop_099a84(void);
+void sys_nop_09b700(void);
 void FUN_0c0a2ee8(void);
 void FUN_0c0a3304(void);
 void FUN_0c0a3792(void);
@@ -771,30 +771,6 @@ void fmMngMcpy4(int a4, int a5, int a6)
         *(unsigned int *)((t2 + 0x0)) = t0;
         t2 = (t2 + 0x4);
     }
-}
-
-int FUN_0c064d32(int a4)
-{
-    *(unsigned int *)((a4 + 0x30)) = (FUN_0c09db78(a4));
-    return FUN_0c09a808(a4, 0x1, 0xA2);
-}
-
-int FUN_0c0a34be(void)
-{
-    FUN_0c0a2f16(0x0, 0x106);
-    *(volatile signed char *)0xC7F2F0E;
-    return FUN_0c0f4db4((*(int *)0xC494048), 0xFFFFFFF6);
-}
-
-int FUN_0c0c5906(int a4, int a5)
-{
-    *(unsigned char *)((a5 + 0x0)) = 0x3;
-    *(unsigned char *)((a4 + 0x9)) = 0x2;
-    *(unsigned char *)((a4 + 0xA)) = 0x0;
-    *(unsigned char *)(((0x105 + a4) + 0x2)) = 0x1;
-    *(unsigned char *)(((0x105 + a4) + 0x1)) = 0x1;
-    (((struct o105_uchar *)(a4))->v) = 0x1;
-    return 0x1;
 }
 
 int vmsfs_c_settime(int a4, int a5)
@@ -882,246 +858,6 @@ int FUN_0c11518e(int a4, int a5, int a6)
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a6;
     return FUN_0c0e6834((*(int *)(((*(int *)(((*(int *)(((int)stk + 0))) + 0x10))) + 0x4))), a5, (*(signed char *)(((int)stk + 4))));
-}
-
-int FUN_0c011aa6(int a4)
-{
-    return (buLoadFileEx(a4, 0xC116220, 0xC352240, 0x4, 0x1));
-}
-
-int FUN_0c012504(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    *(unsigned char *)0xC361BE8 = 0x1;
-    t0 = FUN_0c05948c(0x5, a5, a6, a7);
-    *(unsigned char *)0xC361BE8 = 0x0;
-    return t0;
-}
-
-int FUN_0c0162ba(int a4, int a5)
-{
-    *(unsigned char *)((a4 + 0x0)) = 0x1;
-    *(unsigned char *)((a4 + 0x1)) = 0x0;
-    *(unsigned short *)((a4 + 0x2)) = 0x1F;
-    return FUN_0c0623a6(a4, 0xC6649D0, a5);
-}
-
-int FUN_0c01ae48(void)
-{
-    memset(0xC362348, 0x0, 0xC);
-    (((struct o1_uchar *)0xC362351)->v) = 0x1;
-    (((struct o0_uchar *)0xC362351)->v) = 0x1;
-    return 0x1;
-}
-
-float FUN_0c0262f8(int a4)
-{
-    int stk[5];
-
-    FUN_0c020e3e(((int)stk + 0), a4);
-    return (*(float *)(((int)stk + 12)));
-}
-
-int FUN_0c02440e(int a4)
-{
-    register int t1;
-    register int t0;
-
-    t1 = a4;
-    for (;;) {
-        if (t1 == 0) {
-            break;
-        }
-        t0 = (FUN_0c023f0a(t1));
-        t1 = (*(int *)((t1 + 0x18)));
-    }
-    return t0;
-}
-
-int FUN_0c025f38(void)
-{
-    FUN_0c025d72(0xC7E40C4, ((((struct o0_int *)0xC7E407C)->v)));
-    return FUN_0c025d72(0xC7E40C4, ((((struct o4_int *)0xC7E407C)->v)));
-}
-
-int FUN_0c02d814(void)
-{
-    *(unsigned char *)0xC366A70 = 0x1;
-    if ((*(signed char *)0xC7F4769) == 0) {
-        return FUN_0c049b7c();
-    }
-    return 0xC7F4769;
-}
-
-int FUN_0c0302fe(int a4, int a5, int a6, int a7)
-{
-    *(unsigned char *)((((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C) + 0xA)) = 0xE;
-    return FUN_0c0301d2(a4, a5, ((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC366A9C), a7);
-}
-
-int FUN_0c0555c4(void)
-{
-    int t1;
-
-    if (((*(signed char *)0xC7F302C) == 3) && (t1 = *(signed char *)0xC7F302D, t1 == 0)) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c058f60(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC7E40C0;
-    if (t0 == 0) {
-        return 0x0;
-    }
-    *(unsigned int *)0xC7E40C0 = (*(int *)((t0 + 0x14)));
-    return t0;
-}
-
-int FUN_0c05f56e(Stk4 s)
-{
-    return (FUN_0c05f4cc((((((signed char)(s.w[0] >> 0)) << 2) << 2) + 0xC14D768)));
-}
-
-int FUN_0c05fc50(int a4)
-{
-    return (FUN_0c061240(0xCC00000, a4));
-}
-
-int FUN_0c05fcaa(int a4)
-{
-    return (FUN_0c061240(0xCC00000, a4));
-}
-
-int FUN_0c05fcc2(int a4)
-{
-    return (FUN_0c061240(0xCC00000, a4));
-}
-
-int FUN_0c05fcda(int a4)
-{
-    return (FUN_0c061240(0xCC00000, a4));
-}
-
-int FUN_0c06208c(int a4, float f4, float f5, float f6)
-{
-    *(float *)((a4 + 0x0)) = ((*(float *)((a4 + 0x0))) * f4);
-    (((struct o4_float *)(a4))->v) = (((((struct o4_float *)(a4))->v)) * f5);
-    (((struct o8_float *)(a4))->v) = (((((struct o8_float *)(a4))->v)) * f6);
-    return 0x8;
-}
-
-int FUN_0c061472(float f4)
-{
-    FUN_0c0de280(0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, f4);
-    FUN_0c0ddf80();
-    return FUN_0c0ddf80();
-}
-
-int FUN_0c062242(int a4, int a5)
-{
-    FUN_0c0e19b0();
-    nlGetTranslate(a5);
-    return nlPopMatrix(0x1);
-}
-
-int FUN_0c08d644(int a4, int a5)
-{
-    int stk[1];
-    register int t0;
-
-    *(unsigned char *)(((int)stk + 0)) = a5;
-    t0 = *(signed char *)(((int)stk + 0));
-    if ((unsigned char)t0 != 99) {
-        return FUN_0c04be14(a4, (*(signed char *)(((int)stk + 0))));
-    }
-    return (unsigned char)t0;
-}
-
-int FUN_0c09c506(int a4)
-{
-    if ((int)(*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x720E))) > (int)0xA) {
-        (((struct o720E_uchar *)((*(int *)((a4 + 0x1C)))))->v) = 0xA;
-    }
-    (((struct o720E_uchar *)((*(int *)((a4 + 0x1C)))))->v) = 0x0;
-    return 0x720E;
-}
-
-int FUN_0c0a73ca(void)
-{
-    register int t0;
-
-    t0 = FUN_0c0a5d96();
-    if (t0 != 0) {
-        *(unsigned int *)((t0 + 0x10)) = 0xC0A73E2;
-    }
-    return t0;
-}
-
-int FUN_0c0aa3aa(void)
-{
-    register int t0;
-
-    t0 = FUN_0c0a5d96();
-    if (t0 != 0) {
-        *(unsigned int *)((t0 + 0x10)) = 0xC0AA3C2;
-    }
-    return t0;
-}
-
-int FUN_0c0ac6a2(int a4, int a5)
-{
-    if ((*(signed char *)((((signed char)a5 + (0x310 + a4)) + 0x0))) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-void FUN_0c0d5292(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = 0x0;
-    for (;;) {
-        t1 = (0xC7F302C + t0);
-        t0 = (t0 + 0x1);
-        *(unsigned char *)((t1 + 0x0)) = 0x0;
-        if ((int)t0 >= (int)0xA) {
-            break;
-        }
-    }
-}
-
-float FUN_0c0df340(float f4)
-{
-    if (0.0f > f4) {
-        return (-_builtin_sqrtf((-f4)));
-    }
-    return _builtin_sqrtf(f4);
-}
-
-int FUN_0c0df4d0(int a4)
-{
-    register int t1;
-
-    t1 = (unsigned short)a4;
-    if ((int)(unsigned short)a4 > (int)0x8000) {
-        t1 = (0x10000 - (unsigned short)a4);
-    }
-    return FUN_0c0dfa50((0x4000 - t1));
-}
-
-int FUN_0c0ddf80(void)
-{
-    *(unsigned int *)0xC7F8E94 = 0x1;
-    FUN_0c0f61c0();
-    *(unsigned int *)0xC7F8E94 = 0x0;
-    return kmFlipFrameBuffer();
 }
 
 void nlCalcPoint44(int a4, int a5)
@@ -1382,191 +1118,6 @@ int vmsfb_create(int a4, int a5, int a6)
     return FUN_0c11533a((*(int *)0xC843928), a4, a5, a6);
 }
 
-int FUN_0c0195a2(int a4)
-{
-    if ((((((struct oF2_short *)(a4))->v)) & (*(short *)0xC3622D0)) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c01958c(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    *(unsigned short *)0xC3622D0 = a4;
-    t0 = FUN_0c05948c(0x5, a5, a6, a7);
-    *(unsigned short *)0xC3622D0 = 0x0;
-    return t0;
-}
-
-int FUN_0c01a3d8(int a4)
-{
-    if ((((((struct oF2_short *)(a4))->v)) & (*(short *)0xC36232C)) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c01a3c2(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    *(unsigned short *)0xC36232C = a4;
-    t0 = FUN_0c05948c(0x5, a5, a6, a7);
-    *(unsigned short *)0xC36232C = 0x0;
-    return t0;
-}
-
-int FUN_0c01ae08(int a4)
-{
-    if ((((((struct oF2_short *)(a4))->v)) & (*(short *)0xC36233C)) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c01b4aa(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    *(unsigned short *)0xC36234C = a4;
-    t0 = FUN_0c05948c(0x5, a5, a6, a7);
-    *(unsigned short *)0xC36234C = 0x0;
-    return t0;
-}
-
-int FUN_0c01b4c0(int a4)
-{
-    if ((((((struct oF2_short *)(a4))->v)) & (*(short *)0xC36234C)) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c01adbc(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    *(unsigned short *)0xC36233C = a4;
-    t0 = FUN_0c05948c(0x5, a5, a6, a7);
-    *(unsigned short *)0xC36233C = 0x0;
-    return t0;
-}
-
-int FUN_0c01d090(void)
-{
-    *(unsigned char *)0xC7F473E = 0x0;
-    (((struct o3_uchar *)0xC362360)->v) = 0x0;
-    (((struct o2_uchar *)0xC362360)->v) = 0x0;
-    (((struct o1_uchar *)0xC362360)->v) = 0x0;
-    (((struct o0_uchar *)0xC362360)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c01d304(int a4)
-{
-    (((struct o3_uchar *)0xC362378)->v) = 0x0;
-    (((struct o2_uchar *)0xC362378)->v) = 0x0;
-    (((struct o1_uchar *)0xC362378)->v) = 0x0;
-    (((struct o0_uchar *)0xC362378)->v) = 0x0;
-    (((struct o6_uchar *)0xC362378)->v) = a4;
-    return a4;
-}
-
-int FUN_0c02078c(void)
-{
-    FUN_0c02067e(0xC7E40C4);
-    FUN_0c02067e(((((struct o0_int *)0xC7E4074)->v)));
-    return FUN_0c02067e(((((struct o4_int *)0xC7E4074)->v)));
-}
-
-int FUN_0c05fdc6(int a4)
-{
-    return FUN_0c05fd1a(((signed char)((((a4 << 1) + a4) << 2) << 1) + 0xC6002D0));
-}
-
-int FUN_0c062aa8(int a4, int a5)
-{
-    *(float *)((a4 + 0x0)) = ((((struct o18_float *)((*(int *)0xC439DC8)))->v));
-    *(float *)((a5 + 0x0)) = ((((struct o1C_float *)((*(int *)0xC439DC8)))->v));
-    return 0x0;
-}
-
-int FUN_0c06585e(int a4)
-{
-    register int t1;
-
-    t1 = 0x4B;
-    if ((*(signed char *)((a4 + 0x7205))) != 0) {
-        t1 = 0x4C;
-    }
-    return FUN_0c09a808(a4, 0x1, t1);
-}
-
-int FUN_0c077428(int a4)
-{
-    FUN_0c07a1e4(a4);
-    FUN_0c07743e(a4);
-    return 0x0;
-}
-
-int FUN_0c0c3b16(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((a4 + 0x1C));
-    if ((*(signed char *)((t0 + 0x10A))) != 0) {
-        return (*(signed char *)((t0 + 0x7213)));
-    }
-    return 0x0;
-}
-
-int FUN_0c0d3350(void)
-{
-    (((struct o0_uchar *)0xC7F2EE5)->v) = ((*(signed char *)0xC7F2EE5) + 0x1);
-    (((struct o3_uchar *)0xC7F2EE5)->v) = 0x0;
-    (((struct o2_uchar *)0xC7F2EE5)->v) = 0x0;
-    (((struct o1_uchar *)0xC7F2EE5)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c0d7076(void)
-{
-    (((struct oC_uint *)0xC7F2F24)->v) = (((((struct oC_int *)0xC7F2F24)->v)) + 0x1);
-    (((struct o0_uint *)0xC7F2F24)->v) = (((((struct o0_int *)0xC7F2F24)->v)) + 0x1);
-    return 0x1;
-}
-
-int FUN_0c0d7e5e(void)
-{
-    FUN_0c0d7a7c();
-    *(unsigned char *)0xC7F4768 = 0x1;
-    *(unsigned char *)0xC7F2F17 = 0x0;
-    return 0xC7F2F17;
-}
-
-float FUN_0c0df940(void)
-{
-    register int t0;
-
-    t0 = FUN_0c0df920();
-    return ((float)t0 * 3.05175781e-05f);
-}
-
-int FUN_0c0df520(float f4)
-{
-    return FUN_0c0dfb50(((-_builtin_fabsf(f4)) + 1.57079625f));
-}
-
-int FUN_0c0ec102(int a4)
-{
-    if ((*(int *)((a4 + 0x0))) == 1) {
-        return 0x0;
-    }
-    return ((*(signed char *)((0x10 + (*(int *)((a4 + 0x4)))))) & 0x40);
-}
-
 void FUN_0c0f059e(int a4)
 {
     int t0;
@@ -1748,220 +1299,6 @@ int vmsfb_init(void)
     return t1;
 }
 
-int FUN_0c027f90(void)
-{
-    (((struct o4_uint *)0xC363A68)->v) = 0x0;
-    (((struct o0_uint *)0xC363A68)->v) = 0x0;
-    return memset(0xC363A70, 0x0, 0x3000);
-}
-
-int FUN_0c02aa9c(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((((a4 & 0x7) << 2) + 0xC148EF8));
-    (((struct o8_uint *)0xC7F31BC)->v) = t0;
-    (((struct o4_uint *)0xC7F31BC)->v) = t0;
-    (((struct o0_uint *)0xC7F31BC)->v) = t0;
-    return 0xC148EF8;
-}
-
-int FUN_0c02b7d4(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((((a4 & 0x7) << 2) + 0xC1490C4));
-    (((struct o8_uint *)0xC7F31BC)->v) = t0;
-    (((struct o4_uint *)0xC7F31BC)->v) = t0;
-    (((struct o0_uint *)0xC7F31BC)->v) = t0;
-    return 0xC1490C4;
-}
-
-int FUN_0c02c91a(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((((a4 & 0x7) << 2) + 0xC1491AC));
-    (((struct o8_uint *)0xC7F31BC)->v) = t0;
-    (((struct o4_uint *)0xC7F31BC)->v) = t0;
-    (((struct o0_uint *)0xC7F31BC)->v) = t0;
-    return 0xC1491AC;
-}
-
-int FUN_0c027b90(void)
-{
-    register int t0;
-
-    t0 = gdFsChangeDir();
-    return (((t0 == 0)) ? 1 : 0);
-}
-
-int FUN_0c05fc08(void)
-{
-    (((struct o4_uint *)0xC38380C)->v) = 0x270F;
-    (((struct o0_uint *)0xC38380C)->v) = 0x270F;
-    (((struct o8_float *)0xC38380C)->v) = (*(float *)0xC05FC4C);
-    return 0xC05FC4C;
-}
-
-int FUN_0c05fefa(int a4)
-{
-    return FUN_0c05fcf2(((unsigned char)(((a4 << 1) + a4) << 2) + 0xC17FDC8));
-}
-
-int FUN_0c0603c4(void)
-{
-    FUN_0c05fd1a(0xC664940);
-    FUN_0c05fd1a(0xC664958);
-    return FUN_0c05fd1a(0xC664970);
-}
-
-int FUN_0c0607f0(void)
-{
-    FUN_0c05fd1a(0xC6649B8);
-    FUN_0c05fd1a(0xC6649D0);
-    return FUN_0c05fcf2(0xC17FE70);
-}
-
-
-int FUN_0c062436(int a4, int a5, int a6)
-{
-    FUN_0c0624c4((a4 + 0x9C), a5, a6);
-    return 0x0;
-}
-
-int FUN_0c09e7d2(int a4)
-{
-    if (!(((((struct o274_float *)(a4))->v)) > 0.0f)) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c0a347c(void)
-{
-    FUN_0c0a2f16(0x0, 0x102);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a3490(void)
-{
-    FUN_0c0a2f16(0x0, 0x103);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a34a4(void)
-{
-    FUN_0c0a2f16(0x0, 0x104);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a3510(void)
-{
-    FUN_0c0a2f16(0x0, 0x107);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a3524(void)
-{
-    FUN_0c0a2f16(0x0, 0x108);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a356c(void)
-{
-    FUN_0c0a2f16(0x0, 0x10A);
-    return FUN_0c0f4f28((*(int *)0xC494048), 0x1);
-}
-
-int FUN_0c0a3580(void)
-{
-    FUN_0c0a2f16(0x1, 0x117);
-    return FUN_0c0f4f28((*(int *)0xC49404C), 0x1);
-}
-
-int FUN_0c0a3594(void)
-{
-    FUN_0c0a2f16(0x1, 0x118);
-    return FUN_0c0f4f28((*(int *)0xC49404C), 0x1);
-}
-
-int FUN_0c0a3ea8(int a4)
-{
-    int stk[1];
-    register int t0;
-
-    *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = *(signed char *)(((int)stk + 0));
-    *(unsigned char *)(((int)stk + 0)) = (t0 & 0x1);
-    return FUN_0c0a2eec(((signed char)(t0 & 0x1) + 0x502A9));
-}
-
-int FUN_0c0a5042(void)
-{
-    register int t1;
-
-    t1 = (*(int *)0xC7E4084);
-    for (;;) {
-        if ((*(int *)((t1 + 0x10))) == 0xC0A6CAE) {
-            break;
-        }
-        t1 = (*(int *)((t1 + 0x18)));
-    }
-    return t1;
-}
-
-int FUN_0c0a502e(void)
-{
-    (((struct o0_uchar *)0xC7F2EE4)->v) = 0x3;
-    (((struct o3_uchar *)0xC7F2EE4)->v) = 0x0;
-    (((struct o2_uchar *)0xC7F2EE4)->v) = 0x0;
-    (((struct o1_uchar *)0xC7F2EE4)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c0a6c9a(void)
-{
-    register int t0;
-
-    t0 = FUN_0c0a5d96();
-    if (t0 != 0) {
-        *(unsigned int *)((t0 + 0x10)) = 0xC0A6CAE;
-    }
-    return FUN_0c0a7160(t0);
-}
-
-int FUN_0c0d2a70(int a4)
-{
-    return FUN_0c0240e8((*(int *)((a4 + 0x1C))), ((((struct o64_short *)(a4))->v)), ((((struct o68_short *)(a4))->v)));
-}
-
-int FUN_0c0d4fa4(void)
-{
-    FUN_0c0d54ac();
-    (((struct o0_uchar *)0xC7F2EE4)->v) = 0x6;
-    (((struct o1_uchar *)0xC7F2EE4)->v) = 0x0;
-    return 0x0;
-}
-
-float FUN_0c0d5bc0(void)
-{
-    if ((*(int *)0xC7F3020) != 0) {
-        return (*(float *)0xC0D5DF4);
-    }
-    return 0.0f;
-}
-
-int FUN_0c0d7e74(void)
-{
-    register int t0;
-
-    t0 = FUN_0c0d7a9c();
-    *(unsigned char *)0xC7F4769 = 0x1;
-    *(unsigned char *)0xC7F2F17 = 0x1;
-    return t0;
-}
-
 float FUN_0c0e2340(int a4)
 {
     register float u0;
@@ -2125,191 +1462,6 @@ int FUN_0c115270(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c059b1a(int a4)
-{
-    if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71ED))) != 0) {
-        return FUN_0c0599fc(0x1);
-    }
-    return 0x71ED;
-}
-
-int FUN_0c059b08(int a4)
-{
-    if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71ED))) != 0) {
-        return FUN_0c0599fc(0x1);
-    }
-    return 0x71ED;
-}
-
-int FUN_0c059b48(int a4)
-{
-    if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71ED))) != 0) {
-        return FUN_0c0599fc(0x2);
-    }
-    return 0x71ED;
-}
-
-int FUN_0c059b5a(int a4)
-{
-    if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71ED))) != 0) {
-        return FUN_0c0599fc(0x4);
-    }
-    return 0x71ED;
-}
-
-int FUN_0c058f4e(void)
-{
-    FUN_0c058f3a();
-    FUN_0c058f44();
-    FUN_0c058ef4();
-    return FUN_0c058fa2();
-}
-
-int FUN_0c05fbee(int a4)
-{
-    (((struct o4_uint *)0xC38380C)->v) = a4;
-    (((struct o0_uint *)0xC38380C)->v) = a4;
-    (((struct o8_float *)0xC38380C)->v) = (*(float *)0xC05FC44);
-    return 0xC05FC44;
-}
-
-int FUN_0c060360(int a4)
-{
-    int stk[1];
-
-    *(unsigned char *)(((int)stk + 0)) = a4;
-    FUN_0c05ff88((*(signed char *)(((int)stk + 0))));
-    return FUN_0c05fdc6((*(signed char *)(((int)stk + 0))));
-}
-
-int FUN_0c060690(void)
-{
-    FUN_0c060620();
-    FUN_0c060626();
-    FUN_0c060684();
-    return FUN_0c06068a();
-}
-
-int FUN_0c06b868(int a4, int a5)
-{
-    if ((a5 & ((((struct o2DC_int *)(a4))->v))) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c07d926(int a4)
-{
-    FUN_0c09a91a(a4);
-    return FUN_0c09da1c(a4);
-}
-
-int FUN_0c08e382(int a4)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(signed char *)((a4 + 0x7226));
-    t1 = t0;
-    if (t0 != 32) {
-        (((struct o7228_ushort *)(a4))->v) = 0x0;
-        t1 = 0x7228;
-    }
-    return t1;
-}
-
-int FUN_0c0989fc(int a4)
-{
-    register int t1;
-
-    t1 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x9));
-    if (t1 != 2) {
-        return FUN_0c0a2080(a4);
-    }
-    return t1;
-}
-
-int FUN_0c0989ea(int a4, int a5, int a6, int a7)
-{
-    register int t2;
-
-    t2 = *(int *)((0xC339338 + ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x4))) << 2)));
-    return ((int (*)(int, int, int, int))(t2))(a4, a5, a6, a7);
-}
-
-int FUN_0c09a91a(int a4)
-{
-    (((struct o71B4_uchar *)(a4))->v) = 0x1;
-    return FUN_0c09a94c(a4, (*(int *)((a4 + 0x1C))));
-}
-
-int FUN_0c09e7a6(int a4)
-{
-    if ((((((struct o2E4_int *)(a4))->v)) & 4) != 0) {
-        return 0x1;
-    }
-    return 0x0;
-}
-
-int FUN_0c0cfeb0(void)
-{
-    (((struct o20_float *)0xC7F2B08)->v) = (*(float *)0xC0CFF30);
-    (((struct o0_uint *)0xC7F2B08)->v) = 0x4000;
-    return 0x110;
-}
-
-int FUN_0c0d48ea(int a4)
-{
-    (((struct o0_uchar *)0xC7F2EE0)->v) = 0x4;
-    (((struct o1_uchar *)0xC7F2EE0)->v) = 0x0;
-    (((struct o5_uchar *)0xC7F2EE0)->v) = a4;
-    return a4;
-}
-
-int FUN_0c0d8e5c(int a4, int a5)
-{
-    *(unsigned char *)(((short)((short)a4 * (short)0x1FC) + 0xC7F2AA4)) = a5;
-    return 0xC7F2AA4;
-}
-
-int FUN_0c0da54a(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC33FFC0))));
-}
-
-int FUN_0c0da57e(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC340048))));
-}
-
-int FUN_0c0da874(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC3407EC))));
-}
-
-int FUN_0c0da8ae(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC3425E8))));
-}
-
-int FUN_0c0dabbe(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC343B60))));
-}
-
-int FUN_0c0db0e8(int a4)
-{
-    return FUN_0c0da1f6(a4, (*(int *)((((*(signed char *)((a4 + 0x4))) << 2) + 0xC33FE44))));
-}
-
-int FUN_0c0df080(int a4, int a5, int a6, int a7)
-{
-    if (a4 == 0) {
-        return ((int (*)(int, int, int, int))(0xC0DF092))(0xC0DEFE0, a5, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0DF092))(0xC0DF070, a5, a6, a7);
-}
-
 int FUN_0c0eb5a4(void)
 {
     register int t0;
@@ -2360,82 +1512,6 @@ void FUN_0c10b434(int a4, int a5)
 int mpdrv_get_deviceinfo(int a4)
 {
     return (((*(int *)0xC843924) + 0x44C) + (a4 * 0x78));
-}
-
-int FUN_0c0117ec(int a4)
-{
-    return (buDefragDisk(a4, 0xC352440));
-}
-
-int FUN_0c0121d0(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = FUN_0c012504(a4, a5, a6, a7);
-    *(unsigned char *)0xC361BC9 = 0x4;
-    return t0;
-}
-
-int FUN_0c02466e(int a4)
-{
-    FUN_0c020be0(a4);
-    return FUN_0c024446(a4);
-}
-
-int FUN_0c060956(void)
-{
-    FUN_0c05fc68(0xC0);
-    return FUN_0c05fd5e(0xC17FEA4);
-}
-
-int FUN_0c098ac8(int a4, int a5, int a6, int a7)
-{
-    register int t1;
-
-    t1 = *(int *)((0xC339338 + ((*(signed char *)((a4 + 0x4))) << 2)));
-    return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
-}
-
-int FUN_0c099920(int a4)
-{
-    (((struct o74_float *)(a4))->v) = 1.0f;
-    (((struct o70_float *)(a4))->v) = 1.0f;
-    (((struct o6C_float *)(a4))->v) = 1.0f;
-    return 0x6C;
-}
-
-int FUN_0c09d9e8(int a4)
-{
-    (((struct o3C_float *)(a4))->v) = (((((struct o3C_float *)(a4))->v)) + ((((struct o71E4_float *)(a4))->v)));
-    return 0x3C;
-}
-
-int FUN_0c0a2f66(int a4)
-{
-    int stk[1];
-
-    *(unsigned char *)(((int)stk + 0)) = a4;
-    return FUN_0c0e59e8((*(signed char *)(((int)stk + 0))), 0x1300A0, 0x0);
-}
-
-int FUN_0c0aeca8(int a4, int a5, int a6, int a7)
-{
-    register int t1;
-
-    t1 = *(int *)((0xC33A09C + ((*(signed char *)((a4 + 0x7))) << 2)));
-    return ((int (*)(int, int, int, int))(t1))(a4, a5, a6, a7);
-}
-
-int FUN_0c0cdb24(void)
-{
-    FUN_0c0cdac0();
-    FUN_0c0ce88c(0xC33EE0C, 0x5);
-    return FUN_0c0ce836();
-}
-
-int nlSysMetricsScaleTime(int a4)
-{
-    return (int)((float)a4 * (*(float *)0xC7F88F0));
 }
 
 void nlGetTranslate(int a4)
@@ -2500,17 +1576,6 @@ void FUN_0c0e2110(float f4, float f5, float f6)
     u1[14] = u0[2];
     u1[15] = u0[3];
     _builtin_ld_ext((float (*)[4])u1);
-}
-
-int FUN_0c0ec0f2(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((a4 + 0x0));
-    if (t0 == 1) {
-        *(unsigned char *)(((*(int *)((a4 + 0x4))) + 0x0)) = 0x0;
-    }
-    return t0;
 }
 
 int syHwCacheFinish(int a4, int a5, int a6, int a7)
@@ -2663,132 +1728,6 @@ void FUN_0c1135fa(int a4, int a5, int a6, int a7)
     ((int (*)(int, int, int, int))(0xC1135F4))(a4, a5, (a6 - 1), a7);
 }
 
-int FUN_0c01d31a(void)
-{
-    (((struct o3_uchar *)0xC362378)->v) = 0x0;
-    (((struct o2_uchar *)0xC362378)->v) = 0x0;
-    (((struct o1_uchar *)0xC362378)->v) = 0x0;
-    (((struct o0_uchar *)0xC362378)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c01d328(void)
-{
-    (((struct o3_uchar *)0xC362378)->v) = 0x0;
-    (((struct o2_uchar *)0xC362378)->v) = 0x0;
-    (((struct o1_uchar *)0xC362378)->v) = 0x0;
-    (((struct o0_uchar *)0xC362378)->v) = 0x0;
-    return 0x0;
-}
-
-void FUN_0c01f48c(int a4, int a5)
-{
-    *(unsigned int *)0xC362A70 = (((signed char)a4 << 1) + (signed char)a5);
-}
-
-int FUN_0c0555b6(void)
-{
-    FUN_0c055566(0xC7E40C4);
-    return FUN_0c055566(0xC7EB394);
-}
-
-int FUN_0c060590(void)
-{
-    FUN_0c05fc68(0x7F);
-    return FUN_0c05fd5e(0xC17FE4C);
-}
-
-int FUN_0c06057c(void)
-{
-    FUN_0c05fc68(0x7E);
-    return FUN_0c05fd5e(0xC17FDB0);
-}
-
-int FUN_0c0605b4(void)
-{
-    FUN_0c05fcf2(0xC17FDBC);
-    return FUN_0c05fd1a(0xC4CFA80);
-}
-
-int FUN_0c06074a(void)
-{
-    FUN_0c05fd1a(0xC6649E8);
-    return FUN_0c05fd1a(0xC6649A0);
-}
-
-int FUN_0c06090c(void)
-{
-    FUN_0c05fd1a(0xC664AA8);
-    return FUN_0c05fcf2(0xC17FE98);
-}
-
-int FUN_0c060bd4(void)
-{
-    FUN_0c05fd1a(0xC664A18);
-    return FUN_0c05fcf2(0xC17FE58);
-}
-
-int FUN_0c060c18(void)
-{
-    FUN_0c05fd1a(0xC4CFA68);
-    return FUN_0c05fcf2(0xC33F66C);
-}
-
-int FUN_0c09a7ba(int a4)
-{
-    (((struct o723B_uchar *)(a4))->v) = 0x1;
-    (((struct o723C_ushort *)(a4))->v) = 0xFFFFFFFF;
-    return 0x723C;
-}
-
-int FUN_0c0ae276(int a4)
-{
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    (((struct o107_uchar *)(a4))->v) = 0x1;
-    return 0x107;
-}
-
-int FUN_0c0b146e(int a4, int a5)
-{
-    return ((((int)(unsigned short)(a4 - a5) >= (int)0x8000)) ? 1 : 0);
-}
-
-int FUN_0c0c9982(int a4)
-{
-    return ((((int)(*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x8))) >= (int)0x2)) ? 1 : 0);
-}
-
-int FUN_0c0d5188(void)
-{
-    return ((((unsigned char)(*(signed char *)0xC7F2EE4) == 7)) ? 1 : 0);
-}
-
-int FUN_0c0d54ac(void)
-{
-    (((struct o1_uchar *)0xC7F319D)->v) = 0x0;
-    (((struct o0_uchar *)0xC7F319D)->v) = 0x0;
-    return 0x171;
-}
-
-int FUN_0c0d48d6(void)
-{
-    FUN_0c09bafe();
-    return FUN_0c0a3118();
-}
-
-int FUN_0c0d7ecc(void)
-{
-    register int t1;
-
-    t1 = *(int *)((((*(signed char *)0xC7F4738) << 2) + 0xC33F970));
-    return ((int (*)(void))(t1))();
-}
-
-void FUN_0c0dcac0(int a4, int a5)
-{
-    *(unsigned int *)(((*(int *)0xC7F8E9C) + 0x0)) = ((a5 << 16) | 0x800000);
-}
-
 int syRtcFinish(void)
 {
     (((struct o0_uint *)0xC7FD0C8)->v) = 0x0;
@@ -2893,85 +1832,6 @@ int mpdrv_swapmode(int a4)
 {
     (((struct o10C4_uint *)((*(int *)0xC843924)))->v) = (a4 & 0x1);
     return 0x10C4;
-}
-
-int FUN_0c0158d8(void)
-{
-    (((struct o0_uchar *)0xC361C78)->v) = 0x2;
-    (((struct o1_uchar *)0xC361C78)->v) = 0x0;
-    return 0x0;
-}
-
-void FUN_0c0283c4(int a4, int a5)
-{
-    *(unsigned short *)((a4 + 0x0)) = (*(short *)((a5 + 0x0)));
-    *(unsigned int *)((a4 + 0xC)) = (*(int *)((a5 + 0x4)));
-    *(unsigned int *)((a4 + 0x10)) = a5;
-}
-
-int FUN_0c039c6c(int a4, int a5, int a6)
-{
-    return (FUN_0c039c78(a4, a5, a6, 0xA));
-}
-
-int FUN_0c0622ae(int a4, float f4)
-{
-    return (FUN_0c06225a(a4, 0x1, f4));
-}
-
-int FUN_0c0622a2(int a4, float f4)
-{
-    return (FUN_0c06225a(a4, 0x0, f4));
-}
-
-int FUN_0c0622ba(int a4, float f4)
-{
-    return (FUN_0c06225a(a4, 0x2, f4));
-}
-
-int FUN_0c08b8b8(int a4)
-{
-    (((struct o7223_uchar *)(a4))->v) = 0x0;
-    return FUN_0c0980b0(a4);
-}
-
-int FUN_0c08bb46(int a4)
-{
-    (((struct o7223_uchar *)(a4))->v) = 0x0;
-    return FUN_0c0980b0(a4);
-}
-
-int FUN_0c098136(int a4)
-{
-    return ((((*(signed char *)((a4 + 0x7204))) == 2)) ? 1 : 0);
-}
-
-int FUN_0c0d44c4(void)
-{
-    (((struct o0_uchar *)0xC7F2EE5)->v) = 0x0;
-    (((struct o1_uchar *)0xC7F2EE5)->v) = 0x0;
-    (((struct o2_uchar *)0xC7F2EE5)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c0d4872(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-
-    t0 = ((int (*)(int, int, int, int))(FUN_0c0d47be))(0x0, a5, a6, a7);
-    return ((int (*)(int))(FUN_0c0d47be))(0x1);
-}
-
-int FUN_0c0d5ba8(void)
-{
-    FUN_0c0d5a4e(0x0);
-    return FUN_0c0d5a4e(0x1);
-}
-
-void FUN_0c0dd310(void)
-{
-    *(unsigned int *)0xC7FD490 = 0x0;
-    *(unsigned int *)0xC7F87C0 = 0x0;
 }
 
 void FUN_0c0e4ac0(int a4)
@@ -3105,123 +1965,6 @@ int mpdrv_init_memory(void)
 {
     (((struct o10F4_uint *)((*(int *)0xC843924)))->v) = 0xA05F6C00;
     return 0x10F4;
-}
-
-int FUN_0c0158e4(void)
-{
-    (((struct o1_uchar *)0xC361C78)->v) = 0x0;
-    (((struct o0_uchar *)0xC361C78)->v) = 0x0;
-    return 0x0;
-}
-
-int FUN_0c0195f0(void)
-{
-    return memset(0xC362310, 0x0, 0x8);
-}
-
-int FUN_0c019bf4(void)
-{
-    return memset(0xC362328, 0x0, 0xA);
-}
-
-int FUN_0c01a42c(void)
-{
-    return memset(0xC362338, 0x0, 0xC);
-}
-
-int FUN_0c01b66c(void)
-{
-    return memset(0xC362358, 0x0, 0x2);
-}
-
-int FUN_0c01e7a2(void)
-{
-    return memset(0xC362A50, 0x0, 0x38);
-}
-
-int FUN_0c01e798(void)
-{
-    return memset(0xC362A50, 0x0, 0x38);
-}
-
-int FUN_0c027c74(void)
-{
-    return FUN_0c0dd5d0(0xC1437B8, 0xC321050);
-}
-
-int FUN_0c03148c(void)
-{
-    return FUN_0c0dd5d0(0xC321238, 0xC321330);
-}
-
-int FUN_0c058f44(void)
-{
-    return memset(0xC7F2998, 0x0, 0x60);
-}
-
-int FUN_0c058f3a(void)
-{
-    return memset(0xC7F2664, 0x0, 0x334);
-}
-
-int FUN_0c061444(int a4)
-{
-    return FUN_0c0de340(a4, 0x80, 0x1);
-}
-
-int FUN_0c099a88(int a4)
-{
-    register int t0;
-
-    t0 = *(short *)((a4 + 0x6));
-    *(unsigned short *)((a4 + 0x6)) = (t0 & 0xFDFF);
-    return (t0 & 0xFDFF);
-}
-
-int FUN_0c09a910(int a4)
-{
-    return FUN_0c09a94c(a4, a4);
-}
-
-int FUN_0c0a2f5c(void)
-{
-    return FUN_0c0e59e8(0x0, 0x300A0, 0x0);
-}
-
-int FUN_0c0a2f52(void)
-{
-    FUN_0c0a2f5c();
-    return FUN_0c0a2f7a();
-}
-
-int FUN_0c0d2dde(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC494AF0;
-    *(unsigned int *)0xC494AF0 = 0x0;
-    return t0;
-}
-
-void nlObjPutSetGlobalAmbience(float f4)
-{
-    *(float *)0xC346878 = f4;
-    *(float *)0xC7FCC9C = f4;
-}
-
-int FUN_0c0e0580(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC7F8BF0;
-    *(unsigned int *)0xC7F8BF0 = (t0 | 0x1);
-    return (t0 | 0x1);
-}
-
-void FUN_0c0e05a0(int a4, int a5)
-{
-    (((struct o0_uint *)0xC7F8BFC)->v) = a4;
-    (((struct o4_uint *)0xC7F8BFC)->v) = a5;
 }
 
 int FUN_0c0e16c0(void)
@@ -3466,114 +2209,6 @@ int FUN_0c115a48(void)
     return memset(0xC857C8C, 0x0, 0x1A0);
 }
 
-int FUN_0c0105a2(void)
-{
-    return buGetVersion(0xC01025C);
-}
-
-void FUN_0c017a24(void)
-{
-    *(unsigned char *)0xC3622C0 = 0x0;
-}
-
-void FUN_0c02828e(void)
-{
-    *(unsigned int *)0xC363A68 = 0x0;
-}
-
-int FUN_0c02d82c(void)
-{
-    *(unsigned char *)0xC366A70 = 0x0;
-    return 0xC366A70;
-}
-
-void FUN_0c02d834(void)
-{
-    *(unsigned char *)0xC366A71 = 0x1;
-}
-
-int FUN_0c02d83c(void)
-{
-    *(unsigned char *)0xC366A71 = 0x0;
-    return 0xC366A71;
-}
-
-void FUN_0c0314dc(void)
-{
-    *(unsigned char *)0xC7F31CB = 0x0;
-}
-
-void FUN_0c05fc00(void)
-{
-    *(unsigned int *)0xC38380C = 0x0;
-}
-
-void FUN_0c05fc1c(void)
-{
-    *(unsigned int *)0xC38380C = 0x0;
-}
-
-int FUN_0c061434(int a4, int a5, int a6)
-{
-    return FUN_0c0e48b0(0x1, 0xC061694, a6);
-}
-
-int FUN_0c06143c(int a4, int a5, int a6)
-{
-    return FUN_0c0e48b0(0x1, 0x0, a6);
-}
-
-int FUN_0c0634ec(int a4)
-{
-    return FUN_0c09a808(a4, 0x1, 0xA);
-}
-
-int FUN_0c0645ee(int a4)
-{
-    return FUN_0c09a808(a4, 0x2, 0x5A);
-}
-
-int FUN_0c065468(int a4)
-{
-    return FUN_0c09a808(a4, 0x1, 0x9F);
-}
-
-int FUN_0c099a1c(int a4)
-{
-    return FUN_0c0997a2(a4, 0x1, 0x4, 0xC0999E8);
-}
-
-int FUN_0c09a7b2(int a4)
-{
-    (((struct o723B_uchar *)(a4))->v) = 0x0;
-    return 0x723B;
-}
-
-int FUN_0c0a2f0e(int a4)
-{
-    return FUN_0c0e5d22(a4);
-}
-
-void FUN_0c0d487e(void)
-{
-    *(unsigned int *)0xC33F6B8 = 0x1;
-}
-
-int FUN_0c0da42c(int a4)
-{
-    return FUN_0c0d9288(a4, 0xC33FA9C);
-}
-
-int FUN_0c0da434(int a4)
-{
-    return FUN_0c0d9288(a4, 0xC33FAD0);
-}
-
-int FUN_0c0df100(void)
-{
-    return FUN_0c0f9bb2();
-}
-
 int FUN_0c0e0800(int a4)
 {
     return kmSetFogDensity(a4);
@@ -3662,213 +2297,6 @@ int FUN_0c1151d6(int a4, int a5, int a6)
 {
     *(unsigned int *)((a6 + 0x0)) = 0x1;
     return 0x0;
-}
-
-int thunk_FUN_0c0f2f7e(void)
-{
-    return FUN_0c0f2f7e();
-}
-
-void FUN_0c0124ce(void)
-{
-    
-}
-
-void FUN_0c01f9a0(void)
-{
-    
-}
-
-int thunk_FUN_0c062d78(void)
-{
-    return FUN_0c062d78();
-}
-
-int FUN_0c0247d0(int a4, int a5)
-{
-    (((struct o27C_uchar *)(a4))->v) = a5;
-    return 0x27C;
-}
-
-int FUN_0c02d844(void)
-{
-    return (*(signed char *)0xC366A70);
-}
-
-int thunk_FUN_0c059330(int a4)
-{
-    return FUN_0c059330(a4);
-}
-
-int FUN_0c06058a(void)
-{
-    return FUN_0c05fcf2(0xC17FE4C);
-}
-
-int FUN_0c060514(void)
-{
-    return FUN_0c05fd1a(0xC664988);
-}
-
-int FUN_0c060576(void)
-{
-    return FUN_0c05fcf2(0xC17FDB0);
-}
-
-int FUN_0c06059e(void)
-{
-    return FUN_0c05fcf2(0xC17FE64);
-}
-
-int FUN_0c0605f0(void)
-{
-    return FUN_0c05fd1a(0xC664A00);
-}
-
-int FUN_0c060620(void)
-{
-    return FUN_0c05fd1a(0xC664A30);
-}
-
-int FUN_0c060684(void)
-{
-    return FUN_0c05fd1a(0xC664A48);
-}
-
-int FUN_0c060626(void)
-{
-    return FUN_0c05fd1a(0xC664A78);
-}
-
-int FUN_0c06068a(void)
-{
-    return FUN_0c05fd1a(0xC664A60);
-}
-
-int FUN_0c060966(void)
-{
-    return FUN_0c05fd1a(0xC664AC0);
-}
-
-int FUN_0c060950(void)
-{
-    return FUN_0c05fcf2(0xC17FEA4);
-}
-
-int FUN_0c060b5e(void)
-{
-    return FUN_0c05fd1a(0xC664B08);
-}
-
-int FUN_0c060a12(void)
-{
-    return FUN_0c05fd1a(0xC664AD8);
-}
-
-int FUN_0c060afe(void)
-{
-    return FUN_0c05fd1a(0xC664AF0);
-}
-
-int FUN_0c060b2e(void)
-{
-    return FUN_0c05fd1a(0xC664B20);
-}
-
-int FUN_0c08d65c(int a4, int a5)
-{
-    return (signed char)a5;
-}
-
-int FUN_0c098b96(void)
-{
-    return ((int (*)(void))(0xC08C838))();
-}
-
-int thunk_FUN_0c05fff4(void)
-{
-    return FUN_0c05fff4();
-}
-
-int FUN_0c0a34b8(void)
-{
-    return FUN_0c0a2f16(0x0, 0x105);
-}
-
-int FUN_0c0a35cc(void)
-{
-    return FUN_0c0a2f16(0x0, 0x128);
-}
-
-int FUN_0c0a375c(void)
-{
-    return FUN_0c0a2f0e(0x1A9);
-}
-
-void FUN_0c0d2dd8(int a4)
-{
-    *(unsigned int *)0xC494AF0 = a4;
-}
-
-int thunk_FUN_0c0a3180(void)
-{
-    return FUN_0c0a3180();
-}
-
-int FUN_0c0d6098(int a4)
-{
-    *(unsigned char *)((a4 + 0x1)) = 0x1;
-    return 0x1;
-}
-
-void FUN_0c0d71f4(int a4)
-{
-    *(unsigned int *)0xC494B08 = a4;
-}
-
-int FUN_0c0da886(int a4)
-{
-    return FUN_0c0da1f6(a4, 0xC340814);
-}
-
-int FUN_0c0da952(int a4)
-{
-    return FUN_0c0da1f6(a4, 0xC3463BC);
-}
-
-int FUN_0c0dafcc(int a4)
-{
-    return FUN_0c0da1f6(a4, 0xC340D90);
-}
-
-int FUN_0c0db184(int a4)
-{
-    return FUN_0c0da1f6(a4, 0xC33F9D4);
-}
-
-void FUN_0c0dd9e0(int a4)
-{
-    *(unsigned int *)0xC7FD490 = a4;
-}
-
-void FUN_0c0de890(int a4)
-{
-    *(unsigned int *)0xC7F882C = a4;
-}
-
-int nlSysMetricsReadTimer(void)
-{
-    return (*(int *)0xFFD8000C);
-}
-
-int nlSysMetricsDiffTime(int a4, int a5)
-{
-    return (a4 - a5);
-}
-
-void FUN_0c0e0710(int a4)
-{
-    *(unsigned int *)0xC7F8C5C = a4;
 }
 
 int thunk_FUN_0c0fbcf0(int a4)
@@ -4030,199 +2458,9 @@ int thunk_FUN_0c115240(int a4, int a5, int a6)
     return SJ_SplitChunk(a4, a5, a6);
 }
 
-int thunk_FUN_0c020cba(int a4)
-{
-    return FUN_0c020cba(a4);
-}
-
-int FUN_0c0235ca(void)
-{
-    return 0x8;
-}
-
-void FUN_0c02ee3c(void)
-{
-    
-}
-
-int FUN_0c02d9e0(int a4, int a5, float f4, float f5, float f6, float f7)
-{
-    return FUN_0c02d9e4(a4, a5, f4, f5, f6, f7, (*(float *)0xC02DBBC));
-}
-
-void FUN_0c03082e(void)
-{
-    
-}
-
-int FUN_0c048ea0(int a4, int a5, int a6, int a7)
-{
-    return ((int (*)(int, int, int, int))(0xC048C18))(a4, 0x0, a6, a7);
-}
-
-void FUN_0c04cdee(void)
-{
-    
-}
-
-void FUN_0c055562(void)
-{
-    
-}
-
-int FUN_0c059b04(void)
-{
-    return FUN_0c0599fc(0x1);
-}
-
-void FUN_0c05b188(void)
-{
-    
-}
-
-void FUN_0c05b9e4(void)
-{
-    
-}
-
-void FUN_0c05c44e(void)
-{
-    
-}
-
-int FUN_0c05cb42(int a4, int a5, int a6)
-{
-    return ((int (*)(int, int, int, int))(0xC05CB5C))(a4, a5, a6, 0xFFFFFFFF);
-}
-
-void FUN_0c05d1cc(void)
-{
-    
-}
-
-void FUN_0c05dbf4(void)
-{
-    
-}
-
-void FUN_0c05df96(void)
-{
-    
-}
-
-void FUN_0c05e4e8(void)
-{
-    
-}
-
-int FUN_0c062da2(void)
-{
-    return 0x0;
-}
-
-int FUN_0c062da6(void)
-{
-    return 0x0;
-}
-
-int FUN_0c08a842(int a4)
-{
-    return FUN_0c08a846(a4);
-}
-
-int FUN_0c08f76a(void)
-{
-    return 0x0;
-}
-
-int FUN_0c098c82(void)
-{
-    return 0x0;
-}
-
-void FUN_0c099a84(void)
-{
-    
-}
-
-void FUN_0c09b700(void)
-{
-    
-}
-
-void FUN_0c0a2ee8(void)
-{
-    
-}
-
-void FUN_0c0a3304(void)
-{
-    
-}
-
-void FUN_0c0a3792(void)
-{
-    
-}
-
-void FUN_0c0ad46e(void)
-{
-    
-}
-
-void FUN_0c0ae284(void)
-{
-    
-}
-
-void FUN_0c0ae396(void)
-{
-    
-}
-
-void FUN_0c0cf202(void)
-{
-    
-}
-
-void FUN_0c0d00ea(void)
-{
-    
-}
-
-void FUN_0c0d2a84(void)
-{
-    
-}
-
-void FUN_0c0d4696(void)
-{
-    
-}
-
-int thunk_FUN_0c0d45fe(void)
-{
-    return FUN_0c0d45fe();
-}
-
-void FUN_0c0d52aa(void)
-{
-    
-}
-
-void FUN_0c0d905e(void)
-{
-    
-}
-
 int FUN_0c0e48a0(void)
 {
     return 0x0;
-}
-
-void FUN_0c0eacf0(void)
-{
-    
 }
 
 void FUN_0c0f283e(void)
@@ -4355,7 +2593,3 @@ int FUN_0c115108(void)
     return 0x0;
 }
 
-int FUN_0c0e7240(int a4, int a5)
-{
-    return FUN_0c0e7242(a4, a5, 1.0f);
-}

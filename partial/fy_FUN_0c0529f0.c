@@ -1,5 +1,5 @@
 
-void FUN_0c0529f0(void)
+void game_reset_state_block(void)
 {
     struct St *g = (struct St *)0xC7F302C;
     struct Pos *dst = (struct Pos *)0xC7F31BC;
@@ -10,11 +10,11 @@ void FUN_0c0529f0(void)
     dst->a = *(int *)((char *)tbl + (unsigned char)(g->sel * 12));
     dst->b = *(int *)((char *)tbl + (unsigned char)(g->sel * 12) + 4);
     dst->c = *(int *)((char *)tbl + (unsigned char)(g->sel * 12) + 8);
-    FUN_0c058fa2();
-    FUN_0c099738();
+    obj_system_init();
+    pl_place_start_positions();
     FUN_0c041e14(0);
     FUN_0c041e14(1);
-    FUN_0c02d774();
+    ui_init_hud();
     FUN_0c02d82c();
     FUN_0c02d83c();
     FUN_0c026c7c();

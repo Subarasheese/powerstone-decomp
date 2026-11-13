@@ -2,10 +2,10 @@
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c029268.json (synthetic). */
 /* Lays out and animates a ring of linked sprite objects (count at +732): state 0 places them on a circle (mode +4 == 0) or at one spot, then every frame spins them, steps their colour index (table at 0xC148DF4) and tracks the largest scale in +152 until the life counter at +236 runs out. */
 typedef struct { int a, b, c; } S12;
-extern void FUN_0c062050(void *, void *, void *);
-extern float FUN_0c0dfa50(int);
-extern float FUN_0c0df4d0(int);
-extern int FUN_0c059330(void *);
+extern void math_vec3_add(void *, void *, void *);
+extern float math_sin_angle16(int);
+extern float math_cos_angle16(int);
+extern int obj_destroy(void *);
 
 #define ST (*(signed char *)(e + 8))
 #define E4 (*(signed char *)(e + 4))
@@ -32,9 +32,9 @@ void FUN_0c029268(char *e)
                 p = OBJ(i);
                 *(S12 *)(p + 4) = *(S12 *)0xC148DD0;
                 a = 960.0f / (float)E238;
-                F(40) = a * FUN_0c0dfa50((int)((float)(5 * (E242 + i * 2)) * 65536.0f / 360.0f));
+                F(40) = a * math_sin_angle16((int)((float)(5 * (E242 + i * 2)) * 65536.0f / 360.0f));
                 a = 832.0f / (float)E238;
-                F(44) = a * FUN_0c0df4d0((int)((float)(5 * (E242 + i * 2)) * 65536.0f / 360.0f));
+                F(44) = a * math_cos_angle16((int)((float)(5 * (E242 + i * 2)) * 65536.0f / 360.0f));
                 F(48) = 0.0f;
                 F(32) = 1.0f;
                 F(28) = 1.0f;
@@ -53,7 +53,7 @@ void FUN_0c029268(char *e)
     if (E4 == 0) {
         for (i = 0; i < N; i++) {
             p = OBJ(i);
-            FUN_0c062050(p + 4, p + 4, p + 40);
+            math_vec3_add(p + 4, p + 4, p + 40);
             F(32) = F(32) + 2.0f / (float)E238;
             F(28) = F(32);
         }
@@ -80,6 +80,6 @@ void FUN_0c029268(char *e)
     }
     LIFE = LIFE - 1;
     if (LIFE <= 0) {
-        FUN_0c059330(e);
+        obj_destroy(e);
     }
 }

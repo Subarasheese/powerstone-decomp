@@ -42,7 +42,7 @@ int FUN_0c0c9b08(int a4)
             } else {
                 t2 = t1;
                 if (t1 == 3) {
-                    t2 = (FUN_0c059330(a4));
+                    t2 = (obj_destroy(a4));
                 }
                 t3 = t2;
             }
@@ -75,7 +75,7 @@ int FUN_0c0c9b08(int a4)
                 }
             }
             FUN_0c0c99c0(a4, 0x0, 0x1, ((((struct oF0_float *)(a4))->v)));
-            FUN_0c0c9d18(a4);
+            fx_trail_resize_list(a4);
             FUN_0c0ca050(a4);
             t2 = (((struct oEE_short *)(a4))->v);
             u0 = *(float *)(((t2 << 2) + 0xC33C998));
@@ -107,7 +107,7 @@ int FUN_0c0c9b08(int a4)
                     }
                     t5 = (*(int *)((t6 + 0x10)));
                     if (t5 == 0xC0CA198) {
-                        FUN_0c059330(t6);
+                        obj_destroy(t6);
                     } else {
                         t7 = t5;
                         t8 = t3;
@@ -165,7 +165,7 @@ int FUN_0c0c9b08(int a4)
             }
         }
         FUN_0c0c99c0(a4, 0x0, 0x1, ((((struct oF0_float *)(a4))->v)));
-        FUN_0c0c9d18(a4);
+        fx_trail_resize_list(a4);
         FUN_0c0ca050(a4);
         t1 = (((struct oEE_short *)(a4))->v);
         u0 = *(float *)(((t1 << 2) + 0xC33C998));
@@ -197,7 +197,7 @@ int FUN_0c0c9b08(int a4)
                 }
                 t4 = (*(int *)((t5 + 0x10)));
                 if (t4 == 0xC0CA198) {
-                    FUN_0c059330(t5);
+                    obj_destroy(t5);
                 } else {
                     t6 = t4;
                     t7 = t3;

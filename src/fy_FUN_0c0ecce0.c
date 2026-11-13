@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer loop: state in registers (r4-r6, r10-r13, fr12-fr14), pushes fpu regs, fschg double moves, jumps by command word to the display fragments; no C form */
 /* nl_objasm: display-list loop: scales the colour and vertex setup, then per command word at r4 emits the vertex header and calls the strip/triangle (clipped or not) fragments. */
-#pragma inline_asm(FUN_0c0ecce0)
-void FUN_0c0ecce0(void)
+#pragma inline_asm(nl_objasm_draw_obj_bump)
+void nl_objasm_draw_obj_bump(void)
 {
     .DATA.W H'E043
     .DATA.W H'4018

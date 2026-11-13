@@ -3,15 +3,15 @@
 
 struct o94_uchar { char p[0x94]; unsigned char v; };
 struct oC0_uint { char p[0xC0]; unsigned int v; };
-int FUN_0c0ebe90(int, int, int, int);
-int FUN_0c0ec09a(int, int, int);
+int printf_int_to_text(int, int, int, int);
+int printf_write_bytes(int, int, int);
 int FUN_0c0ec0f2(int);
 int FUN_0c0ec102(int);
 int FUN_0c0eda64(int, int, int, int);
 int strlen(int);
-int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8);
+int printf_format_core(int a4, int a5, int a6, int a7, int a8);
 
-int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
+int printf_format_core(int a4, int a5, int a6, int a7, int a8)
 {
     int stk[62];
     int t9;
@@ -102,7 +102,7 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x1);
     goto L_C0EBE40;
     L_C0EBE4E:;
-    FUN_0c0ec09a(v0_2, ((*(int *)(((int)stk + 4))) - v0_2), v0_0);
+    printf_write_bytes(v0_2, ((*(int *)(((int)stk + 4))) - v0_2), v0_0);
     v0_2 = ((*(int *)(((int)stk + 4))));
     goto L_C0EBE5A;
     L_C0EB802:;
@@ -228,14 +228,14 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     goto L_C0EBE5A;
     L_C0EBD5A:;
     if (!(((int)(*(int *)((v0_3 + 0x28))) > 0))) goto L_C0EBD60;
-    FUN_0c0ec09a((v0_3 + 0x1), 0x1, v0_0);
+    printf_write_bytes((v0_3 + 0x1), 0x1, v0_0);
     *(unsigned int *)((v0_3 + 0x28)) = ((*(int *)((v0_3 + 0x28))) - 1);
     goto L_C0EBD5A;
     L_C0EBD60:;
     if (((*(int *)((v0_3 + 0x1C))) != 0)) goto L_C0EBD7E;
     if (((*(int *)((v0_3 + 0x20))) != 0)) goto L_C0EBD7E;
     if (((*(int *)((v0_3 + 0x24))) != 0)) goto L_C0EBD7E;
-    FUN_0c0ec09a((*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 16))), v0_0);
+    printf_write_bytes((*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 16))), v0_0);
     L_C0EBE0C:;
     if ((((*(signed char *)((v0_3 + 0x0))) & 2) == 0)) goto L_C0EBE32;
     if (((int)(*(int *)((v0_3 + 0x28))) <= 0)) goto L_C0EBE32;
@@ -243,7 +243,7 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     if (((int)(*(int *)((v0_3 + 0x28))) > 0)) goto L_C0EBE1C;
     goto L_C0EBE32;
     L_C0EBE1C:;
-    FUN_0c0ec09a((v0_3 + 0x1), 0x1, v0_0);
+    printf_write_bytes((v0_3 + 0x1), 0x1, v0_0);
     *(unsigned int *)((v0_3 + 0x28)) = ((*(int *)((v0_3 + 0x28))) - 1);
     goto L_C0EBE2C;
     L_C0EBD7E:;
@@ -253,7 +253,7 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     v0_8 = (v0_9);
     v0_7 = ((v0_6 - v0_9));
     if (((int)(v0_6 - v0_9) <= 0)) goto L_C0EBDB0;
-    FUN_0c0ec09a(v0_8, v0_7, v0_0);
+    printf_write_bytes(v0_8, v0_7, v0_0);
     L_C0EBDB0:;
     if (((int)(*(int *)((v0_3 + 0x1C))) > 0)) goto L_C0EBDA0;
     v0_6 = *(int *)((v0_3 + 0x14));
@@ -261,23 +261,23 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + (v0_6 - v0_8));
     v0_7 = ((v0_6 - v0_8));
     if (((int)(v0_6 - v0_8) <= 0)) goto L_C0EBDE0;
-    FUN_0c0ec09a((*(int *)((v0_3 + 0x10))), v0_7, v0_0);
+    printf_write_bytes((*(int *)((v0_3 + 0x10))), v0_7, v0_0);
     L_C0EBDE0:;
     if (((int)(*(int *)((v0_3 + 0x20))) > 0)) goto L_C0EBDD0;
-    FUN_0c0ec09a((*(int *)((v0_3 + 0x14))), ((*(int *)(((int)stk + 16))) - (*(int *)(((int)stk + 4)))), v0_0);
+    printf_write_bytes((*(int *)((v0_3 + 0x14))), ((*(int *)(((int)stk + 16))) - (*(int *)(((int)stk + 4)))), v0_0);
     L_C0EBE06:;
     if (((int)(*(int *)((v0_3 + 0x24))) > 0)) goto L_C0EBDF6;
     goto L_C0EBE0C;
     L_C0EBDF6:;
-    FUN_0c0ec09a((((int)stk + 4) + 0x8), 0x1, v0_0);
+    printf_write_bytes((((int)stk + 4) + 0x8), 0x1, v0_0);
     *(unsigned int *)((v0_3 + 0x24)) = ((*(int *)((v0_3 + 0x24))) - 1);
     goto L_C0EBE06;
     L_C0EBDD0:;
-    FUN_0c0ec09a((((int)stk + 4) + 0x8), 0x1, v0_0);
+    printf_write_bytes((((int)stk + 4) + 0x8), 0x1, v0_0);
     *(unsigned int *)((v0_3 + 0x20)) = ((*(int *)((v0_3 + 0x20))) - 1);
     goto L_C0EBDE0;
     L_C0EBDA0:;
-    FUN_0c0ec09a((((int)stk + 4) + 0x8), 0x1, v0_0);
+    printf_write_bytes((((int)stk + 4) + 0x8), 0x1, v0_0);
     *(unsigned int *)((v0_3 + 0x1C)) = ((*(int *)((v0_3 + 0x1C))) - 1);
     goto L_C0EBDB0;
     L_C0EBA2A:;
@@ -364,7 +364,7 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     if (((*(int *)((v0_3 + 0x8))) != -1)) goto L_C0EBCC2;
     *(unsigned int *)((v0_3 + 0x8)) = 0x1;
     L_C0EBCC2:;
-    FUN_0c0ebe90(v0_6, v0_5, 0x78, R7);
+    printf_int_to_text(v0_6, v0_5, 0x78, R7);
     *(unsigned int *)(((int)stk + 8)) = v0_5;
     v0_6 = ((strlen(v0_5)));
     goto L_C0EBCD0;
@@ -434,7 +434,7 @@ int FUN_0c0eb758(int a4, int a5, int a6, int a7, int a8)
     if (((*(int *)((v0_3 + 0x8))) != -1)) goto L_C0EBBBA;
     *(unsigned int *)((v0_3 + 0x8)) = 0x1;
     L_C0EBBBA:;
-    FUN_0c0ebe90(v0_6, v0_5, (*(signed char *)((v0_2 + 0x0))), R7);
+    printf_int_to_text(v0_6, v0_5, (*(signed char *)((v0_2 + 0x0))), R7);
     *(unsigned int *)(((int)stk + 8)) = v0_5;
     v0_6 = ((strlen(v0_5)));
     goto L_C0EBCD0;

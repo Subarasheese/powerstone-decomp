@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
-#pragma inline_asm(FUN_0c0e7600)
-int FUN_0c0e7600(void)
+/* Vertex-strip transform loop: runs each vertex through XMTRX, writes 8-word vertex records to the output buffer and ends the strip on the last vertex. */
+#pragma inline_asm(nl_display_strip)
+int nl_display_strip(void)
 {
     TST R8,R8
     MOV R8,R0

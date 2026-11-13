@@ -33,13 +33,13 @@ struct O {
     char pad29268[170];
     float f7254;
 };
-extern float g_494d1c;
-extern struct P g_7e40c4[];
-int FUN_0c09a910(struct O *);
-int FUN_0c0df360(float);
-float FUN_0c0dfa50(int);
-float FUN_0c0df4d0(int);
-void FUN_0c09a808(struct O *, int, int);
+extern float g_fighter_distance;
+extern struct P g_players[];
+int pl_step_motion(struct O *);
+int math_atan_angle16(float);
+float math_sin_angle16(int);
+float math_cos_angle16(int);
+void pl_start_motion(struct O *, int, int);
 void thunk_FUN_0c062242(void *, void *);
 void FUN_0c064a1c(struct O *o);
 void FUN_0c064a1c(struct O *o)
@@ -48,21 +48,21 @@ void FUN_0c064a1c(struct O *o)
     float d;
     int a, m;
     o->b729 = 2;
-    if ((char)FUN_0c09a910(o)) {
+    if ((char)pl_step_motion(o)) {
         int p;
-        d = g_494d1c;
+        d = g_fighter_distance;
         if (d == 0.0f) d = 0.01f;
         o->f7254 = o->f36 - o->t->f36 + -50.0f;
         
-        o->i44 = (FUN_0c0df360(o->f7254 / d) + 16384) & 0xffff;
-        o->f60 = FUN_0c0dfa50(0x14000 - o->i44) * 25.0f;
-        o->f7254 = FUN_0c0df4d0(0x14000 - o->i44) * 25.0f;
-        o->f56 = FUN_0c0df4d0(0x14000 - o->i48) * o->f7254;
-        o->f64 = FUN_0c0dfa50(0x14000 - o->i48) * o->f7254;
+        o->i44 = (math_atan_angle16(o->f7254 / d) + 16384) & 0xffff;
+        o->f60 = math_sin_angle16(0x14000 - o->i44) * 25.0f;
+        o->f7254 = math_cos_angle16(0x14000 - o->i44) * 25.0f;
+        o->f56 = math_cos_angle16(0x14000 - o->i48) * o->f7254;
+        o->f64 = math_sin_angle16(0x14000 - o->i48) * o->f7254;
         o->f72 = o->f68 = o->f76 = 0.0f;
-        FUN_0c09a808(o, 1, 72);
+        pl_start_motion(o, 1, 72);
         o->b71a8 = o->b71a9 = 1;
-        p = (int)g_7e40c4 + (unsigned short)(o->b3 * 29392);
+        p = (int)g_players + (unsigned short)(o->b3 * 29392);
         x[0] = p;
         {
             int b = p + 768;

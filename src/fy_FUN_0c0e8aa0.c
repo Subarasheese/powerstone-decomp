@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written polygon clipper (vertex counts in r3, flags in r9/r12, T flag from the callee routines, braf jump table) that C cannot express; every bsr to the renderer's helper routines goes through a stub that calls the helper at its absolute address */
-#pragma inline_asm(FUN_0c0e8aa0)
-int FUN_0c0e8aa0(void)
+/* Polygon clipper with a jump table that calls the renderer helper stubs. */
+#pragma inline_asm(nl_display_strip_nc_ofst)
+int nl_display_strip_nc_ofst(void)
 {
     .DATA.W H'2FA6
     .DATA.W H'2FB6

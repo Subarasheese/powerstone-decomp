@@ -1,5 +1,5 @@
 
-int FUN_0c01f436(int a4, int a5, int a6, int a7)
+int vmu_menu_state_rewrite_vmgame(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -12,7 +12,7 @@ int FUN_0c01f436(int a4, int a5, int a6, int a7)
         } else {
             *(volatile signed char *)((a4 + 0x34));
             *(volatile int *)((a4 + 0x20));
-            t0 = FUN_0c011c4a();
+            t0 = vmu_step_rewrite_vmgame();
             t2 = t0;
             if (t0 != -1) {
                 if (t0 == 0) {
@@ -28,12 +28,12 @@ int FUN_0c01f436(int a4, int a5, int a6, int a7)
         t0 = t1;
     } else {
         *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0x12);
+        vmu_menu_update_objs(a4, a5, a6, a7);
+        vmu_menu_spawn_message(0x12);
         (((struct o32_uchar *)(a4))->v) = 0x3C;
         *(volatile signed char *)((a4 + 0x34));
         *(volatile int *)((a4 + 0x20));
-        t1 = FUN_0c011c4a();
+        t1 = vmu_step_rewrite_vmgame();
         t2 = t1;
         if (t1 != -1) {
             if (t1 == 0) {

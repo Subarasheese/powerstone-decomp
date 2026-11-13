@@ -1,0 +1,156 @@
+/* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c04a294-0c04a4c4) */
+
+struct o118_uint { char p[0x118]; unsigned int v; };
+struct o1C_float { char p[0x1C]; float v; };
+struct o20_float { char p[0x20]; float v; };
+struct o24_float { char p[0x24]; float v; };
+struct o2E0_int { char p[0x2E0]; int v; };
+struct o40_float { char p[0x40]; float v; };
+struct o50_float { char p[0x50]; float v; };
+struct o54_float { char p[0x54]; float v; };
+struct o58_float { char p[0x58]; float v; };
+struct oC_float { char p[0xC]; float v; };
+int obj_create(int, int, int);
+int FUN_0c06233a(int, int, int);
+struct oEC_short { char p[0xEC]; short v; };
+struct oEC_ushort { char p[0xEC]; unsigned short v; };
+struct oEE_ushort { char p[0xEE]; unsigned short v; };
+struct oF0_short { char p[0xF0]; short v; };
+struct oF0_ushort { char p[0xF0]; unsigned short v; };
+struct oF2_ushort { char p[0xF2]; unsigned short v; };
+int obj_destroy(int, int, int);
+int FUN_0c06231c(int, int, int);
+int thunk_FUN_0c062242(int);
+
+int fx_spawn_04a294(int a4)
+{
+    int stk[1];
+    register int t0;
+    register int t5;
+    register int t4;
+
+    *(unsigned char *)(((int)stk + 0)) = a4;
+    t0 = obj_create(0x5, 0x1, 0x1);
+    t5 = t0;
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned char *)((t0 + 0x3)) = (*(signed char *)(((int)stk + 0)));
+        *(unsigned short *)((t0 + 0x6)) = 0x21;
+        *(unsigned char *)((t0 + 0x5)) = 0x1;
+        *(unsigned int *)((t0 + 0x10)) = 0xC04A324;
+        (((struct o118_uint *)(t0))->v) = 0x0;
+        *(unsigned int *)((t0 + 0x34)) = 0x0;
+        *(unsigned int *)((t0 + 0x30)) = 0x0;
+        *(unsigned int *)((t0 + 0x2C)) = 0x0;
+        (((struct o58_float *)(t0))->v) = 1.0f;
+        (((struct o54_float *)(t0))->v) = 1.0f;
+        (((struct o50_float *)(t0))->v) = 1.0f;
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x63);
+        t4 = (((struct o2E0_int *)(t0))->v);
+        *(unsigned char *)((t4 + 0x0)) = 0x1;
+        *(unsigned short *)((t4 + 0x2)) = 0x411;
+        (((struct o40_float *)(t4))->v) = 0.0f;
+        (((struct o24_float *)(t4))->v) = 3.0f;
+        (((struct o20_float *)(t4))->v) = 3.0f;
+        (((struct o1C_float *)(t4))->v) = 3.0f;
+        (((struct oC_float *)(t4))->v) = 50.0f;
+        t5 = 0xC;
+    }
+    return t5;
+}
+
+int fx_tick_04a294(int a4)
+{
+
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R6;
+    register int R12;
+    register float F2;
+    register float F3;
+    register float F10;
+    register int T_;
+    register int FPUL_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register float w0_0;
+    v0_2 = a4;
+    v0_0 = *(signed char *)((v0_2 + 0x3));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+    v0_4 = *(signed char *)((v0_2 + 0x8));
+    v0_1 = (v0_4);
+    v0_0 = (v0_2);
+    v0_3 = (0x4);
+    if ((v0_4 == 0)) goto L_C04A3B0;
+    if ((v0_1 == 1)) goto L_C04A3CA;
+    if ((v0_1 != 2)) goto L_C04A372;
+    L_C04A48C:;
+    return obj_destroy(v0_0, v0_3, R6);
+    L_C04A372:;
+    if ((v0_1 != 3)) goto L_C04A37A;
+    goto L_C04A48C;
+    L_C04A37A:;
+    L_C04A49A:;
+    return v0_1;
+    L_C04A3CA:;
+    v0_2 = (((struct oF0_short *)(v0_0))->v);
+    (((struct oF0_ushort *)(v0_0))->v) = (v0_2 - 1);
+    v0_1 = (0xF0);
+    if (((short)(v0_2 - 1) != 0)) goto L_C04A3F2;
+    *(unsigned short *)((v0_0 + v0_1)) = v0_3;
+    *(unsigned short *)((v0_0 + (v0_1 + 0x2))) = ((*(short *)((v0_0 + (v0_1 + 0x2)))) ^ 0x1);
+    FUN_0c06231c(((((struct o2E0_int *)(v0_0))->v)), 0xC4CFA68, ((*(signed char *)((v0_0 + (v0_1 + 0x2)))) + 0x63));
+    L_C04A3F2:;
+    v0_2 = *(signed char *)((v0_0 + 0x9));
+    v0_1 = (v0_2);
+    if ((v0_2 == 0)) goto L_C04A404;
+    if ((v0_1 == 1)) goto L_C04A436;
+    if ((v0_1 == 2)) goto L_C04A460;
+    goto L_C04A49A;
+    L_C04A460:;
+    v0_1 = (((struct oEC_short *)(v0_0))->v);
+    (((struct oEC_ushort *)(v0_0))->v) = (v0_1 - 1);
+    if (((short)(v0_1 - 1) != 0)) goto L_C04A474;
+    *(unsigned char *)((v0_0 + 0x8)) = ((*(signed char *)((v0_0 + 0x8))) + 0x1);
+    L_C04A474:;
+    v0_2 = (((struct oEC_short *)(v0_0))->v);
+    (((struct o40_float *)(((((struct o2E0_int *)(v0_0))->v))))->v) = ((float)v0_2 / 16.0f);
+    v0_1 = (0x40);
+    FPUL_ = (v0_2);
+    goto L_C04A49A;
+    L_C04A436:;
+    (((struct o40_float *)(((((struct o2E0_int *)(v0_0))->v))))->v) = 1.0f;
+    v0_2 = *(signed char *)((0xC7EB27E + (unsigned short)((unsigned short)(*(signed char *)((v0_0 + 0x3))) * (unsigned short)0x72D0)));
+    v0_1 = (v0_2);
+    if ((v0_2 == 13)) goto L_C04A49A;
+    *(unsigned char *)((v0_0 + 0x9)) = ((*(signed char *)((v0_0 + 0x9))) + 0x1);
+    (((struct oEC_ushort *)(v0_0))->v) = 0x10;
+    v0_1 = (0xEC);
+    goto L_C04A49A;
+    L_C04A404:;
+    v0_1 = (((struct oEC_short *)(v0_0))->v);
+    (((struct oEC_ushort *)(v0_0))->v) = (v0_1 + 0x1);
+    w0_0 = (8.0f);
+    FPUL_ = ((short)(v0_1 + 0x1));
+    if ((8.0f > (float)(short)(v0_1 + 0x1))) goto L_C04A420;
+    *(unsigned char *)((v0_0 + 0x9)) = ((*(signed char *)((v0_0 + 0x9))) + 0x1);
+    L_C04A420:;
+    v0_2 = (((struct oEC_short *)(v0_0))->v);
+    (((struct o40_float *)(((((struct o2E0_int *)(v0_0))->v))))->v) = ((float)v0_2 / w0_0);
+    v0_1 = (0x40);
+    FPUL_ = (v0_2);
+    goto L_C04A49A;
+    L_C04A3B0:;
+    *(unsigned char *)((v0_0 + 0x8)) = ((*(signed char *)((v0_0 + 0x8))) + 0x1);
+    (((struct oEC_ushort *)(v0_0))->v) = 0x0;
+    (((struct oEE_ushort *)(v0_0))->v) = 0x78;
+    (((struct oF0_ushort *)(v0_0))->v) = v0_3;
+    (((struct oF2_ushort *)(v0_0))->v) = 0x0;
+    v0_2 = (0x0);
+    goto L_C04A3CA;
+}

@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: reads r2, r3, r5, r6 and fr2-fr7 as live registers and runs in FPSCR.SZ=1 (fschg), no C form. */
+/* Renderer vertex routine running in FPSCR.SZ=1 on live registers r2, r3, r5, r6 and fr2-fr7. */
 #pragma inline_asm(ia_FUN_0c0e9ca0)
 static void ia_FUN_0c0e9ca0(void)
 {
@@ -28,7 +29,7 @@ LC0E9CC4:
 LEND:
 }
 
-void FUN_0c0e9ca0(void)
+void nl_objasm_send_vtx_spd(void)
 {
     ia_FUN_0c0e9ca0();
 }

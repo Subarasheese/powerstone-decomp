@@ -1,4 +1,5 @@
 /* INLINE-ASM: reads r11, r2, fr2, fr4, fr6 and uses r10 as live registers and runs with FPSCR.SZ set (fschg): hand-written NL object assembly with no C form. */
+/* Hand-written: stores fr4, fr6, fr0 (from @r2) and fr2 as four 8-byte moves pre-decrementing from the table entry (r11&3) at 0xC0E95C0. */
 #pragma inline_asm(ia_9ce0)
 static void ia_9ce0(void)
 {
@@ -17,7 +18,7 @@ static void ia_9ce0(void)
     FSCHG
 }
 
-void FUN_0c0e9ce0(void)
+void nl_objasm_save_vtx_spd(void)
 {
     ia_9ce0();
 }

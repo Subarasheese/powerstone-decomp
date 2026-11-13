@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written register-convention routine (r2 pointer, r3 counter, r5/r6 pointers, fr2-fr7 in; fschg pair stores, pref, branch with delay slot) that C cannot express */
-#pragma inline_asm(FUN_0c0e7c80)
-void FUN_0c0e7c80(void)
+/* Strip tail: stores the last vertex words, writes the end marker and returns the advanced output pointer. */
+#pragma inline_asm(nl_objasm_send_vtx)
+void nl_objasm_send_vtx(void)
 {
     FSCHG
     ADD #32,R6

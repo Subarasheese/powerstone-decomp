@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: loops over a clip list calling sibling assembly fragments with live registers (r3, r4, r9, r11, r12, the T flag) and dispatching through braf, no C form. */
+/* Hand-written: loops over a clip list calling sibling assembly fragments and dispatching on the accumulated clip code through a braf table. */
 #pragma inline_asm(ia_FUN_0c0e8f60)
 static void ia_FUN_0c0e8f60(void)
 {
@@ -240,7 +241,7 @@ PL6:
     .DATA.L H'0C0E8EC0
 }
 
-void FUN_0c0e8f60(void)
+void nl_display_triangle_nc_ofst(void)
 {
     ia_FUN_0c0e8f60();
 }

@@ -4,7 +4,7 @@
 typedef struct { unsigned int v; } PACKED;
 int kmSetBorderColor(PACKED c);
 
-void FUN_0c0defe0(int mode)
+void sys_fatal_error_screen(int mode)
 {
     int m;
     PACKED p;

@@ -1,6 +1,6 @@
 /* INLINE-ASM: hand-written display-list assembly (registers r3, r9, r11, r12, T and XMTRX are its inputs and state, calls and jump table between sibling helpers); no C form exists. The bsr calls to the sibling helpers became mov.l/jsr through r14 (saved and restored) because the C is linked far from them. */
-/* Draws one or more non-clipped vertex-colour triangles: transforms the triangle (FUN_0c0ecc40), then by its clip code sends, saves or clips each vertex. */
-extern void FUN_0c0ecc40(void);
+/* Draws one or more non-clipped vertex-colour triangles: transforms the triangle (nl_objasm_transform_tri_vtxcol), then by its clip code sends, saves or clips each vertex. */
+extern void nl_objasm_transform_tri_vtxcol(void);
 extern void nl_objasm_transform_vtx_vtxcol(void);
 extern void nl_objasm_save_vtx_vtxcol(void);
 extern void nl_objasm_shift_vtx_vtxcol(void);
@@ -10,7 +10,7 @@ extern void nl_objasm_clip_send_vtx_vtxcol(void);
 #pragma inline_asm(displayTriangle_nc_vtxcol)
 void displayTriangle_nc_vtxcol(void)
 {
-    .IMPORT _FUN_0c0ecc40
+    .IMPORT _nl_objasm_transform_tri_vtxcol
     .IMPORT _nl_objasm_transform_vtx_vtxcol
     .IMPORT _nl_objasm_save_vtx_vtxcol
     .IMPORT _nl_objasm_shift_vtx_vtxcol
@@ -87,7 +87,7 @@ Lc0ecb3e:
     mov.l @r15+,r14
     .ALIGN 4
 PA_FUN_0c0ecc40:
-    .DATA.L _FUN_0c0ecc40
+    .DATA.L _nl_objasm_transform_tri_vtxcol
 PA_nl_objasm_transform_vtx_vtxcol:
     .DATA.L _nl_objasm_transform_vtx_vtxcol
 PA_nl_objasm_save_vtx_vtxcol:
@@ -258,7 +258,7 @@ Lc0ecc20:
 
     .ALIGN 4
 PB_FUN_0c0ecc40:
-    .DATA.L _FUN_0c0ecc40
+    .DATA.L _nl_objasm_transform_tri_vtxcol
 PB_nl_objasm_transform_vtx_vtxcol:
     .DATA.L _nl_objasm_transform_vtx_vtxcol
 PB_nl_objasm_save_vtx_vtxcol:

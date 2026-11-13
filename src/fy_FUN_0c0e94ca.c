@@ -1,16 +1,16 @@
 /* INLINE-ASM: renderer hand-written assembly: its inputs are registers (r4 command pointer, r5, r6, r10, r11, r12) and the callees it reaches by bsr take the rest; the four bsr calls became mov.l/jsr through r0 (dead at those points) because the C is linked far from the original and bsr cannot reach */
-/* Renderer command loop: walks the command words at r4, copies the state words at 0xC7FD240 into the output queue at r6, and dispatches by flag bits to the triangle / strip helpers FUN_0c0e97e0, 96c0, 98e0 and 9ea0 until a non-positive command ends it (the function starts at 0C0E94C0 with the pushes of fr15..fr12: the listed start 0C0E94CA is inside it). */
-void FUN_0c0e97e0(void);
-void FUN_0c0e96c0(void);
-void FUN_0c0e98e0(void);
-void FUN_0c0e9ea0(void);
+/* Renderer command loop: walks the command words at r4, copies state words into the output queue at r6 and dispatches by flag bits to the triangle and strip helpers until a non-positive command ends it. */
+void nl_display_triangle_spd(void);
+void nl_display_strip_spd(void);
+void nl_display_strip_nc_spd(void);
+void nl_display_triangle_nc_spd(void);
 #pragma inline_asm(FUN_0c0e94ca)
 int FUN_0c0e94ca(void)
 {
-    .IMPORT _FUN_0c0e97e0
-    .IMPORT _FUN_0c0e96c0
-    .IMPORT _FUN_0c0e98e0
-    .IMPORT _FUN_0c0e9ea0
+    .IMPORT _nl_display_triangle_spd
+    .IMPORT _nl_display_strip_spd
+    .IMPORT _nl_display_strip_nc_spd
+    .IMPORT _nl_display_triangle_nc_spd
     MOV R15,R1
     FMOV.S FR15,@-R15
     FMOV.S FR14,@-R15
@@ -130,8 +130,8 @@ L9590:
     NOP
     .ALIGN 4
 PC0E96A0: .DATA.L H'0C7FD240
-K97E0: .DATA.L _FUN_0c0e97e0
-K96C0: .DATA.L _FUN_0c0e96c0
-K98E0: .DATA.L _FUN_0c0e98e0
-K9EA0: .DATA.L _FUN_0c0e9ea0
+K97E0: .DATA.L _nl_display_triangle_spd
+K96C0: .DATA.L _nl_display_strip_spd
+K98E0: .DATA.L _nl_display_strip_nc_spd
+K9EA0: .DATA.L _nl_display_triangle_nc_spd
 }

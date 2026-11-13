@@ -1,7 +1,7 @@
 /* INLINE-ASM: runs on registers r11, r2 and fr2/fr4/fr6 held by the caller (renderer hand-written assembly), uses fschg */
 /* Stores four floats into a 32-byte slot of the vertex ring at 0xC7FD3A0 chosen by r11 & 3 (fr4, fr6, fr0 loaded from @r2, fr2). */
-#pragma inline_asm(FUN_0c0e8e20)
-void FUN_0c0e8e20(void)
+#pragma inline_asm(nl_objasm_save_vtx_ofst)
+void nl_objasm_save_vtx_ofst(void)
 {
     MOV #5,R10
     MOV R11,R0

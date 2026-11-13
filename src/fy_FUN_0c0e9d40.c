@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer fragment (index in r0, T flag from caller, FPSCR.SZ toggled by fschg, pc-relative table pointer) has no C form */
 /* nl_objasm: reads four floats of the table at 0xC0E95A0 (entry r0&3), scales two by fr3/fr1 and writes the four to r6 (pre-decrement), then a -1 or r6 marker. */
-#pragma inline_asm(FUN_0c0e9d40)
-void FUN_0c0e9d40(void)
+#pragma inline_asm(nl_objasm_send_saved_vtx_spd)
+void nl_objasm_send_saved_vtx_spd(void)
 {
     .DATA.W H'C903
     .DATA.W H'E205

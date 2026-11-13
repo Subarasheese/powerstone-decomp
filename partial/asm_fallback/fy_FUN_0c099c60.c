@@ -1,6 +1,6 @@
 /* INLINE-ASM: asm fallback: an ordinary compiled game function (a C form exists) whose original instructions are wrapped as inline assembly because the C was not written in this pass; calls out go through push/load/jsr sequences. */
-#pragma inline_asm(FUN_0c099c60)
-int FUN_0c099c60(void)
+#pragma inline_asm(pl_build_model_matrix)
+int pl_build_model_matrix(void)
 {
     MOV.L R14,@-R15
     MOV.L R13,@-R15

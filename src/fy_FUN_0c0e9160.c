@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written display-list strip transformer with three entry variants chosen by r8 (inputs r4, r5, r6, r8, r13, fr12-fr15, XMTRX; state in r9, r14, r2, r3); no C form exists. */
 /* Transforms a strip of vertices at r4 (ftrv, perspective divide, lighting dot products with fv12 and a table lookup through r8) and writes the display-list entries backwards below r6+32. */
-#pragma inline_asm(FUN_0c0e9160)
-void FUN_0c0e9160(void)
+#pragma inline_asm(nl_display_triangle_ofst)
+void nl_display_triangle_ofst(void)
 {
     tst r8,r8
     mov r8,r0

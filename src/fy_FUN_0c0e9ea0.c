@@ -1,7 +1,7 @@
 /* INLINE-ASM: hand-written renderer loop: register-passed state (r3, r4, r9, r12), bsr into sibling fragments and a braf jump table of bra entries; no C form */
-/* nl_objasm: polygon loop: per command at r4 calls the clip test fragment, then the transform/send fragments per vertex, and dispatches on the returned code r9 (braf table) to the clip variants. */
-#pragma inline_asm(FUN_0c0e9ea0)
-void FUN_0c0e9ea0(void)
+/* Polygon loop of the renderer: per command runs the clip test, transform and send fragments, then dispatches on the returned code to the clip variants. */
+#pragma inline_asm(nl_display_triangle_nc_spd)
+void nl_display_triangle_nc_spd(void)
 {
     .DATA.W H'2FA6
     .DATA.W H'2FB6

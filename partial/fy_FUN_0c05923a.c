@@ -1,12 +1,12 @@
 
-char *FUN_0c05923a(int a, char *e, int mode, int n, int c)
+char *obj_create_beside(int a, char *e, int mode, int n, int c)
 {
     char *obj;
     char *p;
     char **q;
     int i;
 
-    obj = FUN_0c058f60();
+    obj = obj_pool_pop();
     if (obj == 0)
         return 0;
     obj[2] = a;
@@ -36,17 +36,17 @@ char *FUN_0c05923a(int a, char *e, int mode, int n, int c)
         do {
             switch (obj[0x2DD]) {
             case 0:
-                q[i] = FUN_0c059538();
+                q[i] = part_alloc0();
                 break;
             case 1:
-                q[i] = FUN_0c0595fa();
+                q[i] = part_alloc1();
                 break;
             case 2:
-                q[i] = FUN_0c059698();
+                q[i] = part_alloc2();
                 break;
             }
             if (q[i] == 0) {
-                FUN_0c059330(obj);
+                obj_destroy(obj);
                 return 0;
             }
             obj[0x2DC] = obj[0x2DC] + 1;

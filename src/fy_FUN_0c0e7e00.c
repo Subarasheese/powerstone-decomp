@@ -1,22 +1,22 @@
 /* INLINE-ASM: renderer hand-written assembly: registers (r3 count, r4 vertex pointer, r9, r11, r12, T flag) are the interface and the callees read T and r0; the bsr calls became mov.l/jsr through r14 (saved and restored here) because the C is linked far from the original and bsr cannot reach */
-/* Renderer clipping loop: transforms three vertices per triangle with FUN_0c0e7f60, then depending on the clip bits in r9 skips the triangle, passes it whole (7), or clips it with the FUN_0c0e7be0 / 7c80 / 7cc0 / 7ce0 / 7d20 / 7d60 helpers; r3 triangles in a row, r12 bit 0 is set at the end. */
-void FUN_0c0e7f60(void);
-void FUN_0c0e7be0(void);
-void FUN_0c0e7cc0(void);
-void FUN_0c0e7ce0(void);
-void FUN_0c0e7c80(void);
-void FUN_0c0e7d20(void);
-void FUN_0c0e7d60(void);
-#pragma inline_asm(FUN_0c0e7e00)
-int FUN_0c0e7e00(void)
+/* Renderer clipping loop: transforms three vertices per triangle with nl_objasm_transform_tri, then depending on the clip bits in r9 skips the triangle, passes it whole (7), or clips it with the nl_objasm_transform_vtx / 7c80 / 7cc0 / 7ce0 / 7d20 / 7d60 helpers; r3 triangles in a row, r12 bit 0 is set at the end. */
+void nl_objasm_transform_tri(void);
+void nl_objasm_transform_vtx(void);
+void nl_objasm_save_vtx(void);
+void nl_objasm_shift_vtx(void);
+void nl_objasm_send_vtx(void);
+void nl_objasm_send_saved_vtx(void);
+void nl_objasm_clip_send_vtx(void);
+#pragma inline_asm(nl_display_triangle_nc)
+int nl_display_triangle_nc(void)
 {
-    .IMPORT _FUN_0c0e7f60
-    .IMPORT _FUN_0c0e7be0
-    .IMPORT _FUN_0c0e7cc0
-    .IMPORT _FUN_0c0e7ce0
-    .IMPORT _FUN_0c0e7c80
-    .IMPORT _FUN_0c0e7d20
-    .IMPORT _FUN_0c0e7d60
+    .IMPORT _nl_objasm_transform_tri
+    .IMPORT _nl_objasm_transform_vtx
+    .IMPORT _nl_objasm_save_vtx
+    .IMPORT _nl_objasm_shift_vtx
+    .IMPORT _nl_objasm_send_vtx
+    .IMPORT _nl_objasm_send_saved_vtx
+    .IMPORT _nl_objasm_clip_send_vtx
     MOV.L R10,@-R15
     MOV.L R11,@-R15
     STS.L PR,@-R15
@@ -241,11 +241,11 @@ L7F40:
     BRA L7E5E
     NOP
     .ALIGN 4
-K7F60: .DATA.L _FUN_0c0e7f60
-K7BE0: .DATA.L _FUN_0c0e7be0
-K7CC0: .DATA.L _FUN_0c0e7cc0
-K7CE0: .DATA.L _FUN_0c0e7ce0
-K7C80: .DATA.L _FUN_0c0e7c80
-K7D20: .DATA.L _FUN_0c0e7d20
-K7D60: .DATA.L _FUN_0c0e7d60
+K7F60: .DATA.L _nl_objasm_transform_tri
+K7BE0: .DATA.L _nl_objasm_transform_vtx
+K7CC0: .DATA.L _nl_objasm_save_vtx
+K7CE0: .DATA.L _nl_objasm_shift_vtx
+K7C80: .DATA.L _nl_objasm_send_vtx
+K7D20: .DATA.L _nl_objasm_send_saved_vtx
+K7D60: .DATA.L _nl_objasm_clip_send_vtx
 }

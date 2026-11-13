@@ -1,5 +1,5 @@
 
-void FUN_0c084d9e(char *o)
+void pl_kraken_attack_kind2_phase1(char *o)
 {
     int d;
     char *x = o + 0x72BC;
@@ -11,21 +11,21 @@ void FUN_0c084d9e(char *o)
         *(int *)(x + 8) = FUN_0c0c571c(o, 0);
         if (*(int *)(x + 8) == 0) {
             o[0x7223] = 0;
-            FUN_0c0a2080(o);
+            pl_end_action_choose_state(o);
         } else {
-            FUN_0c03d254(o, 0);
+            fx_spawn_03d254(o, 0);
             *(int *)(o + 0x1E80 + 0x1760 + 84) = 0;
             *(int *)(o + 0x1E80 + 0x1810 + 84) = 0;
             o[0x1E80 + 0x1760 + 64] = 0;
             o[0x1E80 + 0x1810 + 64] = 0;
             o[0x5CA0] = 0;
-            FUN_0c0a3914(o);
+            snd_play_char_voice(o);
             o[11] = o[11] + 1;
             *(short *)(o + 236) = 180;
         }
     }
-    FUN_0c09a910(o);
-    FUN_0c09da1c(o);
+    pl_step_motion(o);
+    pl_apply_motion_translation(o);
     *(short *)(o + 240) = *(short *)(o + 240) - 1;
     if (*(short *)(o + 240) == 0)
         *(short *)(o + 240) = 1;

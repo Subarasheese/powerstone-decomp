@@ -1,5 +1,5 @@
 
-int FUN_0c09cd32(int a4)
+int hit_find_contact_direction(int a4)
 {
     int stk[7];
     register int t2;
@@ -15,7 +15,7 @@ int FUN_0c09cd32(int a4)
     int t18;
     register int t19;
 
-    FUN_0c023524(a4, ((int)stk + 4));
+    hit_build_part_shape(a4, ((int)stk + 4));
     t2 = t1;
     t4 = 0x0;
     for (;;) {
@@ -42,7 +42,7 @@ int FUN_0c09cd32(int a4)
         if ((int)t25 >= (int)(*(signed char *)((a4 + 0x2D8)))) {
             return 0x0;
         }
-        t29 = FUN_0c025f7a(0x1, (*(signed char *)((((0x2B8 + a4) + t25) + 0x0))), ((int)stk + 4), (*(int *)((((t25 << 2) + (0x2C0 + a4)) + 0x0))));
+        t29 = hit_dispatch_shape_pair(0x1, (*(signed char *)((((0x2B8 + a4) + t25) + 0x0))), ((int)stk + 4), (*(int *)((((t25 << 2) + (0x2C0 + a4)) + 0x0))));
         if ((int)(signed char)t29 >= (int)0x4) {
             break;
         }

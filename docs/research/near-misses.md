@@ -15,7 +15,7 @@ subsequence of instructions with pool and branch displacements masked, so one ex
 | `p_0c0c10f0.c` | 236/312 | First function matches; the second differs in stack temporaries. |
 | `p_0c08352c.c`, `p_0c0a02d4.c`, `p_0c0a4030.c`, `p_0c04fc9e.c` | lower | Register allocation and parameter spills (`p_0c0a4030`: the original keeps a value in r14 and also stores the parameter to the stack). |
 | `p_0c03a024.c`, `p_0c05986c.c`, `p_0c06f4f0.c`, `p_0c08bf90.c`, `p_0c09d89c.c` | n/a | Do not build as committed (a compile error, or the code overflows the range by a few bytes). `p_0c06f4f0`: 8 of 9 functions matched in an earlier attempt, only `FUN_0c06f6ca` differed. `p_0c09d89c` overlaps two matched units, `m_0c09d990` and `m_0c09d9bc`, which would have to be removed first. |
-| `p_0c0101f0.c` | 35/38 | Parked: see [FUN_0c0101f0.md](FUN_0c0101f0.md). |
+| `p_0c0101f0.c` | 35/38 | Parked: see [vmu_lcd_refresh.md](vmu_lcd_refresh.md). |
 
 A quick way to see the real differences: build with the draft in `src/`, disassemble both images with
 `tools/shdis.py` over the range, and diff the two listings with the `@(...,pc)` displacements and branch targets

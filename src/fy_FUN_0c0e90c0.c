@@ -1,7 +1,7 @@
 /* INLINE-ASM: renderer hand-written assembly: vertex pointer in r4, clip-flag accumulator r9 and limit r12 held by the caller, XMTRX and the FV registers are used as registers, T flag shifted into r9 */
 /* Transforms three consecutive vertices (inline 32-byte records or 8-byte records pointing at their data, selected by bit 0 of the first word) by XMTRX and shifts into r9 one compare of r12 against each transformed w. */
-#pragma inline_asm(FUN_0c0e90c0)
-int FUN_0c0e90c0(void)
+#pragma inline_asm(nl_objasm_transform_tri_ofst)
+int nl_objasm_transform_tri_ofst(void)
 {
     MOV R4,R1
     MOV.L @R4,R0

@@ -1,3 +1,0 @@
-/* @unit 0c09d9bc-0c09d9e8 */
-struct S { char p[56]; float a, b, c, d, e, f; };
-void FUN_0c09d9bc(struct S *s) { s->a += s->d; s->c += s->f; s->b += s->e; }

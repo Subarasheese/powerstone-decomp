@@ -1,11 +1,11 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c05923a.json (synthetic). */
 /* Allocates an actor node from the free list, links it before/after `at` in list `list` (heads at 0xC7E4070 / 0xC7E4098), then fills its n child slots from the pool selected by `kind`. Returns the node or 0. */
-struct Node *FUN_0c058f60(void);
-int FUN_0c059330(struct Node *);
-int FUN_0c059538(void);
-int FUN_0c0595fa(void);
-int FUN_0c059698(void);
+struct Node *obj_pool_pop(void);
+int obj_destroy(struct Node *);
+int part_alloc0(void);
+int part_alloc1(void);
+int part_alloc2(void);
 
 struct Node {
     char p0[2];
@@ -20,13 +20,13 @@ struct Node {
     int slot[1];            /* 0x2E0 */
 };
 
-struct Node *FUN_0c05923a(int list, struct Node *at, int where, int n, int kind)
+struct Node *obj_create_beside(int list, struct Node *at, int where, int n, int kind)
 {
     struct Node *x;
     struct Node *p;
     int i;
 
-    x = FUN_0c058f60();
+    x = obj_pool_pop();
     if (x == 0) {
         return 0;
     }
@@ -56,17 +56,17 @@ struct Node *FUN_0c05923a(int list, struct Node *at, int where, int n, int kind)
     for (i = 0; i < n; i++) {
         switch (x->kind) {
         case 0:
-            x->slot[i] = FUN_0c059538();
+            x->slot[i] = part_alloc0();
             break;
         case 1:
-            x->slot[i] = FUN_0c0595fa();
+            x->slot[i] = part_alloc1();
             break;
         case 2:
-            x->slot[i] = FUN_0c059698();
+            x->slot[i] = part_alloc2();
             break;
         }
         if (x->slot[i] == 0) {
-            FUN_0c059330(x);
+            obj_destroy(x);
             return 0;
         }
         x->count = x->count + 1;

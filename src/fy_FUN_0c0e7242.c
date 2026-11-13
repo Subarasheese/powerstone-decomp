@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
-#pragma inline_asm(FUN_0c0e7242)
-int FUN_0c0e7242(void)
+/* Hand-written SH-4 routine: walks a display command list, transforming vertices with the matrix and writing store-queue output */
+#pragma inline_asm(nl_objasm_draw_obj)
+int nl_objasm_draw_obj(void)
 {
     NOP
     ADD #24,R4

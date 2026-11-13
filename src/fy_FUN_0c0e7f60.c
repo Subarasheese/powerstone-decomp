@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written FPU routine (3 vertices through the matrix in XMTRX with ftrv, clip flags accumulated through the T flag into r9, argument in r4 and flags in r12) that C cannot express */
-#pragma inline_asm(FUN_0c0e7f60)
-int FUN_0c0e7f60(void)
+/* Transforms three vertices through the XMTRX matrix and accumulates clip flags into r9. */
+#pragma inline_asm(nl_objasm_transform_tri)
+int nl_objasm_transform_tri(void)
 {
     MOV R4,R1
     MOV.L @R4,R0

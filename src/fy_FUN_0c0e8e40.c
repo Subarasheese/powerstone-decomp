@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: its inputs are r11 and fr (live registers) and it runs in FPSCR.SZ=1 (fschg) over a table, no C form. */
+/* NL object assembly over a table in FPSCR.SZ=1 mode (hand-written assembly wrapper). */
 #pragma inline_asm(ia_FUN_0c0e8e40)
 static void ia_FUN_0c0e8e40(void)
 {
@@ -28,7 +29,7 @@ static void ia_FUN_0c0e8e40(void)
     FSCHG
 }
 
-void FUN_0c0e8e40(void)
+void nl_objasm_shift_vtx_ofst(void)
 {
     ia_FUN_0c0e8e40();
 }

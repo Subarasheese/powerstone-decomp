@@ -1,10 +1,10 @@
 /* Draft: proven in a copy without the runtime-helper renames, but the call arguments differ from the original once
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c0529f0.json (synthetic). */
 /* Scene setup: clears three state fields, copies a 12-byte descriptor chosen by byte 37 into the record at 0xC7F31BC, runs the init calls and, if either slot holds mode 10, FUN_0c08a6c0. */
-extern void FUN_0c058fa2(void);
-extern void FUN_0c099738(void);
+extern void obj_system_init(void);
+extern void pl_place_start_positions(void);
 extern void FUN_0c041e14(int a);
-extern void FUN_0c02d774(void);
+extern void ui_init_hud(void);
 extern void FUN_0c02d82c(void);
 extern void FUN_0c02d83c(void);
 extern void FUN_0c026c7c(void);
@@ -12,7 +12,7 @@ extern void FUN_0c04c0ea(void);
 extern void FUN_0c0cc074(void);
 extern void FUN_0c05fc00(void);
 extern void FUN_0c08a6c0(void);
-void FUN_0c0529f0(void)
+void game_reset_state_block(void)
 {
     char *g = (char *)0xC7F302C;
     int *o = (int *)0xC7F31BC;
@@ -24,11 +24,11 @@ void FUN_0c0529f0(void)
     o[0] = e[0];
     o[1] = e[1];
     o[2] = e[2];
-    FUN_0c058fa2();
-    FUN_0c099738();
+    obj_system_init();
+    pl_place_start_positions();
     FUN_0c041e14(0);
     FUN_0c041e14(1);
-    FUN_0c02d774();
+    ui_init_hud();
     FUN_0c02d82c();
     FUN_0c02d83c();
     FUN_0c026c7c();

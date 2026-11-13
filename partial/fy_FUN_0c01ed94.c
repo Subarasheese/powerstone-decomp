@@ -15,21 +15,21 @@ int FUN_0c01ed94(int a4, int a5, int a6, int a7)
                                 if (t0 != 8) {
                                     return t0;
                                 }
-                                return FUN_0c01f28e(a4, a5, a6, a7);
+                                return vmu_menu_step_notice_wait_ok(a4, a5, a6, a7);
                             }
                             return FUN_0c01f248(a4, a5, a6, a7);
                         }
-                        return FUN_0c01f1f6(a4, a5, a6, a7);
+                        return vmu_menu_state_save(a4, a5, a6, a7);
                     }
                     t0 = FUN_0c01fa70();
                     if ((int)(signed char)t0 >= 0) {
-                        return FUN_0c01f19e(a4);
+                        return vmu_menu_step_choose_yes_no(a4);
                     }
                     return (signed char)t0;
                 }
                 (((struct o2F_uchar *)0xC362A52)->v) = 0x6;
                 (((struct o2_uchar *)0xC362A52)->v) = 0x0;
-                return FUN_0c01f1f6(a4, a5, a6, a7);
+                return vmu_menu_state_save(a4, a5, a6, a7);
             }
             t0 = FUN_0c01fa70();
             if ((int)(signed char)t0 >= 0) {

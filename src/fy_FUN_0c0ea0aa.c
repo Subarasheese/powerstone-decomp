@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: the clip/send loop of the display list builder, reading and updating r4-r6, r9-r12 and fr (live registers), looping through sibling fragments with SZ toggles; no C form. */
+/* NL object assembly: the clip/send loop of the display list builder, looping through sibling fragments (hand-written assembly wrapper). */
 #pragma inline_asm(ia_FUN_0c0ea0aa)
 static void ia_FUN_0c0ea0aa(void)
 {
@@ -127,7 +128,7 @@ PL4:
     .DATA.L H'0C0EAB00
 }
 
-void FUN_0c0ea0aa(void)
+void nl_objasm_draw_obj_spd_ofst(void)
 {
     ia_FUN_0c0ea0aa();
 }

@@ -25,14 +25,14 @@ typedef struct { int a, b, c; } S12;
 extern void FUN_0c0ddf30(void);
 extern void FUN_0c0fb54c(int a);
 extern void FUN_0c0fb5dc(int a, int b, int c, int d);
-extern void FUN_0c0de1e0(int a);
+extern void gfx_init_background_render_state(int a);
 extern void FUN_0c0de120(int a);
 extern void FUN_0c0e31c0(float a, float b, float c, float d);
 extern void kmSetCullingRegister(float a);
 extern void FUN_0c0fc2a6(int a);
 extern void FUN_0c0de820(int a);
 extern void FUN_0c0df080(int a);
-void FUN_0c0de340(int a, int b, int c)
+void gfx_init_display_mode(int a, int b, int c)
 {
     short *w = (short *)0xC7FD498;
     int *rec;
@@ -59,7 +59,7 @@ void FUN_0c0de340(int a, int b, int c)
     FUN_0c0fb5dc(rec[1], *(int *)0xC7F88EC, w[4], w[5]);
     w[2] = ((short *)rec)[4];
     w[3] = ((short *)rec)[5];
-    FUN_0c0de1e0(0xC7F8EB8);
+    gfx_init_background_render_state(0xC7F8EB8);
     FUN_0c0de120(0xC7FC4F8);
     *(int *)0xC7FCAF8 = 0xC7FC4F8;
     *(int *)0xC7FCAFC = 0;

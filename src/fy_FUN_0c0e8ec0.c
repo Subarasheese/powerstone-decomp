@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written register-convention routine (r0/r11 slot indices, r12/r7/r5/r6 and fr registers in, T flag from the caller, fschg pair moves, fmac) that C cannot express */
-#pragma inline_asm(FUN_0c0e8ec0)
-void FUN_0c0e8ec0(void)
+/* Hand-written SH-4 routine: interpolates a vertex between two table entries by a ratio and writes it to the send buffer */
+#pragma inline_asm(nl_objasm_clip_send_vtx_ofst)
+void nl_objasm_clip_send_vtx_ofst(void)
 {
     AND #3,R0
     SHLL2 R0

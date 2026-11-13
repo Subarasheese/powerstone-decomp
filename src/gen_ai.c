@@ -3,12 +3,12 @@
 
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
-int FUN_0c0df340(float);
+int math_signed_sqrt(float);
 int FUN_0c1070a0(int);
 int FUN_0c10796a(int, int);
 int mwRnaErrCallFunc(int, int, int, int);
 int FUN_0c107482(int a4, int a5, int a6, int a7);
-int FUN_0c06225a(int a4, int a5);
+int math_mat_row_length(int a4, int a5);
 
 int FUN_0c107482(int a4, int a5, int a6, int a7)
 {
@@ -28,19 +28,3 @@ int FUN_0c107482(int a4, int a5, int a6, int a7)
     return t5;
 }
 
-int FUN_0c06225a(int a4, int a5)
-{
-    register float u0;
-    register float u1;
-    register float u2;
-    register float u3;
-
-    u0 = *(float *)(((a4 + ((a5 << 2) << 2)) + 0x0));
-    u1 = (((struct o4_float *)((a4 + ((a5 << 2) << 2))))->v);
-    u2 = (((struct o8_float *)((a4 + ((a5 << 2) << 2))))->v);
-    u3 = (u1 * u1);
-    u3 = u3 + u0 * u0;
-    u0 = u3;
-    u0 = u0 + u2 * u2;
-    return (FUN_0c0df340(u0));
-}

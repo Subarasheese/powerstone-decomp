@@ -1,6 +1,7 @@
 /* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
-#pragma inline_asm(FUN_0c0e9d80)
-int FUN_0c0e9d80(void)
+/* Hand-written renderer routine using FPSCR.SZ transfer mode. */
+#pragma inline_asm(nl_objasm_clip_send_vtx_spd)
+int nl_objasm_clip_send_vtx_spd(void)
 {
     AND #3,R0
     SHLL2 R0

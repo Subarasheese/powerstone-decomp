@@ -3,19 +3,19 @@
 /* Allocates a node, links it at the head of one of two per-queue lists, then fills its slots by a type-selected constructor. */
 struct nd { char p0[2]; unsigned char q; char p1[0x11]; struct nd *next; struct nd *prev;
             char p2[0x2DC - 0x1C]; signed char cnt; signed char type; char p3[2]; int slot[1]; };
-struct nd *FUN_0c058f60(void);
-void FUN_0c059330(struct nd *);
-int FUN_0c059538(void);
-int FUN_0c0595fa(void);
-int FUN_0c059698(void);
+struct nd *obj_pool_pop(void);
+void obj_destroy(struct nd *);
+int part_alloc0(void);
+int part_alloc1(void);
+int part_alloc2(void);
 
-struct nd *FUN_0c059132(int a4, int a5, int a6, int a7)
+struct nd *obj_create(int a4, int a5, int a6, int a7)
 {
     struct nd *n, *h;
     struct nd **pa, **pb;
     int i;
 
-    n = FUN_0c058f60();
+    n = obj_pool_pop();
     if (n == 0)
         return 0;
     n->q = a4;
@@ -44,17 +44,17 @@ struct nd *FUN_0c059132(int a4, int a5, int a6, int a7)
     for (i = 0; i < a6; i++) {
         switch (n->type) {
         case 0:
-            n->slot[i] = FUN_0c059538();
+            n->slot[i] = part_alloc0();
             break;
         case 1:
-            n->slot[i] = FUN_0c0595fa();
+            n->slot[i] = part_alloc1();
             break;
         case 2:
-            n->slot[i] = FUN_0c059698();
+            n->slot[i] = part_alloc2();
             break;
         }
         if (n->slot[i] == 0) {
-            FUN_0c059330(n);
+            obj_destroy(n);
             return 0;
         }
         n->cnt++;

@@ -1,7 +1,7 @@
 /* INLINE-ASM: renderer hand-written assembly on r11 and r2 held by the caller, uses fschg */
 /* Reads a 64-bit pair from the 4-slot ring at 0xC7FD2A0 (slot r11&3, minus 8 bytes) and stores it into the slots of r11-1 and r11-2 (mod 4). */
-#pragma inline_asm(FUN_0c0e7ce0)
-void FUN_0c0e7ce0(void)
+#pragma inline_asm(nl_objasm_shift_vtx)
+void nl_objasm_shift_vtx(void)
 {
     MOV #5,R1
     MOV.L L1,R10

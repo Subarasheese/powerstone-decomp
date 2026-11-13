@@ -1,4 +1,4 @@
-/* Generated straight-line translation (kept from the generator, checked on drawn cases): FUN_0c093254. */
+/* Generated straight-line translation (kept from the generator, checked on drawn cases): pl_update_frame. */
 
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
@@ -47,44 +47,44 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int FUN_0c036a6c(int, int);
-int FUN_0c0375d4(int);
-int FUN_0c044e38(int);
-int FUN_0c049e68(int, int);
+int fx_spawn_036a6c(int, int);
+int fx_spawn_0375d4(int);
+int fx_spawn_044e38(int);
+int item_spawn_pickup_popup(int, int);
 int FUN_0c0555c4(void);
 int FUN_0c0555dc(void);
-int FUN_0c059330(int);
+int obj_destroy(int);
 int FUN_0c09375c(int);
-int FUN_0c099a88(int);
+int pl_clear_tint_flag(int);
 int FUN_0c099a92(int);
 int FUN_0c099ac6(int);
 int FUN_0c099ae4(int);
 int FUN_0c099afe(int);
-int FUN_0c09a808(int, int, int);
-int FUN_0c09c6b8(int);
-int FUN_0c09c7be(int, int);
-int FUN_0c09c894(int);
-int FUN_0c09cb20(void);
-int FUN_0c09d8ec(int);
+int pl_start_motion(int, int, int);
+int pl_get_held_item_class(int);
+int pl_mash_reduce_counter(int, int);
+int pl_get_hit_count_of_opponent(int);
+int pl_check_item_pickup(void);
+int pl_update_camera_side_flag(int);
 int FUN_0c0a0074(int);
-int FUN_0c0a1d88(int, int);
-int FUN_0c0a2e26(int, int, int);
-int FUN_0c0a3796(int, int);
-int FUN_0c0a3914(int, int);
-int FUN_0c0abef2(int);
-int FUN_0c0abf64(int);
-float FUN_0c0df340(float);
-int FUN_0c0df360(float);
-float FUN_0c0df4d0(int);
-float FUN_0c0df940(void);
-float FUN_0c0dfa50(int);
+int obj_set_record_char(int, int);
+int pl_change_state(int, int, int);
+int snd_play_side_se(int, int);
+int snd_play_char_voice(int, int);
+int obj_clear_slot_contact(int);
+int obj_collect_slot_contacts(int);
+float math_signed_sqrt(float);
+int math_atan_angle16(float);
+float math_cos_angle16(int);
+float math_rand_float(void);
+float math_sin_angle16(int);
 int FUN_0c0e6e5c(void);
 int FUN_0c0e6f24(void);
 int FUN_0c0e6fe8(void);
 int thunk_FUN_0c062242(int, int);
-int FUN_0c0ba090(int a4);
-int FUN_0c093254(int a4, int a5, int a6, int a7);
-int FUN_0c093254(int a4, int a5, int a6, int a7)
+int fx_update_16(int a4);
+int pl_update_frame(int a4, int a5, int a6, int a7);
+int pl_update_frame(int a4, int a5, int a6, int a7)
 {
     int t0;
     register int t1;
@@ -165,18 +165,18 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
         if (t60 != 1) {
             return t60;
         }
-        FUN_0c0abef2((*(signed char *)((a4 + 0x3))));
+        obj_clear_slot_contact((*(signed char *)((a4 + 0x3))));
         t60 = *(signed char *)((a4 + 0x9));
         if (((t60 == 0) && (t0 = *(signed char *)((a4 + 0x71BA)), t1 = *(signed char *)(((t0 << 2) + 0xC338D3B)), t1 != 0)) || ((t60 == 1) || ((t2 = *(signed char *)((a4 + 0x71BA)), t2 == 16) && (t3 = *(signed char *)((a4 + 0xA)), t3 == 1)))) {
-            t0 = FUN_0c09c6b8(a4);
+            t0 = pl_get_held_item_class(a4);
             if ((signed char)t0 == 0) {
-                FUN_0c0abf64(a4);
+                obj_collect_slot_contacts(a4);
             }
         }
         if ((*(signed char *)((a4 + 0x9))) == 0) {
             t0 = FUN_0c0555c4();
             if (t0 != 0) {
-                t0 = FUN_0c09cb20();
+                t0 = pl_check_item_pickup();
                 if (((signed char)t0 != 1) && ((t4 = *(signed char *)((a4 + 0x71F1)), t4 != 0) || ((t5 = *(signed char *)((a4 + 0x71BA)), t5 == 23) || (t6 = *(signed char *)((a4 + 0x7230)), (int)t6 < (int)0x3)))) {
                     if ((*(signed char *)0xC7F3192) == 0) {
                         if (((((struct o720C_short *)(a4))->v)) != 0) {
@@ -197,7 +197,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             switch (t0) {
                             case 32:
                                 FUN_0c099a92(a4);
-                                FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                                pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                                 if (((*(signed char *)((a4 + 0x7240))) == 0) && (t8 = (((struct o7228_short *)(a4))->v), (int)t8 > 0)) {
                                     (((struct o7240_uchar *)(a4))->v) = 0x14;
                                     t0 = (((struct o7228_short *)(a4))->v);
@@ -222,17 +222,17 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             if ((int)(short)(t0 - 1) <= 0) {
                                 (((struct o7226_uchar *)(a4))->v) = 0x0;
                                 (((struct o7228_ushort *)(a4))->v) = 0x0;
-                                FUN_0c099a88(a4);
+                                pl_clear_tint_flag(a4);
                             }
                         } else {
-                            FUN_0c099a88(a4);
+                            pl_clear_tint_flag(a4);
                         }
                     } else {
                         t0 = *(signed char *)((a4 + 0x7226));
                         switch (t0) {
                         case 32:
                             FUN_0c099a92(a4);
-                            FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                            pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                             if (((*(signed char *)((a4 + 0x7240))) == 0) && (t9 = (((struct o7228_short *)(a4))->v), (int)t9 > 0)) {
                                 (((struct o7240_uchar *)(a4))->v) = 0x14;
                                 t0 = (((struct o7228_short *)(a4))->v);
@@ -257,14 +257,14 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         if ((int)(short)(t0 - 1) <= 0) {
                             (((struct o7226_uchar *)(a4))->v) = 0x0;
                             (((struct o7228_ushort *)(a4))->v) = 0x0;
-                            FUN_0c099a88(a4);
+                            pl_clear_tint_flag(a4);
                         }
                     }
                     if ((*(signed char *)((a4 + 0x71F1))) != 0) {
                         t0 = FUN_0c0555c4();
                         if (t0 != 0) {
                             if (((*(signed char *)((a4 + 0x71F1))) != 0) && ((t10 = (((struct o71F4_short *)(a4))->v), (int)t10 <= 0) && ((t11 = *(signed char *)((a4 + 0x9)), t11 == 0) && ((t12 = *(signed char *)((a4 + 0x71BA)), t12 != 10) && ((t13 = *(signed char *)((a4 + 0x71BA)), t13 != 11) && ((t14 = *(signed char *)((a4 + 0x71BA)), t14 != 23) && (t15 = *(signed char *)0xC7F3053, t15 == 0))))))) {
-                                return FUN_0c0a2e26(a4, 0x17, 0x0);
+                                return pl_change_state(a4, 0x17, 0x0);
                             }
                             if (((((struct o71F4_short *)(a4))->v)) != 0) {
                                 if ((*(signed char *)0xC7F4766) == 0) {
@@ -275,12 +275,12 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                                     if (t0 != 0) {
                                         if (((*(int *)0xC7F307C) & 7) != 0) {
                                         } else {
-                                            FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                            fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                                         }
                                     }
                                 }
                             }
-                            FUN_0c09d8ec(a4);
+                            pl_update_camera_side_flag(a4);
                             FUN_0c0e6fe8();
                             if ((*(signed char *)((a4 + 0x105))) != 0) {
                                 (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -304,7 +304,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                                 }
                             }
                         } else {
-                            FUN_0c09d8ec(a4);
+                            pl_update_camera_side_flag(a4);
                             FUN_0c0e6fe8();
                             if ((*(signed char *)((a4 + 0x105))) != 0) {
                                 (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -332,10 +332,10 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         if (((int)(*(signed char *)((a4 + 0x7230))) >= (int)0x2) && ((t17 = *(signed char *)((a4 + 0x1)), t17 != 0) && (t18 = *(signed char *)0xC7F319E, t18 == 0))) {
                             t0 = FUN_0c0555c4();
                             if ((t0 != 0) && (t19 = *(int *)0xC7F307C, (t19 & 7) == 0)) {
-                                FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                             }
                         }
-                        FUN_0c09d8ec(a4);
+                        pl_update_camera_side_flag(a4);
                         FUN_0c0e6fe8();
                         if ((*(signed char *)((a4 + 0x105))) != 0) {
                             (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -361,11 +361,11 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                     }
                 } else {
                     if ((int)(*(signed char *)((a4 + 0x7230))) < (int)0x3) {
-                        FUN_0c0a3796((*(signed char *)((a4 + 0x3))), 0x12);
-                        FUN_0c049e68(a4, 0x0);
+                        snd_play_side_se((*(signed char *)((a4 + 0x3))), 0x12);
+                        item_spawn_pickup_popup(a4, 0x0);
                     }
                     if (((*(signed char *)((a4 + 0x71F1))) == 0) && (t20 = *(signed char *)((a4 + 0x7230)), (int)t20 >= (int)0x3)) {
-                        return FUN_0c0a2e26(a4, 0x17, 0x0);
+                        return pl_change_state(a4, 0x17, 0x0);
                     }
                     if ((*(signed char *)0xC7F3192) == 0) {
                         if (((((struct o720C_short *)(a4))->v)) != 0) {
@@ -386,7 +386,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             switch (t0) {
                             case 32:
                                 FUN_0c099a92(a4);
-                                FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                                pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                                 if (((*(signed char *)((a4 + 0x7240))) == 0) && (t22 = (((struct o7228_short *)(a4))->v), (int)t22 > 0)) {
                                     (((struct o7240_uchar *)(a4))->v) = 0x14;
                                     t0 = (((struct o7228_short *)(a4))->v);
@@ -411,17 +411,17 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             if ((int)(short)(t0 - 1) <= 0) {
                                 (((struct o7226_uchar *)(a4))->v) = 0x0;
                                 (((struct o7228_ushort *)(a4))->v) = 0x0;
-                                FUN_0c099a88(a4);
+                                pl_clear_tint_flag(a4);
                             }
                         } else {
-                            FUN_0c099a88(a4);
+                            pl_clear_tint_flag(a4);
                         }
                     } else {
                         t0 = *(signed char *)((a4 + 0x7226));
                         switch (t0) {
                         case 32:
                             FUN_0c099a92(a4);
-                            FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                            pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                             if (((*(signed char *)((a4 + 0x7240))) == 0) && (t23 = (((struct o7228_short *)(a4))->v), (int)t23 > 0)) {
                                 (((struct o7240_uchar *)(a4))->v) = 0x14;
                                 t0 = (((struct o7228_short *)(a4))->v);
@@ -446,14 +446,14 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         if ((int)(short)(t0 - 1) <= 0) {
                             (((struct o7226_uchar *)(a4))->v) = 0x0;
                             (((struct o7228_ushort *)(a4))->v) = 0x0;
-                            FUN_0c099a88(a4);
+                            pl_clear_tint_flag(a4);
                         }
                     }
                     if ((*(signed char *)((a4 + 0x71F1))) != 0) {
                         t0 = FUN_0c0555c4();
                         if (t0 != 0) {
                             if (((*(signed char *)((a4 + 0x71F1))) != 0) && ((t24 = (((struct o71F4_short *)(a4))->v), (int)t24 <= 0) && ((t25 = *(signed char *)((a4 + 0x9)), t25 == 0) && ((t26 = *(signed char *)((a4 + 0x71BA)), t26 != 10) && ((t27 = *(signed char *)((a4 + 0x71BA)), t27 != 11) && ((t28 = *(signed char *)((a4 + 0x71BA)), t28 != 23) && (t29 = *(signed char *)0xC7F3053, t29 == 0))))))) {
-                                return FUN_0c0a2e26(a4, 0x17, 0x0);
+                                return pl_change_state(a4, 0x17, 0x0);
                             }
                             if (((((struct o71F4_short *)(a4))->v)) != 0) {
                                 if ((*(signed char *)0xC7F4766) == 0) {
@@ -464,12 +464,12 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                                     if (t0 != 0) {
                                         if (((*(int *)0xC7F307C) & 7) != 0) {
                                         } else {
-                                            FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                            fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                                         }
                                     }
                                 }
                             }
-                            FUN_0c09d8ec(a4);
+                            pl_update_camera_side_flag(a4);
                             FUN_0c0e6fe8();
                             if ((*(signed char *)((a4 + 0x105))) != 0) {
                                 (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -493,7 +493,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                                 }
                             }
                         } else {
-                            FUN_0c09d8ec(a4);
+                            pl_update_camera_side_flag(a4);
                             FUN_0c0e6fe8();
                             if ((*(signed char *)((a4 + 0x105))) != 0) {
                                 (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -521,10 +521,10 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         if (((int)(*(signed char *)((a4 + 0x7230))) >= (int)0x2) && ((t31 = *(signed char *)((a4 + 0x1)), t31 != 0) && (t32 = *(signed char *)0xC7F319E, t32 == 0))) {
                             t0 = FUN_0c0555c4();
                             if ((t0 != 0) && (t33 = *(int *)0xC7F307C, (t33 & 7) == 0)) {
-                                FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                             }
                         }
-                        FUN_0c09d8ec(a4);
+                        pl_update_camera_side_flag(a4);
                         FUN_0c0e6fe8();
                         if ((*(signed char *)((a4 + 0x105))) != 0) {
                             (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -569,7 +569,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         switch (t0) {
                         case 32:
                             FUN_0c099a92(a4);
-                            FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                            pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                             if (((*(signed char *)((a4 + 0x7240))) == 0) && (t35 = (((struct o7228_short *)(a4))->v), (int)t35 > 0)) {
                                 (((struct o7240_uchar *)(a4))->v) = 0x14;
                                 t0 = (((struct o7228_short *)(a4))->v);
@@ -594,17 +594,17 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         if ((int)(short)(t0 - 1) <= 0) {
                             (((struct o7226_uchar *)(a4))->v) = 0x0;
                             (((struct o7228_ushort *)(a4))->v) = 0x0;
-                            FUN_0c099a88(a4);
+                            pl_clear_tint_flag(a4);
                         }
                     } else {
-                        FUN_0c099a88(a4);
+                        pl_clear_tint_flag(a4);
                     }
                 } else {
                     t0 = *(signed char *)((a4 + 0x7226));
                     switch (t0) {
                     case 32:
                         FUN_0c099a92(a4);
-                        FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                        pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                         if (((*(signed char *)((a4 + 0x7240))) == 0) && (t36 = (((struct o7228_short *)(a4))->v), (int)t36 > 0)) {
                             (((struct o7240_uchar *)(a4))->v) = 0x14;
                             t0 = (((struct o7228_short *)(a4))->v);
@@ -629,14 +629,14 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                     if ((int)(short)(t0 - 1) <= 0) {
                         (((struct o7226_uchar *)(a4))->v) = 0x0;
                         (((struct o7228_ushort *)(a4))->v) = 0x0;
-                        FUN_0c099a88(a4);
+                        pl_clear_tint_flag(a4);
                     }
                 }
                 if ((*(signed char *)((a4 + 0x71F1))) != 0) {
                     t0 = FUN_0c0555c4();
                     if (t0 != 0) {
                         if (((*(signed char *)((a4 + 0x71F1))) != 0) && ((t37 = (((struct o71F4_short *)(a4))->v), (int)t37 <= 0) && ((t38 = *(signed char *)((a4 + 0x9)), t38 == 0) && ((t39 = *(signed char *)((a4 + 0x71BA)), t39 != 10) && ((t40 = *(signed char *)((a4 + 0x71BA)), t40 != 11) && ((t41 = *(signed char *)((a4 + 0x71BA)), t41 != 23) && (t42 = *(signed char *)0xC7F3053, t42 == 0))))))) {
-                            return FUN_0c0a2e26(a4, 0x17, 0x0);
+                            return pl_change_state(a4, 0x17, 0x0);
                         }
                         if (((((struct o71F4_short *)(a4))->v)) != 0) {
                             if ((*(signed char *)0xC7F4766) == 0) {
@@ -647,12 +647,12 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                                 if (t0 != 0) {
                                     if (((*(int *)0xC7F307C) & 7) != 0) {
                                     } else {
-                                        FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                        fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                                     }
                                 }
                             }
                         }
-                        FUN_0c09d8ec(a4);
+                        pl_update_camera_side_flag(a4);
                         FUN_0c0e6fe8();
                         if ((*(signed char *)((a4 + 0x105))) != 0) {
                             (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -676,7 +676,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             }
                         }
                     } else {
-                        FUN_0c09d8ec(a4);
+                        pl_update_camera_side_flag(a4);
                         FUN_0c0e6fe8();
                         if ((*(signed char *)((a4 + 0x105))) != 0) {
                             (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -704,10 +704,10 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                     if (((int)(*(signed char *)((a4 + 0x7230))) >= (int)0x2) && ((t44 = *(signed char *)((a4 + 0x1)), t44 != 0) && (t45 = *(signed char *)0xC7F319E, t45 == 0))) {
                         t0 = FUN_0c0555c4();
                         if ((t0 != 0) && (t46 = *(int *)0xC7F307C, (t46 & 7) == 0)) {
-                            FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                            fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                         }
                     }
-                    FUN_0c09d8ec(a4);
+                    pl_update_camera_side_flag(a4);
                     FUN_0c0e6fe8();
                     if ((*(signed char *)((a4 + 0x105))) != 0) {
                         (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -752,7 +752,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                     switch (t0) {
                     case 32:
                         FUN_0c099a92(a4);
-                        FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                        pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                         if (((*(signed char *)((a4 + 0x7240))) == 0) && (t48 = (((struct o7228_short *)(a4))->v), (int)t48 > 0)) {
                             (((struct o7240_uchar *)(a4))->v) = 0x14;
                             t0 = (((struct o7228_short *)(a4))->v);
@@ -777,17 +777,17 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                     if ((int)(short)(t0 - 1) <= 0) {
                         (((struct o7226_uchar *)(a4))->v) = 0x0;
                         (((struct o7228_ushort *)(a4))->v) = 0x0;
-                        FUN_0c099a88(a4);
+                        pl_clear_tint_flag(a4);
                     }
                 } else {
-                    FUN_0c099a88(a4);
+                    pl_clear_tint_flag(a4);
                 }
             } else {
                 t0 = *(signed char *)((a4 + 0x7226));
                 switch (t0) {
                 case 32:
                     FUN_0c099a92(a4);
-                    FUN_0c09c7be(a4, ((0x723E + a4) + 0x2));
+                    pl_mash_reduce_counter(a4, ((0x723E + a4) + 0x2));
                     if (((*(signed char *)((a4 + 0x7240))) == 0) && (t49 = (((struct o7228_short *)(a4))->v), (int)t49 > 0)) {
                         (((struct o7240_uchar *)(a4))->v) = 0x14;
                         t0 = (((struct o7228_short *)(a4))->v);
@@ -812,14 +812,14 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                 if ((int)(short)(t0 - 1) <= 0) {
                     (((struct o7226_uchar *)(a4))->v) = 0x0;
                     (((struct o7228_ushort *)(a4))->v) = 0x0;
-                    FUN_0c099a88(a4);
+                    pl_clear_tint_flag(a4);
                 }
             }
             if ((*(signed char *)((a4 + 0x71F1))) != 0) {
                 t0 = FUN_0c0555c4();
                 if (t0 != 0) {
                     if (((*(signed char *)((a4 + 0x71F1))) != 0) && ((t50 = (((struct o71F4_short *)(a4))->v), (int)t50 <= 0) && ((t51 = *(signed char *)((a4 + 0x9)), t51 == 0) && ((t52 = *(signed char *)((a4 + 0x71BA)), t52 != 10) && ((t53 = *(signed char *)((a4 + 0x71BA)), t53 != 11) && ((t54 = *(signed char *)((a4 + 0x71BA)), t54 != 23) && (t55 = *(signed char *)0xC7F3053, t55 == 0))))))) {
-                        return FUN_0c0a2e26(a4, 0x17, 0x0);
+                        return pl_change_state(a4, 0x17, 0x0);
                     }
                     if (((((struct o71F4_short *)(a4))->v)) != 0) {
                         if ((*(signed char *)0xC7F4766) == 0) {
@@ -830,12 +830,12 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                             if (t0 != 0) {
                                 if (((*(int *)0xC7F307C) & 7) != 0) {
                                 } else {
-                                    FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                                    fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                                 }
                             }
                         }
                     }
-                    FUN_0c09d8ec(a4);
+                    pl_update_camera_side_flag(a4);
                     FUN_0c0e6fe8();
                     if ((*(signed char *)((a4 + 0x105))) != 0) {
                         (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -859,7 +859,7 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                         }
                     }
                 } else {
-                    FUN_0c09d8ec(a4);
+                    pl_update_camera_side_flag(a4);
                     FUN_0c0e6fe8();
                     if ((*(signed char *)((a4 + 0x105))) != 0) {
                         (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -887,10 +887,10 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
                 if (((int)(*(signed char *)((a4 + 0x7230))) >= (int)0x2) && ((t57 = *(signed char *)((a4 + 0x1)), t57 != 0) && (t58 = *(signed char *)0xC7F319E, t58 == 0))) {
                     t0 = FUN_0c0555c4();
                     if ((t0 != 0) && (t59 = *(int *)0xC7F307C, (t59 & 7) == 0)) {
-                        FUN_0c044e38((*(signed char *)((a4 + 0x3))));
+                        fx_spawn_044e38((*(signed char *)((a4 + 0x3))));
                     }
                 }
-                FUN_0c09d8ec(a4);
+                pl_update_camera_side_flag(a4);
                 FUN_0c0e6fe8();
                 if ((*(signed char *)((a4 + 0x105))) != 0) {
                     (((struct o105_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x105))) - 1);
@@ -935,9 +935,9 @@ int FUN_0c093254(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     (((struct o71BA_uchar *)(a4))->v) = 0x0;
     (((struct o71BC_uchar *)(a4))->v) = 0x0;
-    FUN_0c09a808(a4, 0x0, 0x0);
+    pl_start_motion(a4, 0x0, 0x0);
     (((struct o7194_uint *)(a4))->v) = ((((struct o718C_int *)(a4))->v));
     (((struct o7190_uint *)(a4))->v) = ((((struct o718C_int *)(a4))->v));
     (((struct o7214_uchar *)(a4))->v) = (*(signed char *)((0xC338E12 + (*(signed char *)((a4 + 0x4))))));
-    return FUN_0c0a2e26(a4, 0x0, 0x0);
+    return pl_change_state(a4, 0x0, 0x0);
 }

@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: transforms a vertex with ftrv (XMTRX back bank) and tests it against a plane (fipr) and a table, live registers r4, r8, r12 and fr8-fr15, no C form. */
+/* Transforms a vertex through the back XMTRX bank and tests it against a plane and a table. */
 #pragma inline_asm(ia_FUN_0c0e7be0)
 static int ia_FUN_0c0e7be0(void)
 {
@@ -81,7 +82,7 @@ LC0E7C6A:
 LEND:
 }
 
-int FUN_0c0e7be0(void)
+int nl_objasm_transform_vtx(void)
 {
     return ia_FUN_0c0e7be0();
 }

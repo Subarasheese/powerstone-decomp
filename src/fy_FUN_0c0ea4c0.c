@@ -1,4 +1,5 @@
 /* INLINE-ASM: NL object assembly: the clip/send state machine of the display list builder: live registers r4, r9, r11, r12, fr and the T flag, SZ toggles, braf dispatch and calls to sibling assembly fragments; no C form. */
+/* Display list builder clip/send state machine over the command stream (hand-written assembly). */
 #pragma inline_asm(ia_FUN_0c0ea4c0)
 static void ia_FUN_0c0ea4c0(void)
 {
@@ -566,7 +567,7 @@ PL5:
     .DATA.L H'0C0EA8E0
 }
 
-void FUN_0c0ea4c0(void)
+void nl_display_strip_nc_spd_ofst(void)
 {
     ia_FUN_0c0ea4c0();
 }

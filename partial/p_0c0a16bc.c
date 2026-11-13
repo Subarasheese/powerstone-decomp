@@ -41,20 +41,20 @@ struct O {
     char pad13[40];
     char b29238;
 };
-extern int g_w31e0;
-extern void FUN_0c099b60(struct O *);
-extern void FUN_0c09c506(struct O *);
-extern void FUN_0c09a808(struct O *, int, int);
-extern int FUN_0c09db78(struct O *);
-extern int FUN_0c09ddfe(struct O *);
-extern float FUN_0c0df4d0(int);
-extern float FUN_0c0dfa50(int);
-extern int FUN_0c0ac6a2(struct O *, int);
-extern void FUN_0c0abe44(struct O *, int, int);
-void FUN_0c0a16bc(struct O *o0, char c)
+extern int g_cam_yaw16;
+extern void pl_reset_pose(struct O *);
+extern void pl_reset_combo_counter(struct O *);
+extern void pl_start_motion(struct O *, int, int);
+extern int pl_angle_to_opponent(struct O *);
+extern int pl_stick_dir_angle(struct O *);
+extern float math_cos_angle16(int);
+extern float math_sin_angle16(int);
+extern int obj_touched_by_slot(struct O *, int);
+extern void obj_set_mode_owner(struct O *, int, int);
+void pl_enter_state_24(struct O *o0, char c)
 {
     register struct O *o = o0;
-    register void (*fn)(struct O *, int, int) = FUN_0c09a808;
+    register void (*fn)(struct O *, int, int) = pl_start_motion;
     register short five = 5;
     register int z = 0;
     int d;
@@ -62,11 +62,11 @@ void FUN_0c0a16bc(struct O *o0, char c)
     float f;
     o->b29114 = 24;
     o->b29151 = z;
-    FUN_0c099b60(o);
+    pl_reset_pose(o);
     o->b28938 = z;
     o->b28939 = z;
     o->b28940 = z;
-    FUN_0c09c506(o);
+    pl_reset_combo_counter(o);
     o->s240 = c;
     switch (c) {
     case 0:
@@ -89,7 +89,7 @@ void FUN_0c0a16bc(struct O *o0, char c)
         o->s29196 = five;
         break;
     case 3:
-        o->w48 = FUN_0c09db78(o);
+        o->w48 = pl_angle_to_opponent(o);
         fn(o, 1, 83);
         o->b29096 = o->b29097 = !z;
         break;
@@ -98,31 +98,31 @@ void FUN_0c0a16bc(struct O *o0, char c)
         o->b29096 = o->b29097 = !z;
         o->s29196 = five;
         if (o->i732 & 240)
-            o->w48 = (unsigned short)(FUN_0c09ddfe(o) + g_w31e0 + 32768);
+            o->w48 = (unsigned short)(pl_stick_dir_angle(o) + g_cam_yaw16 + 32768);
         f = -9.0f;
-        d = (unsigned short)(o->w48 - FUN_0c09db78(o));
+        d = (unsigned short)(o->w48 - pl_angle_to_opponent(o));
         if (d & 0x8000) d |= 0xffff0000;
         if (d > 16384 || d < -16384) f = -4.5f;
         o->f60 = 18.0f;
-        o->f56 = FUN_0c0df4d0(-o->w48 + 81920) * f;
-        o->f64 = FUN_0c0dfa50(-o->w48 + 81920) * f;
+        o->f56 = math_cos_angle16(-o->w48 + 81920) * f;
+        o->f64 = math_sin_angle16(-o->w48 + 81920) * f;
         o->b262 = 10;
         break;
     }
 }
-void FUN_0c0a1844(struct O *o)
+void pl_enter_state_25_pickup_item(struct O *o)
 {
     struct O *p;
     o->b29114 = 25;
     o->b29116 = 0;
-    FUN_0c09a808(o, 2, 226);
+    pl_start_motion(o, 2, 226);
     o->b29097 = 1;
     o->b29096 = 1;
-    o->w48 = FUN_0c09db78(o);
+    o->w48 = pl_angle_to_opponent(o);
     p = o->p29128;
     if (p) {
-        if (FUN_0c0ac6a2(p, o->b3)) {
-            FUN_0c0abe44(p, 5, o->b3);
+        if (obj_touched_by_slot(p, o->b3)) {
+            obj_set_mode_owner(p, 5, o->b3);
             o->p29132 = p;
             o->b29238 = 1;
         }

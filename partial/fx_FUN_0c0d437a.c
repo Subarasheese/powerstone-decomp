@@ -4,14 +4,14 @@
 extern void FUN_0c0d5292(void);
 extern void FUN_0c0d4692(void);
 extern void FUN_0c031030(void);
-extern void FUN_0c0527a2(void);
-extern void FUN_0c0a2f7a(void);
-extern void FUN_0c0a3538(void);
-extern void FUN_0c0dc1c0(int a, int b, int c, int d);
-extern int FUN_0c0d366c(void);
-extern int FUN_0c0d3ada(void);
-extern void FUN_0c031496(int a, int b, int c, int d);
-void FUN_0c0d437a(void)
+extern void game_frame_update(void);
+extern void bgm_stop_streams(void);
+extern void bgm_play_rank(void);
+extern void cam_reset_shake(int a, int b, int c, int d);
+extern int rank_screen_time_ranking(void);
+extern int rank_screen_vs_ranking(void);
+extern void ui_fade_start(int a, int b, int c, int d);
+void attract_ranking_step(void)
 {
     unsigned char *g = (unsigned char *)0xC7F2EE0;
     short *tm = (short *)(g + 20);
@@ -26,14 +26,14 @@ void FUN_0c0d437a(void)
         if (*(int *)(g + 0x134) & 16)
             FUN_0c0d4692();
         FUN_0c031030();
-        FUN_0c0527a2();
+        game_frame_update();
         *tm = *tm - 1;
         if (*tm != 0) return;
         g[7]++;
         g[8] = 0;
-        FUN_0c0a2f7a();
-        FUN_0c0a3538();
-        FUN_0c0dc1c0(0, 0, 99, 0);
+        bgm_stop_streams();
+        bgm_play_rank();
+        cam_reset_shake(0, 0, 99, 0);
         return;
     case 2:
         switch (g[8]) {
@@ -42,22 +42,22 @@ void FUN_0c0d437a(void)
             g[8] = g[0x138] + 1;
             break;
         case 1:
-            if (FUN_0c0d366c() != 0)
+            if (rank_screen_time_ranking() != 0)
                 g[8] = 3;
             break;
         case 2:
-            if (FUN_0c0d3ada() != 0)
+            if (rank_screen_vs_ranking() != 0)
                 g[8] = 3;
             break;
         default:
             g[7]++;
             g[8] = 0;
             *tm = 16;
-            FUN_0c031496(0xFF000000, 0, 1, 15);
+            ui_fade_start(0xFF000000, 0, 1, 15);
             break;
         }
         FUN_0c031030();
-        FUN_0c0527a2();
+        game_frame_update();
         return;
     default:
         *tm = *tm - 1;
@@ -66,7 +66,7 @@ void FUN_0c0d437a(void)
             g[7] = 0;
             g[8] = 0;
         }
-        FUN_0c0527a2();
+        game_frame_update();
         FUN_0c031030();
         return;
     }

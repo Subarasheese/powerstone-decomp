@@ -12,7 +12,7 @@ static void ia_setsr(int v)
 }
 extern void FUN_0c06143c(void);
 extern int FUN_0c0f2114(int, int, int);
-extern void FUN_0c012568(void);
+extern void pad_state_clear(void);
 extern int gdFsInit(int, int, int, int);
 extern void FUN_0c0f2664(void);
 extern void FUN_0c0f283e(void);
@@ -35,8 +35,8 @@ extern void FUN_0c0e0580(void);
 extern void FUN_0c0dd8e0(int, int, int);
 extern void FUN_0c0e3564(int, int, int);
 extern void nlInitMatrix(int, int);
-extern void FUN_0c0de590(int);
-extern void FUN_0c0de280(int, int, int);
+extern void gfx_set_border_color(int);
+extern void gfx_set_background_color(int, int, int);
 extern void thunk_FUN_0c0fbcf0(int);
 extern void FUN_0c0e07c0(int);
 extern void FUN_0c0e0800(int);
@@ -49,34 +49,34 @@ extern void FUN_0c05eed2(void);
 extern void FUN_0c024274(void);
 extern void FUN_0c027c74(void);
 extern void FUN_0c03148c(void);
-extern void FUN_0c0a31b8(void);
-extern void FUN_0c0a2f52(void);
+extern void snd_init_adx(void);
+extern void bgm_stop_all(void);
 extern void FUN_0c0a3062(int);
-extern void FUN_0c0105c8(void);
+extern void vmu_init(void);
 extern void FUN_0c061434(void);
 
-void FUN_0c061be2(void)
+void sys_init_all(void)
 {
-    unsigned char *g = (unsigned char *)0xC7F2EE0;
+    unsigned char *state = (unsigned char *)0xC7F2EE0;
     int count = 0;
-    int r;
-    int a = (0xC3A289C & ~31) + 32;
-    int b = (0xC3A3C90 & ~31) + 32;
+    int status;
+    int work_a = (0xC3A289C & ~31) + 32;
+    int work_b = (0xC3A3C90 & ~31) + 32;
     int mode;
-    float *p;
-    int i;
+    float *zero_ptr;
+    int idx;
 
     FUN_0c06143c();
     ia_setsr((ia_getsr() & ~0xF0) | 0xE0);
     FUN_0c0f2114(0, 0xC38683C, 0xC39285C);
-    FUN_0c012568();
+    pad_state_clear();
     for (;;) {
-        r = gdFsInit(8, a, 1024, b);
-        *(int *)0xC3B9D3C = r;
-        if (r == 0)
+        status = gdFsInit(8, work_a, 1024, work_b);
+        *(int *)0xC3B9D3C = status;
+        if (status == 0)
             break;
         count++;
-        if (r == -23 || r == -33 || count > 256) {
+        if (status == -23 || status == -33 || count > 256) {
             ia_setsr(ia_getsr() & ~0xF0);
             FUN_0c0f2664();
             FUN_0c0f283e();
@@ -95,7 +95,7 @@ void FUN_0c061be2(void)
     syRtcSetServerMode(1);
     syCfgInit((0xC39E87C & ~31) + 32);
     syCfgGetSoundMode(&mode);
-    g[46] = (mode == 0) ? 1 : 0;
+    state[46] = (mode == 0) ? 1 : 0;
     ia_setsr(ia_getsr() & ~0xF0);
     FUN_0c0f4644();
     FUN_0c0f1ffe(0xC0614FC, 0);
@@ -109,11 +109,11 @@ void FUN_0c061be2(void)
     FUN_0c0dd8e0(0xC494D68, 2048, 4096);
     FUN_0c0e3564(0xC4BB0A8, 2048, 4096);
     nlInitMatrix(0xC7F370C, 63);
-    FUN_0c0de590(0);
-    FUN_0c0de280(0, 0, 0);
-    p = (float *)0xC494B18;
-    for (i = 0; i < 129; i++)
-        *p++ = 0.0f;
+    gfx_set_border_color(0);
+    gfx_set_background_color(0, 0, 0);
+    zero_ptr = (float *)0xC494B18;
+    for (idx = 0; idx < 129; idx++)
+        *zero_ptr++ = 0.0f;
     thunk_FUN_0c0fbcf0(0xC494B18);
     FUN_0c0e07c0(0x101010);
     FUN_0c0e0800(0xFF09);
@@ -124,31 +124,31 @@ void FUN_0c061be2(void)
     FUN_0c0dd310();
     nlObjPutInit();
     FUN_0c05eed2();
-    g[37] = 1;
-    g[35] = 1;
-    g[36] = 0;
-    g[319] = 0;
-    g[43] = 1;
+    state[37] = 1;
+    state[35] = 1;
+    state[36] = 0;
+    state[319] = 0;
+    state[43] = 1;
     *(unsigned char *)0xC7F31B5 = 0;
-    g[45] = 1;
-    g[44] = 1;
-    g[47] = 0;
-    g[48] = 0;
-    g[40] = 4;
-    g[49] = 3;
-    g[50] = 1;
-    g[51] = 1;
-    g[52] = 1;
-    g[53] = 1;
-    g[54] = 0;
-    g[55] = 1;
+    state[45] = 1;
+    state[44] = 1;
+    state[47] = 0;
+    state[48] = 0;
+    state[40] = 4;
+    state[49] = 3;
+    state[50] = 1;
+    state[51] = 1;
+    state[52] = 1;
+    state[53] = 1;
+    state[54] = 0;
+    state[55] = 1;
     FUN_0c024274();
     FUN_0c027c74();
     FUN_0c03148c();
-    FUN_0c0a31b8();
-    FUN_0c0a2f52();
-    FUN_0c0a3062((signed char)g[46]);
+    snd_init_adx();
+    bgm_stop_all();
+    FUN_0c0a3062((signed char)state[46]);
     FUN_0c06143c();
-    FUN_0c0105c8();
+    vmu_init();
     FUN_0c061434();
 }

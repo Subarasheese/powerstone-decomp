@@ -10,90 +10,14 @@ static void iaOcbp(void *p)
 {
     .DATA.W H'04A3
 }
-int FUN_0c0101a8(void);
-int FUN_0c010160(void);
+int vmu_lcd_set_busy_image(void);
+int vmu_lcd_set_idle_image(void);
 void FUN_0c010038(void);
 int FUN_0c0100b0(int a4, int a5);
 int FUN_0c010030(void);
 int FUN_0c010028(void);
 void FUN_0c01015c(void);
 void FUN_0c01013c(void);
-
-int FUN_0c0101a8(void)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t5;
-
-    t0 = 0xC178230;
-    t1 = 0xC0;
-    t2 = 0xC177B70;
-    for (;;) {
-        t3 = *(signed char *)((t0 + 0x0));
-        t0 = (t0 + 0x1);
-        t4 = 0x7;
-        t5 = 0x0;
-        for (;;) {
-            if ((((unsigned int)(unsigned char)t3 << (int)(-t4)) & 0x1) != 0) {
-                *(unsigned char *)((t2 + 0x0)) = 0x8;
-            } else {
-                *(unsigned char *)((t2 + 0x0)) = 0x0;
-            }
-            t5 = (t5 + 0x1);
-            t2 = (t2 + 0x1);
-            t4 = (t4 - 1);
-            if ((int)t5 >= (int)0x8) {
-                break;
-            }
-        }
-        t1 = (t1 - 0x1);
-        if (t1 == 0) {
-            break;
-        }
-    }
-    return t3;
-}
-
-int FUN_0c010160(void)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t5;
-
-    t0 = 0xC178170;
-    t1 = 0xC0;
-    t2 = 0xC177B70;
-    for (;;) {
-        t3 = *(signed char *)((t0 + 0x0));
-        t0 = (t0 + 0x1);
-        t4 = 0x7;
-        t5 = 0x0;
-        for (;;) {
-            if ((((unsigned int)(unsigned char)t3 << (int)(-t4)) & 0x1) != 0) {
-                *(unsigned char *)((t2 + 0x0)) = 0x0;
-            } else {
-                *(unsigned char *)((t2 + 0x0)) = 0x8;
-            }
-            t5 = (t5 + 0x1);
-            t2 = (t2 + 0x1);
-            t4 = (t4 - 1);
-            if ((int)t5 >= (int)0x8) {
-                break;
-            }
-        }
-        t1 = (t1 - 0x1);
-        if (t1 == 0) {
-            break;
-        }
-    }
-    return t3;
-}
 
 void FUN_0c010038(void)
 {

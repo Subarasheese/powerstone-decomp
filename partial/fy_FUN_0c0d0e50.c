@@ -21,7 +21,7 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
     *(unsigned int *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0xC)) = ((*(int *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0xC))) & 0x3);
     *(int *)((int)stk + 0) = 0xC1544B4;
     sprintf(0xC7F36B8, a5, a6, a7, 0xC1544B4);
-    FUN_0c0ccefc(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0x8) << 2) << 1), (float)((((*(int *)(((*(int *)(((int)stk + 4))) + 0xC))) + 0x3) << 2) << 1));
+    dbg_print_at(0xC7F36B8, (float)(((((short)(*(signed char *)((a4 + 0x5))) * (short)0x1E) + 0x8) << 2) << 1), (float)((((*(int *)(((*(int *)(((int)stk + 4))) + 0xC))) + 0x3) << 2) << 1));
     if ((((((struct o48_int *)(a4))->v)) & 192) == 0) {
     } else {
         (((struct oA2_ushort *)(a4))->v) = 0x0;
@@ -45,17 +45,17 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
             *(unsigned char *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x4)) = (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x6)));
             thunk_FUN_0c05fff4();
             FUN_0c09939c();
-            FUN_0c0993e4(t0);
+            pl_init_player_record(t0);
             FUN_0c05f2d4(0x0, 0x0);
             *(unsigned char *)(((*(int *)(((int)stk + 4))) + 0x7)) = 0x0;
-            FUN_0c0d0024();
-            FUN_0c09a808(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x9))));
+            dbgedit_set_start_positions();
+            pl_start_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x9))));
             break;
         case 1:
             *(unsigned char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x7)) = ((*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x7))) + t25);
             *(unsigned char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x7)) = ((*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x7))) & 0x1);
             (((struct o71F1_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x7)));
-            FUN_0c099a24(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
+            pl_reset_model_parts(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
             break;
         case 2:
             *(unsigned char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x8)) = ((*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x8))) + t25);
@@ -66,29 +66,29 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
                 *(unsigned char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x8)) = 0x0;
             }
             *(unsigned int *)(((int)stk + 4)) = ((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0);
-            FUN_0c09a808(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))));
+            pl_start_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))));
             (((struct o71A9_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
             (((struct o71A8_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
-            FUN_0c0d0024();
+            dbgedit_set_start_positions();
             break;
         case 3:
             *(unsigned int *)(((int)stk + 4)) = ((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0);
             *(unsigned char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9)) = ((*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))) + t25);
             *(unsigned char *)(((int)stk + 8)) = (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x9)));
-            FUN_0c09a808(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)(((int)stk + 8))));
+            pl_start_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)(((int)stk + 8))));
             (((struct o71A9_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
             (((struct o71A8_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
-            FUN_0c0d0024();
+            dbgedit_set_start_positions();
             break;
         }
     }
     if ((((((struct o48_int *)(a4))->v)) & 0x4) != 0) {
         *(unsigned int *)(((int)stk + 4)) = ((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0);
-        FUN_0c09a808(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))));
+        pl_start_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))));
         (((struct o71A9_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
         (((struct o71A8_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
         *(struct V12 *)(0xC494988 + (signed char)(*(signed char *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3) * 12)) = *(struct V12 *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 44);
-        FUN_0c0d0024();
+        dbgedit_set_start_positions();
         *(struct V12 *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 44) = *(struct V12 *)(0xC494988 + (signed char)(*(signed char *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3) * 12));
         (((struct oA2_ushort *)(a4))->v) = 0x0;
     }
@@ -108,7 +108,7 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
         t193 = 0x48;
         if ((((((struct o48_int *)(a4))->v)) & 0x200) == 0) {
         } else {
-            t144 = FUN_0c09a910(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
+            t144 = pl_step_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
             t193 = (signed char)t144;
             if ((signed char)t144 == 64) {
                 if (((((struct oA2_short *)(a4))->v)) == 0) {
@@ -123,7 +123,7 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
         t193 = 0x14;
         if ((int)(unsigned char)(t167 + 0x1) > (int)(unsigned char)(*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x14)))) {
             (((struct o16_uchar *)(((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0)))->v) = 0x0;
-            t169 = FUN_0c09a910(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
+            t169 = pl_step_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
             t193 = (signed char)t169;
             if ((signed char)t169 == 64) {
                 if (((((struct oA2_short *)(a4))->v)) == 0) {
