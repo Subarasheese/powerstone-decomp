@@ -12,6 +12,7 @@
 #include <math.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "port.h"
@@ -531,6 +532,11 @@ static void key_on(int c)
     k->env = 1023;
     k->lp_hit = 0;
     k->playing = 1;
+    static int dbg = -1;
+    if (dbg < 0)
+        dbg = getenv("PORT_DEBUG_KEYON") != 0;
+    if (dbg)
+        fprintf(stderr, "keyon %d sa %06X fmt %d loop %d lsa %04X lea %04X\n", c, k->sa, k->fmt, k->loop, CREG(c, 2), CREG(c, 3));
 }
 
 static void key_off(int c)

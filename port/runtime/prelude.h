@@ -11,7 +11,12 @@
 #define _builtin_fabsf port_fabsf
 #define _builtin_sqrtf port_sqrtf
 #define _builtin_fsrra port_fsrra      /* the SH-4 fsrra: 1 / sqrt(x); no source declares it */
+/* the ones returning float must be declared here: a source that calls one undeclared would take it as an int
+   function (gnu89) and read the result from the wrong register */
+float port_fabsf(float);
+float port_sqrtf(float);
 float port_fsrra(float);
+float port_fipr();
 #define _builtin_get_cr port_get_cr
 #define _builtin_set_cr port_set_cr
 #define _builtin_set_imask port_set_imask

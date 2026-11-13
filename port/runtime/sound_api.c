@@ -2,6 +2,7 @@
    runs as the library's C against the emulated AICA (aica.c); CRI's ADX player is the host's (adx.c). */
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "port.h"
 
@@ -93,6 +94,27 @@ static int send_command(uint32_t word)
     return -1;
 }
 
+/* the library's record of the banks, as its own snd_bank_load keeps it: per slot {id or -1, SH-4 address, size} at
+   0x0C7FD1D0, and the bytes in use at 0x0C7FD0F0 */
+static void sync_library_table(void)
+{
+    uint32_t used = 0;
+    for (int i = 0; i < 8; i++) {
+        uint32_t *e = (uint32_t *)(uintptr_t)(0x0C7FD1D0u + 12u * (uint32_t)i);
+        int on = MB(0x60 + 4 * i) != 0xFFFFFFFFu;
+        e[0] = on ? MB(0x60 + 4 * i) : 0xFFFFFFFFu;
+        e[1] = on ? 0xA0800000u + bank[i].offset : 0;
+        e[2] = on ? bank[i].size : 0;
+        if (on)
+            used += bank[i].size;
+    }
+    *(uint32_t *)(uintptr_t)0x0C7FD0F0u = used;
+    if (getenv("PORT_DEBUG_KEYON"))
+        for (int i = 0; i < 8; i++)
+            if (MB(0x60 + 4 * i) != 0xFFFFFFFFu)
+                fprintf(stderr, "bank slot %d id %08X at %06X size %06X\n", i, MB(0x60 + 4 * i), bank[i].offset, bank[i].size);
+}
+
 static void driver_memmove(uint32_t src, uint32_t dst, uint32_t len)
 {
     if (!len || src == dst)
@@ -110,7 +132,9 @@ int32_t sound_bank_load(uint32_t src, int32_t slot)
     const uint8_t *d = (const uint8_t *)(uintptr_t)src;
     if (memcmp(d, "DTPK", 4) || slot < 0 || slot >= 8 || MB(0x60 + 4 * slot) != 0xFFFFFFFFu)
         return -1;
-    uint32_t size = (*(uint32_t *)(d + 8) + 31) & ~31u, used = 0;
+    /* the bank's own size, unrounded: the driver finds each bank by walking the headers from the first (each DTPK's
+       size at +8 gives the next), so the banks lie end to end exactly as the library packs them (snd_bank_load) */
+    uint32_t size = *(uint32_t *)(d + 8), used = 0;
     for (int i = 0; i < 8; i++)
         if (MB(0x60 + 4 * i) != 0xFFFFFFFFu)
             used += bank[i].size;
@@ -121,6 +145,9 @@ int32_t sound_bank_load(uint32_t src, int32_t slot)
     for (int i = 0; i < slot; i++)
         if (MB(0x60 + 4 * i) != 0xFFFFFFFFu && bank[i].offset + bank[i].size > at)
             at = bank[i].offset + bank[i].size;
+    /* the slot's id goes in before the lock, as the library does it: the driver takes its copy of the slot words when it
+       locks (command 0x18A0) and registers the banks whose words changed when it is released (0xB0) */
+    MB(0x60 + 4 * slot) = *(uint32_t *)(d + 4);
     send_command(0x000018A0u);
     wait_for(0xB4, 1);
     /* the banks above it move up by size, highest first */
@@ -134,11 +161,11 @@ int32_t sound_bank_load(uint32_t src, int32_t slot)
             if (MB(0x60 + 4 * i) != 0xFFFFFFFFu)
                 bank[i].offset += size;
     }
-    for (uint32_t i = 0; i < size / 4; i++)
+    for (uint32_t i = 0; i < (size + 3) / 4; i++)
         *(volatile uint32_t *)(SRAM + at + 4 * i) = ((const uint32_t *)d)[i];
     bank[slot].offset = at;
     bank[slot].size = size;
-    MB(0x60 + 4 * slot) = *(uint32_t *)(d + 4);
+    sync_library_table();
     MB(0xB0) = 1;
     wait_for(0xB4, 0);
     MB(0xB0) = 0;
@@ -150,10 +177,10 @@ int32_t sound_bank_unload(int32_t slot)
 {
     if (slot < 0 || slot >= 8 || MB(0x60 + 4 * slot) == 0xFFFFFFFFu)
         return -2;
+    MB(0x60 + 4 * slot) = 0xFFFFFFFFu; /* before the lock, as for a load */
     send_command(0x000018A0u);
     wait_for(0xB4, 1);
     uint32_t at = bank[slot].offset, size = bank[slot].size, top = at + size;
-    MB(0x60 + 4 * slot) = 0xFFFFFFFFu;
     for (int i = slot + 1; i < 8; i++)
         if (MB(0x60 + 4 * i) != 0xFFFFFFFFu && bank[i].offset + bank[i].size > top)
             top = bank[i].offset + bank[i].size;
@@ -163,6 +190,7 @@ int32_t sound_bank_unload(int32_t slot)
             if (MB(0x60 + 4 * i) != 0xFFFFFFFFu)
                 bank[i].offset -= size;
     }
+    sync_library_table();
     MB(0xB0) = 1;
     wait_for(0xB4, 0);
     MB(0xB0) = 0;
