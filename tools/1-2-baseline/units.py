@@ -15,6 +15,7 @@ backslashes for the Windows linker), then nothing else. With --units, prints ins
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob, os, re, sys
 
 HEAD = re.compile(r'\s*/\*\s*@unit\s+([0-9A-Fa-f]{8})-([0-9A-Fa-f]{8})'
@@ -23,7 +24,7 @@ HEAD = re.compile(r'\s*/\*\s*@unit\s+([0-9A-Fa-f]{8})-([0-9A-Fa-f]{8})'
 
 def units():
     out = []
-    for c in sorted(glob.glob('src/*.c')):
+    for c in sorted(srcfiles.files()):
         m = HEAD.match(open(c, errors='replace').readline())
         if m:
             data = (int(m.group(3), 16), int(m.group(4), 16)) if m.group(3) else None

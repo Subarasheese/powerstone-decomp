@@ -19,14 +19,14 @@ for t in lnk elf2bin shc; do
 done
 BASE="$(cat BASE)"
 mkdir -p build/obj
-# C units (src/*.c starting with /* @unit <start>-<end> [@data <dstart>-<dend>] [shc options] */)
+# C units (src/**/*.c starting with /* @unit <start>-<end> [@data <dstart>-<dend>] [shc options] */)
 # replace the asm files in their range(s);
 # symbols.txt gives the linker the addresses of globals they use that no file defines.
 {
   printf '%s\n' elf "start P($BASE)" "output build\\out.elf"
   python3 tools/1-2-baseline/units.py objects.txt | while read -r o; do printf 'input %s\n' "$o"; done
-  if ls src/*.c >/dev/null 2>&1; then
-    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -l '@unit' src/*.c 2>/dev/null) /dev/null | sort -u > build/c_idents.txt || true
+  if [ -n "$(find src -name '*.c' -print -quit)" ]; then
+    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -rl --include='*.c' '@unit' src 2>/dev/null) /dev/null | sort -u > build/c_idents.txt || true
     [ -f symbols.txt ] && awk 'NR==FNR{u[$1]=1; next} !/^#/ && NF==2 && ($2 in u) {printf "define _%s(%s)\n", $2, $1}' build/c_idents.txt symbols.txt
   fi
   printf '%s\n' exit
@@ -54,8 +54,9 @@ STEPS='
   while read -r name start end dstart dend opts; do
     [ -n "$name" ] || continue
     o="build/obj/c_$name.obj"
-    if [ ! -f "$o" ] || [ "src/$name.c" -nt "$o" ] || [ src -nt "$o" ]; then
-      SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp" wibo "$(tool shc)" "src\\$name.c" -code=asm -object="build\\obj\\c_$name.s" \
+    sp=$(find src -name "$name.c" -print -quit)        # src/ is a tree (tools/srcfiles.py): the unit by its stem
+    if [ ! -f "$o" ] || [ "$sp" -nt "$o" ] || [ src -nt "$o" ]; then
+      SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp" wibo "$(tool shc)" "${sp//\//\\}" -code=asm -object="build\\obj\\c_$name.s" \
         -cpu=sh4 -endian=little -fpu=single -division=cpu -round=nearest -pic=0 -macsave=0 -optimize=1 -size \
         -string=const -section=p=P,c=C,d=D,b=B -include=src $opts > build/shc.log 2>&1 || { cat build/shc.log; exit 1; }
       # code at <start>-<end>; with @data, the constant data (C section) as its own piece at <dstart>-<dend>

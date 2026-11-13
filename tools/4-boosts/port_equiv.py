@@ -28,6 +28,7 @@ src/*.c with tests/<file>/<function>.json). For every function the source has as
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import os
 import re
 import struct
@@ -125,10 +126,11 @@ def main(argv):
     only = set(args[2:])
     # candidates: Equivalent functions by source file
     files = {}
-    for f in sorted(os.listdir(os.path.join(src['path'], 'src'))):
-        if not f.endswith('.c') or (only and 'src/' + f not in only and f not in only):
+    for rel in srcfiles.files('*', src['path']):          # the source repo's src/ may be flat or a tree
+        f = os.path.basename(rel)
+        if only and 'src/' + f not in only and f not in only and rel not in only:
             continue
-        text = open(os.path.join(src['path'], 'src', f), errors='replace').read()
+        text = open(os.path.join(src['path'], rel), errors='replace').read()
         if text.startswith('/* @unit'):
             continue
         _, defs = split_c(text)
@@ -281,7 +283,7 @@ def main(argv):
                         return tr(o)
                     return o
                 json.dump(conv(sets), open(os.path.join(tdir, n + '.json'), 'w'), indent=1)
-            r = subprocess.run([sys.executable, 'tools/equiv.py', 'src/%s.c' % stem] + mine,
+            r = subprocess.run([sys.executable, 'tools/equiv.py', srcfiles.path(stem)] + mine,
                                cwd=dst['path'], capture_output=True, text=True)
             out = r.stdout + r.stderr
             und = re.search(r'link: undefined ([^(\n]+?) \(', out)

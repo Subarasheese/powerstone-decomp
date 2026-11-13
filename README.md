@@ -31,9 +31,9 @@ FUNCTIONS LEFT  (98.5% complete) 75  of the 4935 functions that can be C (76 wit
 BYTES LEFT   (97.6% complete) 21098  of 868526 bytes of code that can be C
 FUNCTIONS                            
   unnamed                      1980  functions still called FUN_... (1980 of 5011)
-  Not written C                   8  934 bytes
+  Not written C                   0  0 bytes
   Written C with errors           0  0 bytes
-  Not drawn                       2  560 bytes
+  Not drawn                      10  1494 bytes
   Drawn with errors              25  6648 bytes
   Checked with errors            40  12956 bytes
   No C form                    1.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
@@ -150,7 +150,7 @@ Other releases are different builds: `setup.sh` refuses them rather than produce
 
 | path | what |
 |---|---|
-| [src/](src/) | C: Equivalent files `gen_*.c` (checked by [tools/equiv.py](tools/equiv.py), not built; written by [tools/5-generated/gen_equiv](tools/5-generated/gen_equiv)) and matching C units `m_<start>[_<name>].c` (built, see below) |
+| [src/](src/) | C in a tree by subsystem (`game/<subsystem>/`, `lib/<library>/`, see [src/README.md](src/README.md)): Equivalent files `gen_*.c` (checked by [tools/equiv.py](tools/equiv.py), not built; written by [tools/5-generated/gen_equiv](tools/5-generated/gen_equiv)) and matching C units `m_<start>[_<name>].c` (built, see below) |
 | [partial/](partial/) | Matching drafts that do not match yet, `p_<start>.c`: not built, counted apart from done |
 | [sdk-verified.txt](sdk-verified.txt) | Library functions whose bytes the SDK source you supplied reproduces (written by [tools/5-generated/sdk_source.py](tools/5-generated/sdk_source.py)) |
 
@@ -219,7 +219,7 @@ run. The original's code is kept as one assembly file per function, the baseline
 script-generated: it is checked on generated cases, which are then widened (`gen_equiv --direct` and `--retest`, and cases by hand for the branches
 nobody ran). There is no pass mark: a function that passes is done, and the total test coverage on the badge says how strong the evidence is. `AGENTS.md` lists the steps this decomp follows.
 
-`src/<file>.c` with no `@unit` header is C checked for behaviour only: `python3 tools/equiv.py src/<file>.c`
+`src/<folder>/<file>.c` with no `@unit` header is C checked for behaviour only: `python3 tools/equiv.py src/<folder>/<file>.c`
 runs each function in an SH-4 interpreter twice per test case, the original bytes and your compiled C,
 and they must agree on calls, memory writes and the result. Passing functions are listed in
 `tests/equivalent.txt` and counted as done. The loop, and how to write many of them quickly, is in

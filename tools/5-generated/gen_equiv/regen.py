@@ -10,6 +10,7 @@ import re
 import shutil
 
 import consistency
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 
 BACKUP = 'state/regen'
 
@@ -25,8 +26,9 @@ def _write_eq(names):
 def take_out(names):
     """([record, ...], {name: why skipped}); a record holds what put_back needs"""
     manual = consistency.manual_names()
-    files = sorted(f for f in os.listdir('src') if f.endswith('.c')) if os.path.isdir('src') else []
-    texts = {f: open(os.path.join('src', f), errors='replace').read() for f in files}
+    paths = srcfiles.files()
+    files = sorted(os.path.basename(p) for p in paths)
+    texts = {os.path.basename(p): open(p, errors='replace').read() for p in paths}
     recs, skipped = [], {}
     eq = _eq()
     os.makedirs(BACKUP, exist_ok=True)
@@ -39,7 +41,7 @@ def take_out(names):
         if fn in manual:
             skipped[fn] = 'manual: %s' % manual[fn]; continue
         code = consistency.remove_def(stem, fn)
-        texts[stem + '.c'] = open('src/%s.c' % stem, errors='replace').read()
+        texts[stem + '.c'] = open(srcfiles.path(stem), errors='replace').read()
         tp = 'tests/%s/%s.json' % (stem, fn)
         cases = json.load(open(tp)) if os.path.exists(tp) else None
         rec = {'fn': fn, 'stem': stem, 'code': code, 'cases': cases, 'eq': fn in eq}
@@ -58,7 +60,7 @@ def put_back(recs, proved):
         bk = os.path.join(BACKUP, r['fn'] + '.json')
         if not os.path.exists(bk):
             continue                        # already handled (the run's end, then its exit)
-        path = 'src/%s.c' % r['stem']
+        path = srcfiles.path(r['stem'])
         tdir = 'tests/%s' % r['stem']
         if r['fn'] in proved:
             if os.path.exists(path) and not re.search(r'^\{', open(path, errors='replace').read(), flags=re.M) and \

@@ -37,7 +37,9 @@ instruction no case ran is a branch nobody checked. Details: the kickoff skill's
   functions.txt .`).
 - `asm/<addr>_<name>.src`: one file per function, in link order (`objects.txt`). Each starts as data
   words (`.DATA.W`), which is what makes the first build match.
-- `src/<file>.c`: C for the game's code. Without a header it is checked for behaviour only
+- `src/<folder>/<file>.c`: C for the game's code, in a tree by subsystem (`src/game/<subsystem>/`, `src/lib/<library>/`;
+  [src/README.md](src/README.md)). A file is known by its stem, unique across the tree (`tests/<stem>/`, `tools/srcfiles.py`);
+  a tool writes a new file at the top of `src/` and `python3 tools/srctree.py --apply` files it. Without a header it is checked for behaviour only
   (`tools/equiv.py`) and stays out of the build. A file whose first line is `/* @unit <start>-<end> [shc options] */`
   replaces every asm file in that range (`tools/1-2-baseline/units.py`, `tools/1-2-baseline/fill.py`). A unit with constant
   data (tables, strings) adds `@data <dstart>-<dend>`: the range where the original link put that data. Its ends are

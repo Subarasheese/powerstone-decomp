@@ -18,6 +18,7 @@ is written to a new src/gen_*.c like any generated one and leaves state/kept/.
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '../..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob
 import hashlib
 import json
@@ -107,7 +108,7 @@ def recheck(wanted, rebuild, run, write_batch, note, ledger, lock, unlock, resto
         passed, failed, deferred, dropped, err = gen_pipe.run_file_robust('gen_tmpK%d' % os.getpid(), items)
     finally:
         restore_evidence()
-        for f in glob.glob('src/gen_tmpK%d.c' % os.getpid()):      # this process's scratch only: runs side by side (shrink workers) keep theirs
+        for f in srcfiles.files('gen_tmpK%d' % os.getpid()):      # this process's scratch only: runs side by side (shrink workers) keep theirs
             os.remove(f)
         subprocess.run(['rm', '-rf'] + glob.glob('tests/gen_tmpK%d' % os.getpid()))
         unlock()

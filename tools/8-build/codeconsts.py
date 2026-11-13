@@ -14,6 +14,7 @@ left as it is and reported). Only reads with a constant address inside a replace
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob
 import math
 import re
@@ -79,7 +80,7 @@ def main():
     base = int(open('BASE').read().strip(), 16)
     total = 0
     nfiles = 0
-    for f in sorted(glob.glob('src/*.c')):
+    for f in sorted(srcfiles.files()):
         t = open(f, errors='replace').read()
         hits = scan(t, image, base, regs)
         if not hits:
@@ -93,7 +94,7 @@ def main():
             for s, e, a, lit in hits[:3]:
                 print('  %s: %s -> %s' % (f, t[s:e], lit))
     left = 0
-    for f in sorted(glob.glob('src/*.c')) if write else []:
+    for f in sorted(srcfiles.files()) if write else []:
         left += sum(1 for h in scan(open(f, errors='replace').read(), image, base, regs) if not h[3])
     print('codeconsts: %d reads of a float in the replaced code, %d files%s' % (total, nfiles, ' (rewritten, %d NaN or infinity left)' % left if write else ''))
     sys.exit(1 if (left if write else total) else 0)

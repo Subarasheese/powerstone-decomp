@@ -1,6 +1,7 @@
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '../..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob,json,os,re,struct,subprocess,copy
 import gen_cfg
 import sh4sim
@@ -590,7 +591,7 @@ def def_arity(fname):
     global _DEFS
     if _DEFS is None:
         _DEFS={}
-        for f in glob.glob('src/*.c'):
+        for f in srcfiles.files():
             txt=open(f,errors='replace').read()
             structs=set(re.findall(r'typedef\s+struct\s*\w*\s*\{[^{}]*\}\s*(\w+)\s*;',txt))|{'Stk%d'%k for k in range(1,65)}
             for m in re.finditer(r'^[A-Za-z_][\w \*]*?\b(\w+)\s*\(([^;{)]*)\)\s*\n\{',txt,re.M):
@@ -604,7 +605,7 @@ def def_struct_ret(fname):
     global _DEFSR
     if _DEFSR is None:
         _DEFSR={}
-        for f in glob.glob('src/*.c'):
+        for f in srcfiles.files():
             for m in re.finditer(r'^Stk(\d+)\s+(\w+)\s*\([^;{)]*\)\s*\n\{',open(f,errors='replace').read(),re.M):
                 _DEFSR.setdefault(m.group(2),int(m.group(1)))
     return _DEFSR.get(fname,0)
@@ -615,7 +616,7 @@ def def_stack_words(fname):
     global _DEFSW
     if _DEFSW is None:
         _DEFSW={}
-        for f in glob.glob('src/*.c'):
+        for f in srcfiles.files():
             txt=open(f,errors='replace').read()
             for m in re.finditer(r'^[A-Za-z_][\w \*]*?\b(\w+)\s*\(([^;{)]*)\)\s*\n\{',txt,re.M):
                 w=[int(k.group(1)) for x in m.group(2).split(',') for k in [re.match(r'\s*Stk(\d+)\s+\w+\s*$',x)] if k]
@@ -629,7 +630,7 @@ def def_stack_total(fname):
     global _DEFTOT
     if _DEFTOT is None:
         _DEFTOT={}
-        for f in glob.glob('src/*.c'):
+        for f in srcfiles.files():
             txt=open(f,errors='replace').read()
             for m in re.finditer(r'^[A-Za-z_][\w \*]*?\b(\w+)\s*\(([^;{)]*)\)\s*\n\{',txt,re.M):
                 ni=nf=w=0
@@ -652,7 +653,7 @@ def def_stack_kinds(fname):
     global _DEFSK
     if _DEFSK is None:
         _DEFSK={}
-        for f in glob.glob('src/*.c'):
+        for f in srcfiles.files():
             txt=open(f,errors='replace').read()
             for m in re.finditer(r'^[A-Za-z_][\w \*]*?\b(\w+)\s*\(([^;{)]*)\)\s*\n\{',txt,re.M):
                 ni=nf=0; ks=[]; ok=True

@@ -13,6 +13,7 @@ zeros in the other words; the compiled C read uninitialised frame there.
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '../..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob
 import re
 import sys
@@ -115,7 +116,7 @@ def convert(body, name, idx, miss, ndecl):
 def main(argv):
     fix = '--fix' in argv
     only = [a for a in argv if not a.startswith('--')]
-    for f in sorted(glob.glob('src/*.c')):
+    for f in sorted(srcfiles.files()):
         text = open(f, errors='replace').read()
         res = analyse(text)
         if only:

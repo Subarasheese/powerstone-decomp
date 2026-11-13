@@ -6,6 +6,8 @@ The tools of each step are in their own folder: [1-2-baseline/](1-2-baseline/), 
 |---|---|
 | [apply_bin.py](apply_bin.py) | Write a modified executable's changes into the repo's asm data words. |
 | [boundaries.py](boundaries.py) | Function boundaries from reachability: which code addresses are functions of their own. |
+| [srcfiles.py](srcfiles.py) | Where the C files are: src/ is a tree, a file is known by its stem (`files()`, `path(stem)`). |
+| [srctree.py](srctree.py) | Files every C file of src/ into its subsystem or library folder (`--apply`), by the original link order and docs/sourcetree.csv. |
 | [consistency.py](consistency.py) | Every function with C in src/ has its cases where the check looks for them and a recorded outcome. |
 | [docker_check.sh](docker_check.sh) | Checks Docker is installed and running, and whether Ghidra steps run one at a time (sourced by build.sh) |
 | [equiv.py](equiv.py) | Behaviour check: does a C file's code do what the original does? |

@@ -8,6 +8,7 @@
     splice             a unit's text with rewritten functions in place and those declarations after its head
 """
 import re
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 
 _SELF = re.compile(r'^[ \t]*\*\(((?:unsigned )?(?:int|short|char|float)) \*\)\(\(\(int\)stk \+ (\d+)\)\) = '
                    r'\*\(((?:unsigned )?(?:int|short|char|float)) \*\)\(\(int\)stk \+ (\d+)\);\n', re.M)
@@ -222,7 +223,7 @@ def narrow_unit(text):
     if os.environ.get('GEN_NARROW', '1') == '0':
         return text
     if not _DEFS:
-        _DEFS.append(definitions(open(p, errors='replace').read() for p in glob.glob('src/*.c')
+        _DEFS.append(definitions(open(p, errors='replace').read() for p in srcfiles.files()
                                  if not os.path.basename(p).startswith(('gen_tmp', 'zz_'))))
     return narrow_calls(text, _DEFS[0])[0]
 

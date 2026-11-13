@@ -50,7 +50,7 @@ def words(plist):
 def scan(srcdir='src'):
     """[(function, file, direct calls, words the file's prototype passes, words the definition takes)]"""
     defs, protos, texts = {}, collections.defaultdict(dict), {}
-    for f in sorted(glob.glob(srcdir + '/*.c')):
+    for f in sorted(glob.glob(srcdir + '/**/*.c', recursive=True)):
         t = open(f, errors='replace').read()
         texts[f] = t
         for m in DEFN.finditer(t):
@@ -104,7 +104,7 @@ def scan_reads(srcdir='src', reads_of=None):
         import gen_core
         reads_of = gen_core.entry_reads
     out = []
-    for f in sorted(glob.glob(srcdir + '/*.c')):
+    for f in sorted(glob.glob(srcdir + '/**/*.c', recursive=True)):
         for m in DEFN.finditer(open(f, errors='replace').read()):
             if '...' in m.group(2):
                 continue

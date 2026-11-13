@@ -23,6 +23,7 @@ import json
 import os
 import re
 import sys
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 
 CATEGORIES = [('game', 'Game code'), ('sdk', 'Katana SDK'), ('adx', 'CRI ADX / Sofdec'),
               ('nl', 'NAOMI-style libraries'), ('runtime', 'C runtime')]
@@ -60,7 +61,7 @@ def main(out):
             funcs.append((int(p[1], 16), int(p[2]), p[3]))
     head = re.compile(r'\s*/\*\s*@unit\s+([0-9A-Fa-f]{8})-([0-9A-Fa-f]{8})')
     units_c = []
-    for f in sorted(glob.glob('src/*.c')):
+    for f in sorted(srcfiles.files()):
         m = head.match(open(f, errors='replace').readline())
         if m:
             units_c.append((int(m.group(1), 16), int(m.group(2), 16)))

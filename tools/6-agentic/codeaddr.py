@@ -14,6 +14,7 @@ rewritten: they are data in the code (tools/6-agentic/poolconst.py takes the con
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob
 import os
 import re
@@ -37,7 +38,7 @@ def main(argv):
     declared_rx = {n: re.compile(r'\b%s\s*\(' % re.escape(n)) for n in entry.values()}
     rewritten = inside = files = 0
     left = []
-    for f in sorted(glob.glob('src/*.c')):
+    for f in sorted(srcfiles.files()):
         if os.path.basename(f).startswith('zz_') or 'gen_tmp' in f:
             continue
         text = open(f, errors='replace').read()

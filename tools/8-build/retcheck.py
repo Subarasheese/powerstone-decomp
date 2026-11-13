@@ -152,7 +152,7 @@ def scan(srcdir='src'):
     F = functions()
     cache = load_cache()
     defn, decl, text = {}, {}, {}
-    for f in sorted(glob.glob(srcdir + '/*.c')):
+    for f in sorted(glob.glob(srcdir + '/**/*.c', recursive=True)):
         t = open(f, errors='replace').read()
         text[f] = t
         for m in DEFN.finditer(t):

@@ -20,6 +20,7 @@ the C names by address); the entry stub at 0C020000, the NAOMI library, the data
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
+import srcfiles  # noqa: E402  src/ is a tree: files by stem (tools/srcfiles.py)
 import glob
 import json
 import os
@@ -129,7 +130,7 @@ def in_code_numbers(srcdir):
     """{address: [(file, line)]} for the numbers in the C that point inside the game code region but are not a function's entry."""
     ent = {a for a, s, n in functions()}
     out = {}
-    for f in sorted(glob.glob(srcdir + '/*.c')):
+    for f in sorted(glob.glob(srcdir + '/**/*.c', recursive=True)):
         for i, l in enumerate(open(f, errors='replace').read().split('\n'), 1):
             if is_comment(l):
                 continue
@@ -445,7 +446,7 @@ def prep_sources():
     stripped = kept = stubbed = 0
     stub = strip_names()
     for stem in stems:
-        p = 'src/%s.c' % stem
+        p = srcfiles.path(stem)
         if not os.path.exists(p):
             continue
         t = open(p, errors='replace').read()
