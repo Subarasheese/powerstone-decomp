@@ -919,10 +919,6 @@ void kmiNullCallback3(void)
     
 }
 
-void kmiNullCallback4(void)
-{
-    
-}
 
 void kmiNullCallback5(void)
 {

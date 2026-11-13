@@ -3818,7 +3818,7 @@ F 0c0eedf0 112 FUN_0c0eedf0
 F 0c0eee64 102 FUN_0c0eee64
 F 0c0eeecc 168 FUN_0c0eeecc
 F 0c0eef74 72 FUN_0c0eef74
-F 0c0eefc4 378 FUN_0c0eefc4
+F 0c0eefc4 404 FUN_0c0eefc4
 F 0c0ef158 58 FUN_0c0ef158
 F 0c0ef19c 208 in_coss
 F 0c0ef28c 76 lsft

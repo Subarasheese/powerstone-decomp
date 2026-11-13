@@ -745,7 +745,7 @@ start,end,name,layer,role,functions,bytes,pools,bsr_internal,nop_after_mov_r0_pa
 0c0eee64,0c0eeecc,src_0c0eee64.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,104,0,0,0,no,unmatched,2
 0c0eeecc,0c0eef74,src_0c0eeecc.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,168,0,0,0,no,unmatched,2
 0c0eef74,0c0eefc4,src_0c0eef74.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,80,1,0,0,no,unmatched,2
-0c0eefc4,0c0ef158,src_0c0eefc4.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,404,2,0,0,no,unmatched,3
+0c0eefc4,0c0ef158,src_0c0eefc4.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,404,2,0,0,no,matched,3
 0c0ef158,0c0ef19c,src_0c0ef158.c,C runtime,"libc/libm: strncpy, printf internals, acosf, trig, float formatting",1,68,1,0,0,no,unmatched,2
 0c0ef19c,0c0ef28c,libc_in_coss.c,C runtime,libc/libm internal (in_coss),1,240,1,0,0,no,unmatched,2
 0c0ef28c,0c0ef2dc,libc_lsft.c,C runtime,libc/libm internal (lsft),1,80,1,0,0,no,unmatched,2
@@ -793,7 +793,7 @@ start,end,name,layer,role,functions,bytes,pools,bsr_internal,nop_after_mov_r0_pa
 0c0f9a20,0c0fae00,km_sys_0c0f9a20.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",13,5088,13,13,0,no,unmatched,5
 0c0fae00,0c0faee0,src_0c0fae00.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",3,224,1,0,0,no,unmatched,2
 0c0faee0,0c0fb460,src_0c0faee0.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",18,1408,8,10,0,yes,unmatched,5
-0c0fb460,0c0fb464,src_0c0fb460.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",1,4,0,0,0,no,unmatched,1
+0c0fb460,0c0fb464,src_0c0fb460.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",1,4,0,0,0,no,matched,1
 0c0fb464,0c0fb468,src_0c0fb464.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",1,4,0,0,0,no,unmatched,1
 0c0fb468,0c0fb46c,src_0c0fb468.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",1,4,0,0,0,no,unmatched,1
 0c0fb46c,0c0fb470,src_0c0fb46c.c,SDK/Katana,"Kamui system init (KAMUI, VideoMode, EnableTexture16MB)",1,4,0,0,0,no,unmatched,1
