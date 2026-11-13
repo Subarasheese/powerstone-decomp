@@ -153,8 +153,8 @@ int math_rand_next(void);
 float math_sin_angle16(int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e24f0(int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(float);
+int _modls(void);
+int _quick_odd_mvn(float);
 int FUN_0c0f2292(int);
 int FUN_0c0f8180(int);
 int FUN_0c0f8920(int);
@@ -642,6 +642,7 @@ int ADXPD_ExecHndl(int a4)
 {
     register int t0;
     register int t1;
+    register int t3;
 
     if ((*(int *)((a4 + 0xC))) == 1) {
         *(unsigned int *)((a4 + 0xC)) = 0x2;
@@ -656,12 +657,14 @@ int ADXPD_ExecHndl(int a4)
         } else {
             *(volatile short *)(((a4 + 0x30) + 0x2));
             *(volatile short *)(((a4 + 0x30) + 0x0));
-            *(unsigned int *)((a4 + 0x10)) = (FUN_0c115fb8((*(int *)((a4 + 0x18))), (*(int *)((a4 + 0x1C))), (*(int *)((a4 + 0x20))), (a4 + 0x28), ((*(int *)((a4 + 0x24)))), ((a4 + 0x28) + 0x4)));
-            t0 = FUN_0c0e6e5c();
-            t1 = t0;
-            if (t0 == 1) {
-                t1 = (adxpd_error());
+            t0 = FUN_0c115fb8((*(int *)((a4 + 0x18))), (*(int *)((a4 + 0x1C))), (*(int *)((a4 + 0x20))), (a4 + 0x28), ((*(int *)((a4 + 0x24)))), ((a4 + 0x28) + 0x4));
+            *(unsigned int *)((a4 + 0x10)) = t0;
+            t3 = (int)((int)t0 % (int)0x2);
+            t0 = t3;
+            if (t3 == 1) {
+                t0 = (adxpd_error());
             }
+            t1 = t0;
         }
         *(unsigned int *)((a4 + 0xC)) = 0x3;
     }

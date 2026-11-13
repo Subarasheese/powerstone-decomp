@@ -17,9 +17,9 @@ struct o274_float { char p[0x274]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c0555dc(void);
-int obj_destroy(int, int, int);
+int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c0e6fe8(int, int, int, float, float, float, float, float, float, float);
+int _quick_odd_mvn(int, int, int, float, float, float, float, float, float, float);
 int memset(int, int, int);
 
 int fx_spawn_0498c4(int a4)
@@ -93,7 +93,7 @@ int fx_tick_0498c4(int a4)
     v0_1 = (FUN_0c0555dc()) == 0;
     v0_0 = (v0_6);
     if (v0_1) goto L_C0499AC;
-    return obj_destroy(v0_0, R5, R6);
+    return obj_destroy(v0_0);
     L_C0499AC:;
     v0_3 = *(signed char *)((v0_0 + 0x8));
     v0_4 = (v0_3);
@@ -105,7 +105,7 @@ int fx_tick_0498c4(int a4)
     if ((v0_4 != 3)) goto L_C0499CC;
     goto L_C049B44;
     L_C049B44:;
-    return obj_destroy(v0_0, R5, R6);
+    return obj_destroy(v0_0);
     L_C0499CC:;
     L_C049B5A:;
     return v0_4;
@@ -123,10 +123,10 @@ int fx_tick_0498c4(int a4)
     if (((*(signed char *)((v0_7 + 0x0))) != 0)) goto L_C049A8C;
     (((struct oEC_ushort *)(v0_0))->v) = 0x2;
     *(unsigned char *)((v0_6 + 0x0)) = v0_3;
-    FUN_0c0e6fe8(v0_6, R5, R6, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, F10);
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_6 + 0x4)) = *(struct mv3 *)((v0_2 + 0x20)); }
     *(unsigned char *)((((*(signed char *)((v0_1 + 0x10))) + v0_1) + 0x0)) = v0_5;
     *(unsigned char *)((((*(signed char *)((v0_1 + 0x10))) + (v0_1 + 0x8)) + 0x0)) = v0_4;
-    FUN_0c06231c(0x0, ((int)g_res_kyoutsuu), ((*(signed char *)((((*(signed char *)((v0_1 + 0x10))) + v0_1) + 0x0))) + 0x5C));
+    FUN_0c06231c(v0_6, 0xC4CFA68, ((*(signed char *)((((*(signed char *)((v0_1 + 0x10))) + v0_1) + 0x0))) + 0x5C));
     (((struct o10_uchar *)(v0_1))->v) = (((*(signed char *)((v0_1 + 0x10))) + 0x1) & 0x7);
     (((struct o11_uchar *)(v0_1))->v) = ((*(signed char *)((v0_1 + 0x11))) + 0x1);
     L_C049A8C:;
@@ -166,7 +166,7 @@ int fx_tick_0498c4(int a4)
     v0_4 = (0x2);
     goto L_C049B5A;
     L_C049AF0:;
-    FUN_0c06231c(v0_6, ((int)g_res_kyoutsuu), ((*(signed char *)((((signed char)v0_7 + v0_1) + 0x0))) + 0x5C));
+    FUN_0c06231c(v0_6, 0xC4CFA68, ((*(signed char *)((((signed char)v0_7 + v0_1) + 0x0))) + 0x5C));
     goto L_C049B00;
     L_C0499F4:;
     *(unsigned char *)((v0_0 + 0x8)) = ((*(signed char *)((v0_0 + 0x8))) + 0x1);

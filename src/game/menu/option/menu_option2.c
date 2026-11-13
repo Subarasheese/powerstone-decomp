@@ -32,7 +32,7 @@ float math_sin_angle16(int, int, int, int);
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -47,7 +47,7 @@ struct o2E4_int { char p[0x2E4]; int v; };
 struct o0_short { short v; };
 struct o14_short { char p[0x14]; short v; };
 
-int FUN_0c01a800(int a4);
+int FUN_0c01a800(int);
 int FUN_0c01a928(int a4);
 int opt_page2_spawn_bg_scroll(int a4);
 int opt_page2_obj_in_mask(int a4);
@@ -91,14 +91,14 @@ int FUN_0c01a800(int a4)
     int stk[1];
     register int t1;
     register int t2;
-    register int t11;
+    register int t10;
     register int t0;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
     t1 = 0x0;
     for (;;) {
-        t2 = obj_create(0x5, 0x1, 0x1);
-        t11 = t2;
+        t2 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
+        t10 = t2;
         if (t2 != 0) {
             *(unsigned int *)((t2 + 0x10)) = 0xC01A74C;
             *(unsigned char *)((t2 + 0x0)) = 0x1;
@@ -117,20 +117,20 @@ int FUN_0c01a800(int a4)
             *(unsigned int *)((t2 + 0x2C)) = 0x0;
             (((struct oF2_ushort *)(t2))->v) = (*(short *)(((int)stk + 0)));
             t0 = (t0 + 0xC11C034);
-            FUN_0c0e6fe8();
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x20)) = *(struct mv3 *)(t0); }
             *(unsigned char *)((((((struct o2E0_int *)(t2))->v)) + 0x0)) = 0x1;
             *(unsigned char *)((((((struct o2E0_int *)(t2))->v)) + 0x1)) = 0x0;
             *(unsigned short *)((((((struct o2E0_int *)(t2))->v)) + 0x2)) = 0xF;
-            FUN_0c06233a(((((struct o2E0_int *)(t2))->v)), ((int)g_res_art_model), (*(signed char *)((t0 + 0xC))));
+            FUN_0c06233a(((((struct o2E0_int *)(t2))->v)), 0xC664AC0, (*(signed char *)((t0 + 0xC))));
             *(unsigned char *)((t2 + 0xF)) = t1;
-            t11 = t1;
+            t10 = t1;
         }
         t1 = (t1 + 0x1);
         if ((int)t1 >= (int)0xC) {
             break;
         }
     }
-    return t11;
+    return t10;
 }
 
 int FUN_0c01a8c8(int a4)

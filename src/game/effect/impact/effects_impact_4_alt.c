@@ -12,12 +12,12 @@ struct o4C_float { char p[0x4C]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c048ea0(int, int);
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c0624c4(int, int, int);
 int FUN_0c0e21b0(int, int);
-int FUN_0c0e6d00(void);
+int _divls(void);
 
-int fx_update_heading_shot(int a4, int a5, int a6, int a7)
+int fx_update_heading_shot(int a4)
 {
     register int t0;
     register int t1;
@@ -25,12 +25,10 @@ int fx_update_heading_shot(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         t0 = (((struct o2E0_int *)(a4))->v);
-        *(volatile short *)((a4 + 0xEC));
-        t1 = FUN_0c0e6d00();
-        FUN_0c0624c4((0x9C + t0), ((int)g_res_kyoutsuu), (t1 + 0x48));
+        FUN_0c0624c4((0x9C + t0), 0xC4CFA68, (((int)((int)((((struct oEC_short *)(a4))->v)) / (int)0x4)) + 0x48));
         t1 = *(signed char *)((a4 + 0x9));
         if (t1 != 0) {
             if (t1 != 1) {

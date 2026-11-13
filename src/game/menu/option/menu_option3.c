@@ -39,7 +39,7 @@ struct o28_float { char p[0x28]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct o2E4_int { char p[0x2E4]; int v; };
 int FUN_0c06231c(int, int, int);
 struct o38_float { char p[0x38]; float v; };
@@ -50,7 +50,7 @@ int mdl_vtx_iter_next(void);
 int mdl_vtx_get_uv(int, int);
 int mdl_vtx_set_uv(int, int);
 
-int FUN_0c01b144(int a4, int a5);
+void FUN_0c01b144(int, int);
 int opt_page3_spawn_bg_scroll(int a4);
 int opt_page3_obj_in_mask(int a4);
 int FUN_0c01b4d6(int a4);
@@ -91,18 +91,16 @@ int FUN_0c01b0a4(int a4, int a5, int a6, int a7)
     return (signed char)t0;
 }
 
-int FUN_0c01b144(int a4, int a5)
+void FUN_0c01b144(int a4, int a5)
 {
     int stk[1];
     register int t0;
-    register int t15;
     register int t5;
     register int t8;
     register int t12;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t15 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01B0A4;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -126,15 +124,13 @@ int FUN_0c01b144(int a4, int a5)
         if ((short)t5 != 0) {
             t8 = (*(signed char *)(((((signed char)a5 << 2) << 2) + 0xC11C17C)));
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), t8);
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, t8);
         t12 = (((struct o2E0_int *)(t0))->v);
         (((struct o24_float *)(t12))->v) = 1.0f;
         (((struct o20_float *)(t12))->v) = 1.0f;
         (((struct o1C_float *)(t12))->v) = 1.0f;
-        *(volatile int *)((t0 + 0x2E0));
-        t15 = (FUN_0c0e6fe8(t12));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)((0xC11C170 + (((signed char)a5 << 2) << 2))); }
     }
-    return t15;
 }
 
 int FUN_0c01b206(int a4)

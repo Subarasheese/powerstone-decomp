@@ -6508,7 +6508,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 26 of 26 instructions
 
-### FUN_0c0235ca (`0C0235CA`, 4 bytes, `src/game/hit/hit_boxes_4.c`)
+### FUN_0c0235ca (`0C0235CA`, 4 bytes, `src/game/hit/hit_boxes_4_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_4_equiv/FUN_0c0235ca.json`
 - case 0
 - case 1
@@ -15054,7 +15054,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - limit edge exact
 - the cases run 133 of 133 instructions
 
-### FUN_0c05b188 (`0C05B188`, 4 bytes, `src/game/item/item_4.c`)
+### FUN_0c05b188 (`0C05B188`, 4 bytes, `src/game/item/item_4_alt_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/item_4_alt_equiv/FUN_0c05b188.json`
 - case 0
 - case 1
@@ -20697,7 +20697,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 117
 - the cases run 9 of 21 instructions
 
-### FUN_0c08e980 (`0C08E980`, 488 bytes, `src/game/hit/hit_records.c`)
+### FUN_0c08e980 (`0C08E980`, 524 bytes, `src/game/hit/hit_records.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/hit_records/FUN_0c08e980.json`
 - case 0
 - case 0
@@ -20735,7 +20735,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 49
 - case 32
 - case 50
-- the cases run 72 of 186 instructions
+- the cases run 83 of 241 instructions
 
 ### FUN_0c08ebfa (`0C08EBFA`, 212 bytes, `src/game/hit/hit_records.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/hit_records/FUN_0c08ebfa.json`
@@ -24337,7 +24337,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 20 of 20 instructions
 
-### FUN_0c0a3304 (`0C0A3304`, 4 bytes, `src/game/sound/sound_2.c`)
+### FUN_0c0a3304 (`0C0A3304`, 4 bytes, `src/game/sound/sound_2_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/sound_2_equiv/FUN_0c0a3304.json`
 - case 0
 - case 1
@@ -25843,7 +25843,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 136
 - the cases run 70 of 79 instructions
 
-### FUN_0c0abd84 (`0C0ABD84`, 92 bytes, `src/game/stage/stage_object_base.c`)
+### FUN_0c0abd84 (`0C0ABD84`, 92 bytes, `src/game/stage/stage_object_base_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/stage_object_base_equiv/FUN_0c0abd84.json`
 - case 0
 - case 9
@@ -26179,7 +26179,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 51 of 51 instructions
 
-### FUN_0c0ad46e (`0C0AD46E`, 4 bytes, `src/game/stage/stage_layout_objects_7.c`)
+### FUN_0c0ad46e (`0C0AD46E`, 4 bytes, `src/game/stage/stage_layout_objects_7_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/stage_layout_objects_7_equiv/FUN_0c0ad46e.json`
 - case 0
 - case 1
@@ -37355,13 +37355,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 82
 - the cases run 40 of 40 instructions
 
-### FUN_0c0e66f4 (`0C0E66F4`, 44 bytes, `src/lib/naomi/m_0c0e65f8_libsnd.c`)
+### FUN_0c0e66f4 (`0C0E66F4`, 44 bytes, `src/lib/mixed/gen_ap.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ap/FUN_0c0e66f4.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 22 of 22 instructions
 
-### FUN_0c0e6726 (`0C0E6726`, 44 bytes, `src/lib/naomi/m_0c0e65f8_libsnd.c`)
+### FUN_0c0e6726 (`0C0E6726`, 44 bytes, `src/lib/mixed/gen_ap.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ap/FUN_0c0e6726.json`
 - rescue: empty case
 - rescue: empty case
@@ -60239,7 +60239,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 46
 - the cases run 34 of 34 instructions
 
-### buCreateExecFile (`0C0F3442`, 46 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buCreateExecFile (`0C0F3442`, 46 bytes, `src/lib/mixed/gen_an.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_an/buCreateExecFile.json`
 - case 0
 - case 1
@@ -60279,7 +60279,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 15 of 23 instructions
 
-### buCreateFile (`0C0F340C`, 46 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buCreateFile (`0C0F340C`, 46 bytes, `src/lib/mixed/gen_an.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_an/buCreateFile.json`
 - case 0
 - case 1
@@ -60319,7 +60319,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 91
 - the cases run 15 of 23 instructions
 
-### buFindFirstFileEx (`0C0F3348`, 42 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buFindFirstFileEx (`0C0F3348`, 42 bytes, `src/lib/mixed/gen_ap.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/buFindFirstFileEx.json`
 - case 0
 - case 1
@@ -60359,7 +60359,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 88
 - the cases run 14 of 21 instructions
 
-### buFindNextFileEx (`0C0F337A`, 42 bytes, `src/lib/katana/m_0c0f2fec_vmsapi.c`)
+### buFindNextFileEx (`0C0F337A`, 42 bytes, `src/lib/mixed/gen_ap.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ap/buFindNextFileEx.json`
 - case 0
 - case 1
@@ -66218,7 +66218,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 34 of 172 instructions
 
-### fx_burst_place_sprites (`0C0C7C2C`, 708 bytes, `src/game/effect/special/effects_burst_2.c`)
+### fx_burst_place_sprites (`0C0C7C2C`, 766 bytes, `src/game/effect/special/effects_burst_2.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/effects_burst_2/fx_burst_place_sprites.json`
 - case 6
 - case 6
@@ -66256,7 +66256,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 83
 - case 68
 - case 147
-- the cases run 46 of 199 instructions
+- the cases run 57 of 353 instructions
 
 ### fx_burst_update (`0C0C7F48`, 864 bytes, `src/game/effect/special/effects_burst_2_alt.c`)
 - equivalent on 9 development and 4 holdout cases, in `tests/effects_burst_2_alt/fx_burst_update.json`
@@ -66890,11 +66890,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fuzz 13.0
 - the cases run 348 of 380 instructions
 
-### fx_spawn_040a84 (`0C040A84`, 1330 bytes, `src/game/effect/effects_86.c`)
+### fx_spawn_040a84 (`0C040A84`, 1844 bytes, `src/game/effect/effects_86.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_86/fx_spawn_040a84.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 24 of 441 instructions
+- the cases run 24 of 650 instructions
 
 ### fx_spawn_0416d8 (`0C0416D8`, 194 bytes, `src/game/effect/effects_89.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_89/fx_spawn_0416d8.json`
@@ -67570,11 +67570,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 26 of 173 instructions
 
-### fx_spawn_26 (`0C0C2342`, 192 bytes, `src/game/effect/player/effects_player_43_alt.c`)
+### fx_spawn_26 (`0C0C2342`, 240 bytes, `src/game/effect/player/effects_player_43_alt.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_player_43_alt/fx_spawn_26.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 14 of 90 instructions
+- the cases run 19 of 95 instructions
 
 ### fx_spawn_27 (`0C0C2432`, 252 bytes, `src/game/effect/player/effects_player_43_alt.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_player_43_alt/fx_spawn_27.json`
@@ -67624,11 +67624,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 32 of 152 instructions
 
-### fx_spawn_35 (`0C0C6E6C`, 478 bytes, `src/game/effect/player/effects_player_52.c`)
+### fx_spawn_35 (`0C0C6E6C`, 530 bytes, `src/game/effect/player/effects_player_52.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_player_52/fx_spawn_35.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 21 of 202 instructions
+- the cases run 29 of 236 instructions
 
 ### fx_spawn_burst_slot (`0C042F48`, 490 bytes, `src/game/effect/effects_95_alt8.c`)
 - equivalent on 7 development and 2 holdout cases, in `tests/effects_95_alt8/fx_spawn_burst_slot.json`
@@ -67817,11 +67817,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mode -128
 - the cases run 100 of 100 instructions
 
-### fx_spawn_item_sparkle (`0C047DF4`, 442 bytes, `src/game/effect/effects_111.c`)
+### fx_spawn_item_sparkle (`0C047DF4`, 490 bytes, `src/game/effect/effects_111.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_111/fx_spawn_item_sparkle.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 22 of 164 instructions
+- the cases run 33 of 216 instructions
 
 ### fx_spawn_jack_projectile (`0C0BB2E8`, 522 bytes, `src/game/effect/player/effects_player_14.c`)
 - equivalent on 3 development and 2 holdout cases, in `tests/effects_player_14/fx_spawn_jack_projectile.json`
@@ -77753,7 +77753,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - s=5 a=1
 - the cases run 71 of 71 instructions
 
-### item_director_tick (`0C0CC8E8`, 222 bytes, `src/game/flow/round_flow_alt.c`)
+### item_director_tick (`0C0CC8E8`, 246 bytes, `src/game/flow/round_flow_alt.c`)
 - equivalent on 3 development and 3 holdout cases, in `tests/round_flow_alt/item_director_tick.json`
 - case 5
 - case 9
@@ -77761,7 +77761,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 6
 - case 35
 - case 78
-- the cases run 9 of 64 instructions
+- the cases run 14 of 96 instructions
 
 ### item_spawn_pickup_popup (`0C049E68`, 124 bytes, `src/game/item/item_popup.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/item_popup/item_spawn_pickup_popup.json`
@@ -91438,7 +91438,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 117
 - case 150
 - case 79
-- the cases run 0 of 38 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
+- the cases run 32 of 38 instructions
 
 ### obj_collect_slot_contacts (`0C0ABF64`, 1388 bytes, `src/game/stage/stage_object_base_3.c`)
 - equivalent on 15 development and 14 holdout cases, in `tests/stage_object_base_3/obj_collect_slot_contacts.json`
@@ -93934,7 +93934,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 102
 - the cases run 13 of 13 instructions
 
-### pad_get_start_mask (`0C01B9B4`, 58 bytes, `src/game/menu/option/menu_option4.c`)
+### pad_get_start_mask (`0C01B9B4`, 58 bytes, `src/game/menu/option/menu_option4_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/menu_option4_equiv/pad_get_start_mask.json`
 - case 22
 - case 0
@@ -119521,7 +119521,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 83
 - the cases run 2 of 2 instructions
 
-### stage_gimmick_05_spawn (`0C0AF23C`, 136 bytes, `src/game/stage/gimmick/stage_gimmicks_5.c`)
+### stage_gimmick_05_spawn (`0C0AF23C`, 136 bytes, `src/game/stage/gimmick/stage_gimmicks_5_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/stage_gimmicks_5_equiv/stage_gimmick_05_spawn.json`
 - rescue: empty case
 - rescue: empty case
@@ -120461,11 +120461,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 19 of 85 instructions
 
-### stage_gimmick_26_spawn_b (`0C0B2DC0`, 406 bytes, `src/game/stage/gimmick/stage_gimmicks_28.c`)
+### stage_gimmick_26_spawn_b (`0C0B2DC0`, 462 bytes, `src/game/stage/gimmick/stage_gimmicks_28.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/stage_gimmicks_28/stage_gimmick_26_spawn_b.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 20 of 171 instructions
+- the cases run 27 of 199 instructions
 
 ### stage_gimmick_26_update (`0C0B2CFE`, 190 bytes, `src/game/stage/gimmick/stage_gimmicks_28.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/stage_gimmicks_28/stage_gimmick_26_update.json`
@@ -121544,7 +121544,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 19 of 105 instructions
 
-### stage_spawn_type03 (`0C0ACA24`, 164 bytes, `src/game/stage/stage_layout_objects_3.c`)
+### stage_spawn_type03 (`0C0ACA24`, 164 bytes, `src/game/stage/stage_layout_objects_3_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/stage_layout_objects_3_equiv/stage_spawn_type03.json`
 - rescue: empty case
 - rescue: empty case

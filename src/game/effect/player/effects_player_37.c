@@ -17,28 +17,25 @@ struct o8_float { char p[0x8]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_linked_effect(int, int, int, int, int, int, int, int, int);
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(int, int, float);
+int _quick_odd_mvn(int, int, float);
 
 int fx_spawn_22(int a4)
 {
     int stk[6];
     register int t0;
-    register int t35;
-    register int t2;
-    register float u7;
-    register float u14;
-    register int t15;
-    register int t16;
-    register int t22;
-    register int t30;
+    register int t32;
+    register float u6;
+    register float u13;
+    register int t19;
+    register int t27;
 
-    t0 = obj_create(0x1, 0x1, 0x1);
-    t35 = t0;
+    t0 = obj_create(0x1, 0x1, 0x1, 0x0);
+    t32 = t0;
     if (t0 == 0) {
     } else {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -52,18 +49,18 @@ int fx_spawn_22(int a4)
         (((struct oEE_ushort *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0C0E3C;
         *(unsigned int *)((t0 + 0x1C)) = a4;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         *(int *)((int)stk + 16) = (t0 + 0x20);
-        u7 = ((((struct o20_float *)(t0))->v));
-        u7 = u7 + (math_cos_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))) * ((((struct o0_float *)0xC33C74C)->v));
-        (((struct o20_float *)(t0))->v) = u7;
+        u6 = ((((struct o20_float *)(t0))->v));
+        u6 = u6 + (math_cos_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))) * ((((struct o0_float *)0xC33C74C)->v));
+        (((struct o20_float *)(t0))->v) = u6;
         (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + ((((struct o4_float *)0xC33C74C)->v)));
         *(int *)((int)stk + 16) = (t0 + 0x28);
-        u14 = ((((struct o28_float *)(t0))->v));
-        u14 = u14 + (math_sin_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))) * ((((struct o8_float *)0xC33C74C)->v));
-        (((struct o28_float *)(t0))->v) = u14;
-        t15 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t16 = ((int (*)(void))(FUN_0c0e6fe8))();
+        u13 = ((((struct o28_float *)(t0))->v));
+        u13 = u13 + (math_sin_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))) * ((((struct o8_float *)0xC33C74C)->v));
+        (((struct o28_float *)(t0))->v) = u13;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33C734); }
         (((struct o38_float *)(t0))->v) = ((math_cos_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000))) * 40.0f);
         (((struct o3C_float *)(t0))->v) = 0.0f;
         (((struct o40_float *)(t0))->v) = ((math_sin_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000))) * 40.0f);
@@ -71,8 +68,8 @@ int fx_spawn_22(int a4)
         (((struct o102_uchar *)(t0))->v) = 0x1;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         obj_set_record_char(t0, 0x7D);
-        t22 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t22 << 1) + t22) << 2) << 1) + 0xC6002D0), 0x3);
+        t19 = *(signed char *)((a4 + 0x3));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t19 << 1) + t19) << 2) << 1) + 0xC6002D0), 0x3);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xB;
         *(unsigned int *)((((((struct o2E0_int *)(t0))->v)) + 0x18)) = 0x4000;
@@ -81,9 +78,9 @@ int fx_spawn_22(int a4)
         *(int *)((int)stk + 8) = 0x6F;
         *(int *)((int)stk + 4) = 0x78;
         *(int *)((int)stk + 0) = 0x5;
-        t30 = *(signed char *)((a4 + 0x3));
-        (((struct o14_uchar *)(((int)stk + 0)))->v) = t30;
-        t35 = (fx_spawn_linked_effect((*(signed char *)(((int)stk + 20))), (t0 + 0x6C), t0, ((signed char)((((t30 << 1) + t30) << 2) << 1) + 0xC6002D0), 0x5, 0x78, 0x6F, 0xC153190, 0xC15319C));
+        t27 = *(signed char *)((a4 + 0x3));
+        (((struct o14_uchar *)(((int)stk + 0)))->v) = t27;
+        t32 = (fx_spawn_linked_effect((*(signed char *)(((int)stk + 20))), (t0 + 0x6C), t0, ((signed char)((((t27 << 1) + t27) << 2) << 1) + 0xC6002D0), 0x5, 0x78, 0x6F, 0xC153190, 0xC15319C));
     }
-    return t35;
+    return t32;
 }

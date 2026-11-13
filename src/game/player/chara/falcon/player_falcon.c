@@ -2,7 +2,7 @@
 /* runtime: _quick_odd_mvn */
 typedef struct { int a, b, c; } S12;
 extern S12 g14ee48;
-extern void FUN_0c0e6fe8(void);
+extern void _quick_odd_mvn(void);
 extern void pl_falcon_motion_sfx(char *);
 extern char FUN_0c09c3f8(char *, int);
 extern void pl_start_motion(char *, int, int);

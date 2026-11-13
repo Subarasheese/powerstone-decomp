@@ -101,7 +101,7 @@ int fx_spawn_17(int, int);
 int fx_spawn_18(int, int);
 int fx_spawn_19(int, int);
 int FUN_0c0bd640(int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 void pl_gunrock_state_enter(char *obj)
 {

@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.5&b=97.7&m=1.6&a=63&s=0)
+![decomp progress](badges/progress.svg?p=97.8&b=96.7&m=1.6&a=62&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,18 +24,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE           62.6%  the instructions the cases ran, of all instructions, over the 4940 functions that can be C; the 4625 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (98.5% complete) 74  of the 4940 functions that can be C (76 with no C form are counted apart)
-BYTES LEFT   (97.7% complete) 20720  of 886580 bytes of code that can be C
-FUNCTIONS                            
-  unnamed                      1963  functions still called FUN_... (1963 of 5016)
-  Not written C                   0  0 bytes
-  Written C with errors           0  0 bytes
-  Not drawn                      10  1494 bytes
-  Drawn with errors              24  6270 bytes
-  Checked with errors            40  12956 bytes
-  No C form                    1.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                  56.8%  2850 named functions in docs/*.md
+TOTAL TEST COVERAGE            61.8%  the instructions the cases ran, of all instructions, over the 4973 functions that can be C; the 4625 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (97.8% complete) 107  of the 4973 functions that can be C (43 with no C form are counted apart)
+BYTES LEFT    (96.7% complete) 29706  of 895566 bytes of code that can be C
+FUNCTIONS                             
+  unnamed                       1955  functions still called FUN_... (1955 of 5016)
+  Not written C                   33  8986 bytes
+  Written C with errors            0  0 bytes
+  Not drawn                       10  1494 bytes
+  Drawn with errors               24  6270 bytes
+  Checked with errors             40  12956 bytes
+  No C form                     0.9%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                   57.0%  2857 named functions in docs/*.md
 ```
 <!-- /progress -->
 

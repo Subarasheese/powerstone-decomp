@@ -105,7 +105,7 @@ struct oC_int { char p[0xC]; int v; };
 int vmu_write_vmgame_file(int, int);
 int buMountDisk(int, int, int);
 int obj_destroy(int, int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 int vmu_lcd_set_idle_image(void);
 int vmu_lcd_set_busy_image(void);
@@ -1192,18 +1192,16 @@ void vmu_check_message_update(int a4, int a5, int a6, int a7)
     }
 }
 
-int vmu_check_show_message(int a4)
+void vmu_check_show_message(int a4)
 {
     int stk[2];
     register int t0;
-    register int t12;
     register int t5;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     (((struct o0_uchar *)0xC361BE8)->v) = 0x0;
     (((struct o1_uchar *)0xC361BE8)->v) = 0x1;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t12 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
@@ -1223,12 +1221,9 @@ int vmu_check_show_message(int a4)
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t5 = *(signed char *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 4)) = (((t5 << 2) << 2) + 0xC116240);
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_vms_check), (*(signed char *)(((((t5 << 2) << 2) + 0xC116240) + 0xC))));
-        *(volatile int *)((t0 + 0x2E0));
-        *(volatile int *)(((int)stk + 4));
-        t12 = (FUN_0c0e6fe8());
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B20, (*(signed char *)(((((t5 << 2) << 2) + 0xC116240) + 0xC))));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
     }
-    return t12;
 }
 
 void FUN_0c0124ce(void)

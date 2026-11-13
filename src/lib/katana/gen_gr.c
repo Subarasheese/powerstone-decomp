@@ -55,7 +55,7 @@ int math_atan2_angle16(float, float);
 float math_cos_angle16(int);
 float math_pow_float(float, float);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 extern int FUN_0c0f7e80();
 extern float _builtin_sqrtf(float);
 int thunk_FUN_0c062242(int);

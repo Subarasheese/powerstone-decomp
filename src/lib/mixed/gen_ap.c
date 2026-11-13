@@ -165,7 +165,7 @@ int syRtcGetAndCheckCount(int);
 int syRtcGetCountForce(void);
 int FUN_0c0e55e0(int, int);
 int FUN_0c0e5884(int);
-int FUN_0c0e6d00(void);
+int _divls(void);
 int sys_strided_copy_blocks(int, int, int, int, int, int);
 int FUN_0c0ee6dc(int, int);
 int FUN_0c0f1766(int);

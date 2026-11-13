@@ -10,7 +10,6 @@ int ai_calc_goal_angle(int);
 int ai_calc_dist_to_goal_obj(int);
 int ai_angle_to_pad_dir(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(int);
 
 int ai_op60(void)
 {
@@ -157,7 +156,7 @@ int ai_op47(int a4, float f4)
     if ((2.14748365e+09f > (w0_0 * 255.0f))) goto L_C051248;
     w0_2 = ((w0_2 - (w0_1 + w0_1)));
     L_C051248:;
-    *(unsigned short *)((v0_5 + 0x0)) = (FUN_0c0e6f24(v0_3));
+    *(unsigned short *)((v0_5 + 0x0)) = ((unsigned int)(int)w0_2 % 2u);
     v0_3 = *(signed char *)((v0_1 + 0x0));
     *(unsigned char *)((((short)((short)(unsigned char)v0_3 * (short)0x254) + v0_0) + 0x0)) = ((*(signed char *)((((short)((short)(unsigned char)v0_3 * (short)0x254) + v0_0) + 0x0))) + 0x1);
     goto L_C051268;

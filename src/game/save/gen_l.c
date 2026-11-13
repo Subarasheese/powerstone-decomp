@@ -80,7 +80,7 @@ int FUN_0c0e0ae0(int);
 int FUN_0c0e1240(int);
 int FUN_0c0e1550(int);
 int FUN_0c0e19b0(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int buMountDisk(int, int, int);
 int buUnmount(int);
 int dbg_print_at(int, float, float);
@@ -127,127 +127,127 @@ int FUN_0c05a164(int a4)
     register int t0;
     register int t1;
     register int t7;
-    register int t1618;
+    register int t1716;
     register int t12;
     register int t13;
     register int t15;
-    register int t1596;
-    register int t1588;
-    register int t1580;
+    register int t1694;
+    register int t1686;
+    register int t1678;
     register int t71;
     register int t72;
-    register int t85;
-    register int t245;
-    register float u262;
-    register float u263;
-    register float u281;
-    register float u286;
-    register int t289;
-    register float t290;
-    register float u292;
-    register int t294;
-    register int t318;
-    register int t351;
-    register int t367;
-    register float u384;
-    register float u385;
-    register float u403;
-    register float u408;
-    register int t411;
-    register float t412;
-    register float u414;
-    register int t416;
-    register int t440;
-    register int t473;
-    register int t509;
-    register float u526;
-    register float u527;
-    register float u545;
-    register float u550;
-    register int t553;
-    register float t554;
-    register float u556;
-    register int t558;
-    register int t582;
-    register int t615;
-    register int t643;
-    register float u660;
-    register float u661;
-    register float u679;
-    register float u684;
-    register int t687;
-    register float t688;
-    register float u690;
-    register int t692;
-    register int t716;
-    register int t749;
-    register int t776;
-    register float u793;
-    register float u794;
-    register float u812;
-    register float u817;
+    register int t91;
+    register int t253;
+    register float u269;
+    register float u270;
+    register float u288;
+    register float u293;
+    register int t296;
+    register float t297;
+    register float u299;
+    register int t301;
+    register int t327;
+    register int t365;
+    register int t384;
+    register float u400;
+    register float u401;
+    register float u419;
+    register float u424;
+    register int t427;
+    register float t428;
+    register float u430;
+    register int t432;
+    register int t458;
+    register int t496;
+    register int t535;
+    register float u551;
+    register float u552;
+    register float u570;
+    register float u575;
+    register int t578;
+    register float t579;
+    register float u581;
+    register int t583;
+    register int t609;
+    register int t647;
+    register int t678;
+    register float u694;
+    register float u695;
+    register float u713;
+    register float u718;
+    register int t721;
+    register float t722;
+    register float u724;
+    register int t726;
+    register int t752;
+    register int t790;
     register int t820;
-    register float t821;
-    register float u823;
-    register int t825;
-    register int t849;
-    register int t882;
-    register int t909;
-    register float u926;
-    register float u927;
-    register float u945;
-    register float u950;
-    register int t953;
-    register float t954;
-    register float u956;
-    register int t958;
-    register int t982;
-    register int t1015;
-    register int t1042;
-    register float u1059;
-    register float u1060;
-    register float u1078;
-    register float u1083;
-    register int t1086;
-    register float t1087;
-    register float u1089;
-    register int t1091;
-    register int t1115;
-    register int t1148;
-    register int t1175;
-    register float u1192;
-    register float u1193;
-    register float u1211;
-    register float u1216;
-    register int t1219;
-    register float t1220;
-    register float u1222;
-    register int t1224;
-    register int t1248;
-    register int t1281;
-    register int t1308;
-    register float u1325;
-    register float u1326;
-    register float u1344;
-    register float u1349;
-    register int t1352;
-    register float t1353;
-    register float u1355;
-    register int t1357;
-    register int t1381;
-    register int t1414;
-    register int t1441;
-    register float u1458;
-    register float u1459;
-    register float u1477;
-    register float u1482;
-    register int t1485;
-    register float t1486;
-    register float u1488;
-    register int t1490;
-    register int t1514;
-    register int t1547;
-    register int t1602;
+    register float u836;
+    register float u837;
+    register float u855;
+    register float u860;
+    register int t863;
+    register float t864;
+    register float u866;
+    register int t868;
+    register int t894;
+    register int t932;
+    register int t962;
+    register float u978;
+    register float u979;
+    register float u997;
+    register float u1002;
+    register int t1005;
+    register float t1006;
+    register float u1008;
+    register int t1010;
+    register int t1036;
+    register int t1074;
+    register int t1104;
+    register float u1120;
+    register float u1121;
+    register float u1139;
+    register float u1144;
+    register int t1147;
+    register float t1148;
+    register float u1150;
+    register int t1152;
+    register int t1178;
+    register int t1216;
+    register int t1246;
+    register float u1262;
+    register float u1263;
+    register float u1281;
+    register float u1286;
+    register int t1289;
+    register float t1290;
+    register float u1292;
+    register int t1294;
+    register int t1320;
+    register int t1358;
+    register int t1388;
+    register float u1404;
+    register float u1405;
+    register float u1423;
+    register float u1428;
+    register int t1431;
+    register float t1432;
+    register float u1434;
+    register int t1436;
+    register int t1462;
+    register int t1500;
+    register int t1530;
+    register float u1546;
+    register float u1547;
+    register float u1565;
+    register float u1570;
+    register int t1573;
+    register float t1574;
+    register float u1576;
+    register int t1578;
+    register int t1604;
+    register int t1642;
+    register int t1700;
     register int t14;
     register int t16;
     register int t17;
@@ -259,83 +259,84 @@ int FUN_0c05a164(int a4)
     register float u23;
     register float u24;
     register float u25;
-    register int t1593;
-    register int t1594;
-    register float u1597;
-    register float u1598;
-    register int t1585;
-    register int t1586;
-    register float u1589;
-    register float u1590;
-    register int t1577;
-    register int t1578;
-    register float u1581;
-    register float u1582;
-    register int t1570;
-    register int t1571;
-    register int t1573;
-    register float u1574;
-    register float u1575;
-    register int t1563;
-    register int t1564;
-    register float u1565;
-    register float u1566;
-    register float u1433;
-    register float u1434;
-    register float u1300;
-    register float u1301;
-    register float u1167;
-    register float u1168;
-    register float u1034;
-    register float u1035;
-    register float u901;
-    register float u902;
-    register float u768;
-    register float u769;
-    register float u634;
-    register float u635;
-    register float u500;
-    register float u501;
-    register int t256;
-    register float u265;
-    register float u492;
-    register float u493;
-    register float u484;
-    register float u485;
-    register int t378;
-    register float u387;
-    register float u626;
-    register float u627;
-    register int t520;
-    register float u529;
-    register float u760;
-    register float u761;
-    register int t654;
-    register float u663;
-    register float u893;
-    register float u894;
-    register int t787;
-    register float u796;
-    register float u1026;
-    register float u1027;
-    register int t920;
-    register float u929;
-    register float u1159;
-    register float u1160;
-    register int t1053;
-    register float u1062;
-    register float u1292;
-    register float u1293;
-    register int t1186;
-    register float u1195;
-    register float u1425;
-    register float u1426;
-    register int t1319;
-    register float u1328;
-    register float u1557;
-    register float u1558;
-    register int t1452;
-    register float u1461;
+    register int t1691;
+    register int t1692;
+    register float u1695;
+    register float u1696;
+    register int t1683;
+    register int t1684;
+    register float u1687;
+    register float u1688;
+    register int t1675;
+    register int t1676;
+    register float u1679;
+    register float u1680;
+    register int t1668;
+    register int t1669;
+    register int t1671;
+    register float u1672;
+    register float u1673;
+    register int t92;
+    register int t1661;
+    register int t1662;
+    register float u1663;
+    register float u1664;
+    register float u1522;
+    register float u1523;
+    register float u1380;
+    register float u1381;
+    register float u1238;
+    register float u1239;
+    register float u1096;
+    register float u1097;
+    register float u954;
+    register float u955;
+    register float u812;
+    register float u813;
+    register float u669;
+    register float u670;
+    register float u526;
+    register float u527;
+    register float u272;
+    register int t331;
+    register float u518;
+    register float u519;
+    register float u510;
+    register float u511;
+    register float u403;
+    register int t462;
+    register float u661;
+    register float u662;
+    register float u554;
+    register int t613;
+    register float u804;
+    register float u805;
+    register float u697;
+    register int t756;
+    register float u946;
+    register float u947;
+    register float u839;
+    register int t898;
+    register float u1088;
+    register float u1089;
+    register float u981;
+    register int t1040;
+    register float u1230;
+    register float u1231;
+    register float u1123;
+    register int t1182;
+    register float u1372;
+    register float u1373;
+    register float u1265;
+    register int t1324;
+    register float u1514;
+    register float u1515;
+    register float u1407;
+    register int t1466;
+    register float u1655;
+    register float u1656;
+    register float u1549;
+    register int t1608;
 
     t0 = *(signed char *)((a4 + 0x3));
     t1 = *(signed char *)(((0x71F1 + a4) + 0x0));
@@ -343,11 +344,11 @@ int FUN_0c05a164(int a4)
     *(unsigned int *)(((int)stk + 28)) = (*(signed char *)(((t1 + (0xC383800 + ((signed char)t0 << 1))) + 0x0)));
     *(unsigned int *)(((int)stk + 8)) = (((*(int *)0xC7F307C) << 8) << 2);
     t7 = *(signed char *)((a4 + 0x1));
-    t1618 = t7;
+    t1716 = t7;
     if (t7 == 0) {
     } else {
-        t1602 = *(signed char *)((a4 + 0x8));
-        if (t1602 == 0) {
+        t1700 = *(signed char *)((a4 + 0x8));
+        if (t1700 == 0) {
         } else {
             t12 = FUN_0c0e1550(0x1);
             *(unsigned int *)(((int)stk + 12)) = 0x0;
@@ -431,36 +432,36 @@ int FUN_0c05a164(int a4)
                         break;
                     }
                     t12 = 0x90;
-                    t1596 = t15;
+                    t1694 = t15;
                     if ((*(int *)((t16 + t12))) == 0) {
-                        t1593 = t20;
-                        t1594 = t13;
-                        u1597 = u22;
-                        u1598 = u23;
+                        t1691 = t20;
+                        t1692 = t13;
+                        u1695 = u22;
+                        u1696 = u23;
                     } else {
                         t12 = 0x7232;
                         t13 = (*(signed char *)((a4 + t12)));
-                        t1588 = t15;
+                        t1686 = t15;
                         if (t13 != 0) {
-                            t1585 = t20;
-                            t1586 = t13;
-                            u1589 = u22;
-                            u1590 = u23;
+                            t1683 = t20;
+                            t1684 = t13;
+                            u1687 = u22;
+                            u1688 = u23;
                         } else {
                             t13 = 0xC7F300B;
-                            t1580 = t15;
+                            t1678 = t15;
                             if ((*(signed char *)((t13 + 0x0))) != 0) {
-                                t1577 = t20;
-                                t1578 = t13;
-                                u1581 = u22;
-                                u1582 = u23;
+                                t1675 = t20;
+                                t1676 = t13;
+                                u1679 = u22;
+                                u1680 = u23;
                             } else {
                                 if ((*(signed char *)0xC7F300E) != 0) {
-                                    t1570 = t20;
-                                    t1571 = t13;
-                                    t1573 = t15;
-                                    u1574 = u22;
-                                    u1575 = u23;
+                                    t1668 = t20;
+                                    t1669 = t13;
+                                    t1671 = t15;
+                                    u1672 = u22;
+                                    u1673 = u23;
                                 } else {
                                     t12 = 0x90;
                                     t20 = 0xC0CCF38;
@@ -483,7 +484,7 @@ int FUN_0c05a164(int a4)
                                     t15 = (t15 + 0x34);
                                     t12 = (FUN_0c0e0ae0(t15));
                                     t12 = (*(signed char *)((t21 + 0x2)));
-                                    t85 = 0xC0E0AE0;
+                                    t91 = 0xC0E0AE0;
                                     if (t12 != 0) {
                                         if (t12 != 1) {
                                             if (t12 != 2) {
@@ -491,9 +492,10 @@ int FUN_0c05a164(int a4)
                                                 t13 = t21;
                                                 t13 = (t13 + 0x4);
                                                 t12 = 0xC;
-                                                t12 = (FUN_0c0e6fe8());
+                                                { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x1C)) = *(struct mv3 *)(t13); }
+                                                t92 = t13;
                                             }
-                                            t85 = 0xC0E0AE0;
+                                            t91 = 0xC0E0AE0;
                                         } else {
                                             t18 = 0xC062242;
                                             t15 = t19;
@@ -502,10 +504,11 @@ int FUN_0c05a164(int a4)
                                             t15 = ((int)stk + 4);
                                             t15 = (t15 + 0x28);
                                             t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x1C)));
-                                            t85 = 0xC062242;
+                                            t91 = 0xC062242;
                                         }
                                     }
-                                    t18 = t85;
+                                    t18 = t91;
+                                    t13 = t92;
                                     t15 = t16;
                                     t12 = (FUN_0c0e1240(t15));
                                     *(unsigned int *)(((int)stk + 4)) = 0x0;
@@ -534,10 +537,10 @@ int FUN_0c05a164(int a4)
                                                                                 t18 = (t18 + t17);
                                                                                 t12 = t20;
                                                                                 t12 = (t12 << 2);
-                                                                                t245 = *(int *)(((int)stk + 24));
+                                                                                t253 = *(int *)(((int)stk + 24));
                                                                                 t19 = (*(int *)((t15 + t12)));
                                                                                 t19 = (t19 << 2);
-                                                                                t19 = (t19 + t245);
+                                                                                t19 = (t19 + t253);
                                                                                 t12 = t20;
                                                                                 t13 = (*(int *)((t21 + 0x20)));
                                                                                 t12 = (t12 << 1);
@@ -545,7 +548,7 @@ int FUN_0c05a164(int a4)
                                                                                 t12 = (t12 << 2);
                                                                                 t13 = (*(int *)((t15 + t12)));
                                                                                 t13 = (t13 << 2);
-                                                                                *(unsigned int *)(((int)stk + 16)) = (t245 + t13);
+                                                                                *(unsigned int *)(((int)stk + 16)) = (t253 + t13);
                                                                                 t15 = (*(int *)((t21 + 0x2C)));
                                                                                 t15 = (t15 + t17);
                                                                                 t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -556,11 +559,8 @@ int FUN_0c05a164(int a4)
                                                                                     t13 = ((int)stk + 4);
                                                                                     t13 = (t13 + 0x28);
                                                                                     t12 = 0xC;
-                                                                                    t12 = (FUN_0c0e6fe8());
-                                                                                } else {
-                                                                                    t256 = t13;
+                                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                                 }
-                                                                                t13 = t256;
                                                                                 t17 = 0xC06206E;
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
@@ -569,19 +569,19 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = t20;
                                                                                 t13 = (t13 << 2);
                                                                                 u23 = 0.0f;
-                                                                                u262 = *(float *)((t13 + t12));
-                                                                                if (u262 != u23) {
+                                                                                u269 = *(float *)((t13 + t12));
+                                                                                if (u269 != u23) {
                                                                                     t12 = 0xC05A510;
-                                                                                    u263 = *(float *)((t12 + 0x0));
+                                                                                    u270 = *(float *)((t12 + 0x0));
                                                                                     t12 = 0x18;
                                                                                     u22 = (*(float *)((t21 + t12)));
-                                                                                    u25 = u263;
-                                                                                    u25 = (u25 / (u262 * u22));
-                                                                                    u265 = u22;
+                                                                                    u25 = u270;
+                                                                                    u25 = (u25 / (u269 * u22));
+                                                                                    u272 = u22;
                                                                                 } else {
                                                                                     u25 = 1.0f;
                                                                                 }
-                                                                                u22 = u265;
+                                                                                u22 = u272;
                                                                                 if (u25 > 1.0f) {
                                                                                     u25 = 1.0f;
                                                                                 } else {
@@ -605,9 +605,9 @@ int FUN_0c05a164(int a4)
                                                                                 u22 = (*(float *)((t18 + 0x0)));
                                                                                 t12 = 0x4;
                                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                u281 = u22;
-                                                                                u281 = u281 + u25 * u23;
-                                                                                u22 = u281;
+                                                                                u288 = u22;
+                                                                                u288 = u288 + u25 * u23;
+                                                                                u22 = u288;
                                                                                 *(float *)((t18 + 0x0)) = u22;
                                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                                 t15 = (*(int *)(((int)stk + 8)));
@@ -616,28 +616,28 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = (t18 + t12);
                                                                                 u22 = (*(float *)((t13 + 0x0)));
                                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                u286 = u22;
-                                                                                u286 = u286 + u25 * u23;
-                                                                                u22 = u286;
+                                                                                u293 = u22;
+                                                                                u293 = u293 + u25 * u23;
+                                                                                u22 = u293;
                                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                                 t15 = (*(int *)(((int)stk + 8)));
-                                                                                t289 = t15;
+                                                                                t296 = t15;
                                                                                 t15 = (t15 << 1);
-                                                                                t15 = (t15 + t289);
-                                                                                t290 = math_sin_angle16(t15);
+                                                                                t15 = (t15 + t296);
+                                                                                t297 = math_sin_angle16(t15);
                                                                                 t13 = (t18 + t12);
                                                                                 t15 = 0xFA4;
                                                                                 u22 = (*(float *)((t13 + 0x0)));
-                                                                                u23 = (t290 * u24);
-                                                                                u292 = u22;
-                                                                                u292 = u292 + u25 * u23;
-                                                                                u22 = u292;
+                                                                                u23 = (t297 * u24);
+                                                                                u299 = u22;
+                                                                                u299 = u299 + u25 * u23;
+                                                                                u22 = u299;
                                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                                 t13 = 0xC0E19B0;
-                                                                                t294 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                                t301 = ((*(int *)(((int)stk + 8))) + t15);
                                                                                 t15 = ((int)stk + 4);
-                                                                                *(unsigned int *)(((int)stk + 8)) = t294;
+                                                                                *(unsigned int *)(((int)stk + 8)) = t301;
                                                                                 t15 = (t15 + 0x34);
                                                                                 t12 = (FUN_0c0e19b0(t15));
                                                                                 t15 = t18;
@@ -652,7 +652,8 @@ int FUN_0c05a164(int a4)
                                                                                     if ((int)t13 < 0) {
                                                                                         t13 = t19;
                                                                                         t12 = 0xC;
-                                                                                        t12 = (FUN_0c0e6fe8());
+                                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                                        t331 = t13;
                                                                                     } else {
                                                                                         t15 = ((int)stk + 4);
                                                                                         t15 = (t15 + 0x28);
@@ -660,15 +661,16 @@ int FUN_0c05a164(int a4)
                                                                                     }
                                                                                 } else {
                                                                                     t12 = (*(int *)((t21 + 0x20)));
-                                                                                    t318 = (((int)stk + 4) + 0x1C);
+                                                                                    t327 = (((int)stk + 4) + 0x1C);
                                                                                     if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                                     } else {
-                                                                                        t318 = (*(int *)(((int)stk + 16)));
+                                                                                        t327 = (*(int *)(((int)stk + 16)));
                                                                                     }
                                                                                     t15 = ((int)stk + 4);
                                                                                     t15 = (t15 + 0x28);
-                                                                                    t12 = (math_vec3_sub(t15, t19, t318));
+                                                                                    t12 = (math_vec3_sub(t15, t19, t327));
                                                                                 }
+                                                                                t13 = t331;
                                                                                 t17 = 0xC0620A4;
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
@@ -694,7 +696,7 @@ int FUN_0c05a164(int a4)
                                                                                         t13 = ((int)stk + 4);
                                                                                         t13 = (t13 + 0x28);
                                                                                         t12 = 0xC;
-                                                                                        t12 = (FUN_0c0e6fe8());
+                                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                                     } else {
                                                                                         t15 = t19;
                                                                                         t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -702,21 +704,21 @@ int FUN_0c05a164(int a4)
                                                                                 } else {
                                                                                     t12 = (*(int *)((t21 + 0x20)));
                                                                                     t20 = (t20 << 1);
-                                                                                    t351 = (((int)stk + 4) + 0x1C);
+                                                                                    t365 = (((int)stk + 4) + 0x1C);
                                                                                     if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                                     } else {
-                                                                                        t351 = (*(int *)(((int)stk + 16)));
+                                                                                        t365 = (*(int *)(((int)stk + 16)));
                                                                                     }
                                                                                     t15 = t19;
-                                                                                    t12 = (math_vec3_add(t15, t351, (((int)stk + 4) + 0x28)));
+                                                                                    t12 = (math_vec3_add(t15, t365, (((int)stk + 4) + 0x28)));
                                                                                 }
                                                                                 t13 = 0xC0E0910;
                                                                                 t15 = t19;
                                                                                 t12 = (nlCalcPoint(t15, t18));
                                                                                 t15 = 0x1;
                                                                                 *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                                t1563 = t15;
-                                                                                t1564 = 0xC0620A4;
+                                                                                t1661 = t15;
+                                                                                t1662 = 0xC0620A4;
                                                                             } else {
                                                                                 t12 = (*(int *)((t21 + 0x38)));
                                                                                 t13 = t20;
@@ -724,30 +726,30 @@ int FUN_0c05a164(int a4)
                                                                                 u23 = (*(float *)((t13 + t12)));
                                                                                 t12 = 0x10;
                                                                                 u22 = (*(float *)((t21 + t12)));
-                                                                                t1564 = t17;
+                                                                                t1662 = t17;
                                                                                 if (u22 > u23) {
-                                                                                    u492 = u22;
-                                                                                    u493 = u23;
+                                                                                    u518 = u22;
+                                                                                    u519 = u23;
                                                                                 } else {
                                                                                     t13 = (*(int *)((t21 + 0x2C)));
                                                                                     t12 = 0x4;
                                                                                     u23 = 1.0f;
                                                                                     t13 = (t13 + t17);
                                                                                     u22 = (*(float *)((t13 + t12)));
-                                                                                    t1564 = t17;
+                                                                                    t1662 = t17;
                                                                                     if (u22 > u23) {
-                                                                                        u484 = u22;
-                                                                                        u485 = u23;
+                                                                                        u510 = u22;
+                                                                                        u511 = u23;
                                                                                     } else {
                                                                                         t18 = (*(int *)((t21 + 0x34)));
                                                                                         t15 = (*(int *)((t21 + 0x30)));
                                                                                         t18 = (t18 + t17);
                                                                                         t12 = t20;
                                                                                         t12 = (t12 << 2);
-                                                                                        t367 = *(int *)(((int)stk + 24));
+                                                                                        t384 = *(int *)(((int)stk + 24));
                                                                                         t19 = (*(int *)((t15 + t12)));
                                                                                         t19 = (t19 << 2);
-                                                                                        t19 = (t19 + t367);
+                                                                                        t19 = (t19 + t384);
                                                                                         t12 = t20;
                                                                                         t13 = (*(int *)((t21 + 0x20)));
                                                                                         t12 = (t12 << 1);
@@ -755,7 +757,7 @@ int FUN_0c05a164(int a4)
                                                                                         t12 = (t12 << 2);
                                                                                         t13 = (*(int *)((t15 + t12)));
                                                                                         t13 = (t13 << 2);
-                                                                                        *(unsigned int *)(((int)stk + 16)) = (t367 + t13);
+                                                                                        *(unsigned int *)(((int)stk + 16)) = (t384 + t13);
                                                                                         t15 = (*(int *)((t21 + 0x2C)));
                                                                                         t15 = (t15 + t17);
                                                                                         t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -766,11 +768,8 @@ int FUN_0c05a164(int a4)
                                                                                             t13 = ((int)stk + 4);
                                                                                             t13 = (t13 + 0x28);
                                                                                             t12 = 0xC;
-                                                                                            t12 = (FUN_0c0e6fe8());
-                                                                                        } else {
-                                                                                            t378 = t13;
+                                                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                                         }
-                                                                                        t13 = t378;
                                                                                         t17 = 0xC06206E;
                                                                                         t15 = ((int)stk + 4);
                                                                                         t15 = (t15 + 0x28);
@@ -779,19 +778,19 @@ int FUN_0c05a164(int a4)
                                                                                         t13 = t20;
                                                                                         t13 = (t13 << 2);
                                                                                         u23 = 0.0f;
-                                                                                        u384 = *(float *)((t13 + t12));
-                                                                                        if (u384 != u23) {
+                                                                                        u400 = *(float *)((t13 + t12));
+                                                                                        if (u400 != u23) {
                                                                                             t12 = 0xC05A510;
-                                                                                            u385 = *(float *)((t12 + 0x0));
+                                                                                            u401 = *(float *)((t12 + 0x0));
                                                                                             t12 = 0x18;
                                                                                             u22 = (*(float *)((t21 + t12)));
-                                                                                            u25 = u385;
-                                                                                            u25 = (u25 / (u384 * u22));
-                                                                                            u387 = u22;
+                                                                                            u25 = u401;
+                                                                                            u25 = (u25 / (u400 * u22));
+                                                                                            u403 = u22;
                                                                                         } else {
                                                                                             u25 = 1.0f;
                                                                                         }
-                                                                                        u22 = u387;
+                                                                                        u22 = u403;
                                                                                         if (u25 > 1.0f) {
                                                                                             u25 = 1.0f;
                                                                                         } else {
@@ -815,9 +814,9 @@ int FUN_0c05a164(int a4)
                                                                                         u22 = (*(float *)((t18 + 0x0)));
                                                                                         t12 = 0x4;
                                                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                        u403 = u22;
-                                                                                        u403 = u403 + u25 * u23;
-                                                                                        u22 = u403;
+                                                                                        u419 = u22;
+                                                                                        u419 = u419 + u25 * u23;
+                                                                                        u22 = u419;
                                                                                         *(float *)((t18 + 0x0)) = u22;
                                                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                                                         t15 = (*(int *)(((int)stk + 8)));
@@ -826,28 +825,28 @@ int FUN_0c05a164(int a4)
                                                                                         t13 = (t18 + t12);
                                                                                         u22 = (*(float *)((t13 + 0x0)));
                                                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                        u408 = u22;
-                                                                                        u408 = u408 + u25 * u23;
-                                                                                        u22 = u408;
+                                                                                        u424 = u22;
+                                                                                        u424 = u424 + u25 * u23;
+                                                                                        u22 = u424;
                                                                                         *(float *)((t13 + 0x0)) = u22;
                                                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                                                         t15 = (*(int *)(((int)stk + 8)));
-                                                                                        t411 = t15;
+                                                                                        t427 = t15;
                                                                                         t15 = (t15 << 1);
-                                                                                        t15 = (t15 + t411);
-                                                                                        t412 = math_sin_angle16(t15);
+                                                                                        t15 = (t15 + t427);
+                                                                                        t428 = math_sin_angle16(t15);
                                                                                         t13 = (t18 + t12);
                                                                                         t15 = 0xFA4;
                                                                                         u22 = (*(float *)((t13 + 0x0)));
-                                                                                        u23 = (t412 * u24);
-                                                                                        u414 = u22;
-                                                                                        u414 = u414 + u25 * u23;
-                                                                                        u22 = u414;
+                                                                                        u23 = (t428 * u24);
+                                                                                        u430 = u22;
+                                                                                        u430 = u430 + u25 * u23;
+                                                                                        u22 = u430;
                                                                                         *(float *)((t13 + 0x0)) = u22;
                                                                                         t13 = 0xC0E19B0;
-                                                                                        t416 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                                        t432 = ((*(int *)(((int)stk + 8))) + t15);
                                                                                         t15 = ((int)stk + 4);
-                                                                                        *(unsigned int *)(((int)stk + 8)) = t416;
+                                                                                        *(unsigned int *)(((int)stk + 8)) = t432;
                                                                                         t15 = (t15 + 0x34);
                                                                                         t12 = (FUN_0c0e19b0(t15));
                                                                                         t15 = t18;
@@ -862,7 +861,8 @@ int FUN_0c05a164(int a4)
                                                                                             if ((int)t13 < 0) {
                                                                                                 t13 = t19;
                                                                                                 t12 = 0xC;
-                                                                                                t12 = (FUN_0c0e6fe8());
+                                                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                                                t462 = t13;
                                                                                             } else {
                                                                                                 t15 = ((int)stk + 4);
                                                                                                 t15 = (t15 + 0x28);
@@ -870,15 +870,16 @@ int FUN_0c05a164(int a4)
                                                                                             }
                                                                                         } else {
                                                                                             t12 = (*(int *)((t21 + 0x20)));
-                                                                                            t440 = (((int)stk + 4) + 0x1C);
+                                                                                            t458 = (((int)stk + 4) + 0x1C);
                                                                                             if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                                             } else {
-                                                                                                t440 = (*(int *)(((int)stk + 16)));
+                                                                                                t458 = (*(int *)(((int)stk + 16)));
                                                                                             }
                                                                                             t15 = ((int)stk + 4);
                                                                                             t15 = (t15 + 0x28);
-                                                                                            t12 = (math_vec3_sub(t15, t19, t440));
+                                                                                            t12 = (math_vec3_sub(t15, t19, t458));
                                                                                         }
+                                                                                        t13 = t462;
                                                                                         t17 = 0xC0620A4;
                                                                                         t15 = ((int)stk + 4);
                                                                                         t15 = (t15 + 0x28);
@@ -904,7 +905,7 @@ int FUN_0c05a164(int a4)
                                                                                                 t13 = ((int)stk + 4);
                                                                                                 t13 = (t13 + 0x28);
                                                                                                 t12 = 0xC;
-                                                                                                t12 = (FUN_0c0e6fe8());
+                                                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                                             } else {
                                                                                                 t15 = t19;
                                                                                                 t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -912,30 +913,30 @@ int FUN_0c05a164(int a4)
                                                                                         } else {
                                                                                             t12 = (*(int *)((t21 + 0x20)));
                                                                                             t20 = (t20 << 1);
-                                                                                            t473 = (((int)stk + 4) + 0x1C);
+                                                                                            t496 = (((int)stk + 4) + 0x1C);
                                                                                             if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                                             } else {
-                                                                                                t473 = (*(int *)(((int)stk + 16)));
+                                                                                                t496 = (*(int *)(((int)stk + 16)));
                                                                                             }
                                                                                             t15 = t19;
-                                                                                            t12 = (math_vec3_add(t15, t473, (((int)stk + 4) + 0x28)));
+                                                                                            t12 = (math_vec3_add(t15, t496, (((int)stk + 4) + 0x28)));
                                                                                         }
                                                                                         t13 = 0xC0E0910;
                                                                                         t15 = t19;
                                                                                         t12 = (nlCalcPoint(t15, t18));
                                                                                         t15 = 0x1;
                                                                                         *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                                        t1563 = t15;
-                                                                                        t1564 = 0xC0620A4;
+                                                                                        t1661 = t15;
+                                                                                        t1662 = 0xC0620A4;
                                                                                     }
-                                                                                    u492 = u484;
-                                                                                    u493 = u485;
+                                                                                    u518 = u510;
+                                                                                    u519 = u511;
                                                                                 }
-                                                                                u500 = u492;
-                                                                                u501 = u493;
+                                                                                u526 = u518;
+                                                                                u527 = u519;
                                                                             }
-                                                                            u634 = u500;
-                                                                            u635 = u501;
+                                                                            u669 = u526;
+                                                                            u670 = u527;
                                                                         } else {
                                                                             t12 = 0x8;
                                                                             t13 = (*(int *)((t21 + 0x2C)));
@@ -946,20 +947,20 @@ int FUN_0c05a164(int a4)
                                                                             t12 = 0x10;
                                                                             u22 = (u22 - u23);
                                                                             u23 = (*(float *)((t21 + t12)));
-                                                                            t1564 = t17;
+                                                                            t1662 = t17;
                                                                             if (u22 > u23) {
-                                                                                u626 = u22;
-                                                                                u627 = u23;
+                                                                                u661 = u22;
+                                                                                u662 = u23;
                                                                             } else {
                                                                                 t18 = (*(int *)((t21 + 0x34)));
                                                                                 t15 = (*(int *)((t21 + 0x30)));
                                                                                 t18 = (t18 + t17);
                                                                                 t12 = t20;
                                                                                 t12 = (t12 << 2);
-                                                                                t509 = *(int *)(((int)stk + 24));
+                                                                                t535 = *(int *)(((int)stk + 24));
                                                                                 t19 = (*(int *)((t15 + t12)));
                                                                                 t19 = (t19 << 2);
-                                                                                t19 = (t19 + t509);
+                                                                                t19 = (t19 + t535);
                                                                                 t12 = t20;
                                                                                 t13 = (*(int *)((t21 + 0x20)));
                                                                                 t12 = (t12 << 1);
@@ -967,7 +968,7 @@ int FUN_0c05a164(int a4)
                                                                                 t12 = (t12 << 2);
                                                                                 t13 = (*(int *)((t15 + t12)));
                                                                                 t13 = (t13 << 2);
-                                                                                *(unsigned int *)(((int)stk + 16)) = (t509 + t13);
+                                                                                *(unsigned int *)(((int)stk + 16)) = (t535 + t13);
                                                                                 t15 = (*(int *)((t21 + 0x2C)));
                                                                                 t15 = (t15 + t17);
                                                                                 t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -978,11 +979,8 @@ int FUN_0c05a164(int a4)
                                                                                     t13 = ((int)stk + 4);
                                                                                     t13 = (t13 + 0x28);
                                                                                     t12 = 0xC;
-                                                                                    t12 = (FUN_0c0e6fe8());
-                                                                                } else {
-                                                                                    t520 = t13;
+                                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                                 }
-                                                                                t13 = t520;
                                                                                 t17 = 0xC06206E;
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
@@ -991,19 +989,19 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = t20;
                                                                                 t13 = (t13 << 2);
                                                                                 u23 = 0.0f;
-                                                                                u526 = *(float *)((t13 + t12));
-                                                                                if (u526 != u23) {
+                                                                                u551 = *(float *)((t13 + t12));
+                                                                                if (u551 != u23) {
                                                                                     t12 = 0xC05A510;
-                                                                                    u527 = *(float *)((t12 + 0x0));
+                                                                                    u552 = *(float *)((t12 + 0x0));
                                                                                     t12 = 0x18;
                                                                                     u22 = (*(float *)((t21 + t12)));
-                                                                                    u25 = u527;
-                                                                                    u25 = (u25 / (u526 * u22));
-                                                                                    u529 = u22;
+                                                                                    u25 = u552;
+                                                                                    u25 = (u25 / (u551 * u22));
+                                                                                    u554 = u22;
                                                                                 } else {
                                                                                     u25 = 1.0f;
                                                                                 }
-                                                                                u22 = u529;
+                                                                                u22 = u554;
                                                                                 if (u25 > 1.0f) {
                                                                                     u25 = 1.0f;
                                                                                 } else {
@@ -1027,9 +1025,9 @@ int FUN_0c05a164(int a4)
                                                                                 u22 = (*(float *)((t18 + 0x0)));
                                                                                 t12 = 0x4;
                                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                u545 = u22;
-                                                                                u545 = u545 + u25 * u23;
-                                                                                u22 = u545;
+                                                                                u570 = u22;
+                                                                                u570 = u570 + u25 * u23;
+                                                                                u22 = u570;
                                                                                 *(float *)((t18 + 0x0)) = u22;
                                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                                 t15 = (*(int *)(((int)stk + 8)));
@@ -1038,28 +1036,28 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = (t18 + t12);
                                                                                 u22 = (*(float *)((t13 + 0x0)));
                                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                                u550 = u22;
-                                                                                u550 = u550 + u25 * u23;
-                                                                                u22 = u550;
+                                                                                u575 = u22;
+                                                                                u575 = u575 + u25 * u23;
+                                                                                u22 = u575;
                                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                                 t15 = (*(int *)(((int)stk + 8)));
-                                                                                t553 = t15;
+                                                                                t578 = t15;
                                                                                 t15 = (t15 << 1);
-                                                                                t15 = (t15 + t553);
-                                                                                t554 = math_sin_angle16(t15);
+                                                                                t15 = (t15 + t578);
+                                                                                t579 = math_sin_angle16(t15);
                                                                                 t13 = (t18 + t12);
                                                                                 t15 = 0xFA4;
                                                                                 u22 = (*(float *)((t13 + 0x0)));
-                                                                                u23 = (t554 * u24);
-                                                                                u556 = u22;
-                                                                                u556 = u556 + u25 * u23;
-                                                                                u22 = u556;
+                                                                                u23 = (t579 * u24);
+                                                                                u581 = u22;
+                                                                                u581 = u581 + u25 * u23;
+                                                                                u22 = u581;
                                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                                 t13 = 0xC0E19B0;
-                                                                                t558 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                                t583 = ((*(int *)(((int)stk + 8))) + t15);
                                                                                 t15 = ((int)stk + 4);
-                                                                                *(unsigned int *)(((int)stk + 8)) = t558;
+                                                                                *(unsigned int *)(((int)stk + 8)) = t583;
                                                                                 t15 = (t15 + 0x34);
                                                                                 t12 = (FUN_0c0e19b0(t15));
                                                                                 t15 = t18;
@@ -1074,7 +1072,8 @@ int FUN_0c05a164(int a4)
                                                                                     if ((int)t13 < 0) {
                                                                                         t13 = t19;
                                                                                         t12 = 0xC;
-                                                                                        t12 = (FUN_0c0e6fe8());
+                                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                                        t613 = t13;
                                                                                     } else {
                                                                                         t15 = ((int)stk + 4);
                                                                                         t15 = (t15 + 0x28);
@@ -1082,15 +1081,16 @@ int FUN_0c05a164(int a4)
                                                                                     }
                                                                                 } else {
                                                                                     t12 = (*(int *)((t21 + 0x20)));
-                                                                                    t582 = (((int)stk + 4) + 0x1C);
+                                                                                    t609 = (((int)stk + 4) + 0x1C);
                                                                                     if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                                     } else {
-                                                                                        t582 = (*(int *)(((int)stk + 16)));
+                                                                                        t609 = (*(int *)(((int)stk + 16)));
                                                                                     }
                                                                                     t15 = ((int)stk + 4);
                                                                                     t15 = (t15 + 0x28);
-                                                                                    t12 = (math_vec3_sub(t15, t19, t582));
+                                                                                    t12 = (math_vec3_sub(t15, t19, t609));
                                                                                 }
+                                                                                t13 = t613;
                                                                                 t17 = 0xC0620A4;
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
@@ -1116,7 +1116,7 @@ int FUN_0c05a164(int a4)
                                                                                         t13 = ((int)stk + 4);
                                                                                         t13 = (t13 + 0x28);
                                                                                         t12 = 0xC;
-                                                                                        t12 = (FUN_0c0e6fe8());
+                                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                                     } else {
                                                                                         t15 = t19;
                                                                                         t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -1124,27 +1124,27 @@ int FUN_0c05a164(int a4)
                                                                                 } else {
                                                                                     t12 = (*(int *)((t21 + 0x20)));
                                                                                     t20 = (t20 << 1);
-                                                                                    t615 = (((int)stk + 4) + 0x1C);
+                                                                                    t647 = (((int)stk + 4) + 0x1C);
                                                                                     if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                                     } else {
-                                                                                        t615 = (*(int *)(((int)stk + 16)));
+                                                                                        t647 = (*(int *)(((int)stk + 16)));
                                                                                     }
                                                                                     t15 = t19;
-                                                                                    t12 = (math_vec3_add(t15, t615, (((int)stk + 4) + 0x28)));
+                                                                                    t12 = (math_vec3_add(t15, t647, (((int)stk + 4) + 0x28)));
                                                                                 }
                                                                                 t13 = 0xC0E0910;
                                                                                 t15 = t19;
                                                                                 t12 = (nlCalcPoint(t15, t18));
                                                                                 t15 = 0x1;
                                                                                 *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                                t1563 = t15;
-                                                                                t1564 = 0xC0620A4;
+                                                                                t1661 = t15;
+                                                                                t1662 = 0xC0620A4;
                                                                             }
-                                                                            u634 = u626;
-                                                                            u635 = u627;
+                                                                            u669 = u661;
+                                                                            u670 = u662;
                                                                         }
-                                                                        u768 = u634;
-                                                                        u769 = u635;
+                                                                        u812 = u669;
+                                                                        u813 = u670;
                                                                     } else {
                                                                         t12 = 0x8;
                                                                         t13 = (*(int *)((t21 + 0x2C)));
@@ -1155,20 +1155,20 @@ int FUN_0c05a164(int a4)
                                                                         t12 = 0x10;
                                                                         u22 = (u22 - u23);
                                                                         u23 = (*(float *)((t21 + t12)));
-                                                                        t1564 = t17;
+                                                                        t1662 = t17;
                                                                         if (u23 > u22) {
-                                                                            u760 = u22;
-                                                                            u761 = u23;
+                                                                            u804 = u22;
+                                                                            u805 = u23;
                                                                         } else {
                                                                             t18 = (*(int *)((t21 + 0x34)));
                                                                             t15 = (*(int *)((t21 + 0x30)));
                                                                             t18 = (t18 + t17);
                                                                             t12 = t20;
                                                                             t12 = (t12 << 2);
-                                                                            t643 = *(int *)(((int)stk + 24));
+                                                                            t678 = *(int *)(((int)stk + 24));
                                                                             t19 = (*(int *)((t15 + t12)));
                                                                             t19 = (t19 << 2);
-                                                                            t19 = (t19 + t643);
+                                                                            t19 = (t19 + t678);
                                                                             t12 = t20;
                                                                             t13 = (*(int *)((t21 + 0x20)));
                                                                             t12 = (t12 << 1);
@@ -1176,7 +1176,7 @@ int FUN_0c05a164(int a4)
                                                                             t12 = (t12 << 2);
                                                                             t13 = (*(int *)((t15 + t12)));
                                                                             t13 = (t13 << 2);
-                                                                            *(unsigned int *)(((int)stk + 16)) = (t643 + t13);
+                                                                            *(unsigned int *)(((int)stk + 16)) = (t678 + t13);
                                                                             t15 = (*(int *)((t21 + 0x2C)));
                                                                             t15 = (t15 + t17);
                                                                             t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -1187,11 +1187,8 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = ((int)stk + 4);
                                                                                 t13 = (t13 + 0x28);
                                                                                 t12 = 0xC;
-                                                                                t12 = (FUN_0c0e6fe8());
-                                                                            } else {
-                                                                                t654 = t13;
+                                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                             }
-                                                                            t13 = t654;
                                                                             t17 = 0xC06206E;
                                                                             t15 = ((int)stk + 4);
                                                                             t15 = (t15 + 0x28);
@@ -1200,19 +1197,19 @@ int FUN_0c05a164(int a4)
                                                                             t13 = t20;
                                                                             t13 = (t13 << 2);
                                                                             u23 = 0.0f;
-                                                                            u660 = *(float *)((t13 + t12));
-                                                                            if (u660 != u23) {
+                                                                            u694 = *(float *)((t13 + t12));
+                                                                            if (u694 != u23) {
                                                                                 t12 = 0xC05A510;
-                                                                                u661 = *(float *)((t12 + 0x0));
+                                                                                u695 = *(float *)((t12 + 0x0));
                                                                                 t12 = 0x18;
                                                                                 u22 = (*(float *)((t21 + t12)));
-                                                                                u25 = u661;
-                                                                                u25 = (u25 / (u660 * u22));
-                                                                                u663 = u22;
+                                                                                u25 = u695;
+                                                                                u25 = (u25 / (u694 * u22));
+                                                                                u697 = u22;
                                                                             } else {
                                                                                 u25 = 1.0f;
                                                                             }
-                                                                            u22 = u663;
+                                                                            u22 = u697;
                                                                             if (u25 > 1.0f) {
                                                                                 u25 = 1.0f;
                                                                             } else {
@@ -1236,9 +1233,9 @@ int FUN_0c05a164(int a4)
                                                                             u22 = (*(float *)((t18 + 0x0)));
                                                                             t12 = 0x4;
                                                                             u23 = ((math_sin_angle16(t15)) * u24);
-                                                                            u679 = u22;
-                                                                            u679 = u679 + u25 * u23;
-                                                                            u22 = u679;
+                                                                            u713 = u22;
+                                                                            u713 = u713 + u25 * u23;
+                                                                            u22 = u713;
                                                                             *(float *)((t18 + 0x0)) = u22;
                                                                             *(int *)((int)stk + 0) = (t18 + t12);
                                                                             t15 = (*(int *)(((int)stk + 8)));
@@ -1247,28 +1244,28 @@ int FUN_0c05a164(int a4)
                                                                             t13 = (t18 + t12);
                                                                             u22 = (*(float *)((t13 + 0x0)));
                                                                             u23 = ((math_sin_angle16(t15)) * u24);
-                                                                            u684 = u22;
-                                                                            u684 = u684 + u25 * u23;
-                                                                            u22 = u684;
+                                                                            u718 = u22;
+                                                                            u718 = u718 + u25 * u23;
+                                                                            u22 = u718;
                                                                             *(float *)((t13 + 0x0)) = u22;
                                                                             *(int *)((int)stk + 0) = (t18 + t12);
                                                                             t15 = (*(int *)(((int)stk + 8)));
-                                                                            t687 = t15;
+                                                                            t721 = t15;
                                                                             t15 = (t15 << 1);
-                                                                            t15 = (t15 + t687);
-                                                                            t688 = math_sin_angle16(t15);
+                                                                            t15 = (t15 + t721);
+                                                                            t722 = math_sin_angle16(t15);
                                                                             t13 = (t18 + t12);
                                                                             t15 = 0xFA4;
                                                                             u22 = (*(float *)((t13 + 0x0)));
-                                                                            u23 = (t688 * u24);
-                                                                            u690 = u22;
-                                                                            u690 = u690 + u25 * u23;
-                                                                            u22 = u690;
+                                                                            u23 = (t722 * u24);
+                                                                            u724 = u22;
+                                                                            u724 = u724 + u25 * u23;
+                                                                            u22 = u724;
                                                                             *(float *)((t13 + 0x0)) = u22;
                                                                             t13 = 0xC0E19B0;
-                                                                            t692 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                            t726 = ((*(int *)(((int)stk + 8))) + t15);
                                                                             t15 = ((int)stk + 4);
-                                                                            *(unsigned int *)(((int)stk + 8)) = t692;
+                                                                            *(unsigned int *)(((int)stk + 8)) = t726;
                                                                             t15 = (t15 + 0x34);
                                                                             t12 = (FUN_0c0e19b0(t15));
                                                                             t15 = t18;
@@ -1283,7 +1280,8 @@ int FUN_0c05a164(int a4)
                                                                                 if ((int)t13 < 0) {
                                                                                     t13 = t19;
                                                                                     t12 = 0xC;
-                                                                                    t12 = (FUN_0c0e6fe8());
+                                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                                    t756 = t13;
                                                                                 } else {
                                                                                     t15 = ((int)stk + 4);
                                                                                     t15 = (t15 + 0x28);
@@ -1291,15 +1289,16 @@ int FUN_0c05a164(int a4)
                                                                                 }
                                                                             } else {
                                                                                 t12 = (*(int *)((t21 + 0x20)));
-                                                                                t716 = (((int)stk + 4) + 0x1C);
+                                                                                t752 = (((int)stk + 4) + 0x1C);
                                                                                 if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                                 } else {
-                                                                                    t716 = (*(int *)(((int)stk + 16)));
+                                                                                    t752 = (*(int *)(((int)stk + 16)));
                                                                                 }
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
-                                                                                t12 = (math_vec3_sub(t15, t19, t716));
+                                                                                t12 = (math_vec3_sub(t15, t19, t752));
                                                                             }
+                                                                            t13 = t756;
                                                                             t17 = 0xC0620A4;
                                                                             t15 = ((int)stk + 4);
                                                                             t15 = (t15 + 0x28);
@@ -1325,7 +1324,7 @@ int FUN_0c05a164(int a4)
                                                                                     t13 = ((int)stk + 4);
                                                                                     t13 = (t13 + 0x28);
                                                                                     t12 = 0xC;
-                                                                                    t12 = (FUN_0c0e6fe8());
+                                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                                 } else {
                                                                                     t15 = t19;
                                                                                     t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -1333,27 +1332,27 @@ int FUN_0c05a164(int a4)
                                                                             } else {
                                                                                 t12 = (*(int *)((t21 + 0x20)));
                                                                                 t20 = (t20 << 1);
-                                                                                t749 = (((int)stk + 4) + 0x1C);
+                                                                                t790 = (((int)stk + 4) + 0x1C);
                                                                                 if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                                 } else {
-                                                                                    t749 = (*(int *)(((int)stk + 16)));
+                                                                                    t790 = (*(int *)(((int)stk + 16)));
                                                                                 }
                                                                                 t15 = t19;
-                                                                                t12 = (math_vec3_add(t15, t749, (((int)stk + 4) + 0x28)));
+                                                                                t12 = (math_vec3_add(t15, t790, (((int)stk + 4) + 0x28)));
                                                                             }
                                                                             t13 = 0xC0E0910;
                                                                             t15 = t19;
                                                                             t12 = (nlCalcPoint(t15, t18));
                                                                             t15 = 0x1;
                                                                             *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                            t1563 = t15;
-                                                                            t1564 = 0xC0620A4;
+                                                                            t1661 = t15;
+                                                                            t1662 = 0xC0620A4;
                                                                         }
-                                                                        u768 = u760;
-                                                                        u769 = u761;
+                                                                        u812 = u804;
+                                                                        u813 = u805;
                                                                     }
-                                                                    u901 = u768;
-                                                                    u902 = u769;
+                                                                    u954 = u812;
+                                                                    u955 = u813;
                                                                 } else {
                                                                     t12 = 0x10;
                                                                     t13 = (*(int *)((t21 + 0x2C)));
@@ -1361,20 +1360,20 @@ int FUN_0c05a164(int a4)
                                                                     t12 = 0x8;
                                                                     t13 = (t13 + t17);
                                                                     u22 = (*(float *)((t13 + t12)));
-                                                                    t1564 = t17;
+                                                                    t1662 = t17;
                                                                     if (u23 > u22) {
-                                                                        u893 = u22;
-                                                                        u894 = u23;
+                                                                        u946 = u22;
+                                                                        u947 = u23;
                                                                     } else {
                                                                         t18 = (*(int *)((t21 + 0x34)));
                                                                         t15 = (*(int *)((t21 + 0x30)));
                                                                         t18 = (t18 + t17);
                                                                         t12 = t20;
                                                                         t12 = (t12 << 2);
-                                                                        t776 = *(int *)(((int)stk + 24));
+                                                                        t820 = *(int *)(((int)stk + 24));
                                                                         t19 = (*(int *)((t15 + t12)));
                                                                         t19 = (t19 << 2);
-                                                                        t19 = (t19 + t776);
+                                                                        t19 = (t19 + t820);
                                                                         t12 = t20;
                                                                         t13 = (*(int *)((t21 + 0x20)));
                                                                         t12 = (t12 << 1);
@@ -1382,7 +1381,7 @@ int FUN_0c05a164(int a4)
                                                                         t12 = (t12 << 2);
                                                                         t13 = (*(int *)((t15 + t12)));
                                                                         t13 = (t13 << 2);
-                                                                        *(unsigned int *)(((int)stk + 16)) = (t776 + t13);
+                                                                        *(unsigned int *)(((int)stk + 16)) = (t820 + t13);
                                                                         t15 = (*(int *)((t21 + 0x2C)));
                                                                         t15 = (t15 + t17);
                                                                         t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -1393,11 +1392,8 @@ int FUN_0c05a164(int a4)
                                                                             t13 = ((int)stk + 4);
                                                                             t13 = (t13 + 0x28);
                                                                             t12 = 0xC;
-                                                                            t12 = (FUN_0c0e6fe8());
-                                                                        } else {
-                                                                            t787 = t13;
+                                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                         }
-                                                                        t13 = t787;
                                                                         t17 = 0xC06206E;
                                                                         t15 = ((int)stk + 4);
                                                                         t15 = (t15 + 0x28);
@@ -1406,19 +1402,19 @@ int FUN_0c05a164(int a4)
                                                                         t13 = t20;
                                                                         t13 = (t13 << 2);
                                                                         u23 = 0.0f;
-                                                                        u793 = *(float *)((t13 + t12));
-                                                                        if (u793 != u23) {
+                                                                        u836 = *(float *)((t13 + t12));
+                                                                        if (u836 != u23) {
                                                                             t12 = 0xC05A510;
-                                                                            u794 = *(float *)((t12 + 0x0));
+                                                                            u837 = *(float *)((t12 + 0x0));
                                                                             t12 = 0x18;
                                                                             u22 = (*(float *)((t21 + t12)));
-                                                                            u25 = u794;
-                                                                            u25 = (u25 / (u793 * u22));
-                                                                            u796 = u22;
+                                                                            u25 = u837;
+                                                                            u25 = (u25 / (u836 * u22));
+                                                                            u839 = u22;
                                                                         } else {
                                                                             u25 = 1.0f;
                                                                         }
-                                                                        u22 = u796;
+                                                                        u22 = u839;
                                                                         if (u25 > 1.0f) {
                                                                             u25 = 1.0f;
                                                                         } else {
@@ -1442,9 +1438,9 @@ int FUN_0c05a164(int a4)
                                                                         u22 = (*(float *)((t18 + 0x0)));
                                                                         t12 = 0x4;
                                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                                        u812 = u22;
-                                                                        u812 = u812 + u25 * u23;
-                                                                        u22 = u812;
+                                                                        u855 = u22;
+                                                                        u855 = u855 + u25 * u23;
+                                                                        u22 = u855;
                                                                         *(float *)((t18 + 0x0)) = u22;
                                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                                         t15 = (*(int *)(((int)stk + 8)));
@@ -1453,28 +1449,28 @@ int FUN_0c05a164(int a4)
                                                                         t13 = (t18 + t12);
                                                                         u22 = (*(float *)((t13 + 0x0)));
                                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                                        u817 = u22;
-                                                                        u817 = u817 + u25 * u23;
-                                                                        u22 = u817;
+                                                                        u860 = u22;
+                                                                        u860 = u860 + u25 * u23;
+                                                                        u22 = u860;
                                                                         *(float *)((t13 + 0x0)) = u22;
                                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                                         t15 = (*(int *)(((int)stk + 8)));
-                                                                        t820 = t15;
+                                                                        t863 = t15;
                                                                         t15 = (t15 << 1);
-                                                                        t15 = (t15 + t820);
-                                                                        t821 = math_sin_angle16(t15);
+                                                                        t15 = (t15 + t863);
+                                                                        t864 = math_sin_angle16(t15);
                                                                         t13 = (t18 + t12);
                                                                         t15 = 0xFA4;
                                                                         u22 = (*(float *)((t13 + 0x0)));
-                                                                        u23 = (t821 * u24);
-                                                                        u823 = u22;
-                                                                        u823 = u823 + u25 * u23;
-                                                                        u22 = u823;
+                                                                        u23 = (t864 * u24);
+                                                                        u866 = u22;
+                                                                        u866 = u866 + u25 * u23;
+                                                                        u22 = u866;
                                                                         *(float *)((t13 + 0x0)) = u22;
                                                                         t13 = 0xC0E19B0;
-                                                                        t825 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                        t868 = ((*(int *)(((int)stk + 8))) + t15);
                                                                         t15 = ((int)stk + 4);
-                                                                        *(unsigned int *)(((int)stk + 8)) = t825;
+                                                                        *(unsigned int *)(((int)stk + 8)) = t868;
                                                                         t15 = (t15 + 0x34);
                                                                         t12 = (FUN_0c0e19b0(t15));
                                                                         t15 = t18;
@@ -1489,7 +1485,8 @@ int FUN_0c05a164(int a4)
                                                                             if ((int)t13 < 0) {
                                                                                 t13 = t19;
                                                                                 t12 = 0xC;
-                                                                                t12 = (FUN_0c0e6fe8());
+                                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                                t898 = t13;
                                                                             } else {
                                                                                 t15 = ((int)stk + 4);
                                                                                 t15 = (t15 + 0x28);
@@ -1497,15 +1494,16 @@ int FUN_0c05a164(int a4)
                                                                             }
                                                                         } else {
                                                                             t12 = (*(int *)((t21 + 0x20)));
-                                                                            t849 = (((int)stk + 4) + 0x1C);
+                                                                            t894 = (((int)stk + 4) + 0x1C);
                                                                             if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                             } else {
-                                                                                t849 = (*(int *)(((int)stk + 16)));
+                                                                                t894 = (*(int *)(((int)stk + 16)));
                                                                             }
                                                                             t15 = ((int)stk + 4);
                                                                             t15 = (t15 + 0x28);
-                                                                            t12 = (math_vec3_sub(t15, t19, t849));
+                                                                            t12 = (math_vec3_sub(t15, t19, t894));
                                                                         }
+                                                                        t13 = t898;
                                                                         t17 = 0xC0620A4;
                                                                         t15 = ((int)stk + 4);
                                                                         t15 = (t15 + 0x28);
@@ -1531,7 +1529,7 @@ int FUN_0c05a164(int a4)
                                                                                 t13 = ((int)stk + 4);
                                                                                 t13 = (t13 + 0x28);
                                                                                 t12 = 0xC;
-                                                                                t12 = (FUN_0c0e6fe8());
+                                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                             } else {
                                                                                 t15 = t19;
                                                                                 t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -1539,27 +1537,27 @@ int FUN_0c05a164(int a4)
                                                                         } else {
                                                                             t12 = (*(int *)((t21 + 0x20)));
                                                                             t20 = (t20 << 1);
-                                                                            t882 = (((int)stk + 4) + 0x1C);
+                                                                            t932 = (((int)stk + 4) + 0x1C);
                                                                             if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                             } else {
-                                                                                t882 = (*(int *)(((int)stk + 16)));
+                                                                                t932 = (*(int *)(((int)stk + 16)));
                                                                             }
                                                                             t15 = t19;
-                                                                            t12 = (math_vec3_add(t15, t882, (((int)stk + 4) + 0x28)));
+                                                                            t12 = (math_vec3_add(t15, t932, (((int)stk + 4) + 0x28)));
                                                                         }
                                                                         t13 = 0xC0E0910;
                                                                         t15 = t19;
                                                                         t12 = (nlCalcPoint(t15, t18));
                                                                         t15 = 0x1;
                                                                         *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                        t1563 = t15;
-                                                                        t1564 = 0xC0620A4;
+                                                                        t1661 = t15;
+                                                                        t1662 = 0xC0620A4;
                                                                     }
-                                                                    u901 = u893;
-                                                                    u902 = u894;
+                                                                    u954 = u946;
+                                                                    u955 = u947;
                                                                 }
-                                                                u1034 = u901;
-                                                                u1035 = u902;
+                                                                u1096 = u954;
+                                                                u1097 = u955;
                                                             } else {
                                                                 t12 = 0x10;
                                                                 t13 = (*(int *)((t21 + 0x2C)));
@@ -1567,20 +1565,20 @@ int FUN_0c05a164(int a4)
                                                                 t12 = 0x8;
                                                                 t13 = (t13 + t17);
                                                                 u22 = (*(float *)((t13 + t12)));
-                                                                t1564 = t17;
+                                                                t1662 = t17;
                                                                 if (u22 > u23) {
-                                                                    u1026 = u22;
-                                                                    u1027 = u23;
+                                                                    u1088 = u22;
+                                                                    u1089 = u23;
                                                                 } else {
                                                                     t18 = (*(int *)((t21 + 0x34)));
                                                                     t15 = (*(int *)((t21 + 0x30)));
                                                                     t18 = (t18 + t17);
                                                                     t12 = t20;
                                                                     t12 = (t12 << 2);
-                                                                    t909 = *(int *)(((int)stk + 24));
+                                                                    t962 = *(int *)(((int)stk + 24));
                                                                     t19 = (*(int *)((t15 + t12)));
                                                                     t19 = (t19 << 2);
-                                                                    t19 = (t19 + t909);
+                                                                    t19 = (t19 + t962);
                                                                     t12 = t20;
                                                                     t13 = (*(int *)((t21 + 0x20)));
                                                                     t12 = (t12 << 1);
@@ -1588,7 +1586,7 @@ int FUN_0c05a164(int a4)
                                                                     t12 = (t12 << 2);
                                                                     t13 = (*(int *)((t15 + t12)));
                                                                     t13 = (t13 << 2);
-                                                                    *(unsigned int *)(((int)stk + 16)) = (t909 + t13);
+                                                                    *(unsigned int *)(((int)stk + 16)) = (t962 + t13);
                                                                     t15 = (*(int *)((t21 + 0x2C)));
                                                                     t15 = (t15 + t17);
                                                                     t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -1599,11 +1597,8 @@ int FUN_0c05a164(int a4)
                                                                         t13 = ((int)stk + 4);
                                                                         t13 = (t13 + 0x28);
                                                                         t12 = 0xC;
-                                                                        t12 = (FUN_0c0e6fe8());
-                                                                    } else {
-                                                                        t920 = t13;
+                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                     }
-                                                                    t13 = t920;
                                                                     t17 = 0xC06206E;
                                                                     t15 = ((int)stk + 4);
                                                                     t15 = (t15 + 0x28);
@@ -1612,19 +1607,19 @@ int FUN_0c05a164(int a4)
                                                                     t13 = t20;
                                                                     t13 = (t13 << 2);
                                                                     u23 = 0.0f;
-                                                                    u926 = *(float *)((t13 + t12));
-                                                                    if (u926 != u23) {
+                                                                    u978 = *(float *)((t13 + t12));
+                                                                    if (u978 != u23) {
                                                                         t12 = 0xC05A510;
-                                                                        u927 = *(float *)((t12 + 0x0));
+                                                                        u979 = *(float *)((t12 + 0x0));
                                                                         t12 = 0x18;
                                                                         u22 = (*(float *)((t21 + t12)));
-                                                                        u25 = u927;
-                                                                        u25 = (u25 / (u926 * u22));
-                                                                        u929 = u22;
+                                                                        u25 = u979;
+                                                                        u25 = (u25 / (u978 * u22));
+                                                                        u981 = u22;
                                                                     } else {
                                                                         u25 = 1.0f;
                                                                     }
-                                                                    u22 = u929;
+                                                                    u22 = u981;
                                                                     if (u25 > 1.0f) {
                                                                         u25 = 1.0f;
                                                                     } else {
@@ -1648,9 +1643,9 @@ int FUN_0c05a164(int a4)
                                                                     u22 = (*(float *)((t18 + 0x0)));
                                                                     t12 = 0x4;
                                                                     u23 = ((math_sin_angle16(t15)) * u24);
-                                                                    u945 = u22;
-                                                                    u945 = u945 + u25 * u23;
-                                                                    u22 = u945;
+                                                                    u997 = u22;
+                                                                    u997 = u997 + u25 * u23;
+                                                                    u22 = u997;
                                                                     *(float *)((t18 + 0x0)) = u22;
                                                                     *(int *)((int)stk + 0) = (t18 + t12);
                                                                     t15 = (*(int *)(((int)stk + 8)));
@@ -1659,28 +1654,28 @@ int FUN_0c05a164(int a4)
                                                                     t13 = (t18 + t12);
                                                                     u22 = (*(float *)((t13 + 0x0)));
                                                                     u23 = ((math_sin_angle16(t15)) * u24);
-                                                                    u950 = u22;
-                                                                    u950 = u950 + u25 * u23;
-                                                                    u22 = u950;
+                                                                    u1002 = u22;
+                                                                    u1002 = u1002 + u25 * u23;
+                                                                    u22 = u1002;
                                                                     *(float *)((t13 + 0x0)) = u22;
                                                                     *(int *)((int)stk + 0) = (t18 + t12);
                                                                     t15 = (*(int *)(((int)stk + 8)));
-                                                                    t953 = t15;
+                                                                    t1005 = t15;
                                                                     t15 = (t15 << 1);
-                                                                    t15 = (t15 + t953);
-                                                                    t954 = math_sin_angle16(t15);
+                                                                    t15 = (t15 + t1005);
+                                                                    t1006 = math_sin_angle16(t15);
                                                                     t13 = (t18 + t12);
                                                                     t15 = 0xFA4;
                                                                     u22 = (*(float *)((t13 + 0x0)));
-                                                                    u23 = (t954 * u24);
-                                                                    u956 = u22;
-                                                                    u956 = u956 + u25 * u23;
-                                                                    u22 = u956;
+                                                                    u23 = (t1006 * u24);
+                                                                    u1008 = u22;
+                                                                    u1008 = u1008 + u25 * u23;
+                                                                    u22 = u1008;
                                                                     *(float *)((t13 + 0x0)) = u22;
                                                                     t13 = 0xC0E19B0;
-                                                                    t958 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                    t1010 = ((*(int *)(((int)stk + 8))) + t15);
                                                                     t15 = ((int)stk + 4);
-                                                                    *(unsigned int *)(((int)stk + 8)) = t958;
+                                                                    *(unsigned int *)(((int)stk + 8)) = t1010;
                                                                     t15 = (t15 + 0x34);
                                                                     t12 = (FUN_0c0e19b0(t15));
                                                                     t15 = t18;
@@ -1695,7 +1690,8 @@ int FUN_0c05a164(int a4)
                                                                         if ((int)t13 < 0) {
                                                                             t13 = t19;
                                                                             t12 = 0xC;
-                                                                            t12 = (FUN_0c0e6fe8());
+                                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                            t1040 = t13;
                                                                         } else {
                                                                             t15 = ((int)stk + 4);
                                                                             t15 = (t15 + 0x28);
@@ -1703,15 +1699,16 @@ int FUN_0c05a164(int a4)
                                                                         }
                                                                     } else {
                                                                         t12 = (*(int *)((t21 + 0x20)));
-                                                                        t982 = (((int)stk + 4) + 0x1C);
+                                                                        t1036 = (((int)stk + 4) + 0x1C);
                                                                         if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                         } else {
-                                                                            t982 = (*(int *)(((int)stk + 16)));
+                                                                            t1036 = (*(int *)(((int)stk + 16)));
                                                                         }
                                                                         t15 = ((int)stk + 4);
                                                                         t15 = (t15 + 0x28);
-                                                                        t12 = (math_vec3_sub(t15, t19, t982));
+                                                                        t12 = (math_vec3_sub(t15, t19, t1036));
                                                                     }
+                                                                    t13 = t1040;
                                                                     t17 = 0xC0620A4;
                                                                     t15 = ((int)stk + 4);
                                                                     t15 = (t15 + 0x28);
@@ -1737,7 +1734,7 @@ int FUN_0c05a164(int a4)
                                                                             t13 = ((int)stk + 4);
                                                                             t13 = (t13 + 0x28);
                                                                             t12 = 0xC;
-                                                                            t12 = (FUN_0c0e6fe8());
+                                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                         } else {
                                                                             t15 = t19;
                                                                             t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -1745,27 +1742,27 @@ int FUN_0c05a164(int a4)
                                                                     } else {
                                                                         t12 = (*(int *)((t21 + 0x20)));
                                                                         t20 = (t20 << 1);
-                                                                        t1015 = (((int)stk + 4) + 0x1C);
+                                                                        t1074 = (((int)stk + 4) + 0x1C);
                                                                         if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                         } else {
-                                                                            t1015 = (*(int *)(((int)stk + 16)));
+                                                                            t1074 = (*(int *)(((int)stk + 16)));
                                                                         }
                                                                         t15 = t19;
-                                                                        t12 = (math_vec3_add(t15, t1015, (((int)stk + 4) + 0x28)));
+                                                                        t12 = (math_vec3_add(t15, t1074, (((int)stk + 4) + 0x28)));
                                                                     }
                                                                     t13 = 0xC0E0910;
                                                                     t15 = t19;
                                                                     t12 = (nlCalcPoint(t15, t18));
                                                                     t15 = 0x1;
                                                                     *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                    t1563 = t15;
-                                                                    t1564 = 0xC0620A4;
+                                                                    t1661 = t15;
+                                                                    t1662 = 0xC0620A4;
                                                                 }
-                                                                u1034 = u1026;
-                                                                u1035 = u1027;
+                                                                u1096 = u1088;
+                                                                u1097 = u1089;
                                                             }
-                                                            u1167 = u1034;
-                                                            u1168 = u1035;
+                                                            u1238 = u1096;
+                                                            u1239 = u1097;
                                                         } else {
                                                             t12 = (*(int *)((t21 + 0x38)));
                                                             t13 = t20;
@@ -1773,20 +1770,20 @@ int FUN_0c05a164(int a4)
                                                             u23 = (*(float *)((t13 + t12)));
                                                             t12 = 0x10;
                                                             u22 = (*(float *)((t21 + t12)));
-                                                            t1564 = t17;
+                                                            t1662 = t17;
                                                             if (u23 > u22) {
-                                                                u1159 = u22;
-                                                                u1160 = u23;
+                                                                u1230 = u22;
+                                                                u1231 = u23;
                                                             } else {
                                                                 t18 = (*(int *)((t21 + 0x34)));
                                                                 t15 = (*(int *)((t21 + 0x30)));
                                                                 t18 = (t18 + t17);
                                                                 t12 = t20;
                                                                 t12 = (t12 << 2);
-                                                                t1042 = *(int *)(((int)stk + 24));
+                                                                t1104 = *(int *)(((int)stk + 24));
                                                                 t19 = (*(int *)((t15 + t12)));
                                                                 t19 = (t19 << 2);
-                                                                t19 = (t19 + t1042);
+                                                                t19 = (t19 + t1104);
                                                                 t12 = t20;
                                                                 t13 = (*(int *)((t21 + 0x20)));
                                                                 t12 = (t12 << 1);
@@ -1794,7 +1791,7 @@ int FUN_0c05a164(int a4)
                                                                 t12 = (t12 << 2);
                                                                 t13 = (*(int *)((t15 + t12)));
                                                                 t13 = (t13 << 2);
-                                                                *(unsigned int *)(((int)stk + 16)) = (t1042 + t13);
+                                                                *(unsigned int *)(((int)stk + 16)) = (t1104 + t13);
                                                                 t15 = (*(int *)((t21 + 0x2C)));
                                                                 t15 = (t15 + t17);
                                                                 t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -1805,11 +1802,8 @@ int FUN_0c05a164(int a4)
                                                                     t13 = ((int)stk + 4);
                                                                     t13 = (t13 + 0x28);
                                                                     t12 = 0xC;
-                                                                    t12 = (FUN_0c0e6fe8());
-                                                                } else {
-                                                                    t1053 = t13;
+                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                                 }
-                                                                t13 = t1053;
                                                                 t17 = 0xC06206E;
                                                                 t15 = ((int)stk + 4);
                                                                 t15 = (t15 + 0x28);
@@ -1818,19 +1812,19 @@ int FUN_0c05a164(int a4)
                                                                 t13 = t20;
                                                                 t13 = (t13 << 2);
                                                                 u23 = 0.0f;
-                                                                u1059 = *(float *)((t13 + t12));
-                                                                if (u1059 != u23) {
+                                                                u1120 = *(float *)((t13 + t12));
+                                                                if (u1120 != u23) {
                                                                     t12 = 0xC05A510;
-                                                                    u1060 = *(float *)((t12 + 0x0));
+                                                                    u1121 = *(float *)((t12 + 0x0));
                                                                     t12 = 0x18;
                                                                     u22 = (*(float *)((t21 + t12)));
-                                                                    u25 = u1060;
-                                                                    u25 = (u25 / (u1059 * u22));
-                                                                    u1062 = u22;
+                                                                    u25 = u1121;
+                                                                    u25 = (u25 / (u1120 * u22));
+                                                                    u1123 = u22;
                                                                 } else {
                                                                     u25 = 1.0f;
                                                                 }
-                                                                u22 = u1062;
+                                                                u22 = u1123;
                                                                 if (u25 > 1.0f) {
                                                                     u25 = 1.0f;
                                                                 } else {
@@ -1854,9 +1848,9 @@ int FUN_0c05a164(int a4)
                                                                 u22 = (*(float *)((t18 + 0x0)));
                                                                 t12 = 0x4;
                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                u1078 = u22;
-                                                                u1078 = u1078 + u25 * u23;
-                                                                u22 = u1078;
+                                                                u1139 = u22;
+                                                                u1139 = u1139 + u25 * u23;
+                                                                u22 = u1139;
                                                                 *(float *)((t18 + 0x0)) = u22;
                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                 t15 = (*(int *)(((int)stk + 8)));
@@ -1865,28 +1859,28 @@ int FUN_0c05a164(int a4)
                                                                 t13 = (t18 + t12);
                                                                 u22 = (*(float *)((t13 + 0x0)));
                                                                 u23 = ((math_sin_angle16(t15)) * u24);
-                                                                u1083 = u22;
-                                                                u1083 = u1083 + u25 * u23;
-                                                                u22 = u1083;
+                                                                u1144 = u22;
+                                                                u1144 = u1144 + u25 * u23;
+                                                                u22 = u1144;
                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                 *(int *)((int)stk + 0) = (t18 + t12);
                                                                 t15 = (*(int *)(((int)stk + 8)));
-                                                                t1086 = t15;
+                                                                t1147 = t15;
                                                                 t15 = (t15 << 1);
-                                                                t15 = (t15 + t1086);
-                                                                t1087 = math_sin_angle16(t15);
+                                                                t15 = (t15 + t1147);
+                                                                t1148 = math_sin_angle16(t15);
                                                                 t13 = (t18 + t12);
                                                                 t15 = 0xFA4;
                                                                 u22 = (*(float *)((t13 + 0x0)));
-                                                                u23 = (t1087 * u24);
-                                                                u1089 = u22;
-                                                                u1089 = u1089 + u25 * u23;
-                                                                u22 = u1089;
+                                                                u23 = (t1148 * u24);
+                                                                u1150 = u22;
+                                                                u1150 = u1150 + u25 * u23;
+                                                                u22 = u1150;
                                                                 *(float *)((t13 + 0x0)) = u22;
                                                                 t13 = 0xC0E19B0;
-                                                                t1091 = ((*(int *)(((int)stk + 8))) + t15);
+                                                                t1152 = ((*(int *)(((int)stk + 8))) + t15);
                                                                 t15 = ((int)stk + 4);
-                                                                *(unsigned int *)(((int)stk + 8)) = t1091;
+                                                                *(unsigned int *)(((int)stk + 8)) = t1152;
                                                                 t15 = (t15 + 0x34);
                                                                 t12 = (FUN_0c0e19b0(t15));
                                                                 t15 = t18;
@@ -1901,7 +1895,8 @@ int FUN_0c05a164(int a4)
                                                                     if ((int)t13 < 0) {
                                                                         t13 = t19;
                                                                         t12 = 0xC;
-                                                                        t12 = (FUN_0c0e6fe8());
+                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                        t1182 = t13;
                                                                     } else {
                                                                         t15 = ((int)stk + 4);
                                                                         t15 = (t15 + 0x28);
@@ -1909,15 +1904,16 @@ int FUN_0c05a164(int a4)
                                                                     }
                                                                 } else {
                                                                     t12 = (*(int *)((t21 + 0x20)));
-                                                                    t1115 = (((int)stk + 4) + 0x1C);
+                                                                    t1178 = (((int)stk + 4) + 0x1C);
                                                                     if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                     } else {
-                                                                        t1115 = (*(int *)(((int)stk + 16)));
+                                                                        t1178 = (*(int *)(((int)stk + 16)));
                                                                     }
                                                                     t15 = ((int)stk + 4);
                                                                     t15 = (t15 + 0x28);
-                                                                    t12 = (math_vec3_sub(t15, t19, t1115));
+                                                                    t12 = (math_vec3_sub(t15, t19, t1178));
                                                                 }
+                                                                t13 = t1182;
                                                                 t17 = 0xC0620A4;
                                                                 t15 = ((int)stk + 4);
                                                                 t15 = (t15 + 0x28);
@@ -1943,7 +1939,7 @@ int FUN_0c05a164(int a4)
                                                                         t13 = ((int)stk + 4);
                                                                         t13 = (t13 + 0x28);
                                                                         t12 = 0xC;
-                                                                        t12 = (FUN_0c0e6fe8());
+                                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                     } else {
                                                                         t15 = t19;
                                                                         t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -1951,27 +1947,27 @@ int FUN_0c05a164(int a4)
                                                                 } else {
                                                                     t12 = (*(int *)((t21 + 0x20)));
                                                                     t20 = (t20 << 1);
-                                                                    t1148 = (((int)stk + 4) + 0x1C);
+                                                                    t1216 = (((int)stk + 4) + 0x1C);
                                                                     if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                     } else {
-                                                                        t1148 = (*(int *)(((int)stk + 16)));
+                                                                        t1216 = (*(int *)(((int)stk + 16)));
                                                                     }
                                                                     t15 = t19;
-                                                                    t12 = (math_vec3_add(t15, t1148, (((int)stk + 4) + 0x28)));
+                                                                    t12 = (math_vec3_add(t15, t1216, (((int)stk + 4) + 0x28)));
                                                                 }
                                                                 t13 = 0xC0E0910;
                                                                 t15 = t19;
                                                                 t12 = (nlCalcPoint(t15, t18));
                                                                 t15 = 0x1;
                                                                 *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                                t1563 = t15;
-                                                                t1564 = 0xC0620A4;
+                                                                t1661 = t15;
+                                                                t1662 = 0xC0620A4;
                                                             }
-                                                            u1167 = u1159;
-                                                            u1168 = u1160;
+                                                            u1238 = u1230;
+                                                            u1239 = u1231;
                                                         }
-                                                        u1300 = u1167;
-                                                        u1301 = u1168;
+                                                        u1380 = u1238;
+                                                        u1381 = u1239;
                                                     } else {
                                                         t12 = (*(int *)((t21 + 0x38)));
                                                         t13 = t20;
@@ -1979,20 +1975,20 @@ int FUN_0c05a164(int a4)
                                                         u23 = (*(float *)((t13 + t12)));
                                                         t12 = 0x10;
                                                         u22 = (*(float *)((t21 + t12)));
-                                                        t1564 = t17;
+                                                        t1662 = t17;
                                                         if (u22 > u23) {
-                                                            u1292 = u22;
-                                                            u1293 = u23;
+                                                            u1372 = u22;
+                                                            u1373 = u23;
                                                         } else {
                                                             t18 = (*(int *)((t21 + 0x34)));
                                                             t15 = (*(int *)((t21 + 0x30)));
                                                             t18 = (t18 + t17);
                                                             t12 = t20;
                                                             t12 = (t12 << 2);
-                                                            t1175 = *(int *)(((int)stk + 24));
+                                                            t1246 = *(int *)(((int)stk + 24));
                                                             t19 = (*(int *)((t15 + t12)));
                                                             t19 = (t19 << 2);
-                                                            t19 = (t19 + t1175);
+                                                            t19 = (t19 + t1246);
                                                             t12 = t20;
                                                             t13 = (*(int *)((t21 + 0x20)));
                                                             t12 = (t12 << 1);
@@ -2000,7 +1996,7 @@ int FUN_0c05a164(int a4)
                                                             t12 = (t12 << 2);
                                                             t13 = (*(int *)((t15 + t12)));
                                                             t13 = (t13 << 2);
-                                                            *(unsigned int *)(((int)stk + 16)) = (t1175 + t13);
+                                                            *(unsigned int *)(((int)stk + 16)) = (t1246 + t13);
                                                             t15 = (*(int *)((t21 + 0x2C)));
                                                             t15 = (t15 + t17);
                                                             t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -2011,11 +2007,8 @@ int FUN_0c05a164(int a4)
                                                                 t13 = ((int)stk + 4);
                                                                 t13 = (t13 + 0x28);
                                                                 t12 = 0xC;
-                                                                t12 = (FUN_0c0e6fe8());
-                                                            } else {
-                                                                t1186 = t13;
+                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                             }
-                                                            t13 = t1186;
                                                             t17 = 0xC06206E;
                                                             t15 = ((int)stk + 4);
                                                             t15 = (t15 + 0x28);
@@ -2024,19 +2017,19 @@ int FUN_0c05a164(int a4)
                                                             t13 = t20;
                                                             t13 = (t13 << 2);
                                                             u23 = 0.0f;
-                                                            u1192 = *(float *)((t13 + t12));
-                                                            if (u1192 != u23) {
+                                                            u1262 = *(float *)((t13 + t12));
+                                                            if (u1262 != u23) {
                                                                 t12 = 0xC05A510;
-                                                                u1193 = *(float *)((t12 + 0x0));
+                                                                u1263 = *(float *)((t12 + 0x0));
                                                                 t12 = 0x18;
                                                                 u22 = (*(float *)((t21 + t12)));
-                                                                u25 = u1193;
-                                                                u25 = (u25 / (u1192 * u22));
-                                                                u1195 = u22;
+                                                                u25 = u1263;
+                                                                u25 = (u25 / (u1262 * u22));
+                                                                u1265 = u22;
                                                             } else {
                                                                 u25 = 1.0f;
                                                             }
-                                                            u22 = u1195;
+                                                            u22 = u1265;
                                                             if (u25 > 1.0f) {
                                                                 u25 = 1.0f;
                                                             } else {
@@ -2060,9 +2053,9 @@ int FUN_0c05a164(int a4)
                                                             u22 = (*(float *)((t18 + 0x0)));
                                                             t12 = 0x4;
                                                             u23 = ((math_sin_angle16(t15)) * u24);
-                                                            u1211 = u22;
-                                                            u1211 = u1211 + u25 * u23;
-                                                            u22 = u1211;
+                                                            u1281 = u22;
+                                                            u1281 = u1281 + u25 * u23;
+                                                            u22 = u1281;
                                                             *(float *)((t18 + 0x0)) = u22;
                                                             *(int *)((int)stk + 0) = (t18 + t12);
                                                             t15 = (*(int *)(((int)stk + 8)));
@@ -2071,28 +2064,28 @@ int FUN_0c05a164(int a4)
                                                             t13 = (t18 + t12);
                                                             u22 = (*(float *)((t13 + 0x0)));
                                                             u23 = ((math_sin_angle16(t15)) * u24);
-                                                            u1216 = u22;
-                                                            u1216 = u1216 + u25 * u23;
-                                                            u22 = u1216;
+                                                            u1286 = u22;
+                                                            u1286 = u1286 + u25 * u23;
+                                                            u22 = u1286;
                                                             *(float *)((t13 + 0x0)) = u22;
                                                             *(int *)((int)stk + 0) = (t18 + t12);
                                                             t15 = (*(int *)(((int)stk + 8)));
-                                                            t1219 = t15;
+                                                            t1289 = t15;
                                                             t15 = (t15 << 1);
-                                                            t15 = (t15 + t1219);
-                                                            t1220 = math_sin_angle16(t15);
+                                                            t15 = (t15 + t1289);
+                                                            t1290 = math_sin_angle16(t15);
                                                             t13 = (t18 + t12);
                                                             t15 = 0xFA4;
                                                             u22 = (*(float *)((t13 + 0x0)));
-                                                            u23 = (t1220 * u24);
-                                                            u1222 = u22;
-                                                            u1222 = u1222 + u25 * u23;
-                                                            u22 = u1222;
+                                                            u23 = (t1290 * u24);
+                                                            u1292 = u22;
+                                                            u1292 = u1292 + u25 * u23;
+                                                            u22 = u1292;
                                                             *(float *)((t13 + 0x0)) = u22;
                                                             t13 = 0xC0E19B0;
-                                                            t1224 = ((*(int *)(((int)stk + 8))) + t15);
+                                                            t1294 = ((*(int *)(((int)stk + 8))) + t15);
                                                             t15 = ((int)stk + 4);
-                                                            *(unsigned int *)(((int)stk + 8)) = t1224;
+                                                            *(unsigned int *)(((int)stk + 8)) = t1294;
                                                             t15 = (t15 + 0x34);
                                                             t12 = (FUN_0c0e19b0(t15));
                                                             t15 = t18;
@@ -2107,7 +2100,8 @@ int FUN_0c05a164(int a4)
                                                                 if ((int)t13 < 0) {
                                                                     t13 = t19;
                                                                     t12 = 0xC;
-                                                                    t12 = (FUN_0c0e6fe8());
+                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                    t1324 = t13;
                                                                 } else {
                                                                     t15 = ((int)stk + 4);
                                                                     t15 = (t15 + 0x28);
@@ -2115,15 +2109,16 @@ int FUN_0c05a164(int a4)
                                                                 }
                                                             } else {
                                                                 t12 = (*(int *)((t21 + 0x20)));
-                                                                t1248 = (((int)stk + 4) + 0x1C);
+                                                                t1320 = (((int)stk + 4) + 0x1C);
                                                                 if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                                 } else {
-                                                                    t1248 = (*(int *)(((int)stk + 16)));
+                                                                    t1320 = (*(int *)(((int)stk + 16)));
                                                                 }
                                                                 t15 = ((int)stk + 4);
                                                                 t15 = (t15 + 0x28);
-                                                                t12 = (math_vec3_sub(t15, t19, t1248));
+                                                                t12 = (math_vec3_sub(t15, t19, t1320));
                                                             }
+                                                            t13 = t1324;
                                                             t17 = 0xC0620A4;
                                                             t15 = ((int)stk + 4);
                                                             t15 = (t15 + 0x28);
@@ -2149,7 +2144,7 @@ int FUN_0c05a164(int a4)
                                                                     t13 = ((int)stk + 4);
                                                                     t13 = (t13 + 0x28);
                                                                     t12 = 0xC;
-                                                                    t12 = (FUN_0c0e6fe8());
+                                                                    { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                                 } else {
                                                                     t15 = t19;
                                                                     t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -2157,27 +2152,27 @@ int FUN_0c05a164(int a4)
                                                             } else {
                                                                 t12 = (*(int *)((t21 + 0x20)));
                                                                 t20 = (t20 << 1);
-                                                                t1281 = (((int)stk + 4) + 0x1C);
+                                                                t1358 = (((int)stk + 4) + 0x1C);
                                                                 if ((int)(*(short *)((t20 + t12))) < 0) {
                                                                 } else {
-                                                                    t1281 = (*(int *)(((int)stk + 16)));
+                                                                    t1358 = (*(int *)(((int)stk + 16)));
                                                                 }
                                                                 t15 = t19;
-                                                                t12 = (math_vec3_add(t15, t1281, (((int)stk + 4) + 0x28)));
+                                                                t12 = (math_vec3_add(t15, t1358, (((int)stk + 4) + 0x28)));
                                                             }
                                                             t13 = 0xC0E0910;
                                                             t15 = t19;
                                                             t12 = (nlCalcPoint(t15, t18));
                                                             t15 = 0x1;
                                                             *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                            t1563 = t15;
-                                                            t1564 = 0xC0620A4;
+                                                            t1661 = t15;
+                                                            t1662 = 0xC0620A4;
                                                         }
-                                                        u1300 = u1292;
-                                                        u1301 = u1293;
+                                                        u1380 = u1372;
+                                                        u1381 = u1373;
                                                     }
-                                                    u1433 = u1300;
-                                                    u1434 = u1301;
+                                                    u1522 = u1380;
+                                                    u1523 = u1381;
                                                 } else {
                                                     t12 = 0x10;
                                                     t13 = (*(int *)((t21 + 0x2C)));
@@ -2185,20 +2180,20 @@ int FUN_0c05a164(int a4)
                                                     t12 = 0x4;
                                                     t13 = (t13 + t17);
                                                     u22 = (*(float *)((t13 + t12)));
-                                                    t1564 = t17;
+                                                    t1662 = t17;
                                                     if (u22 > u23) {
-                                                        u1425 = u22;
-                                                        u1426 = u23;
+                                                        u1514 = u22;
+                                                        u1515 = u23;
                                                     } else {
                                                         t18 = (*(int *)((t21 + 0x34)));
                                                         t15 = (*(int *)((t21 + 0x30)));
                                                         t18 = (t18 + t17);
                                                         t12 = t20;
                                                         t12 = (t12 << 2);
-                                                        t1308 = *(int *)(((int)stk + 24));
+                                                        t1388 = *(int *)(((int)stk + 24));
                                                         t19 = (*(int *)((t15 + t12)));
                                                         t19 = (t19 << 2);
-                                                        t19 = (t19 + t1308);
+                                                        t19 = (t19 + t1388);
                                                         t12 = t20;
                                                         t13 = (*(int *)((t21 + 0x20)));
                                                         t12 = (t12 << 1);
@@ -2206,7 +2201,7 @@ int FUN_0c05a164(int a4)
                                                         t12 = (t12 << 2);
                                                         t13 = (*(int *)((t15 + t12)));
                                                         t13 = (t13 << 2);
-                                                        *(unsigned int *)(((int)stk + 16)) = (t1308 + t13);
+                                                        *(unsigned int *)(((int)stk + 16)) = (t1388 + t13);
                                                         t15 = (*(int *)((t21 + 0x2C)));
                                                         t15 = (t15 + t17);
                                                         t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -2217,11 +2212,8 @@ int FUN_0c05a164(int a4)
                                                             t13 = ((int)stk + 4);
                                                             t13 = (t13 + 0x28);
                                                             t12 = 0xC;
-                                                            t12 = (FUN_0c0e6fe8());
-                                                        } else {
-                                                            t1319 = t13;
+                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                         }
-                                                        t13 = t1319;
                                                         t17 = 0xC06206E;
                                                         t15 = ((int)stk + 4);
                                                         t15 = (t15 + 0x28);
@@ -2230,19 +2222,19 @@ int FUN_0c05a164(int a4)
                                                         t13 = t20;
                                                         t13 = (t13 << 2);
                                                         u23 = 0.0f;
-                                                        u1325 = *(float *)((t13 + t12));
-                                                        if (u1325 != u23) {
+                                                        u1404 = *(float *)((t13 + t12));
+                                                        if (u1404 != u23) {
                                                             t12 = 0xC05A510;
-                                                            u1326 = *(float *)((t12 + 0x0));
+                                                            u1405 = *(float *)((t12 + 0x0));
                                                             t12 = 0x18;
                                                             u22 = (*(float *)((t21 + t12)));
-                                                            u25 = u1326;
-                                                            u25 = (u25 / (u1325 * u22));
-                                                            u1328 = u22;
+                                                            u25 = u1405;
+                                                            u25 = (u25 / (u1404 * u22));
+                                                            u1407 = u22;
                                                         } else {
                                                             u25 = 1.0f;
                                                         }
-                                                        u22 = u1328;
+                                                        u22 = u1407;
                                                         if (u25 > 1.0f) {
                                                             u25 = 1.0f;
                                                         } else {
@@ -2266,9 +2258,9 @@ int FUN_0c05a164(int a4)
                                                         u22 = (*(float *)((t18 + 0x0)));
                                                         t12 = 0x4;
                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                        u1344 = u22;
-                                                        u1344 = u1344 + u25 * u23;
-                                                        u22 = u1344;
+                                                        u1423 = u22;
+                                                        u1423 = u1423 + u25 * u23;
+                                                        u22 = u1423;
                                                         *(float *)((t18 + 0x0)) = u22;
                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                         t15 = (*(int *)(((int)stk + 8)));
@@ -2277,28 +2269,28 @@ int FUN_0c05a164(int a4)
                                                         t13 = (t18 + t12);
                                                         u22 = (*(float *)((t13 + 0x0)));
                                                         u23 = ((math_sin_angle16(t15)) * u24);
-                                                        u1349 = u22;
-                                                        u1349 = u1349 + u25 * u23;
-                                                        u22 = u1349;
+                                                        u1428 = u22;
+                                                        u1428 = u1428 + u25 * u23;
+                                                        u22 = u1428;
                                                         *(float *)((t13 + 0x0)) = u22;
                                                         *(int *)((int)stk + 0) = (t18 + t12);
                                                         t15 = (*(int *)(((int)stk + 8)));
-                                                        t1352 = t15;
+                                                        t1431 = t15;
                                                         t15 = (t15 << 1);
-                                                        t15 = (t15 + t1352);
-                                                        t1353 = math_sin_angle16(t15);
+                                                        t15 = (t15 + t1431);
+                                                        t1432 = math_sin_angle16(t15);
                                                         t13 = (t18 + t12);
                                                         t15 = 0xFA4;
                                                         u22 = (*(float *)((t13 + 0x0)));
-                                                        u23 = (t1353 * u24);
-                                                        u1355 = u22;
-                                                        u1355 = u1355 + u25 * u23;
-                                                        u22 = u1355;
+                                                        u23 = (t1432 * u24);
+                                                        u1434 = u22;
+                                                        u1434 = u1434 + u25 * u23;
+                                                        u22 = u1434;
                                                         *(float *)((t13 + 0x0)) = u22;
                                                         t13 = 0xC0E19B0;
-                                                        t1357 = ((*(int *)(((int)stk + 8))) + t15);
+                                                        t1436 = ((*(int *)(((int)stk + 8))) + t15);
                                                         t15 = ((int)stk + 4);
-                                                        *(unsigned int *)(((int)stk + 8)) = t1357;
+                                                        *(unsigned int *)(((int)stk + 8)) = t1436;
                                                         t15 = (t15 + 0x34);
                                                         t12 = (FUN_0c0e19b0(t15));
                                                         t15 = t18;
@@ -2313,7 +2305,8 @@ int FUN_0c05a164(int a4)
                                                             if ((int)t13 < 0) {
                                                                 t13 = t19;
                                                                 t12 = 0xC;
-                                                                t12 = (FUN_0c0e6fe8());
+                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                                t1466 = t13;
                                                             } else {
                                                                 t15 = ((int)stk + 4);
                                                                 t15 = (t15 + 0x28);
@@ -2321,15 +2314,16 @@ int FUN_0c05a164(int a4)
                                                             }
                                                         } else {
                                                             t12 = (*(int *)((t21 + 0x20)));
-                                                            t1381 = (((int)stk + 4) + 0x1C);
+                                                            t1462 = (((int)stk + 4) + 0x1C);
                                                             if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                             } else {
-                                                                t1381 = (*(int *)(((int)stk + 16)));
+                                                                t1462 = (*(int *)(((int)stk + 16)));
                                                             }
                                                             t15 = ((int)stk + 4);
                                                             t15 = (t15 + 0x28);
-                                                            t12 = (math_vec3_sub(t15, t19, t1381));
+                                                            t12 = (math_vec3_sub(t15, t19, t1462));
                                                         }
+                                                        t13 = t1466;
                                                         t17 = 0xC0620A4;
                                                         t15 = ((int)stk + 4);
                                                         t15 = (t15 + 0x28);
@@ -2355,7 +2349,7 @@ int FUN_0c05a164(int a4)
                                                                 t13 = ((int)stk + 4);
                                                                 t13 = (t13 + 0x28);
                                                                 t12 = 0xC;
-                                                                t12 = (FUN_0c0e6fe8());
+                                                                { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                             } else {
                                                                 t15 = t19;
                                                                 t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -2363,46 +2357,46 @@ int FUN_0c05a164(int a4)
                                                         } else {
                                                             t12 = (*(int *)((t21 + 0x20)));
                                                             t20 = (t20 << 1);
-                                                            t1414 = (((int)stk + 4) + 0x1C);
+                                                            t1500 = (((int)stk + 4) + 0x1C);
                                                             if ((int)(*(short *)((t20 + t12))) < 0) {
                                                             } else {
-                                                                t1414 = (*(int *)(((int)stk + 16)));
+                                                                t1500 = (*(int *)(((int)stk + 16)));
                                                             }
                                                             t15 = t19;
-                                                            t12 = (math_vec3_add(t15, t1414, (((int)stk + 4) + 0x28)));
+                                                            t12 = (math_vec3_add(t15, t1500, (((int)stk + 4) + 0x28)));
                                                         }
                                                         t13 = 0xC0E0910;
                                                         t15 = t19;
                                                         t12 = (nlCalcPoint(t15, t18));
                                                         t15 = 0x1;
                                                         *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                        t1563 = t15;
-                                                        t1564 = 0xC0620A4;
+                                                        t1661 = t15;
+                                                        t1662 = 0xC0620A4;
                                                     }
-                                                    u1433 = u1425;
-                                                    u1434 = u1426;
+                                                    u1522 = u1514;
+                                                    u1523 = u1515;
                                                 }
-                                                u1565 = u1433;
-                                                u1566 = u1434;
+                                                u1663 = u1522;
+                                                u1664 = u1523;
                                             } else {
                                                 t12 = 0x10;
                                                 u23 = (*(float *)((t21 + t12)));
                                                 t12 = 0x4;
                                                 u22 = (*(float *)((((*(int *)((t21 + 0x2C))) + t17) + t12)));
-                                                t1564 = t17;
+                                                t1662 = t17;
                                                 if (u23 > u22) {
-                                                    u1557 = u22;
-                                                    u1558 = u23;
+                                                    u1655 = u22;
+                                                    u1656 = u23;
                                                 } else {
                                                     t18 = (*(int *)((t21 + 0x34)));
                                                     t15 = (*(int *)((t21 + 0x30)));
                                                     t18 = (t18 + t17);
                                                     t12 = t20;
                                                     t12 = (t12 << 2);
-                                                    t1441 = *(int *)(((int)stk + 24));
+                                                    t1530 = *(int *)(((int)stk + 24));
                                                     t19 = (*(int *)((t15 + t12)));
                                                     t19 = (t19 << 2);
-                                                    t19 = (t19 + t1441);
+                                                    t19 = (t19 + t1530);
                                                     t12 = t20;
                                                     t13 = (*(int *)((t21 + 0x20)));
                                                     t12 = (t12 << 1);
@@ -2410,7 +2404,7 @@ int FUN_0c05a164(int a4)
                                                     t12 = (t12 << 2);
                                                     t13 = (*(int *)((t15 + t12)));
                                                     t13 = (t13 << 2);
-                                                    *(unsigned int *)(((int)stk + 16)) = (t1441 + t13);
+                                                    *(unsigned int *)(((int)stk + 16)) = (t1530 + t13);
                                                     t15 = (*(int *)((t21 + 0x2C)));
                                                     t15 = (t15 + t17);
                                                     t12 = (nlCalcPoint(t15, (((int)stk + 4) + 0x28)));
@@ -2421,11 +2415,8 @@ int FUN_0c05a164(int a4)
                                                         t13 = ((int)stk + 4);
                                                         t13 = (t13 + 0x28);
                                                         t12 = 0xC;
-                                                        t12 = (FUN_0c0e6fe8());
-                                                    } else {
-                                                        t1452 = t13;
+                                                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t18) = *(struct mv3 *)(t13); }
                                                     }
-                                                    t13 = t1452;
                                                     t17 = 0xC06206E;
                                                     t15 = ((int)stk + 4);
                                                     t15 = (t15 + 0x28);
@@ -2434,19 +2425,19 @@ int FUN_0c05a164(int a4)
                                                     t13 = t20;
                                                     t13 = (t13 << 2);
                                                     u23 = 0.0f;
-                                                    u1458 = *(float *)((t13 + t12));
-                                                    if (u1458 != u23) {
+                                                    u1546 = *(float *)((t13 + t12));
+                                                    if (u1546 != u23) {
                                                         t12 = 0xC05A510;
-                                                        u1459 = *(float *)((t12 + 0x0));
+                                                        u1547 = *(float *)((t12 + 0x0));
                                                         t12 = 0x18;
                                                         u22 = (*(float *)((t21 + t12)));
-                                                        u25 = u1459;
-                                                        u25 = (u25 / (u1458 * u22));
-                                                        u1461 = u22;
+                                                        u25 = u1547;
+                                                        u25 = (u25 / (u1546 * u22));
+                                                        u1549 = u22;
                                                     } else {
                                                         u25 = 1.0f;
                                                     }
-                                                    u22 = u1461;
+                                                    u22 = u1549;
                                                     if (u25 > 1.0f) {
                                                         u25 = 1.0f;
                                                     } else {
@@ -2470,9 +2461,9 @@ int FUN_0c05a164(int a4)
                                                     u22 = (*(float *)((t18 + 0x0)));
                                                     t12 = 0x4;
                                                     u23 = ((math_sin_angle16(t15)) * u24);
-                                                    u1477 = u22;
-                                                    u1477 = u1477 + u25 * u23;
-                                                    u22 = u1477;
+                                                    u1565 = u22;
+                                                    u1565 = u1565 + u25 * u23;
+                                                    u22 = u1565;
                                                     *(float *)((t18 + 0x0)) = u22;
                                                     *(int *)((int)stk + 0) = (t18 + t12);
                                                     t15 = (*(int *)(((int)stk + 8)));
@@ -2481,28 +2472,28 @@ int FUN_0c05a164(int a4)
                                                     t13 = (t18 + t12);
                                                     u22 = (*(float *)((t13 + 0x0)));
                                                     u23 = ((math_sin_angle16(t15)) * u24);
-                                                    u1482 = u22;
-                                                    u1482 = u1482 + u25 * u23;
-                                                    u22 = u1482;
+                                                    u1570 = u22;
+                                                    u1570 = u1570 + u25 * u23;
+                                                    u22 = u1570;
                                                     *(float *)((t13 + 0x0)) = u22;
                                                     *(int *)((int)stk + 0) = (t18 + t12);
                                                     t15 = (*(int *)(((int)stk + 8)));
-                                                    t1485 = t15;
+                                                    t1573 = t15;
                                                     t15 = (t15 << 1);
-                                                    t15 = (t15 + t1485);
-                                                    t1486 = math_sin_angle16(t15);
+                                                    t15 = (t15 + t1573);
+                                                    t1574 = math_sin_angle16(t15);
                                                     t13 = (t18 + t12);
                                                     t15 = 0xFA4;
                                                     u22 = (*(float *)((t13 + 0x0)));
-                                                    u23 = (t1486 * u24);
-                                                    u1488 = u22;
-                                                    u1488 = u1488 + u25 * u23;
-                                                    u22 = u1488;
+                                                    u23 = (t1574 * u24);
+                                                    u1576 = u22;
+                                                    u1576 = u1576 + u25 * u23;
+                                                    u22 = u1576;
                                                     *(float *)((t13 + 0x0)) = u22;
                                                     t13 = 0xC0E19B0;
-                                                    t1490 = ((*(int *)(((int)stk + 8))) + t15);
+                                                    t1578 = ((*(int *)(((int)stk + 8))) + t15);
                                                     t15 = ((int)stk + 4);
-                                                    *(unsigned int *)(((int)stk + 8)) = t1490;
+                                                    *(unsigned int *)(((int)stk + 8)) = t1578;
                                                     t15 = (t15 + 0x34);
                                                     t12 = (FUN_0c0e19b0(t15));
                                                     t15 = t18;
@@ -2517,7 +2508,8 @@ int FUN_0c05a164(int a4)
                                                         if ((int)t13 < 0) {
                                                             t13 = t19;
                                                             t12 = 0xC;
-                                                            t12 = (FUN_0c0e6fe8());
+                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x28)) = *(struct mv3 *)(t13); }
+                                                            t1608 = t13;
                                                         } else {
                                                             t15 = ((int)stk + 4);
                                                             t15 = (t15 + 0x28);
@@ -2525,15 +2517,16 @@ int FUN_0c05a164(int a4)
                                                         }
                                                     } else {
                                                         t12 = (*(int *)((t21 + 0x20)));
-                                                        t1514 = (((int)stk + 4) + 0x1C);
+                                                        t1604 = (((int)stk + 4) + 0x1C);
                                                         if ((int)(*(short *)(((t20 << 1) + t12))) < 0) {
                                                         } else {
-                                                            t1514 = (*(int *)(((int)stk + 16)));
+                                                            t1604 = (*(int *)(((int)stk + 16)));
                                                         }
                                                         t15 = ((int)stk + 4);
                                                         t15 = (t15 + 0x28);
-                                                        t12 = (math_vec3_sub(t15, t19, t1514));
+                                                        t12 = (math_vec3_sub(t15, t19, t1604));
                                                     }
+                                                    t13 = t1608;
                                                     t17 = 0xC0620A4;
                                                     t15 = ((int)stk + 4);
                                                     t15 = (t15 + 0x28);
@@ -2559,7 +2552,7 @@ int FUN_0c05a164(int a4)
                                                             t13 = ((int)stk + 4);
                                                             t13 = (t13 + 0x28);
                                                             t12 = 0xC;
-                                                            t12 = (FUN_0c0e6fe8());
+                                                            { struct mv3 { int w[3]; }; *(struct mv3 *)(t19) = *(struct mv3 *)(t13); }
                                                         } else {
                                                             t15 = t19;
                                                             t12 = (math_vec3_add(t15, (*(int *)(((int)stk + 16))), (((int)stk + 4) + 0x28)));
@@ -2567,61 +2560,61 @@ int FUN_0c05a164(int a4)
                                                     } else {
                                                         t12 = (*(int *)((t21 + 0x20)));
                                                         t20 = (t20 << 1);
-                                                        t1547 = (((int)stk + 4) + 0x1C);
+                                                        t1642 = (((int)stk + 4) + 0x1C);
                                                         if ((int)(*(short *)((t20 + t12))) < 0) {
                                                         } else {
-                                                            t1547 = (*(int *)(((int)stk + 16)));
+                                                            t1642 = (*(int *)(((int)stk + 16)));
                                                         }
                                                         t15 = t19;
-                                                        t12 = (math_vec3_add(t15, t1547, (((int)stk + 4) + 0x28)));
+                                                        t12 = (math_vec3_add(t15, t1642, (((int)stk + 4) + 0x28)));
                                                     }
                                                     t13 = 0xC0E0910;
                                                     t15 = t19;
                                                     t12 = (nlCalcPoint(t15, t18));
                                                     t15 = 0x1;
                                                     *(unsigned int *)((t19 + 0x0)) = ((*(int *)((t19 + 0x0))) | t15);
-                                                    t1563 = t15;
-                                                    t1564 = 0xC0620A4;
+                                                    t1661 = t15;
+                                                    t1662 = 0xC0620A4;
                                                 }
-                                                u1565 = u1557;
-                                                u1566 = u1558;
+                                                u1663 = u1655;
+                                                u1664 = u1656;
                                             }
-                                            u22 = u1565;
-                                            u23 = u1566;
+                                            u22 = u1663;
+                                            u23 = u1664;
                                             t13 = (*(int *)(((int)stk + 4)));
-                                            t15 = t1563;
-                                            t17 = t1564;
+                                            t15 = t1661;
+                                            t17 = t1662;
                                             t13 = (t13 + 0x1);
                                             *(unsigned int *)(((int)stk + 4)) = t13;
                                             continue;
                                         }
                                         break;
                                     }
-                                    t1570 = 0xC0E1240;
+                                    t1668 = 0xC0E1240;
                                 }
-                                t1577 = t1570;
-                                t1578 = t1571;
-                                t1580 = t1573;
-                                u1581 = u1574;
-                                u1582 = u1575;
+                                t1675 = t1668;
+                                t1676 = t1669;
+                                t1678 = t1671;
+                                u1679 = u1672;
+                                u1680 = u1673;
                             }
-                            t1585 = t1577;
-                            t1586 = t1578;
-                            t1588 = t1580;
-                            u1589 = u1581;
-                            u1590 = u1582;
+                            t1683 = t1675;
+                            t1684 = t1676;
+                            t1686 = t1678;
+                            u1687 = u1679;
+                            u1688 = u1680;
                         }
-                        t1593 = t1585;
-                        t1594 = t1586;
-                        t1596 = t1588;
-                        u1597 = u1589;
-                        u1598 = u1590;
+                        t1691 = t1683;
+                        t1692 = t1684;
+                        t1694 = t1686;
+                        u1695 = u1687;
+                        u1696 = u1688;
                     }
-                    u22 = u1597;
-                    u23 = u1598;
-                    t20 = t1593;
-                    t13 = t1594;
-                    t15 = t1596;
+                    u22 = u1695;
+                    u23 = u1696;
+                    t20 = t1691;
+                    t13 = t1692;
+                    t15 = t1694;
                     *(unsigned int *)(((int)stk + 12)) = ((*(int *)(((int)stk + 12))) + 0x1);
                     t13 = (*(int *)(((int)stk + 20)));
                     t13 = (t13 + 0x40);
@@ -2630,11 +2623,11 @@ int FUN_0c05a164(int a4)
                 }
                 break;
             }
-            t1602 = t12;
+            t1700 = t12;
         }
-        t1618 = t1602;
+        t1716 = t1700;
     }
-    return t1618;
+    return t1716;
 }
 
 int FUN_0c026ce0(int a4)
@@ -3884,89 +3877,106 @@ int FUN_0c0d78fa(void)
 int FUN_0c040938(int a4)
 {
     int stk[1];
-    register int t0;
-    register int t1;
     register int t2;
     register int t3;
+    register int t4;
     register int t5;
-    register int t6;
+    register int t7;
+    register int t8;
     register int t46;
     register int t47;
-    register float u48;
-    register float u19;
-    register float u4;
-    register float u41;
+    register int t48;
+    register int t49;
+    register float u50;
+    register float u21;
+    register int t0;
+    register int t1;
+    register float u6;
+    register float u42;
     register float u34;
-    register float u25;
 
     *(unsigned int *)(((int)stk + 0)) = ((0x2E0 + a4) + 0x4);
-    t0 = ((0x2E0 + a4) + 0x4);
-    t1 = a4;
-    t2 = 0x0;
-    t3 = 0x1;
+    t2 = ((0x2E0 + a4) + 0x4);
+    t3 = a4;
+    t4 = 0x0;
+    t5 = 0x1;
     for (;;) {
-        t5 = *(int *)(((int)stk + 0));
-        *(unsigned int *)(((int)stk + 0)) = (t5 + 0x4);
-        t6 = *(int *)((((t5 + 0x4) - 4) + 0x0));
+        t7 = *(int *)(((int)stk + 0));
+        *(unsigned int *)(((int)stk + 0)) = (t7 + 0x4);
+        t8 = *(int *)((((t7 + 0x4) - 4) + 0x0));
         t46 = t0;
         t47 = t1;
-        u48 = u4;
-        if (((((struct o1C_float *)(t6))->v)) != 0.0f) {
-            t2 = (t2 + 0x1);
-            if (((((struct o40_float *)(t6))->v)) != 0.0f) {
-                (((struct o40_float *)(t6))->v) = (((((struct o40_float *)(t6))->v)) - 1.0f);
+        t48 = t2;
+        t49 = t3;
+        u50 = u6;
+        if (((((struct o1C_float *)(t8))->v)) != 0.0f) {
+            t4 = (t4 + 0x1);
+            if (((((struct o40_float *)(t8))->v)) != 0.0f) {
+                (((struct o40_float *)(t8))->v) = (((((struct o40_float *)(t8))->v)) - 1.0f);
                 t46 = t0;
                 t47 = t1;
-                u41 = u4;
+                t48 = t2;
+                t49 = t3;
+                u42 = u6;
             } else {
-                t1 = t6;
-                *(unsigned char *)((t6 + 0x0)) = 0x1;
-                t1 = (t1 + 0x4);
-                math_vec3_add(t1, (t6 + 0x4), (t6 + 0x28));
-                t0 = t6;
-                t0 = (t0 + 0x38);
-                (((struct o2C_float *)(t6))->v) = (((((struct o2C_float *)(t6))->v)) + (*(float *)((t0 + 0x0))));
-                t0 = (*(int *)((t6 + 0x34)));
-                if ((float)t0 == 0.0f) {
-                    (((struct o44_float *)(t6))->v) = (((((struct o44_float *)(t6))->v)) - 0.099999994f);
-                    u4 = ((((struct o48_float *)(t6))->v));
-                    u4 = (u4 - 0.099999994f);
-                    (((struct o48_float *)(t6))->v) = u4;
-                    (((struct o4C_float *)(t6))->v) = (((((struct o4C_float *)(t6))->v)) - 0.099999994f);
-                    u4 = ((((struct o1C_float *)(t6))->v));
-                    u4 = (u4 - 0.099999994f);
-                    (((struct o1C_float *)(t6))->v) = u4;
-                    u19 = (((struct o20_float *)(t6))->v);
-                    (((struct o20_float *)(t6))->v) = (u19 - 0.099999994f);
-                    if (!((u19 - 0.099999994f) > 0.0f)) {
-                        t0 = 0xC0E6FE8;
-                        FUN_0c0e6fe8();
-                        FUN_0c0e6fe8();
-                        *(unsigned char *)((t6 + 0x0)) = 0x0;
-                    } else {
+                t1 = 0xC062050;
+                t3 = t8;
+                *(unsigned char *)((t8 + 0x0)) = 0x1;
+                t3 = (t3 + 0x4);
+                math_vec3_add(t3, (t8 + 0x4), (t8 + 0x28));
+                t2 = t8;
+                t2 = (t2 + 0x38);
+                (((struct o2C_float *)(t8))->v) = (((((struct o2C_float *)(t8))->v)) + (*(float *)((t2 + 0x0))));
+                t2 = (*(int *)((t8 + 0x34)));
+                if ((float)t2 == 0.0f) {
+                    (((struct o44_float *)(t8))->v) = (((((struct o44_float *)(t8))->v)) - 0.099999994f);
+                    u6 = ((((struct o48_float *)(t8))->v));
+                    u6 = (u6 - 0.099999994f);
+                    (((struct o48_float *)(t8))->v) = u6;
+                    (((struct o4C_float *)(t8))->v) = (((((struct o4C_float *)(t8))->v)) - 0.099999994f);
+                    u6 = ((((struct o1C_float *)(t8))->v));
+                    u6 = (u6 - 0.099999994f);
+                    (((struct o1C_float *)(t8))->v) = u6;
+                    u21 = (((struct o20_float *)(t8))->v);
+                    (((struct o20_float *)(t8))->v) = (u21 - 0.099999994f);
+                    t48 = t2;
+                    if (!((u21 - 0.099999994f) > 0.0f)) {
+                        t2 = 0xC0E6FE8;
+                        t0 = t8;
+                        t1 = 0xC149AE0;
+                        t0 = (t0 + 0x1C);
+                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t0) = *(struct mv3 *)(t1); }
+                        t0 = t8;
+                        t1 = 0xC149AE0;
+                        t0 = (t0 + 0x44);
+                        { struct mv3 { int w[3]; }; *(struct mv3 *)(t0) = *(struct mv3 *)(t1); }
+                        *(unsigned char *)((t8 + 0x0)) = 0x0;
                         t46 = t0;
-                        u25 = u4;
+                        t47 = t1;
+                        t48 = 0xC0E6FE8;
                     }
-                    u34 = u25;
+                    u34 = u6;
                 } else {
-                    t0 = (*(int *)((t6 + 0x34)));
-                    t0 = (t0 - 1);
-                    *(unsigned int *)((t6 + 0x34)) = t0;
-                    t46 = t0;
+                    t2 = (*(int *)((t8 + 0x34)));
+                    t2 = (t2 - 1);
+                    *(unsigned int *)((t8 + 0x34)) = t2;
+                    t48 = t2;
                 }
-                u41 = u34;
+                u42 = u34;
             }
-            u48 = u41;
+            u50 = u42;
         }
-        u4 = u48;
-        t3 = (t3 + 0x1);
+        u6 = u50;
         t0 = t46;
+        t5 = (t5 + 0x1);
         t1 = t47;
-        if ((int)t3 >= (int)0x5) {
+        t2 = t48;
+        t3 = t49;
+        if ((int)t5 >= (int)0x5) {
             break;
         }
     }
-    return t2;
+    return t4;
 }
 
 int FUN_0c0ce530(int a4, int a5, int a6, int a7)

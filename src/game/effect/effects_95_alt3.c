@@ -11,7 +11,9 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 int fx_spawn_burst_slot(int, int, int, int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
+struct oC_float { char p[0xC]; float v; };
+
 
 int FUN_0c042980(int a4, int a5)
 {
@@ -19,6 +21,8 @@ int FUN_0c042980(int a4, int a5)
     register int t1;
     register int t2;
     register float u0;
+    register float u1;
+    register float u2;
 
     t0 = *(signed char *)0xC7F3014;
     t1 = fx_spawn_burst_slot(a4, 0x1, 0x1, a5, 0x0, ((signed char)((((t0 & 0x3) << 1) + (t0 & 0x3)) << 2) + 0xC149E84));
@@ -29,10 +33,13 @@ int FUN_0c042980(int a4, int a5)
         (((struct o44_float *)(((((struct o2E0_int *)(t1))->v))))->v) = u0;
         (((struct o48_float *)(((((struct o2E0_int *)(t1))->v))))->v) = u0;
         (((struct o4C_float *)(((((struct o2E0_int *)(t1))->v))))->v) = u0;
-        math_rand_float();
-        *(volatile float *)0xC042AA0;
-        
-        t2 = FUN_0c0e6f24();
+        u0 = math_rand_float();
+        u1 = (((struct oC_float *)0xC042A94)->v);
+        u2 = (u0 * u1);
+        if (!(2.14748365e+09f > (u0 * u1))) {
+            u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        t2 = (int)((unsigned int)(int)u2 % (unsigned int)0xB);
         u0 = (float)t2;
         if ((int)t2 < 0) {
             u0 = ((float)t2 + 4.2949673e+09f);

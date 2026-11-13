@@ -64,7 +64,7 @@ struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 int FUN_0c0f9c20(int, int);
 int gfx_set_frame_time_weights(int, int, int, int);
-int FUN_0c0e6d00(void);
+int _divls(void);
 struct o0_short { short v; };
 struct o2_short { char p[0x2]; short v; };
 int kmSetColorClampValue(PACKED lo, PACKED hi);
@@ -384,45 +384,50 @@ int nlSysMetricsGetFrameBuffer(int a4)
     register int t5;
     register int t6;
 
-    t2 = *(int *)0xC7F893C;
-    t3 = *(int *)0xC7F88EC;
-    *(volatile short *)0xC7FD49C;
-    if ((int)t3 <= (int)0x3) {
+    t0 = *(int *)0xC7F893C;
+    t1 = *(int *)0xC7F88EC;
+    t2 = (((struct o0_short *)0xC7FD49C)->v);
+    t3 = (t2 + t2);
+    if ((int)t1 <= (int)0x3) {
     } else {
-        if ((int)t3 <= (int)0x4) {
+        if ((int)t1 <= (int)0x4) {
+            t4 = ((t2 << 1) + t2);
         } else {
-            if ((int)t3 > (int)0x5) {
+            if ((int)t1 > (int)0x5) {
                 for (;;) {
                 }
             }
+            t4 = (t2 << 2);
         }
+        t3 = t4;
     }
-    t3 = FUN_0c0e6d00();
-    t4 = t0;
-    t0 = 0x0;
-    t5 = t1;
-    t1 = (t2 + 0xA5000000);
+    t2 = (int)((int)t3 / (int)0x4);
+    t3 = 0xC0E6D00;
+    t4 = t1;
+    t1 = 0x0;
+    t5 = a4;
+    t6 = (t0 + 0xA5000000);
     for (;;) {
-        t2 = *(short *)0xC7FD49E;
-        if ((int)t0 >= (int)t2) {
+        t0 = (((struct o2_short *)0xC7FD49C)->v);
+        if ((int)t1 >= (int)t0) {
             break;
         }
         t4 = 0x0;
-        if ((int)t3 > 0) {
+        if ((int)t2 > 0) {
             for (;;) {
-                t6 = *(int *)((t1 + 0x0));
-                t1 = (t1 + 0x4);
+                t3 = *(int *)((t6 + 0x0));
+                t6 = (t6 + 0x4);
                 t4 = (t4 + 0x1);
-                *(unsigned int *)((t5 + 0x0)) = (t6);
+                *(unsigned int *)((t5 + 0x0)) = t3;
                 t5 = (t5 + 0x4);
-                if ((int)t4 >= (int)t3) {
+                if ((int)t4 >= (int)t2) {
                     break;
                 }
             }
         }
-        t0 = (t0 + 0x1);
+        t1 = (t1 + 0x1);
     }
-    return t2;
+    return t0;
 }
 
 int nlSysMetricsGetFrameBufferUser(int a4)

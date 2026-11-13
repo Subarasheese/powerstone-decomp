@@ -18,12 +18,12 @@ struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int fx_aim_at_target(int, int);
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(int, float);
+int _quick_odd_mvn(int, float);
 
-int fx_tick_03fd08(int a4, int a5, int a6, int a7)
+int fx_tick_03fd08(int a4)
 {
     register int t0;
     register int t1;
@@ -88,7 +88,7 @@ int fx_tick_03fd08(int a4, int a5, int a6, int a7)
                         return t1;
                     }
                     if (t2 == 9) {
-                        return obj_destroy(a4, a5, a6, a7);
+                        return obj_destroy(a4);
                     }
                     return t2;
                 }
@@ -125,25 +125,18 @@ int fx_tick_03fd08(int a4, int a5, int a6, int a7)
         (((struct oEC_ushort *)(a4))->v) = 0x3C;
     }
     t0 = (((struct o2E0_int *)(a4))->v);
-    t1 = t0;
-    u0 = 0.0333333313f;
     if (1.0f > ((((struct o44_float *)(t0))->v))) {
         (((struct o44_float *)(t0))->v) = (((((struct o44_float *)(t0))->v)) + 0.0333333313f);
         (((struct o48_float *)(t0))->v) = (((((struct o48_float *)(t0))->v)) + 0.0333333313f);
-        u1 = (((struct o4C_float *)(t0))->v);
-        (((struct o4C_float *)(t0))->v) = (u1 + 0.0333333313f);
-        if (!(1.0f > (u1 + 0.0333333313f))) {
-            FUN_0c0e6fe8(t0, 0.0333333313f);
-        } else {
-            t2 = t0;
-            u1 = 0.0333333313f;
+        u0 = (((struct o4C_float *)(t0))->v);
+        (((struct o4C_float *)(t0))->v) = (u0 + 0.0333333313f);
+        if (!(1.0f > (u0 + 0.0333333313f))) {
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x44)) = *(struct mv3 *)(0xC149AC4); }
         }
-        t1 = t2;
-        u0 = u1;
     }
-    if (2.0f > ((((struct o1C_float *)(t1))->v))) {
-        (((struct o1C_float *)(t1))->v) = (((((struct o1C_float *)(t1))->v)) + u0);
-        (((struct o20_float *)(t1))->v) = (((((struct o20_float *)(t1))->v)) + u0);
+    if (2.0f > ((((struct o1C_float *)(t0))->v))) {
+        (((struct o1C_float *)(t0))->v) = (((((struct o1C_float *)(t0))->v)) + 0.0333333313f);
+        (((struct o20_float *)(t0))->v) = (((((struct o20_float *)(t0))->v)) + 0.0333333313f);
     }
     t0 = (((struct oEC_short *)(a4))->v);
     (((struct oEC_ushort *)(a4))->v) = (t0 - 1);

@@ -12,9 +12,9 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 int snd_play_stage_obj_se(int a4, int a5, int a6);
 
 int fx_spawn_debris_sprites(int a4, int a5);
@@ -48,19 +48,16 @@ int fx_spawn_debris_sprites(int a4, int a5)
 {
     int stk[2];
     register int t0;
-    register int t11;
-    register int t2;
+    register int t7;
+    register float u2;
     register int t3;
     register int t4;
-    register float u6;
-    register int t7;
-    register int t8;
-    register int t9;
+    register int t5;
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x5, 0x1, 0x5);
-    t11 = t0;
+    t0 = obj_create(0x5, 0x1, 0x5, 0x0);
+    t7 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -73,30 +70,30 @@ int fx_spawn_debris_sprites(int a4, int a5)
         *(unsigned char *)((t0 + 0xB)) = 0x0;
         (((struct oEC_ushort *)(t0))->v) = 0x0;
         (((struct oEE_ushort *)(t0))->v) = 0x0;
-        *(volatile int *)(((int)stk + 0));
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t4 = ((int (*)(void))(FUN_0c0e6fe8))();
-        (((struct o118_uint *)(t0))->v) = t8;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((*(int *)(((int)stk + 0)))); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC339ED8); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC339ECC); }
+        (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0ACF90;
-        u6 = *(float *)0xC0ACFE8;
-        t7 = *(signed char *)(((int)stk + 4));
+        u2 = *(float *)0xC0ACFE8;
+        t3 = *(signed char *)(((int)stk + 4));
+        t4 = 0x0;
         for (;;) {
-            t9 = *(int *)((((t8 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t9, ((int)g_res_stage_c), (t8 + ((t7 << 2) + t7)));
-            *(unsigned char *)((t9 + 0x0)) = 0x1;
-            *(unsigned short *)((t9 + 0x2)) = 0x1F;
-            (((struct o1C_float *)(t9))->v) = u6;
-            t8 = (t8 + 0x1);
-            (((struct o20_float *)(t9))->v) = u6;
-            (((struct o24_float *)(t9))->v) = u6;
-            if ((int)t8 >= (int)0x5) {
+            t5 = *(int *)((((t4 << 2) + (0x2E0 + t0)) + 0x0));
+            FUN_0c06233a(t5, 0xC664970, (t4 + ((t3 << 2) + t3)));
+            *(unsigned char *)((t5 + 0x0)) = 0x1;
+            *(unsigned short *)((t5 + 0x2)) = 0x1F;
+            (((struct o1C_float *)(t5))->v) = u2;
+            t4 = (t4 + 0x1);
+            (((struct o20_float *)(t5))->v) = u2;
+            (((struct o24_float *)(t5))->v) = u2;
+            if ((int)t4 >= (int)0x5) {
                 break;
             }
         }
-        t11 = 0x24;
+        t7 = 0x24;
     }
-    return t11;
+    return t7;
 }
 
 int stage_obj_play_break_se(int a4)

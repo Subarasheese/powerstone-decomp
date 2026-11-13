@@ -13,7 +13,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct o94_float { char p[0x94]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c0623a6(int, int, int);
 int ui_task_create(void);
 typedef struct { int x, y, z; } vec3i;
@@ -23,7 +23,7 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int menu_ui_spawn_21(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o1C_float { char p[0x1C]; float v; };
 int FUN_0c06233a(int, int, int);
 struct o38_float { char p[0x38]; float v; };
@@ -46,7 +46,7 @@ int FUN_0c0a7320(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         t0 = (((struct o2E0_int *)(a4))->v);
         t1 = 0xFFFFFFF8;
@@ -95,7 +95,7 @@ int menu_ui_task_11(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         return t0;
     }
@@ -142,32 +142,77 @@ int menu_ui_task_13(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
-    } else {
-        *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-        *(unsigned char *)((a4 + 0x9)) = 0x0;
-        (((struct oEC_ushort *)(a4))->v) = 0xA;
-        *(unsigned char *)((a4 + 0x1)) = 0x1;
-        *(unsigned short *)((a4 + 0x6)) = 0xF;
-        *(unsigned char *)((a4 + 0x5)) = 0x19;
-        *(unsigned char *)((a4 + 0x4)) = (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)));
-        FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_csel), (((*(signed char *)((a4 + 0x3))) << 1) + 0xA));
-        *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
-        *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
+        if (((*(signed char *)0xC7F3074) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
+            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
+        }
         t0 = *(signed char *)((a4 + 0x4));
-        (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))));
-        *(volatile int *)((a4 + 0x2E0));
-        FUN_0c0e6fe8();
-        t0 = (((struct o2E0_int *)(a4))->v);
-        (((struct oC_float *)(t0))->v) = 0.0f;
-        (((struct o8_float *)(t0))->v) = 0.0f;
-        (((struct o4_float *)(t0))->v) = 0.0f;
-        (((struct o58_float *)(a4))->v) = 1.0f;
-        (((struct o54_float *)(a4))->v) = 1.0f;
-        (((struct o50_float *)(a4))->v) = 1.0f;
+        t1 = 0x0;
+        if (((int)t0 >= (int)0x1) && ((int)t0 <= (int)0x8)) {
+            t1 = 0x1;
+        }
+        *(unsigned char *)((a4 + 0x1)) = t1;
+        if ((*(signed char *)((a4 + 0x4))) != (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)))) {
+            t0 = *(signed char *)((a4 + 0x4));
+            t1 = *(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0));
+            t2 = (t1 - t0);
+            if ((int)(t1 - t0) < 0) {
+                t2 = (t0 - t1);
+            }
+            if ((int)t2 > (int)0x1) {
+                t0 = *(signed char *)((((0xC7F2DF0 + (unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78)) + 0x64) + 0x0));
+                (((struct o20_float *)(a4))->v) = (*(float *)((((unsigned char)(((t0 << 1) + t0) << 2) + 0xC152644) + 0x0)));
+                menu_ui_spawn_21((*(signed char *)((a4 + 0x3))));
+            }
+            *(unsigned char *)((a4 + 0x4)) = (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)));
+        }
+        t0 = *(signed char *)((a4 + 0x4));
+        if (((((struct o20_float *)(a4))->v)) != (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))))) {
+            u0 = *(float *)0xC0A77DC;
+            t0 = *(signed char *)((a4 + 0x4));
+            if (((((struct o20_float *)(a4))->v)) > (*(float *)(((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2)) + 0x0)))) {
+                (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) - u0);
+                t0 = *(signed char *)((a4 + 0x4));
+                if (!((*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2)))) > ((((struct o20_float *)(a4))->v)))) {
+                    return 0x20;
+                }
+                t0 = *(signed char *)((a4 + 0x4));
+                (((struct o20_float *)(a4))->v) = (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))));
+                return menu_ui_spawn_21((*(signed char *)((a4 + 0x3))));
+            }
+            (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + u0);
+            t0 = *(signed char *)((a4 + 0x4));
+            if (((((struct o20_float *)(a4))->v)) > (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))))) {
+                t0 = *(signed char *)((a4 + 0x4));
+                (((struct o20_float *)(a4))->v) = (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))));
+                return menu_ui_spawn_21((*(signed char *)((a4 + 0x3))));
+            }
+            return 0x20;
+        }
+        return 0x20;
     }
-    if (((*(signed char *)g_select_ready_mask) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
+    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
+    *(unsigned char *)((a4 + 0x9)) = 0x0;
+    (((struct oEC_ushort *)(a4))->v) = 0xA;
+    *(unsigned char *)((a4 + 0x1)) = 0x1;
+    *(unsigned short *)((a4 + 0x6)) = 0xF;
+    *(unsigned char *)((a4 + 0x5)) = 0x19;
+    *(unsigned char *)((a4 + 0x4)) = (*(signed char *)(((((unsigned char)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x78) + 0xC7F2DF0) + 0x64) + 0x0)));
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A48, (((*(signed char *)((a4 + 0x3))) << 1) + 0xA));
+    *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
+    *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
+    t0 = *(signed char *)((a4 + 0x4));
+    (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = (*(float *)((0xC152644 + (unsigned char)(((t0 << 1) + t0) << 2))));
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x20)) = *(struct mv3 *)((((((struct o2E0_int *)(a4))->v)) + 0x4)); }
+    t0 = (((struct o2E0_int *)(a4))->v);
+    (((struct oC_float *)(t0))->v) = 0.0f;
+    (((struct o8_float *)(t0))->v) = 0.0f;
+    (((struct o4_float *)(t0))->v) = 0.0f;
+    (((struct o58_float *)(a4))->v) = 1.0f;
+    (((struct o54_float *)(a4))->v) = 1.0f;
+    (((struct o50_float *)(a4))->v) = 1.0f;
+    if (((*(signed char *)0xC7F3074) & ((*(signed char *)((a4 + 0x3))) + 0x1)) != 0) {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     }
     t0 = *(signed char *)((a4 + 0x4));
@@ -326,7 +371,7 @@ int menu_ui_task_14(int a4, int a5, int a6, int a7)
                 (((struct o24_float *)(a4))->v) = ((-(u0 * 1.0f)) / 480.0f);
                 return 0x24;
             }
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
@@ -467,7 +512,7 @@ int menu_ui_task_15(int a4, int a5, int a6, int a7, float f4)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);

@@ -9,8 +9,8 @@ int mdl_vtx_get_uv(int, int);
 int mdl_vtx_set_uv(int, int);
 struct o2EC_int { char p[0x2EC]; int v; };
 struct o40_float { char p[0x40]; float v; };
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6fe8(int, int);
+int _modls(int);
+int _quick_odd_mvn(int, int);
 
 int FUN_0c045968(int a4)
 {
@@ -37,37 +37,29 @@ int FUN_0c0459d6(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
-    register int t2;
     register int t3;
-    register int t4;
-    register int t5;
-    register int t6;
-    register int t7;
-    register int t8;
-    register int t9;
 
-    t7 = *(signed char *)(((0x308 + a4) + 0x5));
-    *(unsigned char *)(((0x308 + a4) + 0x5)) = (t7 - 1);
-    t8 = (signed char)(t7 - 1);
-    if ((signed char)(t7 - 1) == 0) {
-        if ((*(signed char *)(((*(int *)(((((*(signed char *)(((0x308 + a4) + 0x4))) << 2) + (0x2E0 + a4)) + 0x18))) + 0x0))) != 0) {
+    t0 = *(signed char *)(((0x308 + a4) + 0x5));
+    *(unsigned char *)(((0x308 + a4) + 0x5)) = (t0 - 1);
+    t1 = (signed char)(t0 - 1);
+    if ((signed char)(t0 - 1) == 0) {
+        t0 = *(int *)(((((*(signed char *)(((0x308 + a4) + 0x4))) << 2) + (0x2E0 + a4)) + 0x18));
+        if ((*(signed char *)((t0 + 0x0))) != 0) {
             *(unsigned char *)(((0x308 + a4) + 0x5)) = 0x1;
-            t7 = 0x1;
+            t1 = 0x1;
         } else {
             *(unsigned char *)(((0x308 + a4) + 0x5)) = 0x2;
-            *(volatile signed char *)(((0x308 + a4) + 0x4));
-            *(unsigned char *)((t1 + 0x4)) = (FUN_0c0e6e5c(a4));
-            t9 = (((struct o2EC_int *)(t0))->v);
-            *(unsigned char *)((t2 + 0x0)) = t3;
-            t0 = ((int (*)(int, int, int, int))(FUN_0c0e6fe8))(t9, t2, t1, t3);
-            t0 = ((int (*)(int, int))(FUN_0c0e6fe8))(t4, t5);
-            *(unsigned short *)((t6 + 0x2)) = ((*(short *)((t6 + 0x2))) | 0x400);
-            (((struct o40_float *)(t6))->v) = 1.0f;
-            t7 = 0x40;
+            *(unsigned char *)(((0x308 + a4) + 0x4)) = ((int)((int)((*(signed char *)(((0x308 + a4) + 0x4))) + 0x1) % (int)0x2));
+            t3 = (((struct o2EC_int *)(a4))->v);
+            *(unsigned char *)((t0 + 0x0)) = 0x1;
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x4)) = *(struct mv3 *)((t3 + 0x4)); }
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x10)) = *(struct mv3 *)((t3 + 0x10)); }
+            *(unsigned short *)((t0 + 0x2)) = ((*(short *)((t0 + 0x2))) | 0x400);
+            (((struct o40_float *)(t0))->v) = 1.0f;
+            t1 = 0x40;
         }
-        t8 = t7;
     }
-    return t8;
+    return t1;
 }
 
 int FUN_0c045a4e(int a4)

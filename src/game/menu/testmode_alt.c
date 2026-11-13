@@ -7,7 +7,7 @@ int FUN_0c0ce99a(int, int, int, int);
 int FUN_0c0cea90(int, int, int, int);
 int testmode_game_config_commit(void);
 int testmode_game_config_load(void);
-int FUN_0c0e7140(int);
+int _slow_mvn(int);
 
 int testmode_game_config_screen(int a4, int a5)
 {
@@ -27,12 +27,12 @@ int testmode_game_config_screen(int a4, int a5)
     register int v0_4;
     register int v0_5;
     R5 = a5;
-    v0_4 = *(signed char *)0xC7F2EE7;
-    v0_2 = ((unsigned char)v0_4);
+    v0_3 = *(signed char *)0xC7F2EE7;
+    v0_2 = ((unsigned char)v0_3);
     v0_1 = (0x0);
     v0_0 = (0xC7F2EE0);
-    v0_3 = (0xC7F2EE7);
-    if (((unsigned char)v0_4 == 0)) goto L_C0CECFC;
+    v0_4 = (0xC7F2EE7);
+    if (((unsigned char)v0_3 == 0)) goto L_C0CECFC;
     if ((v0_2 == 1)) goto L_C0CED0A;
     testmode_game_config_load();
     *(unsigned char *)((v0_0 + 0x5)) = 0x1;
@@ -62,7 +62,7 @@ int testmode_game_config_screen(int a4, int a5)
     FUN_0c0ce99a(0xD, R5, v0_2, v0_3);
     v0_4 = *(signed char *)((v0_0 + 0x8));
     v0_2 = ((unsigned char)v0_4);
-    v0_3 = (((int)g_game_config));
+    v0_3 = (0xC49491C);
     R11 = (0x4);
     v0_5 = (0xC33F1CC);
     if (((unsigned char)v0_4 == 11)) goto L_C0CED74;
@@ -86,20 +86,19 @@ int testmode_game_config_screen(int a4, int a5)
     testmode_draw_text_table((v0_5 + 0x20), 0x1);
     v0_1 = *(short *)0xC361BFC;
     v0_2 = (v0_1);
-    v0_3 = (0xC361BF0);
+    v0_4 = (0xC361BF0);
     R5 = ((unsigned short)v0_1);
     if ((((unsigned short)v0_1 & R11) == 0)) goto L_C0CED90;
-    v0_1 = *(short *)((v0_3 + 0x8));
+    v0_1 = *(short *)((v0_4 + 0x8));
     v0_2 = ((unsigned short)v0_1);
     if ((((unsigned short)v0_1 & 2) != 0)) goto L_C0CED9E;
     L_C0CED90:;
     if (((0x2 & R5) == 0)) goto L_C0CEDEC;
-    v0_1 = *(short *)((v0_3 + 0x8));
+    v0_1 = *(short *)((v0_4 + 0x8));
     v0_2 = ((unsigned short)v0_1);
     if ((((unsigned short)v0_1 & R11) == 0)) goto L_C0CEDEC;
     L_C0CED9E:;
-    *(volatile signed char *)((v0_0 + 0x28));
-    v0_2 = ((FUN_0c0e7140(v0_3)));
+    { struct mvb11 { char b[11]; }; *(struct mvb11 *)(v0_3) = *(struct mvb11 *)((((unsigned short)(unsigned char)(*(signed char *)((v0_0 + 0x28))) * (unsigned short)0xB) + 0xC11B380)); }
     goto L_C0CEDEC;
     L_C0CED4A:;
     R5 = (0xC33F33C);
@@ -108,7 +107,7 @@ int testmode_game_config_screen(int a4, int a5)
     R5 = (0xC33F33C);
     goto L_C0CED2C;
     L_C0CECFC:;
-    *(unsigned char *)((v0_3 + 0x0)) = ((*(signed char *)((v0_3 + 0x0))) + 0x1);
+    *(unsigned char *)((v0_4 + 0x0)) = ((*(signed char *)((v0_4 + 0x0))) + 0x1);
     *(unsigned char *)((v0_0 + 0x8)) = v0_1;
     testmode_game_config_commit();
     goto L_C0CED0A;

@@ -112,12 +112,12 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c0623a6(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o94_float { char p[0x94]; float v; };
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o40_float { char p[0x40]; float v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct oEE_short { char p[0xEE]; short v; };
@@ -125,7 +125,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 
 int menu_pad_any_button(int a4);
 int FUN_0c0a43b8(int a4);
@@ -962,7 +962,7 @@ int menu_ui_task_01(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         t1 = t0;
         if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
@@ -1002,7 +1002,7 @@ int menu_ui_task_02(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 t0 = *(signed char *)((a4 + 0x8));
@@ -1069,7 +1069,7 @@ int menu_ui_task_03(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 t0 = *(signed char *)((a4 + 0x8));
@@ -1136,7 +1136,7 @@ int menu_ui_task_04(int a4, int a5, int a6, int a7, float f4, float f5, float f6
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 t0 = *(signed char *)((a4 + 0x8));
@@ -1223,7 +1223,7 @@ int menu_ui_task_05(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
@@ -1272,7 +1272,7 @@ int FUN_0c0a65a8(int a4, int a5, int a6, int a7, float f4)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 t0 = *(signed char *)((a4 + 0x8));
@@ -1342,7 +1342,7 @@ int menu_ui_task_06(int a4, int a5, int a6, int a7, float f4, float f5, float f6
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, 0x0, a6, a7);
+                return obj_destroy(a4);
             }
             if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x2) {
                 t0 = *(signed char *)((a4 + 0x8));
@@ -1470,7 +1470,7 @@ int menu_ui_task_06(int a4, int a5, int a6, int a7, float f4, float f5, float f6
     return t1;
 }
 
-int menu_ui_task_07(int a4, int a5, int a6, int a7)
+int menu_ui_task_07(int a4)
 {
     register int t0;
     register int t1;
@@ -1478,11 +1478,12 @@ int menu_ui_task_07(int a4, int a5, int a6, int a7)
     register float u1;
     float u2;
     register float u3;
+    register float u4;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         if (((int)(unsigned char)(*(signed char *)0xC7F2EE4) < (int)0x2) && (u0 = (((struct o1C_float *)0xC0A6AC4)->v), u1 = (((struct o24_float *)(a4))->v), !(u1 > u0))) {
             (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + ((((struct o3C_float *)(a4))->v)));
@@ -1499,7 +1500,7 @@ int menu_ui_task_07(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_open), 0xD);
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A30, 0xD);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x30;
     t0 = (((struct o2E0_int *)(a4))->v);
@@ -1511,10 +1512,13 @@ int menu_ui_task_07(int a4, int a5, int a6, int a7)
     (((struct o50_float *)(a4))->v) = 1.0f;
     (((struct o20_float *)(a4))->v) = ((((struct o0_float *)0xC0A6AC4)->v));
     (((struct o24_float *)(a4))->v) = 0.0f;
-    math_rand_float();
-    *(volatile float *)0xC0A6ACC;
-    
-    t0 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (((struct o8_float *)0xC0A6AC4)->v);
+    u4 = (u0 * u1);
+    if (!(2.14748365e+09f > (u0 * u1))) {
+        u4 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u4 % (unsigned int)0xA);
     u0 = (float)(t0 + 0x14);
     if (0.0f > (float)(t0 + 0x14)) {
         u0 = ((float)(t0 + 0x14) + ((((struct o14_float *)0xC0A6AC4)->v)));
@@ -1541,7 +1545,7 @@ int FUN_0c0a6b6e(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             u0 = (((struct o58_float *)(a4))->v);
             (((struct o58_float *)(a4))->v) = (u0 + 0.099999994f);
@@ -1592,7 +1596,7 @@ int menu_ui_task_08(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
         } else {
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
@@ -1725,7 +1729,7 @@ int menu_ui_task_09(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         t0 = *(signed char *)((a4 + 0x4));
         t1 = t0;
@@ -1759,7 +1763,7 @@ int menu_ui_task_09(int a4, int a5, int a6, int a7)
     return 0x50;
 }
 
-int FUN_0c0a703e(int a4, int a5, int a6, int a7)
+int FUN_0c0a703e(int a4)
 {
     register int t0;
     register int t1;
@@ -1768,7 +1772,7 @@ int FUN_0c0a703e(int a4, int a5, int a6, int a7)
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 != 2) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if (((((struct o24_float *)(a4))->v)) > (*(float *)0xC1528D0)) {
                 (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + ((((struct o3C_float *)(a4))->v)));
@@ -1797,17 +1801,17 @@ int FUN_0c0a703e(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ksel), 0x2);
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A78, 0x2);
     (((struct o94_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
-    FUN_0c0e6fe8();
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x20)) = *(struct mv3 *)(0xC1528C0); }
     (((struct o58_float *)(a4))->v) = 1.0f;
     (((struct o54_float *)(a4))->v) = 1.0f;
     (((struct o50_float *)(a4))->v) = 1.0f;
     t0 = 0x50;
     if ((int)(unsigned char)(*(signed char *)0xC7F2EE4) >= (int)0x3) {
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x20)) = *(struct mv3 *)(0xC1528CC); }
         t1 = (((struct o2E0_int *)(a4))->v);
         *(unsigned int *)((t1 + 0x14)) = 0x8000;
         t0 = t1;

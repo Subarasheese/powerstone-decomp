@@ -6,18 +6,18 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
 int stage_gimmick_36_spawn_b(int a4)
 {
     register int t0;
+    register int t5;
     register int t1;
-    register int t2;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t1 = t0;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    t5 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -27,18 +27,18 @@ int stage_gimmick_36_spawn_b(int a4)
         *(unsigned char *)((t0 + 0x8)) = 0x0;
         (((struct oEC_ushort *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B5180;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)((a4 + 0x50)); }
         *(unsigned int *)((t0 + 0x1C)) = a4;
-        t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC664958, ((((struct oF2_short *)((*(int *)((t0 + 0x1C)))))->v)));
-        *(unsigned char *)((t2 + 0x0)) = 0x1;
-        *(unsigned short *)((t2 + 0x2)) = 0x21F;
-        (((struct o44_float *)(t2))->v) = 1.0f;
-        (((struct o48_float *)(t2))->v) = 1.0f;
-        (((struct o4C_float *)(t2))->v) = 0.5f;
-        t1 = 0x4C;
+        t1 = (((struct o2E0_int *)(t0))->v);
+        FUN_0c06233a(t1, 0xC664958, ((((struct oF2_short *)((*(int *)((t0 + 0x1C)))))->v)));
+        *(unsigned char *)((t1 + 0x0)) = 0x1;
+        *(unsigned short *)((t1 + 0x2)) = 0x21F;
+        (((struct o44_float *)(t1))->v) = 1.0f;
+        (((struct o48_float *)(t1))->v) = 1.0f;
+        (((struct o4C_float *)(t1))->v) = 0.5f;
+        t5 = 0x4C;
     }
-    return t1;
+    return t5;
 }

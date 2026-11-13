@@ -83,9 +83,9 @@ int menu_ui_task_34_bind_models(int, int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _divls(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
 int FUN_0c0f547e(int);
 int FUN_0c0f5570(int);
 int adxf_ChkPrmPt(int, int);
@@ -115,9 +115,6 @@ int FUN_0c02e144(int a4, float f4, float f5);
 int FUN_0c0f5238(int a4, int a5, int a6, int a7)
 {
     int stk[11];
-    register int t67;
-    register int t68;
-    register int t73;
 
     register int R1;
     register int R2;
@@ -233,11 +230,11 @@ int FUN_0c0f5238(int a4, int a5, int a6, int a7)
     R10 = (0x0);
     goto L_C0F536A;
     L_C0F5318:;
-    *(unsigned short *)(((((R8 << 2) << 1) + (*(int *)(((int)stk + 0)))) + 0x0)) = R11;
-    *(volatile int *)((v0_1 + (v0_3 << 2)));
-    *(unsigned int *)((t67 + 0x4)) = (FUN_0c0e6d00());
-    *(volatile int *)((v0_1 + (t68 << 2)));
-    *(unsigned short *)((t73 + 0x2)) = (FUN_0c0e6d00());
+    v0_5 = *(int *)(((int)stk + 0));
+    *(unsigned short *)(((((R8 << 2) << 1) + v0_5) + 0x0)) = R11;
+    *(unsigned int *)(((((R8 << 2) << 1) + v0_5) + 0x4)) = ((int)((int)((*(int *)((v0_1 + (v0_3 << 2)))) + 0x7FF) / (int)0x800));
+    *(unsigned short *)(((((R8 << 2) << 1) + v0_5) + 0x2)) = ((int)((int)((*(int *)((v0_1 + ((v0_3 + 0x1) << 2)))) + 0x7FF) / (int)0x800));
+    v0_3 = (((v0_3 + 0x1) + 0x1));
     R8 = ((R8 + 0x1));
     goto L_C0F5354;
     L_C0F52E8:;

@@ -28,12 +28,12 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int FUN_0c045968(int);
 int FUN_0c0459d6(int, int, int, int);
 int FUN_0c045a4e(int);
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int math_vec3_add(int, int, int);
 int FUN_0c06231c(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 void fx_tick_0457d0(int a4, int a5, int a6, int a7)
 {
@@ -111,9 +111,9 @@ void fx_tick_0457d0(int a4, int a5, int a6, int a7)
             if ((short)(t1 - 1) == 0) {
                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                 (((struct oEC_ushort *)(a4))->v) = 0x14;
-                FUN_0c0e6fe8();
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x4)) = *(struct mv3 *)(0xC14A678); }
                 (((struct oC_float *)(t0))->v) = 0.0f;
-                FUN_0c0e6fe8();
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x10)) = *(struct mv3 *)(0xC14A690); }
                 *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x1;
                 t0 = (((struct o2E8_int *)(a4))->v);
                 *(unsigned short *)((t0 + 0x2)) = ((*(short *)((t0 + 0x2))) | 0x400);
@@ -223,7 +223,7 @@ void fx_tick_0457d0(int a4, int a5, int a6, int a7)
                 (((struct o8_uint *)0xC7F31BC)->v) = (((((struct o8_int *)0xC7F31BC)->v)) + 0x11111111);
                 if (((((struct o0_int *)0xC7F31BC)->v)) == -1) {
                     *(unsigned char *)((((((struct o2EC_int *)(a4))->v)) + 0x0)) = 0x1;
-                    FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), ((int)g_res_capcom_logo), 0x6);
+                    FUN_0c06231c(((((struct o2EC_int *)(a4))->v)), 0xC664A18, 0x6);
                     *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x0;
                 }
             }
@@ -263,7 +263,7 @@ void fx_tick_0457d0(int a4, int a5, int a6, int a7)
         }
         default:
         {
-            obj_destroy(a4, a5, a6, a7);
+            obj_destroy(a4);
     return;
         }
     }

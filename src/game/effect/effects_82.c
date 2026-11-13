@@ -7,11 +7,11 @@ struct o4_float { char p[0x4]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -24,13 +24,13 @@ int math_mat_transform_point(int, int);
 int fx_spawn_03fab4(int a4)
 {
     register int t0;
-    register int t14;
+    register int t12;
+    register int t3;
+    register int t4;
     register int t5;
-    register int t6;
-    register int t7;
 
-    t0 = obj_create(0x5, 0x1, 0x3);
-    t14 = t0;
+    t0 = obj_create(0x5, 0x1, 0x3, 0x0);
+    t12 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -38,31 +38,31 @@ int fx_spawn_03fab4(int a4)
         *(unsigned short *)((t0 + 0x6)) = 0x29;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC03FB92;
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC149A9C); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC149AA8); }
         (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x1C)) = a4;
         (((struct o40_float *)(t0))->v) = (*(float *)0xC03FC10);
-        t5 = 0x0;
-        t6 = 0x0;
+        t3 = 0x0;
+        t4 = 0x0;
         for (;;) {
-            t7 = *(int *)((((t5 << 2) + (0x2E0 + t0)) + 0x0));
-            *(unsigned char *)((t7 + 0x0)) = 0x1;
-            FUN_0c06233a(t7, ((int)g_res_kyoutsuu), (t5 + 0x59));
-            *(unsigned short *)((t7 + 0x2)) = 0x1F;
-            (((struct o4_float *)(t7))->v) = ((math_cos_angle16(t6)) * ((((struct o40_float *)(t0))->v)));
-            t5 = (t5 + 0x1);
-            (((struct o8_float *)(t7))->v) = ((math_sin_angle16(t6)) * ((((struct o40_float *)(t0))->v)));
-            (((struct oC_float *)(t7))->v) = 0.0f;
-            *(unsigned int *)((t7 + 0x3C)) = t6;
-            t6 = (unsigned short)(t6 + 0x5555);
-            if ((int)t5 >= (int)0x3) {
+            t5 = *(int *)((((t3 << 2) + (0x2E0 + t0)) + 0x0));
+            *(unsigned char *)((t5 + 0x0)) = 0x1;
+            FUN_0c06233a(t5, 0xC4CFA68, (t3 + 0x59));
+            *(unsigned short *)((t5 + 0x2)) = 0x1F;
+            (((struct o4_float *)(t5))->v) = ((math_cos_angle16(t4)) * ((((struct o40_float *)(t0))->v)));
+            t3 = (t3 + 0x1);
+            (((struct o8_float *)(t5))->v) = ((math_sin_angle16(t4)) * ((((struct o40_float *)(t0))->v)));
+            (((struct oC_float *)(t5))->v) = 0.0f;
+            *(unsigned int *)((t5 + 0x3C)) = t4;
+            t4 = (unsigned short)(t4 + 0x5555);
+            if ((int)t3 >= (int)0x3) {
                 break;
             }
         }
-        t14 = 0xC;
+        t12 = 0xC;
     }
-    return t14;
+    return t12;
 }
 
 int fx_tick_03fab4(int a4)

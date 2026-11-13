@@ -19,7 +19,7 @@ int obj_destroy(int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 int ui_sprite_queue_add(int, int, int, int, int, int);
 
 int FUN_0c048314(int a4, int a5);
@@ -65,6 +65,7 @@ int fx_tick_048074(int a4, float f4)
     register int t0;
     register int t1;
     register float u0;
+    register float u1;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
@@ -84,8 +85,12 @@ int fx_tick_048074(int a4, float f4)
         (((struct oEE_ushort *)(a4))->v) = (t0 - 1);
         if ((short)(t0 - 1) == 0) {
             (((struct oEE_ushort *)(a4))->v) = 0x2;
-            math_rand_float();
-            t0 = FUN_0c0e6f24();
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x20);
             t1 = *(int *)(((((*(signed char *)(((0x308 + a4) + 0x0))) << 2) + (0x2E0 + a4)) + 0x0));
             if ((*(signed char *)((t1 + 0x0))) == 0) {
                 *(unsigned char *)((t1 + 0x0)) = 0x1;

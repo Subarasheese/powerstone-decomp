@@ -4,9 +4,9 @@ struct o118_uint { char p[0x118]; unsigned int v; };
 struct o28_float { char p[0x28]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -21,7 +21,7 @@ int fx_spawn_03ed0c(int a4)
     register int t4;
     register float u0;
 
-    t0 = obj_create(0x5, 0x1, 0xA);
+    t0 = obj_create(0x5, 0x1, 0xA, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -30,9 +30,9 @@ int fx_spawn_03ed0c(int a4)
         *(unsigned short *)((t0 + 0x6)) = 0xF;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC03EDFA;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x1);
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC14993C); }
         (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x1C)) = a4;
         u0 = *(float *)0xC03EE30;
@@ -44,7 +44,7 @@ int fx_spawn_03ed0c(int a4)
             FUN_0c06233a(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x19);
             *(unsigned short *)((t3 + 0x2)) = 0x411;
             (((struct o28_float *)(t3))->v) = (float)(t2 << 1);
-            t4 = ((int (*)(void))(FUN_0c0e6fe8))();
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t3 + 0x1C)) = *(struct mv3 *)(0xC149930); }
             t4 = t2;
             t2 = (t2 + 0x1);
             (((struct oC_float *)(t3))->v) = ((float)t4 * u0);

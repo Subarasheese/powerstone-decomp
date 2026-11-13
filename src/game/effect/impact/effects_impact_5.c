@@ -12,10 +12,10 @@ struct o4_float { char p[0x4]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record(int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int FUN_0c026554(int);
 int fx_spawn_with_params(int, float, float, float, float);
 int FUN_0c0555dc(void);
@@ -28,17 +28,14 @@ int fx_spawn_04(int a4, int a5)
 {
     int stk[2];
     register int t0;
-    register int t13;
-    register int t2;
-    register int t3;
-    register int t4;
     register int t9;
-    register int t11;
+    register int t4;
+    register int t7;
 
     *(unsigned int *)(((int)stk + 4)) = a4;
     *(unsigned char *)(((int)stk + 0)) = a5;
-    t0 = obj_create(0x2, 0x1, 0x1);
-    t13 = t0;
+    t0 = obj_create(0x2, 0x1, 0x1, 0x0);
+    t9 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -50,27 +47,26 @@ int fx_spawn_04(int a4, int a5)
         (((struct oEC_ushort *)(t0))->v) = 0x0;
         (((struct oEE_ushort *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B698E;
-        *(volatile int *)(((int)stk + 4));
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t4 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC33C228); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33C21C); }
         (((struct o38_float *)(t0))->v) = ((((struct o0_float *)0xC0B6A00)->v));
         (((struct o3C_float *)(t0))->v) = ((((struct o4_float *)0xC0B6A00)->v));
         (((struct o40_float *)(t0))->v) = 0.0f;
-        *(volatile signed char *)(((int)stk + 0));
-        t9 = ((int (*)(void))(FUN_0c0e6fe8))();
+        t4 = *(signed char *)(((int)stk + 0));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x44)) = *(struct mv3 *)(((signed char)(((t4 << 1) + t4) << 2) + 0xC33C234)); }
         (((struct o101_uchar *)(t0))->v) = 0x27;
         (((struct o102_uchar *)(t0))->v) = 0xA1;
         (((struct o105_uchar *)(t0))->v) = 0x1;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         obj_set_record(t0, 0x3A);
-        t11 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t11, 0xC664958, 0x7);
-        *(unsigned char *)((t11 + 0x0)) = 0x1;
-        *(unsigned short *)((t11 + 0x2)) = 0xF;
-        t13 = 0xF;
+        t7 = (((struct o2E0_int *)(t0))->v);
+        FUN_0c06233a(t7, 0xC664958, 0x7);
+        *(unsigned char *)((t7 + 0x0)) = 0x1;
+        *(unsigned short *)((t7 + 0x2)) = 0xF;
+        t9 = 0xF;
     }
-    return t13;
+    return t9;
 }
 
 int fx_update_04(int a4)

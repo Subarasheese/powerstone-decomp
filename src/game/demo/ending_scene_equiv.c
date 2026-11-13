@@ -28,7 +28,7 @@ struct o44_uint { char p[0x44]; unsigned int v; };
 struct o6_ushort { char p[0x6]; unsigned short v; };
 extern int FUN_0c016238();
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 struct o40_int { char p[0x40]; int v; };
 struct o44_int { char p[0x44]; int v; };
 int ui_sprite_queue_add(int, int, int, int, int, int);

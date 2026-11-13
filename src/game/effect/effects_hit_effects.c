@@ -8,10 +8,10 @@ struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int math_rand_next(void);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(void);
+int _modls(void);
+int _quick_odd_mvn(void);
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -29,7 +29,7 @@ int fx_spawn_04b6b8(int a4, int a5, int a6, int a7, float f4)
 
     if ((a4 == 0) && ((a6 == 0) || (a7 == 0))) {
     } else {
-        t0 = obj_create(0x5, 0x1, 0x1);
+        t0 = obj_create(0x5, 0x1, 0x1, 0x0);
         t1 = t0;
         if (t0 != 0) {
             *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -43,15 +43,14 @@ int fx_spawn_04b6b8(int a4, int a5, int a6, int a7, float f4)
             (((struct o118_uint *)(t0))->v) = 0x0;
             if (a4 != 0) {
                 *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
-                t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-                t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((0x10C + a4)); }
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
             } else {
                 *(unsigned char *)((t0 + 0x3)) = 0x2;
-                t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-                t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(a6); }
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(a7); }
             }
-            math_rand_next();
-            *(unsigned int *)((t0 + 0x34)) = (FUN_0c0e6e5c());
+            *(unsigned int *)((t0 + 0x34)) = ((int)((int)(math_rand_next()) % (int)0x10000));
             t2 = (((struct o2E0_int *)(t0))->v);
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned short *)((t2 + 0x2)) = 0x238;

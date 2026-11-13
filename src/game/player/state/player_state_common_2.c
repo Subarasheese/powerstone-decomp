@@ -26,7 +26,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int pl_step_motion(int);
 int pl_angle_to_opponent(int);
 int pl_end_action_choose_state(int);
-int FUN_0c0e6d00(void);
+int _divls(void);
 int pl_apply_motion_translation(int);
 int pl_update_hit_reaction(int);
 int pl_start_motion(int, int, int);
@@ -104,14 +104,18 @@ float FUN_0c0641a0(int a4, float f4, float f5)
 int FUN_0c064534(int a4)
 {
     register int t0;
+    register int t1;
+    register int t2;
 
     t0 = (((struct oEC_short *)(a4))->v);
     if (((int)t0 < (int)0x14) && ((short)t0 != 0)) {
-        pl_angle_to_opponent(a4);
-        *(volatile int *)((a4 + 0x30));
-        
-        *(volatile short *)((a4 + 0xEC));
-        *(unsigned int *)((a4 + 0x30)) = (unsigned short)((*(int *)((a4 + 0x30))) + (FUN_0c0e6d00()));
+        t0 = pl_angle_to_opponent(a4);
+        t1 = *(int *)((a4 + 0x30));
+        t2 = (unsigned short)(t0 - t1);
+        if ((0x8000 & (unsigned short)(t0 - t1)) != 0) {
+            t2 = ((unsigned short)(t0 - t1) | 0xFFFF0000);
+        }
+        *(unsigned int *)((a4 + 0x30)) = (unsigned short)((*(int *)((a4 + 0x30))) + ((int)((int)t2 / (int)((((struct oEC_short *)(a4))->v)))));
     }
     if (((((struct oEC_short *)(a4))->v)) != 0) {
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
@@ -232,10 +236,8 @@ int FUN_0c0647f0(int a4, int a5)
 
     (((struct o2D9_uchar *)(a4))->v) = 0x2;
     if (((((struct oEC_short *)(a4))->v)) != 0) {
-        pl_angle_to_opponent(a4);
-        *(volatile int *)((a4 + 0x30));
-        *(volatile short *)((a4 + 0xEC));
-        *(unsigned int *)((a4 + 0x30)) = (unsigned short)(t0 + (FUN_0c0e6d00()));
+        t0 = *(int *)((a4 + 0x30));
+        *(unsigned int *)((a4 + 0x30)) = (unsigned short)(t0 + ((int)((int)(unsigned short)((pl_angle_to_opponent(a4)) - t0) / (int)((((struct oEC_short *)(a4))->v)))));
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
     }
     t0 = pl_step_motion(a4);

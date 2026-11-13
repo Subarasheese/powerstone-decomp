@@ -5,7 +5,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create_beside(int, int, int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o105_uchar { char p[0x105]; unsigned char v; };
@@ -18,11 +18,8 @@ int obj_set_record_char(int, int);
 int FUN_0c0ca124(int a4)
 {
     register int t0;
-    register int t9;
-    register int t3;
 
     t0 = obj_create_beside(0x1, a4, 0x1, 0x0, 0x0);
-    t9 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -30,15 +27,15 @@ int FUN_0c0ca124(int a4)
         *(unsigned short *)((t0 + 0x6)) = 0xF;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0CA198;
-        FUN_0c0e6fe8(t0);
-        FUN_0c0e6fe8(t3);
-        (((struct o58_float *)(t9))->v) = 1.0f;
-        (((struct o54_float *)(t9))->v) = 1.0f;
-        (((struct o50_float *)(t9))->v) = 1.0f;
-        *(unsigned int *)((t9 + 0x1C)) = (*(int *)((a4 + 0x1C)));
-        (((struct o308_uint *)(t9))->v) = a4;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        (((struct o58_float *)(t0))->v) = 1.0f;
+        (((struct o54_float *)(t0))->v) = 1.0f;
+        (((struct o50_float *)(t0))->v) = 1.0f;
+        *(unsigned int *)((t0 + 0x1C)) = (*(int *)((a4 + 0x1C)));
+        (((struct o308_uint *)(t0))->v) = a4;
     }
-    return t9;
+    return t0;
 }
 
 int FUN_0c0ca198(int a4)

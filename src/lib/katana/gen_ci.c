@@ -90,7 +90,7 @@ int FUN_0c0e1240(int);
 int FUN_0c0e1550(int);
 int FUN_0c0e2110(float, float, float);
 int FUN_0c0e2790(int, float, float, float);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int buCalcCRC(int, int, int, int);
 int memcpy(int, int, int);
 int memset(int, int, int);

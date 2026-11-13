@@ -58,9 +58,9 @@ int fx_swirl_create(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int FUN_0c0e24f0(int);
-int FUN_0c0e6d00(void);
-extern int FUN_0c0e6e5c();
-extern int FUN_0c0e6fe8();
+int _divls(void);
+extern int _modls();
+extern int _quick_odd_mvn();
 int FUN_0c101148(int, int);
 int FUN_0c1012f4(int, int, int);
 int FUN_0c104622(int);
@@ -85,40 +85,40 @@ int vmsfs_format(int a4, int a5, int a6, int a7, int a8)
     int stk[14];
     register int t1;
     register int t3;
-    register int t14;
-    register int t25;
+    register int t11;
+    register int t22;
+    register int t23;
     register int t26;
-    register int t29;
-    register int t30;
-    register int t31;
+    register int t27;
+    register int t28;
+    register int t35;
     register int t38;
-    register int t41;
-    register int t42;
-    register int t49;
-    register int t50;
-    register int t51;
-    register int t53;
-    register int t62;
-    register int t71;
-    register int t76;
-    register int t81;
-    register int t87;
-    register int t93;
-    register int t99;
-    register int t105;
-    register int t111;
-    register int t117;
-    register int t123;
-    register int t125;
-    register int t126;
-    register int t129;
-    register int t130;
-    register int t139;
-    register int t151;
-    register int t153;
     register int t39;
-    register int t40;
+    register int t46;
+    register int t47;
     register int t48;
+    register int t50;
+    register int t59;
+    register int t68;
+    register int t73;
+    register int t78;
+    register int t84;
+    register int t90;
+    register int t96;
+    register int t102;
+    register int t108;
+    register int t114;
+    register int t120;
+    register int t122;
+    register int t123;
+    register int t126;
+    register int t127;
+    register int t136;
+    register int t148;
+    register int t150;
+    register int t36;
+    register int t37;
+    register int t45;
 
     *(unsigned int *)(((int)stk + 8)) = a5;
     *(unsigned int *)(((int)stk + 12)) = a6;
@@ -134,118 +134,117 @@ int vmsfs_format(int a4, int a5, int a6, int a7, int a8)
     } else {
         *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x30)) = 0x1;
         t3 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x4));
-        *(volatile int *)(((((((t3 << 2) + t3) << 2) << 2) + 0xC347200) + 0xC));
-        *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x34)) = (FUN_0c0e6d00());
+        *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x34)) = ((int)((int)(*(int *)(((((((t3 << 2) + t3) << 2) << 2) + 0xC347200) + 0xC))) / (int)0xA));
     }
-    t14 = vmsio_ismount(a4);
-    if (t14 == 0) {
+    t11 = vmsio_ismount(a4);
+    if (t11 == 0) {
         return 0xFFFFFF01;
     }
     if ((*(signed char *)((((*(int *)(((int)stk + 4))) + 0xC80DBC8) + 0x8))) == 0) {
         return 0xFFFFFF01;
     }
     memset((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x0, 0x200);
-    t25 = FUN_0c1012f4(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))));
-    if ((int)t25 < 0) {
-        t26 = 0xFFFFFF81;
-        if (t25 != 0xFFFFFF40) {
-            t26 = 0xFFFFFF01;
+    t22 = FUN_0c1012f4(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))));
+    if ((int)t22 < 0) {
+        t23 = 0xFFFFFF81;
+        if (t22 != 0xFFFFFF40) {
+            t23 = 0xFFFFFF01;
         }
-        return t26;
+        return t23;
     }
-    t29 = FUN_0c101148(a4, (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))));
-    if ((int)t29 < 0) {
+    t26 = FUN_0c101148(a4, (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))));
+    if ((int)t26 < 0) {
         return 0xFFFFFF01;
     }
-    t30 = check_caps(((a4 * 0x148) + 0xC80DBC8));
-    if ((int)t30 < 0) {
+    t27 = check_caps(((a4 * 0x148) + 0xC80DBC8));
+    if ((int)t27 < 0) {
         return 0xFFFFFF83;
     }
-    t31 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
-    *(unsigned int *)((t31 + 0x30)) = (*(int *)((t31 + 0x1C)));
+    t28 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
+    *(unsigned int *)((t28 + 0x30)) = (*(int *)((t28 + 0x1C)));
     memset((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x0, 0x200);
-    t42 = *(int *)(((int)stk + 8));
-    t38 = (memset(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))) + 0x10), 0x20, 0x20));
-    t41 = 0x0;
+    t39 = *(int *)(((int)stk + 8));
+    t35 = (memset(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))) + 0x10), 0x20, 0x20));
+    t38 = 0x0;
     for (;;) {
-        if ((int)t41 >= (int)0x20) {
+        if ((int)t38 >= (int)0x20) {
             break;
         }
-        t38 = (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20)));
-        t39 = t41;
-        t40 = (*(signed char *)((t42 + 0x0)));
-        t42 = (t42 + 0x1);
-        t39 = (t39 + 0x10);
-        t41 = (t41 + 0x1);
-        *(unsigned char *)((t39 + t38)) = t40;
+        t35 = (*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20)));
+        t36 = t38;
+        t37 = (*(signed char *)((t39 + 0x0)));
+        t39 = (t39 + 0x1);
+        t36 = (t36 + 0x10);
+        t38 = (t38 + 0x1);
+        *(unsigned char *)((t36 + t35)) = t37;
     }
     set_vmstime((((int)stk + 0) + 0x10), (*(int *)(((int)stk + 0))));
-    t49 = ((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))) + 0x30);
-    t50 = 0x0;
-    t51 = (((int)stk + 0) + 0x10);
+    t46 = ((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))) + 0x30);
+    t47 = 0x0;
+    t48 = (((int)stk + 0) + 0x10);
     for (;;) {
-        if ((int)t50 >= (int)0x8) {
+        if ((int)t47 >= (int)0x8) {
             break;
         }
-        t48 = (*(signed char *)((t51 + 0x0)));
-        t51 = (t51 + 0x1);
-        t50 = (t50 + 0x1);
-        *(unsigned char *)((t49 + 0x0)) = t48;
-        t49 = (t49 + 0x1);
+        t45 = (*(signed char *)((t48 + 0x0)));
+        t48 = (t48 + 0x1);
+        t47 = (t47 + 0x1);
+        *(unsigned char *)((t46 + 0x0)) = t45;
+        t46 = (t46 + 0x1);
     }
-    t53 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
-    *(unsigned int *)(((int)stk + 0)) = t53;
-    *(unsigned int *)(((int)stk + 4)) = (*(int *)((t53 + 0xC)));
+    t50 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
+    *(unsigned int *)(((int)stk + 0)) = t50;
+    *(unsigned int *)(((int)stk + 4)) = (*(int *)((t50 + 0xC)));
     *(unsigned int *)(((int)stk + 8)) = (*(int *)(((*(int *)(((int)stk + 0))) + 0x14)));
-    t62 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x42, (*(int *)(((*(int *)(((int)stk + 0))) + 0x4))), t51, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t59 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x42, (*(int *)(((*(int *)(((int)stk + 0))) + 0x4))), t48, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
     (((struct o4E_uchar *)((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20)))))->v) = (*(int *)(((int)stk + 12)));
     (((struct o4F_uchar *)((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20)))))->v) = 0x0;
-    t71 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x40, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t76 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x4A, (*(int *)(((int)stk + 8))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t81 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x46, (*(int *)(((int)stk + 4))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t87 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x4C, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x18))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t93 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x48, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x10))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t99 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x50, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x1C))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t105 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x52, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x20))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t111 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x54, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x34))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t117 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x56, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x38))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t123 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x44, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    t125 = (memset((((a4 << 8) << 1) + 0xC812AD4), 0x0, 0x200));
-    t126 = 0x0;
+    t68 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x40, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t73 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x4A, (*(int *)(((int)stk + 8))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t78 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x46, (*(int *)(((int)stk + 4))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t84 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x4C, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x18))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t90 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x48, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x10))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t96 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x50, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x1C))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t102 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x52, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x20))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t108 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x54, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x34))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t114 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x56, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x38))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t120 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x20))), 0x44, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0))), a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    t122 = (memset((((a4 << 8) << 1) + 0xC812AD4), 0x0, 0x200));
+    t123 = 0x0;
     for (;;) {
-        if ((int)t126 >= (int)(*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0)))) {
-            t129 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
-            t130 = *(int *)((t129 + 0x18));
-            *(volatile int *)(((0x30 + t129) + 0x0));
-            *(unsigned int *)(((int)stk + 0)) = t130;
-            t125 = (memset((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x28))), 0x0, ((t130 << 8) << 1)));
-            t125 = (FUN_0c104622(a4));
-            t126 = 0xFFFA;
-            t125 = (set_fat(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), t126));
-            t139 = 0x0;
+        if ((int)t123 >= (int)(*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0)))) {
+            t126 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C));
+            t127 = *(int *)((t126 + 0x18));
+            *(volatile int *)(((0x30 + t126) + 0x0));
+            *(unsigned int *)(((int)stk + 0)) = t127;
+            t122 = (memset((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x28))), 0x0, ((t127 << 8) << 1)));
+            t122 = (FUN_0c104622(a4));
+            t123 = 0xFFFA;
+            t122 = (set_fat(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), t123));
+            t136 = 0x0;
             for (;;) {
-                if ((int)t139 >= (int)(*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x10)))) {
+                if ((int)t136 >= (int)(*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x10)))) {
                     break;
                 }
-                t125 = (set_fat(a4, ((*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0xC))) + t139), t126));
-                t139 = (t139 + 0x1);
+                t122 = (set_fat(a4, ((*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0xC))) + t136), t123));
+                t136 = (t136 + 0x1);
             }
-            t125 = (set_fat(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), t126));
+            t122 = (set_fat(a4, (*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x8))), t123));
             return ((int (*)(void))(0xC102510))();
         }
-        t151 = 0x0;
+        t148 = 0x0;
         if (a8 != 0) {
-            t125 = (FUN_0c1012f4(a4, t126, (((a4 << 8) << 1) + 0xC812AD4)));
-            t151 = t125;
+            t122 = (FUN_0c1012f4(a4, t123, (((a4 << 8) << 1) + 0xC812AD4)));
+            t148 = t122;
         }
-        t125 = t151;
-        if (t125 != 0xFFFFFF01) {
-            t153 = 0xFFFF;
-            if (t125 != 0xFFFFFF40) {
-                t153 = 0xFFFC;
+        t122 = t148;
+        if (t122 != 0xFFFFFF01) {
+            t150 = 0xFFFF;
+            if (t122 != 0xFFFFFF40) {
+                t150 = 0xFFFC;
             }
-            t125 = (set_fat(a4, t126, t153));
-            t126 = (t126 + 0x1);
+            t122 = (set_fat(a4, t123, t150));
+            t123 = (t123 + 0x1);
             continue;
         }
         break;

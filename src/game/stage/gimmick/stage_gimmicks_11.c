@@ -2,18 +2,17 @@
 
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 int stage_gimmick_11_spawn(void)
 {
     register int t0;
-    register int t1;
-    register int t2;
+    register int t5;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t1 = t0;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    t5 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -24,12 +23,12 @@ int stage_gimmick_11_spawn(void)
         (((struct oEC_ushort *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B01CA;
         *(unsigned char *)((t0 + 0x4)) = 0xD;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC33A2C8); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A2BC); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, 0xE);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t1 = 0xF;
+        t5 = 0xF;
     }
-    return t1;
+    return t5;
 }

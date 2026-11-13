@@ -51,7 +51,7 @@ struct o2F4_int { char p[0x2F4]; int v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct o6_uchar { char p[0x6]; unsigned char v; };
 struct oE_uchar { char p[0xE]; unsigned char v; };
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 struct o8_uint { char p[0x8]; unsigned int v; };
@@ -799,10 +799,10 @@ int FUN_0c02c830(int a4)
     register int t0;
     register int t14;
     register int t2;
-    register int t12;
+    register int t11;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x6, 0);
+    t0 = obj_create(0x5, 0x1, 0x6, 0x0);
     t14 = t0;
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC02C3C4;
@@ -823,12 +823,11 @@ int FUN_0c02c830(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x2)) = 0x41F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((int)g_res_pstone_logo), (*(signed char *)((t2 + 0xC14915E))));
-            *(volatile int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0));
-            FUN_0c0e6fe8();
-            t12 = (t2 << 2);
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A00, (*(signed char *)((t2 + 0xC14915E))));
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t2 << 1) + t2) << 2) + 0xC149164)); }
+            t11 = (t2 << 2);
             t2 = (t2 + 0x1);
-            (((struct o40_float *)((*(int *)(((t12 + (0x2E0 + t0)) + 0x0)))))->v) = 1.0f;
+            (((struct o40_float *)((*(int *)(((t11 + (0x2E0 + t0)) + 0x0)))))->v) = 1.0f;
             if ((int)t2 >= (int)0x6) {
                 break;
             }

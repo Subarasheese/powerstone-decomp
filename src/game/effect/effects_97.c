@@ -7,12 +7,12 @@ struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o40_float { char p[0x40]; float v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int math_vec3_add(int, int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c0e6fe8(int, int, int, int, float);
+int _quick_odd_mvn(int, int, int, int, float);
 
-int FUN_0c0434cc(int a4, int a5, int a6, int a7)
+int FUN_0c0434cc(int a4, int a5, int a6)
 {
     int stk[1];
     register int t0;
@@ -22,7 +22,12 @@ int FUN_0c0434cc(int a4, int a5, int a6, int a7)
     register float u29;
     register int t45;
     register int t44;
-    register int t48;
+    register int t50;
+    register int t51;
+    register int t55;
+    register int t60;
+    register int t62;
+    register int t63;
     register int t2;
     register int t5;
     register float u6;
@@ -31,17 +36,18 @@ int FUN_0c0434cc(int a4, int a5, int a6, int a7)
     register int t41;
     register float u32;
     register float u33;
-    register int t59;
+    register int t48;
+    register int t49;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
             if (t0 == 2) {
                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             if (t0 == 3) {
-                return obj_destroy(a4, a5, a6, a7);
+                return obj_destroy(a4);
             }
             return t0;
         }
@@ -72,7 +78,7 @@ int FUN_0c0434cc(int a4, int a5, int a6, int a7)
                 if (t2 == 0) {
                     *(unsigned char *)(((((0x308 + a4) + 0x8) + t4) + 0x0)) = 0x3;
                     t3 = t5;
-                    FUN_0c06231c(t3, ((int)g_res_kyoutsuu), ((*(signed char *)((((0x308 + a4) + t4) + 0x0))) + 0x21));
+                    FUN_0c06231c(t3, 0xC4CFA68, ((*(signed char *)((((0x308 + a4) + t4) + 0x0))) + 0x21));
                     t2 = (0x308 + a4);
                     t2 = (t2 + t4);
                     t21 = *(signed char *)((t2 + 0x0));
@@ -128,20 +134,41 @@ int FUN_0c0434cc(int a4, int a5, int a6, int a7)
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     *(unsigned char *)((a4 + 0x1)) = 0x1;
-    t48 = 0x0;
+    t50 = 0x0;
+    t51 = a6;
     for (;;) {
-        if ((int)t48 >= (int)(*(signed char *)((a4 + 0x2DC)))) {
+        if ((int)t50 >= (int)(*(signed char *)((a4 + 0x2DC)))) {
             break;
         }
-        *(unsigned char *)((((0x308 + a4) + t48) + 0x0)) = 0x1;
-        *(unsigned char *)(((((0x308 + a4) + 0x8) + t48) + 0x0)) = 0x1;
-        *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t48 << 2)) + 0x0))) + 0x0)) = 0x1;
-        (((struct o40_float *)((*(int *)((((0x2E0 + a4) + (t48 << 2)) + 0x0)))))->v) = 1.0f;
-        *(volatile signed char *)0xC7F3051;
-        *(volatile int *)((((0x2E0 + a4) + (t48 << 2)) + 0x0));
-        *(volatile signed char *)((a4 + 0xEC));
-        FUN_0c0e6fe8(0x1, t48, (t48 << 2), 0xC7F302C, 1.0f);
-        t48 = (t59 + 0x1);
+        *(unsigned char *)((((0x308 + a4) + t50) + 0x0)) = 0x1;
+        t49 = (0x308 + a4);
+        t51 = t50;
+        t49 = (t49 + 0x8);
+        t48 = 0x2E0;
+        t51 = (t51 << 2);
+        t49 = (t49 + t50);
+        *(unsigned char *)((t49 + 0x0)) = 0x1;
+        t49 = (*(int *)((((0x2E0 + a4) + t51) + 0x0)));
+        t48 = (t48 + a4);
+        *(unsigned char *)((t49 + 0x0)) = 0x1;
+        t48 = (t48 + t51);
+        t49 = (*(int *)((((0x2E0 + a4) + t51) + 0x0)));
+        (((struct o40_float *)(t49))->v) = 1.0f;
+        t55 = *(signed char *)0xC7F3051;
+        t48 = (*(int *)((t48 + 0x0)));
+        t49 = t55;
+        t48 = (t48 + 0x44);
+        t60 = (short)(((((t55 << 2) << 1) + t49) << 2) << 1);
+        t49 = (*(signed char *)((a4 + 0xEC)));
+        t62 = t49;
+        t49 = (t49 << 1);
+        t49 = (t49 + t62);
+        t49 = (t49 << 2);
+        t49 = (signed char)t49;
+        t63 = ((t60 + 0xC14A2B4) + t49);
+        t49 = 0xC0E6FE8;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t48) = *(struct mv3 *)(t63); }
+        t50 = (t50 + 0x1);
     }
     return 0x2DC;
 }

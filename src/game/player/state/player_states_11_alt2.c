@@ -50,7 +50,7 @@ int FUN_0c0972b2(int);
 int hit_find_wall_entry_by_kind(int, int);
 int pl_apply_velocity(int);
 int snd_play_side_se(int, int);
-int FUN_0c0e6fdc(int);
+int _quick_evn_mvn(int);
 struct o44_float { char p[0x44]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct o71C8_uint { char p[0x71C8]; unsigned int v; };
@@ -285,19 +285,18 @@ int pl_state39_phase2(int a4)
     register int t2;
     register int t3;
     register int t4;
-    register int t21;
-    register int t36;
-    register int t40;
+    register int t35;
+    register int t39;
     register int t10;
-    register int t28;
-    register float u29;
+    register int t27;
+    register float u28;
 
     if ((((((struct o2DC_int *)(a4))->v)) & 240) == 0) {
         pl_start_motion(a4, 0x2, 0xD0);
         (((struct o71A9_uchar *)(a4))->v) = 0x1;
         (((struct o71A8_uchar *)(a4))->v) = 0x1;
         *(unsigned char *)((a4 + 0xA)) = 0x1;
-        t40 = 0x1;
+        t39 = 0x1;
     } else {
         t2 = pl_stick_dir_angle(a4);
         t3 = *(int *)0xC7F31E0;
@@ -314,31 +313,29 @@ int pl_state39_phase2(int a4)
             }
         }
         *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) & 0xFFFF);
-        (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C) + (((int)g_pl_char_param_tbl) + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)))))->v));
+        (((struct o7254_float *)(a4))->v) = ((((struct o38_float *)(((unsigned char)((unsigned short)(*(signed char *)(((0x71F1 + a4) + 0x0))) * (unsigned short)0x4C) + (0xC339540 + ((short)(*(signed char *)((a4 + 0x4))) * (short)0x98)))))->v));
         *(unsigned int *)(((int)stk + 0)) = (0x14000 - t10);
         (((struct o38_float *)(a4))->v) = ((math_cos_angle16((0x14000 - t10))) * ((((struct o7254_float *)(a4))->v)));
         (((struct o40_float *)(a4))->v) = ((math_sin_angle16((*(int *)(((int)stk + 0))))) * ((((struct o7254_float *)(a4))->v)));
-        t21 = hit_find_wall_entry_by_kind(a4, 0xA);
-        *(volatile int *)((((((signed char)t21 - 1) << 2) + (0x2C0 + a4)) + 0x0));
-        FUN_0c0e6fdc(t21);
+        { struct mv6 { int w[6]; }; *(struct mv6 *)((((int)stk + 0) + 0x4)) = *(struct mv6 *)((*(int *)((((((signed char)(hit_find_wall_entry_by_kind(a4, 0xA)) - 1) << 2) + (0x2C0 + a4)) + 0x0)))); }
         if (((((struct oC_float *)((((int)stk + 0) + 0x4)))->v)) > ((((struct o14_float *)((((int)stk + 0) + 0x4)))->v))) {
-            t28 = 0x28;
-            u29 = ((((struct o8_float *)((((int)stk + 0) + 0x4)))->v));
+            t27 = 0x28;
+            u28 = ((((struct o8_float *)((((int)stk + 0) + 0x4)))->v));
         } else {
-            t28 = 0x20;
-            u29 = ((((struct o4_float *)(((int)stk + 0)))->v));
+            t27 = 0x20;
+            u28 = ((((struct o4_float *)(((int)stk + 0)))->v));
         }
-        *(float *)((a4 + t28)) = u29;
+        *(float *)((a4 + t27)) = u28;
         (((struct o24_float *)(a4))->v) = (((((((struct o4_float *)((((int)stk + 0) + 0x4)))->v)) - ((((struct o10_float *)((((int)stk + 0) + 0x4)))->v))) - (FUN_0c02651e(a4))) + 1.0f);
         pl_step_motion(a4);
         pl_apply_velocity(a4);
-        t36 = (((struct o719E_short *)(a4))->v);
-        t40 = (unsigned short)t36;
-        if (((unsigned short)t36 == 19) || ((unsigned short)t36 == 39)) {
-            t40 = (snd_play_side_se((*(signed char *)((a4 + 0x3))), 0xE));
+        t35 = (((struct o719E_short *)(a4))->v);
+        t39 = (unsigned short)t35;
+        if (((unsigned short)t35 == 19) || ((unsigned short)t35 == 39)) {
+            t39 = (snd_play_side_se((*(signed char *)((a4 + 0x3))), 0xE));
         }
     }
-    return t40;
+    return t39;
 }
 
 int pl_state39_update(int a4, int a5, int a6)

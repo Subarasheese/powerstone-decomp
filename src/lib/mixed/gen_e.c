@@ -128,7 +128,7 @@ int FUN_0c0e52b6(int, int, int, int);
 int FUN_0c0e5d22(int);
 int FUN_0c0e60ce(int, int);
 int FUN_0c0e6834(int, int, int);
-int FUN_0c0e6fe8(int, int, int, int);
+int _quick_odd_mvn(int, int, int, int);
 int FUN_0c0ed9d4(int, int, int);
 int FUN_0c0fddbe(int, int, int);
 int FUN_0c10121c(int, int, int);

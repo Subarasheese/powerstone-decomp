@@ -27,8 +27,8 @@ int hit_load_sphere_world(int, int, int);
 struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int FUN_0c0e6fdc(int, int);
-int FUN_0c0e6fe8(int, int);
+int _quick_evn_mvn(int, int);
+int _quick_odd_mvn(int, int);
 struct float_rec16 { float vals[4]; };
 struct float_rec20 { float vals[5]; };
 struct float_rec24 { float vals[6]; };
@@ -185,31 +185,28 @@ float FUN_0c026220(int a4, int a5, int a6)
 float FUN_0c02629e(int a4, int a5)
 {
     int stk[15];
-    register float u24;
-    register float u15;
-    register float u6;
-    register int t1;
-    register int t10;
-    register int t19;
+    register float u27;
+    register float u17;
+    register float u7;
 
     if (((signed char)a4 & 0xF) != 0) {
         if (((signed char)a4 & 0xF) != 1) {
             if (((signed char)a4 & 0xF) != 2) {
             } else {
-                FUN_0c0e6fdc((((int)stk + 0) + 0x14), a5);
-                u6 = (((((struct o4_float *)(t1))->v)) + ((((struct o10_float *)(t1))->v)));
+                { struct mv6 { int w[6]; }; *(struct mv6 *)((((int)stk + 0) + 0x14)) = *(struct mv6 *)(a5); }
+                u7 = (((((struct o4_float *)((((int)stk + 0) + 0x14)))->v)) + ((((struct o10_float *)((((int)stk + 0) + 0x14)))->v)));
             }
-            u15 = u6;
+            u17 = u7;
         } else {
-            FUN_0c0e6fe8(((int)stk + 0), a5);
-            u15 = (((((struct o4_float *)(t10))->v)) + ((((struct o10_float *)(t10))->v)));
+            { struct mv5 { int w[5]; }; *(struct mv5 *)(((int)stk + 0)) = *(struct mv5 *)(a5); }
+            u17 = (((((struct o4_float *)(((int)stk + 0)))->v)) + ((((struct o10_float *)(((int)stk + 0)))->v)));
         }
-        u24 = u15;
+        u27 = u17;
     } else {
-        FUN_0c0e6fdc((((int)stk + 0) + 0x2C), a5);
-        u24 = (((((struct o4_float *)(t19))->v)) + ((((struct oC_float *)(t19))->v)));
+        { struct mv4 { int w[4]; }; *(struct mv4 *)((((int)stk + 0) + 0x2C)) = *(struct mv4 *)(a5); }
+        u27 = (((((struct o4_float *)((((int)stk + 0) + 0x2C)))->v)) + ((((struct oC_float *)((((int)stk + 0) + 0x2C)))->v)));
     }
-    return u24;
+    return u27;
 }
 
 float FUN_0c0262f8(int a4)

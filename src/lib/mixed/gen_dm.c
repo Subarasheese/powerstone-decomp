@@ -123,10 +123,10 @@ int dbg_set_text_color(int);
 int FUN_0c0e5178(int, int, int);
 int FUN_0c0e51d0(void);
 int FUN_0c0e5d22(int);
-int FUN_0c0e6d00(void);
-extern int FUN_0c0e6e5c();
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _divls(void);
+extern int _modls();
+int _modlu(void);
+int _quick_odd_mvn(void);
 int FUN_0c0f1766(int);
 int FUN_0c0f1c44(int);
 int FUN_0c0f7d04(int, int, int);
@@ -705,19 +705,18 @@ int FUN_0c1066f0(int a4, int a5, int a6, int a7)
     register int t12;
     register int t14;
     register int t19;
-    register int t26;
-    register int t44;
+    register int t24;
     register int t47;
-    register int t52;
-    register int t54;
+    register int t50;
+    register int t55;
     register int t57;
-    register int t58;
-    register int t59;
     register int t60;
+    register int t61;
     register int t62;
-    register int t66;
+    register int t63;
+    register int t65;
+    register int t69;
     int t16;
-    register int t27;
 
     t1 = *(int *)((a4 + 0x4));
     if ((*(signed char *)((a4 + 0x2))) == 1) {
@@ -733,10 +732,8 @@ int FUN_0c1066f0(int a4, int a5, int a6, int a7)
             }
             *(unsigned int *)((a4 + 0x34)) = ((*(int *)((a4 + 0x34))) + (((t4 << 8) << 2) << 1));
             *(unsigned char *)((a4 + 0x2)) = 0x0;
-            FUN_0c0f1766((*(int *)((a4 + 0x8))));
-            *(volatile int *)((a4 + 0x14));
-            t26 = FUN_0c0e6d00();
-            if ((int)t27 >= (int)t26) {
+            t24 = FUN_0c0f1766((*(int *)((a4 + 0x8))));
+            if ((int)t24 >= (int)((int)((int)((*(int *)((a4 + 0x14))) + 0x7FF) / (int)0x800))) {
                 *(unsigned char *)((a4 + 0x1)) = 0x3;
             }
         } else {
@@ -748,37 +745,36 @@ int FUN_0c1066f0(int a4, int a5, int a6, int a7)
             }
         }
     }
-    t44 = *(signed char *)((a4 + 0x2));
-    if (t44 == 0) {
-        t47 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x24)))))(t1, 0x1, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
-        if ((int)t47 < (int)(*(int *)((a4 + 0x1C)))) {
-            t52 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x18)))))(t1, 0x0, (*(int *)((a4 + 0x18))), (a4 + 0x24), *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
-            *(volatile int *)((a4 + 0x28));
-            t54 = FUN_0c0e6d00();
+    t47 = *(signed char *)((a4 + 0x2));
+    if (t47 == 0) {
+        t50 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x24)))))(t1, 0x1, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
+        if ((int)t50 < (int)(*(int *)((a4 + 0x1C)))) {
+            t55 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x18)))))(t1, 0x0, (*(int *)((a4 + 0x18))), (a4 + 0x24), *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
+            t57 = (int)((int)(*(int *)((a4 + 0x28))) / (int)0x800);
             *(unsigned int *)(((int)stk + 4)) = (*(int *)((a4 + 0x30)));
-            t57 = FUN_0c0f1766((*(int *)((a4 + 0x8))));
-            t58 = *(int *)(((int)stk + 4));
-            t59 = *(int *)((a4 + 0x2C));
-            t60 = (t58 - t57);
-            if ((int)t54 < (int)(t58 - t57)) {
-                t60 = t54;
+            t60 = FUN_0c0f1766((*(int *)((a4 + 0x8))));
+            t61 = *(int *)(((int)stk + 4));
+            t62 = *(int *)((a4 + 0x2C));
+            t63 = (t61 - t60);
+            if ((int)t57 < (int)(t61 - t60)) {
+                t63 = t57;
             }
-            t62 = t59;
-            if ((int)t60 < (int)t59) {
-                t62 = t60;
+            t65 = t62;
+            if ((int)t63 < (int)t62) {
+                t65 = t63;
             }
-            if (t62 != 0) {
-                t66 = gdFsReqRd32((*(int *)((a4 + 0x8))), t62, (*(int *)((a4 + 0x24))));
-                *(unsigned int *)((a4 + 0x20)) = t66;
-                if ((int)t66 <= 0) {
+            if (t65 != 0) {
+                t69 = gdFsReqRd32((*(int *)((a4 + 0x8))), t65, (*(int *)((a4 + 0x24))));
+                *(unsigned int *)((a4 + 0x20)) = t69;
+                if ((int)t69 <= 0) {
                     return (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x1C)))))(t1, 0x0, (a4 + 0x24), a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24)));
                 }
                 return ((int (*)(void))(0xC10682A))();
             }
             return (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x1C)))))(t1, 0x0, (a4 + 0x24), a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24)));
         }
-        return t47;
+        return t50;
     }
-    return t44;
+    return t47;
 }
 

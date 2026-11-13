@@ -12,12 +12,12 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
@@ -39,7 +39,7 @@ int fx_spawn_09(int a4, int a5)
     register int t4;
     register float u0;
 
-    t0 = obj_create(0x1, 0x1, 0x2);
+    t0 = obj_create(0x1, 0x1, 0x2, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -50,8 +50,8 @@ int fx_spawn_09(int a4, int a5)
         *(unsigned short *)((t0 + 0x6)) = 0x1F;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B8604;
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         *(unsigned int *)((t0 + 0x1C)) = a4;
         t2 = *(int *)((t0 + 0x30));
         t3 = *(int *)(((a5 << 2) + 0xC153090));

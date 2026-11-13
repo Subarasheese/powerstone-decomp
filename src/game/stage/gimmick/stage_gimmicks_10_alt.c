@@ -27,9 +27,9 @@ int FUN_0c0afac2(int);
 int FUN_0c0afb0a(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _modls(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
 
 int FUN_0c0afb68(int a4)
 {
@@ -39,6 +39,7 @@ int FUN_0c0afb68(int a4)
     register int t3;
     register int t4;
     register float u0;
+    register float u1;
 
     t0 = *(signed char *)((a4 + 0x9));
     if (t0 != 0) {
@@ -54,8 +55,7 @@ int FUN_0c0afb68(int a4)
         return 0x1;
     }
     *(unsigned char *)((a4 + 0x1)) = 0x1;
-    *(volatile short *)((a4 + 0xEC));
-    t0 = FUN_0c0e6e5c();
+    t0 = (int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x8);
     t1 = *(signed char *)((a4 + 0x8));
     if (t1 != 0) {
         if (t1 != 1) {
@@ -167,9 +167,13 @@ int FUN_0c0afb68(int a4)
                 } else {
                     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x0;
-                    math_rand_float();
-                    (((struct oEE_ushort *)(a4))->v) = (((short)(FUN_0c0e6f24()) * (short)0x3C) + 0x1E0);
-                    FUN_0c0e6fe8();
+                    u0 = math_rand_float();
+                    u1 = (u0 * 255.0f);
+                    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    (((struct oEE_ushort *)(a4))->v) = (((short)((int)((unsigned int)(int)u1 % (unsigned int)0x2)) * (short)0x3C) + 0x1E0);
+                    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x50)) = *(struct mv3 *)(0xC33A298); }
                     (((struct o5C_float *)(a4))->v) = 1.0f;
                     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x1;
                     *(unsigned int *)(((((((struct o2E4_int *)(a4))->v)) + 0x28) + 0x0)) = 0x2;

@@ -24,7 +24,7 @@ struct oA2_short { char p[0xA2]; short v; };
 struct oA2_ushort { char p[0xA2]; unsigned short v; };
 int pl_reset_model_parts(int);
 int pl_step_motion(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
 
 int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
@@ -33,6 +33,8 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
     register int t0;
     register int t25;
     register int t27;
+    register int t103;
+    register int t106;
     register int t144;
     register int t167;
     register int t169;
@@ -115,11 +117,11 @@ int FUN_0c0d0e50(int a4, int a5, int a6, int a7)
         pl_start_motion(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4), (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x8))), (*(signed char *)((((short)((short)(signed char)t0 * (short)0xA8) + 0xC4949A0) + 0x9))));
         (((struct o71A9_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
         (((struct o71A8_uchar *)(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4)))->v) = 0x1;
-        *(volatile signed char *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3));
-        FUN_0c0e6fe8();
+        t103 = *(signed char *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(((signed char)(((t103 << 1) + t103) << 2) + 0xC494988)) = *(struct mv3 *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x2C)); }
         dbgedit_set_start_positions(((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4));
-        *(volatile signed char *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3));
-        FUN_0c0e6fe8();
+        t106 = *(signed char *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x3));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((unsigned short)((unsigned short)(signed char)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x2C)) = *(struct mv3 *)(((signed char)(((t106 << 1) + t106) << 2) + 0xC494988)); }
         (((struct oA2_ushort *)(a4))->v) = 0x0;
     }
     if ((((((struct o48_int *)(a4))->v)) & 0x400) != 0) {

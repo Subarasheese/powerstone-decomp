@@ -16,8 +16,8 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 float math_signed_sqrt(float);
 struct o10_float { char p[0x10]; float v; };
-int FUN_0c0e6fdc(void);
-int FUN_0c0e6fe8(void);
+int _quick_evn_mvn(void);
+int _quick_odd_mvn(void);
 typedef struct { int x, y, z; } vec3i;
 struct draw_params { int head; vec3i pos; float field_16, field_20; int pad24[4]; int field_40; float field_44; int pad48; int field_52; };
 void ui_sprite_queue_add(void *, int, int, int, int, int);
@@ -98,8 +98,7 @@ int FUN_0c023d8e(void)
         if ((int)t0 >= (int)(*(signed char *)(((((t1 << 1) + t1) + 0xC33EC20) + 0x1)))) {
             break;
         }
-        *(volatile int *)((0xC33EB20 + ((*(signed char *)0xC7F3051) << 2)));
-        FUN_0c0e6fdc();
+        { struct mv6 { int w[6]; }; *(struct mv6 *)((((int)stk + 0) + 0x14)) = *(struct mv6 *)(((*(int *)((0xC33EB20 + ((*(signed char *)0xC7F3051) << 2)))) + ((((t0 << 1) + t0) << 2) << 1))); }
         FUN_0c0243b0((((int)stk + 0) + 0x14), ((((int)stk + 0) + 0x14) + 0xC), 1.0f, 0.0f, 1.0f);
         t0 = (t0 + 0x1);
     }
@@ -109,8 +108,7 @@ int FUN_0c023d8e(void)
         if ((int)t10 >= (int)(*(signed char *)(((((t11 << 1) + t11) + 0xC33EC20) + 0x0)))) {
             break;
         }
-        *(volatile int *)((0xC33EAA0 + ((*(signed char *)0xC7F3051) << 2)));
-        FUN_0c0e6fe8();
+        { struct mv5 { int w[5]; }; *(struct mv5 *)(((int)stk + 0)) = *(struct mv5 *)(((*(int *)((0xC33EAA0 + ((*(signed char *)0xC7F3051) << 2)))) + (((t10 << 2) + t10) << 2))); }
         FUN_0c024298(((int)stk + 0), ((((struct o10_float *)(((int)stk + 0)))->v)), ((((struct oC_float *)(((int)stk + 0)))->v)), 1.0f, 0.0f, 1.0f);
         t10 = (t10 + 0x1);
     }
@@ -121,8 +119,7 @@ int FUN_0c023d8e(void)
         if ((int)t20 >= (int)t23) {
             break;
         }
-        *(volatile int *)((0xC33EBA0 + ((*(signed char *)0xC7F3051) << 2)));
-        FUN_0c0e6fdc();
+        { struct mv4 { int w[4]; }; *(struct mv4 *)((((int)stk + 0) + 0x2C)) = *(struct mv4 *)(((*(int *)((0xC33EBA0 + ((*(signed char *)0xC7F3051) << 2)))) + ((t20 << 2) << 2))); }
         FUN_0c024300((((int)stk + 0) + 0x2C), ((((struct oC_float *)((((int)stk + 0) + 0x2C)))->v)), 1.0f, 0.0f, 1.0f);
         t20 = (t20 + 0x1);
     }

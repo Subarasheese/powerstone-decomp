@@ -11,11 +11,11 @@ struct o308_uint { char p[0x308]; unsigned int v; };
 struct o30E_uchar { char p[0x30E]; unsigned char v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
-extern int FUN_0c0e6fe8();
+int _modlu(void);
+extern int _quick_odd_mvn();
 int obj_destroy(int, int, int, int);
 int obj_find_hitting_player(int);
 struct o24_float { char p[0x24]; float v; };
@@ -24,18 +24,21 @@ struct oEC_short { char p[0xEC]; short v; };
 int obj_set_record(int, int);
 int stage_obj_on_break(int);
 
-int stage_gimmick_21_spawn_b(int a4, int a5);
+int stage_gimmick_21_spawn_b(int, int);
+struct o0_float { float v; };
+struct oC_float { char p[0xC]; float v; };
+
 
 int stage_gimmick_21_spawn(int a4)
 {
     register int t0;
     register int t1;
-    register int t15;
+    register int t12;
 
     t0 = 0x0;
     for (;;) {
-        t1 = obj_create(0x4, 0x1, 0x1);
-        t15 = t1;
+        t1 = ((int (*)(int, int, int, int))obj_create)(0x4, 0x1, 0x1, 0x0);
+        t12 = t1;
         if (t1 != 0) {
             *(unsigned char *)((t1 + 0x0)) = 0x1;
             *(unsigned char *)((t1 + 0x1)) = 0x1;
@@ -53,21 +56,21 @@ int stage_gimmick_21_spawn(int a4)
             (((struct o105_uchar *)(t1))->v) = 0x1;
             (((struct o106_uchar *)(t1))->v) = 0x1;
             (((struct o107_uchar *)(t1))->v) = 0x0;
-            FUN_0c0e6fe8();
-            FUN_0c0e6fe8();
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x20)) = *(struct mv3 *)(((signed char)(((t0 << 1) + t0) << 2) + 0xC33A59C)); }
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x2C)) = *(struct mv3 *)(0xC33A590); }
             *(unsigned int *)((t1 + 0x30)) = (*(int *)(((t0 << 2) + 0xC33A5F0)));
-            FUN_0c0e6fe8();
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x50)) = *(struct mv3 *)(0xC33A584); }
             FUN_0c06233a(((((struct o2E0_int *)(t1))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
             *(unsigned char *)((((((struct o2E0_int *)(t1))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(t1))->v)) + 0x2)) = 0xF;
-            t15 = 0xF;
+            t12 = 0xF;
         }
         t0 = (t0 + 0x1);
         if ((int)t0 >= (int)0x7) {
             break;
         }
     }
-    return t15;
+    return t12;
 }
 
 int stage_gimmick_21_update(int a4, int a5, int a6, int a7)
@@ -97,14 +100,14 @@ int stage_gimmick_21_spawn_b(int a4, int a5)
 {
     int stk[1];
     register int t0;
-    register int t20;
-    register int t3;
-    register int t4;
-    register int t5;
+    register int t17;
+    register float t3;
+    register float u4;
+    register float u7;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
-    t0 = obj_create(0x2, 0x1, 0x1);
-    t20 = t0;
+    t0 = obj_create(0x2, 0x1, 0x1, 0x0);
+    t17 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -121,20 +124,23 @@ int stage_gimmick_21_spawn_b(int a4, int a5)
         (((struct o105_uchar *)(t0))->v) = 0x0;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         (((struct o107_uchar *)(t0))->v) = 0x0;
-        t3 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t4 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t5 = ((int (*)(void))(FUN_0c0e6fe8))();
-        math_rand_float();
-        *(volatile float *)0xC0B1DE0;
-        
-        (((struct oEC_ushort *)(t0))->v) = ((FUN_0c0e6f24()) + 0x46);
-        (((struct o3C_float *)(t0))->v) = (*(float *)0xC0B1DEC);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A584); }
+        t3 = math_rand_float();
+        u4 = (((struct o0_float *)0xC0B1DE0)->v);
+        u7 = (t3 * u4);
+        if (!(2.14748365e+09f > (t3 * u4))) {
+            u7 = (((t3 * u4)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        (((struct oEC_ushort *)(t0))->v) = (((int)((unsigned int)(int)u7 % (unsigned int)0x14)) + 0x46);
+        (((struct o3C_float *)(t0))->v) = ((((struct oC_float *)0xC0B1DE0)->v));
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t20 = 0xF;
+        t17 = 0xF;
     }
-    return t20;
+    return t17;
 }
 
 int stage_gimmick_21_update_b(int a4, int a5, int a6, int a7)

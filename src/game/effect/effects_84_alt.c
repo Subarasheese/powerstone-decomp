@@ -2,7 +2,7 @@
 
 struct oF0_short { char p[0xF0]; short v; };
 int math_vec3_add(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
@@ -22,7 +22,9 @@ int FUN_0c040410(int a4)
     register int t5;
     register int t6;
     register float u0;
+    register float u1;
 
+    u0 = *(float *)0xC0404E8;
     t0 = 0xC0404E8;
     t1 = (0x2E0 + a4);
     t2 = 0x0;
@@ -32,22 +34,18 @@ int FUN_0c040410(int a4)
         if ((*(signed char *)(((*(int *)((t4 + 0x0))) + 0x0))) != 0) {
             t5 = (*(int *)((t3 + 0x0)));
             t0 = 0x44;
-            t6 = t1;
             if (1.0f > (*(float *)((t5 + t0)))) {
-                *(float *)((t5 + t0)) = ((*(float *)((t5 + t0))) + 0.125f);
+                *(float *)((t5 + t0)) = ((*(float *)((t5 + t0))) + u0);
                 t0 = 0x48;
-                *(float *)((t5 + t0)) = ((*(float *)((t5 + t0))) + 0.125f);
+                *(float *)((t5 + t0)) = ((*(float *)((t5 + t0))) + u0);
                 t0 = 0x4C;
-                u0 = *(float *)((t5 + t0));
-                *(float *)((t5 + t0)) = (u0 + 0.125f);
-                if (!(1.0f > (u0 + 0.125f))) {
+                u1 = *(float *)((t5 + t0));
+                *(float *)((t5 + t0)) = (u1 + u0);
+                if (!(1.0f > (u1 + u0))) {
                     t0 = 0xC;
-                    t0 = (FUN_0c0e6fe8(t1));
-                } else {
-                    t6 = t1;
+                    { struct mv3 { int w[3]; }; *(struct mv3 *)((t5 + 0x44)) = *(struct mv3 *)(0xC149AC4); }
                 }
             }
-            t1 = t6;
             t1 = t5;
             t1 = (t1 + 0x4);
             t0 = (math_vec3_add(t1, (t5 + 0x4), (t5 + 0x28)));

@@ -12,9 +12,9 @@ struct o2E4_int { char p[0x2E4]; int v; };
 struct o40_float { char p[0x40]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
 void fx_spawn_056e2c(void)
 {
@@ -34,7 +34,7 @@ void fx_spawn_056e2c(void)
     }
 }
 
-int fx_tick_057128(int a4, int a5, int a6, int a7)
+int fx_tick_057128(int a4)
 {
     register int t0;
     register int t1;
@@ -143,7 +143,7 @@ int fx_tick_057128(int a4, int a5, int a6, int a7)
             }
             return t0;
         }
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
@@ -163,28 +163,36 @@ int fx_tick_057128(int a4, int a5, int a6, int a7)
         t1 = 0x18;
         t3 = 0xC06233A;
         t5 = (t5 << 2);
-        t1 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), ((int)g_res_font), ((*(signed char *)(((t6 + t0) + t1))) + t4)));
+        t1 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t0) + t1))) + t4)));
         t2 = 0x2E0;
+        t6 = 0x2E0;
         t2 = (t2 + a4);
         t2 = (t2 + t5);
         t3 = (*(int *)((t2 + 0x0)));
         t2 = 0x1C;
+        t6 = (t6 + a4);
+        t6 = (t6 + t5);
         *(unsigned char *)((t3 + 0x0)) = 0x0;
         t1 = (*(signed char *)((a4 + 0x4)));
-        *(volatile int *)((((0x2E0 + a4) + t5) + 0x0));
+        t6 = (*(int *)((t6 + 0x0)));
         t3 = 0xC0E6FE8;
+        t6 = (t6 + 0x4);
         t2 = ((short)t1 * (short)t2);
         t2 = (t2 + t0);
         t1 = 0xC;
-        t1 = (FUN_0c0e6fe8());
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t6) = *(struct mv3 *)(t2); }
         t1 = (*(signed char *)((a4 + 0x4)));
         t2 = 0x1C;
-        *(volatile int *)((((0x2E0 + a4) + t5) + 0x0));
+        t6 = 0x2E0;
+        t6 = (t6 + a4);
+        t6 = (t6 + t5);
+        t6 = (*(int *)((t6 + 0x0)));
         t2 = ((short)t1 * (short)t2);
+        t6 = (t6 + 0x1C);
         t2 = (t2 + t0);
         t2 = (t2 + 0xC);
         t1 = 0xC;
-        t1 = (FUN_0c0e6fe8());
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t6) = *(struct mv3 *)(t2); }
         t6 = t4 == 0;
         t4 = (t4 + 0x1);
         if (t6) {

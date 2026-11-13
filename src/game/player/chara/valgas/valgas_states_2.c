@@ -1,3 +1,4 @@
+typedef struct { int w[3]; } Stk3;
 /* Valgas attack update and state updates (part 2 of 3 of the same module) (0c089de8-0c08a106) */
 
 struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
@@ -18,7 +19,7 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct o719E_short { char p[0x719E]; short v; };
 struct oEC_short { char p[0xEC]; short v; };
-int fx_spawn_double_ring(int, int);
+int fx_spawn_double_ring(int, int, Stk3);
 int obj_force_owner_state27(int, int);
 int obj_set_owner_hit_record(int, int);
 int pl_step_motion(int);
@@ -28,7 +29,7 @@ int pl_apply_acceleration(int);
 int pl_apply_motion_translation(int);
 int pl_landed(int);
 int FUN_0c0a3d5c(int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int pl_end_action_choose_state(int);
 
 int pl_valgas_special_id3(int a4)
@@ -60,7 +61,7 @@ int pl_valgas_special_id4(int a4)
 {
     int stk[5];
     register int t19;
-    register int t36;
+    register int t35;
 
     pl_step_motion(a4);
     pl_apply_motion_translation(a4);
@@ -84,20 +85,19 @@ int pl_valgas_special_id4(int a4)
     pl_apply_acceleration(a4);
     (((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v) = ((((struct o24_float *)(a4))->v));
     t19 = pl_landed(a4);
-    t36 = (signed char)t19;
+    t35 = (signed char)t19;
     if ((signed char)t19 != 0) {
         *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
         pl_step_motion(a4);
         pl_step_motion_owner((*(int *)((a4 + 0x1C))));
         obj_set_owner_hit_record(a4, 0x32);
         obj_force_owner_state27(a4, 0x32);
-        *(volatile int *)((a4 + 0x1C));
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)(((*(int *)((a4 + 0x1C))) + 0x20)); }
         *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + (*(float *)0xC08A058));
-        fx_spawn_double_ring((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3))), ((int)stk + 0));
-        t36 = (FUN_0c0a3d5c(((-(*(signed char *)((a4 + 0x3)))) + 0x1), (*(signed char *)((a4 + 0x27C)))));
+        fx_spawn_double_ring((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3))), ((int)stk + 0), *(Stk3 *)(((int)stk + 0)));
+        t35 = (FUN_0c0a3d5c(((-(*(signed char *)((a4 + 0x3)))) + 0x1), (*(signed char *)((a4 + 0x27C)))));
     }
-    return t36;
+    return t35;
 }
 
 int FUN_0c089fca(int a4)

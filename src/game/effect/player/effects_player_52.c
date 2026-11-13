@@ -15,42 +15,46 @@ struct o58_float { char p[0x58]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct Vec3i { int x, y, z; };
 int thunk_FUN_0c062242(int, float *);
 int math_vec3_sub(float *, float *, int);
 float math_signed_sqrt(float);
 int math_atan_angle16(float);
+struct o4_float { char p[0x4]; float v; };
+struct oEE_short { char p[0xEE]; short v; };
+
 
 int fx_spawn_35(int a4, int a5)
 {
     int stk[1];
     register int t0;
-    register int t51;
-    register int t8;
-    register int t16;
-    register int t21;
-    register float t25;
-    register int t26;
-    register float u28;
-    register float u31;
-    register int t32;
-    register float u35;
-    register float t37;
-    register int t38;
-    register float u40;
-    register int t43;
-    register float u46;
-    register float u48;
+    register int t55;
+    register int t7;
+    register int t15;
+    register int t20;
+    register float t24;
+    register int t25;
+    register float u27;
+    register float u30;
+    register int t31;
+    register float u34;
+    register float t36;
+    register int t37;
+    register float u39;
+    register int t42;
+    register float u45;
+    register float u47;
+    register int t48;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
-    t0 = obj_create(0x1, 0x1, 0x2);
-    t51 = t0;
+    t0 = obj_create(0x1, 0x1, 0x2, 0x0);
+    t55 = t0;
     if (t0 == 0) {
     } else {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -59,7 +63,7 @@ int fx_spawn_35(int a4, int a5)
         *(unsigned short *)((t0 + 0x6)) = 0x1F;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0C719C;
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         *(unsigned int *)((t0 + 0x2C)) = ((*(int *)((a4 + 0x2C))) + 0x2AAA);
         *(unsigned int *)((t0 + 0x30)) = (*(int *)((a4 + 0x30)));
         *(unsigned int *)((t0 + 0x34)) = (*(int *)((a4 + 0x34)));
@@ -68,43 +72,44 @@ int fx_spawn_35(int a4, int a5)
         (((struct o50_float *)(t0))->v) = 0.099999994f;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x41F;
-        t8 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x0);
+        t7 = *(signed char *)((a4 + 0x3));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), 0x0);
         (((struct o40_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x3F;
-        t16 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t16 << 1) + t16) << 2) << 1) + 0xC6002D0), 0x1);
-        t21 = (((struct o2E4_int *)(t0))->v);
-        (((struct o24_float *)(t21))->v) = 0.099999994f;
-        (((struct o20_float *)(t21))->v) = 0.099999994f;
-        (((struct o1C_float *)(t21))->v) = 0.099999994f;
+        t15 = *(signed char *)((a4 + 0x3));
+        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t15 << 1) + t15) << 2) << 1) + 0xC6002D0), 0x1);
+        t20 = (((struct o2E4_int *)(t0))->v);
+        (((struct o24_float *)(t20))->v) = 0.099999994f;
+        (((struct o20_float *)(t20))->v) = 0.099999994f;
+        (((struct o1C_float *)(t20))->v) = 0.099999994f;
         *(unsigned int *)((t0 + 0x1C)) = a4;
         (((struct oEC_ushort *)(t0))->v) = 0x1E;
         (((struct oEE_ushort *)(t0))->v) = (unsigned char)(*(signed char *)(((int)stk + 0)));
         (((struct o101_uchar *)(t0))->v) = 0x1;
         (((struct o102_uchar *)(t0))->v) = 0x0;
         obj_set_record_char(t0, 0x70);
-        t25 = math_sin_angle16((*(int *)((t0 + 0x30))));
-        t26 = *(signed char *)(((0xEE + t0) + 0x0));
-        u28 = (((struct o8_float *)(((signed char)(((t26 << 1) + t26) << 2) + 0xC33C8C8)))->v);
-        u31 = (((struct o20_float *)(t0))->v);
-        t32 = *(signed char *)(((0xEE + t0) + 0x0));
-        u35 = ((math_cos_angle16((*(int *)((t0 + 0x30))))) * (*(float *)((((signed char)(((t32 << 1) + t32) << 2) + 0xC33C8C8) + 0x0))));
-        u35 = u35 + u28 * t25;
-        (((struct o20_float *)(t0))->v) = (u31 + u35);
-        t37 = math_cos_angle16((*(int *)((t0 + 0x30))));
-        t38 = *(signed char *)(((0xEE + t0) + 0x0));
-        u40 = (((struct o8_float *)(((signed char)(((t38 << 1) + t38) << 2) + 0xC33C8C8)))->v);
-        t43 = *(signed char *)(((0xEE + t0) + 0x0));
-        u46 = (((struct o28_float *)(t0))->v);
-        u48 = ((math_sin_angle16((*(int *)((t0 + 0x30))))) * (*(float *)((((signed char)(((t43 << 1) + t43) << 2) + 0xC33C8C8) + 0x0))));
-        (((struct o28_float *)(t0))->v) = (u46 + (((t37 * u40)) - u48));
-        *(volatile signed char *)(((0xEE + t0) + 0x0));
-        *(volatile float *)((t0 + 0x24));
-        t51 = 0x24;
+        t24 = math_sin_angle16((*(int *)((t0 + 0x30))));
+        t25 = *(signed char *)(((0xEE + t0) + 0x0));
+        u27 = (((struct o8_float *)(((signed char)(((t25 << 1) + t25) << 2) + 0xC33C8C8)))->v);
+        u30 = (((struct o20_float *)(t0))->v);
+        t31 = *(signed char *)(((0xEE + t0) + 0x0));
+        u34 = ((math_cos_angle16((*(int *)((t0 + 0x30))))) * (*(float *)((((signed char)(((t31 << 1) + t31) << 2) + 0xC33C8C8) + 0x0))));
+        u34 = u34 + u27 * t24;
+        (((struct o20_float *)(t0))->v) = (u30 + u34);
+        t36 = math_cos_angle16((*(int *)((t0 + 0x30))));
+        t37 = *(signed char *)(((0xEE + t0) + 0x0));
+        u39 = (((struct o8_float *)(((signed char)(((t37 << 1) + t37) << 2) + 0xC33C8C8)))->v);
+        t42 = *(signed char *)(((0xEE + t0) + 0x0));
+        u45 = (((struct o28_float *)(t0))->v);
+        u47 = ((math_sin_angle16((*(int *)((t0 + 0x30))))) * (*(float *)((((signed char)(((t42 << 1) + t42) << 2) + 0xC33C8C8) + 0x0))));
+        (((struct o28_float *)(t0))->v) = (u45 + (((t36 * u39)) - u47));
+        t48 = *(signed char *)(((0xEE + t0) + 0x0));
+        (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + ((((struct o4_float *)((0xC33C8C8 + (signed char)(((t48 << 1) + t48) << 2))))->v)));
+        *(unsigned int *)((t0 + 0x30)) = ((*(int *)((t0 + 0x30))) + (*(int *)(((((((struct oEE_short *)(t0))->v)) << 2) + 0xC33C8EC))));
+        t55 = 0xC33C8EC;
     }
-    return t51;
+    return t55;
 }
 
 void fx35_calc_angles_to_point(char *obj, char *other, int arg2, int arg3, struct Vec3i *out)

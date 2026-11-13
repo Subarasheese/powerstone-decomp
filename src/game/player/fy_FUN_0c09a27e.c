@@ -31,7 +31,7 @@ L1: .DATA.L H'0C0E7080
 L2: .DATA.W H'00D0
 L3: NOP
 }
-extern void FUN_0c0e7080(void);
+extern void _quick_mvn(void);
 extern void FUN_0c0e1240(unsigned char *);
 extern void FUN_0c0e0ae0(unsigned char *);
 extern void FUN_0c0e2140(unsigned char *);

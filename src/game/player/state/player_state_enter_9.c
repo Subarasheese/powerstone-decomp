@@ -20,7 +20,7 @@ int pl_start_motion(int, int, int);
 int hit_find_wall_entry_by_kind(int, int);
 int snd_play_side_se(int, int);
 int snd_play_char_voice(int, int);
-int FUN_0c0e6fdc(int);
+int _quick_evn_mvn(int);
 struct o7207_uchar { char p[0x7207]; unsigned char v; };
 struct o720A_uchar { char p[0x720A]; unsigned char v; };
 struct o7236_uchar { char p[0x7236]; unsigned char v; };
@@ -39,7 +39,7 @@ int pl_enter_state_36(int a4, int a5)
     int stk[7];
     register int t1;
     register int t9;
-    register int t24;
+    register int t23;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
     (((struct o71BA_uchar *)(a4))->v) = 0x24;
@@ -64,18 +64,17 @@ int pl_enter_state_36(int a4, int a5)
     (((struct o71A8_uchar *)(a4))->v) = 0x1;
     if (t1 != 2) {
         t9 = hit_find_wall_entry_by_kind(a4, 0x9);
-        t24 = (signed char)t9;
+        t23 = (signed char)t9;
         if ((signed char)t9 != 0) {
-            *(volatile int *)((((((signed char)t9 - 1) << 2) + (0x2C0 + a4)) + 0x0));
-            FUN_0c0e6fdc(t9);
+            { struct mv6 { int w[6]; }; *(struct mv6 *)((((int)stk + 0) + 0x4)) = *(struct mv6 *)((*(int *)((((((signed char)t9 - 1) << 2) + (0x2C0 + a4)) + 0x0)))); }
             (((struct o24_float *)(a4))->v) = (((((((struct o4_float *)((((int)stk + 0) + 0x4)))->v)) - ((((struct o10_float *)((((int)stk + 0) + 0x4)))->v))) - (FUN_0c02651e(a4))) + (*(float *)0xC0A0940));
-            t24 = 0x24;
+            t23 = 0x24;
         }
     } else {
         (((struct o24_float *)(a4))->v) = (((((struct o729C_float *)(a4))->v)) + (*(float *)0xC0A0940));
-        t24 = 0x24;
+        t23 = 0x24;
     }
-    return t24;
+    return t23;
 }
 
 int pl_enter_state_37(int a4, int a5)
@@ -134,12 +133,11 @@ int pl_enter_state_38(int a4, int a5)
 float pl_enter_state_39(int a4, int a5)
 {
     int stk[7];
-    register int t9;
+    register float u18;
     register float u19;
-    register float u20;
-    register float t21;
-    register int t16;
-    register float u17;
+    register float t20;
+    register int t15;
+    register float u16;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
     (((struct o71BA_uchar *)(a4))->v) = 0x27;
@@ -162,22 +160,20 @@ float pl_enter_state_39(int a4, int a5)
     }
     (((struct o71A9_uchar *)(a4))->v) = 0x1;
     (((struct o71A8_uchar *)(a4))->v) = 0x1;
-    t9 = hit_find_wall_entry_by_kind(a4, 0xA);
-    *(volatile int *)((((((signed char)t9 - 1) << 2) + (0x2C0 + a4)) + 0x0));
-    FUN_0c0e6fdc(t9);
+    { struct mv6 { int w[6]; }; *(struct mv6 *)((((int)stk + 0) + 0x4)) = *(struct mv6 *)((*(int *)((((((signed char)(hit_find_wall_entry_by_kind(a4, 0xA)) - 1) << 2) + (0x2C0 + a4)) + 0x0)))); }
     if (((((struct oC_float *)((((int)stk + 0) + 0x4)))->v)) > ((((struct o14_float *)((((int)stk + 0) + 0x4)))->v))) {
-        t16 = 0x28;
-        u17 = ((((struct o8_float *)((((int)stk + 0) + 0x4)))->v));
+        t15 = 0x28;
+        u16 = ((((struct o8_float *)((((int)stk + 0) + 0x4)))->v));
     } else {
-        t16 = 0x20;
-        u17 = ((((struct o4_float *)(((int)stk + 0)))->v));
+        t15 = 0x20;
+        u16 = ((((struct o4_float *)(((int)stk + 0)))->v));
     }
-    *(float *)((a4 + t16)) = u17;
-    u19 = (((struct o10_float *)((((int)stk + 0) + 0x4)))->v);
-    u20 = (((struct o4_float *)((((int)stk + 0) + 0x4)))->v);
-    t21 = FUN_0c02651e(a4);
-    (((struct o24_float *)(a4))->v) = (((u20 - u19) - t21) + (*(float *)0xC0A0B70));
-    return t21;
+    *(float *)((a4 + t15)) = u16;
+    u18 = (((struct o10_float *)((((int)stk + 0) + 0x4)))->v);
+    u19 = (((struct o4_float *)((((int)stk + 0) + 0x4)))->v);
+    t20 = FUN_0c02651e(a4);
+    (((struct o24_float *)(a4))->v) = (((u19 - u18) - t20) + (*(float *)0xC0A0B70));
+    return t20;
 }
 
 int pl_enter_state_40(int a4, int a5)

@@ -135,9 +135,9 @@ float math_sin_angle16(int);
 int FUN_0c0e1550(int);
 int FUN_0c0e19b0(int);
 float FUN_0c0e2220(int, int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(void);
-extern int FUN_0c0e6fe8();
+int _divls(void);
+int _modls(void);
+extern int _quick_odd_mvn();
 int FUN_0c0f4128(int);
 int FUN_0c0f414e(int, int, int, int);
 int FUN_0c101148(int, int);
@@ -415,41 +415,51 @@ int FUN_0c106994(int a4, int a5, int a6, int a7)
 
 int FUN_0c1144b8(int a4)
 {
-    register int t0;
+    int t0;
     register int t1;
+    register int t2;
     register int t3;
     register int t4;
     register int t5;
+    register int t6;
+    register int t7;
+    register int t8;
+    register int t9;
 
-    *(volatile int *)(((a4 + 0x50) + 0x4));
-    *(volatile int *)(((a4 + 0x50) + 0x8));
-    t3 = FUN_0c0e6d00();
-    *(volatile int *)((t0 + 0x18));
-    *(volatile int *)((t0 + 0x20));
-    *(volatile int *)((t0 + 0x24));
-    *(volatile int *)((t0 + 0x10));
-    *(volatile int *)((t0 + 0x28));
-    t0 = FUN_0c0e6d00();
-    FUN_0c0e6e5c();
-    FUN_0c0e6d00();
-    
-    t4 = FUN_0c0e6d00();
-    t5 = t3;
-    if ((int)t3 > (int)t4) {
-        t5 = t4;
+    t1 = (int)((int)(*(int *)(((a4 + 0x50) + 0x4))) / (int)(*(int *)(((a4 + 0x50) + 0x8))));
+    t2 = *(int *)(((a4 + 0x50) + 0x20));
+    t3 = *(int *)(((a4 + 0x50) + 0x24));
+    t4 = *(int *)(((a4 + 0x50) + 0x10));
+    t5 = *(int *)(((a4 + 0x50) + 0x28));
+    t6 = (int)((int)((t5 + t4) - 1) / (int)t4);
+    t7 = (int)((int)((t5 + t4) - 1) % (int)t4);
+    t8 = (int)((int)((((*(int *)(((a4 + 0x50) + 0x18))) - t2) + t4) - 1) / (int)t4);
+    t9 = t8;
+    if (((int)t6 < (int)t8) && (t0 = *(int *)(((a4 + 0x50) + 0x18)), (int)(((t8 * t4) - ((t4 - t7) - 1)) + t2) < (int)t0)) {
+        t9 = (t8 + 0x1);
     }
-    t3 = t5;
-    if ((int)t5 > (int)t0) {
-        t3 = t0;
+    t0 = t3;
+    if ((int)t5 < (int)t3) {
+        t0 = (t3 + ((t4 - t7) - 1));
     }
-    t0 = *(int *)((t1 + 0x8));
-    t1 = t3;
-    if ((int)t3 > (int)t1) {
+    t2 = (int)((int)t0 / (int)t4);
+    t0 = t1;
+    if ((int)t1 > (int)t2) {
+        t0 = t2;
+    }
+    t1 = t0;
+    if ((int)t0 > (int)t6) {
+        t1 = t6;
+    }
+    t0 = *(int *)(((a4 + 0x50) + 0x8));
+    t2 = t1;
+    if ((int)t1 > (int)t9) {
+        t2 = t9;
     }
     if (t0 == 2) {
-        return ADXB_EvokeExpandSte(0x0, t1);
+        return ADXB_EvokeExpandSte(a4, t2);
     }
-    return ADXB_EvokeExpandMono(0x0, t1);
+    return ADXB_EvokeExpandMono(a4, t2);
 }
 
 int FUN_0c108372(int a4, int a5, int a6, int a7)

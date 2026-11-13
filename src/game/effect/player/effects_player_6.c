@@ -12,12 +12,12 @@ struct o44_float { char p[0x44]; float v; };
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int thunk_FUN_0c062242(int);
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -44,7 +44,7 @@ int fx_spawn_ryoma_spray(int a4, int a5)
     register int t5;
     register int t6;
 
-    t0 = obj_create(0x1, 0x1, 0x1);
+    t0 = obj_create(0x1, 0x1, 0x1, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -55,8 +55,8 @@ int fx_spawn_ryoma_spray(int a4, int a5)
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B8F9A;
         t2 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242(((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
-        FUN_0c0e6fe8();
+        ((int (*)(int, int))thunk_FUN_0c062242)(((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (t0 + 0x20));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
         *(unsigned int *)((t0 + 0x30)) = ((*(int *)((t0 + 0x30))) + (*(int *)(((a5 << 2) + 0xC33C300))));
         *(unsigned int *)((t0 + 0x2C)) = ((*(int *)((t0 + 0x2C))) + (*(int *)(((a5 << 2) + 0xC33C314))));
         (((struct o38_float *)(t0))->v) = ((math_cos_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000))) * 15.0f);

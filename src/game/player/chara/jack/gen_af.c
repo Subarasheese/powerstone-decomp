@@ -36,8 +36,8 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oEE0_float { char p[0xEE0]; float v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(void);
+int _divls(void);
+int _modls(void);
 int fx_spawn_037d88(int, int);
 int fx_spawn_0382a8(int);
 int fx_spawn_038a0c(int, int);
@@ -795,9 +795,7 @@ int pl_jack_attack_state_update(int a4, int a5, int a6, int a7)
                     (((struct oEE_ushort *)(a4))->v) = 0x25;
                 }
                 *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + (int)(((float)((((struct oEE_short *)(a4))->v)) * 65536.0f) / 360.0f));
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6e5c();
-                if (t0 == 0) {
+                if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x8)) == 0) {
                     obj_set_record_char(a4, 0x79);
                 }
                 t0 = (((struct oEC_short *)(a4))->v);
@@ -886,12 +884,8 @@ int pl_jack_attack_state_update(int a4, int a5, int a6, int a7)
             t0 = (((struct oEC_short *)(a4))->v);
             if ((t0 != 54) && ((t0 != 60) && ((t0 != 66) && ((t0 != 72) && ((t0 != 78) && ((t0 != 84) && ((t0 != 90) && (t0 != 96)))))))) {
             } else {
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6d00();
-                fx_spawn_jack_projectile(a4, t0);
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6d00();
-                fx_spawn_jack_projectile(a4, (t0 + 0x1));
+                fx_spawn_jack_projectile(a4, ((int)((int)(((((struct oEC_short *)(a4))->v)) - 54) / (int)0x3)));
+                fx_spawn_jack_projectile(a4, (((int)((int)(((((struct oEC_short *)(a4))->v)) - 54) / (int)0x3)) + 0x1));
             }
             pl_step_motion(a4);
             t0 = 0x71AA;
@@ -974,9 +968,7 @@ int pl_jack_attack_state_update(int a4, int a5, int a6, int a7)
                     (((struct oEE_ushort *)(a4))->v) = 0x25;
                 }
                 *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + (int)(((float)((((struct oEE_short *)(a4))->v)) * 65536.0f) / 360.0f));
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6e5c();
-                if (t0 == 0) {
+                if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x8)) == 0) {
                     obj_set_record_char(a4, 0x79);
                 }
                 t0 = (((struct oEC_short *)(a4))->v);
@@ -1062,12 +1054,8 @@ int pl_jack_attack_state_update(int a4, int a5, int a6, int a7)
             t0 = (((struct oEC_short *)(a4))->v);
             if ((t0 != 54) && ((t0 != 60) && ((t0 != 66) && ((t0 != 72) && ((t0 != 78) && ((t0 != 84) && ((t0 != 90) && (t0 != 96)))))))) {
             } else {
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6d00();
-                fx_spawn_jack_projectile_alt(a4, t0);
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6d00();
-                fx_spawn_jack_projectile_alt(a4, (t0 + 0x1));
+                fx_spawn_jack_projectile_alt(a4, ((int)((int)(((((struct oEC_short *)(a4))->v)) - 54) / (int)0x3)));
+                fx_spawn_jack_projectile_alt(a4, (((int)((int)(((((struct oEC_short *)(a4))->v)) - 54) / (int)0x3)) + 0x1));
             }
             pl_step_motion(a4);
             t0 = 0x71AA;

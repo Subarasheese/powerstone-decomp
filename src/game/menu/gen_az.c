@@ -81,9 +81,9 @@ int FUN_0c0d7a44(int);
 int FUN_0c0dcd20(float, float, float);
 int FUN_0c0e1550(int);
 int FUN_0c0e21b0(int, int);
-int FUN_0c0e6e5c(void);
-extern int FUN_0c0e6fdc();
-extern int FUN_0c0e6fe8();
+int _modls(void);
+extern int _quick_evn_mvn();
+extern int _quick_odd_mvn();
 float ai_dist_to_opponent(int);
 int fx_spawn_item_sparkle(int);
 int fx_spawn_on_player_part(int, int, int, int, int, int, int, int);
@@ -983,29 +983,23 @@ int FUN_0c05bbc8(int a4)
 {
     register int t0;
     register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t5;
     register float u0;
 
-    t4 = *(signed char *)((a4 + 0x8));
-    if (t4 != 0) {
-        if (t4 != 1) {
-            return t4;
+    t0 = *(signed char *)((a4 + 0x8));
+    if (t0 != 0) {
+        if (t0 != 1) {
+            return t0;
         }
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-        t4 = (((struct o2E0_int *)(a4))->v);
-        t5 = (((struct oEC_short *)(a4))->v);
-        u0 = math_sin_angle16(((int)(((((float)((t5 << 1) + (t5 << 2)) * ((((struct o0_float *)0xC05BD18)->v))) / ((((struct o4_float *)0xC05BD18)->v)))) + ((((struct o8_float *)0xC05BD18)->v))) & 0xFFFF));
-        (((struct o8_float *)(t4))->v) = (u0 * ((((struct o14_float *)0xC05BD18)->v)));
-        t4 = (((struct o2E0_int *)(a4))->v);
-        *(unsigned int *)((t4 + 0x14)) = ((*(int *)((t4 + 0x14))) + 0xB6);
-        *(volatile short *)((a4 + 0xEC));
-        t4 = FUN_0c0e6e5c();
-        math_rand_next();
-        t5 = FUN_0c0e6e5c();
-        if (t4 == t5) {
+        t0 = (((struct o2E0_int *)(a4))->v);
+        t1 = (((struct oEC_short *)(a4))->v);
+        u0 = math_sin_angle16(((int)(((((float)((t1 << 1) + (t1 << 2)) * ((((struct o0_float *)0xC05BD18)->v))) / ((((struct o4_float *)0xC05BD18)->v)))) + ((((struct o8_float *)0xC05BD18)->v))) & 0xFFFF));
+        (((struct o8_float *)(t0))->v) = (u0 * ((((struct o14_float *)0xC05BD18)->v)));
+        t0 = (((struct o2E0_int *)(a4))->v);
+        *(unsigned int *)((t0 + 0x14)) = ((*(int *)((t0 + 0x14))) + 0xB6);
+        t0 = (int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x1E);
+        t1 = (int)((int)(math_rand_next()) % (int)0x1E);
+        if (t0 == t1) {
             fx_spawn_item_sparkle((a4 + 0x20));
         }
         if (((((struct o274_float *)(a4))->v)) > 0.0f) {
@@ -1018,10 +1012,10 @@ int FUN_0c05bbc8(int a4)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned int *)((a4 + 0x2C)) = 0x0;
     *(unsigned int *)((a4 + 0x34)) = 0x0;
-    t4 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(a4, 0x0, 0x1);
-    t4 = ((int (*)(int))(FUN_0c0e6fe8))(t0);
-    (((struct o105_uchar *)(t2))->v) = t1;
-    (((struct o107_uchar *)(t2))->v) = t3;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x38)) = *(struct mv3 *)(0xC336298); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x44)) = *(struct mv3 *)(0xC3362B0); }
+    (((struct o105_uchar *)(a4))->v) = 0x1;
+    (((struct o107_uchar *)(a4))->v) = 0x0;
     return 0x107;
 }
 

@@ -7,7 +7,7 @@ struct o58_uint { char p[0x58]; unsigned int v; };
 struct o5C_uint { char p[0x5C]; unsigned int v; };
 struct o719E_short { char p[0x719E]; short v; };
 struct o72BC_int { char p[0x72BC]; int v; };
-int FUN_0c0e6d00(void);
+int _divls(void);
 extern float math_rand_float(void);
 extern void fx_spawn_03d8b0(char *obj, int choice);
 struct o20_float { char p[0x20]; float v; };
@@ -15,21 +15,16 @@ struct o28_float { char p[0x28]; float v; };
 int math_atan_angle16(float);
 float math_sin_angle16(int);
 int pl_angle_to_target_pos(int a4);
+struct o5C_int { char p[0x5C]; int v; };
+
 
 int FUN_0c085606(int a4)
 {
     int stk[3];
     register int t1;
     register int t15;
-    register int t27;
-    register int t40;
-    register int t20;
-    register int t23;
-    register int t28;
-    register int t33;
-    register int t36;
-    register int t41;
-    register int t46;
+    register int t25;
+    register int t35;
 
     t1 = ((((struct o72BC_int *)(a4))->v));
     for (;;) {
@@ -43,37 +38,24 @@ int FUN_0c085606(int a4)
         (((struct o58_uint *)(((0x1E80 + a4) + 0x14A0)))->v) = (*(int *)((t1 + 0x8)));
         (((struct o5C_uint *)(((0x1E80 + a4) + 0x14A0)))->v) = (*(int *)((t1 + 0xC)));
     } else {
-        *(volatile int *)(((t1 - 16) + 0x4));
-        *(volatile int *)((t1 + 0x4));
-        *(volatile short *)(((t1 - 16) + 0x0));
-        *(volatile short *)((t1 + 0x0));
-        t15 = FUN_0c0e6d00();
+        t15 = (int)((int)(short)((*(int *)((t1 + 0x4))) - (*(int *)(((t1 - 16) + 0x4)))) / (int)((*(short *)((t1 + 0x0))) - (*(short *)(((t1 - 16) + 0x0)))));
         *(unsigned int *)((((int)stk + 0) + 0x0)) = (short)t15;
         if (((short)t15 & 0x8000) != 0) {
             *(unsigned int *)((((int)stk + 0) + 0x0)) = ((*(int *)((((int)stk + 0) + 0x0))) | 0xFFFF0000);
         }
-        (((struct o54_uint *)(t20))->v) = (((((struct o54_int *)(t20))->v)) + (*(int *)((((int)stk + 0) + 0x0))));
-        *(volatile int *)(((t1 - 16) + 0x8));
-        *(volatile int *)((t23 + 0x8));
-        *(volatile short *)((t23 + 0x0));
-        *(volatile short *)(((t1 - 16) + 0x0));
-        t27 = FUN_0c0e6d00();
-        *(unsigned int *)((t28 + 0x4)) = (short)t27;
-        if (((short)t27 & 0x8000) != 0) {
-            *(unsigned int *)((t28 + 0x4)) = ((*(int *)((t28 + 0x4))) | 0xFFFF0000);
+        (((struct o54_uint *)(((0x1E80 + a4) + 0x14A0)))->v) = (((((struct o54_int *)(((0x1E80 + a4) + 0x14A0)))->v)) + (*(int *)((((int)stk + 0) + 0x0))));
+        t25 = (int)((int)(short)((*(int *)((t1 + 0x8))) - (*(int *)(((t1 - 16) + 0x8)))) / (int)((*(short *)((t1 + 0x0))) - (*(short *)(((t1 - 16) + 0x0)))));
+        *(unsigned int *)((((int)stk + 0) + 0x4)) = (short)t25;
+        if (((short)t25 & 0x8000) != 0) {
+            *(unsigned int *)((((int)stk + 0) + 0x4)) = ((*(int *)((((int)stk + 0) + 0x4))) | 0xFFFF0000);
         }
-        (((struct o58_uint *)(t33))->v) = (((((struct o58_int *)(t33))->v)) + (*(int *)((t28 + 0x4))));
-        *(volatile int *)(((t1 - 16) + 0xC));
-        *(volatile int *)((t36 + 0xC));
-        *(volatile short *)((t36 + 0x0));
-        *(volatile short *)(((t1 - 16) + 0x0));
-        t40 = FUN_0c0e6d00();
-        *(unsigned int *)((t41 + 0x8)) = (short)t40;
-        if ((0x8000 & (short)t40) != 0) {
-            *(unsigned int *)((t41 + 0x8)) = ((*(int *)((t41 + 0x8))) | 0xFFFF0000);
+        (((struct o58_uint *)(((0x1E80 + a4) + 0x14A0)))->v) = (((((struct o58_int *)(((0x1E80 + a4) + 0x14A0)))->v)) + (*(int *)((((int)stk + 0) + 0x4))));
+        t35 = (int)((int)(short)((*(int *)((t1 + 0xC))) - (*(int *)(((t1 - 16) + 0xC)))) / (int)((*(short *)((t1 + 0x0))) - (*(short *)(((t1 - 16) + 0x0)))));
+        *(unsigned int *)((((int)stk + 0) + 0x8)) = (short)t35;
+        if ((0x8000 & (short)t35) != 0) {
+            *(unsigned int *)((((int)stk + 0) + 0x8)) = ((*(int *)((((int)stk + 0) + 0x8))) | 0xFFFF0000);
         }
-        *(volatile int *)((t41 + 0x8));
-        *(volatile int *)((t46 + 0x5C));
+        (((struct o5C_uint *)(((0x1E80 + a4) + 0x14A0)))->v) = (((((struct o5C_int *)(((0x1E80 + a4) + 0x14A0)))->v)) + (*(int *)((((int)stk + 0) + 0x8))));
     }
     return 0x5C;
 }

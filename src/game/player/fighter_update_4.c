@@ -40,8 +40,8 @@ int FUN_0c0555c4(void);
 int FUN_0c0555dc(void);
 int pl_hitreact_update(int, int, int);
 int FUN_0c09375c(int, int, int);
-int pl_state_dispatch_720a(int);
-int FUN_0c098b9c(int);
+int pl_state_dispatch_720a(int, int, int, int, int, int, int, int);
+int FUN_0c098b9c(int, int, int, int, int, int, int, int);
 int pl_clear_tint_flag(int);
 int FUN_0c099a92(int);
 int FUN_0c099ac6(int);
@@ -49,7 +49,7 @@ int FUN_0c099ae4(int);
 int FUN_0c099afe(int);
 int pl_start_motion(int, int, int);
 int FUN_0c09bb9e(int, int);
-int FUN_0c09bcbc(int);
+int FUN_0c09bcbc(int, int, int, int, int, int);
 int pl_get_held_item_class(int, int, int);
 int pl_mash_reduce_counter(int, int);
 int pl_check_item_pickup(int);
@@ -60,7 +60,7 @@ int pl_change_state(int, int, int);
 int snd_play_side_se(int, int);
 int obj_clear_slot_contact(int);
 int obj_collect_slot_contacts(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int pl_end_action_choose_state(int);
 
 int pl_update_frame(int a4)
@@ -230,7 +230,7 @@ int pl_update_frame(int a4)
     if (v0_0) goto L_C0935A8;
     L_C0935B0:;
     pl_update_camera_side_flag(R14);
-    FUN_0c0e6fe8();
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((0x7264 + R14)) = *(struct mv3 *)((R14 + 0x20)); }
     v0_1 = (*(signed char *)((R14 + 0x105))) == 0;
     v0_0 = (0x105);
     if (v0_1) goto L_C0935D2;
@@ -264,7 +264,7 @@ int pl_update_frame(int a4)
     (((struct o72A2_ushort *)(R14))->v) = (int)w0_0;
     FPUL_ = ((int)w0_0);
     L_C09363E:;
-    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((((int)g_pl_char_frame_hook_tbl) + ((*(signed char *)((R14 + 0x4))) << 2))))))(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    v0_0 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((0xC339070 + ((*(signed char *)((R14 + 0x4))) << 2))))))(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
     v0_1 = *(signed char *)((R14 + 0x9));
     v0_0 = (v0_1);
     if ((v0_1 == 0)) goto L_C093660;
@@ -272,14 +272,13 @@ int pl_update_frame(int a4)
     if ((v0_0 == 2)) goto L_C09369E;
     if ((v0_0 == 3)) goto L_C0936A8;
     L_C0936AE:;
-    FUN_0c09bb9e(R14, (*(int *)((((*(signed char *)((R14 + 0x4))) << 2) + ((int)g_pl_char_param_ptr_tbl)))));
-    FUN_0c09bcbc(R14);
+    FUN_0c09bb9e(R14, (*(int *)((((*(signed char *)((R14 + 0x4))) << 2) + 0xC3390A4))));
+    FUN_0c09bcbc(R14, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 4));
     (((struct o71FC_uint *)(R14))->v) = ((((struct o71F8_int *)(R14))->v));
     (((struct o71F8_uint *)(R14))->v) = ((((struct o2E4_int *)(R14))->v));
     (((struct o71CC_uint *)(R14))->v) = R12;
     pl_update_pos_delta(R14);
-    v0_0 = (*(signed char *)((R14 + 0x71A4))) != (*(signed char *)((R14 + 0x71B5)));
-    if (v0_0) goto L_C09370A;
+    if (((*(signed char *)((R14 + 0x71A4))) != (*(signed char *)((R14 + 0x71B5))))) goto L_C09370A;
     v0_0 = (*(signed char *)((R14 + 0x71A5))) != (*(signed char *)((R14 + 0x71B6)));
     if (v0_0) goto L_C09370A;
     v0_0 = ((((struct o719E_short *)(R14))->v)) != ((((struct o71B8_short *)(R14))->v));
@@ -298,10 +297,10 @@ int pl_update_frame(int a4)
     (((struct o72B0_uchar *)(R14))->v) = R12;
     goto L_C09370E;
     L_C0936A8:;
-    FUN_0c098b9c(R14);
+    FUN_0c098b9c(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 4), *(int *)((int)stk + 8), *(int *)((int)stk + 12));
     goto L_C0936AE;
     L_C09369E:;
-    pl_state_dispatch_720a(R14);
+    pl_state_dispatch_720a(R14, R5, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 4), *(int *)((int)stk + 8), *(int *)((int)stk + 12));
     goto L_C0936AE;
     L_C093694:;
     pl_hitreact_update(R14, R5, R6);

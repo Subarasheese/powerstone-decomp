@@ -124,7 +124,7 @@ int FUN_0c0e16c0(void);
 int FUN_0c0e1900(int);
 int FUN_0c0e19b0(int);
 int FUN_0c0e4980(int, int);
-int FUN_0c0e6d00(void);
+int _divls(void);
 int FUN_0c0eb5c8(int, int);
 int FUN_0c0f4328(int, int, int, int, int, int);
 int FUN_0c0fb042(int, int, int, int);
@@ -429,15 +429,14 @@ int FUN_0c0fefee(int a4, int a5)
 
 int FUN_0c0f4e2c(int a4, int a5, int a6, int a7)
 {
-    register int t0;
     register int t1;
+    register int t6;
 
     if ((*(int *)((a4 + 0x14))) != 0) {
-        t0 = *(int *)((a4 + 0x14));
-        t1 = ((int (*)(int, int, int, int))((*(int *)(((*(int *)((t0 + 0x0))) + 0x24)))))(t0, 0x1, a6, a7);
-        t0 = (FUN_0c0e6d00());
+        t1 = *(int *)((a4 + 0x14));
+        t6 = ((int)((int)(((int (*)(int, int, int, int))((*(int *)(((*(int *)((t1 + 0x0))) + 0x24)))))(t1, 0x1, a6, a7)) / (int)0x800));
     }
-    return t0;
+    return t6;
 }
 
 int FUN_0c108552(int a4, int a5, int a6, int a7)

@@ -58,7 +58,7 @@ int ui_draw_text_stub(int, int, float, float, float, float);
 struct o71EC_uchar { char p[0x71EC]; unsigned char v; };
 int FUN_0c0158d8(void);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 int FUN_0c031030(void);
 extern int game_frame_update();
 extern int bgm_play_rank();
@@ -655,6 +655,9 @@ int FUN_0c0d3be6(void)
     register int t2;
     register int t3;
     register int t4;
+    register float u0;
+    register float u1;
+    register float u2;
 
     if ((unsigned char)(*(signed char *)0xC7F2EE7) != 0) {
     } else {
@@ -667,28 +670,35 @@ int FUN_0c0d3be6(void)
         (((struct o0_uint *)0xC7F31BC)->v) = 0xFFFFFFFF;
         FUN_0c0158d8();
         (((struct o0_uchar *)0xC7E40C7)->v) = 0x0;
-        t3 = 0xC7F314C;
+        t2 = 0xC7F314C;
         if ((*(signed char *)0xC7F3018) == 0) {
-            t3 = 0xC7F3083;
+            t2 = 0xC7F3083;
         }
-        (((struct o1_uchar *)0xC7E40C7)->v) = (*(signed char *)((t3 + 0x0)));
+        (((struct o1_uchar *)0xC7E40C7)->v) = (*(signed char *)((t2 + 0x0)));
         (((struct o1_uchar *)0xC7EB2B0)->v) = 0x1;
         (((struct o0_uchar *)0xC7EB2B0)->v) = 0x1;
         (((struct o0_uchar *)0xC7EB397)->v) = 0x1;
-        math_rand_float();
-        *(volatile float *)0xC0D3D7C;
-        
-        (((struct o1_uchar *)0xC7EB397)->v) = (FUN_0c0e6f24());
+        u0 = math_rand_float();
+        u1 = *(float *)0xC0D3D7C;
+        u2 = (u0 * u1);
+        if (!(2.14748365e+09f > (u0 * u1))) {
+            u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        (((struct o1_uchar *)0xC7EB397)->v) = ((int)((unsigned int)(int)u2 % (unsigned int)0x8));
         (((struct o1_uchar *)0xC7F2580)->v) = 0x1;
-        math_rand_float();
-        *(volatile float *)0xC0D3D7C;
-        
-        (((struct o0_uchar *)0xC7F2580)->v) = ((FUN_0c0e6f24()) + 0x1);
+        u0 = math_rand_float();
+        u1 = *(float *)0xC0D3D7C;
+        u2 = (u0 * u1);
+        if (!(2.14748365e+09f > (u0 * u1))) {
+            u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        (((struct o0_uchar *)0xC7F2580)->v) = (((int)((unsigned int)(int)u2 % (unsigned int)0x2)) + 0x1);
         *(unsigned char *)0xC7F3051 = (*(signed char *)0xC7EB398);
+        t2 = 0xC0E6F24;
         t3 = 0x0;
         for (;;) {
             t4 = *(int *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x1C));
-            if (((*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x4))) == (*(signed char *)((t4 + 0x4)))) && (t0 = *(signed char *)((t4 + 0x71EC)), t1 = t0, t2 = *(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71EC)), t2 == t1)) {
+            if (((*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x4))) == (*(signed char *)((t4 + 0x4)))) && (t0 = *(signed char *)((t4 + 0x71EC)), t2 = t0, t1 = *(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71EC)), t1 == t2)) {
                 t4 = 0x1;
                 if ((*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71EC))) == 1) {
                     t4 = 0x2;

@@ -1,9 +1,9 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03a12c-0c03a278) */
 
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(void);
+int _modls(void);
+int _quick_odd_mvn(void);
 
 int FUN_0c03a12c(int a4, int a5, int a6)
 {
@@ -12,19 +12,19 @@ int FUN_0c03a12c(int a4, int a5, int a6)
     register int t4;
     register int t5;
     register int t6;
-    register int t22;
-    register int t24;
-    register int t26;
+    register int t19;
+    register int t21;
+    register int t23;
     register int t0;
     register int t1;
     register int t2;
     register int t7;
     register int t8;
+    register int t25;
+    register int t27;
     register int t28;
+    register int t29;
     register int t30;
-    register int t31;
-    register int t32;
-    register int t33;
 
     t3 = a4;
     t4 = a5;
@@ -37,7 +37,7 @@ int FUN_0c03a12c(int a4, int a5, int a6)
         t4 = 0x1;
         t5 = 0x6;
         t3 = 0x5;
-        t0 = (obj_create(t3, t4, t5));
+        t0 = (obj_create(t3, t4, t5, 0x0));
         t8 = t0;
         if (t0 != 0) {
             *(unsigned char *)((t8 + 0x0)) = 0x1;
@@ -60,21 +60,21 @@ int FUN_0c03a12c(int a4, int a5, int a6)
             t0 = (t0 + 0x2);
             *(unsigned short *)((t8 + t0)) = 0x0;
             t0 = 0xC;
-            t0 = (FUN_0c0e6fe8());
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(t1) = *(struct mv3 *)((a4 + 0x20)); }
             t1 = t8;
             t1 = (t1 + 0x2C);
             t0 = 0xC;
-            t0 = (FUN_0c0e6fe8());
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(t1) = *(struct mv3 *)((a4 + 0x2C)); }
             t1 = t8;
             t1 = (t1 + 0x50);
             t0 = 0xC;
-            t0 = (FUN_0c0e6fe8());
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(t1) = *(struct mv3 *)(0xC3216E0); }
             t0 = 0x118;
             t2 = 0xC0E6E5C;
             *(unsigned int *)((t8 + t0)) = 0x0;
             t0 = 0x3;
             t1 = t6;
-            t0 = (FUN_0c0e6e5c());
+            t0 = ((int)((int)t1 % (int)t0));
             t1 = t0;
             t6 = t0;
             t0 = 0xC3215A0;
@@ -111,9 +111,9 @@ int FUN_0c03a12c(int a4, int a5, int a6)
             t3 = 0x4;
             t4 = 0xC3215AD;
             t5 = 0x1;
-            t22 = *(int *)((t8 + t0));
+            t19 = *(int *)((t8 + t0));
             t0 = 0x90;
-            *(unsigned int *)((t22 + t0)) = 0x0;
+            *(unsigned int *)((t19 + t0)) = 0x0;
             t0 = 0x2E0;
             t2 = (*(int *)((t8 + t0)));
             t0 = 0x7;
@@ -123,33 +123,33 @@ int FUN_0c03a12c(int a4, int a5, int a6)
                 t5 = (t5 + 0x1);
                 t1 = 0x90;
                 t0 = (t0 + t8);
-                t24 = *(signed char *)((t4 + 0x0));
+                t21 = *(signed char *)((t4 + 0x0));
                 t4 = (t4 + 0x1);
                 t2 = (*(int *)((t3 + t0)));
                 t1 = (t1 + t2);
                 t2 = 0x2E0;
-                t26 = *(int *)(((t24 << 2) + t0));
+                t23 = *(int *)(((t21 << 2) + t0));
                 t0 = 0xF;
                 t2 = (t2 + t8);
                 t2 = (t2 + t3);
-                *(unsigned int *)((t1 + 0x0)) = (t26 + 0x50);
+                *(unsigned int *)((t1 + 0x0)) = (t23 + 0x50);
                 *(unsigned short *)(((*(int *)((t2 + 0x0))) + 0x2)) = t0;
                 t3 = (t3 + 0x4);
                 if ((int)t5 >= (int)0x6) {
                     break;
                 }
             }
-            t28 = t1;
-            t30 = t2;
-            t31 = t3;
-            t32 = t4;
-            t33 = t5;
+            t25 = t1;
+            t27 = t2;
+            t28 = t3;
+            t29 = t4;
+            t30 = t5;
         }
-        t1 = t28;
-        t2 = t30;
-        t3 = t31;
-        t4 = t32;
-        t5 = t33;
+        t1 = t25;
+        t2 = t27;
+        t3 = t28;
+        t4 = t29;
+        t5 = t30;
         t6 = (t6 + 0x1);
     }
     return t0;

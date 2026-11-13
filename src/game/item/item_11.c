@@ -15,33 +15,29 @@ struct o2F8_int { char p[0x2F8]; int v; };
 struct o30C_uchar { char p[0x30C]; unsigned char v; };
 struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o30F_uchar { char p[0x30F]; unsigned char v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
 int item_create(int a4, int a5)
 {
     int stk[2];
     register int t0;
-    register int t33;
+    register int t26;
+    register int t3;
     register int t4;
     register int t9;
-    register int t16;
-    register int t17;
+    register int t12;
+    register int t13;
     register int t18;
     register int t19;
-    register int t24;
-    register int t25;
-    register int t27;
-    register int t29;
-    register int t10;
-    register int t14;
-    register int t15;
+    register int t21;
+    register int t22;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a5;
-    t0 = obj_create(0x2, 0x1, 0x7);
-    t33 = t0;
+    t0 = obj_create(0x2, 0x1, 0x7, 0x0);
+    t26 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
@@ -63,37 +59,37 @@ int item_create(int a4, int a5)
         (((struct o102_uchar *)(t0))->v) = 0x1;
         (((struct o105_uchar *)(t0))->v) = 0x1;
         (((struct o106_uchar *)(t0))->v) = 0x1;
-        *(volatile signed char *)0xC7F3051;
+        t3 = *(signed char *)0xC7F3051;
         t4 = *(signed char *)(((int)stk + 0));
-        t9 = ((int (*)(int, int, int))(FUN_0c0e6fe8))((signed char)((((t4 << 1) + t4) << 2) << 1), 0xC7F302C, 0xC33CA80);
-        *(volatile signed char *)((t10 + 0x25));
-        t16 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(t15, t10, t14);
-        t17 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((((short)(((((t3 << 2) << 1) + t3) << 2) << 1) + 0xC33CA80) + (signed char)((((t4 << 1) + t4) << 2) << 1))); }
+        t9 = *(signed char *)0xC7F3051;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(((((short)(((((t9 << 2) << 1) + t9) << 2) << 1) + 0xC33CA80) + (signed char)((((t4 << 1) + t4) << 2) << 1)) + 0xC)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33635C); }
         *(unsigned int *)(((int)stk + 0)) = 0xC33637C;
         *(unsigned int *)(((int)stk + 4)) = 0xC3363D0;
-        t18 = 0x0;
-        t19 = 0x0;
+        t12 = 0x0;
+        t13 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t19) + 0x0))), ((int)g_res_kyoutsuu), (*(signed char *)(((signed char)t18 + 0xC336374))));
-            *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t19) + 0x0))) + 0x0)) = 0x0;
-            t24 = *(int *)(((int)stk + 4));
-            t25 = *(int *)((((0x2E0 + t0) + t19) + 0x0));
-            *(unsigned int *)(((int)stk + 4)) = (t24 + 0x2);
-            *(unsigned short *)((t25 + 0x2)) = (*(short *)((((t24 + 0x2) - 2) + 0x0)));
-            t27 = *(int *)(((int)stk + 0));
-            *(volatile int *)((((0x2E0 + t0) + t19) + 0x0));
-            *(unsigned int *)(((int)stk + 0)) = (t27 + 0xC);
-            t29 = ((int (*)(void))(FUN_0c0e6fe8))();
-            t18 = (t18 + 0x1);
-            t19 = (t19 + 0x4);
-            if ((int)(signed char)t18 >= (int)0x7) {
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t13) + 0x0))), 0xC4CFA68, (*(signed char *)(((signed char)t12 + 0xC336374))));
+            *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t13) + 0x0))) + 0x0)) = 0x0;
+            t18 = *(int *)(((int)stk + 4));
+            t19 = *(int *)((((0x2E0 + t0) + t13) + 0x0));
+            *(unsigned int *)(((int)stk + 4)) = (t18 + 0x2);
+            *(unsigned short *)((t19 + 0x2)) = (*(short *)((((t18 + 0x2) - 2) + 0x0)));
+            t21 = *(int *)(((int)stk + 0));
+            t22 = *(int *)((((0x2E0 + t0) + t13) + 0x0));
+            *(unsigned int *)(((int)stk + 0)) = (t21 + 0xC);
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t22 + 0x4)) = *(struct mv3 *)(((t21 + 0xC) - 12)); }
+            t12 = (t12 + 0x1);
+            t13 = (t13 + 0x4);
+            if ((int)(signed char)t12 >= (int)0x7) {
                 break;
             }
         }
         *(unsigned char *)((((((struct o2F8_int *)(t0))->v)) + 0x0)) = 0x1;
         (((struct o1C_float *)(((((struct o2F8_int *)(t0))->v))))->v) = 0.0f;
         (((struct o24_float *)(((((struct o2F8_int *)(t0))->v))))->v) = 0.0f;
-        t33 = 0x24;
+        t26 = 0x24;
     }
-    return t33;
+    return t26;
 }

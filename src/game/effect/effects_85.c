@@ -18,7 +18,7 @@ int math_vec3_add(int, int, int);
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o2C_float { char p[0x2C]; float v; };
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
 void fx_spawn_040550(char obj, char arg1, struct vec3i *arg2)
 {

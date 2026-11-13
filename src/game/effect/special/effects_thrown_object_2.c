@@ -8,8 +8,8 @@ struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int FUN_0c06231c(int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6f24(void);
+int _modls(void);
+int _modlu(void);
 
 float FUN_0c0c8460(int a4)
 {
@@ -25,17 +25,22 @@ float FUN_0c0c8460(int a4)
         if ((*(signed char *)((t0 + 0x0))) != 0) {
             (((struct oF2_ushort *)(a4))->v) = 0x1;
         } else {
-            math_rand_float();
-            
-            (((struct oF2_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x1);
-            *(volatile short *)((a4 + 0xF0));
-            (((struct oF0_ushort *)(a4))->v) = (FUN_0c0e6e5c());
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            (((struct oF2_ushort *)(a4))->v) = (((int)((unsigned int)(int)u1 % (unsigned int)0x4)) + 0x1);
+            (((struct oF0_ushort *)(a4))->v) = ((int)((int)(((((struct oF0_short *)(a4))->v)) + 0x1) % (int)0x3));
             *(unsigned char *)((t0 + 0x0)) = 0x1;
             t1 = *(signed char *)((a4 + 0x3));
             FUN_0c06231c(t0, ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0x1C);
-            math_rand_float();
-            
-            t1 = FUN_0c0e6f24();
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            t1 = (int)((unsigned int)(int)u1 % (unsigned int)0x20);
             u0 = (float)(((t1 << 8) << 2) << 1);
             if ((int)(((t1 << 8) << 2) << 1) < 0) {
                 u0 = ((float)(((t1 << 8) << 2) << 1) + 4.2949673e+09f);

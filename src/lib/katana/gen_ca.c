@@ -83,7 +83,7 @@ int snd_play_side_se(int, int);
 int pl_play_side_se_at_frame(int, int, int);
 int FUN_0c0a3824(int);
 float math_signed_sqrt(float);
-int FUN_0c0e6fe8(int, int, int, float);
+int _quick_odd_mvn(int, int, int, float);
 int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor2(int, int, int, int);
 int kmiBGPlanePutWord(int, int, int);

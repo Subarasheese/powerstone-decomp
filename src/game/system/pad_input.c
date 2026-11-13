@@ -9,7 +9,7 @@ struct o20_ushort { char p[0x20]; unsigned short v; };
 struct o22_ushort { char p[0x22]; unsigned short v; };
 float math_signed_sqrt(float);
 int math_atan_angle16(int, float);
-int FUN_0c0e6d00(void);
+int _divls(void);
 int FUN_0c0f263a(int);
 
 int pad_state_clear(void)
@@ -50,24 +50,13 @@ int pad_poll_all(void)
 {
     register int t0;
     register int t1;
+    register int t2;
     register int t3;
-    register int t36;
-    register int t38;
-    register float u39;
-    register float u40;
-    register float u41;
-    register float t42;
-    register int t43;
-    register int t44;
-    register float u46;
-    register float u49;
-    register int t63;
-    register int t91;
-    register int t92;
-    register int t93;
-    register float u98;
-    register float u99;
-    int t64;
+    register int t4;
+    register float u0;
+    register float u1;
+    register float u2;
+    register float u3;
 
     t0 = 0x0;
     t1 = 0xC361BF0;
@@ -110,30 +99,30 @@ int pad_poll_all(void)
             *(unsigned char *)(((t1 + 0x10) + 0x3)) = 0x80;
             *(unsigned char *)(((t1 + 0x10) + 0x2)) = 0x80;
         }
-        t36 = *(signed char *)((t1 + 0x12));
-        t38 = *(signed char *)((t1 + 0x13));
-        u39 = _builtin_fabsf((float)((unsigned char)t36 - 128));
-        u40 = _builtin_fabsf((float)((unsigned char)t36 - 128));
-        u41 = (_builtin_fabsf((float)((unsigned char)t38 - 128)) * _builtin_fabsf((float)((unsigned char)t38 - 128)));
-        u41 = u41 + u39 * u40;
-        t42 = math_signed_sqrt(u41);
-        (((struct o22_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (int)t42;
-        if (!((float)(unsigned short)(int)t42 > 15.0f)) {
+        t3 = *(signed char *)((t1 + 0x12));
+        t4 = *(signed char *)((t1 + 0x13));
+        u0 = _builtin_fabsf((float)((unsigned char)t3 - 128));
+        u1 = _builtin_fabsf((float)((unsigned char)t3 - 128));
+        u2 = (_builtin_fabsf((float)((unsigned char)t4 - 128)) * _builtin_fabsf((float)((unsigned char)t4 - 128)));
+        u2 = u2 + u0 * u1;
+        u0 = math_signed_sqrt(u2);
+        (((struct o22_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (int)u0;
+        if (!((float)(unsigned short)(int)u0 > 15.0f)) {
             (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = 0x0;
-            t93 = 0x20;
-            u98 = _builtin_fabsf((float)((unsigned char)t36 - 128));
-            u99 = _builtin_fabsf((float)((unsigned char)t38 - 128));
+            t2 = 0x20;
+            u0 = _builtin_fabsf((float)((unsigned char)t3 - 128));
+            u1 = _builtin_fabsf((float)((unsigned char)t4 - 128));
         } else {
-            t43 = *(signed char *)(((t1 + 0x10) + 0x2));
-            t44 = *(signed char *)(((t1 + 0x10) + 0x3));
-            u46 = (float)((unsigned char)t43 - 128);
-            if ((float)((unsigned char)t43 - 128) == 0.0f) {
-                u46 = 9.99999997e-07f;
+            t3 = *(signed char *)(((t1 + 0x10) + 0x2));
+            t4 = *(signed char *)(((t1 + 0x10) + 0x3));
+            u2 = (float)((unsigned char)t3 - 128);
+            if ((float)((unsigned char)t3 - 128) == 0.0f) {
+                u2 = 9.99999997e-07f;
             }
-            u49 = (float)((unsigned char)t44 - 128);
-            u49 = -u49;
-            (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = ((math_atan_angle16((t1 + 0x10), (u49 / u46))) & 0xFFFF);
-            if (0.0f > u46) {
+            u3 = (float)((unsigned char)t4 - 128);
+            u3 = -u3;
+            (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = ((math_atan_angle16((t1 + 0x10), (u3 / u2))) & 0xFFFF);
+            if (0.0f > u2) {
                 (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (((((struct o20_short *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v)) + 0x8000);
             }
             (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = (((((struct o20_short *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v)) + 0x4000);
@@ -141,16 +130,15 @@ int pad_poll_all(void)
                 (((struct o20_ushort *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v) = 0x1;
             }
             *(unsigned short *)((t1 + 0x8)) = ((*(short *)((t1 + 0x8))) & 0xFF0F);
-            *(volatile short *)((((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0) + 0x20));
-            t63 = FUN_0c0e6d00();
-            if ((t63 & t64) != 0) {
-                if ((t63 & t64) != 1) {
-                    if ((t63 & t64) != 2) {
-                        if ((t63 & t64) != 3) {
-                            if ((t63 & t64) != 4) {
-                                if ((t63 & t64) != 5) {
-                                    if ((t63 & t64) != 6) {
-                                        if ((t63 & t64) != 7) {
+            t3 = (int)((int)((unsigned short)((((struct o20_short *)(((signed char)((((t0 << 2) << 1) + t0) << 2) + 0xC7F31F0)))->v)) + 0x1000) / (int)0x2000);
+            if ((t3 & 0x7) != 0) {
+                if ((t3 & 0x7) != 1) {
+                    if ((t3 & 0x7) != 2) {
+                        if ((t3 & 0x7) != 3) {
+                            if ((t3 & 0x7) != 4) {
+                                if ((t3 & 0x7) != 5) {
+                                    if ((t3 & 0x7) != 6) {
+                                        if ((t3 & 0x7) != 7) {
                                         } else {
                                             *(unsigned short *)((t1 + 0x8)) = ((*(short *)((t1 + 0x8))) | 0x60);
                                         }
@@ -176,17 +164,17 @@ int pad_poll_all(void)
                 *(unsigned short *)((t1 + 0x8)) = ((*(short *)((t1 + 0x8))) | 0x20);
             }
             *(unsigned short *)((t1 + 0xC)) = ((*(short *)((t1 + 0x8))) & (~(*(short *)((t1 + 0xA)))));
-            t91 = *(short *)((t1 + 0x8));
-            t92 = *(short *)((t1 + 0xA));
-            *(unsigned short *)((t1 + 0xE)) = (t92 & (~t91));
-            t93 = (t92 & (~t91));
-            u98 = u49;
-            u99 = u46;
+            t3 = *(short *)((t1 + 0x8));
+            t4 = *(short *)((t1 + 0xA));
+            *(unsigned short *)((t1 + 0xE)) = (t4 & (~t3));
+            t2 = (t4 & (~t3));
+            u0 = u3;
+            u1 = u2;
         }
         t0 = (t0 + 0x1);
         t1 = (t1 + 0x14);
         if ((int)t0 < (int)0x4) continue;
         break;
     }
-    return t93;
+    return t2;
 }

@@ -26,8 +26,8 @@ int pl_angle_to_opponent(int);
 int pl_landed(int);
 int pl_end_action_choose_state(int, int, int, int, int);
 int pl_change_state(int, int, int);
-int FUN_0c0e6e5c(void);
-int thunk_FUN_0c062242(int);
+int _modls(void);
+int thunk_FUN_0c062242(int, int);
 
 int pl_rouge_move10_init(int a4)
 {
@@ -100,18 +100,17 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
     int t0;
     register int t1;
     register int t4;
-    register int t8;
     register float u10;
-    register int t21;
-    register int t26;
-    register int t39;
-    register int t42;
-    register int t45;
-    register int t49;
+    register int t22;
+    register int t27;
+    register int t40;
+    register int t43;
+    register int t46;
+    register int t50;
+    register int t55;
     register int t54;
-    register int t53;
-    register int t59;
-    register int t24;
+    register int t60;
+    register int t25;
 
     t0 = *(signed char *)((a4 + 0x721F));
     if ((t0 != 0) && (t0 != 2)) {
@@ -129,28 +128,26 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
                     t4 = *(signed char *)((a4 + 0x3));
                     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
-                    *(volatile short *)((a4 + 0xEC));
-                    t8 = FUN_0c0e6e5c();
-                    if (t8 == 0) {
+                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)stk + 0) + 0x4));
+                    if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x3)) == 0) {
                         u10 = 0.049999997f;
                         u10 = u10 + 0.0199999996f * (float)((((struct oEE_short *)(a4))->v));
                         fx_spawn_03b4d0(a4, (((int)stk + 0) + 0x4), 0xF, 0x0, u10);
                         (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
                     }
                 }
-                t21 = pl_step_motion(a4);
-                if ((signed char)t21 != 0) {
-                    t24 = (pl_end_action_choose_state(a4, 0x0, 0x0, 0x0, a4));
+                t22 = pl_step_motion(a4);
+                if ((signed char)t22 != 0) {
+                    t25 = (pl_end_action_choose_state(a4, 0x0, 0x0, 0x0, a4));
                 } else {
-                    t24 = (pl_apply_motion_translation(a4));
+                    t25 = (pl_apply_motion_translation(a4));
                 }
-                return t24;
+                return t25;
             }
             *(int *)((int)stk + 24) = a4;
-            t26 = (((struct oEC_short *)(a4))->v);
-            (((struct oEC_ushort *)(a4))->v) = (t26 - 1);
-            if ((int)(short)(t26 - 1) > 0) {
+            t27 = (((struct oEC_short *)(a4))->v);
+            (((struct oEC_ushort *)(a4))->v) = (t27 - 1);
+            if ((int)(short)(t27 - 1) > 0) {
                 (((struct o2D9_uchar *)(a4))->v) = 0x2;
             }
             if (0.0f > ((((struct o274_float *)(a4))->v))) {
@@ -158,20 +155,20 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
             }
             pl_step_motion(a4);
             if (0.0f > ((((struct o3C_float *)(a4))->v))) {
-                t39 = pl_landed(a4);
-                if ((signed char)t39 != 0) {
+                t40 = pl_landed(a4);
+                if ((signed char)t40 != 0) {
                     if ((*(signed char *)((a4 + 0x108))) != 0) {
-                        t42 = pl_get_hit_count_of_opponent(a4);
-                        if ((signed char)t42 != 0) {
+                        t43 = pl_get_hit_count_of_opponent(a4);
+                        if ((signed char)t43 != 0) {
                             *(unsigned int *)((a4 + 0x30)) = (pl_angle_to_opponent(a4));
                             (((struct oEC_ushort *)(a4))->v) = 0x14;
                             (((struct oEE_ushort *)(a4))->v) = 0x0;
                             pl_start_motion(a4, 0x1, 0xFFFFFF98);
                             (((struct o71A9_uchar *)(a4))->v) = 0x1;
                             (((struct o71A8_uchar *)(a4))->v) = 0x1;
-                            t45 = *(signed char *)((a4 + 0xA));
-                            *(unsigned char *)((a4 + 0xA)) = (t45 + 0x1);
-                            return (t45 + 0x1);
+                            t46 = *(signed char *)((a4 + 0xA));
+                            *(unsigned char *)((a4 + 0xA)) = (t46 + 0x1);
+                            return (t46 + 0x1);
                         }
                         return pl_change_state(a4, 0x6, 0x0);
                     }
@@ -184,10 +181,10 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
         *(int *)((int)stk + 24) = a4;
         (((struct o2D9_uchar *)(a4))->v) = 0x2;
         pl_step_motion(a4);
-        t49 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t49 - 1);
-        t54 = 0xEC;
-        if ((int)(short)(t49 - 1) <= 0) {
+        t50 = (((struct oEC_short *)(a4))->v);
+        (((struct oEC_ushort *)(a4))->v) = (t50 - 1);
+        t55 = 0xEC;
+        if ((int)(short)(t50 - 1) <= 0) {
             (((struct o71BC_uchar *)(a4))->v) = 0x2;
             *(unsigned int *)((a4 + 0x30)) = (pl_angle_to_opponent(a4));
             FUN_0c0641a0(a4, 35.0f, -3.5f);
@@ -195,12 +192,12 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
             (((struct o71A9_uchar *)(a4))->v) = 0x1;
             (((struct o71A8_uchar *)(a4))->v) = 0x1;
             (((struct oEC_ushort *)(a4))->v) = 0x2;
-            t53 = *(signed char *)((a4 + 0xA));
-            *(unsigned char *)((a4 + 0xA)) = (t53 + 0x1);
-            t54 = (t53 + 0x1);
+            t54 = *(signed char *)((a4 + 0xA));
+            *(unsigned char *)((a4 + 0xA)) = (t54 + 0x1);
+            t55 = (t54 + 0x1);
         }
-        return t54;
+        return t55;
     }
-    t59 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + ((int)g_rouge_move_update_tab)));
-    return ((int (*)(int, int, int, int))(t59))(a4, a5, a6, a7);
+    t60 = *(int *)((((*(signed char *)((a4 + 0x7238))) << 2) + 0xC33785C));
+    return ((int (*)(int, int, int, int))(t60))(a4, a5, a6, a7);
 }

@@ -120,8 +120,8 @@ float math_signed_sqrt(float);
 int math_atan2_angle16(int, int, int, int, float, float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6fe8(void);
+int _modls(int);
+int _quick_odd_mvn(void);
 int FUN_0c1012f4(int, int, int);
 int FUN_0c108734(void);
 int FUN_0c10874c(int, int);
@@ -414,10 +414,7 @@ int SJRBF_GetChunk(int a4, int a5, int a6, int a7)
         }
         *(unsigned int *)((a7 + 0x4)) = t1;
         *(unsigned int *)((a7 + 0x0)) = ((*(int *)((a4 + 0x1C))) + (*(int *)((a4 + 0x14))));
-        *(volatile int *)((a7 + 0x4));
-        *(volatile int *)((a4 + 0x14));
-        *(volatile int *)((a4 + 0x20));
-        *(unsigned int *)((a4 + 0x14)) = (FUN_0c0e6e5c(t5));
+        *(unsigned int *)((a4 + 0x14)) = ((int)((int)((*(int *)((a4 + 0x14))) + (*(int *)((a7 + 0x4)))) % (int)(*(int *)((a4 + 0x20)))));
         *(unsigned int *)((a4 + 0x10)) = ((*(int *)((a4 + 0x10))) - (*(int *)((a7 + 0x4))));
     } else {
         if (a5 == 1) {
@@ -436,10 +433,7 @@ int SJRBF_GetChunk(int a4, int a5, int a6, int a7)
             }
             *(unsigned int *)((a7 + 0x4)) = t1;
             *(unsigned int *)((a7 + 0x0)) = ((*(int *)((a4 + 0x1C))) + (*(int *)((a4 + 0x18))));
-            *(volatile int *)((a7 + 0x4));
-            *(volatile int *)((a4 + 0x18));
-            *(volatile int *)((a4 + 0x20));
-            *(unsigned int *)((a4 + 0x18)) = (FUN_0c0e6e5c(t5));
+            *(unsigned int *)((a4 + 0x18)) = ((int)((int)((*(int *)((a4 + 0x18))) + (*(int *)((a7 + 0x4)))) % (int)(*(int *)((a4 + 0x20)))));
             *(unsigned int *)((a4 + 0xC)) = ((*(int *)((a4 + 0xC))) - (*(int *)((a7 + 0x4))));
         } else {
             *(unsigned int *)((a7 + 0x4)) = 0x0;

@@ -18,7 +18,7 @@ int menu_pad_any_button(int);
 int menu_ui_spawn_13(int);
 int menu_ui_spawn_14(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 int sprintf(int, int, int, int, int);
 void item_clear_state(void);
 void FUN_0c058f44(void);

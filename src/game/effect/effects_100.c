@@ -4,9 +4,9 @@
 extern char g_res_kyoutsuu[];
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oC_float { char p[0xC]; float v; };
-int obj_create(int, int, int);
-extern int FUN_0c0e6fe8();
-int FUN_0c06233a(int a4, int a5, int a6);
+int obj_create(int, int, int, int);
+extern int _quick_odd_mvn();
+int FUN_0c06233a(int, int, int);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o40_float { char p[0x40]; float v; };
@@ -26,26 +26,26 @@ int FUN_0c044104(int a4);
 int fx_spawn_044094(int a4)
 {
     register int t0;
-    register int t1;
-    register int t2;
+    register int t7;
+    register int t5;
 
-    t1 = obj_create(0x5, 0x1, 0x1);
-    t2 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x1)) = 0x1;
-        *(unsigned short *)((t1 + 0x6)) = 0x43F;
-        *(unsigned char *)((t1 + 0x5)) = 0x1;
-        *(unsigned int *)((t1 + 0x10)) = 0xC04415A;
-        FUN_0c0e6fe8(0x1);
-        *(unsigned char *)((((((struct o2E0_int *)(t1))->v)) + 0x0)) = t0;
-        *(unsigned short *)((((((struct o2E0_int *)(t1))->v)) + 0x2)) = 0xF;
-        FUN_0c06233a(((((struct o2E0_int *)(t1))->v)), ((int)g_res_kyoutsuu), 0x54);
-        t0 = (((struct o2E0_int *)(t1))->v);
-        (((struct oC_float *)(t0))->v) = (((((struct oC_float *)(t0))->v)) + 200.0f);
-        t2 = 0xC;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    t7 = t0;
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned short *)((t0 + 0x6)) = 0x43F;
+        *(unsigned char *)((t0 + 0x5)) = 0x1;
+        *(unsigned int *)((t0 + 0x10)) = 0xC04415A;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(a4); }
+        *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
+        *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x54);
+        t5 = (((struct o2E0_int *)(t0))->v);
+        (((struct oC_float *)(t5))->v) = (((((struct oC_float *)(t5))->v)) + 200.0f);
+        t7 = 0xC;
     }
-    return t2;
+    return t7;
 }
 
 int FUN_0c044104(int a4)

@@ -14,12 +14,12 @@ struct o98_float { char p[0x98]; float v; };
 struct o9C_int { char p[0x9C]; int v; };
 int FUN_0c02cb4a(int);
 int FUN_0c02ced4(int, float, float);
-int FUN_0c05fb58(int);
+int FUN_0c05fb58(int, float);
 int FUN_0c0dcd20(float, float, float);
 int FUN_0c0e1240(int, int, int, float, float, float);
 int FUN_0c0e1550(int);
 int FUN_0c0e34a0(float);
-int FUN_0c0e7140(int);
+int _slow_mvn(int);
 int FUN_0c0ef980(int);
 int nlObjPut(int);
 int nlObjPutTrnsl(int, float);
@@ -51,7 +51,7 @@ int FUN_0c02cf18(int a4)
     register float w0_2;
     register float w0_3;
     v0_2 = a4;
-    FUN_0c0e7140(v0_2);
+    { struct mvb8 { char b[8]; }; *(struct mvb8 *)((((int)stk + 0) + 0x8)) = *(struct mvb8 *)(0xC149288); }
     v0_2 = *(int *)0xC4CFA70;
     v0_0 = ((((int)stk + 0) + 0x8));
     v0_1 = (v0_2);
@@ -72,7 +72,7 @@ int FUN_0c02cf18(int a4)
     v0_1 = *(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))));
     v0_2 = (v0_1);
     if ((v0_1 == -1)) goto L_C02D19E;
-    v0_1 = ((*(int *)((((*(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))))) << 2) + ((int)g_obj_class_head)))));
+    v0_1 = ((*(int *)((((*(signed char *)((v0_0 + (*(signed char *)(((int)stk + 4)))))) << 2) + 0xC7E4070))));
     L_C02D184:;
     if ((v0_1 == 0)) goto L_C02D18C;
     if (!(((*(signed char *)((v0_1 + 0x0))) != 0))) goto L_C02D182;
@@ -85,7 +85,7 @@ int FUN_0c02cf18(int a4)
     if ((((unsigned short)(*(short *)((v0_1 + 0x6))) & 128) == 0)) goto L_C02CFA2;
     goto L_C02D182;
     L_C02CFA2:;
-    FUN_0c05fb58((*(signed char *)((v0_1 + 0x5))));
+    FUN_0c05fb58((*(signed char *)((v0_1 + 0x5))), F4);
     if ((((unsigned short)(*(short *)((v0_1 + 0x6))) & R10) == 0)) goto L_C02CFC0;
     FUN_0c0dcd20(((((struct o60_float *)(v0_1))->v)), ((((struct o64_float *)(v0_1))->v)), ((((struct o68_float *)(v0_1))->v)));
     L_C02CFC0:;

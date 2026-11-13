@@ -2,9 +2,9 @@
 
 /* named globals (symbols.txt) */
 extern char g_res_kyoutsuu[];
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct o28_float { char p[0x28]; float v; };
 struct o2C_float { char p[0x2C]; float v; };
 struct o30_float { char p[0x30]; float v; };
@@ -23,55 +23,55 @@ struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 
-int fx_spawn_043730(int a4, int a5);
+int fx_spawn_043730(int, int);
 int FUN_0c0437fe(int a4, int a5);
 
 int fx_spawn_043730(int a4, int a5)
 {
     register int t0;
+    register int t9;
     register int t1;
     register int t2;
     register int t3;
-    register int t4;
-    register int t5;
     register int t6;
+    register int t8;
 
-    t1 = obj_create(0x5, 0x1, 0x3);
-    t2 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x1)) = 0x1;
-        *(unsigned short *)((t1 + 0x6)) = 0x20F;
-        *(unsigned char *)((t1 + 0x5)) = 0x1;
-        *(unsigned int *)((t1 + 0x34)) = 0x0;
-        *(unsigned int *)((t1 + 0x2C)) = 0x0;
-        *(unsigned int *)((t1 + 0x10)) = 0xC0438A4;
-        FUN_0c0e6fe8(0x0);
-        *(unsigned int *)((t1 + 0x30)) = a5;
-        t3 = t0;
-        t0 = 0xC14A5D0;
-        t4 = 0x0;
+    t0 = obj_create(0x5, 0x1, 0x3, 0x0);
+    t9 = t0;
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned short *)((t0 + 0x6)) = 0x20F;
+        *(unsigned char *)((t0 + 0x5)) = 0x1;
+        *(unsigned int *)((t0 + 0x34)) = 0x0;
+        *(unsigned int *)((t0 + 0x2C)) = 0x0;
+        *(unsigned int *)((t0 + 0x10)) = 0xC0438A4;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(a4); }
+        *(unsigned int *)((t0 + 0x30)) = a5;
+        t1 = 0x0;
+        t2 = 0xC14A5D0;
+        t3 = 0x0;
         for (;;) {
-            *(unsigned char *)(((*(int *)((((0x2E0 + t1) + t4) + 0x0))) + 0x0)) = 0x1;
-            *(unsigned short *)(((*(int *)((((0x2E0 + t1) + t4) + 0x0))) + 0x2)) = 0x3F;
-            t6 = *(signed char *)((t0 + 0x0));
-            t0 = (t0 + 0x1);
-            t5 = FUN_0c06233a((*(int *)((((0x2E0 + t1) + t4) + 0x0))), ((int)g_res_kyoutsuu), t6);
-            t3 = (t3 + 0x1);
-            t4 = (t4 + 0x4);
-            if ((int)(signed char)t3 >= (int)0x3) {
+            *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x0)) = 0x1;
+            *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x2)) = 0x3F;
+            t6 = *(signed char *)((t2 + 0x0));
+            t2 = (t2 + 0x1);
+            t8 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), 0xC4CFA68, t6);
+            t1 = (t1 + 0x1);
+            t3 = (t3 + 0x4);
+            if ((int)(signed char)t1 >= (int)0x3) {
                 break;
             }
         }
-        t2 = t5;
+        t9 = t8;
     }
-    return t2;
+    return t9;
 }
 
 int FUN_0c0437d6(int a4, int a5, int a6)
@@ -112,7 +112,7 @@ int FUN_0c0437fe(int a4, int a5)
     return 0x30;
 }
 
-int fx_tick_043730(int a4, int a5, int a6, int a7)
+int fx_tick_043730(int a4)
 {
     int stk[3];
     register int t0;
@@ -133,13 +133,19 @@ int fx_tick_043730(int a4, int a5, int a6, int a7)
     register int t34;
     register int t35;
     register int t36;
+    register float t37;
+    register float u40;
     register int t43;
     register int t45;
+    register float t47;
+    register float u50;
     register int t52;
     register float u56;
     register int t59;
     register int t64;
     register int t69;
+    register float t70;
+    register float u73;
     register int t75;
     register float u79;
     register int t82;
@@ -206,7 +212,7 @@ int fx_tick_043730(int a4, int a5, int a6, int a7)
             }
             return t28;
         }
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     (((struct oEC_ushort *)(a4))->v) = 0x1E;
@@ -226,15 +232,21 @@ int fx_tick_043730(int a4, int a5, int a6, int a7)
         (((struct o24_float *)(t36))->v) = 0.25f;
         (((struct o20_float *)(t36))->v) = 0.25f;
         (((struct o1C_float *)(t36))->v) = 0.25f;
-        math_rand_float();
-        
+        t37 = math_rand_float();
+        u40 = (t37 * 255.0f);
+        if (!(2.14748365e+09f > (t37 * 255.0f))) {
+            u40 = (((t37 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
         t43 = *(int *)((((0x2E0 + a4) + t35) + 0x0));
-        *(unsigned int *)((t43 + 0x14)) = ((*(int *)((t43 + 0x14))) + (int)(((float)(short)((FUN_0c0e6f24()) - 11) * 65536.0f) / 360.0f));
+        *(unsigned int *)((t43 + 0x14)) = ((*(int *)((t43 + 0x14))) + (int)(((float)(short)(((int)((unsigned int)(int)u40 % (unsigned int)0x15)) - 11) * 65536.0f) / 360.0f));
         t45 = *(int *)((((0x2E0 + a4) + t35) + 0x0));
         *(unsigned int *)((t45 + 0x14)) = ((*(int *)((t45 + 0x14))) & 0xFFFF);
-        math_rand_float();
-        
-        t52 = FUN_0c0e6f24();
+        t47 = math_rand_float();
+        u50 = (t47 * 255.0f);
+        if (!(2.14748365e+09f > (t47 * 255.0f))) {
+            u50 = (((t47 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        t52 = (int)((unsigned int)(int)u50 % (unsigned int)0x8);
         u56 = (float)(t52 << 1);
         if ((int)(t52 << 1) < 0) {
             u56 = ((float)(t52 << 1) + 4.2949673e+09f);
@@ -250,9 +262,12 @@ int fx_tick_043730(int a4, int a5, int a6, int a7)
         (((struct o30_float *)(t64))->v) = ((math_cos_angle16((*(int *)(((*(int *)(((int)stk + 4))) + 0x14))))) * (*(float *)(((int)stk + 8))));
         t69 = *(int *)((((0x2E0 + a4) + t35) + 0x0));
         *(int *)((int)stk + 0) = (0x2C + t69);
-        math_rand_float();
-        
-        t75 = FUN_0c0e6f24();
+        t70 = math_rand_float();
+        u73 = (t70 * 255.0f);
+        if (!(2.14748365e+09f > (t70 * 255.0f))) {
+            u73 = (((t70 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        t75 = (int)((unsigned int)(int)u73 % (unsigned int)0x4);
         u79 = (float)(t75 << 1);
         if ((int)(t75 << 1) < 0) {
             u79 = ((float)(t75 << 1) + 4.2949673e+09f);
