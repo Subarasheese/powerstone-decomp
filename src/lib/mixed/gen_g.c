@@ -197,8 +197,8 @@ int FUN_0c05986c(int a4, int a5, int a6, int a7);
 int FUN_0c059934(int a4, int a5, int a6, int a7);
 float obj_place_linked_ahead(int a4, int a5, float f4);
 int fx_swirl_create(int a4, int a5);
-int FUN_0c0e393a(int a4, int a5, int a6, int a7);
-int FUN_0c0e51e8(int a4, int a5, int a6, int a7);
+int FUN_0c0e393a(int a4);
+int FUN_0c0e51e8(int a4, int a5);
 int FUN_0c0eae20(int a4, int a5);
 int FUN_0c101148(int a4, int a5);
 int FUN_0c1058e2(int a4, int a5, int a6, int a7, int a8);
@@ -509,7 +509,7 @@ int kmiReqRestOfDMA(int a4)
     return t1;
 }
 
-int FUN_0c0e393a(int a4, int a5, int a6, int a7)
+int FUN_0c0e393a(int a4)
 {
     int stk[7];
     int t2;
@@ -590,11 +590,10 @@ int FUN_0c0e393a(int a4, int a5, int a6, int a7)
         t3 = (t3 + 0x1);
         *(unsigned int *)(((int)stk + 4)) = t3;
     }
-    *(volatile int *)(((int)stk + 12));
-    return ((int (*)(int, int, int, int))(0xC0E39EA))(t5, a5, a6, a7);
+    return (*(int *)(((int)stk + 12)));
 }
 
-int FUN_0c0e51e8(int a4, int a5, int a6, int a7)
+int FUN_0c0e51e8(int a4, int a5)
 {
     int stk[7];
     register int t7;
@@ -623,7 +622,7 @@ int FUN_0c0e51e8(int a4, int a5, int a6, int a7)
                 if (((((struct o8_int *)0xC7FD0F0)->v)) != 0) {
                     return 0xFFFFFFFB;
                 }
-                return ((int (*)(int, int, int, int))(0xC0E5298))(a4, a5, a6, a7);
+                return 0x0;
             }
             t18 = *(int *)(((int)stk + 4));
             *(unsigned int *)(((int)stk + 4)) = (t18 + 0x1);

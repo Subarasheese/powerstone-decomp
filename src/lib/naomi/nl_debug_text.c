@@ -191,8 +191,46 @@ int printf_hex_digits(int val, char *out, int sel)
 
 int FUN_0c0e0210(int a4, int a5)
 {
+    int stk[8];
+    register int t3;
+    register int t4;
+    register int t7;
+    register int t8;
+    register int t9;
+    register int t10;
 
-    return ((int (*)(int, int, int, int))(0xC0E028C))(a4, a5, 0x0, 0xA);
+    t3 = a4;
+    t4 = 0x0;
+    for (;;) {
+        if (t3 == 0) {
+            break;
+        }
+        t8 = t4;
+        t8 = (t8 + ((int)stk + 0));
+        t7 = 0xA;
+        t7 = ((int)((int)t3 % (int)t7));
+        t7 = (t7 + 0x30);
+        *(unsigned char *)((t8 + 0x0)) = t7;
+        t7 = 0xA;
+        t8 = 0xC0E6D00;
+        t7 = ((int)((int)t3 / (int)t7));
+        t4 = (t4 + 0x1);
+        t3 = t7;
+    }
+    t9 = a5;
+    t10 = t4;
+    for (;;) {
+        if (t10 == 0) {
+            break;
+        }
+        t7 = t10;
+        t7 = (t7 - 1);
+        t8 = (*(signed char *)((((int)stk + 0) + t7)));
+        t10 = (t10 - 1);
+        *(unsigned char *)((t9 + 0x0)) = t8;
+        t9 = (t9 + 0x1);
+    }
+    return t4;
 }
 
 int FUN_0c0e0580(void)
@@ -210,28 +248,110 @@ void dbg_set_cell_size(int a4, int a5)
     (((struct o4_uint *)g_dbg_cell_w)->v) = a5;
 }
 
-int dbg_print_string(int a4, int a5, int a6, int a7)
+int dbg_print_string(int a4, int a5, int a6)
 {
     register int t1;
     int t4;
+    register int t5;
+    register int t13;
+    register int t14;
+    register int t15;
+    register int t16;
+    register int t17;
+    register int t18;
+    register int t19;
+    register int t20;
+    register int t21;
+    register int t22;
+    register int t55;
+    register int t56;
+    register int t50;
+    register int t52;
+    register int t53;
 
     t1 = 0x2;
     if (((((struct o14_int *)0xC7F8C4C)->v)) != 0) {
         t1 = 0x0;
     }
     t4 = *(int *)(((t1 << 2) + (*(int *)0xC803DF4)));
-    *(volatile int *)g_dbg_text_flags;
-    *(volatile int *)g_dbg_cursor_x;
-    *(volatile int *)g_dbg_cursor_y;
+    t5 = (((struct o0_int *)0xC7F8BF0)->v);
+    t22 = (((struct o4_int *)0xC7F8BF0)->v);
+    t19 = (((struct o8_int *)0xC7F8BF0)->v);
     (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0x0)) = ((((struct o0_int *)0xC7F8C4C)->v));
     *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0x4)) = ((((struct o4_int *)0xC7F8C4C)->v));
     *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0x8)) = ((((struct o8_int *)0xC7F8C4C)->v));
-    *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0xC)) = ((((struct oC_int *)0xC7F8C4C)->v));
+    t14 = (((struct oC_int *)0xC7F8C4C)->v);
+    *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0xC)) = t14;
     *(unsigned int *)((((0x3FFFFFF & t4) | 0xE0000000) + 0x10)) = ((((struct o10_int *)0xC7F8C4C)->v));
     _builtin_prefetch((void *)((0x3FFFFFF & t4) | 0xE0000000));
-    return ((int (*)(int, int, int, int))(0xC0E06A4))(0xC7F8C4C, t4, a6, a7);
+    t13 = 0xFF000038;
+    t15 = 0xE0000000;
+    t16 = 0xC7F8C4C;
+    t17 = t4;
+    t18 = a6;
+    t20 = a4;
+    t21 = (((0x3FFFFFF & t4) | 0xE0000000) + 0x20);
+    for (;;) {
+        if ((*(signed char *)((t20 + 0x0))) == 0) {
+            break;
+        }
+        t13 = (*(signed char *)((t20 + 0x0)));
+        if (t13 != 32) {
+            t13 = (*(signed char *)((t20 + 0x0)));
+            t16 = 0x0;
+            t18 = 0xC7F8C04;
+            t17 = (*(int *)((t18 + 0x0)));
+            if (t13 == 10) {
+                t22 = t16;
+                if ((t5 & 0x1) != 0) {
+                    t22 = t17;
+                }
+                t16 = 0xC7F8C00;
+                t19 = (t19 + (*(int *)((t16 + 0x0))));
+                t50 = t14;
+                t52 = t17;
+                t53 = t18;
+            } else {
+                if (t13 == 13) {
+                    t22 = t16;
+                    if ((t5 & 0x1) != 0) {
+                        t22 = t17;
+                    }
+                    t50 = t14;
+                    t52 = t17;
+                    t53 = t18;
+                } else {
+                    t18 = (*(signed char *)((t20 + 0x0)));
+                    t17 = t19;
+                    t16 = t22;
+                    t13 = (int)dbg_emit_glyph_quad(t16, t17, t18, (int *)t21);
+                    t21 = t13;
+                    t16 = 0xC7F8BFC;
+                    t15 = (*(int *)((t16 + 0x0)));
+                    t22 = (t22 + t15);
+                }
+            }
+        } else {
+            t16 = 0xC7F8BFC;
+            t15 = (*(int *)((t16 + 0x0)));
+            t22 = (t22 + t15);
+            t50 = t14;
+            t52 = t17;
+            t53 = t18;
+        }
+        t14 = t50;
+        t20 = (t20 + 0x1);
+        t17 = t52;
+        t18 = t53;
+    }
+    (((struct o4_uint *)0xC7F8BF0)->v) = t22;
+    (((struct o8_uint *)0xC7F8BF0)->v) = t19;
+    t55 = *(int *)0xC803DF4;
+    t56 = *(int *)((((t1 << 2) + t55) + 0x0));
+    *(unsigned int *)((((t1 << 2) + t55) + 0x0)) = ((t56 & 0xFC000000) | (t21 & 0x3FFFFFF));
+    return ((t56 & 0xFC000000) | (t21 & 0x3FFFFFF));
 }
 
 int dbg_set_cursor_cell(int a4, int a5)

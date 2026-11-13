@@ -6,7 +6,6 @@ int FUN_0c020be0(int a4, int a5, int a6, int a7);
 int FUN_0c0207ca(int a4, int a5, int a6, int a7);
 int FUN_0c02067e(int a4, int a5, int a6, int a7);
 extern char g_obj_list_heads[];
-int FUN_0c020cba(int);
 int FUN_0c062d78(void);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
@@ -351,7 +350,40 @@ float FUN_0c020a80(int a4, float f4)
 
 int thunk_FUN_0c020cba(int a4)
 {
-    return FUN_0c020cba(a4);
+    register int t1;
+    register int t0;
+    register float u2;
+    register float u3;
+
+    t1 = a4;
+    for (;;) {
+        if (t1 == 0) {
+            break;
+        }
+        t0 = 0x270;
+        u3 = (*(float *)((t1 + t0)));
+        t0 = 0x20;
+        u2 = (*(float *)((t1 + t0)));
+        t0 = 0x270;
+        u2 = (u2 - u3);
+        *(float *)((t1 + t0)) = u2;
+        t0 = (t0 + 0x4);
+        u3 = (*(float *)((t1 + t0)));
+        t0 = 0x24;
+        u2 = (*(float *)((t1 + t0)));
+        t0 = 0x274;
+        u2 = (u2 - u3);
+        *(float *)((t1 + t0)) = u2;
+        t0 = (t0 + 0x4);
+        u3 = (*(float *)((t1 + t0)));
+        t0 = 0x28;
+        u2 = (*(float *)((t1 + t0)));
+        t0 = 0x278;
+        u2 = (u2 - u3);
+        *(float *)((t1 + t0)) = u2;
+        t1 = (*(int *)((t1 + 0x18)));
+    }
+    return t0;
 }
 
 int FUN_0c020cc2(int a4, int a5)

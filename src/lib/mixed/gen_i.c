@@ -1,6 +1,8 @@
 /* Straight-line functions with calls and guards (batch gen_i): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int kdGetDeviceInfo(int);
+int kdGetDevice(int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_short { short v; };
@@ -194,7 +196,7 @@ int fx_spawn_03a024(int a4);
 int fx_spawn_03d254(int a4, int a5);
 float FUN_0c059c44(int a4, int a5, float f4);
 int menu_stage_select_open(int a4);
-int FUN_0c100196(void);
+int FUN_0c100196(int a4, int a5);
 int kdSetDriverMode(int a4, int a5);
 int FUN_0c01b788(int a4);
 int FUN_0c022634(int a4, int a5, int a6, int a7);
@@ -417,10 +419,64 @@ int FUN_0c0f5898(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int FUN_0c100196(void)
+int FUN_0c100196(int a4, int a5)
 {
+    int stk[2];
+    register int t2;
+    register int t3;
+    int t4;
+    register int t6;
+    register int t5;
+    register int t15;
+    int t16;
 
-    return ((int (*)(void))(0xC100246))();
+    *(unsigned char *)(((int)stk + 0)) = (*(signed char *)(((*(int *)0xC843924) + 0xFB0)));
+    t2 = 0xFB0;
+    t3 = a4;
+    t4 = a5;
+    t6 = 0x0;
+    for (;;) {
+        if ((int)t6 >= (int)0x4) {
+            t2 = 0x0;
+            return t2;
+        }
+        if ((((int)0x1 << (int)t6) & (unsigned char)(*(signed char *)(((int)stk + 0)))) != 0) {
+            t3 = 0xC15B050;
+            t3 = (t3 + t6);
+            *(unsigned int *)(((int)stk + 4)) = t3;
+            t3 = (*(signed char *)((t3 + 0x0)));
+            t3 = (unsigned char)t3;
+            t2 = (kdGetDevice(t3));
+            t3 = (*(int *)(((int)stk + 4)));
+            t5 = t2;
+            t3 = (*(signed char *)((t3 + 0x0)));
+            t3 = (unsigned char)t3;
+            t2 = (kdGetDeviceInfo(t3));
+            t3 = t2;
+            t2 = t6;
+            *(unsigned char *)((0xC805784 + t2)) = (*(signed char *)((0xC805788 + t2)));
+            if ((((*(int *)((t3 + 0x0))) & 0x80) != 0) && ((t15 = *(signed char *)((t5 + 0x2)), t2 = t15, t2 == 0) && (t16 = *(signed char *)((t5 + 0x4)), t2 = t16, t2 = (unsigned char)t2, t2 == 8))) {
+                t3 = (*(int *)((t5 + 0x8)));
+                t2 = (*(signed char *)((t3 + 0x8)));
+                t2 = (t2 & 0x4);
+                t3 = t2;
+                t2 = t6;
+                *(unsigned char *)((0xC805788 + t2)) = t3;
+                t4 = (*(signed char *)((0xC805784 + t2)));
+                t4 = (t4 ^ t3);
+                t3 = (unsigned char)t3;
+                if ((t3 == 0) && (t4 = (unsigned char)t4, t4 != 0)) {
+                    break;
+                }
+                t6 = (t6 + 0x1);
+                continue;
+            }
+            t6 = (t6 + 0x1);
+            continue;
+        }
+        t6 = (t6 + 0x1);
+    }
+    return (t6 + 0x1);
 }
 
 int kdSetDriverMode(int a4, int a5)

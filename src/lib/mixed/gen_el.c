@@ -1,6 +1,12 @@
 /* Straight-line functions with calls and guards (batch gen_el): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int mpdrv_set_getcond_ns(int, int);
+int mpdrv_set_end_ns(void);
+int mpdrv_set_dreset_ns(int);
+int mpdrv_set_dreq_ns(int);
+int mpdrv_set_dkill_ns(int);
+int mpdrv_set_allstatreq_ns(int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_uchar { unsigned char v; };
@@ -205,13 +211,107 @@ int FUN_0c0e1460(int a4)
 
 int FUN_0c11163a(void)
 {
-    register int t0;
+    int t0;
+    register int t1;
+    register int t2;
+    register int t3;
+    register int t4;
+    register int t5;
+    register int t6;
+    register int t7;
+    register int t8;
+    register int t9;
+    register int t10;
+    register int t11;
+    register int t12;
 
-    t0 = *(int *)0xC843924;
-    if ((int)((((struct o10E4_int *)(t0))->v)) > 0) {
-        mpdrv_insertnop(((((struct o10E4_int *)(t0))->v)));
+    t2 = *(int *)0xC843924;
+    t3 = (((struct o10E4_int *)(t2))->v);
+    t4 = 0x10E4;
+    if ((int)t3 > 0) {
+        t4 = (mpdrv_insertnop(((((struct o10E4_int *)(t2))->v))));
+    } else {
+        t5 = t3;
     }
-    return ((int (*)(void))(0xC11171C))();
+    t3 = t4;
+    t4 = t5;
+    t5 = (0x44C + t2);
+    t6 = (t2 + 0x28);
+    t2 = 0x0;
+    for (;;) {
+        if ((int)t2 >= (int)0x18) {
+            break;
+        }
+        t4 = 0xF90;
+        t3 = (*(int *)0xC843924);
+        t4 = (t4 + t3);
+        t4 = (t4 + t2);
+        t7 = (*(signed char *)((t4 + 0x0)));
+        if ((t7 != 0) && (t0 = *(signed char *)((t6 + 0x6)), t3 = t0, t3 == 0)) {
+            t3 = (*(signed char *)((t6 + 0x4)));
+            t3 = (unsigned char)t3;
+            if (t3 != 1) {
+                if (t3 != 2) {
+                    if (t3 != 3) {
+                        if (t3 != 4) {
+                            if (t3 != 9) {
+                                t8 = t1;
+                                t9 = t7;
+                                t10 = t4;
+                            } else {
+                                t11 = *(int *)((t5 + 0x0));
+                                t7 = t11;
+                                t12 = t11;
+                                if ((t7 & 0x1) != 0) {
+                                    t12 = 0x1;
+                                }
+                                t7 = 0xC112AAE;
+                                t3 = (mpdrv_set_getcond_ns(t2, t12));
+                            }
+                            t11 = t8;
+                            t8 = t9;
+                            t9 = t10;
+                        } else {
+                            t7 = 0xC112B54;
+                            t3 = (mpdrv_set_dkill_ns(t2));
+                        }
+                        t10 = t11;
+                        t11 = t8;
+                        t8 = t9;
+                    } else {
+                        t7 = 0xC112B98;
+                        t3 = (mpdrv_set_dreset_ns(t2));
+                    }
+                    t9 = t10;
+                    t10 = t11;
+                    t11 = t8;
+                } else {
+                    t7 = 0xC112BDC;
+                    t3 = (mpdrv_set_allstatreq_ns(t2));
+                }
+                t8 = t9;
+                t9 = t10;
+                t10 = t11;
+            } else {
+                t3 = (mpdrv_set_dreq_ns(t2));
+            }
+            t11 = t8;
+            t8 = t9;
+            t9 = t10;
+        } else {
+            t11 = t1;
+            t8 = t7;
+            t9 = t4;
+        }
+        t1 = t11;
+        t5 = (t5 + 0x78);
+        t7 = t8;
+        t4 = t9;
+        t6 = (t6 + 0x2C);
+        t2 = (t2 + 0x1);
+    }
+    mpdrv_set_end_ns();
+    return 0x0;
 }
 
 int FUN_0c1145f4(int a4)
@@ -286,7 +386,7 @@ int nlSetViewport(float f4, float f5, float f6, float f7)
     if ((*(int *)0xC7F88EC) == 4) {
         return FUN_0c0fbfa2((int)f4, (int)f5, (int)(f4 + f6), (int)(f5 + f7));
     }
-    return ((int (*)(int, int, int, int))(0xC0E3296))((int)f4, (int)f5, (int)((f4 + f6) + -1.0f), (int)((f5 + f7) + -1.0f));
+    return FUN_0c0fbfa2((int)f4, (int)f5, (int)((f4 + f6) + -1.0f), (int)((f5 + f7) + -1.0f));
 }
 
 int FUN_0c0fb160(int a4)

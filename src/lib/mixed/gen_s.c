@@ -1,6 +1,7 @@
 /* Straight-line functions with calls and guards (batch gen_s): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int ADXCRS_Unlock(void);
 struct o0_float { float v; };
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -143,7 +144,7 @@ int memset(int, int, int);
 int mwRnaErrCallFunc(int);
 int thunk_FUN_0c062242(int);
 int pl_end_action_reset(int a4);
-int ADXF_ReadNw(int a4, int a5, int a6);
+int ADXF_ReadNw(int a4, int a5, int a6, int a7);
 int set_vmstime(int a4, int a5);
 int FUN_0c107a36(int a4);
 int FUN_0c02649a(int a4, int a5);
@@ -192,30 +193,37 @@ int vmu_check_do_load(int a4, int a5, int a6, int a7);
 int FUN_0c01dd6a(int a4, int a5, float f4);
 int FUN_0c098026(int a4);
 
-int ADXF_ReadNw(int a4, int a5, int a6)
+int ADXF_ReadNw(int a4, int a5, int a6, int a7)
 {
+    register int t35;
     register int t10;
-    register int t12;
+    register int t15;
 
+    t35 = 0xFFFFFFFD;
     if ((a4 != 0) && (((int)a5 >= 0) && (a6 != 0))) {
+        t35 = 0x0;
         if ((*(signed char *)((a4 + 0x1))) == 2) {
-            return 0x0;
+        } else {
+            t35 = 0xFFFFFFFF;
+            if ((*(int *)((a4 + 0x8))) != 0) {
+            } else {
+                t10 = FUN_0c108776(a6, (((a5 << 8) << 2) << 1), 0x0);
+                t35 = 0xFFFFFFFE;
+                if (t10 == 0) {
+                } else {
+                    ADXCRS_Lock();
+                    t35 = ADXF_ReadSj(a4, a5, t10);
+                    if ((int)t35 <= 0) {
+                        t15 = ((int (*)(int, int, int, int))((*(int *)(((*(int *)((t10 + 0x0))) + 0xC)))))(t10, a5, a6, a7);
+                    } else {
+                        *(unsigned int *)((a4 + 0x8)) = t10;
+                    }
+                    ADXCRS_Unlock();
+                }
+            }
         }
-        if ((*(int *)((a4 + 0x8))) != 0) {
-            return 0xFFFFFFFF;
-        }
-        t10 = FUN_0c108776(a6, (((a5 << 8) << 2) << 1), 0x0);
-        if (t10 == 0) {
-            return 0xFFFFFFFE;
-        }
-        ADXCRS_Lock();
-        t12 = ADXF_ReadSj(a4, a5, t10);
-        if ((int)t12 <= 0) {
-            return t12;
-        }
-        return ((int (*)(void))(0xC0F56C4))();
     }
-    return 0xFFFFFFFD;
+    return t35;
 }
 
 int FUN_0c107a36(int a4)
@@ -555,25 +563,36 @@ int FUN_0c109d40(int a4, int a5)
     int t0;
     register int t1;
     register int t2;
+    register int t3;
 
     t1 = *(int *)((a4 + 0xC));
     t2 = *(int *)((a4 + 0x10));
     if ((unsigned int)a5 <= (unsigned int)0x2B0) {
         if (((unsigned int)((0x800 + t1) & 0xFFFFF800) < (unsigned int)(t1 + t2)) && (t0 = *(int *)((a4 + 0xC)), (unsigned int)(((0x800 + t1) & 0xFFFFF800) - t0) < (unsigned int)a5)) {
+            t0 = 0xFFFFFFFF;
             if ((unsigned int)((t1 + t2) - ((0x800 + t1) & 0xFFFFF800)) >= (unsigned int)a5) {
-                return ((int (*)(int, int, int, int))(0xC109DDA))(a4, ((0x800 + t1) & 0xFFFFF800), ((0x800 + t1) & 0xFFFFF800), ((t1 + t2) - ((0x800 + t1) & 0xFFFFF800)));
+                t0 = ((0x800 + t1) & 0xFFFFF800);
             }
-            return ((int (*)(int, int, int, int))(0xC109DDA))(a4, 0xFFFFFFFF, ((0x800 + t1) & 0xFFFFF800), ((t1 + t2) - ((0x800 + t1) & 0xFFFFF800)));
+            t3 = t0;
+        } else {
+            t3 = (*(int *)((a4 + 0xC)));
         }
-        t0 = *(int *)((a4 + 0xC));
-        return ((int (*)(int, int, int, int))(0xC109DDA))(a4, t0, ((0x800 + t1) & 0xFFFFF800), (t1 + t2));
-    }
-    if ((unsigned int)(((0x800 + t1) & 0xFFFFF800) - (*(int *)((a4 + 0xC)))) >= (unsigned int)0x2B0) {
-        if ((unsigned int)(((((0x800 + t1) & 0xFFFFF800) - (*(int *)((a4 + 0xC)))) + a5) - 688) > (unsigned int)(t1 + t2)) {
-            return ((int (*)(int, int, int, int))(0xC109DDA))(a4, 0xFFFFFFFF, ((0x800 + t1) & 0xFFFFF800), (t1 + t2));
+        t0 = t3;
+    } else {
+        if ((unsigned int)(((0x800 + t1) & 0xFFFFF800) - (*(int *)((a4 + 0xC)))) >= (unsigned int)0x2B0) {
+            t3 = (((0x800 + t1) & 0xFFFFF800) - 688);
+            if ((unsigned int)(((((0x800 + t1) & 0xFFFFF800) - (*(int *)((a4 + 0xC)))) + a5) - 688) > (unsigned int)(t1 + t2)) {
+                t3 = 0xFFFFFFFF;
+            }
+            t0 = t3;
+        } else {
+            t3 = 0xFFFFFFFF;
+            if ((unsigned int)((((((0x800 + t1) & 0xFFFFF800) + 0x800) - (*(int *)((a4 + 0xC)))) + a5) - 688) <= (unsigned int)(t1 + t2)) {
+                t3 = ((((0x800 + t1) & 0xFFFFF800) + 0x800) - 688);
+            }
+            t0 = t3;
         }
-        return ((int (*)(int, int, int, int))(0xC109DD2))(a4, a5, ((0x800 + t1) & 0xFFFFF800), (t1 + t2));
     }
-    return ((int (*)(int, int, int, int))(0xC109DC0))(a4, a5, ((0x800 + t1) & 0xFFFFF800), (t1 + t2));
+    return t0;
 }
 

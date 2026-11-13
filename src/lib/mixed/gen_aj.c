@@ -201,7 +201,7 @@ int snd_play_char_voice(int a4, int a5);
 int cam_update_view_matrices(float f4);
 int syRtcMakeAgeOfMoon(void);
 int FUN_0c0f2664(void);
-int FUN_0c0f6128(int a4, int a5, int a6, int a7);
+int FUN_0c0f6128(int a4);
 int mpdrv_dpf(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
 int FUN_0c016e02(void);
 int FUN_0c01c7c4(int a4);
@@ -252,7 +252,7 @@ int FUN_0c0d609e(int a4, int a5);
 int math_sin_float(float f4);
 int FUN_0c0e6758(int a4, int a5);
 int FUN_0c0e64c4(int a4);
-int FUN_0c0efe10(int a4, int a5, int a6, int a7);
+int FUN_0c0efe10(int a4);
 int buCalcCRC(int a4, int a5, int a6, int a7);
 int kmCreateTextureSurface(int a4, int a5, int a6, int a7);
 int mpdrv_insertnop(int a4);
@@ -399,25 +399,28 @@ int FUN_0c0f2664(void)
     return t9;
 }
 
-int FUN_0c0f6128(int a4, int a5, int a6, int a7)
+int FUN_0c0f6128(int a4)
 {
     register int t5;
+    register int t12;
 
     if (((*(int *)((a4 + 0x18))) & 4) == 0) {
         if ((*(int *)((a4 + 0x4))) != 1) {
             return 0x4;
         }
         t5 = *(int *)((a4 + 0x8));
+        t12 = 0x3;
         if ((t5 & 0x38000000) != 0) {
+            t12 = 0x1;
             if ((t5 & 0x38000000) != 0x8000000) {
+                t12 = 0x2;
                 if ((t5 & 0x38000000) != 0x10000000) {
-                    return ((int (*)(int, int, int, int))(0xC0F6186))(a4, a5, a6, a7);
+                    t12 = a4;
                 }
-                return ((int (*)(int, int, int, int))(0xC0F6184))(a4, a5, a6, a7);
             }
-            return ((int (*)(int, int, int, int))(0xC0F6180))(a4, a5, a6, a7);
         }
-        return ((int (*)(int, int, int, int))(0xC0F6186))(0x3, a5, a6, a7);
+        *(unsigned int *)0xC803CE8 = (((*(int *)0xC817284) & 0xFFFFFFF8) | t12);
+        return 0x0;
     }
     return 0x4;
 }
@@ -629,18 +632,26 @@ int FUN_0c0e64c4(int a4)
     return (snd_send_command(((((t4 << 8) << 2) << 2) + 0x1A1)));
 }
 
-int FUN_0c0efe10(int a4, int a5, int a6, int a7)
+int FUN_0c0efe10(int a4)
 {
     int stk[2];
     register int t0;
+    register int t2;
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     t0 = FUN_0c0efdee((((int)stk + 0) + 0x4));
     if ((int)(*(int *)((t0 + 0x0))) > 0) {
-        if ((*(int *)(((int)stk + 0))) == (*(int *)(((0x0 + (t0 + 0x8)) + 0x0)))) {
-            return 0x0;
+        t2 = 0x0;
+        for (;;) {
+            if ((*(int *)(((int)stk + 0))) == (*(int *)(((((t2 << 2) << 1) + (t0 + 0x8)) + 0x0)))) {
+                break;
+            }
+            t2 = (t2 + 0x1);
+            if ((int)t2 >= (int)(*(int *)((t0 + 0x0)))) {
+                return 0xFFFFFFFD;
+            }
         }
-        return ((int (*)(int, int, int, int))(0xC0EFE80))(0x0, t0, a6, a7);
+        return t2;
     }
     return 0xFFFFFFFD;
 }

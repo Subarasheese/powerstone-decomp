@@ -1,6 +1,7 @@
 /* Straight-line functions with calls and guards (batch gen_z): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int FUN_0c10121c(int, int, int);
 struct o0_float { float v; };
 struct o0_uchar { unsigned char v; };
 struct o0_uint { unsigned int v; };
@@ -66,6 +67,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
+struct o44_short { char p[0x44]; short v; };
 int ADXRNA_SetOutPan(int, int, int);
 int ui_draw_element_sprite(int);
 int vmu_menu_pad_pressed(int);
@@ -168,7 +170,7 @@ int FUN_0c111ca6(void);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
 int gdFsStrcmp(void);
-int FUN_0c106a86(int a4, int a5, int a6, int a7);
+int FUN_0c106a86(int a4);
 int pl_mode15_cls05_07_f1_move(int a4);
 int FUN_0c08b8fc(int a4);
 int FUN_0c09fa84(int a4, int a5, int a6);
@@ -198,7 +200,7 @@ int fx_spawn_0488b8(int a4, int a5, int a6, int a7);
 int FUN_0c045968(int a4);
 int FUN_0c08a7d4(int a4, int a5);
 int FUN_0c0a1162(int a4);
-int FUN_0c0fcea0(int a4, int a5, int a6, int a7);
+int FUN_0c0fcea0(int a4, int a5);
 int kdGetDriverMode(int a4);
 int FUN_0c1043c6(int a4, int a5, int a6, int a7);
 int FUN_0c024764(int a4, int a5, int a6, int a7);
@@ -216,7 +218,7 @@ int nlMakeProjConvMat(int a4);
 int syRtcGetCountForce(void);
 int FUN_0c0de290(int a4, int a5, int a6, int a7);
 int kdDevGetLCDInfo(int a4, int a5);
-int FUN_0c105190(int a4, int a5, int a6, int a7);
+int FUN_0c105190(int a4, int a5);
 int FUN_0c10521a(int a4, int a5);
 int FUN_0c01da70(int a4, int a5, float f4);
 int pl_falcon_attack_kind57_phase1(int a4);
@@ -232,26 +234,36 @@ int stage_point_in_sphere(int a4, int a5);
 int FUN_0c0408d0(int a4);
 int FUN_0c0da5b2(int a4, int a5, int a6, int a7);
 
-int FUN_0c106a86(int a4, int a5, int a6, int a7)
+int FUN_0c106a86(int a4)
 {
+    register int t0;
     register int t1;
-    register int t5;
-    register int t7;
+    register int t2;
 
-    t1 = ADXSJD_GetNumChan((*(int *)((a4 + 0x4))));
-    if (t1 == 1) {
-        t5 = *(int *)((a4 + 0xC));
-        t7 = 0x0;
+    t0 = ADXSJD_GetNumChan((*(int *)((a4 + 0x4))));
+    if (t0 == 1) {
+        t0 = *(int *)((a4 + 0xC));
+        t1 = 0x0;
         if (((((struct o42_short *)(a4))->v)) == -128) {
         } else {
-            t7 = ((((struct o42_short *)(a4))->v));
+            t1 = ((((struct o42_short *)(a4))->v));
         }
-        return (ADXRNA_SetOutPan(t5, 0x0, t7));
+        t2 = (ADXRNA_SetOutPan(t0, 0x0, t1));
+    } else {
+        t0 = 0xFFFFFFF1;
+        if (((((struct o42_short *)(a4))->v)) == -128) {
+        } else {
+            t0 = ((((struct o42_short *)(a4))->v));
+        }
+        ADXRNA_SetOutPan((*(int *)((a4 + 0xC))), 0x0, t0);
+        t0 = 0xF;
+        if (((((struct o44_short *)(a4))->v)) == -128) {
+        } else {
+            t0 = ((((struct o44_short *)(a4))->v));
+        }
+        t2 = (ADXRNA_SetOutPan((*(int *)((a4 + 0xC))), 0x1, t0));
     }
-    if (((((struct o42_short *)(a4))->v)) == -128) {
-        return ((int (*)(int, int, int, int))(0xC106B12))(t1, 0x0, 0xFFFFFFF1, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC106B0C))(t1, 0x0, a6, a7);
+    return t2;
 }
 
 int FUN_0c0f0000(int a4)
@@ -403,7 +415,7 @@ int FUN_0c10b740(void)
     return 0x0;
 }
 
-int FUN_0c0fcea0(int a4, int a5, int a6, int a7)
+int FUN_0c0fcea0(int a4, int a5)
 {
     register int t0;
 
@@ -422,25 +434,25 @@ int FUN_0c0fcea0(int a4, int a5, int a6, int a7)
                                     if (t0 != 0x100) {
                                         if (t0 != 0x200) {
                                             if (t0 != 0x400) {
-                                                return ((int (*)(int, int, int, int))(0xC0FCF40))(t0, a5, a6, a7);
+                                                return 0x3;
                                             }
-                                            return ((int (*)(int, int, int, int))(0xC0FCF3C))(t0, a5, a6, a7);
+                                            return 0xA;
                                         }
-                                        return ((int (*)(int, int, int, int))(0xC0FCF38))(t0, a5, a6, a7);
+                                        return 0x9;
                                     }
-                                    return ((int (*)(int, int, int, int))(0xC0FCF34))(t0, a5, a6, a7);
+                                    return 0x8;
                                 }
-                                return ((int (*)(int, int, int, int))(0xC0FCF30))(t0, a5, a6, a7);
+                                return 0x7;
                             }
-                            return ((int (*)(int, int, int, int))(0xC0FCF2C))(t0, a5, a6, a7);
+                            return 0x6;
                         }
-                        return ((int (*)(int, int, int, int))(0xC0FCF28))(t0, a5, a6, a7);
+                        return 0x5;
                     }
-                    return ((int (*)(int, int, int, int))(0xC0FCF24))(t0, a5, a6, a7);
+                    return 0x4;
                 }
-                return ((int (*)(int, int, int, int))(0xC0FCF40))(t0, a5, a6, a7);
+                return 0x3;
             }
-            return ((int (*)(int, int, int, int))(0xC0FCF20))(t0, a5, a6, a7);
+            return 0x2;
         }
         return 0x1;
     }
@@ -607,14 +619,29 @@ int kdDevGetLCDInfo(int a4, int a5)
     return 0x0;
 }
 
-int FUN_0c105190(int a4, int a5, int a6, int a7)
+int FUN_0c105190(int a4, int a5)
 {
     register int t0;
+    register int t1;
+    register int t2;
 
     *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x30)) = 0x1;
     t0 = *(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x4));
     *(unsigned int *)((((a4 * 0x148) + 0xC80DBC8) + 0x34)) = (*(int *)((((((t0 << 2) + t0) << 2) << 2) + 0xC34723C)));
-    return ((int (*)(int, int, int, int))(0xC1051FE))(a4, a5, a6, a7);
+    t0 = a5;
+    t1 = 0x0;
+    for (;;) {
+        if ((int)t1 >= (int)((*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x0))) + 0x1)) {
+            return 0x0;
+        }
+        t2 = FUN_0c10121c(a4, t1, t0);
+        if ((int)t2 < 0) {
+            break;
+        }
+        t1 = (t1 + 0x1);
+        t0 = (t0 + 0x200);
+    }
+    return t2;
 }
 
 int FUN_0c10521a(int a4, int a5)
@@ -653,49 +680,57 @@ int FUN_0c0fd04e(int a4)
     register int t6;
     register int t7;
     register int t8;
-    register int t9;
 
     t0 = *(int *)((a4 + 0x10));
     t1 = *(int *)((a4 + 0xC));
+    t2 = (t1 * t0);
     if (((*(int *)((a4 + 0x18))) & 0x1) != 0) {
-        t2 = ((unsigned int)t0 >> 1);
+        t3 = ((unsigned int)t0 >> 1);
         if ((unsigned int)((unsigned int)t1 >> 1) < (unsigned int)((unsigned int)t0 >> 1)) {
-            t2 = ((unsigned int)t1 >> 1);
+            t3 = ((unsigned int)t1 >> 1);
         }
-        t3 = (t1 * t0);
-        t4 = ((unsigned int)t1 >> 1);
-        t5 = ((unsigned int)t0 >> 1);
-        if ((unsigned int)t2 > (unsigned int)0x1) {
-            t6 = t2;
-            t2 = (t1 * t0);
-            t7 = ((unsigned int)t1 >> 1);
-            t8 = ((unsigned int)t0 >> 1);
+        t4 = (t1 * t0);
+        t5 = ((unsigned int)t1 >> 1);
+        t6 = ((unsigned int)t0 >> 1);
+        if ((unsigned int)t3 > (unsigned int)0x1) {
+            t7 = t3;
+            t3 = (t1 * t0);
+            t8 = ((unsigned int)t1 >> 1);
+            t1 = ((unsigned int)t0 >> 1);
             for (;;) {
-                t9 = (t7 * t8);
-                t7 = ((unsigned int)t7 >> 1);
+                t0 = (t8 * t1);
                 t8 = ((unsigned int)t8 >> 1);
-                t6 = ((unsigned int)t6 >> 1);
-                t2 = (t2 + t9);
-                if ((unsigned int)t6 <= (unsigned int)0x1) {
+                t1 = ((unsigned int)t1 >> 1);
+                t7 = ((unsigned int)t7 >> 1);
+                t3 = (t3 + t0);
+                if ((unsigned int)t7 <= (unsigned int)0x1) {
                     break;
                 }
             }
-            t3 = t2;
-            t4 = t7;
+            t4 = t3;
             t5 = t8;
+            t6 = t1;
         }
-        t2 = (t3 + (t4 * t5));
-        t6 = (t4 * t5);
-        if (t4 == t5) {
-            t2 = (t3 + 0x1);
-            t6 = t4;
+        t0 = (t4 + (t5 * t6));
+        if (t5 == t6) {
+            t0 = (t4 + 0x1);
         }
+        t1 = (t0 + 0xB);
         if ((*(int *)((a4 + 0x8))) == 0x28000000) {
-            return ((int (*)(int, int, int, int))(0xC0FD0C2))(a4, (t2 + 0x2B), t6, t5);
+            t1 = (t0 + 0x2B);
         }
-        return ((int (*)(int, int, int, int))(0xC0FD0C0))(a4, t2, t6, t5);
+        t2 = t1;
     }
-    return ((int (*)(int, int, int, int))(0xC0FD0C2))(a4, (t1 * t0), t1, t0);
+    t0 = t2;
+    if ((*(int *)((a4 + 0x8))) == 0x28000000) {
+        t1 = 0x1;
+        if (t2 == 1) {
+        } else {
+            t1 = ((unsigned int)t2 >> 1);
+        }
+        t0 = t1;
+    }
+    return t0;
 }
 
 int FUN_0c1084b6(int a4, int a5)

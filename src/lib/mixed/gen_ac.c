@@ -102,6 +102,9 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
+struct o4E_ushort { char p[0x4E]; unsigned short v; };
+struct o50_ushort { char p[0x50]; unsigned short v; };
+struct o52_ushort { char p[0x52]; unsigned short v; };
 int ADXCRS_Lock(void);
 int ADXCRS_Unlock(void);
 int ADXERR_CallErrFunc(int, ...);
@@ -466,7 +469,10 @@ int FUN_0c0f0d04(int a4, int a5, int a6, int a7)
     (((struct o48_ushort *)(a4))->v) = 0x0;
     (((struct o4A_ushort *)(a4))->v) = 0x0;
     (((struct o4C_ushort *)(a4))->v) = 0x1;
-    return ((int (*)(int, int, int, int))(0xC0F0D60))(a4, 0x0, a6, a7);
+    (((struct o4E_ushort *)(a4))->v) = (*(short *)0xC15A274);
+    (((struct o50_ushort *)(a4))->v) = 0x0;
+    (((struct o52_ushort *)(a4))->v) = 0x0;
+    return a4;
 }
 
 int FUN_0c0fb4e0(void)
@@ -484,11 +490,35 @@ int FUN_0c0fb4e0(void)
 
 int FUN_0c0fbfa2(int a4, int a5, int a6, int a7)
 {
-    if ((int)a4 <= (int)a6) {
-        if ((int)a5 > (int)a7) {
-            return 0xDDDD;
+    register int t0;
+    register int t2;
+    register int t8;
+    register int t9;
+    register int t10;
+    register int t11;
+
+    if (((int)a4 <= (int)a6) && ((int)a5 <= (int)a7)) {
+        t0 = a6;
+        if ((int)a6 > (int)0x7FF) {
+            t0 = 0x7FF;
         }
-        return ((int (*)(int, int, int, int))(0xC0FC000))(a4, a5, a6, a7);
+        t2 = a7;
+        if ((int)a7 > (int)0x7FF) {
+            t2 = 0x7FF;
+        }
+        t8 = a4;
+        t9 = a5;
+        t10 = t0;
+        t11 = t2;
+        if ((*(int *)0xC816FE8) == 4) {
+            t8 = ((a4 + 0x1) & 0xFFFFFFFE);
+            t9 = ((a5 + 0x1) & 0xFFFFFFFE);
+            t10 = (t0 & 0xFFFFFFFE);
+            t11 = (t2 & 0xFFFFFFFE);
+        }
+        (((struct o0_uint *)0xC81726C)->v) = ((t8 & 0x7FF) | ((t10 & 0x7FF) << 16));
+        (((struct o4_uint *)0xC81726C)->v) = (((t11 & 0x7FF) << 16) | (t9 & 0x7FF));
+        return 0x0;
     }
     return 0xDDDD;
 }

@@ -345,7 +345,7 @@ int pl_load_gravity(int a4);
 int FUN_0c0a32dc(void);
 int FUN_0c0afb0a(int a4);
 int FUN_0c0ddeb0(void);
-int nlStoreMatrix8(int a4, int a5, int a6, int a7);
+int nlStoreMatrix8(int a4);
 float nlRotateXSC(float f4, float f5);
 float nlRotateAY(int a4);
 float nlRotateAZ(int a4);
@@ -1096,7 +1096,7 @@ int kmiBGPlaneSetPCW(int a4, int a5, int a6)
     return t1;
 }
 
-int nlStoreMatrix8(int a4, int a5, int a6, int a7)
+int nlStoreMatrix8(int a4)
 {
     register int t1;
     float u3[16];
@@ -1122,7 +1122,7 @@ int nlStoreMatrix8(int a4, int a5, int a6, int a7)
     *(float *)(((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[2];
     *(float *)(((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0)) = u3[1];
     *(float *)((((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) + 0x0) + 4)) = u3[0];
-    return ((int (*)(int, int, int, int))(0xC0E0BF8))((((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8), a5, a6, a7);
+    return (((((((((t1 + 0x40) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8) - 0x8);
 }
 
 float nlRotateXSC(float f4, float f5)

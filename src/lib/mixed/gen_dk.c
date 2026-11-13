@@ -1,6 +1,8 @@
 /* Straight-line functions with calls and guards (batch gen_dk): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
+int write_fat(int, int, int);
+int FUN_0c104742(int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_short { short v; };
@@ -144,7 +146,7 @@ float math_sin_angle16(int);
 int FUN_0c0e09f0(int, int, int, int, float);
 int nlStoreMatrix(int);
 int nlLoadMatrix(int);
-float FUN_0c0e12e0(int, int);
+float nlLUDecompose(int, int);
 int nlSelectMatrixStack(int);
 extern int _modls();
 extern int _quick_evn_mvn();
@@ -231,7 +233,7 @@ float nlInvertMatrix(int a4)
     if (a4 == 0) {
         t2 = (nlStoreMatrix(0x0));
     }
-    t5 = FUN_0c0e12e0(t2, (((int)stk + 0) + 0x4C));
+    t5 = nlLUDecompose(t2, (((int)stk + 0) + 0x4C));
     if (t5 == 0.0f) {
     } else {
         *(unsigned char *)(((int)stk + 0)) = 0x0;
@@ -331,78 +333,97 @@ float nlInvertMatrix(int a4)
 int vmsfs_xdefrag(int a4, int a5, int a6, int a7)
 {
     int stk[12];
-    register int t1;
-    register int t3;
-    register int t6;
-    register int t11;
-    register int t12;
-    register int t13;
-    register int t14;
-    register int t15;
-    register int t16;
-    register int t17;
-    register int t19;
-    register int t22;
-    register int t26;
-    int t4;
-    register int t5;
 
-    *(unsigned int *)(((int)stk + 0)) = (a4 * 0x148);
-    if ((*(signed char *)((((a4 * 0x148) + 0xC80DBC8) + 0x2))) != 0) {
-        t1 = vmsio_isready(a4);
-        if (t1 == 0) {
-            vmsfs_unmount(a4);
-            return 0xFFFFFF01;
-        }
-        t3 = vmsio_ismount(a4);
-        if ((t3 != 0) && (t4 = *(int *)(((int)stk + 0)), t5 = *(signed char *)(((t4 + 0xC80DBC8) + 0x8)), t5 != 0)) {
-            t6 = buIsFormat(a4);
-            if ((int)t6 < 0) {
-                return 0xFFFFFF03;
-            }
-            if ((*(int *)(((*(int *)((((a4 * 0x148) + 0xC80DBC8) + 0x1C))) + 0x38))) != 0) {
-                t11 = FUN_0c104006(a4, (((int)stk + 0) + 0x4));
-                if (t11 != 0) {
-                    t12 = FUN_0c1043c6(a4);
-                    if ((int)t12 < 0) {
-                        return 0xFFFFFF0B;
-                    }
-                    for (;;) {
-                        t13 = FUN_0c1042ba(a4);
-                        if ((int)t13 >= 0) {
-                            t14 = FUN_0c104308(a4, (t13 + 0x1));
-                            if ((int)t14 >= 0) {
-                                t15 = FUN_0c10121c(a4, t13, a5);
-                                if ((int)t15 >= 0) {
-                                    t16 = FUN_0c1012f4(a4, t14, a5);
-                                    if ((int)t16 >= 0) {
-                                        t17 = search_fat(a4, t13);
-                                        if ((int)t17 > 0) {
-                                            set_fat(a4, t17, t14);
-                                        } else {
-                                            t19 = FUN_0c10435a(a4, t13);
-                                            t22 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))(t19, 0x2, t14, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-                                        }
-                                        t26 = get_fat(a4, t13);
-                                        set_fat(a4, t14, t26);
-                                        set_fat(a4, t13, 0xFFFC);
-                                        continue;
-                                    }
-                                    return ((int (*)(int, int, int, int))(0xC1045A0))(t16, a5, a6, a7);
-                                }
-                                return ((int (*)(int, int, int, int))(0xC1045A0))(t15, a5, a6, a7);
-                            }
-                            return ((int (*)(void))(0xC104578))();
-                        }
-                        return ((int (*)(void))(0xC104578))();
-                    }
-                }
-                return 0xFFFFFF0B;
-            }
-            return 0xFFFFFF0B;
-        }
-        return 0xFFFFFF01;
-    }
-    return 0xFFFFFF01;
+    register int R2;
+    register int R3;
+    register int R6;
+    register int R9;
+    register float F15;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    register int v0_6;
+    v0_6 = a4;
+    v0_3 = a5;
+    *(unsigned int *)(((int)stk + 0)) = (v0_6 * 0x148);
+    v0_1 = (v0_3);
+    v0_2 = (((v0_6 * 0x148) + 0xC80DBC8));
+    v0_0 = (v0_6);
+    if (((*(signed char *)((((v0_6 * 0x148) + 0xC80DBC8) + 0x2))) == 0)) goto L_C10449E;
+    v0_4 = (vmsio_isready(v0_0)) != 0;
+    if (v0_4) goto L_C104488;
+    vmsfs_unmount(v0_0);
+    L_C10449E:;
+    v0_0 = (0xFFFFFF01);
+    L_C1045A2:;
+    return v0_0;
+    L_C104488:;
+    v0_4 = (vmsio_ismount(v0_0)) == 0;
+    if (v0_4) goto L_C10449E;
+    if (((*(signed char *)((((*(int *)(((int)stk + 0))) + 0xC80DBC8) + 0x8))) != 0)) goto L_C1044A4;
+    goto L_C10449E;
+    L_C1044A4:;
+    v0_4 = (int)(buIsFormat(v0_0)) >= 0;
+    if (v0_4) goto L_C1044B4;
+    v0_0 = (0xFFFFFF03);
+    goto L_C1045A2;
+    L_C1044B4:;
+    if (((*(int *)(((*(int *)((v0_2 + 0x1C))) + 0x38))) == 0)) goto L_C1044D2;
+    v0_4 = FUN_0c104006(v0_0, (((int)stk + 0) + 0x4));
+    v0_6 = (v0_4);
+    if ((v0_4 == 0)) goto L_C1044D2;
+    v0_4 = (int)(FUN_0c1043c6(v0_0)) >= 0;
+    if (v0_4) goto L_C1044D8;
+    L_C1044D2:;
+    v0_0 = (0xFFFFFF0B);
+    goto L_C1045A2;
+    L_C1044D8:;
+    v0_3 = FUN_0c1042ba(v0_0);
+    v0_4 = (v0_3);
+    if (((int)v0_3 < 0)) goto L_C104578;
+    v0_3 = FUN_0c104308(v0_0, (v0_4 + 0x1));
+    v0_5 = (v0_3);
+    if (((int)v0_3 < 0)) goto L_C104578;
+    v0_3 = FUN_0c10121c(v0_0, v0_4, v0_1);
+    v0_6 = (v0_3);
+    if (((int)v0_3 < 0)) goto L_C1045A0;
+    v0_3 = FUN_0c1012f4(v0_0, v0_5, v0_1);
+    v0_6 = (v0_3);
+    if (((int)v0_3 < 0)) goto L_C1045A0;
+    v0_6 = search_fat(v0_0, v0_4);
+    v0_3 = (v0_6);
+    if (((int)v0_6 <= 0)) goto L_C104526;
+    set_fat(v0_0, v0_3, v0_5);
+    L_C10453A:;
+    v0_6 = get_fat(v0_0, v0_4);
+    set_fat(v0_0, v0_5, v0_6);
+    set_fat(v0_0, v0_4, 0xFFFC);
+    goto L_C1044D8;
+    L_C104526:;
+    v0_6 = FUN_0c10435a(v0_0, v0_4);
+    v0_6 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)0xC80DBC4) + 0x10)))))(v0_6, 0x2, v0_5, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+    goto L_C10453A;
+    L_C1045A0:;
+    v0_0 = (v0_6);
+    goto L_C1045A2;
+    L_C104578:;
+    v0_6 = ((v0_2 + 0x48));
+    v0_3 = (0x100);
+    R6 = (0x1);
+    L_C104586:;
+    if (((unsigned int)v0_6 < (unsigned int)((v0_2 + 0x48) + v0_3))) goto L_C104582;
+    v0_1 = FUN_0c104742(v0_0);
+    v0_6 = (v0_1);
+    if (((int)v0_1 < 0)) goto L_C1045A0;
+    v0_6 = ((write_fat(v0_0, v0_3, R6)));
+    goto L_C1045A0;
+    L_C104582:;
+    *(unsigned char *)((v0_6 + 0x0)) = R6;
+    v0_6 = ((v0_6 + 0x1));
+    goto L_C104586;
 }
 

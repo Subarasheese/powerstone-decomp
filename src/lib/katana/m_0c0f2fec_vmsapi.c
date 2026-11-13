@@ -82,7 +82,7 @@ void FUN_0c0f2fec(void)
  }
 }
 
-void buGetVersion(void) { vmsfs_c_setcompletecallback(); }
+void buSetCompleteCallback(void) { vmsfs_c_setcompletecallback(); }
 void FUN_0c0f3114(void) { vmsfs_c_setprogresscallback(); }
 void FUN_0c0f311a(void) { vmsfs_c_setcallbackparam(); }
 int buIsReady(void) { return g_vms_6bec; }

@@ -151,9 +151,46 @@ int FUN_0c0ddb20(void)
     return (*(int *)(((int)stk + 0)));
 }
 
-int nl_texture_slot_alloc(int a4, int a5, int a6)
+int nl_texture_slot_alloc(void)
 {
-    return ((int (*)(int, int, int, int))(0xC0DDBA8))(a4, 0x0, a6, 0x0);
+    register int t0;
+    register int t1;
+    register int t2;
+    register int t3;
+    register int t8;
+    int t9;
+    register int t10;
+    register int t12;
+
+    t0 = 0x0;
+    t1 = 0x0;
+    t2 = 0x0;
+    t3 = 0x0;
+    for (;;) {
+        if ((int)t1 >= (int)(*(int *)0xC3468E4)) {
+            return 0xFFFFFFFF;
+        }
+        t8 = *(int *)((t2 + (*(int *)0xC7F87CC)));
+        if (t8 != -1) {
+            break;
+        }
+        t3 = (t3 + 0x4);
+        t2 = (t2 + 0x4);
+        t1 = (t1 + 0x1);
+        t0 = (t0 + 0x20);
+    }
+    t9 = 0x1;
+    t10 = 0x0;
+    for (;;) {
+        if ((t8 & t9) == 0) {
+            break;
+        }
+        t9 = (t9 << 1);
+        t10 = (t10 + 0x1);
+    }
+    t12 = *(int *)0xC7F87CC;
+    *(unsigned int *)((t3 + t12)) = ((*(int *)((t3 + t12))) | t9);
+    return (t0 + t10);
 }
 
 int nl_texture_slot_free(int a4, int a5)
@@ -189,21 +226,54 @@ int FUN_0c0ddc30(void)
     return t2;
 }
 
-int FUN_0c0ddc70(int a4, int a5, int a6, int a7)
+int FUN_0c0ddc70(int a4)
 {
-    if (a4 == 8) {
-        return ((int (*)(int, int, int, int))(0xC0DDD08))(0x0, a5, a6, a7);
-    }
-    if (a4 == 16) {
-        return ((int (*)(int, int, int, int))(0xC0DDD08))(0x1, a5, a6, a7);
-    }
-    if (a4 == 32) {
-        return ((int (*)(int, int, int, int))(0xC0DDD08))(0x2, a5, a6, a7);
-    }
-    if (a4 == 64) {
-        return ((int (*)(int, int, int, int))(0xC0DDD08))(0x3, a5, a6, a7);
-    }
-    return ((int (*)(int, int, int, int))(0xC0DDCD0))(a4, a5, a6, a7);
+
+    register int R0;
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R4;
+    register int R7;
+    register int R8;
+    register int R12;
+    register int R14;
+    register int T_;
+    R4 = a4;
+    R0 = (R4);
+    if ((R4 != 8)) goto L_C0DDC80;
+    R4 = (0x0);
+    L_C0DDD08:;
+    return R4;
+    L_C0DDC80:;
+    if ((R0 != 16)) goto L_C0DDC90;
+    R4 = (0x1);
+    goto L_C0DDD08;
+    L_C0DDC90:;
+    R0 = (R4);
+    if ((R4 != 32)) goto L_C0DDCA0;
+    R4 = (0x2);
+    goto L_C0DDD08;
+    L_C0DDCA0:;
+    if ((R0 != 64)) goto L_C0DDCD0;
+    R4 = (0x3);
+    goto L_C0DDD08;
+    L_C0DDCD0:;
+    if ((R4 != 0x80)) goto L_C0DDCE0;
+    R4 = (0x4);
+    goto L_C0DDD08;
+    L_C0DDCE0:;
+    if ((R4 != 0x100)) goto L_C0DDCF0;
+    R4 = (0x5);
+    goto L_C0DDD08;
+    L_C0DDCF0:;
+    if ((R4 != 0x200)) goto L_C0DDD00;
+    R4 = (0x6);
+    goto L_C0DDD08;
+    L_C0DDD00:;
+    if ((R4 != 0x400)) goto L_C0DDD08;
+    R4 = (0x7);
+    goto L_C0DDD08;
 }
 
 int nl_mesh_set_texture(int a4, int a5)

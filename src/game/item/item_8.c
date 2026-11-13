@@ -1,5 +1,6 @@
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05ca54-0c05cd68) */
 
+int FUN_0c05cb5c(int, int, int, int, float);
 /* named globals (symbols.txt) */
 extern char g_item_state[];
 extern char g_res_kyoutsuu[];
@@ -83,59 +84,11 @@ int FUN_0c05cb42(int a4, int a5, int a6)
     return ((int (*)(int, int, int, int))(0xC05CB5C))(a4, a5, a6, 0xFFFFFFFF);
 }
 
-void FUN_0c05cb46(VEC3 *pos, char kind, char dir)
+int FUN_0c05cb46(int a4, int a5, int a6)
 {
-    struct { signed char dir; float step; int ang; float speed; } s;
-    char *e;
-    int i, n, a;
+    int stk[2];
 
-    s.ang = 0;
-    s.speed = 0.0f;
-    s.dir = dir;
-    n = *(signed char *)(G + 0x32C);
-    if (n > 3) {
-        for (i = 0; i < n; i++) {
-            if (SLOT(i)[0x30D] != 0) {
-                e = SLOT(i);
-                break;
-            }
-        }
-    } else {
-        e = SLOT((signed char)kind);
-    }
-    e[1] = 0;
-    e[0x30D] = 0;
-    e[8] = 0;
-    e[9] = 0;
-    e[10] = 0;
-    e[11] = 0;
-    e[12] = 0;
-    e[13] = s.dir;
-    e[14] = kind;
-    H(e, 0xEC) = 0;
-    H(e, 0xEE) = 0;
-    *(VEC3 *)(e + 32) = *pos;
-    FUN_0c0624c4(MDL(e, 0) + 156, (void *)g_res_kyoutsuu, kind + 89);
-    if (s.dir == -1) {
-        a = 0x14000 - s.ang;
-        F(e, 32) = F(e, 32) + 100.0f * math_cos_angle16(a);
-        F(e, 40) = F(e, 40) + 100.0f * math_sin_angle16(a);
-        s.step = s.speed / 20.0f;
-        F(e, 56) = math_cos_angle16(a) * 20.0f;
-        F(e, 60) = s.step * 0.599999964f;
-        F(e, 64) = math_sin_angle16(a) * 20.0f;
-        *(VEC3 *)(MDL(e, 0) + 28) = *(VEC3 *)0x0C336320;
-    } else {
-        *(VEC3 *)(e + 56) = *(VEC3 *)0x0C336320;
-        F(e, 60) = 20.0f;
-        *(VEC3 *)(MDL(e, 0) + 28) = *(VEC3 *)0x0C33632C;
-    }
-    *(VEC3 *)(e + 68) = *(VEC3 *)0x0C336338;
-    e[0x107] = 0;
-    MDL(e, 0)[0] = 1;
-    MDL(e, 4)[0] = 0;
-    MDL(e, 8)[0] = 0;
-    MDL(e, 12)[0] = 0;
-    fx_spawn_0498c4(e);
-    snd_play_side_se(*(signed char *)(e + 3), 17);
+    *(unsigned char *)(((int)stk + 0)) = a5;
+    *(unsigned char *)(((int)stk + 4)) = a6;
+    return FUN_0c05cb5c(a4, 0x0, (*(signed char *)(((int)stk + 0))), (*(signed char *)(((int)stk + 4))), 0.0f);
 }

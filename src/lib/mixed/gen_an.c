@@ -2,6 +2,9 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 typedef struct { int w[4]; } Stk4;
+int FUN_0c1150cc(int, int, int, int);
+int FUN_0c10bc80(int, int, int);
+int FUN_0c108e74(void);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o0_short { short v; };
@@ -75,6 +78,9 @@ struct oF4_int { char p[0xF4]; int v; };
 struct oF4_uint { char p[0xF4]; unsigned int v; };
 struct oF8_int { char p[0xF8]; int v; };
 struct oF8_uint { char p[0xF8]; unsigned int v; };
+struct o40_int { char p[0x40]; int v; };
+struct o7C_uint { char p[0x7C]; unsigned int v; };
+struct o80_uint { char p[0x80]; unsigned int v; };
 int ADXCRS_Lock(void);
 int ADXCRS_Unlock(void);
 int ADXF_Stop(int);
@@ -213,7 +219,7 @@ int ui_task_create(void);
 int menu_ui_spawn_10(int a4);
 int FUN_0c0d320a(void);
 int FUN_0c0fb54c(int a4);
-int FUN_0c112672(int a4, int a5, int a6, int a7);
+int FUN_0c112672(int a4);
 int fmMngBit2Num(int a4, int a5, int a6);
 int ADXB_EvokeExpandSte(int a4, int a5);
 int ending_spawn_obj_t0a(int a4);
@@ -244,7 +250,6 @@ int FUN_0c1151de(int a4, int a5, int a6, int a7);
 int vmu_load_save_file(int a4);
 int keycfg_reset_system_settings(void);
 int ending_state_run_script(void);
-void FUN_0c020cba(int a4, int a5, int a6, int a7);
 int hit_world_reset(void);
 int FUN_0c0421ee(int a4, int a5);
 int FUN_0c042222(int a4, int a5);
@@ -287,7 +292,7 @@ void FUN_0c0a413a(int a4);
 int FUN_0c0ac640(int a4);
 int FUN_0c0c3ab2(int a4, int a5, int a6, int a7);
 int nlInvLightVector(void);
-int nlLoadMatrix(int a4, int a5, int a6, int a7);
+void nlLoadMatrix(int a4);
 void ADXF_Close(int a4);
 int vmsfs_ismount(int a4);
 int set_fat(int a4, int a5, int a6, int a7);
@@ -355,32 +360,33 @@ int pad_get_type(int a4);
 int FUN_0c0fb54c(int a4)
 {
     FUN_0c108b64();
-    if ((int)a4 <= (int)0x2) {
-        if ((int)a4 < 0) {
-            return 0x2;
-        }
-        return ((int (*)(void))(0xC0FB5C0))();
+    if (((int)a4 <= (int)0x2) && ((int)a4 >= 0)) {
+        *(unsigned int *)0xC816FE0 = (FUN_0c10bc80(0xC15AAA0, 0xC15AAA8, (0x3 & a4)));
+        FUN_0c108e74();
+        return 0x0;
     }
     return 0x2;
 }
 
-int FUN_0c112672(int a4, int a5, int a6, int a7)
+int FUN_0c112672(int a4)
 {
-    register int t4;
+    register int t5;
 
     if ((unsigned char)(*(signed char *)((a4 + 0x7))) == 1) {
         if ((unsigned char)(*(signed char *)((a4 + 0x8))) == 5) {
             *(unsigned char *)((a4 + 0x0)) = 0x1;
-            return ((int (*)(int, int, int, int))(0xC1126B6))(a4, 0x0, 0x1, a7);
+        } else {
+            *(unsigned char *)((a4 + 0x0)) = 0x0;
         }
     } else {
-        t4 = *(signed char *)((a4 + 0x8));
-        if (((unsigned char)t4 != 0xFF) && ((unsigned char)t4 != 0)) {
-            return ((int (*)(int, int, int, int))(0xC1126B4))(a4, 0x0, 0x1, a7);
+        t5 = *(signed char *)((a4 + 0x8));
+        if (((unsigned char)t5 != 0xFF) && ((unsigned char)t5 != 0)) {
+            *(unsigned char *)((a4 + 0x0)) = 0x1;
+        } else {
+            *(unsigned char *)((a4 + 0x0)) = 0x0;
         }
     }
-    *(unsigned char *)((a4 + 0x0)) = 0x0;
-    return ((int (*)(int, int, int, int))(0xC1126B6))(a4, 0x0, 0x1, a7);
+    return 0x0;
 }
 
 int fmMngBit2Num(int a4, int a5, int a6)
@@ -784,7 +790,9 @@ int FUN_0c108304(int a4, int a5, int a6, int a7)
     if (a4 == 0) {
         return mwRnaErrCallFunc(0xC15B31C, a5, a6, a7);
     }
-    return ((int (*)(int, int, int, int))(0xC10833C))(a4, a5, a6, a7);
+    (((struct o7C_uint *)(a4))->v) = a5;
+    (((struct o80_uint *)(a4))->v) = a6;
+    return FUN_0c1150cc(((((struct o40_int *)(a4))->v)), a5, a6, a7);
 }
 
 int kmiBGPlanePutColor(int a4, int a5, int a6)
@@ -862,15 +870,65 @@ int FUN_0c11568c(int a4, int a5, int a6, int a7)
     return (unsigned short)(~(unsigned short)t6);
 }
 
-int nlLoadMatrix(int a4, int a5, int a6, int a7)
+void nlLoadMatrix(int a4)
 {
     register int t1;
+    register float u3;
+    register float u4;
+    register float u5;
+    register float u6;
+    register float u7;
+    register float u8;
+    register float u9;
+    register float u10;
+    register float u11;
+    register float u12;
+    register float u13;
+    register float u14;
+    register float u15;
+    register float u16;
+    register float u17;
+    register float u18;
+    float u19[16];
 
     t1 = a4;
     if (a4 == 0) {
         t1 = (*(int *)0xC7FCCBC);
     }
-    return ((int (*)(int, int, int, int))(0xC0E1280))(t1, a5, a6, a7);
+    u3 = *(float *)((t1 + 0x0));
+    u4 = (((struct o4_float *)(t1))->v);
+    u5 = (((struct o4_float *)((t1 + 0x4)))->v);
+    u6 = (((struct o4_float *)(((t1 + 0x4) + 0x4)))->v);
+    u7 = (((struct o4_float *)((((t1 + 0x4) + 0x4) + 0x4)))->v);
+    u8 = (((struct o4_float *)(((((t1 + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u9 = (((struct o4_float *)((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u10 = (((struct o4_float *)(((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u11 = (((struct o4_float *)((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u12 = (((struct o4_float *)(((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u13 = (((struct o4_float *)((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u14 = (((struct o4_float *)(((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u15 = (((struct o4_float *)((((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u16 = (((struct o4_float *)(((((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u17 = (((struct o4_float *)((((((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    u18 = (((struct o4_float *)(((((((((((((((t1 + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4) + 0x4)))->v);
+    _builtin_st_ext((float (*)[4])u19);
+    u19[0] = u3;
+    u19[1] = u4;
+    u19[2] = u5;
+    u19[3] = u6;
+    u19[4] = u7;
+    u19[5] = u8;
+    u19[6] = u9;
+    u19[7] = u10;
+    u19[8] = u11;
+    u19[9] = u12;
+    u19[10] = u13;
+    u19[11] = u14;
+    u19[12] = u15;
+    u19[13] = u16;
+    u19[14] = u17;
+    u19[15] = u18;
+    _builtin_ld_ext((float (*)[4])u19);
 }
 
 void ADXF_Close(int a4)

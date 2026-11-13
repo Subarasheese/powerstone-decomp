@@ -148,7 +148,7 @@ int FUN_0c02743c(int a4, int a5);
 int pl_mode15_cls14_f1(int a4, int a5, int a6, int a7);
 int pl_load_motion_key(int a4, int a5);
 int FUN_0c0c68cc(int a4, int a5, int a6, int a7);
-int FUN_0c0e6364(int a4, int a5, int a6, int a7);
+int FUN_0c0e6364(int a4);
 
 int kmiProcessVertex_09(int a4)
 {
@@ -228,23 +228,23 @@ int FUN_0c0e5b20(int a4, int a5, int a6)
     return t1;
 }
 
-int FUN_0c0e6364(int a4, int a5, int a6, int a7)
+int FUN_0c0e6364(int a4)
 {
     int stk[3];
     register int t12;
-    register int t15;
-    register int t25;
-    register int t39;
-    register int t42;
-    register int t52;
-    int t19;
-    register int t20;
+    register int t16;
+    register int t26;
+    register int t41;
+    register int t45;
+    register int t55;
+    int t20;
     register int t21;
     register int t22;
-    int t46;
-    register int t47;
-    register int t48;
-    register int t49;
+    register int t23;
+    int t49;
+    register int t50;
+    register int t51;
+    register int t52;
 
     *(unsigned short *)(((((int)stk + 0) + 0xA) + 0x0)) = a4;
     *(unsigned short *)(((int)stk + 0)) = 0x0;
@@ -257,10 +257,10 @@ int FUN_0c0e6364(int a4, int a5, int a6, int a7)
                 }
                 t12 = *(short *)(((int)stk + 2));
                 *(unsigned short *)(((unsigned char)((((t12 << 1) + t12) << 2) << 1) + 0xC7FD110)) = 0x1;
-                return ((int (*)(int, int, int, int))(0xC0E6462))(a4, a5, a6, a7);
+                return (*(short *)(((int)stk + 2)));
             }
-            t15 = *(short *)(((int)stk + 2));
-            if (((*(short *)(((unsigned char)((((t15 << 1) + t15) << 2) << 1) + 0xC7FD110))) == 0) && (t19 = *(short *)(((int)stk + 2)), t20 = (int)(((unsigned int)t19) >> 31), t21 = (int)(((unsigned int)(((t19 << 1) + t19) << 2)) >> 31), t22 = *(int *)(((unsigned char)((((t19 << 1) + t19) << 2) << 1) + 0xC7FD118)), t22 == 0)) {
+            t16 = *(short *)(((int)stk + 2));
+            if (((*(short *)(((unsigned char)((((t16 << 1) + t16) << 2) << 1) + 0xC7FD110))) == 0) && (t20 = *(short *)(((int)stk + 2)), t21 = (int)(((unsigned int)t20) >> 31), t22 = (int)(((unsigned int)(((t20 << 1) + t20) << 2)) >> 31), t23 = *(int *)(((unsigned char)((((t20 << 1) + t20) << 2) << 1) + 0xC7FD118)), t23 == 0)) {
                 break;
             }
             *(unsigned short *)(((int)stk + 2)) = ((*(short *)(((int)stk + 2))) + 0x1);
@@ -269,9 +269,9 @@ int FUN_0c0e6364(int a4, int a5, int a6, int a7)
         if ((*(short *)(((int)stk + 0))) == 0) {
             return 0xFFFFFFFF;
         }
-        t25 = *(short *)(((int)stk + 2));
-        *(unsigned short *)(((unsigned char)((((t25 << 1) + t25) << 2) << 1) + 0xC7FD110)) = 0x1;
-        return ((int (*)(int, int, int, int))(0xC0E6462))(a4, a5, a6, a7);
+        t26 = *(short *)(((int)stk + 2));
+        *(unsigned short *)(((unsigned char)((((t26 << 1) + t26) << 2) << 1) + 0xC7FD110)) = 0x1;
+        return (*(short *)(((int)stk + 2)));
     }
     if ((*(short *)(((int)stk + 10))) == 2) {
         *(unsigned short *)(((int)stk + 2)) = 0x0;
@@ -280,12 +280,12 @@ int FUN_0c0e6364(int a4, int a5, int a6, int a7)
                 if ((*(short *)(((int)stk + 0))) == 0) {
                     return 0xFFFFFFFF;
                 }
-                t39 = *(short *)(((int)stk + 2));
-                *(unsigned short *)(((unsigned char)((((t39 << 1) + t39) << 2) << 1) + 0xC7FD110)) = 0x1;
-                return ((int (*)(int, int, int, int))(0xC0E6462))(a4, a5, a6, a7);
+                t41 = *(short *)(((int)stk + 2));
+                *(unsigned short *)(((unsigned char)((((t41 << 1) + t41) << 2) << 1) + 0xC7FD110)) = 0x1;
+                return (*(short *)(((int)stk + 2)));
             }
-            t42 = *(short *)(((int)stk + 2));
-            if (((*(short *)(((unsigned char)((((t42 << 1) + t42) << 2) << 1) + 0xC7FD110))) == 0) && (t46 = *(short *)(((int)stk + 2)), t47 = (int)(((unsigned int)t46) >> 31), t48 = (int)(((unsigned int)(((t46 << 1) + t46) << 2)) >> 31), t49 = *(int *)(((unsigned char)((((t46 << 1) + t46) << 2) << 1) + 0xC7FD118)), t49 != 0)) {
+            t45 = *(short *)(((int)stk + 2));
+            if (((*(short *)(((unsigned char)((((t45 << 1) + t45) << 2) << 1) + 0xC7FD110))) == 0) && (t49 = *(short *)(((int)stk + 2)), t50 = (int)(((unsigned int)t49) >> 31), t51 = (int)(((unsigned int)(((t49 << 1) + t49) << 2)) >> 31), t52 = *(int *)(((unsigned char)((((t49 << 1) + t49) << 2) << 1) + 0xC7FD118)), t52 != 0)) {
                 break;
             }
             *(unsigned short *)(((int)stk + 2)) = ((*(short *)(((int)stk + 2))) + 0x1);
@@ -294,9 +294,9 @@ int FUN_0c0e6364(int a4, int a5, int a6, int a7)
         if ((*(short *)(((int)stk + 0))) == 0) {
             return 0xFFFFFFFF;
         }
-        t52 = *(short *)(((int)stk + 2));
-        *(unsigned short *)(((unsigned char)((((t52 << 1) + t52) << 2) << 1) + 0xC7FD110)) = 0x1;
-        return ((int (*)(int, int, int, int))(0xC0E6462))(a4, a5, a6, a7);
+        t55 = *(short *)(((int)stk + 2));
+        *(unsigned short *)(((unsigned char)((((t55 << 1) + t55) << 2) << 1) + 0xC7FD110)) = 0x1;
+        return (*(short *)(((int)stk + 2)));
     }
     return 0xFFFFFFFF;
 }

@@ -202,7 +202,7 @@ int bgm_play_demo_w(void);
 int bgm_play_demo_01(void);
 int FUN_0c0ac8dc(int a4);
 int FUN_0c0d6744(int a4);
-int nlLoadMatrix8(int a4, int a5, int a6, int a7);
+void nlLoadMatrix8(int a4);
 int FUN_0c0ee6f0(int a4, int a5);
 int kmFreeTexture(int a4);
 int FUN_0c0ff35a(int a4, int a5, int a6, int a7);
@@ -369,9 +369,8 @@ int gdFsFinish(void);
 int FUN_0c0f2f60(void);
 int FUN_0c0f9c92(int a4);
 int FUN_0c0fdda0(int a4, int a5, int a6);
-int FUN_0c0fe3f4(int a4, int a5, int a6, int a7);
 int FUN_0c106636(int a4);
-void FUN_0c1066a6(int a4, int a5, int a6, int a7);
+int FUN_0c1066a6(int a4, int a5);
 int ADXSTM_GetFad(int a4, int a5);
 int ADXSTM_GetFsizeByte(int a4, int a5);
 int FUN_0c1075e4(int a4, int a5, int a6, int a7);
@@ -436,12 +435,12 @@ int FUN_0c099ae4(int a4);
 int pl_landed(int a4);
 int gfx_set_border_color(int a4);
 int FUN_0c0e2120(int a4);
-int FUN_0c0ec180(void);
+int nl_objasm_draw_obj_vtxcol(void);
 int syCfgGetIDAddress(int a4, int a5, int a6);
 int FUN_0c0fb3fe(int a4);
 int FUN_0c0fdea0(int a4);
 
-int nlLoadMatrix8(int a4, int a5, int a6, int a7)
+void nlLoadMatrix8(int a4)
 {
     register int t1;
     float u5[16];
@@ -467,7 +466,6 @@ int nlLoadMatrix8(int a4, int a5, int a6, int a7)
     u5[14] = (*(float *)((((((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x0) + 4)));
     u5[15] = ((((struct o8_float *)(((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8)))->v));
     _builtin_ld_ext((float (*)[4])u5);
-    return ((int (*)(int, int, int, int))(0xC0E12D4))(((((((((t1 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8), a5, a6, a7);
 }
 
 int FUN_0c0ee6f0(int a4, int a5)
@@ -1082,17 +1080,6 @@ int FUN_0c0fdda0(int a4, int a5, int a6)
     return FUN_0c0fddbe(a4, a5, a6);
 }
 
-int FUN_0c0fe3f4(int a4, int a5, int a6, int a7)
-{
-    if ((*(signed char *)((a4 + 0x0))) == 0) {
-        if ((*(signed char *)((a5 + 0x0))) != 0) {
-            return 0x0;
-        }
-        return 0x1;
-    }
-    return ((int (*)(int, int, int, int))(0xC0FE3EC))(a4, a5, a6, a7);
-}
-
 int FUN_0c106636(int a4)
 {
     *(unsigned char *)((a4 + 0x1)) = 0x2;
@@ -1101,13 +1088,17 @@ int FUN_0c106636(int a4)
     return 0x1;
 }
 
-void FUN_0c1066a6(int a4, int a5, int a6, int a7)
+int FUN_0c1066a6(int a4, int a5)
 {
+    register int t2;
+
     if ((int)a5 >= 0) {
         *(unsigned int *)((a4 + 0x30)) = a5;
-        return;
+    } else {
+        t2 = (int)((int)((*(int *)((a4 + 0x14))) + 0x7FF) / (int)0x800);
+        *(unsigned int *)((a4 + 0x30)) = t2;
     }
-    ((int (*)(int, int, int, int))(0xC1066DC))(a4, a5, a6, a7);
+    return t2;
 }
 
 int ADXSTM_GetFad(int a4, int a5)
@@ -1309,7 +1300,7 @@ int FUN_0c107ef6(int a4, int a5, int a6, int a7)
         mwRnaErrCallFunc(0xC15B31C, a5, a6, a7);
         return 0xFFFFFFFF;
     }
-    return ((int (*)(int, int, int, int))(0xC107F1C))(a4, a5, a6, a7);
+    return (*(int *)((a4 + 0x3C)));
 }
 
 int FUN_0c1081f2(int a4, int a5, int a6, int a7)

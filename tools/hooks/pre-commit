@@ -5,13 +5,22 @@
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 # No build here: a commit does not compile and link the sources. The checks below are quick: retcheck (a function's C returns in the
-# register the original uses) and the audit of tests/equivalent.txt. SKIP_BUILD_CHECK=1 skips them. The staged sources are not
+# register the original uses), rawcalls (no new C that calls original code by address where no listed function starts) and the
+# audit of tests/equivalent.txt. SKIP_BUILD_CHECK=1 skips them. The staged sources are not
 # proven again either: each function was proven when its C was written (tools/equiv.py records it in tests/equivalent.txt).
 if [ "${SKIP_BUILD_CHECK:-}" != "1" ]; then
     if [ -f tools/8-build/retcheck.py ] && ! python3 tools/8-build/retcheck.py >/dev/null 2>&1; then
         python3 tools/8-build/retcheck.py >&2 || true
         echo "[pre-commit] commit refused: a function's C returns in the other register than the original (tools/8-build/retcheck.py)" >&2
         exit 1
+    fi
+    if [ -f tools/8-build/rawcalls.py ]; then
+        if ! python3 tools/8-build/rawcalls.py --update >/dev/null 2>&1; then
+            python3 tools/8-build/rawcalls.py >&2 || true
+            echo "[pre-commit] commit refused: C calls original code by address where no function in functions.txt starts (tools/8-build/rawcalls.py)" >&2
+            exit 1
+        fi
+        git add tests/rawcalls_allowed.txt 2>/dev/null || true
     fi
     if [ -f tools/equiv.py ]; then
         if [ -f tools/5-generated/audit_equivalent.py ] && ! python3 tools/5-generated/audit_equivalent.py >/dev/null 2>&1; then

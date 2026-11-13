@@ -1241,6 +1241,10 @@
      "fr0": "C0400000"
     }
    ]
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ],
  "holdout": [
@@ -2485,6 +2489,10 @@
      "fr0": "C0400000"
     }
    ]
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ]
 }

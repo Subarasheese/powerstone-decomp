@@ -107,7 +107,7 @@ float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
 int nlStoreMatrix(int);
-int nlLoadMatrix(int, int, int, int);
+int nlLoadMatrix(int, int, int, float, float, float, float);
 int _modlu(void);
 extern int _quick_odd_mvn();
 int kmiBGPlaneCountWords(int);
@@ -125,7 +125,7 @@ int fx_spawn_0457d0(void);
 int ai_calc_goal_angle(int a4, int a5, float f4);
 int menu_scene1_update(int a4, int a5, int a6, int a7);
 int FUN_0c0d3be6(void);
-int FUN_0c0e12e0(int a4, int a5, float f4, float f5);
+float nlLUDecompose(int a4, int a5, float f4, float f5);
 int pl_hitreact_23_phase0(int a4);
 int FUN_0c0c9394(int a4);
 
@@ -184,7 +184,11 @@ int kmiProcessVertex_03(int a4)
     return 0x0;
 }
 
-int FUN_0c0e12e0(int a4, int a5, float f4, float f5)
+/* LU decomposition of a 4x4 matrix with scaled partial pivoting (Crout's method, as Numerical Recipes' ludcmp): the
+   matrix at a4 (0: the current matrix, stored out and loaded back after) is replaced by its L and U factors, the row
+   permutation goes into the 4 chars at a5. Returns the determinant (the pivots' product, its sign flipped per row
+   swap), 0 for a singular matrix. */
+float nlLUDecompose(int a4, int a5, float f4, float f5)
 {
     int stk[8];
     register int t2;
@@ -325,14 +329,14 @@ int FUN_0c0e12e0(int a4, int a5, float f4, float f5)
                     t9 = (t9 + 0x1);
                     continue;
                 }
-                return ((int (*)(int, int, int, int, float, float, float, float))(0xC0E1448))(t2, 0x4, t8, t9, u12, u13, -1.0f, 1.0f);
+                return u20;
             }
             if ((*(int *)(((int)stk + 12))) == 0) {
                 t6 = 0xC0E1240;
-                t5 = (nlLoadMatrix(t2, 0x4, t8, t9));
-                return ((int (*)(void))(0xC0E1448))();
+                t5 = (nlLoadMatrix(t2, 0x4, t8, u12, u13, -1.0f, 1.0f));
+                return u20;
             }
-            return ((int (*)(int, int, int, int, float, float, float, float))(0xC0E1448))(t2, 0x4, t8, t9, u12, u13, -1.0f, 1.0f);
+            return u20;
         }
         t5 = t9;
         t10 = t5;
@@ -368,6 +372,6 @@ int FUN_0c0e12e0(int a4, int a5, float f4, float f5)
         t9 = (t9 + 0x1);
         *(float *)(((((int)stk + 0) + 0x10) + t5)) = u11;
     }
-    return ((int (*)(int, int, int, int, float, float, float, float))(0xC0E1448))(t2, 0x4, t8, t9, u12, u13, 0.0f, 1.0f);
+    return 0.0f;
 }
 

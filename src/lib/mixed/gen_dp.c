@@ -218,12 +218,10 @@ int FUN_0c1127bc(int a4, int a5, int a6, int a7, int a8)
     int stk[1];
     register int t2;
     register int t16;
+    int t68;
     register int t62;
     int t63;
     register int t64;
-    register int t101;
-    register int t102;
-    register int t103;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     FUN_0c1126ba(a7, a8);
@@ -281,29 +279,21 @@ int FUN_0c1127bc(int a4, int a5, int a6, int a7, int a8)
         *(unsigned char *)((a7 + 0x4)) = 0xFF;
         *(unsigned char *)((a7 + 0x0)) = 0x0;
     }
-    t101 = 0x1;
-    t102 = (unsigned char)t2;
-    t103 = 0xFF;
     if (((*(signed char *)((a7 + 0x0))) != 0) && ((t62 = *(signed char *)((a7 + 0x7)), t62 != 0) && (t63 = *(int *)0xC843924, t64 = (((struct o10C4_int *)(t63))->v), t64 == 1))) {
-        t101 = *(int *)((a8 + 0x0));
-        if ((t101 != -1) && (t101 != 0xFFFFFF00)) {
+        t68 = *(int *)((a8 + 0x0));
+        if ((t68 != -1) && (t68 != 0xFFFFFF00)) {
             FUN_0c115270(a8, ((unsigned char)(*(int *)((a8 + 0x0))) + 0x1));
-        } else {
-            t102 = (unsigned char)t2;
-            t103 = 0xFF;
         }
     }
     if ((*(signed char *)((a7 + 0x2))) != 0) {
         (((struct o10_uchar *)(a6))->v) = 0x0;
         FUN_0c1128ee(a6, a7, a8);
-    } else {
     }
     if ((*(signed char *)((a7 + 0x3))) != 0) {
         (((struct o10_uchar *)(a6))->v) = 0x0;
         mpdrv_clear_deviceinfo(a6);
-    } else {
     }
-    return ((int (*)(int, int, int, int))(0xC1128E6))(t101, t102, t103, a7);
+    return 0x0;
 }
 
 int FUN_0c0fc4b2(int a4, int a5, int a6, int a7, int a8)

@@ -96,7 +96,7 @@ float math_sin_float(float x)
     return result;
 }
 
-int math_tan_reduce_quadrant(int a4, int a5, int a6, int a7, float f4)
+float math_tan_reduce_quadrant(int a4, float f4)
 {
     register int t0;
     register int t1;
@@ -123,7 +123,7 @@ int math_tan_reduce_quadrant(int a4, int a5, int a6, int a7, float f4)
             break;
         }
     }
-    return ((int (*)(int, int, int, int, float, float, float))(0xC0DFCA8))(t0, 0x3, a6, a7, u1, u0, (u1 * u1));
+    return (u1 / (1.0f - u0));
 }
 
 float FUN_0c0dfd72(int a4, int a5, int a6, int a7)

@@ -1,5 +1,6 @@
 /* motion engine: start/step motion, key tables, attack record load (0c09a808-0c09b068) */
 
+int FUN_0c09a848(int, int, int, int);
 struct o7198_short { char p[0x7198]; short v; };
 struct o7198_ushort { char p[0x7198]; unsigned short v; };
 struct o719A_ushort { char p[0x719A]; unsigned short v; };
@@ -44,44 +45,12 @@ int pl_start_motion(int a4, int a5, int a6)
 
 int pl_start_motion_owner(int a4, int a5, int a6)
 {
-    int stk[7];
-    register int t0;
-    register int t2;
-    register int t3;
-    register int t4;
-    register int t7;
-    register int t10;
-    register int t14;
+    int stk[3];
 
-    *(unsigned int *)(((int)stk + 16)) = a4;
-    *(unsigned char *)(((int)stk + 20)) = a5;
-    *(unsigned char *)(((int)stk + 24)) = a6;
-    t0 = *(signed char *)(((int)stk + 24));
-    t2 = *(signed char *)(((int)stk + 20));
-    t3 = *(int *)(((int)stk + 16));
-    t4 = *(int *)(((*(int *)(((int)stk + 16))) + 0x1C));
-    (((struct o71A4_uchar *)(t3))->v) = t2;
-    (((struct o71A5_uchar *)(t3))->v) = t0;
-    (((struct o719A_ushort *)(t3))->v) = ((((struct o7198_short *)(t3))->v));
-    (((struct o719D_uchar *)(t3))->v) = (*(signed char *)((t3 + 0x719C)));
-    t7 = *(signed char *)((t4 + 0x3));
-    *(unsigned int *)(((int)stk + 4)) = (((signed char)t2 << 8) << 1);
-    t10 = *(short *)((((unsigned char)t0 << 1) + ((((t7 * 0xB5EC8) + 0xC664B50) + 0xAAE88) + (((signed char)t2 << 8) << 1))));
-    *(unsigned int *)(((int)stk + 0)) = (unsigned short)t10;
-    (((struct o7198_ushort *)(t3))->v) = (((int)((unsigned short)t10 & 0xFF00) >> 8) | ((unsigned char)(*(int *)(((int)stk + 0))) << 8));
-    (((struct o719C_uchar *)(t3))->v) = 0x0;
-    t14 = *(short *)((((unsigned char)t0 << 1) + (((((*(signed char *)((t4 + 0x3))) * 0xB5EC8) + 0xC664B50) + 0xAB888) + (*(int *)(((int)stk + 4))))));
-    (((struct o71A0_ushort *)(t3))->v) = (((int)(0xFF00 & (unsigned short)t14) >> 8) | ((unsigned char)(unsigned short)t14 << 8));
-    (((struct o71A2_uchar *)(t3))->v) = 0x0;
-    pl_load_motion_attack_record(t3, t4);
-    (((struct o71A6_uchar *)(t3))->v) = 0x1;
-    (((struct o71A7_uchar *)(t3))->v) = 0x1;
-    (((struct o71A9_uchar *)(t3))->v) = 0x4;
-    (((struct o71A8_uchar *)(t3))->v) = 0x0;
-    (((struct o719E_ushort *)(t3))->v) = 0x0;
-    pl_load_motion_key(t3, t4);
-    (((struct o719C_uchar *)(t3))->v) = ((*(signed char *)((t3 + 0x719C))) + 0x1);
-    return 0x719C;
+    *(unsigned int *)(((int)stk + 0)) = a4;
+    *(unsigned char *)(((int)stk + 4)) = a5;
+    *(unsigned char *)(((int)stk + 8)) = a6;
+    return FUN_0c09a848((*(int *)(((int)stk + 0))), (*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))), (*(signed char *)(((int)stk + 4))), (*(signed char *)(((int)stk + 8))));
 }
 
 int pl_step_motion(int a4)

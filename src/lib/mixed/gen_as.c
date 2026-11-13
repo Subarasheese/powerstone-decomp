@@ -94,7 +94,6 @@ int ADXB_GetTotalNumSmpl(int);
 int ADXB_Stop(int);
 int FUN_0c02067e(int);
 int FUN_0c020be0(int);
-int FUN_0c020cba(int);
 int conv_s16x5_to_f32(int, int);
 int hit_debug_draw_object_parts(int);
 int FUN_0c0240e8(int, int, int);
@@ -180,7 +179,6 @@ int FUN_0c0f61c0(void);
 int FUN_0c0f9bb2(void);
 int kmSetFogTable(int);
 int FUN_0c0fddbe(int, int, int);
-int FUN_0c0fe3f4(int, int);
 int FUN_0c0ff15c(void);
 int FUN_0c0ff4b4(int);
 int FUN_0c10121c(int, int, int);
@@ -288,7 +286,6 @@ int mpdrv_set_dkill_ns(int a4);
 int mpdrv_set_dreset_ns(int a4);
 int mpdrv_set_allstatreq_ns(int a4);
 int mpdrv_set_transagain_ns(int a4);
-int FUN_0c1135c8(int a4, int a5, int a6, int a7);
 int vmsfb_create(int a4, int a5, int a6);
 int keycfg_obj_in_mask(int a4);
 int keycfg_run_objects_in_mask(int a4, int a5, int a6, int a7);
@@ -441,7 +438,6 @@ int mpdrv_get_timeout(void);
 int mpdrv_optimize(int a4);
 int mpdrv_recognize(int a4);
 int mpdrv_ischanged(int a4);
-void FUN_0c1135fa(int a4, int a5, int a6, int a7);
 int FUN_0c01d31a(void);
 int FUN_0c01d328(void);
 void FUN_0c01f48c(int a4, int a5);
@@ -652,7 +648,7 @@ int thunk_FUN_0c0fbcf0(int a4);
 void FUN_0c0e34a0(float f4);
 void syRtcSetServerMode(int a4);
 int gdFsInit(void);
-int buGetVersion(int a4);
+int buSetCompleteCallback(int a4);
 void buSetPrintFunc(int a4);
 int syCfgConvLang(int a4);
 int pdVibMxIsReady(int a4);
@@ -1103,14 +1099,6 @@ int mpdrv_set_allstatreq_ns(int a4)
 int mpdrv_set_transagain_ns(int a4)
 {
     return (mpdrv_setcmd(a4, 0xFC, 0x0, 0x0, 0x0));
-}
-
-int FUN_0c1135c8(int a4, int a5, int a6, int a7)
-{
-    if ((int)a6 <= 0) {
-        return 0x1;
-    }
-    return ((int (*)(int, int, int, int))(0xC1135BC))(a4, a5, (a6 - 1), a7);
 }
 
 int vmsfb_create(int a4, int a5, int a6)
@@ -1720,14 +1708,6 @@ int mpdrv_ischanged(int a4)
     return (unsigned char)(*(signed char *)(((mpdrv_get_device(a4)) + 0xC)));
 }
 
-void FUN_0c1135fa(int a4, int a5, int a6, int a7)
-{
-    if ((int)a6 <= 0) {
-        return;
-    }
-    ((int (*)(int, int, int, int))(0xC1135F4))(a4, a5, (a6 - 1), a7);
-}
-
 int syRtcFinish(void)
 {
     (((struct o0_uint *)0xC7FD0C8)->v) = 0x0;
@@ -2319,7 +2299,7 @@ int gdFsInit(void)
     return gdFsInitOvl();
 }
 
-int buGetVersion(int a4)
+int buSetCompleteCallback(int a4)
 {
     return vmsfs_c_setcompletecallback(a4);
 }
@@ -2480,7 +2460,28 @@ void FUN_0c0f619a(void)
 
 int gdFsStrcmp(int a4, int a5)
 {
-    return FUN_0c0fe3f4(a4, a5);
+    register int t1;
+    register int t2;
+    register int t8;
+    register int t0;
+
+    t1 = a4;
+    t2 = a5;
+    for (;;) {
+        if ((*(signed char *)((t1 + 0x0))) == 0) {
+            break;
+        }
+        t0 = (*(signed char *)((t2 + 0x0)));
+        t2 = (t2 + 0x1);
+        t8 = *(signed char *)((t1 + 0x0));
+        t1 = (t1 + 0x1);
+        if (t8 == t0) continue;
+        return 0x0;
+    }
+    if ((*(signed char *)((t2 + 0x0))) != 0) {
+        return 0x0;
+    }
+    return 0x1;
 }
 
 void FUN_0c0ff7e0(void)

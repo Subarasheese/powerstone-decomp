@@ -557,6 +557,10 @@
      "fr0": "40200000"
     }
    ]
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ],
  "holdout": [
@@ -1117,6 +1121,10 @@
      "fr0": "40200000"
     }
    ]
+  },
+  {
+   "about": "rescue: empty case",
+   "regs": {}
   }
  ]
 }

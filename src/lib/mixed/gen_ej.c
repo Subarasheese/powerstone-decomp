@@ -176,7 +176,7 @@ int pl_ryoma_attack_kind2_phase2(int a4);
 int stage_gimmick_40_spawn(int a4);
 int fx_spawn_14(int a4, int a5);
 void FUN_0c0f1a0e(int a4, int a5, int a6, int a7);
-int FUN_0c0f4202(int a4, int a5, int a6, int a7);
+int FUN_0c0f4202(int a4, int a5, int a6);
 int FUN_0c0f09f6(int a4, int a5, int a6, int a7);
 int FUN_0c1098e0(int a4);
 int FUN_0c11408a(int a4, int a5, int a6);
@@ -274,10 +274,11 @@ void FUN_0c0f1a0e(int a4, int a5, int a6, int a7)
     }
 }
 
-int FUN_0c0f4202(int a4, int a5, int a6, int a7)
+int FUN_0c0f4202(int a4, int a5, int a6)
 {
     int stk[17];
     register int t0;
+    register int t41;
     register int t1;
     register int t2;
     register int t3;
@@ -288,10 +289,11 @@ int FUN_0c0f4202(int a4, int a5, int a6, int a7)
     register int t18;
     register int t22;
     register int t25;
-    register int t46;
+    register int t38;
 
     *(unsigned int *)(((int)stk + 0)) = a4;
     t0 = vib_port_has_vibration(a4);
+    t41 = 0xFFFFFFFE;
     if (t0 == 0) {
     } else {
         if ((unsigned int)0x0 < (unsigned int)a6) {
@@ -340,9 +342,13 @@ int FUN_0c0f4202(int a4, int a5, int a6, int a7)
                 }
             }
         }
-        t46 = (kdSetSetCondition());
+        t38 = kdSetSetCondition();
+        t41 = 0x0;
+        if ((int)t38 < 0) {
+            t41 = 0xFFFFFFFF;
+        }
     }
-    return ((int (*)(int, int, int, int))(0xC0F42E0))(t46, a5, a6, a7);
+    return t41;
 }
 
 int FUN_0c0f09f6(int a4, int a5, int a6, int a7)
