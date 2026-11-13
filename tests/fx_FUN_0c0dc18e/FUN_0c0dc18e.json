@@ -1,0 +1,41 @@
+{
+ "dev": [
+  {
+   "about": "100/7",
+   "regs": {
+    "r4": "64",
+    "r5": "7"
+   }
+  },
+  {
+   "about": "negative",
+   "regs": {
+    "r4": "ffffffa6",
+    "r5": "4"
+   }
+  },
+  {
+   "about": "neg divisor",
+   "regs": {
+    "r4": "50",
+    "r5": "fffffffa"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "zero numerator",
+   "regs": {
+    "r4": "0",
+    "r5": "3"
+   }
+  },
+  {
+   "about": "big",
+   "regs": {
+    "r4": "7fff0000",
+    "r5": "100"
+   }
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{"dev":[
+{"about":"small","regs":{"r4":"7"},"poke":{"C32E216":"0102030405060708090a0b"}},
+{"about":"mid","regs":{"r4":"55"},"poke":{"C32E216":"0102030405060708090a0b"}},
+{"about":"clamped","regs":{"r4":"ff"},"poke":{"C32E216":"01020304050607080981ff"}}
+],"holdout":[
+{"about":"exactly 200 neg byte","regs":{"r4":"c8"},"poke":{"C32E216":"0102030405060708090a8b"}},
+{"about":"high bits of r4 ignored","regs":{"r4":"12345637"},"poke":{"C32E216":"0102030405060708090a0b"}},
+{"about":"199","regs":{"r4":"c7"},"poke":{"C32E216":"090a0b0c0d0e0f1011121314"}},
+{"about":"zero","regs":{"r4":"0"},"poke":{"C32E216":"f0f1f2"}}
+]}

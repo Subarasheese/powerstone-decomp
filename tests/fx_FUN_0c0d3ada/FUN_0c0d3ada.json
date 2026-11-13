@@ -1,0 +1,125 @@
+{
+"dev": [
+{
+"about": "phase 0 starts",
+"poke": {
+"C7F2EE9": "00",
+"C7F2EF8": "09000900"
+}
+},
+{
+"about": "phase 1 still counting",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "05000300"
+}
+},
+{
+"about": "phase 1 counter expires, c24 5->4",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "05000100"
+}
+},
+{
+"about": "phase 1 c24 2->1 sets 200",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "02000100"
+}
+},
+{
+"about": "phase 1 c24 1->0 advances",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "01000100"
+}
+},
+{
+"about": "phase 2 counting",
+"poke": {
+"C7F2EE9": "02",
+"C7F2EF8": "00000200"
+}
+},
+{
+"about": "phase 2 expires",
+"poke": {
+"C7F2EE9": "02",
+"C7F2EF8": "00000100"
+}
+},
+{
+"about": "phase 3 counting",
+"poke": {
+"C7F2EE9": "03",
+"C7F2EF8": "00000500"
+}
+},
+{
+"about": "phase 3 expires",
+"poke": {
+"C7F2EE9": "03",
+"C7F2EF8": "00000100"
+}
+},
+{
+"about": "phase 4 done",
+"poke": {
+"C7F2EE9": "04",
+"C7F2EF8": "00000000"
+}
+}
+],
+"holdout": [
+{
+"about": "phase 0 other start",
+"poke": {
+"C7F2EE9": "00",
+"C7F2EF8": "00000000"
+}
+},
+{
+"about": "phase 1 c24 0 -> -1",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "00000100"
+}
+},
+{
+"about": "phase 1 c26 wraps to -1",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "03000000"
+}
+},
+{
+"about": "phase 2 zero wraps",
+"poke": {
+"C7F2EE9": "02",
+"C7F2EF8": "00000000"
+}
+},
+{
+"about": "phase 3 large",
+"poke": {
+"C7F2EE9": "03",
+"C7F2EF8": "0000ff7f"
+}
+},
+{
+"about": "phase 255 done",
+"poke": {
+"C7F2EE9": "ff",
+"C7F2EF8": "01000100"
+}
+},
+{
+"about": "phase 1 negative counter",
+"poke": {
+"C7F2EE9": "01",
+"C7F2EF8": "0700ffff"
+}
+}
+]
+}

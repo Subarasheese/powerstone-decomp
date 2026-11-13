@@ -1,0 +1,7 @@
+{"dev": [
+{"about":"task allocated","poke":{"0C152adc":"010000000200000003000000"},"calls":[{"r0":"0C700000"}]},
+{"about":"allocation fails","poke":{"0C152adc":"010000000200000003000000"},"calls":[{"r0":"0"}]}
+],"holdout": [
+{"about":"other record, other task address","poke":{"0C152adc":"7f0000008000000081000000"},"calls":[{"r0":"0C7A0000"}]},
+{"about":"allocation fails, record zero","calls":[{"r0":"0"}]}
+]}

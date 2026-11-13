@@ -1,0 +1,6 @@
+{"dev": [
+ {"about":"handler 0","regs":{"r4":"0c700000"},"poke":{"C3371AC":"00100c0c20100c0c"},"calls":[{"r0":"0"}]},
+ {"about":"handler 1","regs":{"r4":"0c710000"},"poke":{"C3371AC":"00100c0c20100c0c","0C717209":"01"},"calls":[{"r0":"0"}]}
+],"holdout":[
+ {"about":"handler 3","regs":{"r4":"0c720000"},"poke":{"C3371AC":"00100c0c20100c0c40100c0c60100c0c","0C727209":"03"},"calls":[{"r0":"0"}]}
+]}

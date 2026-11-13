@@ -1,0 +1,12 @@
+{"dev": [
+{"about":"kind 0","regs":{"r4":"0C700000"},"poke":{"0C700003":"00"}},
+{"about":"kind 17","regs":{"r4":"0C700000"},"poke":{"0C700003":"11"}},
+{"about":"kind 18 -> table 4*(b-32)","regs":{"r4":"0C700000"},"poke":{"0C700003":"12","0C344D7C":"78563412"}},
+{"about":"kind 32","regs":{"r4":"0C700000"},"poke":{"0C700003":"20","0C344DFC":"11223344"}},
+{"about":"kind 40","regs":{"r4":"0C700000"},"poke":{"0C700003":"28","0C344E1C":"aabbccdd"}}
+],"holdout": [
+{"about":"kind 9","regs":{"r4":"0C710000"},"poke":{"0C710003":"09"}},
+{"about":"kind negative -2 goes the table path","regs":{"r4":"0C710000"},"poke":{"0C710003":"FE","0C344D94":"01020304"}},
+{"about":"kind 255 (-1)","regs":{"r4":"0C710000"},"poke":{"0C710003":"FF","0C344D78":"05060708"}},
+{"about":"kind 127","regs":{"r4":"0C720000"},"poke":{"0C720003":"7F","0C344F78":"0a0b0c0d"}}
+]}

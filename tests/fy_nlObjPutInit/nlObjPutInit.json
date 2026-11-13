@@ -1,0 +1,2 @@
+{"dev":[{"about":"scale 0.3","regs":{},"poke":{"0C346878":"9999993E"},"steps":3000000}],
+ "holdout":[{"about":"scale 2.5, table pre-filled with junk","regs":{},"poke":{"0C346878":"00002040"},"steps":3000000}]}

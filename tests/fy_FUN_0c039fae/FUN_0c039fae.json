@@ -1,0 +1,11 @@
+{"dev": [
+{"about":"count reaches limit -> call","regs":{"r4":"0C700000"},"poke":{"0C7000EC":"0800","0C7000EE":"0900"}},
+{"about":"below limit, matches -> return","regs":{"r4":"0C700000"},"poke":{"0C7000EC":"0100","0C7000EE":"0500","0C7000F0":"0700","0C7000F2":"0800","0C70001C":"0000710C","0C7171A4":"0708"}},
+{"about":"below limit, first differs -> call","regs":{"r4":"0C700000"},"poke":{"0C7000EC":"0100","0C7000EE":"0500","0C7000F0":"0600","0C7000F2":"0800","0C70001C":"0000710C","0C7171A4":"0708"}},
+{"about":"below limit, second differs -> call","regs":{"r4":"0C700000"},"poke":{"0C7000EC":"0100","0C7000EE":"0500","0C7000F0":"0700","0C7000F2":"0900","0C70001C":"0000710C","0C7171A4":"0708"}}
+],"holdout": [
+{"about":"negative signed byte vs short","regs":{"r4":"0C720000"},"poke":{"0C7200EC":"FEFF","0C7200EE":"0100","0C7200F0":"FFFF","0C7200F2":"FF00","0C72001C":"0000740C","0C7471A4":"FFFF"}},
+{"about":"count beyond limit","regs":{"r4":"0C720000"},"poke":{"0C7200EC":"0900","0C7200EE":"0200","0C7200F0":"0000","0C7200F2":"0000","0C72001C":"0000750C"}},
+{"about":"count wraps negative (short)","regs":{"r4":"0C720000"},"poke":{"0C7200EC":"FF7F","0C7200EE":"1000","0C72001C":"0000750C"}},
+{"about":"count -16 stays below limit, byte 0x80 sign","regs":{"r4":"0C720000"},"poke":{"0C7200EC":"F0FF","0C7200EE":"1000","0C7200F0":"80FF","0C7200F2":"8000","0C72001C":"0000760C","0C7671A4":"8080"}}
+]}

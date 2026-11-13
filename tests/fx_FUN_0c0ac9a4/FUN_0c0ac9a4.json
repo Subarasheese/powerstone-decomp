@@ -1,0 +1,86 @@
+{
+"dev": [
+{
+"about": "zero",
+"regs": {
+"r4": "0C630000"
+},
+"poke": {
+"0C63001C": "0000640C",
+"0C6471F1": "00",
+"0C6300EC": "0000",
+"0C630038": "0102030405060708090A0B0C",
+"0C630020": "FFFFFFFFFFFFFFFFFFFFFFFF"
+},
+"calls": [
+{}
+]
+},
+{
+"about": "positive",
+"regs": {
+"r4": "0C630000"
+},
+"poke": {
+"0C63001C": "0000640C",
+"0C6471F1": "03",
+"0C6300EC": "0500",
+"0C630038": "0102030405060708090A0B0C",
+"0C630020": "FFFFFFFFFFFFFFFFFFFFFFFF"
+},
+"calls": [
+{}
+]
+}
+],
+"holdout": [
+{
+"about": "negative sb",
+"regs": {
+"r4": "0C630000"
+},
+"poke": {
+"0C63001C": "0000640C",
+"0C6471F1": "FE",
+"0C6300EC": "0700",
+"0C630038": "0102030405060708090A0B0C",
+"0C630020": "FFFFFFFFFFFFFFFFFFFFFFFF"
+},
+"calls": [
+{}
+]
+},
+{
+"about": "negative halfword",
+"regs": {
+"r4": "0C630000"
+},
+"poke": {
+"0C63001C": "0000640C",
+"0C6471F1": "01",
+"0C6300EC": "FCFF",
+"0C630038": "0102030405060708090A0B0C",
+"0C630020": "FFFFFFFFFFFFFFFFFFFFFFFF"
+},
+"calls": [
+{}
+]
+},
+{
+"about": "large",
+"regs": {
+"r4": "0C630000"
+},
+"poke": {
+"0C63001C": "0000640C",
+"0C6471F1": "7F",
+"0C6300EC": "FF7F",
+"0C630038": "0102030405060708090A0B0C",
+"0C630020": "FFFFFFFFFFFFFFFFFFFFFFFF"
+},
+"calls": [
+{}
+]
+}
+]
+}

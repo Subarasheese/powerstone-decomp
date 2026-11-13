@@ -1,0 +1,10 @@
+{"dev": [
+{"about":"mode 0, handler 0","regs":{"r4":"0C700000"},"poke":{"0C70721F":"00","0C707238":"00","0C7000F0":"3412","0C337810":"00A00E0C"}},
+{"about":"mode 2, handler 3","regs":{"r4":"0C700000"},"poke":{"0C70721F":"02","0C707238":"03","0C7000F0":"3412","0C33781C":"00B00E0C"}},
+{"about":"mode 1 -> tail call","regs":{"r4":"0C700000"},"poke":{"0C70721F":"01","0C707238":"03"}},
+{"about":"mode 3 -> tail call","regs":{"r4":"0C700000"},"poke":{"0C70721F":"03"}}
+],"holdout": [
+{"about":"mode 2 handler 5 other object","regs":{"r4":"0C720000"},"poke":{"0C72721F":"02","0C727238":"05","0C7200F0":"FFFF","0C337824":"00C00E0C"}},
+{"about":"mode negative -> tail call","regs":{"r4":"0C720000"},"poke":{"0C72721F":"FE"}},
+{"about":"mode 0 handler 1","regs":{"r4":"0C730000"},"poke":{"0C73721F":"00","0C737238":"01","0C337814":"00D00E0C"}}
+]}

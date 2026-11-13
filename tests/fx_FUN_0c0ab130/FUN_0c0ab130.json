@@ -1,0 +1,76 @@
+{
+"dev": [
+{
+"about": "alloc fails (null)",
+"regs": {
+"r4": "12345678"
+},
+"poke": {
+"0C152CC4": "0102030405060708090A0B0C"
+},
+"calls": [
+{
+"r0": "0"
+}
+]
+},
+{
+"about": "alloc gives object",
+"regs": {
+"r4": "12345678"
+},
+"poke": {
+"0C152CC4": "0102030405060708090A0B0C"
+},
+"calls": [
+{
+"r0": "0C560000"
+}
+]
+},
+{
+"about": "alloc gives object, negative arg",
+"regs": {
+"r4": "FFFFFFFE"
+},
+"poke": {
+"0C152CC4": "A1A2A3A4B1B2B3B4C1C2C3C4"
+},
+"calls": [
+{
+"r0": "0C560200"
+}
+]
+}
+],
+"holdout": [
+{
+"about": "alloc fails, other arg",
+"regs": {
+"r4": "00000041"
+},
+"poke": {
+"0C152CC4": "FFFFFFFF00000000FFFFFFFF"
+},
+"calls": [
+{
+"r0": "0"
+}
+]
+},
+{
+"about": "alloc ok, other arg",
+"regs": {
+"r4": "00000041"
+},
+"poke": {
+"0C152CC4": "7F7E7D7C0000000080808080"
+},
+"calls": [
+{
+"r0": "0C570100"
+}
+]
+}
+]
+}

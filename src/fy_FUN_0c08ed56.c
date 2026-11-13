@@ -1,0 +1,38 @@
+/* FUN_0c08ed56: generated straight-line / guarded function, checked by tests/fy_FUN_0c08ed56. */
+struct o10B_uchar { char p[0x10B]; unsigned char v; };
+struct o24_float { char p[0x24]; float v; };
+struct o274_float { char p[0x274]; float v; };
+struct o38_float { char p[0x38]; float v; };
+struct o3C_float { char p[0x3C]; float v; };
+struct o40_float { char p[0x40]; float v; };
+struct o44_float { char p[0x44]; float v; };
+struct o48_float { char p[0x48]; float v; };
+struct o4C_float { char p[0x4C]; float v; };
+struct o710A_uchar { char p[0x710A]; unsigned char v; };
+struct o710B_uchar { char p[0x710B]; unsigned char v; };
+struct o710C_uchar { char p[0x710C]; unsigned char v; };
+struct o71E4_float { char p[0x71E4]; float v; };
+struct o71E8_float { char p[0x71E8]; float v; };
+struct o720A_uchar { char p[0x720A]; unsigned char v; };
+struct o7216_uchar { char p[0x7216]; unsigned char v; };
+struct o721A_uchar { char p[0x721A]; unsigned char v; };
+struct o72A4_short { char p[0x72A4]; short v; };
+struct o72A4_ushort { char p[0x72A4]; unsigned short v; };
+struct o72AC_uchar { char p[0x72AC]; unsigned char v; };
+struct oF8_int { char p[0xF8]; int v; };
+int FUN_0c08e4bc(int, int, int, int, int, int);
+int FUN_0c08e57e(int);
+int FUN_0c08e704(int);
+int FUN_0c08e8d6(int);
+int FUN_0c08e980(int);
+int FUN_0c08ed08(int);
+int FUN_0c08eef4(int);
+int FUN_0c091eee(void);
+int FUN_0c091f0a(int);
+int FUN_0c092814(int);
+int FUN_0c098c82(void);
+int FUN_0c099b60(int);
+int FUN_0c09a7ba(int);
+int FUN_0c0d905e(void);
+int FUN_0c0dab92(int, int);
+

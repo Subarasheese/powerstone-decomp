@@ -1,0 +1,36 @@
+{
+ "dev": [
+  {
+   "about": "copy a record of distinct words",
+   "regs": {
+    "r4": "0C701000"
+   },
+   "poke": {
+    "0C439DC8": "0020700c",
+    "0C702000": "4433221188776655ccbbaa99"
+   }
+  },
+  {
+   "about": "zero record over a non-zero destination",
+   "regs": {
+    "r4": "0C701040"
+   },
+   "poke": {
+    "0C439DC8": "4020700c",
+    "0C701040": "010000000200000003000000"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "other addresses and values",
+   "regs": {
+    "r4": "0C7A0100"
+   },
+   "poke": {
+    "0C439DC8": "00027b0c",
+    "0C7B0200": "ffffffff0000008007000000"
+   }
+  }
+ ]
+}

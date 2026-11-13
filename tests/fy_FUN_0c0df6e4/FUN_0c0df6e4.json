@@ -1,0 +1,8 @@
+{"dev":[
+{"about":"zero","regs":{"fr4":0.0},"calls":[{"fr0":"3f800000"}]},
+{"about":"nonzero","regs":{"fr4":4.0},"calls":[{"fr0":"40000000"}]}
+],"holdout":[
+{"about":"negative zero","regs":{"fr4":"80000000"},"calls":[{"fr0":"40000000"}]},
+{"about":"negative","regs":{"fr4":-9.0},"calls":[{"fr0":"c0400000"}]},
+{"about":"call returns 0","regs":{"fr4":2.5},"calls":[{"fr0":"00000000"}]}
+]}

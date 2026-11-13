@@ -1,0 +1,7 @@
+{"dev":[
+{"about":"flag clear, old junk","poke":{"0C7F3020":"00000000","0C366A70":"11223344556677889900aabb","0C366A9C":"ffffffff","0C366AB0":"01020304"}},
+{"about":"flag set","poke":{"0C7F3020":"01000000","0C366A74":"deadbeef","0C366EEC":"12345678"}}
+],"holdout":[
+{"about":"flag large","poke":{"0C7F3020":"00000100","0C366B00":"abcdef01","0C366A80":"7f7f7f7f"}},
+{"about":"flag clear 2","poke":{"0C7F3020":"00000000","0C366A90":"0000803f"}}
+]}

@@ -1,0 +1,196 @@
+{
+ "dev": [
+  {
+   "about": "random 0 and counter 3: table pick",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7000EE": "0300",
+    "C7000F0": "0200",
+    "C150542": "0a1415f6"
+   },
+   "calls": [
+    {
+     "fr0": "00000000"
+    }
+   ]
+  },
+  {
+   "about": "random not multiple of 32 -> else path",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7000EE": "0300",
+    "C7000F0": "0200"
+   },
+   "calls": [
+    {
+     "fr0": "3dcccccd"
+    },
+    {
+     "fr0": "3f000000"
+    }
+   ]
+  },
+  {
+   "about": "counter zero -> else path",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7000EE": "0000",
+    "C7000F0": "0200"
+   },
+   "calls": [
+    {
+     "fr0": "00000000"
+    },
+    {
+     "fr0": "3f7d70a4"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "random*255 == 32 with counter 1",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7000EE": "0100",
+    "C7000F0": "0000",
+    "C15053A": "f8"
+   },
+   "calls": [
+    {
+     "fr0": "3e008081"
+    }
+   ]
+  },
+  {
+   "about": "counter negative -> else",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7000EE": "fbff",
+    "C7000F0": "0100"
+   },
+   "calls": [
+    {
+     "fr0": "00000000"
+    },
+    {
+     "fr0": "3c008081"
+    }
+   ]
+  },
+  {
+   "about": "random 0.25 -> else n%3",
+   "regs": {
+    "r4": "c710000"
+   },
+   "poke": {
+    "C7100EE": "0400",
+    "C7100F0": "0300"
+   },
+   "calls": [
+    {
+     "fr0": "3e800000"
+    },
+    {
+     "fr0": "3ce0e0e1"
+    }
+   ]
+  },
+  {
+   "about": "negative table byte, row 1",
+   "regs": {
+    "r4": "c710000"
+   },
+   "poke": {
+    "C7100EE": "0400",
+    "C7100F0": "0100",
+    "C15053E": "80ff7f01"
+   },
+   "calls": [
+    {
+     "fr0": "00000000"
+    }
+   ]
+  },
+  {
+   "about": "large random: unsigned conversion above 2^31, multiple of 32",
+   "regs": {
+    "r4": "c720000"
+   },
+   "poke": {
+    "C7200EE": "0200",
+    "C7200F0": "0100",
+    "C15053E": "05060708"
+   },
+   "calls": [
+    {
+     "fr0": "4b800000"
+    }
+   ]
+  },
+  {
+   "about": "large random not multiple of 32, else path with large second",
+   "regs": {
+    "r4": "c720000"
+   },
+   "poke": {
+    "C7200EE": "0200",
+    "C7200F0": "0100"
+   },
+   "calls": [
+    {
+     "fr0": "4b189680"
+    },
+    {
+     "fr0": "4b189680"
+    }
+   ]
+  },
+  {
+   "about": "else path with a large second random",
+   "regs": {
+    "r4": "c730000"
+   },
+   "poke": {
+    "C7300EE": "0000",
+    "C7300F0": "0000"
+   },
+   "calls": [
+    {
+     "fr0": "3dcccccd"
+    },
+    {
+     "fr0": "4b095440"
+    }
+   ]
+  },
+  {
+   "about": "random 8.5e6: just over 2^31 after scaling",
+   "regs": {
+    "r4": "c740000"
+   },
+   "poke": {
+    "C7400EE": "0000",
+    "C7400F0": "0000"
+   },
+   "calls": [
+    {
+     "fr0": "4b01b320"
+    },
+    {
+     "fr0": "4b002c80"
+    }
+   ]
+  }
+ ]
+}

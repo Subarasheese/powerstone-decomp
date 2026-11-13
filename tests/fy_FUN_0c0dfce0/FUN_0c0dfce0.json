@@ -1,0 +1,132 @@
+{
+ "dev": [
+  {
+   "about": "angle 0000",
+   "regs": {
+    "r4": "00000000"
+   }
+  },
+  {
+   "about": "angle 2000",
+   "regs": {
+    "r4": "00002000"
+   }
+  },
+  {
+   "about": "angle 3FFF",
+   "regs": {
+    "r4": "00003FFF"
+   }
+  },
+  {
+   "about": "angle 4001",
+   "regs": {
+    "r4": "00004001"
+   }
+  },
+  {
+   "about": "angle 6000",
+   "regs": {
+    "r4": "00006000"
+   }
+  },
+  {
+   "about": "angle 8000",
+   "regs": {
+    "r4": "00008000"
+   }
+  },
+  {
+   "about": "angle A000",
+   "regs": {
+    "r4": "0000A000"
+   }
+  },
+  {
+   "about": "angle BFFF",
+   "regs": {
+    "r4": "0000BFFF"
+   }
+  },
+  {
+   "about": "angle C001",
+   "regs": {
+    "r4": "0000C001"
+   }
+  },
+  {
+   "about": "angle F000",
+   "regs": {
+    "r4": "0000F000"
+   }
+  },
+  {
+   "about": "angle 5678",
+   "regs": {
+    "r4": "12345678"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "angle 1000",
+   "regs": {
+    "r4": "00001000"
+   }
+  },
+  {
+   "about": "angle 3000",
+   "regs": {
+    "r4": "00003000"
+   }
+  },
+  {
+   "about": "angle 4000",
+   "regs": {
+    "r4": "00004000"
+   }
+  },
+  {
+   "about": "angle 5000",
+   "regs": {
+    "r4": "00005000"
+   }
+  },
+  {
+   "about": "angle 7FFF",
+   "regs": {
+    "r4": "00007FFF"
+   }
+  },
+  {
+   "about": "angle 9000",
+   "regs": {
+    "r4": "00009000"
+   }
+  },
+  {
+   "about": "angle B000",
+   "regs": {
+    "r4": "0000B000"
+   }
+  },
+  {
+   "about": "angle C000",
+   "regs": {
+    "r4": "0000C000"
+   }
+  },
+  {
+   "about": "angle D000",
+   "regs": {
+    "r4": "0000D000"
+   }
+  },
+  {
+   "about": "angle FFFF",
+   "regs": {
+    "r4": "0000FFFF"
+   }
+  }
+ ]
+}

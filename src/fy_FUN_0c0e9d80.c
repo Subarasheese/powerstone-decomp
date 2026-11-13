@@ -1,0 +1,160 @@
+/* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
+#pragma inline_asm(FUN_0c0e9d80)
+int FUN_0c0e9d80(void)
+{
+    AND #3,R0
+    SHLL2 R0
+    MOV.L C_1,R10
+    SHLL2 R0
+    ADD R0,R0
+    MOV R10,R2
+    ADD R0,R10
+    MOV R11,R0
+    AND #3,R0
+    FMOV.S @R10,FR2
+    SHLL2 R0
+    SHLL2 R0
+    ADD R0,R0
+    ADD R0,R2
+    FMOV.S @R2,FR1
+    LDS R12,FPUL
+    FSTS FPUL,FR0
+    FSUB FR2,FR0
+    ADD #24,R10
+    FSUB FR2,FR1
+    ADD #24,R2
+    FDIV FR1,FR0
+    LDS R7,FPUL
+    FSTS FPUL,FR1
+    FSCHG
+    FMOV.S @R2,FR4
+    ADD #-8,R2
+    FMOV.S @R10,FR2
+    ADD #-8,R10
+    FLDS FR4,FPUL
+    STS FPUL,R0
+    SHLR8 R0
+    FLDS FR4,FPUL
+    SHLR16 R0
+    STS FPUL,R1
+    EXTU.B R0,R0
+    LDS R0,FPUL
+    SHLR16 R1
+    FLOAT FPUL,FR8
+    EXTU.B R1,R1
+    FLDS FR2,FPUL
+    STS FPUL,R0
+    SHLR8 R0
+    LDS R1,FPUL
+    SHLR16 R0
+    FLOAT FPUL,FR10
+    EXTU.B R0,R0
+    LDS R0,FPUL
+    FLOAT FPUL,FR9
+    FLDS FR2,FPUL
+    FSUB FR9,FR8
+    STS FPUL,R1
+    FMAC FR0,FR8,FR9
+    SHLR16 R1
+    FTRC FR9,FPUL
+    EXTU.B R1,R1
+    STS FPUL,R8
+    SHLL8 R8
+    LDS R1,FPUL
+    FLOAT FPUL,FR11
+    FLDS FR4,FPUL
+    FSUB FR11,FR10
+    STS FPUL,R0
+    FMAC FR0,FR10,FR11
+    SHLR8 R0
+    FTRC FR11,FPUL
+    EXTU.B R0,R0
+    STS FPUL,R1
+    OR R1,R8
+    LDS R0,FPUL
+    SHLL8 R8
+    FLOAT FPUL,FR8
+    FLDS FR2,FPUL
+    STS FPUL,R0
+    SHLR8 R0
+    FLDS FR4,FPUL
+    EXTU.B R0,R0
+    STS FPUL,R1
+    EXTU.B R1,R1
+    LDS R0,FPUL
+    FLOAT FPUL,FR9
+    LDS R1,FPUL
+    FLOAT FPUL,FR10
+    FSUB FR9,FR8
+    FLDS FR2,FPUL
+    FMAC FR0,FR8,FR9
+    STS FPUL,R1
+    FTRC FR9,FPUL
+    EXTU.B R1,R1
+    STS FPUL,R0
+    OR R0,R8
+    LDS R1,FPUL
+    SHLL8 R8
+    FLOAT FPUL,FR11
+    FSUB FR11,FR10
+    FMAC FR0,FR10,FR11
+    FTRC FR11,FPUL
+    STS FPUL,R1
+    OR R1,R8
+    ADD #32,R6
+    LDS R8,FPUL
+    FSTS FPUL,FR2
+    FMOV.S FR2,@-R6
+    FMOV.S @R2,FR4
+    ADD #-8,R2
+    FMOV.S @R10,FR2
+    ADD #-8,R10
+    FSUB FR2,FR4
+    FSUB FR3,FR5
+    FMAC FR0,FR4,FR2
+    FMAC FR0,FR5,FR3
+    FMOV.S FR2,@-R6
+    FSCHG
+    FMOV.S FR1,@-R6
+    FMOV.S @R2,FR5
+    ADD #-4,R2
+    FMOV.S @R10,FR3
+    ADD #-4,R10
+    FMOV.S @R2,FR4
+    FMOV.S @R10,FR2
+    FSUB FR3,FR5
+    FSUB FR2,FR4
+    MOV #-16,R2
+    FMAC FR0,FR5,FR3
+    SHLL16 R2
+    FMAC FR0,FR4,FR2
+    SHLL8 R2
+    FMUL FR1,FR3
+    BRA J_1
+    NOP
+C_1:
+    .DATA.W H'95A0
+    .DATA.W H'0C0E
+J_1:
+    ADD #32,R5
+    FMUL FR1,FR2
+    FMOV.S FR3,@-R6
+    FMOV.S FR2,@-R6
+    BF S_1
+    BRA L_0C0E9E8C
+    NOP
+S_1:
+    MOV R6,R2
+L_0C0E9E8C:
+    MOV.L R2,@-R6
+    PREF @R6
+    RTS
+    ADD #32,R6
+L_0C0E9E94:
+    .DATA.W H'95A0
+    .DATA.W H'0C0E
+    .DATA.W H'95C0
+    .DATA.W H'0C0E
+    .DATA.W H'68D0
+    .DATA.W H'0C34
+}

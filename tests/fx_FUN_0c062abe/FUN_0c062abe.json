@@ -1,0 +1,6 @@
+{"dev":[
+{"about":"dest at 0C500000 starts zero","regs":{"r4":"0C510000"},"poke":{"0C439DD0":"0000500C","0C510000":"112233445566778899AABBCC"}},
+{"about":"dest first word has bit 0 set already","regs":{"r4":"0C510100"},"poke":{"0C439DD0":"0000500C","0C510100":"0200000005000000FFFFFFFF"}}
+],"holdout":[
+{"about":"other dest, even first word","regs":{"r4":"0C520000"},"poke":{"0C439DD0":"0000600C","0C520000":"0400000000000080FEFFFFFF","0C600000":"AAAAAAAAAAAAAAAAAAAAAAAA"}}
+]}

@@ -1,0 +1,324 @@
+{
+ "dev": [
+  {
+   "about": "angle 0x0000",
+   "regs": {
+    "r4": "00000000"
+   }
+  },
+  {
+   "about": "angle 0x0001",
+   "regs": {
+    "r4": "00000001"
+   }
+  },
+  {
+   "about": "angle 0x1000",
+   "regs": {
+    "r4": "00001000"
+   }
+  },
+  {
+   "about": "angle 0x2000",
+   "regs": {
+    "r4": "00002000"
+   }
+  },
+  {
+   "about": "angle 0x3000",
+   "regs": {
+    "r4": "00003000"
+   }
+  },
+  {
+   "about": "angle 0x4000",
+   "regs": {
+    "r4": "00004000"
+   }
+  },
+  {
+   "about": "angle 0x5555",
+   "regs": {
+    "r4": "00005555"
+   }
+  },
+  {
+   "about": "angle 0x6000",
+   "regs": {
+    "r4": "00006000"
+   }
+  },
+  {
+   "about": "angle 0x8000",
+   "regs": {
+    "r4": "00008000"
+   }
+  },
+  {
+   "about": "angle 0xA000",
+   "regs": {
+    "r4": "0000A000"
+   }
+  },
+  {
+   "about": "angle 0xC000",
+   "regs": {
+    "r4": "0000C000"
+   }
+  },
+  {
+   "about": "angle 0xE000",
+   "regs": {
+    "r4": "0000E000"
+   }
+  },
+  {
+   "about": "angle 0xFFFF",
+   "regs": {
+    "r4": "0000FFFF"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "angle 0xE79E",
+   "regs": {
+    "r4": "0000E79E"
+   }
+  },
+  {
+   "about": "angle 0xEE69",
+   "regs": {
+    "r4": "0000EE69"
+   }
+  },
+  {
+   "about": "angle 0xE756",
+   "regs": {
+    "r4": "0000E756"
+   }
+  },
+  {
+   "about": "angle 0x613A",
+   "regs": {
+    "r4": "0000613A"
+   }
+  },
+  {
+   "about": "angle 0x5E8B",
+   "regs": {
+    "r4": "00005E8B"
+   }
+  },
+  {
+   "about": "angle 0xF397",
+   "regs": {
+    "r4": "0000F397"
+   }
+  },
+  {
+   "about": "angle 0x5F52",
+   "regs": {
+    "r4": "00005F52"
+   }
+  },
+  {
+   "about": "angle 0x3030",
+   "regs": {
+    "r4": "00003030"
+   }
+  },
+  {
+   "about": "angle 0xE4A7",
+   "regs": {
+    "r4": "0000E4A7"
+   }
+  },
+  {
+   "about": "angle 0x9B57",
+   "regs": {
+    "r4": "00009B57"
+   }
+  },
+  {
+   "about": "angle 0x4899",
+   "regs": {
+    "r4": "00004899"
+   }
+  },
+  {
+   "about": "angle 0x2E6C",
+   "regs": {
+    "r4": "00002E6C"
+   }
+  },
+  {
+   "about": "angle 0x1571",
+   "regs": {
+    "r4": "00001571"
+   }
+  },
+  {
+   "about": "angle 0xCAD5",
+   "regs": {
+    "r4": "0000CAD5"
+   }
+  },
+  {
+   "about": "angle 0xE7EE",
+   "regs": {
+    "r4": "0000E7EE"
+   }
+  },
+  {
+   "about": "angle 0x50A3",
+   "regs": {
+    "r4": "000050A3"
+   }
+  },
+  {
+   "about": "angle 0x07AE",
+   "regs": {
+    "r4": "000007AE"
+   }
+  },
+  {
+   "about": "angle 0x2057",
+   "regs": {
+    "r4": "00002057"
+   }
+  },
+  {
+   "about": "angle 0x1E7D",
+   "regs": {
+    "r4": "00001E7D"
+   }
+  },
+  {
+   "about": "angle 0x1241",
+   "regs": {
+    "r4": "00001241"
+   }
+  },
+  {
+   "about": "angle 0x6162",
+   "regs": {
+    "r4": "00006162"
+   }
+  },
+  {
+   "about": "angle 0x7BDF",
+   "regs": {
+    "r4": "00007BDF"
+   }
+  },
+  {
+   "about": "angle 0x0F66",
+   "regs": {
+    "r4": "00000F66"
+   }
+  },
+  {
+   "about": "angle 0xED88",
+   "regs": {
+    "r4": "0000ED88"
+   }
+  },
+  {
+   "about": "angle 0xA70F",
+   "regs": {
+    "r4": "0000A70F"
+   }
+  },
+  {
+   "about": "angle 0xE18D",
+   "regs": {
+    "r4": "0000E18D"
+   }
+  },
+  {
+   "about": "angle 0x6401",
+   "regs": {
+    "r4": "00006401"
+   }
+  },
+  {
+   "about": "angle 0x77A0",
+   "regs": {
+    "r4": "000077A0"
+   }
+  },
+  {
+   "about": "angle 0x969B",
+   "regs": {
+    "r4": "0000969B"
+   }
+  },
+  {
+   "about": "angle 0xFFE2",
+   "regs": {
+    "r4": "0000FFE2"
+   }
+  },
+  {
+   "about": "angle 0x025A",
+   "regs": {
+    "r4": "0000025A"
+   }
+  },
+  {
+   "about": "angle 0x2B83",
+   "regs": {
+    "r4": "00002B83"
+   }
+  },
+  {
+   "about": "angle 0xEA27",
+   "regs": {
+    "r4": "0000EA27"
+   }
+  },
+  {
+   "about": "angle 0x8E6B",
+   "regs": {
+    "r4": "00008E6B"
+   }
+  },
+  {
+   "about": "angle 0xD045",
+   "regs": {
+    "r4": "0000D045"
+   }
+  },
+  {
+   "about": "angle 0x2A99",
+   "regs": {
+    "r4": "00002A99"
+   }
+  },
+  {
+   "about": "angle 0x820B",
+   "regs": {
+    "r4": "0000820B"
+   }
+  },
+  {
+   "about": "angle 0xA16C",
+   "regs": {
+    "r4": "0000A16C"
+   }
+  },
+  {
+   "about": "angle 0x7596",
+   "regs": {
+    "r4": "00007596"
+   }
+  },
+  {
+   "about": "angle 0x93FD",
+   "regs": {
+    "r4": "000093FD"
+   }
+  }
+ ]
+}

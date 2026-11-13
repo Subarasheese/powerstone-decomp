@@ -1,0 +1,6 @@
+{"dev": [
+{"about":"fresh object","regs":{"r4":"0C700000"},"poke":{"0C7F2AB4":"000080bf0000004000004040","0C7F2AE4":"0000a0400000c0400000e040"}},
+{"about":"object with stale contents","regs":{"r4":"0C700100"},"poke":{"0C700114":"ffffffff","0C700148":"12345678","0C700170":"00004040","0C7F2AB4":"010000000200000003000000","0C7F2AE4":"040000000500000006000000"}}
+],"holdout": [
+{"about":"other object, other vectors","regs":{"r4":"0C710000"},"poke":{"0C7F2AB4":"7f0000008000000081000000","0C7F2AE4":"00000000ffffffff0000803f"}}
+]}

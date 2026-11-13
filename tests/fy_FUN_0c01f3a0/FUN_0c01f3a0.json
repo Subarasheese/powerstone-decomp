@@ -1,0 +1,11 @@
+{"dev": [
+{"about":"state 0, check true","regs":{"r4":"0C700000"},"poke":{"0C700002":"05"},"calls":[{"r0":"0"},{"r0":"0"},{"r0":"0"},{"r0":"1"}]},
+{"about":"state 0, check false","regs":{"r4":"0C700000"},"poke":{"0C700002":"05"},"calls":[{"r0":"0"},{"r0":"0"},{"r0":"0"},{"r0":"0"}]},
+{"about":"state 1, check true","regs":{"r4":"0C700000"},"poke":{"0C700004":"01","0C700002":"05"},"calls":[{"r0":"1"}]},
+{"about":"state 1, check false","regs":{"r4":"0C700000"},"poke":{"0C700004":"01","0C700002":"05"},"calls":[{"r0":"0"}]},
+{"about":"state 2","regs":{"r4":"0C700000"},"poke":{"0C700004":"02","0C700002":"05"}}
+],"holdout": [
+{"about":"state 0 other object, result 0x100 (low byte zero)","regs":{"r4":"0C710000"},"poke":{"0C710002":"09"},"calls":[{"r0":"0"},{"r0":"0"},{"r0":"0"},{"r0":"100"}]},
+{"about":"state 1 other, true","regs":{"r4":"0C710000"},"poke":{"0C710004":"01","0C710002":"07"},"calls":[{"r0":"ff"}]},
+{"about":"state 255","regs":{"r4":"0C710000"},"poke":{"0C710004":"FF","0C710002":"07"}}
+]}

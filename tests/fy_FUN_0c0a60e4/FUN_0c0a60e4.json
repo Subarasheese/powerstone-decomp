@@ -1,0 +1,50 @@
+{
+ "dev": [
+  {
+   "about": "alloc fails (null)",
+   "poke": {
+    "0C152AC4": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "alloc gives object",
+   "poke": {
+    "0C152AC4": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "0C560000"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "other template and object",
+   "poke": {
+    "0C152AC4": "A1A2A3A4B1B2B3B4C1C2C3C4"
+   },
+   "calls": [
+    {
+     "r0": "0C570100"
+    }
+   ]
+  },
+  {
+   "about": "alloc fails, other template",
+   "poke": {
+    "0C152AC4": "FFFFFFFF00000000FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "dev": [
+  {
+   "about": "alloc fails",
+   "poke": {
+    "0C152B24": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "alloc ok 2",
+   "poke": {
+    "0C152B24": "11121314212223243132333F"
+   },
+   "calls": [
+    {
+     "r0": "0C706000"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "alloc ok",
+   "poke": {
+    "0C152B24": "A1A2A3A4A5A6A7A8A9AAABAC"
+   },
+   "calls": [
+    {
+     "r0": "0C705000"
+    }
+   ]
+  },
+  {
+   "about": "alloc fails again",
+   "poke": {
+    "0C152B24": "FFFFFFFF00000000FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ]
+}

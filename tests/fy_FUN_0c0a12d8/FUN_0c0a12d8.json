@@ -1,0 +1,108 @@
+{
+ "dev": [
+  {
+   "about": "random even",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7071BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "00000000"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "random odd",
+   "regs": {
+    "r4": "c700000"
+   },
+   "poke": {
+    "C7071BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "3b808081"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "random 2",
+   "regs": {
+    "r4": "c710000"
+   },
+   "poke": {
+    "C7171BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "3c008081"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "large random (above 2^31 scaled), even",
+   "regs": {
+    "r4": "c720000"
+   },
+   "poke": {
+    "C7271BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "4b800000"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "large odd",
+   "regs": {
+    "r4": "c730000"
+   },
+   "poke": {
+    "C7371BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "4b002c81"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "0.5 -> 127 odd",
+   "regs": {
+    "r4": "c740000"
+   },
+   "poke": {
+    "C7471BA": "ffffff"
+   },
+   "calls": [
+    {
+     "fr0": "3f000000"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{"dev":[
+{"about":"fr15 nonzero, step 3","regs":{"r4":"c700000","fr4":3.0,"fr15":2.0},"poke":{"C7071D4":"0a00"}},
+{"about":"fr15 zero -> step 1","regs":{"r4":"c700000","fr4":5.0,"fr15":0.0},"poke":{"C7071D4":"0a00"}},
+{"about":"step zero -> 1","regs":{"r4":"c700000","fr4":0.25,"fr15":1.0},"poke":{"C7071D4":"0a00"}},
+{"about":"clamp at zero","regs":{"r4":"c700000","fr4":7.0,"fr15":1.0},"poke":{"C7071D4":"0300"}}
+],"holdout":[
+{"about":"negative step","regs":{"r4":"c710000","fr4":-4.0,"fr15":9.0},"poke":{"C7171D4":"0100"}},
+{"about":"fr15 fraction truncates to 0","regs":{"r4":"c710000","fr4":2.0,"fr15":0.5},"poke":{"C7171D4":"0500"}},
+{"about":"fr15 large (short wraps to 0)","regs":{"r4":"c710000","fr4":2.0,"fr15":65536.0},"poke":{"C7171D4":"0500"}},
+{"about":"already negative","regs":{"r4":"c710000","fr4":2.0,"fr15":1.0},"poke":{"C7171D4":"00f0"}}
+]}

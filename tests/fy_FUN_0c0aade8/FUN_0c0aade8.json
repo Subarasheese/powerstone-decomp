@@ -1,0 +1,62 @@
+{
+ "dev": [
+  {
+   "about": "all allocs succeed",
+   "poke": {
+    "0C152C80": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "c750000"
+    },
+    {
+     "r0": "c750200"
+    }
+   ]
+  },
+  {
+   "about": "all fail",
+   "poke": {
+    "0C152C80": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    },
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "mixed",
+   "poke": {
+    "0C152C80": "A1A2A3A4B1B2B3B4C1C2C3C4"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    },
+    {
+     "r0": "c760200"
+    }
+   ]
+  },
+  {
+   "about": "other objects",
+   "poke": {
+    "0C152C80": "FFFFFFFF00000000FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "c780000"
+    },
+    {
+     "r0": "c780200"
+    }
+   ]
+  }
+ ]
+}

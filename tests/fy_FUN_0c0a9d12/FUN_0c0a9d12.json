@@ -1,0 +1,70 @@
+{
+ "dev": [
+  {
+   "about": "alloc fails",
+   "regs": {
+    "r4": "00000011",
+    "r5": "00000022",
+    "r6": "00000033"
+   },
+   "poke": {
+    "0C152C5C": "0102030405060708090A0B0C"
+   },
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "alloc ok negative args",
+   "regs": {
+    "r4": "FFFFFF85",
+    "r5": "FFFFFF90",
+    "r6": "FFFFFFF0"
+   },
+   "poke": {
+    "0C152C5C": "11121314212223243132333F"
+   },
+   "calls": [
+    {
+     "r0": "0C706000"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "alloc ok",
+   "regs": {
+    "r4": "00000011",
+    "r5": "00000022",
+    "r6": "00000033"
+   },
+   "poke": {
+    "0C152C5C": "A1A2A3A4A5A6A7A8A9AAABAC"
+   },
+   "calls": [
+    {
+     "r0": "0C705000"
+    }
+   ]
+  },
+  {
+   "about": "alloc ok upper bits",
+   "regs": {
+    "r4": "12345678",
+    "r5": "9ABCDEF0",
+    "r6": "0000007F"
+   },
+   "poke": {
+    "0C152C5C": "FFFFFFFF00000000FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "0C707000"
+    }
+   ]
+  }
+ ]
+}

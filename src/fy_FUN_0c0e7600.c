@@ -1,0 +1,575 @@
+/* INLINE-ASM: hand-written assembly routine (register-based calling convention, FPU transfer-size mode, no C form) */
+#pragma inline_asm(FUN_0c0e7600)
+int FUN_0c0e7600(void)
+{
+    TST R8,R8
+    MOV R8,R0
+    BT S_1
+    BRA L_0C0E7608
+    NOP
+S_1:
+    BRA L_0C0E7728
+L_0C0E7608:
+    TST #1,R0
+    BT S_2
+    BRA L_0C0E7610
+    NOP
+S_2:
+    BRA L_0C0E7876
+    NOP
+L_0C0E7610:
+    MOV.L @R4+,R3
+    FLDI1 FR2
+    FSCHG
+    FLDI0 FR3
+    FMOV.S FR2,@-R6
+    ADD #32,R6
+    FMOV.S FR2,@R6
+    MOV.L @R4,R0
+    MOV R4,R14
+    TST #1,R0
+    ADD #32,R4
+    BT S_3
+    BRA L_0C0E762E
+    NOP
+S_3:
+    MOV.L @(4,R14),R14
+    ADD #-24,R4
+    ADD R4,R14
+L_0C0E762E:
+    FMOV.S @R14+,FR4
+    FMOV.S @R14,FR6
+    ADD #16,R14
+    FLDI1 FR7
+    FMOV.S @R14,FR0
+    FTRV XMTRX,FV4
+L_0C0E763A:
+    FLDI1 FR7
+    FDIV FR4,FR7
+    DT R3
+    MOV.L @R4+,R0
+    BF/S S_4
+    MOV.L @R4+,R14
+    BRA L_0C0E76E8
+    NOP
+S_4:
+    TST #1,R0
+    MOV R6,R2
+    BF/S S_5
+    ADD R4,R14
+    BRA L_0C0E7654
+    NOP
+S_5:
+    MOV R4,R14
+    ADD #24,R4
+    ADD #-8,R14
+L_0C0E7654:
+    FMOV.S @R14+,FR8
+    ADD #32,R4
+    PREF @R4
+    FMOV.S @R14,FR10
+    ADD #16,R14
+    FLDI1 FR11
+    FMUL FR7,FR6
+    FMOV.S FR0,@-R6
+    FMUL FR7,FR5
+    FMOV.S FR6,@-R6
+    FTRV XMTRX,FV8
+    FMOV.S FR4,@-R6
+    ADD #-32,R4
+    MOV.L R2,@R6
+    FMOV.S @R14,FR0
+    DT R3
+    PREF @R6
+    ADD #56,R6
+    MOV R6,R2
+    FLDI1 FR11
+    FDIV FR8,FR11
+    MOV.L @R4+,R0
+    BF/S S_6
+    MOV.L @R4+,R14
+    BRA L_0C0E76B8
+    NOP
+S_6:
+    TST #1,R0
+    BF/S S_7
+    ADD R4,R14
+    BRA L_0C0E7690
+    NOP
+S_7:
+    MOV R4,R14
+    ADD #24,R4
+    ADD #-8,R14
+L_0C0E7690:
+    ADD #32,R4
+    FMOV.S @R14+,FR4
+    PREF @R4
+    FMOV.S @R14,FR6
+    ADD #16,R14
+    FLDI1 FR7
+    FMUL FR11,FR10
+    ADD #-32,R4
+    FMUL FR11,FR9
+    FMOV.S FR0,@-R6
+    FMOV.S FR10,@-R6
+    FTRV XMTRX,FV4
+    FMOV.S FR8,@-R6
+    ADD #64,R5
+    MOV.L R2,@R6
+    FMOV.S @R14,FR0
+    PREF @R6
+    BRA L_0C0E763A
+    ADD #56,R6
+    .DATA.W H'0009
+L_0C0E76B8:
+    CMP/PL R0
+    MOV.L @R4+,R2
+    BT S_8
+    BRA L_0C0E76D8
+    NOP
+S_8:
+    TST #128,R0
+    MOV R14,R3
+    BF S_9
+    BRA L_0C0E76D8
+    NOP
+S_9:
+    MOV R2,R0
+    MOV #-1,R2
+    MOV.L @R4+,R14
+    TST #1,R0
+    BF/S S_10
+    ADD R4,R14
+    BRA L_0C0E7690
+    NOP
+S_10:
+    MOV R4,R14
+    ADD #24,R4
+    BRA L_0C0E7690
+    ADD #-8,R14
+L_0C0E76D8:
+    ADD #44,R4
+    PREF @R4
+    ADD #-48,R4
+    FMOV FR8,FR4
+    ADD #32,R5
+    BRA L_0C0E770E
+    FMOV FR10,FR6
+    .DATA.W H'0009
+L_0C0E76E8:
+    CMP/PL R0
+    MOV.L @R4+,R2
+    BT S_11
+    BRA L_0C0E7708
+    NOP
+S_11:
+    TST #128,R0
+    MOV R14,R3
+    BF S_12
+    BRA L_0C0E7708
+    NOP
+S_12:
+    MOV R2,R0
+    MOV #-1,R2
+    MOV.L @R4+,R14
+    TST #1,R0
+    BF/S S_13
+    ADD R4,R14
+    BRA L_0C0E7654
+    NOP
+S_13:
+    MOV R4,R14
+    ADD #24,R4
+    BRA L_0C0E7654
+    ADD #-8,R14
+L_0C0E7708:
+    ADD #44,R4
+    PREF @R4
+    ADD #-48,R4
+L_0C0E770E:
+    FMUL FR7,FR6
+    MOV #-1,R2
+    FMUL FR7,FR5
+    FMOV.S FR0,@-R6
+    ADD #-8,R4
+    FMOV.S FR6,@-R6
+    ADD #32,R5
+    FMOV.S FR4,@-R6
+    MOV.L R2,@R6
+    FSCHG
+    PREF @R6
+    RTS
+    ADD #32,R6
+L_0C0E7728:
+    MOV.L @R4+,R3
+    ADD #32,R6
+    FSCHG
+    MOV.L @R4,R0
+    MOV R4,R14
+    FLDI0 FR2
+    TST #1,R0
+    ADD #32,R4
+    BT S_14
+    BRA L_0C0E7740
+    NOP
+S_14:
+    MOV.L @(4,R14),R14
+    ADD #-24,R4
+    ADD R4,R14
+L_0C0E7740:
+    FMOV.S @R14+,FR4
+    MOV R6,R2
+    FMOV.S @R14+,FR6
+    FADD FR7,FR2
+    FLDI1 FR7
+    FLDI0 FR3
+    FMOV.S @R14+,FR0
+    FTRV XMTRX,FV4
+L_0C0E7750:
+    MOV.L @R4+,R0
+    DT R3
+    FLDS FR15,FPUL
+    FLDI1 FR7
+    FDIV FR4,FR7
+    MOV.L @R4+,R1
+    BF/S S_15
+    FIPR FV12,FV0
+    BRA L_0C0E7828
+    NOP
+S_15:
+    TST #1,R0
+    ADD R4,R1
+    BF/S S_16
+    FSTS FPUL,FR2
+    BRA L_0C0E776E
+    NOP
+S_16:
+    MOV R4,R1
+    ADD #24,R4
+    ADD #-8,R1
+L_0C0E776E:
+    FLDI0 FR0
+    FCMP/GT FR0,FR3
+    FMOV.S @R14,FR0
+    ADD #32,R4
+    FMOV.S @R1+,FR8
+    BT S_17
+    BRA L_0C0E777C
+    NOP
+S_17:
+    FADD FR3,FR2
+L_0C0E777C:
+    FLDI0 FR3
+    DT R3
+    FMOV.S FR2,@-R6
+    FSUB FR2,FR2
+    PREF @R4
+    ADD #-32,R4
+    FMOV.S @R1+,FR10
+    FMUL FR7,FR6
+    FMOV.S FR0,@-R6
+    FADD FR11,FR2
+    FLDI1 FR11
+    FMUL FR7,FR5
+    FMOV.S @R1+,FR0
+    ADD #32,R5
+    FMOV.S FR6,@-R6
+    FTRV XMTRX,FV8
+    FMOV.S FR4,@-R6
+    MOV.L R2,@R6
+    MOV R6,R2
+    PREF @R6
+    ADD #64,R6
+    MOV.L @R4+,R0
+    MOV.L @R4+,R14
+    FLDS FR15,FPUL
+    FIPR FV12,FV0
+    FLDI1 FR11
+    BF/S S_18
+    FDIV FR8,FR11
+    BRA L_0C0E77FC
+    NOP
+S_18:
+    TST #1,R0
+    ADD R4,R14
+    BF/S S_19
+    FSTS FPUL,FR2
+    BRA L_0C0E77C2
+    NOP
+S_19:
+    MOV R4,R14
+    ADD #24,R4
+    ADD #-8,R14
+L_0C0E77C2:
+    FLDI0 FR0
+    FCMP/GT FR0,FR3
+    FMOV.S @R1,FR0
+    ADD #32,R4
+    FMOV.S @R14+,FR4
+    BT S_20
+    BRA L_0C0E77D0
+    NOP
+S_20:
+    FADD FR3,FR2
+L_0C0E77D0:
+    FLDI0 FR3
+    FMOV.S FR2,@-R6
+    FSUB FR2,FR2
+    PREF @R4
+    ADD #-32,R4
+    FMOV.S @R14+,FR6
+    FMUL FR11,FR10
+    FMOV.S FR0,@-R6
+    FADD FR7,FR2
+    FLDI1 FR7
+    FMUL FR11,FR9
+    FMOV.S @R14+,FR0
+    ADD #32,R5
+    FMOV.S FR10,@-R6
+    FTRV XMTRX,FV4
+    FMOV.S FR8,@-R6
+    MOV.L R2,@R6
+    MOV R6,R2
+    PREF @R6
+    BRA L_0C0E7750
+    ADD #64,R6
+    .DATA.W H'0009
+L_0C0E77FC:
+    CMP/PL R0
+    FSTS FPUL,FR2
+    BT/S S_21
+    MOV #-1,R2
+    BRA L_0C0E781C
+    NOP
+S_21:
+    TST #128,R0
+    MOV R14,R3
+    BF S_22
+    BRA L_0C0E781C
+    NOP
+S_22:
+    MOV.L @R4+,R0
+    TST #1,R0
+    MOV.L @R4+,R14
+    BF/S S_23
+    ADD R4,R14
+    BRA L_0C0E77C2
+    NOP
+S_23:
+    MOV R4,R14
+    ADD #24,R4
+    BRA L_0C0E77C2
+    ADD #-8,R14
+L_0C0E781C:
+    ADD #48,R4
+    PREF @R4
+    ADD #-48,R4
+    FMOV FR8,FR4
+    BRA L_0C0E7850
+    FMOV FR10,FR6
+L_0C0E7828:
+    CMP/PL R0
+    FSTS FPUL,FR2
+    BT/S S_24
+    MOV #-1,R2
+    BRA L_0C0E7848
+    NOP
+S_24:
+    TST #128,R0
+    MOV R1,R3
+    BF S_25
+    BRA L_0C0E7848
+    NOP
+S_25:
+    MOV.L @R4+,R0
+    TST #1,R0
+    MOV.L @R4+,R1
+    BF/S S_26
+    ADD R4,R1
+    BRA L_0C0E776E
+    NOP
+S_26:
+    MOV R4,R1
+    ADD #24,R4
+    BRA L_0C0E776E
+    ADD #-8,R1
+L_0C0E7848:
+    ADD #48,R4
+    MOV R14,R1
+    PREF @R4
+    ADD #-48,R4
+L_0C0E7850:
+    FLDI0 FR0
+    FCMP/GT FR0,FR3
+    FMOV.S @R1,FR10
+    BT S_27
+    BRA L_0C0E785A
+    NOP
+S_27:
+    FADD FR3,FR2
+L_0C0E785A:
+    FLDI0 FR3
+    FMUL FR7,FR6
+    FMOV.S FR2,@-R6
+    FMUL FR7,FR5
+    FMOV.S FR10,@-R6
+    ADD #-8,R4
+    FMOV.S FR6,@-R6
+    ADD #32,R5
+    FMOV.S FR4,@-R6
+    MOV.L R2,@R6
+    FSCHG
+    PREF @R6
+    RTS
+    ADD #32,R6
+L_0C0E7876:
+    MOV #127,R2
+    MOV.L @R4+,R3
+    ADD #-32,R6
+    MOV.L @R4,R0
+    ADD #127,R2
+    FSCHG
+    ADD #55,R2
+    TST #1,R0
+    MOV R4,R14
+    BT/S S_28
+    ADD #32,R4
+    BRA L_0C0E7892
+    NOP
+S_28:
+    MOV.L @(4,R14),R14
+    ADD #-24,R4
+L_0C0E7890:
+    ADD R4,R14
+L_0C0E7892:
+    FMOV.S @R14+,FR4
+L_0C0E7894:
+    FMOV.S @R14+,FR6
+L_0C0E7896:
+    FLDI0 FR2
+    FADD FR7,FR2
+    FLDI1 FR7
+    ADD #64,R6
+    FLDI0 FR3
+    ADD #32,R5
+    FMOV.S @R14+,FR0
+    FTRV XMTRX,FV4
+    FLDI0 FR11
+    DT R3
+    MOV R14,R1
+    BF S_29
+    BRA L_0C0E78D4
+    NOP
+S_29:
+    MOV.L @R4,R0
+    FIPR FV12,FV0
+    MOV.L @(4,R4),R14
+    TST #1,R0
+    ADD #32,R4
+    FLDI1 FR7
+    BT/S S_30
+    FDIV FR4,FR7
+    BRA L_0C0E78DC
+    NOP
+S_30:
+    ADD #-24,R4
+    PREF @R4
+    FCMP/GT FR11,FR3
+    ADD R4,R14
+    FLDS FR15,FPUL
+    FIPR FV0,FV8
+    PREF @R14
+    BT/S S_31
+    FSTS FPUL,FR2
+    BRA L_0C0E7902
+    NOP
+S_31:
+    BRA L_0C0E78EE
+    FADD FR3,FR2
+L_0C0E78D4:
+    FIPR FV12,FV0
+    ADD #32,R4
+    FLDI1 FR7
+    FDIV FR4,FR7
+L_0C0E78DC:
+    MOV R4,R14
+    FCMP/GT FR11,FR3
+    FLDS FR15,FPUL
+    FIPR FV0,FV8
+    PREF @R4
+    ADD #-32,R14
+    BT/S S_32
+    FSTS FPUL,FR2
+    BRA L_0C0E7902
+    NOP
+S_32:
+    FADD FR3,FR2
+L_0C0E78EE:
+    FTRC FR11,FPUL
+    FLDI0 FR3
+    STS FPUL,R0
+    CMP/GT R2,R0
+    SHLL2 R0
+    BT S_33
+    BRA L_0C0E7904
+    NOP
+S_33:
+    MOV.L @(R0,R8),R0
+    LDS R0,FPUL
+    BRA L_0C0E7904
+    FSTS FPUL,FR3
+L_0C0E7902:
+    FLDI0 FR3
+L_0C0E7904:
+    FMOV.S @R1,FR0
+    FMUL FR7,FR6
+    FMOV.S FR2,@-R6
+    FMUL FR7,FR5
+    FMOV.S FR0,@-R6
+    TST R3,R3
+    FMOV.S FR6,@-R6
+    BF/S S_34
+    FMOV.S FR4,@-R6
+    BRA L_0C0E7920
+    NOP
+S_34:
+    MOV.L R6,@R6
+    FMOV.S @R14+,FR4
+    BRA L_0C0E7894
+    PREF @R6
+    .DATA.W H'0009
+L_0C0E7920:
+    MOV.L @R14+,R0
+    MOV #-1,R1
+    CMP/PL R0
+    MOV.L R1,@R6
+    BT/S S_35
+    PREF @R6
+    BRA L_0C0E7946
+    NOP
+S_35:
+    TST #128,R0
+    MOV.L @R14+,R3
+    BF S_36
+    BRA L_0C0E7946
+    NOP
+S_36:
+    MOV.L @R14,R0
+    ADD #8,R4
+    TST #1,R0
+    FMOV.S @R14+,FR4
+    BT/S S_37
+    FMOV.S @R14+,FR6
+    BRA L_0C0E7896
+    NOP
+S_37:
+    ADD #-24,R4
+    FLDS FR5,FPUL
+    BRA L_0C0E7890
+    STS FPUL,R14
+L_0C0E7946:
+    ADD #-32,R4
+    FSCHG
+    RTS
+    ADD #32,R6
+}

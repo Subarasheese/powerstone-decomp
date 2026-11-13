@@ -1,0 +1,14 @@
+{"dev":[
+{"about":"positive fraction","regs":{"fr4":3.75}},
+{"about":"negative fraction","regs":{"fr4":-3.75}},
+{"about":"negative integer","regs":{"fr4":-4.0}},
+{"about":"huge","regs":{"fr4":16777216.0}},
+{"about":"zero","regs":{"fr4":0.0}}
+],"holdout":[
+{"about":"-0.5","regs":{"fr4":-0.5}},
+{"about":"negative zero","regs":{"fr4":"80000000"}},
+{"about":"NaN","regs":{"fr4":"7fc00000"}},
+{"about":"negative huge","regs":{"fr4":-9000000.0}},
+{"about":"just under 2^23","regs":{"fr4":8388607.5}},
+{"about":"small positive","regs":{"fr4":0.1}}
+]}
