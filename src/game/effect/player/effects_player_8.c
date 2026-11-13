@@ -8,9 +8,9 @@ struct o107_uchar { char p[0x107]; unsigned char v; };
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int obj_set_record_char(int, int);
-int FUN_0c0e6fe8(int, int, int);
+int _quick_odd_mvn(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c0555dc(void);
@@ -19,11 +19,8 @@ int obj_destroy(int, int, int, int);
 int fx_spawn_13(int a4)
 {
     register int t0;
-    register int t3;
-    register int t4;
-    register int t5;
 
-    t0 = obj_create(0x1, 0x1, 0x0);
+    t0 = obj_create(0x1, 0x1, 0x0, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -31,16 +28,16 @@ int fx_spawn_13(int a4)
         *(unsigned short *)((t0 + 0x6)) = 0x1F;
         *(unsigned char *)((t0 + 0x5)) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B9710;
-        FUN_0c0e6fe8(t0, 0x0, 0x1);
-        (((struct o58_float *)(t3))->v) = 0.0f;
-        (((struct o54_float *)(t3))->v) = 0.0f;
-        (((struct o50_float *)(t3))->v) = 0.0f;
-        (((struct o101_uchar *)(t3))->v) = 0x7;
-        (((struct o102_uchar *)(t3))->v) = t4;
-        (((struct o105_uchar *)(t3))->v) = t5;
-        (((struct o106_uchar *)(t3))->v) = t5;
-        (((struct o107_uchar *)(t3))->v) = t5;
-        return obj_set_record_char(t3, 0x7C);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        (((struct o58_float *)(t0))->v) = 0.0f;
+        (((struct o54_float *)(t0))->v) = 0.0f;
+        (((struct o50_float *)(t0))->v) = 0.0f;
+        (((struct o101_uchar *)(t0))->v) = 0x7;
+        (((struct o102_uchar *)(t0))->v) = 0x1;
+        (((struct o105_uchar *)(t0))->v) = 0x0;
+        (((struct o106_uchar *)(t0))->v) = 0x0;
+        (((struct o107_uchar *)(t0))->v) = 0x0;
+        return obj_set_record_char(t0, 0x7C);
     }
     return t0;
 }

@@ -4,8 +4,8 @@ struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o50_float { char p[0x50]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
-int FUN_0c0e6fe8(int);
+int obj_create(int, int, int, int);
+int _quick_odd_mvn(int);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -13,34 +13,36 @@ struct oEC_short { char p[0xEC]; short v; };
 int ui_draw_world_text(int, int, int, float);
 int obj_destroy(int, int, int, int);
 int sprintf(int, int, int, int, int);
+struct o0_float { float v; };
+struct oC_float { char p[0xC]; float v; };
+
 
 int item_spawn_pickup_popup(int a4, int a5)
 {
     int stk[1];
     register int t24;
     register int t3;
-    register int t6;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
     t24 = 0x18;
     if ((*(signed char *)0xC7F4768) == 0) {
         t24 = 0x19;
         if ((*(signed char *)0xC7F4769) == 0) {
-            t3 = obj_create(0x5, 0x1, 0x1);
+            t3 = obj_create(0x5, 0x1, 0x1, 0x0);
             t24 = t3;
             if (t3 != 0) {
                 *(unsigned char *)((t3 + 0x0)) = 0x1;
                 *(unsigned char *)((t3 + 0x3)) = (*(signed char *)((a4 + 0x3)));
                 *(unsigned char *)((t3 + 0x1)) = 0x0;
                 *(unsigned int *)((t3 + 0x10)) = 0xC049EE4;
-                (((struct o50_float *)(t3))->v) = 0.199999988f;
-                FUN_0c0e6fe8(t3);
-                (((struct oEC_ushort *)(t6))->v) = 0xA;
-                (((struct o38_float *)(t6))->v) = (*(float *)((0xC14AA08 + ((*(signed char *)((a4 + 0x4))) << 2))));
-                (((struct o3C_float *)(t6))->v) = 30.0f;
+                (((struct o50_float *)(t3))->v) = ((((struct o0_float *)0xC049F84)->v));
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t3 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+                (((struct oEC_ushort *)(t3))->v) = 0xA;
+                (((struct o38_float *)(t3))->v) = (*(float *)((0xC14AA08 + ((*(signed char *)((a4 + 0x4))) << 2))));
+                (((struct o3C_float *)(t3))->v) = ((((struct oC_float *)0xC049F84)->v));
                 t24 = *(signed char *)(((int)stk + 0));
-                *(unsigned char *)((t6 + 0xB)) = t24;
-                *(unsigned int *)((t6 + 0x1C)) = a4;
+                *(unsigned char *)((t3 + 0xB)) = t24;
+                *(unsigned int *)((t3 + 0x1C)) = a4;
             }
         }
     }

@@ -9,7 +9,7 @@ struct o4_float { char p[0x4]; float v; };
 int fxslot_clear_all(void);
 int FUN_0c05f136(void);
 int FUN_0c05f20e(int, float, float);
-int FUN_0c0e7140(int);
+int _slow_mvn(int);
 
 int FUN_0c05ef8c(int player_idx);
 int FUN_0c05f0b8(int a4);
@@ -78,30 +78,33 @@ int FUN_0c05f0b8(int a4)
 int FUN_0c05f2d4(int a4, int a5)
 {
     int stk[8];
-    register int t2;
     register int t5;
-    register int t14;
-    register int t30;
-    register int t32;
-    register int t48;
-    register int t52;
+    register int t8;
+    register int t17;
+    register int t33;
+    register int t35;
+    register int t51;
     register int t55;
-    register int t19;
+    register int t58;
+    register int t22;
 
     *(unsigned char *)(((int)stk + 24)) = a4;
     *(unsigned char *)(((int)stk + 20)) = a5;
-    FUN_0c0e7140(a4);
+    *(unsigned char *)(((((int)stk + 16) + 0xC) + 0x0)) = (*(signed char *)0xC14D948);
+    *(unsigned char *)(((((int)stk + 16) + 0xC) + 0x1)) = (*(signed char *)0xC14D949);
+    *(unsigned char *)(((((int)stk + 16) + 0xC) + 0x2)) = (*(signed char *)0xC14D94A);
+    *(unsigned char *)(((((int)stk + 16) + 0xC) + 0x3)) = (*(signed char *)0xC14D94B);
     fxslot_clear_all();
     *(unsigned int *)(((int)stk + 16)) = 0xC336504;
-    t2 = *(signed char *)(((int)stk + 24));
-    if (t2 != 1) {
-        if (t2 != 2) {
-            if (t2 != 3) {
+    t5 = *(signed char *)(((int)stk + 24));
+    if (t5 != 1) {
+        if (t5 != 2) {
+            if (t5 != 3) {
                 *(unsigned int *)(((int)stk + 16)) = 0xC336510;
-                t5 = (*(int *)0xC336510);
-                *(int *)((int)stk + 12) = t5;
+                t8 = (*(int *)0xC336510);
+                *(int *)((int)stk + 12) = t8;
                 *(int *)((int)stk + 8) = 0xC14D7D8;
-                fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t5, 1.0f);
+                fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t8, 1.0f);
                 *(unsigned char *)0xC7F323C = 0x1;
                 FUN_0c05ef8c(0x0);
                 (((struct o4_uchar *)0xC7F32C8)->v) = 0x1;
@@ -111,13 +114,13 @@ int FUN_0c05f2d4(int a4, int a5)
                 *(unsigned char *)0xC7F3478 = 0x0;
                 *(unsigned char *)0xC7F3598 = 0x0;
                 *(unsigned char *)0xC7F3628 = 0x0;
-                t19 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-                *(int *)((int)stk + 4) = t19;
+                t22 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
+                *(int *)((int)stk + 4) = t22;
             } else {
-                t14 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-                *(int *)((int)stk + 12) = t14;
+                t17 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
+                *(int *)((int)stk + 12) = t17;
                 *(int *)((int)stk + 8) = 0xC14D7D8;
-                fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t14, 1.0f);
+                fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t17, 1.0f);
                 *(unsigned char *)0xC7F323C = 0x1;
                 (((struct o0_uchar *)0xC7F32C8)->v) = 0x0;
                 (((struct o0_uchar *)0xC7F3358)->v) = 0x0;
@@ -125,13 +128,13 @@ int FUN_0c05f2d4(int a4, int a5)
                 *(unsigned char *)0xC7F3478 = 0x0;
                 *(unsigned char *)0xC7F3598 = 0x0;
                 *(unsigned char *)0xC7F3628 = 0x0;
-                t19 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-                *(int *)((int)stk + 4) = t19;
+                t22 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
+                *(int *)((int)stk + 4) = t22;
             }
             *(int *)((int)stk + 0) = 0xC14D7D8;
-            fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t19, 1.0f);
+            fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t22, 1.0f);
             *(unsigned char *)0xC7F350C = 0x1;
-            t55 = (FUN_0c05f136());
+            t58 = (FUN_0c05f136());
         } else {
             FUN_0c05f0b8((*(signed char *)(((int)stk + 20))));
             FUN_0c05ef8c(0x0);
@@ -140,36 +143,36 @@ int FUN_0c05f2d4(int a4, int a5)
             *(unsigned char *)0xC7F3478 = 0x0;
             *(unsigned char *)0xC7F3598 = 0x0;
             *(unsigned char *)0xC7F3628 = 0x0;
-            t30 = (*(int *)0xC336510);
-            *(int *)((int)stk + 12) = t30;
+            t33 = (*(int *)0xC336510);
+            *(int *)((int)stk + 12) = t33;
             *(int *)((int)stk + 8) = 0xC14D7D8;
-            fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t30, 1.0f);
+            fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t33, 1.0f);
             *(unsigned char *)0xC7F350C = 0x1;
-            t32 = *(signed char *)(((int)stk + 20));
-            if (!(0.0f > (*(float *)((((unsigned char)(((t32 << 1) + t32) << 2) + 0xC14D894) + 0x0))))) {
-                t55 = (FUN_0c05f20e((*(int *)((((unsigned char)(((t32 << 1) + t32) << 2) + 0xC14D894) + 0x8))), (*(float *)((((unsigned char)(((t32 << 1) + t32) << 2) + 0xC14D894) + 0x0))), ((((struct o4_float *)(((unsigned char)(((t32 << 1) + t32) << 2) + 0xC14D894)))->v))));
+            t35 = *(signed char *)(((int)stk + 20));
+            if (!(0.0f > (*(float *)((((unsigned char)(((t35 << 1) + t35) << 2) + 0xC14D894) + 0x0))))) {
+                t58 = (FUN_0c05f20e((*(int *)((((unsigned char)(((t35 << 1) + t35) << 2) + 0xC14D894) + 0x8))), (*(float *)((((unsigned char)(((t35 << 1) + t35) << 2) + 0xC14D894) + 0x0))), ((((struct o4_float *)(((unsigned char)(((t35 << 1) + t35) << 2) + 0xC14D894)))->v))));
             } else {
-                t55 = (FUN_0c05f136());
+                t58 = (FUN_0c05f136());
             }
         }
     } else {
         *(volatile signed char *)(((int)stk + 20));
-        t48 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-        *(int *)((int)stk + 12) = t48;
+        t51 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
+        *(int *)((int)stk + 12) = t51;
         *(int *)((int)stk + 8) = 0xC14D7D8;
-        fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t48, 1.0f);
+        fxslot_start(0x0, 0x80, 0x3, 0x0, 0xC14D7D8, t51, 1.0f);
         (((struct o0_uchar *)0xC7F32C8)->v) = 0x0;
         (((struct o0_uchar *)0xC7F3358)->v) = 0x0;
         *(unsigned char *)0xC7F33E8 = 0x0;
         *(unsigned char *)0xC7F3478 = 0x0;
         *(unsigned char *)0xC7F3598 = 0x0;
         *(unsigned char *)0xC7F3628 = 0x0;
-        t52 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-        *(int *)((int)stk + 4) = t52;
+        t55 = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
+        *(int *)((int)stk + 4) = t55;
         *(int *)((int)stk + 0) = 0xC14D7D8;
-        fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t52, 1.0f);
+        fxslot_start(0x5, 0x80, 0x3, 0x0, 0xC14D7D8, t55, 1.0f);
         *(unsigned char *)0xC7F350C = 0x1;
-        t55 = (FUN_0c05f136());
+        t58 = (FUN_0c05f136());
     }
-    return t55;
+    return t58;
 }

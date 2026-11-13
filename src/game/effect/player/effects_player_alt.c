@@ -15,7 +15,7 @@ int FUN_0c06233a(int, int, int);
 int FUN_0c0b7998(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int thunk_FUN_0c062242(int);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };

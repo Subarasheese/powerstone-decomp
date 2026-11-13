@@ -13,7 +13,7 @@ struct o18_float { char p[0x18]; float v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o9C_int { char p[0x9C]; int v; };
 struct o90_uint { char p[0x90]; unsigned int v; };
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 void *FUN_0c0ccf38(char *pl, int kind, int index);
 typedef struct { float x, y, z; } VEC3;
 #define B(o, n) (*(signed char *)((o) + (n)))
@@ -60,19 +60,15 @@ int FUN_0c06231c(int a4, int a5, int a6)
 
 int FUN_0c06233a(int a4, int a5, int a6)
 {
-    register int t0;
-    register int t1;
-    register int t2;
-
     FUN_0c0624c4((0x9C + a4), a5, a6);
     if (((((struct o9C_int *)(a4))->v)) == 0) {
         return 0x1;
     }
-    t2 = ((int (*)(int))(FUN_0c0e6fe8))(0xC14E3B0);
-    t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t2 = ((int (*)(int))(FUN_0c0e6fe8))(t0);
-    t0 = ((int (*)(int))(FUN_0c0e6fe8))(0xC14E3C8);
-    t0 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x4)) = *(struct mv3 *)(0xC14E3B0); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x1C)) = *(struct mv3 *)(0xC14E3BC); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x28)) = *(struct mv3 *)(0xC14E3B0); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x10)) = *(struct mv3 *)(0xC14E3C8); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x34)) = *(struct mv3 *)(0xC14E3C8); }
     (((struct o90_uint *)(a4))->v) = 0x0;
     return 0x0;
 }
@@ -86,18 +82,16 @@ int FUN_0c062436(int a4, int a5, int a6)
 int FUN_0c06244a(int a4, int a5, int a6)
 {
     register int t0;
-    register int t1;
-    register int t2;
 
-    t2 = FUN_0c062436(a4, a5, a6);
-    if (t2 != 0) {
+    t0 = FUN_0c062436(a4, a5, a6);
+    if (t0 != 0) {
         return 0x1;
     }
-    t2 = ((int (*)(int))(FUN_0c0e6fe8))(0xC14E3B0);
-    t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t2 = ((int (*)(int))(FUN_0c0e6fe8))(t0);
-    t0 = ((int (*)(int))(FUN_0c0e6fe8))(0xC14E3C8);
-    t0 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x4)) = *(struct mv3 *)(0xC14E3B0); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x1C)) = *(struct mv3 *)(0xC14E3BC); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x28)) = *(struct mv3 *)(0xC14E3B0); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x10)) = *(struct mv3 *)(0xC14E3C8); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x34)) = *(struct mv3 *)(0xC14E3C8); }
     (((struct o90_uint *)(a4))->v) = 0x0;
     return 0x0;
 }

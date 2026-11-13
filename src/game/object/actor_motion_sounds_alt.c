@@ -12,7 +12,7 @@ extern short g_cam_yaw16;
 extern void math_vec3_sub(V3 *, char *, char *);
 extern int math_atan_angle16(float);
 int ai_select_variant_script(int, int);
-int FUN_0c08cd18(int);
+int FUN_0c08cd18(int, int);
 int ai_run_reaction_script(int);
 
 int ai_dist_class(int a4);
@@ -66,7 +66,7 @@ int ai_slot_state1_update(int a4, int a5, int a6, int a7)
         ai_select_variant_script(a4, a5);
     }
     *(unsigned char *)((a4 + 0x1)) = ((*(signed char *)((a4 + 0x1))) + 0x1);
-    t0 = FUN_0c08cd18(a4);
+    t0 = FUN_0c08cd18(a4, a5);
     if ((signed char)t0 != 0) {
         ai_select_variant_script(a4, a5);
     }

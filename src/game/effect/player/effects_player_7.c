@@ -15,12 +15,12 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o270_float { char p[0x270]; float v; };
 struct o278_float { char p[0x278]; float v; };
 struct o2D4_float { char p[0x2D4]; float v; };
@@ -41,20 +41,20 @@ int fx_spawn_12(int a4, int a5, int a6, float f4)
 {
     int stk[4];
     register int t0;
-    register int t27;
-    register int t5;
-    register float u9;
-    register float u13;
+    register int t25;
+    register int t3;
+    register float u7;
+    register float u11;
+    register int t17;
+    register int t18;
     register int t19;
     register int t20;
-    register int t21;
-    register int t22;
 
     *(unsigned int *)(((int)stk + 8)) = a5;
     *(float *)(((int)stk + 4)) = f4;
     *(unsigned char *)(((int)stk + 12)) = a6;
-    t0 = obj_create(0x1, 0x1, 0x2);
-    t27 = t0;
+    t0 = obj_create(0x1, 0x1, 0x2, 0x0);
+    t25 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -63,18 +63,18 @@ int fx_spawn_12(int a4, int a5, int a6, float f4)
         *(unsigned short *)((t0 + 0x6)) = 0x1F;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B9430;
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         *(unsigned int *)((t0 + 0x1C)) = a4;
-        t5 = *(int *)((t0 + 0x30));
+        t3 = *(int *)((t0 + 0x30));
         *(int *)((int)stk + 0) = (t0 + 0x20);
-        u9 = ((((struct o20_float *)(t0))->v));
-        u9 = u9 + (*(float *)(((int)stk + 4))) * (math_cos_angle16(((-t5) + 0x14000)));
-        (((struct o20_float *)(t0))->v) = u9;
+        u7 = ((((struct o20_float *)(t0))->v));
+        u7 = u7 + (*(float *)(((int)stk + 4))) * (math_cos_angle16(((-t3) + 0x14000)));
+        (((struct o20_float *)(t0))->v) = u7;
         *(int *)((int)stk + 0) = (t0 + 0x28);
-        u13 = ((((struct o28_float *)(t0))->v));
-        u13 = u13 + (*(float *)(((int)stk + 4))) * (math_sin_angle16(((-t5) + 0x14000)));
-        (((struct o28_float *)(t0))->v) = u13;
+        u11 = ((((struct o28_float *)(t0))->v));
+        u11 = u11 + (*(float *)(((int)stk + 4))) * (math_sin_angle16(((-t3) + 0x14000)));
+        (((struct o28_float *)(t0))->v) = u11;
         (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + 300.0f);
         (((struct o38_float *)(t0))->v) = ((((struct o20_float *)(t0))->v));
         (((struct o40_float *)(t0))->v) = ((((struct o28_float *)(t0))->v));
@@ -88,26 +88,26 @@ int fx_spawn_12(int a4, int a5, int a6, float f4)
         (((struct o106_uchar *)(t0))->v) = 0x1;
         (((struct o107_uchar *)(t0))->v) = 0x0;
         obj_set_record_char(t0, 0x78);
-        t19 = 0x0;
-        t20 = 0x0;
+        t17 = 0x0;
+        t18 = 0x0;
         for (;;) {
-            t21 = *(int *)((((0x2E0 + t0) + t20) + 0x0));
-            *(unsigned char *)((t21 + 0x0)) = 0x1;
-            *(unsigned short *)((t21 + 0x2)) = 0x1F;
-            t22 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a(t21, ((signed char)((((t22 << 1) + t22) << 2) << 1) + 0xC6002D0), 0x5);
-            t19 = (t19 + 0x1);
-            *(unsigned int *)((t21 + 0x14)) = ((*(int *)((t20 + 0xC153160))) - 16384);
-            (((struct o24_float *)(t21))->v) = 3.0f;
-            (((struct o1C_float *)(t21))->v) = 3.0f;
-            t20 = (t20 + 0x4);
-            if ((int)t19 >= (int)0x2) {
+            t19 = *(int *)((((0x2E0 + t0) + t18) + 0x0));
+            *(unsigned char *)((t19 + 0x0)) = 0x1;
+            *(unsigned short *)((t19 + 0x2)) = 0x1F;
+            t20 = *(signed char *)((a4 + 0x3));
+            FUN_0c06233a(t19, ((signed char)((((t20 << 1) + t20) << 2) << 1) + 0xC6002D0), 0x5);
+            t17 = (t17 + 0x1);
+            *(unsigned int *)((t19 + 0x14)) = ((*(int *)((t18 + 0xC153160))) - 16384);
+            (((struct o24_float *)(t19))->v) = 3.0f;
+            (((struct o1C_float *)(t19))->v) = 3.0f;
+            t18 = (t18 + 0x4);
+            if ((int)t17 >= (int)0x2) {
                 break;
             }
         }
-        t27 = 0x1C;
+        t25 = 0x1C;
     }
-    return t27;
+    return t25;
 }
 
 int fx_update_12(int a4)

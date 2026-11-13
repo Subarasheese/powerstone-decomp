@@ -24,8 +24,8 @@ int pl_tick_hitstop(int);
 int snd_play_char_voice(int, int);
 int fx_spawn_four_particle_trail(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
-int thunk_FUN_0c062242(int);
+int _modlu(void);
+int thunk_FUN_0c062242(int, int);
 
 int FUN_0c0bf046(int a4)
 {
@@ -53,15 +53,19 @@ int FUN_0c0bf046(int a4)
     register int t80;
     register int t120;
     register int t123;
+    register float t127;
+    register float u130;
     register int t132;
     register float u135;
     register float u139;
+    register float t140;
+    register float u143;
     register int t145;
     register float u148;
     register float u152;
-    register int t169;
-    register int t189;
-    register int t192;
+    register int t171;
+    register int t193;
+    register int t196;
 
     t0 = FUN_0c0555dc();
     if (t0 == 1) {
@@ -110,11 +114,11 @@ int FUN_0c0bf046(int a4)
             (((struct oEC_ushort *)(a4))->v) = (t38 - 1);
             if ((short)(t38 - 1) == 0) {
                 *(unsigned char *)((a4 + 0x8)) = 0x4;
-                t192 = 0x4;
+                t196 = 0x4;
             } else {
                 t39 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0x4));
                 t44 = 0x0;
                 if (((((struct o24_float *)(a4))->v)) > ((*(float *)(((int)stk + 8))) + 0.0f)) {
                     t44 = 0x1;
@@ -122,7 +126,7 @@ int FUN_0c0bf046(int a4)
                 *(unsigned char *)(((0x105 + a4) + 0x2)) = t44;
                 *(unsigned char *)(((0x105 + a4) + 0x1)) = t44;
                 (((struct o105_uchar *)(a4))->v) = t44;
-                t192 = 0x2D8;
+                t196 = 0x2D8;
                 if ((*(signed char *)((a4 + 0x2D8))) != 0) {
                     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
                     *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x0;
@@ -133,7 +137,7 @@ int FUN_0c0bf046(int a4)
                     fx_spawn_four_particle_trail(a4);
                     (((struct oEC_ushort *)(a4))->v) = 0x8;
                     *(unsigned char *)((a4 + 0x8)) = 0xFFFFFFFF;
-                    t192 = 0xFFFFFFFF;
+                    t196 = 0xFFFFFFFF;
                 }
             }
         } else {
@@ -142,13 +146,13 @@ int FUN_0c0bf046(int a4)
                 (((struct o40_float *)(((((struct o2F0_int *)(a4))->v))))->v) = ((float)((((struct oEC_short *)(a4))->v)) / 8.0f);
                 t74 = (((struct oEC_short *)(a4))->v);
                 (((struct oEC_ushort *)(a4))->v) = (t74 - 1);
-                t192 = 0xEC;
+                t196 = 0xEC;
                 if ((short)(t74 - 1) == 0) {
                     *(unsigned char *)((((((struct o2F0_int *)(a4))->v)) + 0x0)) = 0x0;
                     (((struct oEC_ushort *)(a4))->v) = 0xA;
                     t76 = *(signed char *)((a4 + 0x8));
                     *(unsigned char *)((a4 + 0x8)) = (t76 + 0x1);
-                    t192 = (t76 + 0x1);
+                    t196 = (t76 + 0x1);
                 }
             } else {
                 if (t3 == 3) {
@@ -160,9 +164,9 @@ int FUN_0c0bf046(int a4)
                         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                     }
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
-                    t192 = 0xEC;
+                    t196 = 0xEC;
                 } else {
-                    t192 = (obj_destroy(a4));
+                    t196 = (obj_destroy(a4));
                 }
             }
         }
@@ -173,10 +177,14 @@ int FUN_0c0bf046(int a4)
             if (((((struct oEC_short *)(a4))->v)) == 10) {
                 t123 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (a4 + 0x20));
                 if ((int)(*(signed char *)((a4 + 0xF))) > (int)0x2) {
-                    math_rand_float();
-                    t132 = FUN_0c0e6f24();
+                    t127 = math_rand_float();
+                    u130 = (t127 * 255.0f);
+                    if (!(2.14748365e+09f > (t127 * 255.0f))) {
+                        u130 = (((t127 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t132 = (int)((unsigned int)(int)u130 % (unsigned int)0x14);
                     u135 = (float)t132;
                     if ((int)t132 < 0) {
                         u135 = ((float)t132 + 4.2949673e+09f);
@@ -184,8 +192,12 @@ int FUN_0c0bf046(int a4)
                     u139 = -100.0f;
                     u139 = u139 + 10.0f * u135;
                     (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + u139);
-                    math_rand_float();
-                    t145 = FUN_0c0e6f24();
+                    t140 = math_rand_float();
+                    u143 = (t140 * 255.0f);
+                    if (!(2.14748365e+09f > (t140 * 255.0f))) {
+                        u143 = (((t140 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t145 = (int)((unsigned int)(int)u143 % (unsigned int)0x14);
                     u148 = (float)t145;
                     if ((int)t145 < 0) {
                         u148 = ((float)t145 + 4.2949673e+09f);
@@ -196,21 +208,21 @@ int FUN_0c0bf046(int a4)
                 }
                 (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + 700.0f);
             }
-            t169 = (((struct oEC_short *)(a4))->v);
-            (((struct oEC_ushort *)(a4))->v) = (t169 - 1);
-            if ((short)((t169 - 1) + 0x1) == 0) {
+            t171 = (((struct oEC_short *)(a4))->v);
+            (((struct oEC_ushort *)(a4))->v) = (t171 - 1);
+            if ((short)((t171 - 1) + 0x1) == 0) {
                 (((struct oEC_ushort *)(a4))->v) = 0xB4;
                 *(unsigned char *)((a4 + 0x1)) = 0x1;
                 snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x32);
                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
             }
         }
-        t189 = *(signed char *)((0x71BA + (*(int *)((a4 + 0x1C)))));
-        t192 = t189;
-        if (t189 != 11) {
+        t193 = *(signed char *)((0x71BA + (*(int *)((a4 + 0x1C)))));
+        t196 = t193;
+        if (t193 != 11) {
             *(unsigned char *)((a4 + 0x8)) = 0xFFFFFFFF;
-            t192 = 0xFFFFFFFF;
+            t196 = 0xFFFFFFFF;
         }
     }
-    return t192;
+    return t196;
 }

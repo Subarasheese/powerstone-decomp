@@ -12,10 +12,10 @@ struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o30E_uchar { char p[0x30E]; unsigned char v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int stage_obj_load_layout_pos(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 void snd_play_stage_obj_se(int, int, int);
 int stage_obj_on_break(char *);
 void fx_spawn_thrown_item_kind(char *, int);
@@ -25,10 +25,10 @@ void obj_destroy(char *);
 int stage_spawn_type11(int a4)
 {
     register int t0;
-    register int t21;
+    register int t20;
 
-    t0 = obj_create(0x2, 0x1, 0x2);
-    t21 = t0;
+    t0 = obj_create(0x2, 0x1, 0x2, 0x0);
+    t20 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -51,16 +51,16 @@ int stage_spawn_type11(int a4)
         (((struct o101_uchar *)(t0))->v) = 0x0;
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A16C); }
         (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + 1.0f);
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((((*(signed char *)((t0 + 0x30E))) << 1) + 0xC33A158))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664958, (*(signed char *)((((*(signed char *)((t0 + 0x30E))) << 1) + 0xC33A159))));
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x0;
-        t21 = 0x2E4;
+        t20 = 0x2E4;
     }
-    return t21;
+    return t20;
 }
 
 void stage_type04_mode_19(char *obj)

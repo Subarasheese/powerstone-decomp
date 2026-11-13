@@ -7,7 +7,7 @@ struct o4_uint { char p[0x4]; unsigned int v; };
 int draw_project_point_sprite(int);
 int draw_project_point_sprite_z01(int);
 int FUN_0c0e3c54(int);
-int FUN_0c0e6fdc(int, int);
+int _quick_evn_mvn(int, int);
 struct o10_float { char p[0x10]; float v; };
 struct o14_float { char p[0x14]; float v; };
 struct o18_float { char p[0x18]; float v; };
@@ -26,83 +26,90 @@ int FUN_0c0282cc(void)
 {
     int stk[14];
     register int t13;
-    register int t14;
     register int t15;
-    register int t19;
-    register float u16;
-    register float u17;
-    register int t22;
+    register int t16;
+    register int t17;
+    register int t21;
+    register int t14;
+    register float u18;
+    register float u19;
 
     if ((*(signed char *)0xC7F300B) == 0) {
-        if (((*(signed char *)0xC7F300E) == 0) && (t14 = *(signed char *)0xC494D20, t14 == 0)) {
+        if (((*(signed char *)0xC7F300E) == 0) && (t15 = *(signed char *)0xC494D20, t15 == 0)) {
         } else {
-            t14 = (((struct o4_int *)0xC363A68)->v);
-            (((struct o0_uint *)0xC363A68)->v) = t14;
+            t15 = (((struct o4_int *)0xC363A68)->v);
+            (((struct o0_uint *)0xC363A68)->v) = t15;
         }
         t13 = 0x12E;
     } else {
-        t14 = (((struct o4_int *)0xC363A68)->v);
-        (((struct o0_uint *)0xC363A68)->v) = t14;
+        t15 = (((struct o4_int *)0xC363A68)->v);
+        (((struct o0_uint *)0xC363A68)->v) = t15;
         t13 = 0x12B;
     }
     (((struct o4_uint *)0xC363A68)->v) = ((((struct o0_int *)0xC363A68)->v));
-    t15 = 0xC363A6C;
+    t16 = 0xC363A6C;
+    t17 = 0xC7F2EE0;
     for (;;) {
         if (((((struct o0_int *)0xC363A68)->v)) == 0) {
             break;
         }
-        t19 = (((struct o0_int *)0xC363A68)->v);
-        t14 = 0xC0E6FDC;
-        (((struct o0_uint *)0xC363A68)->v) = (t19 - 1);
-        t15 = (*(int *)(((((((t19 - 1) << 2) << 2) << 2) + 0xC363A70) + 0x4)));
+        t21 = (((struct o0_int *)0xC363A68)->v);
+        t14 = ((int)stk + 0);
+        t15 = 0xC0E6FDC;
+        t17 = (t21 - 1);
+        t17 = (t17 << 2);
+        t17 = (t17 << 2);
+        (((struct o0_uint *)0xC363A68)->v) = (t21 - 1);
+        t17 = (t17 << 2);
+        t17 = (t17 + 0xC363A70);
+        t16 = (*(int *)((t17 + 0x4)));
         t13 = 0x38;
-        t13 = (FUN_0c0e6fdc(t15, (((((t19 - 1) << 2) << 2) << 2) + 0xC363A70)));
+        { struct mv14 { int w[14]; }; *(struct mv14 *)(t14) = *(struct mv14 *)((t17 + 0x8)); }
         t13 = 0x4;
-        t15 = t22;
-        *(unsigned int *)(((int)stk + 0)) = (*(short *)((t22 + 0x0)));
-        u17 = (*(float *)((t15 + t13)));
+        *(unsigned int *)(((int)stk + 0)) = (*(short *)((t16 + 0x0)));
+        u19 = (*(float *)((t16 + t13)));
         t13 = 0x10;
-        u16 = (*(float *)((((int)stk + 0) + t13)));
+        u18 = (*(float *)((((int)stk + 0) + t13)));
         t13 = 0x10;
-        u16 = (u16 * u17);
-        *(float *)((((int)stk + 0) + t13)) = u16;
+        u18 = (u18 * u19);
+        *(float *)((((int)stk + 0) + t13)) = u18;
         t13 = 0x8;
-        u17 = (*(float *)((t15 + t13)));
+        u19 = (*(float *)((t16 + t13)));
         t13 = 0x14;
-        u16 = (*(float *)((((int)stk + 0) + t13)));
+        u18 = (*(float *)((((int)stk + 0) + t13)));
         t13 = 0x14;
-        u16 = (u16 * u17);
-        *(float *)((((int)stk + 0) + t13)) = u16;
-        t14 = ((((struct o0_int *)0xC363A68)->v));
-        t14 = (t14 << 2);
-        t14 = (t14 << 2);
-        t14 = (t14 << 2);
-        t14 = (t14 + 0xC363A70);
-        t13 = (*(signed char *)((t14 + 0x1)));
+        u18 = (u18 * u19);
+        *(float *)((((int)stk + 0) + t13)) = u18;
+        t15 = ((((struct o0_int *)0xC363A68)->v));
+        t15 = (t15 << 2);
+        t15 = (t15 << 2);
+        t15 = (t15 << 2);
+        t15 = (t15 + 0xC363A70);
+        t13 = (*(signed char *)((t15 + 0x1)));
         if (t13 == 0) {
             t13 = 0xC;
-            u17 = (*(float *)((t15 + t13)));
+            u19 = (*(float *)((t16 + t13)));
             t13 = 0x18;
-            *(float *)((((int)stk + 0) + t13)) = u17;
+            *(float *)((((int)stk + 0) + t13)) = u19;
             t13 = 0x14;
         } else {
             t13 = 0x14;
-            u17 = (*(float *)((t15 + t13)));
+            u19 = (*(float *)((t16 + t13)));
             t13 = 0x18;
-            *(float *)((((int)stk + 0) + t13)) = u17;
+            *(float *)((((int)stk + 0) + t13)) = u19;
             t13 = 0xC;
         }
-        u17 = (*(float *)((t15 + t13)));
+        u19 = (*(float *)((t16 + t13)));
         t13 = 0x20;
-        *(float *)((((int)stk + 0) + t13)) = u17;
+        *(float *)((((int)stk + 0) + t13)) = u19;
         t13 = 0x10;
-        u17 = (*(float *)((t15 + t13)));
+        u19 = (*(float *)((t16 + t13)));
         t13 = 0x1C;
-        *(float *)((((int)stk + 0) + t13)) = u17;
+        *(float *)((((int)stk + 0) + t13)) = u19;
         t13 = 0x18;
-        u17 = (*(float *)((t15 + t13)));
+        u19 = (*(float *)((t16 + t13)));
         t13 = 0x24;
-        *(float *)((((int)stk + 0) + t13)) = u17;
+        *(float *)((((int)stk + 0) + t13)) = u19;
         t13 = ((((struct o0_int *)0xC363A68)->v));
         t13 = (t13 << 2);
         t13 = (t13 << 2);
@@ -111,16 +118,16 @@ int FUN_0c0282cc(void)
         switch (t13) {
         case 0:
             *(unsigned int *)(((int)stk + 48)) = 0x2;
-            t15 = ((int)stk + 0);
-            t13 = (FUN_0c0e3c54(t15));
+            t16 = ((int)stk + 0);
+            t13 = (FUN_0c0e3c54(t16));
             break;
         case 1:
-            t15 = ((int)stk + 0);
-            t13 = (draw_project_point_sprite(t15));
+            t16 = ((int)stk + 0);
+            t13 = (draw_project_point_sprite(t16));
             break;
         case 2:
-            t15 = ((int)stk + 0);
-            t13 = (draw_project_point_sprite_z01(t15));
+            t16 = ((int)stk + 0);
+            t13 = (draw_project_point_sprite_z01(t16));
             break;
         }
     }

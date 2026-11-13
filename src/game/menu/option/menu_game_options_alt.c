@@ -2,12 +2,12 @@
 
 /* named globals (symbols.txt) */
 extern char g_opt_unlock_flags[];
-int ui_sprite_queue_add(int, int, int);
-int FUN_0c0e6fdc(int);
+int ui_sprite_queue_add(int, int, int, int, int, int);
+int _quick_evn_mvn(int);
 int opt_game_settings_queue_row(int, int, int);
 int opt_game_settings_queue_cursor(int, int);
 
-int FUN_0c019a06(int a4);
+int FUN_0c019a06(int);
 
 int opt_game_settings_move_cursor(int a4, int a5)
 {
@@ -75,7 +75,7 @@ int FUN_0c019a06(int a4)
     int stk[17];
 
     *(unsigned int *)(((int)stk + 8)) = ((short)(((a4 << 1) + a4) << 2) + 0xC11B7C8);
-    FUN_0c0e6fdc(a4);
+    { struct mv2 { int w[2]; }; *(struct mv2 *)((((int)stk + 8) + 0x8)) = *(struct mv2 *)((((short)(((a4 << 1) + a4) << 2) + 0xC11B7C8) + 0x4)); }
     *(float *)(((int)stk + 24)) = (*(float *)0xC019B10);
     *(unsigned int *)(((int)stk + 52)) = 0x0;
     *(float *)(((int)stk + 56)) = 1.0f;
@@ -84,8 +84,7 @@ int FUN_0c019a06(int a4)
     *(float *)(((int)stk + 32)) = 1.0f;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    *(volatile short *)(((*(int *)(((int)stk + 8))) + 0x0));
-    return (ui_sprite_queue_add((((int)stk + 0) + 0xC), 0xC17FEA4, 0x1));
+    return (ui_sprite_queue_add((((int)stk + 0) + 0xC), 0xC17FEA4, 0x1, (*(short *)(((*(int *)(((int)stk + 8))) + 0x0))), 0x0, 0x0));
 }
 
 int opt_game_settings_draw(int a4, int a5)

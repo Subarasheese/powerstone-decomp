@@ -11,7 +11,7 @@ float FUN_0c0211d0(float, float, float, float);
 float math_signed_sqrt(float);
 int FUN_0c020d20(int, int);
 int conv_s16x7_to_f32(int, int);
-int FUN_0c0e7140(int);
+int _slow_mvn(int);
 int conv_s16x4_to_f32_b(int, int);
 typedef struct { char bytes[8]; } Entry8;
 extern void conv_s16x4_to_f32(int, Entry8 *);
@@ -127,8 +127,7 @@ int FUN_0c0229d8(int a4, int a5, int a6, int a7)
         }
         t19 = (t14 << 1);
     }
-    *(volatile int *)(((((t19 << 2) << 2) << 1) + 0xC7D08E8));
-    FUN_0c0e7140(a4);
+    { struct mvb8 { char b[8]; }; *(struct mvb8 *)((((int)stk + 0) + 0x4)) = *(struct mvb8 *)(((*(int *)(((((t19 << 2) << 2) << 1) + 0xC7D08E8))) + (((unsigned short)a5 << 2) << 1))); }
     return (conv_s16x4_to_f32_b((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x4)));
 }
 
@@ -166,8 +165,7 @@ int FUN_0c022a5a(int a4, int a5, int a6, int a7)
         }
         t19 = (t14 << 1);
     }
-    *(volatile int *)(((((t19 << 2) << 2) << 1) + 0xC7D08EC));
-    FUN_0c0e7140(a4);
+    { struct mvb14 { char b[14]; }; *(struct mvb14 *)((((int)stk + 0) + 0x4)) = *(struct mvb14 *)(((*(int *)(((((t19 << 2) << 2) << 1) + 0xC7D08EC))) + ((unsigned short)a5 * (unsigned short)0xE))); }
     return (conv_s16x7_to_f32((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x4)));
 }
 
@@ -205,8 +203,7 @@ int FUN_0c022b08(int a4, int a5, int a6, int a7)
         }
         t19 = (t14 << 1);
     }
-    *(volatile int *)(((((t19 << 2) << 2) << 1) + 0xC7D08F0));
-    FUN_0c0e7140(a4);
+    { struct mvb48 { char b[48]; }; *(struct mvb48 *)((((int)stk + 0) + 0x4)) = *(struct mvb48 *)(((*(int *)(((((t19 << 2) << 2) << 1) + 0xC7D08F0))) + (((((unsigned short)a5 << 1) + (unsigned short)a5) << 2) << 2))); }
     return (FUN_0c020d20((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x4)));
 }
 

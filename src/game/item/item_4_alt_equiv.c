@@ -1,3 +1,4 @@
+typedef struct { int w[3]; } Stk3;
 /* item objects (class 2): create, modes, held/thrown ticks; consecutive rows are one module game_item (0c05ae26-0c05b6dc) */
 
 /* named globals (symbols.txt) */
@@ -52,8 +53,8 @@ struct o7298_float { char p[0x7298]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int fx_spawn_05(int, int, int);
-float math_cos_angle16(int);
-int FUN_0c0e6fe8(int);
+float math_cos_angle16(int, Stk3);
+int _quick_odd_mvn(int);
 
 void FUN_0c05aee4(ObjRec *obj)
 {
@@ -140,66 +141,66 @@ int FUN_0c05b400(int a4, float f4)
     int stk[3];
     register int t0;
     register int t1;
-    register int t46;
+    register int t45;
     int t3;
     register float u4;
+    register float u7;
     register float u8;
     register float u9;
-    register float u10;
-    register float u12;
+    register float u11;
+    register float u14;
     register float u15;
     register float u16;
-    register float u17;
-    register int t27;
-    register int t29;
-    register int t31;
-    register int t33;
-    register int t35;
-    register int t37;
+    register int t26;
+    register int t28;
+    register int t30;
+    register int t32;
+    register int t34;
+    register int t36;
 
     t0 = *(signed char *)((a4 + 0x30C));
     t1 = *(int *)((a4 + 0x1C));
-    t46 = t0;
+    t45 = t0;
     if (t0 == 14) {
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
         t3 = (((struct oEC_short *)(a4))->v);
         if ((t3 != 5) && ((t3 != 10) && ((t3 != 15) && (t3 != 20)))) {
         } else {
             u4 = (((struct o7298_float *)(t1))->v);
-            FUN_0c0e6fe8(t3);
-            u8 = *(float *)(((int)stk + 0));
-            u9 = ((math_cos_angle16(((-(*(int *)((t1 + 0x30)))) + 0x14000))) * u4);
-            u10 = u8;
-            u10 = u10 + 100.0f * u9;
-            *(float *)(((int)stk + 0)) = u10;
-            u12 = (*(float *)(((int)stk + 4)));
-            u12 = u12 + 160.0f * u4;
-            *(float *)(((int)stk + 4)) = u12;
-            u15 = *(float *)(((int)stk + 8));
-            u16 = ((math_sin_angle16(((-(*(int *)((t1 + 0x30)))) + 0x14000))) * u4);
-            u17 = u15;
-            u17 = u17 + 100.0f * u16;
-            *(float *)(((int)stk + 8)) = u17;
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)((t1 + 0x20)); }
+            u7 = *(float *)(((int)stk + 0));
+            u8 = ((math_cos_angle16(((-(*(int *)((t1 + 0x30)))) + 0x14000), *(Stk3 *)(((int)stk + 0)))) * u4);
+            u9 = u7;
+            u9 = u9 + 100.0f * u8;
+            *(float *)(((int)stk + 0)) = u9;
+            u11 = (*(float *)(((int)stk + 4)));
+            u11 = u11 + 160.0f * u4;
+            *(float *)(((int)stk + 4)) = u11;
+            u14 = *(float *)(((int)stk + 8));
+            u15 = ((math_sin_angle16(((-(*(int *)((t1 + 0x30)))) + 0x14000))) * u4);
+            u16 = u14;
+            u16 = u16 + 100.0f * u15;
+            *(float *)(((int)stk + 8)) = u16;
             fx_spawn_05(((int)stk + 0), (*(int *)((t1 + 0x30))), (*(signed char *)((t1 + 0x3))));
         }
         if (((((struct o44_float *)(((((struct o2E4_int *)(a4))->v))))->v)) > 0.0f) {
-            t27 = (((struct o2E4_int *)(a4))->v);
-            (((struct o1C_float *)(t27))->v) = (((((struct o1C_float *)(t27))->v)) + 0.049999997f);
-            t29 = (((struct o2E4_int *)(a4))->v);
-            (((struct o20_float *)(t29))->v) = (((((struct o20_float *)(t29))->v)) + 0.049999997f);
-            t31 = (((struct o2E4_int *)(a4))->v);
-            (((struct o24_float *)(t31))->v) = (((((struct o24_float *)(t31))->v)) + 0.049999997f);
-            t33 = (((struct o2E4_int *)(a4))->v);
-            (((struct o44_float *)(t33))->v) = (((((struct o44_float *)(t33))->v)) - 0.049999997f);
-            t35 = (((struct o2E4_int *)(a4))->v);
-            (((struct o48_float *)(t35))->v) = (((((struct o48_float *)(t35))->v)) - 0.049999997f);
-            t37 = (((struct o2E4_int *)(a4))->v);
-            (((struct o4C_float *)(t37))->v) = (((((struct o4C_float *)(t37))->v)) - 0.049999997f);
-            t46 = 0x4C;
+            t26 = (((struct o2E4_int *)(a4))->v);
+            (((struct o1C_float *)(t26))->v) = (((((struct o1C_float *)(t26))->v)) + 0.049999997f);
+            t28 = (((struct o2E4_int *)(a4))->v);
+            (((struct o20_float *)(t28))->v) = (((((struct o20_float *)(t28))->v)) + 0.049999997f);
+            t30 = (((struct o2E4_int *)(a4))->v);
+            (((struct o24_float *)(t30))->v) = (((((struct o24_float *)(t30))->v)) + 0.049999997f);
+            t32 = (((struct o2E4_int *)(a4))->v);
+            (((struct o44_float *)(t32))->v) = (((((struct o44_float *)(t32))->v)) - 0.049999997f);
+            t34 = (((struct o2E4_int *)(a4))->v);
+            (((struct o48_float *)(t34))->v) = (((((struct o48_float *)(t34))->v)) - 0.049999997f);
+            t36 = (((struct o2E4_int *)(a4))->v);
+            (((struct o4C_float *)(t36))->v) = (((((struct o4C_float *)(t36))->v)) - 0.049999997f);
+            t45 = 0x4C;
         } else {
             *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
-            t46 = 0x2E4;
+            t45 = 0x2E4;
         }
     }
-    return t46;
+    return t45;
 }

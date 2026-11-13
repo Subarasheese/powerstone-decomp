@@ -165,7 +165,7 @@ int FUN_0c0e59e8(int, int, int);
 int FUN_0c0e5d22(int);
 int FUN_0c0e6758(int, int);
 int FUN_0c0e6834(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 int nl_objasm_draw_obj(int, int, float);
 int FUN_0c0eb238(void);
 int FUN_0c0eeecc(int, int);

@@ -26,7 +26,7 @@ int ai_calc_dist_to_goal_obj(int);
 int ai_angle_to_pad_dir(int);
 int obj_destroy(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int FUN_0c103e50(int, int, int, int);
 int FUN_0c105190(int, int, int, int);
 int FUN_0c10521a(int, int);

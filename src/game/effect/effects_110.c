@@ -13,8 +13,8 @@ struct o34_float { char p[0x34]; float v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
 int memset(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -29,8 +29,8 @@ int obj_destroy(int);
 int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
 int FUN_0c0e24f0(int);
-int FUN_0c0e6e5c(int);
-int thunk_FUN_0c062242(int);
+int _modls(int);
+int thunk_FUN_0c062242(int, int);
 
 
 int fx_tick_046360(int a4)
@@ -56,8 +56,8 @@ int fx_tick_046360(int a4)
         t3 = (((struct o2E0_int *)(a4))->v);
         t4 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
-        math_vec3_sub((((int)stk + 0) + 0x4), (((((struct o2E0_int *)(a4))->v)) + 0x4), ((int)g_camera_pos));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (t3 + 0x4));
+        math_vec3_sub((((int)stk + 0) + 0x4), (((((struct o2E0_int *)(a4))->v)) + 0x4), 0xC7F2AB4);
         FUN_0c0e24f0((((int)stk + 0) + 0x4));
         *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) * 30.0f);
         *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) * 30.0f);
@@ -100,9 +100,8 @@ int fx_tick_046360(int a4)
             *(unsigned char *)(((t58 + 0x34) + 0x5)) = (t60 - 1);
             if ((signed char)(t60 - 1) == 0) {
                 *(unsigned char *)(((t58 + 0x34) + 0x5)) = 0x2;
-                *(volatile signed char *)(((t58 + 0x34) + 0x6));
-                *(unsigned char *)(((t58 + 0x34) + 0x6)) = (FUN_0c0e6e5c((0x2E0 + a4)));
-                FUN_0c06231c(t58, ((int)g_res_kyoutsuu), ((*(signed char *)(((t58 + 0x34) + 0x6))) + 0x75));
+                *(unsigned char *)(((t58 + 0x34) + 0x6)) = ((int)((int)((*(signed char *)(((t58 + 0x34) + 0x6))) + 0x1) % (int)0x4));
+                FUN_0c06231c(t58, 0xC4CFA68, ((*(signed char *)(((t58 + 0x34) + 0x6))) + 0x75));
             }
             if (((((struct oEE_short *)(a4))->v)) != 0) {
                 if ((*(signed char *)(((t58 + 0x34) + 0x9))) == 0) {

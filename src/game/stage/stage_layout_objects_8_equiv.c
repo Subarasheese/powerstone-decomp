@@ -32,14 +32,14 @@ void FUN_0c06233a(int model, int tbl, int idx);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_set_mode_owner(int, int, int);
-int FUN_0c0e6e5c(int);
+int _modls(int);
 int FUN_0c0555dc(void);
 int FUN_0c0ae4f0(int);
 struct vec3i { int x, y, z; };
 extern float math_cos_angle16(int);
 extern float math_sin_angle16(int);
 
-int FUN_0c0ae520(int a4);
+int FUN_0c0ae520(int);
 
 float obj_update_distance_cull_b(int a4)
 {
@@ -109,21 +109,19 @@ void FUN_0c0ae396(void)
 int FUN_0c0ae520(int a4)
 {
     register int t0;
-    register int t1;
 
-    t1 = *(signed char *)((a4 + 0x9));
-    if (t1 != 0) {
-        if (t1 != 1) {
-            return t1;
+    t0 = *(signed char *)((a4 + 0x9));
+    if (t0 != 0) {
+        if (t0 != 1) {
+            return t0;
         }
-        *(volatile short *)((a4 + 0xEC));
-        *(unsigned char *)((t0 + 0x1)) = (FUN_0c0e6e5c(a4));
-        t1 = (((struct oEC_short *)(t0))->v);
-        (((struct oEC_ushort *)(t0))->v) = (t1 + 0x1);
-        if ((int)(short)(t1 + 0x1) >= (int)0x5A) {
-            *(unsigned char *)((t0 + 0x8)) = ((*(signed char *)((t0 + 0x8))) + 0x1);
-            *(unsigned char *)((t0 + 0x1)) = 0x1;
-            return obj_set_mode_owner(t0, 0x0, 0x2);
+        *(unsigned char *)((a4 + 0x1)) = ((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x2));
+        t0 = (((struct oEC_short *)(a4))->v);
+        (((struct oEC_ushort *)(a4))->v) = (t0 + 0x1);
+        if ((int)(short)(t0 + 0x1) >= (int)0x5A) {
+            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
+            *(unsigned char *)((a4 + 0x1)) = 0x1;
+            return obj_set_mode_owner(a4, 0x0, 0x2);
         }
         return 0xEC;
     }

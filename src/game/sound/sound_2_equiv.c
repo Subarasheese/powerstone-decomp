@@ -6,14 +6,14 @@ struct o719E_short { char p[0x719E]; short v; };
 struct o71D4_short { char p[0x71D4]; short v; };
 int FUN_0c0e5d22(int);
 int FUN_0c0e59e8(int, int, int);
-int FUN_0c0f4a06(int);
+int FUN_0c0f4a06(int, int);
 int FUN_0c0f4db4(int, int);
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 int res_load_file_raw_c(int);
 int FUN_0c0e55e0(int, int);
 int FUN_0c0e5884(int);
-int FUN_0c0f4c2c(void);
+int FUN_0c0f4c2c(int);
 int FUN_0c0f4cc6(int);
 struct o8_int { char p[0x8]; int v; };
 struct oC_int { char p[0xC]; int v; };
@@ -53,8 +53,7 @@ int snd_play_se_raw(int a4)
 void bgm_start_file(int a4, int a5)
 {
     if ((*(int *)((((a4 << 2) + 0xC494048) + 0x0))) != 0) {
-        *(volatile int *)(((a5 << 2) + 0xC180BD0));
-        FUN_0c0f4a06((*(int *)((((a4 << 2) + 0xC494048) + 0x0))));
+        FUN_0c0f4a06((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)((a5 << 2) + 0xC180BD0)));
         FUN_0c0f4db4((*(int *)((((a4 << 2) + 0xC494048) + 0x0))), (*(int *)0xC494058));
     return;
     }
@@ -90,8 +89,7 @@ int bgm_stop_streams(void)
         t1 = FUN_0c0f4cc6(t0);
         t0 = t1;
         if (t1 != 0) {
-            *(volatile int *)0xC494048;
-            t0 = (FUN_0c0f4c2c());
+                        t0 = (FUN_0c0f4c2c(*(int *)0xC494048));
         }
         t1 = t0;
     }
@@ -99,8 +97,7 @@ int bgm_stop_streams(void)
     if (t0 != 0) {
         t2 = FUN_0c0f4cc6(t0);
         if (t2 != 0) {
-            *(volatile int *)0xC49404C;
-            return FUN_0c0f4c2c();
+                        return FUN_0c0f4c2c(*(int *)0xC49404C);
         }
         return t2;
     }
@@ -119,8 +116,7 @@ int bgm_stop_slot(int a4)
     if (t1 != 0) {
         t2 = FUN_0c0f4cc6(t1);
         if (t2 != 0) {
-            *(volatile int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC494048));
-            return FUN_0c0f4c2c();
+                        return FUN_0c0f4c2c(*(int *)((((*(signed char *)(((int)stk + 0))) << 2) + 0xC494048)));
         }
         return t2;
     }
@@ -224,7 +220,7 @@ int FUN_0c0a3274(void)
                 t2 = (*(int *)((t6 + 0x0)));
                 t0 = (FUN_0c0f4f1a(t2));
                 t2 = (*(int *)((t6 + 0x0)));
-                t0 = (FUN_0c0f4c2c());
+                t0 = (FUN_0c0f4c2c(t2));
                 t1 = (*(int *)0xC339C80);
                 t1 = (t1 + 0x1);
                 *(unsigned int *)0xC339C80 = t1;

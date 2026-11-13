@@ -15,15 +15,15 @@ int FUN_0c06233a(int, int, int);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
 struct o8_uint { char p[0x8]; unsigned int v; };
 
 
-int FUN_0c02a4e0(int a4, int a5, int a6, int a7)
+int FUN_0c02a4e0(int a4)
 {
     register int t0;
     register int t1;
@@ -47,21 +47,19 @@ int FUN_0c02a4e0(int a4, int a5, int a6, int a7)
             t1 = (*(int *)((t1 + 0x0)));
             u0 = (math_rand_float());
             u1 = u0;
-            u1 = (u1 * (*(float *)0xC02A684));
+            u1 = (u1 * ((*(float *)0xC02A684)));
             u2 = 2.14748365e+09f;
             if (!(u2 > u1)) {
                 u2 = (u2 + u2);
                 u1 = (u1 - u2);
             }
-            t2 = FUN_0c0e6f24();
+            t2 = (int)((unsigned int)(int)u1 % (unsigned int)0x80);
             u1 = (float)t2;
             if ((int)t2 < 0) {
                 u2 = 4.2949673e+09f;
                 u1 = (u1 + u2);
-                u3 = u2;
             }
             u0 = 5.0f;
-            u2 = u3;
             u2 = -320.0f;
             u3 = u2;
             u3 = u3 + u0 * u1;
@@ -75,7 +73,7 @@ int FUN_0c02a4e0(int a4, int a5, int a6, int a7)
     t0 = (((struct oEC_short *)(a4))->v);
     (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
     if ((int)(short)(t0 - 1) <= 0) {
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     return 0xEC;
 }
@@ -126,7 +124,7 @@ int FUN_0c02a6ac(int a4, int a5, int a6, int a7)
     t0 = (((struct oEC_short *)(a4))->v);
     (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
     if ((int)(short)(t0 - 1) <= 0) {
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     return 0xEC;
 }

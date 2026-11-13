@@ -97,9 +97,9 @@ float math_cos_angle16(int);
 int math_rand_next(void);
 float math_sin_angle16(int);
 float FUN_0c0e2220(int, int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(void);
+int _divls(void);
+int _modls(void);
+int _quick_odd_mvn(void);
 int FUN_0c0f4128(int);
 int FUN_0c0f414e(int, int, int, int);
 int FUN_0c0fbfa2(int, int, int, int);
@@ -218,39 +218,37 @@ int FUN_0c1145f4(int a4)
 {
     register int t0;
     register int t1;
+    register int t2;
     register int t3;
     register int t4;
     register int t5;
     register int t6;
-    register int t7;
-    register int t9;
-    register int t13;
-    register int t16;
+    register int t8;
+    register int t10;
+    register int t12;
     register int t14;
 
     t0 = *(int *)(((a4 + 0x50) + 0x10));
     t1 = *(int *)(((a4 + 0x50) + 0xC));
-    *(volatile int *)(((a4 + 0x50) + 0x28));
+    t2 = *(int *)(((a4 + 0x50) + 0x28));
     t3 = *(int *)(((a4 + 0x50) + 0x20));
     t4 = *(int *)(((a4 + 0x50) + 0x14));
     t5 = (((struct o40_int *)(a4))->v);
     t6 = (((struct o44_int *)(a4))->v);
-    t7 = FUN_0c0e6d00();
-    t9 = FUN_0c0e6e5c();
-    ADXPD_GetNumBlk((*(int *)((a4 + 0x8))));
-    *(volatile int *)(((a4 + 0x50) + 0x8));
-    t13 = FUN_0c0e6d00();
-    t16 = t13;
-    if ((int)t7 <= (int)t14) {
-        t16 = (t13 - ((t0 - t9) - 1));
+    t8 = (int)((int)((t0 + t2) - 1) % (int)t0);
+    t10 = ADXPD_GetNumBlk((*(int *)((a4 + 0x8))));
+    t12 = (int)((int)(t0 * t10) / (int)(*(int *)(((a4 + 0x50) + 0x8))));
+    t14 = t12;
+    if ((int)((int)((int)((t0 + t2) - 1) / (int)t0)) <= (int)t10) {
+        t14 = (t12 - ((t0 - t8) - 1));
     }
-    (((struct oA0_uint *)(a4))->v) = t16;
-    (((struct oA4_uint *)(a4))->v) = (t1 * t14);
-    if ((int)(t3 + t16) >= (int)t5) {
+    (((struct oA0_uint *)(a4))->v) = t14;
+    (((struct oA4_uint *)(a4))->v) = (t1 * t10);
+    if ((int)(t3 + t14) >= (int)t5) {
         if ((*(int *)(((a4 + 0x50) + 0x8))) == 2) {
-            return FUN_0c114598(t4, t5, t6, ((t3 + t16) - t5));
+            return FUN_0c114598(t4, t5, t6, ((t3 + t14) - t5));
         }
-        return FUN_0c1145cc(t4, t5, t6, ((t3 + t16) - t5));
+        return FUN_0c1145cc(t4, t5, t6, ((t3 + t14) - t5));
     }
     return 0xA4;
 }

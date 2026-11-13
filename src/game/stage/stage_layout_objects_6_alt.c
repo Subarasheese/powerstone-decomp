@@ -2,13 +2,17 @@
 
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int math_rand_next(void);
 int FUN_0c0e24f0(int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(void);
+int _modls(void);
+int _quick_odd_mvn(void);
+struct o28_float { char p[0x28]; float v; };
+struct o2C_float { char p[0x2C]; float v; };
+struct o30_float { char p[0x30]; float v; };
 
-int FUN_0c0acf90(int a4, int a5, int a6, int a7)
+
+int FUN_0c0acf90(int a4)
 {
     int stk[1];
     register int t1;
@@ -18,22 +22,21 @@ int FUN_0c0acf90(int a4, int a5, int a6, int a7)
     register int t19;
     register int t21;
     register int t20;
-    register int t23;
-    register int t24;
-    register int t31;
-    register int t35;
-    register int t39;
-    register int t45;
+    register int t26;
+    register int t42;
     register int t2;
     register int t3;
     register float u8;
     register float u9;
-    register int t25;
+    register int t23;
+    register int t27;
+    register float u28;
+    register float u29;
 
     t1 = *(signed char *)((a4 + 0x8));
     if (t1 != 0) {
         if (t1 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         t5 = 0x0;
         t6 = 0x0;
@@ -81,50 +84,42 @@ int FUN_0c0acf90(int a4, int a5, int a6, int a7)
         return t21;
     }
     *(unsigned int *)(((int)stk + 0)) = (0x2E0 + a4);
-    t23 = 0xC0ACFF8;
-    t24 = 0x0;
+    t26 = 0x0;
     for (;;) {
-        if ((int)t24 >= (int)0x5) {
+        if ((int)t26 >= (int)0x5) {
             break;
         }
-        t25 = (*(int *)(((int)stk + 0)));
-        t25 = (t25 + 0x4);
-        *(unsigned int *)(((int)stk + 0)) = t25;
-        t25 = (t25 - 4);
-        t25 = (*(int *)((t25 + 0x0)));
+        t27 = (*(int *)(((int)stk + 0)));
+        t27 = (t27 + 0x4);
+        *(unsigned int *)(((int)stk + 0)) = t27;
+        t27 = (t27 - 4);
+        t27 = (*(int *)((t27 + 0x0)));
         t23 = (math_rand_next());
-        t23 = 0xA;
-        t23 = (FUN_0c0e6e5c());
-        t23 = (t23 - 5);
-        t31 = t23;
-        t23 = 0x28;
-        *(float *)((t25 + t23)) = (float)t31;
+        u29 = (float)(((int)((int)t23 % (int)0xA)) - 5);
+        (((struct o28_float *)(t27))->v) = u29;
         t23 = (math_rand_next());
-        t23 = 0x5;
-        t23 = (FUN_0c0e6e5c());
-        t35 = t23;
-        t23 = 0x2C;
-        *(float *)((t25 + t23)) = (float)t35;
+        u29 = (float)((int)((int)t23 % (int)0x5));
+        (((struct o2C_float *)(t27))->v) = u29;
         t23 = (math_rand_next());
-        t23 = 0xA;
-        t23 = (FUN_0c0e6e5c());
-        t23 = (t23 - 5);
-        t39 = t23;
-        t23 = 0x30;
-        *(float *)((t25 + t23)) = (float)t39;
-        t23 = (FUN_0c0e24f0((t25 + 0x28)));
-        t23 = 0x28;
-        *(float *)((t25 + t23)) = ((*(float *)((t25 + t23))) * 20.0f);
-        t23 = 0x2C;
-        *(float *)((t25 + t23)) = ((*(float *)((t25 + t23))) * 20.0f);
-        t23 = 0x30;
-        *(float *)((t25 + t23)) = ((*(float *)((t25 + t23))) * 20.0f);
-        t23 = 0xC;
-        t23 = (FUN_0c0e6fe8());
-        t24 = (t24 + 0x1);
-        *(unsigned int *)((t25 + 0x38)) = 0xE39;
+        u29 = (float)(((int)((int)t23 % (int)0xA)) - 5);
+        (((struct o30_float *)(t27))->v) = u29;
+        FUN_0c0e24f0((t27 + 0x28));
+        u29 = ((((struct o28_float *)(t27))->v));
+        t23 = t27;
+        t23 = (t23 + 0x10);
+        u29 = (u29 * 20.0f);
+        (((struct o28_float *)(t27))->v) = u29;
+        u28 = ((((struct o2C_float *)(t27))->v));
+        u28 = (u28 * 20.0f);
+        (((struct o2C_float *)(t27))->v) = u28;
+        u29 = ((((struct o30_float *)(t27))->v));
+        u29 = (u29 * 20.0f);
+        (((struct o30_float *)(t27))->v) = u29;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t23) = *(struct mv3 *)((0xC339ED8)); }
+        t26 = (t26 + 0x1);
+        *(unsigned int *)((t27 + 0x38)) = 0xE39;
     }
-    t45 = *(signed char *)((a4 + 0x8));
-    *(unsigned char *)((a4 + 0x8)) = (t45 + 0x1);
-    return (t45 + 0x1);
+    t42 = *(signed char *)((a4 + 0x8));
+    *(unsigned char *)((a4 + 0x8)) = (t42 + 0x1);
+    return (t42 + 0x1);
 }

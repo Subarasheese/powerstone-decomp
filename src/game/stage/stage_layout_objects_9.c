@@ -12,11 +12,11 @@ struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o30E_uchar { char p[0x30E]; unsigned char v; };
 struct o314_uchar { char p[0x314]; unsigned char v; };
 struct o98_float { char p[0x98]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record(int, int);
 int stage_obj_load_layout_pos(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o107_uchar { char p[0x107]; unsigned char v; };
 int obj_destroy(int, int, int, int);
 int stage_obj_on_break(int);
@@ -24,10 +24,10 @@ int stage_obj_on_break(int);
 int stage_spawn_type02(int a4)
 {
     register int t0;
-    register int t17;
+    register int t16;
 
-    t0 = obj_create(0x2, 0x1, 0x1);
-    t17 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x2, 0x1, 0x1, 0x0);
+    t16 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -52,14 +52,14 @@ int stage_spawn_type02(int a4)
         (((struct o105_uchar *)(t0))->v) = 0x1;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC339FCC); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1001;
         (((struct o98_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.39999998f;
-        t17 = 0x98;
+        t16 = 0x98;
     }
-    return t17;
+    return t16;
 }
 
 int stage_type12_mode_02(int a4, int a5, int a6, int a7)
@@ -84,10 +84,10 @@ int stage_type12_mode_02(int a4, int a5, int a6, int a7)
 int stage_spawn_type12(int a4)
 {
     register int t0;
-    register int t12;
+    register int t11;
 
-    t0 = obj_create(0x2, 0x1, 0x1);
-    t12 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x2, 0x1, 0x1, 0x0);
+    t11 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -108,13 +108,13 @@ int stage_spawn_type12(int a4)
         (((struct o105_uchar *)(t0))->v) = 0x1;
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A00C); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t12 = 0xF;
+        t11 = 0xF;
     }
-    return t12;
+    return t11;
 }
 
 int stage_type08_update(int a4, int a5, int a6, int a7)
@@ -131,10 +131,10 @@ int stage_type08_update(int a4, int a5, int a6, int a7)
 int stage_spawn_type08(int a4)
 {
     register int t0;
-    register int t11;
+    register int t10;
 
-    t0 = obj_create(0x2, 0x1, 0x1);
-    t11 = t0;
+    t0 = obj_create(0x2, 0x1, 0x1, 0x0);
+    t10 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -155,11 +155,11 @@ int stage_spawn_type08(int a4)
         (((struct o101_uchar *)(t0))->v) = 0x0;
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A034); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t11 = 0xF;
+        t10 = 0xF;
     }
-    return t11;
+    return t10;
 }

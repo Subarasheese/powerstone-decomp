@@ -9,7 +9,7 @@ int nlInvertMatrix(int);
 int nlLookAt(int, int, int);
 int FUN_0c0e1550(int);
 int nlUnitMatrix(void);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int FUN_0c10121c(int, int, int);
 int get_fat(int, int);
 int cam_set_view_matrix(int a4, float f4);

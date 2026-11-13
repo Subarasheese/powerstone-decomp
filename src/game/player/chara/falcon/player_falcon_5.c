@@ -1,3 +1,4 @@
+typedef struct { int w[6]; } Stk6;
 /* character 0 (Falcon): frame hook, state dispatchers, start-action wrappers, specials, victim hooks (0c067d4c-0c068e10) */
 
 /* named globals (symbols.txt) */
@@ -10,7 +11,7 @@ int fx_spawn_effect_at_point(int, int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 struct o0_float { float v; };
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o24_float { char p[0x24]; float v; };
@@ -43,7 +44,7 @@ struct oEE_short { char p[0xEE]; short v; };
 struct oF0_short { char p[0xF0]; short v; };
 int pl_apply_velocity(int);
 int obj_set_record_char(int, int);
-int FUN_0c0e7140(int);
+int _slow_mvn(int);
 int pl_end_action_choose_state(int);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
@@ -67,7 +68,7 @@ int pl_falcon_state12_phase1(int);
 
 int pl_falcon_attack_kind24_phase0(int a4);
 int pl_falcon_attack_kind24_phase1(int a4);
-int pl_falcon_attack_kind24_phase2(int a4);
+int pl_falcon_attack_kind24_phase2(int);
 int pl_falcon_attack_kind24_phase3(int a4);
 int pl_falcon_wait_anim_end(int a4);
 int pl_falcon_attack_kind68_phase0(int a4);
@@ -82,6 +83,8 @@ int pl_falcon_attack_kind24_phase0(int a4)
     int stk[3];
     register int t0;
     register int t25;
+    register float t1;
+    register float u4;
     register int t6;
     register float u9;
     register float u16;
@@ -90,9 +93,12 @@ int pl_falcon_attack_kind24_phase0(int a4)
     t0 = *(int *)0xC7F307C;
     t25 = t0;
     if ((t0 & 7) != 0) {
-        math_rand_float();
-        
-        t6 = FUN_0c0e6f24();
+        t1 = math_rand_float();
+        u4 = (t1 * 255.0f);
+        if (!(2.14748365e+09f > (t1 * 255.0f))) {
+            u4 = (((t1 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        t6 = (int)((unsigned int)(int)u4 % (unsigned int)0xC8);
         u9 = (float)t6;
         if ((int)t6 < 0) {
             u9 = ((float)t6 + 4.2949673e+09f);
@@ -144,62 +150,62 @@ int pl_falcon_attack_kind24_phase1(int a4)
 int pl_falcon_attack_kind24_phase2(int a4)
 {
     int stk[6];
-    register int t5;
-    register int t45;
-    register int t10;
-    register int t21;
-    register int t31;
-    register int t38;
+    register int t4;
+    register int t44;
+    register int t9;
+    register int t20;
+    register int t30;
+    register int t37;
 
-    FUN_0c0e7140(a4);
-    pl_apply_velocity(a4);
+    { struct mvb24 { char b[24]; }; *(struct mvb24 *)(((int)stk + 0)) = *(struct mvb24 *)(0xC14EEA2); }
+    ((int (*)(int, Stk6))pl_apply_velocity)(a4, *(Stk6 *)(((int)stk + 0)));
     *(unsigned int *)((a4 + 0x30)) = (unsigned short)((*(int *)((a4 + 0x30))) + ((((struct o7248_short *)(a4))->v)));
     pl_falcon_attack_kind24_phase0(a4);
-    t5 = (((struct oEE_short *)(a4))->v);
-    (((struct oEE_ushort *)(a4))->v) = (t5 + 0x1);
-    t45 = 0xEE;
-    if ((int)(short)(t5 + 0x1) >= (int)0xA) {
+    t4 = (((struct oEE_short *)(a4))->v);
+    (((struct oEE_ushort *)(a4))->v) = (t4 + 0x1);
+    t44 = 0xEE;
+    if ((int)(short)(t4 + 0x1) >= (int)0xA) {
         (((struct oEE_ushort *)(a4))->v) = 0x0;
         (((struct oF0_ushort *)(a4))->v) = (((((struct oF0_short *)(a4))->v)) + 0x1);
         (((struct o7248_uint *)(a4))->v) = (((((struct o7248_int *)(a4))->v)) + 0x38E);
         if ((int)((((struct oF0_short *)(a4))->v)) <= (int)0x2) {
-            t38 = (obj_set_record_char(a4, 0x72));
+            t37 = (obj_set_record_char(a4, 0x72));
         } else {
-            t10 = 0x0;
+            t9 = 0x0;
             for (;;) {
-                if ((int)(*(short *)((((int)stk + 0) + (((short)t10 << 1) << 1)))) <= (int)((((struct oEC_short *)(a4))->v))) {
-                    t10 = (t10 + 0x1);
-                    if ((int)(short)t10 >= (int)0x5) {
+                if ((int)(*(short *)((((int)stk + 0) + (((short)t9 << 1) << 1)))) <= (int)((((struct oEC_short *)(a4))->v))) {
+                    t9 = (t9 + 0x1);
+                    if ((int)(short)t9 >= (int)0x5) {
                         break;
                     }
                     continue;
                 }
                 break;
             }
-            if ((int)((((struct oF0_short *)(a4))->v)) <= (int)(*(short *)((((((short)t10 << 1) << 1) + ((int)stk + 0)) + 0x2)))) {
+            if ((int)((((struct oF0_short *)(a4))->v)) <= (int)(*(short *)((((((short)t9 << 1) << 1) + ((int)stk + 0)) + 0x2)))) {
                 obj_set_record_char(a4, 0x72);
-                if ((short)t10 == 2) {
-                    t21 = (((struct o71F4_short *)(a4))->v);
-                    (((struct o71F4_ushort *)(a4))->v) = (int)((float)t21 - 240.0f);
-                    if ((int)(short)(int)((float)t21 - 240.0f) < 0) {
+                if ((short)t9 == 2) {
+                    t20 = (((struct o71F4_short *)(a4))->v);
+                    (((struct o71F4_ushort *)(a4))->v) = (int)((float)t20 - 240.0f);
+                    if ((int)(short)(int)((float)t20 - 240.0f) < 0) {
                         (((struct o71F4_ushort *)(a4))->v) = 0x0;
                     }
-                    t38 = 0x71F4;
+                    t37 = 0x71F4;
                 } else {
-                    t38 = (short)t10;
+                    t37 = (short)t9;
                 }
             } else {
                 obj_set_record_char(a4, 0x78);
                 (((struct o48_float *)(a4))->v) = (*(float *)0xC0681C4);
                 (((struct oEC_ushort *)(a4))->v) = 0x0;
-                t31 = *(signed char *)((a4 + 0xA));
-                *(unsigned char *)((a4 + 0xA)) = (t31 + 0x1);
-                t38 = (t31 + 0x1);
+                t30 = *(signed char *)((a4 + 0xA));
+                *(unsigned char *)((a4 + 0xA)) = (t30 + 0x1);
+                t37 = (t30 + 0x1);
             }
         }
-        t45 = t38;
+        t44 = t37;
     }
-    return t45;
+    return t44;
 }
 
 int pl_falcon_attack_kind24_phase3(int a4)

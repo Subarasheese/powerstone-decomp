@@ -11,7 +11,7 @@ int fx_spawn_0387ec(int);
 int FUN_0c0555dc(void);
 int obj_destroy(int);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(void);
+int _modls(void);
 
 int fx_tick_0382a8(int a4)
 {
@@ -43,8 +43,7 @@ int fx_tick_0382a8(int a4)
                         t1 = (((struct o2E4_int *)(a4))->v);
                         u0 = math_sin_angle16((int)(((float)((((struct oEC_short *)(a4))->v)) * 65536.0f) / 360.0f));
                         (((struct o40_float *)(t1))->v) = (((u0 + 1.0f) / 2.0f) * 1.0f);
-                        *(volatile short *)((a4 + 0xEC));
-                        t1 = FUN_0c0e6e5c();
+                        t1 = (int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x168);
                         t2 = t1;
                         if (t1 == 0x10E) {
                             t1 = *(signed char *)((a4 + 0x8));
@@ -67,8 +66,7 @@ int fx_tick_0382a8(int a4)
                 u1 = 0.299999982f;
                 u1 = u1 + 0.699999988f * u0;
                 (((struct o40_float *)(t0))->v) = u1;
-                *(volatile short *)((a4 + 0xEC));
-                t0 = FUN_0c0e6e5c();
+                t0 = (int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x168);
                 t1 = t0;
                 if (t0 == 90) {
                     t0 = 0xEE;

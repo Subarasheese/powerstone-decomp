@@ -14,7 +14,7 @@ struct oF2_short { char p[0xF2]; short v; };
 int FUN_0c0555dc(void);
 int obj_destroy(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 
 int fx_spawn_036598(int a4, int a5)
 {
@@ -56,6 +56,7 @@ int fx_tick_036598(int a4)
     register int t2;
     register int t3;
     register float u0;
+    register float u1;
 
     t1 = FUN_0c0555dc();
     if (t1 != 0) {
@@ -94,9 +95,12 @@ int fx_tick_036598(int a4)
             }
             if (((((struct oF2_short *)(a4))->v)) == 3) {
                 t1 = (((struct o2E0_int *)(a4))->v);
-                math_rand_float();
-                
-                t2 = FUN_0c0e6f24();
+                u0 = math_rand_float();
+                u1 = (u0 * 255.0f);
+                if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                    u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                }
+                t2 = (int)((unsigned int)(int)u1 % (unsigned int)0x3C);
                 u0 = (float)t2;
                 if ((int)t2 < 0) {
                     u0 = ((float)t2 + 4.2949673e+09f);

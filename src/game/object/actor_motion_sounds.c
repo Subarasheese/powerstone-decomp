@@ -22,8 +22,8 @@ struct o2DC_uint { char p[0x2DC]; unsigned int v; };
 struct o2E4_uint { char p[0x2E4]; unsigned int v; };
 struct o7204_uchar { char p[0x7204]; unsigned char v; };
 int FUN_0c0555c4(void);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(int);
+int _divls(void);
+int _modls(int);
 struct o1C_uchar { char p[0x1C]; unsigned char v; };
 struct o1D_uchar { char p[0x1D]; unsigned char v; };
 struct o1F_uchar { char p[0x1F]; unsigned char v; };
@@ -34,16 +34,16 @@ struct o20_short { char p[0x20]; short v; };
 struct o20_ushort { char p[0x20]; unsigned short v; };
 struct o71D4_short { char p[0x71D4]; short v; };
 int ai_dist_class(int);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 int ai_lookup_dir_sector(int, int);
 int ai_run_reaction_script(int);
 
 int ai_difficulty_tier(void);
-int FUN_0c08cd18(int a4);
+int FUN_0c08cd18(int a4, int a5);
 int ai_reaction_check_0(int a4, int a5);
 int ai_reaction_check_1(int a4, int a5);
 int ai_reaction_check_2(int a4, int a5);
-int ai_reaction_check_3(int a4, int a5);
+int ai_reaction_check_3(int, int);
 int ai_pick_reaction(int a4, int a5);
 
 
@@ -106,24 +106,23 @@ void ai_select_variant_script(struct variant_obj *obj, int idx)
     obj->value = ((int **)0xC338A68)[obj->group][obj->entry];
 }
 
-int FUN_0c08cd18(int a4)
+int FUN_0c08cd18(int a4, int a5)
 {
     register int t4;
-    register int t3;
-    register int t11;
-    register int t16;
-    register int t17;
+    register int t8;
+    register int t9;
+    register int t10;
 
     if ((*(signed char *)((a4 + 0x1E))) == 0) {
-        *(volatile signed char *)0xC7F304D;
-        t4 = *(int *)((t3 + 0x1C));
-        *(volatile signed char *)(((-(FUN_0c0e6d00())) + 0xC3383F9));
-        *(volatile short *)((t3 + 0x71D4));
-        *(volatile short *)((t4 + 0x71D4));
-        *(volatile signed char *)(((0x14 - (FUN_0c0e6d00())) + 0xC3383FA));
-        *(volatile signed char *)((t11 + 0x8));
-        *(unsigned char *)((t16 + 0x8)) = (FUN_0c0e6e5c(t11));
-        if ((*(signed char *)((t16 + 0x8))) != (signed char)t17) {
+        t4 = *(signed char *)(((-((int)((int)(*(signed char *)0xC7F304D) / (int)0xA))) + 0xC3383F9));
+        t8 = *(signed char *)(((0x14 - ((int)((int)(short)(0xF0 + (((((struct o71D4_short *)(a5))->v)) - ((((struct o71D4_short *)((*(int *)((a5 + 0x1C)))))->v)))) / (int)0x18))) + 0xC3383FA));
+        t9 = *(signed char *)((a4 + 0x8));
+        t10 = t4;
+        if ((int)(signed char)t4 < (int)(signed char)t8) {
+            t10 = t8;
+        }
+        *(unsigned char *)((a4 + 0x8)) = ((int)((int)(signed char)t10 % (int)0x4));
+        if ((*(signed char *)((a4 + 0x8))) != (signed char)t9) {
             return 0x1;
         }
         return 0x0;
@@ -206,22 +205,24 @@ int ai_reaction_check_2(int a4, int a5)
 int ai_reaction_check_3(int a4, int a5)
 {
     int stk[1];
-    register int t22;
+    register int t30;
     register int t3;
     register int t7;
+    register float t8;
+    register float u11;
     int t4;
     register int t5;
 
     *(unsigned short *)(((int)stk + 0)) = ((((struct o20_short *)(a4))->v));
     (((struct o20_ushort *)(a4))->v) = ((((struct o71D4_short *)(a5))->v));
-    t22 = 0x0;
+    t30 = 0x0;
     if (((*(signed char *)((a4 + 0x1D))) & 8) == 0) {
         t3 = ai_dist_class(a5);
-        t22 = 0x0;
+        t30 = 0x0;
         if (((signed char)t3 == 5) && (t4 = *(short *)(((int)stk + 0)), t5 = (((struct o71D4_short *)(a5))->v), t4 != t5)) {
             (((struct o1D_uchar *)(a4))->v) = ((*(signed char *)((a4 + 0x1D))) | 0x8);
-            t7 = ai_roll_chance();
-            t22 = 0x0;
+            t7 = ((int (*)(int, int))ai_roll_chance)(a4, 0xC150648);
+            t30 = 0x0;
             if ((signed char)t7 != 0) {
                 *(unsigned char *)((a4 + 0x0)) = 0x2;
                 *(unsigned char *)((a4 + 0x1)) = 0x0;
@@ -229,13 +230,17 @@ int ai_reaction_check_3(int a4, int a5)
                 *(unsigned char *)((a4 + 0x3)) = 0x0;
                 (((struct o1F_uchar *)(a4))->v) = 0x3;
                 (((struct o1E_uchar *)(a4))->v) = 0x1;
-                math_rand_float();
-                *(unsigned int *)((a4 + 0x10)) = (*(int *)((0xC3384F4 + ((FUN_0c0e6f24()) << 2))));
-                t22 = 0x1;
+                t8 = math_rand_float();
+                u11 = (t8 * 255.0f);
+                if (!(2.14748365e+09f > (t8 * 255.0f))) {
+                    u11 = (((t8 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                }
+                *(unsigned int *)((a4 + 0x10)) = (*(int *)((0xC3384F4 + (((int)((unsigned int)(int)u11 % (unsigned int)0x4)) << 2))));
+                t30 = 0x1;
             }
         }
     }
-    return t22;
+    return t30;
 }
 
 int ai_pick_reaction(int a4, int a5)
@@ -273,6 +278,8 @@ int ai_reaction_mode0(int a4, int a5)
     register int t1;
     register int t2;
     register int t3;
+    register float u0;
+    register float u1;
 
     t0 = *(signed char *)((a4 + 0x2));
     if (t0 != 0) {
@@ -302,8 +309,12 @@ int ai_reaction_mode0(int a4, int a5)
         *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
         if ((*(short *)((a4 + 0xC))) == 0) {
             t1 = ai_difficulty_tier();
-            math_rand_float();
-            *(unsigned short *)((a4 + 0xC)) = (*(short *)(((0xC150654 + ((((signed char)t1 << 2) << 2) << 1)) + ((FUN_0c0e6f24()) << 1))));
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            *(unsigned short *)((a4 + 0xC)) = (*(short *)(((0xC150654 + ((((signed char)t1 << 2) << 2) << 1)) + (((int)((unsigned int)(int)u1 % (unsigned int)0x10)) << 1))));
         }
         *(unsigned char *)((a4 + 0xA)) = (ai_dist_class(a5));
         t1 = *(short *)((a4 + 0xC));
@@ -330,6 +341,9 @@ int ai_reaction_mode1(int a4, int a5)
 {
     register int t0;
     register int t1;
+    register float u0;
+    register float u1;
+    register float u2;
 
     t0 = *(signed char *)((a4 + 0x2));
     if (t0 != 0) {
@@ -360,13 +374,21 @@ int ai_reaction_mode1(int a4, int a5)
         *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
         if ((*(short *)((a4 + 0xC))) == 0) {
             t1 = ai_dist_class(a5);
-            math_rand_float();
-            *(volatile float *)0xC08D248;
-            *(unsigned short *)((a4 + 0xC)) = (*(short *)(((0xC1506B4 + ((((signed char)t1 << 2) << 2) << 1)) + ((FUN_0c0e6f24()) << 1))));
+            u0 = math_rand_float();
+            u1 = *(float *)0xC08D248;
+            u2 = (u0 * u1);
+            if (!(2.14748365e+09f > (u0 * u1))) {
+                u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            *(unsigned short *)((a4 + 0xC)) = (*(short *)(((0xC1506B4 + ((((signed char)t1 << 2) << 2) << 1)) + (((int)((unsigned int)(int)u2 % (unsigned int)0x10)) << 1))));
         }
-        math_rand_float();
-        *(volatile float *)0xC08D248;
-        t1 = *(signed char *)((0xC338504 + (FUN_0c0e6f24())));
+        u0 = math_rand_float();
+        u1 = *(float *)0xC08D248;
+        u2 = (u0 * u1);
+        if (!(2.14748365e+09f > (u0 * u1))) {
+            u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        t1 = *(signed char *)((0xC338504 + ((int)((unsigned int)(int)u2 % (unsigned int)0x10))));
         *(unsigned char *)((a4 + 0xA)) = t1;
         t0 = t1;
     }
@@ -408,41 +430,35 @@ int ai_reaction_mode2(int a4, int a5)
     return t0;
 }
 
-int ai_reaction_mode3(int a4)
+float ai_reaction_mode3(int a4)
 {
     register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
+    register float u0;
+    register float u1;
+    register float u2;
 
     t0 = *(signed char *)((a4 + 0x2));
     if (t0 != 0) {
-        t1 = t0;
         if (t0 != 1) {
         } else {
             t0 = *(short *)((a4 + 0xC));
             *(unsigned short *)((a4 + 0xC)) = (t0 - 1);
-            t2 = (short)(t0 - 1);
             if ((short)(t0 - 1) == 0) {
                 *(unsigned char *)((a4 + 0x1)) = 0x1;
-                t2 = 0x1;
             }
-            t1 = t2;
         }
-        t0 = t1;
     } else {
         *(unsigned char *)((a4 + 0x2)) = ((*(signed char *)((a4 + 0x2))) + 0x1);
-        math_rand_float();
-        *(volatile float *)0xC08D324;
-        
-        *(volatile short *)((a4 + 0xE));
-        t1 = FUN_0c0e6f24();
-        t2 = *(signed char *)((0xC338514 + (*(signed char *)((a4 + 0x8)))));
-        t3 = *(short *)((a4 + 0xC));
-        *(unsigned short *)((a4 + 0xC)) = (t3 + ((t1 + t2) + 0x1));
-        t0 = (t3 + ((t1 + t2) + 0x1));
+        u0 = math_rand_float();
+        u1 = *(float *)0xC08D324;
+        u2 = (u0 * u1);
+        if (!(2.14748365e+09f > (u0 * u1))) {
+            u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        *(unsigned short *)((a4 + 0xC)) = ((*(short *)((a4 + 0xC))) + ((((int)((unsigned int)(int)u2 % (unsigned int)(*(short *)((a4 + 0xE))))) + (*(signed char *)((0xC338514 + (*(signed char *)((a4 + 0x8))))))) + 0x1));
+        u1 = u0;
     }
-    return t0;
+    return u1;
 }
 
 int ai_reaction_mode4(int a4, int a5)
@@ -489,7 +505,7 @@ int ai_slot_state0_update(int a4, int a5, int a6, int a7)
         *(unsigned int *)((a4 + 0x10)) = 0xC33852C;
     }
     *(unsigned char *)((a4 + 0x1)) = ((*(signed char *)((a4 + 0x1))) + 0x1);
-    t0 = FUN_0c08cd18(a4);
+    t0 = FUN_0c08cd18(a4, a5);
     if ((signed char)t0 != 0) {
         *(unsigned int *)((a4 + 0x10)) = 0xC33852C;
     }

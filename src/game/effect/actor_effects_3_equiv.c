@@ -41,7 +41,7 @@ struct o4C_float { char p[0x4C]; float v; };
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int FUN_0c0e21b0(int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 #define I(o, n) (*(int *)((o) + (n)))
 #define F(o, n) (*(float *)((o) + (n)))
 

@@ -5,7 +5,7 @@ struct o0_uint { unsigned int v; };
 struct o4_ushort { char p[0x4]; unsigned short v; };
 int ai_clear_op_state(void);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o26_ushort { char p[0x26]; unsigned short v; };
@@ -25,15 +25,20 @@ int ai_op25_get_random(void)
 {
     register int t0;
     register int t1;
+    register float u0;
+    register float u1;
+    register float u2;
 
     t0 = *(signed char *)0xC3673EE;
-    math_rand_float();
-    *(volatile float *)0xC04F150;
-    
+    u0 = math_rand_float();
+    u1 = *(float *)0xC04F150;
+    u2 = (u0 * u1);
+    if (!(2.14748365e+09f > (u0 * u1))) {
+        u2 = (((u0 * u1)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
     t1 = (((struct o0_int *)0xC3673E8)->v);
     (((struct o0_uint *)0xC3673E8)->v) = (t1 + 0x2);
-    *(volatile short *)((((t1 + 0x2) - 2) + 0x0));
-    *(unsigned short *)(((0xC366F66 + (short)((short)(unsigned char)t0 * (short)0x254)) + 0x0)) = (FUN_0c0e6f24());
+    *(unsigned short *)(((0xC366F66 + (short)((short)(unsigned char)t0 * (short)0x254)) + 0x0)) = ((int)((unsigned int)(int)u2 % (unsigned int)(unsigned short)(*(short *)((((t1 + 0x2) - 2) + 0x0)))));
     *(unsigned int *)(((0xC366F4C + (short)((short)(unsigned char)(*(signed char *)0xC3673EE) * (short)0x254)) + 0x0)) = ((((struct o0_int *)0xC3673E8)->v));
     t0 = ai_clear_op_state();
     (((struct o4_ushort *)0xC3673E8)->v) = 0x1;

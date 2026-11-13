@@ -92,7 +92,7 @@ int pl_update_camera_side_flag(int);
 int pl_landed(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 int FUN_0c10b7b0(int, int, int, int, int);
 int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor(int, int, int);

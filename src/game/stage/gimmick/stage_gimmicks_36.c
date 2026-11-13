@@ -20,7 +20,7 @@ int FUN_0c0555dc(void);
 int snd_play_stage_obj_se(int, int, int);
 int math_rand_next(void);
 float math_rand_float(void);
-int FUN_0c0e6e5c(void);
+int _modls(void);
 
 int stage_gimmick_33_spawn(int a4)
 {
@@ -107,8 +107,7 @@ int stage_gimmick_33_update(int a4)
                 t2 = 0xEC;
                 if ((int)(short)(t1 + 0x1) > (int)0x78) {
                     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-                    math_rand_next();
-                    (((struct oEC_ushort *)(a4))->v) = (FUN_0c0e6e5c());
+                    (((struct oEC_ushort *)(a4))->v) = ((int)((int)(math_rand_next()) % (int)0x3C));
                     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x0;
                     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
                     t2 = 0x2E4;
@@ -143,8 +142,7 @@ int stage_gimmick_33_update(int a4)
         }
     }
     *(unsigned char *)((((((struct o2E8_int *)(a4))->v)) + 0x0)) = 0x1;
-    math_rand_next();
-    t0 = FUN_0c0e6e5c();
+    t0 = (int)((int)(math_rand_next()) % (int)0x3);
     if (t0 != 0) {
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;

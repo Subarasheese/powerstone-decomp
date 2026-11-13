@@ -78,9 +78,9 @@ int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _modls(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
 int thunk_FUN_0c062242(int, int);
 int fx_update_16(int a4);
 int pl_update_frame(int a4, int a5, int a6, int a7);
@@ -302,7 +302,7 @@ int fx_update_16(int a4)
                     t54 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t54);
                     math_rand_float();
-                    t60 = FUN_0c0e6f24();
+                    t60 = _modlu();
                     u63 = (float)t60;
                     if ((int)t60 < 0) {
                         u63 = ((float)t60 + 4.2949673e+09f);
@@ -311,7 +311,7 @@ int fx_update_16(int a4)
                     t67 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t67);
                     math_rand_float();
-                    t73 = FUN_0c0e6f24();
+                    t73 = _modlu();
                     u76 = (float)t73;
                     if ((int)t73 < 0) {
                         u76 = ((float)t73 + 4.2949673e+09f);
@@ -320,7 +320,7 @@ int fx_update_16(int a4)
                     t80 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t80);
                     math_rand_float();
-                    t86 = FUN_0c0e6f24();
+                    t86 = _modlu();
                     u89 = (float)t86;
                     if ((int)t86 < 0) {
                         u89 = ((float)t86 + 4.2949673e+09f);
@@ -329,7 +329,7 @@ int fx_update_16(int a4)
                     t93 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t93);
                     math_rand_float();
-                    t99 = FUN_0c0e6f24();
+                    t99 = _modlu();
                     u102 = (float)t99;
                     if ((int)t99 < 0) {
                         u102 = ((float)t99 + 4.2949673e+09f);
@@ -338,7 +338,7 @@ int fx_update_16(int a4)
                     t106 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t106);
                     math_rand_float();
-                    t112 = FUN_0c0e6f24();
+                    t112 = _modlu();
                     u115 = (float)t112;
                     if ((int)t112 < 0) {
                         u115 = ((float)t112 + 4.2949673e+09f);
@@ -347,7 +347,7 @@ int fx_update_16(int a4)
                     t119 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t119);
                     math_rand_float();
-                    t125 = FUN_0c0e6f24();
+                    t125 = _modlu();
                     u128 = (float)t125;
                     if ((int)t125 < 0) {
                         u128 = ((float)t125 + 4.2949673e+09f);
@@ -356,7 +356,7 @@ int fx_update_16(int a4)
                     t132 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t132);
                     math_rand_float();
-                    t138 = FUN_0c0e6f24();
+                    t138 = _modlu();
                     u141 = (float)t138;
                     if ((int)t138 < 0) {
                         u141 = ((float)t138 + 4.2949673e+09f);
@@ -365,7 +365,7 @@ int fx_update_16(int a4)
                     t145 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t145);
                     math_rand_float();
-                    t151 = FUN_0c0e6f24();
+                    t151 = _modlu();
                     u154 = (float)t151;
                     if ((int)t151 < 0) {
                         u154 = ((float)t151 + 4.2949673e+09f);
@@ -408,7 +408,7 @@ int fx_update_16(int a4)
                     t199 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t199);
                     math_rand_float();
-                    t205 = FUN_0c0e6f24();
+                    t205 = _modlu();
                     u208 = (float)t205;
                     if ((int)t205 < 0) {
                         u208 = ((float)t205 + 4.2949673e+09f);
@@ -417,7 +417,7 @@ int fx_update_16(int a4)
                     t212 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t212);
                     math_rand_float();
-                    t218 = FUN_0c0e6f24();
+                    t218 = _modlu();
                     u221 = (float)t218;
                     if ((int)t218 < 0) {
                         u221 = ((float)t218 + 4.2949673e+09f);
@@ -426,7 +426,7 @@ int fx_update_16(int a4)
                     t225 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t225);
                     math_rand_float();
-                    t231 = FUN_0c0e6f24();
+                    t231 = _modlu();
                     u234 = (float)t231;
                     if ((int)t231 < 0) {
                         u234 = ((float)t231 + 4.2949673e+09f);
@@ -435,7 +435,7 @@ int fx_update_16(int a4)
                     t238 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t238);
                     math_rand_float();
-                    t244 = FUN_0c0e6f24();
+                    t244 = _modlu();
                     u247 = (float)t244;
                     if ((int)t244 < 0) {
                         u247 = ((float)t244 + 4.2949673e+09f);
@@ -444,7 +444,7 @@ int fx_update_16(int a4)
                     t251 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t251);
                     math_rand_float();
-                    t257 = FUN_0c0e6f24();
+                    t257 = _modlu();
                     u260 = (float)t257;
                     if ((int)t257 < 0) {
                         u260 = ((float)t257 + 4.2949673e+09f);
@@ -453,7 +453,7 @@ int fx_update_16(int a4)
                     t264 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t264);
                     math_rand_float();
-                    t270 = FUN_0c0e6f24();
+                    t270 = _modlu();
                     u273 = (float)t270;
                     if ((int)t270 < 0) {
                         u273 = ((float)t270 + 4.2949673e+09f);
@@ -462,7 +462,7 @@ int fx_update_16(int a4)
                     t277 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t277);
                     math_rand_float();
-                    t283 = FUN_0c0e6f24();
+                    t283 = _modlu();
                     u286 = (float)t283;
                     if ((int)t283 < 0) {
                         u286 = ((float)t283 + 4.2949673e+09f);
@@ -471,7 +471,7 @@ int fx_update_16(int a4)
                     t290 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t290);
                     math_rand_float();
-                    t296 = FUN_0c0e6f24();
+                    t296 = _modlu();
                     u299 = (float)t296;
                     if ((int)t296 < 0) {
                         u299 = ((float)t296 + 4.2949673e+09f);
@@ -503,11 +503,11 @@ int fx_update_16(int a4)
                     (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) - ((((struct o3C_float *)(a4))->v)));
                     (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + ((((struct o40_float *)(a4))->v)));
                     *(volatile short *)((a4 + 0xEC));
-                    t342 = FUN_0c0e6e5c();
+                    t342 = _modls();
                     if (t342 == 0) {
                         if ((int)((((struct oF0_short *)(a4))->v)) < (int)0x9) {
                             *(volatile short *)((a4 + 0xEC));
-                            t346 = FUN_0c0e6e5c();
+                            t346 = _modls();
                             t347 = 0x7A;
                             if (t346 == 0) {
                                 t347 = 0x73;
@@ -564,7 +564,7 @@ int fx_update_16(int a4)
                         t400 = (((struct o2E0_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x1C + t400);
                         math_rand_float();
-                        t406 = FUN_0c0e6f24();
+                        t406 = _modlu();
                         u409 = (float)t406;
                         if ((int)t406 < 0) {
                             u409 = ((float)t406 + 4.2949673e+09f);
@@ -573,7 +573,7 @@ int fx_update_16(int a4)
                         t412 = (((struct o2E0_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x20 + t412);
                         math_rand_float();
-                        t418 = FUN_0c0e6f24();
+                        t418 = _modlu();
                         u421 = (float)t418;
                         if ((int)t418 < 0) {
                             u421 = ((float)t418 + 4.2949673e+09f);
@@ -582,7 +582,7 @@ int fx_update_16(int a4)
                         t424 = (((struct o2E0_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x24 + t424);
                         math_rand_float();
-                        t430 = FUN_0c0e6f24();
+                        t430 = _modlu();
                         u433 = (float)t430;
                         if ((int)t430 < 0) {
                             u433 = ((float)t430 + 4.2949673e+09f);
@@ -591,7 +591,7 @@ int fx_update_16(int a4)
                         t436 = (((struct o2E4_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x1C + t436);
                         math_rand_float();
-                        t442 = FUN_0c0e6f24();
+                        t442 = _modlu();
                         u445 = (float)t442;
                         if ((int)t442 < 0) {
                             u445 = ((float)t442 + 4.2949673e+09f);
@@ -600,7 +600,7 @@ int fx_update_16(int a4)
                         t449 = (((struct o2E4_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x20 + t449);
                         math_rand_float();
-                        t455 = FUN_0c0e6f24();
+                        t455 = _modlu();
                         u458 = (float)t455;
                         if ((int)t455 < 0) {
                             u458 = ((float)t455 + 4.2949673e+09f);
@@ -609,7 +609,7 @@ int fx_update_16(int a4)
                         t462 = (((struct o2E4_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x24 + t462);
                         math_rand_float();
-                        t468 = FUN_0c0e6f24();
+                        t468 = _modlu();
                         u471 = (float)t468;
                         if ((int)t468 < 0) {
                             u471 = ((float)t468 + 4.2949673e+09f);
@@ -618,7 +618,7 @@ int fx_update_16(int a4)
                         t475 = (((struct o2E8_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x1C + t475);
                         math_rand_float();
-                        t481 = FUN_0c0e6f24();
+                        t481 = _modlu();
                         u484 = (float)t481;
                         if ((int)t481 < 0) {
                             u484 = ((float)t481 + 4.2949673e+09f);
@@ -627,7 +627,7 @@ int fx_update_16(int a4)
                         t488 = (((struct o2E8_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x20 + t488);
                         math_rand_float();
-                        t494 = FUN_0c0e6f24();
+                        t494 = _modlu();
                         u497 = (float)t494;
                         if ((int)t494 < 0) {
                             u497 = ((float)t494 + 4.2949673e+09f);
@@ -636,7 +636,7 @@ int fx_update_16(int a4)
                         t501 = (((struct o2E8_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x24 + t501);
                         math_rand_float();
-                        t507 = FUN_0c0e6f24();
+                        t507 = _modlu();
                         u510 = (float)t507;
                         if ((int)t507 < 0) {
                             u510 = ((float)t507 + 4.2949673e+09f);
@@ -645,7 +645,7 @@ int fx_update_16(int a4)
                         t514 = (((struct o2E4_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x18 + t514);
                         math_rand_float();
-                        t520 = FUN_0c0e6f24();
+                        t520 = _modlu();
                         u523 = (float)t520;
                         if ((int)t520 < 0) {
                             u523 = ((float)t520 + 4.2949673e+09f);
@@ -654,7 +654,7 @@ int fx_update_16(int a4)
                         t527 = (((struct o2E8_int *)(a4))->v);
                         *(int *)((int)stk + 0) = (0x18 + t527);
                         math_rand_float();
-                        t533 = FUN_0c0e6f24();
+                        t533 = _modlu();
                         u536 = (float)t533;
                         if ((int)t533 < 0) {
                             u536 = ((float)t533 + 4.2949673e+09f);
@@ -687,7 +687,7 @@ int fx_update_16(int a4)
                             t568 = (((struct o2E4_int *)(a4))->v);
                             *(int *)((int)stk + 0) = (0x18 + t568);
                             math_rand_float();
-                            t574 = FUN_0c0e6f24();
+                            t574 = _modlu();
                             u577 = (float)t574;
                             if ((int)t574 < 0) {
                                 u577 = ((float)t574 + 4.2949673e+09f);
@@ -696,7 +696,7 @@ int fx_update_16(int a4)
                             t581 = (((struct o2E8_int *)(a4))->v);
                             *(int *)((int)stk + 0) = (0x18 + t581);
                             math_rand_float();
-                            t587 = FUN_0c0e6f24();
+                            t587 = _modlu();
                             u590 = (float)t587;
                             if ((int)t587 < 0) {
                                 u590 = ((float)t587 + 4.2949673e+09f);
@@ -723,7 +723,7 @@ int fx_update_16(int a4)
                                 t602 = (((struct o2E4_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x1C + t602);
                                 math_rand_float();
-                                t608 = FUN_0c0e6f24();
+                                t608 = _modlu();
                                 u611 = (float)t608;
                                 if ((int)t608 < 0) {
                                     u611 = ((float)t608 + 4.2949673e+09f);
@@ -732,7 +732,7 @@ int fx_update_16(int a4)
                                 t615 = (((struct o2E4_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x20 + t615);
                                 math_rand_float();
-                                t621 = FUN_0c0e6f24();
+                                t621 = _modlu();
                                 u624 = (float)t621;
                                 if ((int)t621 < 0) {
                                     u624 = ((float)t621 + 4.2949673e+09f);
@@ -741,7 +741,7 @@ int fx_update_16(int a4)
                                 t628 = (((struct o2E4_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x24 + t628);
                                 math_rand_float();
-                                t634 = FUN_0c0e6f24();
+                                t634 = _modlu();
                                 u637 = (float)t634;
                                 if ((int)t634 < 0) {
                                     u637 = ((float)t634 + 4.2949673e+09f);
@@ -750,7 +750,7 @@ int fx_update_16(int a4)
                                 t641 = (((struct o2E8_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x1C + t641);
                                 math_rand_float();
-                                t647 = FUN_0c0e6f24();
+                                t647 = _modlu();
                                 u650 = (float)t647;
                                 if ((int)t647 < 0) {
                                     u650 = ((float)t647 + 4.2949673e+09f);
@@ -759,7 +759,7 @@ int fx_update_16(int a4)
                                 t654 = (((struct o2E8_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x20 + t654);
                                 math_rand_float();
-                                t660 = FUN_0c0e6f24();
+                                t660 = _modlu();
                                 u663 = (float)t660;
                                 if ((int)t660 < 0) {
                                     u663 = ((float)t660 + 4.2949673e+09f);
@@ -768,7 +768,7 @@ int fx_update_16(int a4)
                                 t667 = (((struct o2E8_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x24 + t667);
                                 math_rand_float();
-                                t673 = FUN_0c0e6f24();
+                                t673 = _modlu();
                                 u676 = (float)t673;
                                 if ((int)t673 < 0) {
                                     u676 = ((float)t673 + 4.2949673e+09f);
@@ -777,7 +777,7 @@ int fx_update_16(int a4)
                                 t680 = (((struct o2E4_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x18 + t680);
                                 math_rand_float();
-                                t686 = FUN_0c0e6f24();
+                                t686 = _modlu();
                                 u689 = (float)t686;
                                 if ((int)t686 < 0) {
                                     u689 = ((float)t686 + 4.2949673e+09f);
@@ -786,7 +786,7 @@ int fx_update_16(int a4)
                                 t693 = (((struct o2E8_int *)(a4))->v);
                                 *(int *)((int)stk + 0) = (0x18 + t693);
                                 math_rand_float();
-                                t699 = FUN_0c0e6f24();
+                                t699 = _modlu();
                                 u702 = (float)t699;
                                 if ((int)t699 < 0) {
                                     u702 = ((float)t699 + 4.2949673e+09f);

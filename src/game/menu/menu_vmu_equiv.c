@@ -32,7 +32,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o6_uchar { char p[0x6]; unsigned char v; };
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o2D_uchar { char p[0x2D]; unsigned char v; };
 struct o300_int { char p[0x300]; int v; };
 struct o33_uchar { char p[0x33]; unsigned char v; };
@@ -54,7 +54,7 @@ struct o0_short { short v; };
 struct o14_short { char p[0x14]; short v; };
 
 int FUN_0c01f248(int a4, int a5, int a6, int a7);
-int vmu_menu_spawn_message(int a4);
+void vmu_menu_spawn_message(int);
 int FUN_0c01fa70(int a4);
 int vmu_menu_pad_pressed(int a4);
 int FUN_0c01ff6c(int a4);
@@ -379,17 +379,15 @@ void vmu_menu_tick_message(int a4, int a5, int a6, int a7)
     }
 }
 
-int vmu_menu_spawn_message(int a4)
+void vmu_menu_spawn_message(int a4)
 {
     int stk[2];
     register int t0;
-    register int t13;
     register int t6;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     (((struct o6_uchar *)0xC362A78)->v) = 0x0;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t13 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
@@ -410,12 +408,9 @@ int vmu_menu_spawn_message(int a4)
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t6 = *(signed char *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 4)) = (((t6 << 2) << 2) + 0xC11C644);
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_system_font), (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
-        *(volatile int *)((t0 + 0x2E0));
-        *(volatile int *)(((int)stk + 4));
-        t13 = (FUN_0c0e6fe8());
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
     }
-    return t13;
 }
 
 int FUN_0c01f874(int a4)

@@ -14,22 +14,24 @@ struct o58_float { char p[0x58]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c0623a6(int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 
-int menu_ui_task_10(int a4, int a5, int a6, int a7)
+int menu_ui_task_10(int a4)
 {
     register int t0;
+    register float u0;
+    register float u1;
 
     if ((*(int *)((a4 + 0x1C))) == 0) {
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         (((struct o48_float *)(a4))->v) = ((float)(*(int *)((((((struct o2E0_int *)((*(int *)((a4 + 0x1C)))))->v)) + 0x14))) - ((((struct o3C_float *)(a4))->v)));
         (((struct o3C_float *)(a4))->v) = (float)(*(int *)((((((struct o2E0_int *)((*(int *)((a4 + 0x1C)))))->v)) + 0x14)));
@@ -45,7 +47,7 @@ int menu_ui_task_10(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ksel), ((*(signed char *)((a4 + 0x4))) + 0x6));
+    FUN_0c0623a6(((((struct o2E0_int *)(a4))->v)), 0xC664A78, ((*(signed char *)((a4 + 0x4))) + 0x6));
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
     *(unsigned int *)((((((struct o2E0_int *)(a4))->v)) + 0x14)) = ((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C71);
@@ -55,9 +57,12 @@ int menu_ui_task_10(int a4, int a5, int a6, int a7)
     (((struct o58_float *)(a4))->v) = 1.0f;
     (((struct o54_float *)(a4))->v) = 1.0f;
     (((struct o50_float *)(a4))->v) = 1.0f;
-    math_rand_float();
-    
-    (((struct oEE_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x5);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    (((struct oEE_ushort *)(a4))->v) = (((int)((unsigned int)(int)u1 % (unsigned int)0x6)) + 0x5);
     (((struct o3C_float *)(a4))->v) = (float)(*(int *)((((((struct o2E0_int *)((*(int *)((a4 + 0x1C)))))->v)) + 0x14)));
     return 0x3C;
 }

@@ -7,9 +7,9 @@ struct o58_float { char p[0x58]; float v; };
 struct o60_float { char p[0x60]; float v; };
 struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
@@ -18,29 +18,29 @@ int thunk_FUN_0c062242(int);
 int fx_spawn_035444(int a4)
 {
     register int t0;
-    register int t1;
+    register int t4;
 
-    t1 = obj_create(0x5, 0x1, 0x1);
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x3)) = (*(signed char *)((a4 + 0x3)));
-        *(unsigned char *)((t1 + 0x1)) = 0x1;
-        *(unsigned short *)((t1 + 0x6)) = 0x21F;
-        *(unsigned char *)((t1 + 0x5)) = 0x19;
-        *(unsigned int *)((t1 + 0x10)) = 0xC0354D8;
-        FUN_0c0e6fe8(0x1);
-        (((struct o58_float *)(t1))->v) = 1.0f;
-        (((struct o54_float *)(t1))->v) = 1.0f;
-        (((struct o50_float *)(t1))->v) = 1.0f;
-        (((struct o68_float *)(t1))->v) = 1.0f;
-        (((struct o64_float *)(t1))->v) = 1.0f;
-        (((struct o60_float *)(t1))->v) = 1.0f;
-        *(unsigned char *)((((((struct o2E0_int *)(t1))->v)) + 0x0)) = t0;
-        *(unsigned short *)((((((struct o2E0_int *)(t1))->v)) + 0x2)) = 0xF;
-        t0 = *(signed char *)((t1 + 0x3));
-        return FUN_0c06233a(((((struct o2E0_int *)(t1))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x16);
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned short *)((t0 + 0x6)) = 0x21F;
+        *(unsigned char *)((t0 + 0x5)) = 0x19;
+        *(unsigned int *)((t0 + 0x10)) = 0xC0354D8;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        (((struct o58_float *)(t0))->v) = 1.0f;
+        (((struct o54_float *)(t0))->v) = 1.0f;
+        (((struct o50_float *)(t0))->v) = 1.0f;
+        (((struct o68_float *)(t0))->v) = 1.0f;
+        (((struct o64_float *)(t0))->v) = 1.0f;
+        (((struct o60_float *)(t0))->v) = 1.0f;
+        *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
+        *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
+        t4 = *(signed char *)((t0 + 0x3));
+        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x16);
     }
-    return t1;
+    return t0;
 }
 
 int fx_tick_035444(int a4, int a5, int a6, int a7)

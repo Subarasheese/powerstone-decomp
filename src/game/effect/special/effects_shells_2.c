@@ -15,7 +15,7 @@ struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create_beside(int, int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 int fx_trail_spawn_segment(int a4)
 {
@@ -31,8 +31,8 @@ int fx_trail_spawn_segment(int a4)
         *(unsigned short *)((t0 + 0x6)) = 0xF;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0C9760;
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
         (((struct o38_float *)(t0))->v) = 0.0f;
         (((struct o3C_float *)(t0))->v) = 0.0f;
         (((struct o40_float *)(t0))->v) = 0.0f;

@@ -16,7 +16,7 @@ int pl_step_motion_owner(int);
 int pl_apply_velocity(int);
 int pl_apply_motion_translation(int);
 int pl_landed(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 int pl_ayame_state22_phase1(int a4)
 {
@@ -31,18 +31,18 @@ int pl_ayame_state22_phase1(int a4)
 
 int pl_ayame_victim_dispatch(int a4)
 {
-    register int t0;
-    int t1;
+    int t0;
+    register int t1;
 
-    t1 = *(signed char *)((a4 + 0xB));
-    if ((t1 != 0) && ((t1 != 1) && (t1 != 2))) {
-        if (t1 != 3) {
-            return t1;
+    t0 = *(signed char *)((a4 + 0xB));
+    if ((t0 != 0) && ((t0 != 1) && (t0 != 2))) {
+        if (t0 != 3) {
+            return t0;
         }
-        t1 = *(signed char *)((a4 + 0xC));
-        if (t1 != 0) {
-            if (t1 != 1) {
-                if (t1 != 2) {
+        t0 = *(signed char *)((a4 + 0xC));
+        if (t0 != 0) {
+            if (t0 != 1) {
+                if (t0 != 2) {
                     pl_step_motion(a4);
                     pl_apply_motion_translation(a4);
                     if ((*(signed char *)((a4 + 0x71AA))) != 0) {
@@ -51,23 +51,23 @@ int pl_ayame_victim_dispatch(int a4)
                     return 0x71AA;
                 }
                 pl_apply_velocity(a4);
-                t1 = pl_landed(a4);
-                if ((signed char)t1 != 0) {
+                t0 = pl_landed(a4);
+                if ((signed char)t0 != 0) {
                     return obj_force_owner_state27((*(int *)((a4 + 0x1C))), 0x7C);
                 }
-                return (signed char)t1;
+                return (signed char)t0;
             }
             pl_step_motion_owner(a4);
             pl_apply_motion_translation(a4);
-            t1 = 0x71AA;
+            t0 = 0x71AA;
             if ((*(signed char *)((a4 + 0x71AA))) != 0) {
                 *(unsigned char *)((a4 + 0xC)) = ((*(signed char *)((a4 + 0xC))) + 0x1);
-                FUN_0c0e6fe8(0xC337368);
-                FUN_0c0e6fe8(t0);
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x38)) = *(struct mv3 *)(0xC337368); }
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x44)) = *(struct mv3 *)(0xC337368); }
                 (((struct o3C_float *)(a4))->v) = -20.0f;
-                t1 = 0x3C;
+                t0 = 0x3C;
             }
-            return t1;
+            return t0;
         }
         pl_start_motion_owner(a4, 0x1, 0x71);
         (((struct o71A9_uchar *)(a4))->v) = 0x1;

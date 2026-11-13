@@ -29,10 +29,10 @@ struct o6_uchar { char p[0x6]; unsigned char v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 struct o300_int { char p[0x300]; int v; };
 struct o8_float { char p[0x8]; float v; };
 int obj_destroy(int);
@@ -173,16 +173,15 @@ int vmu_menu_spawn_choice_cursor(int a4)
 {
     int stk[1];
     register int t0;
-    register int t22;
-    register float u15;
-    register int t16;
-    register float u21;
-    register int t6;
+    register int t20;
+    register float u13;
+    register int t14;
+    register float u19;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     (((struct o6_uchar *)0xC362A78)->v) = 0x0;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t22 = t0;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    t20 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
@@ -195,23 +194,22 @@ int vmu_menu_spawn_choice_cursor(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((t0 + 0xF)) = (*(signed char *)0xC362A58);
         (((struct oEC_ushort *)(t0))->v) = 0x0;
-        *(volatile signed char *)(((int)stk + 0));
-        FUN_0c0e6fe8(0x1);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(((((*(signed char *)(((int)stk + 0))) << 2) << 2) + 0xC11C644)); }
         (((struct o24_float *)(t0))->v) = ((((struct o0_float *)0xC362A78)->v));
-        *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = t6;
+        *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x40F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_system_font), 0xF);
-        u15 = ((((struct o0_float *)0xC01F794)->v));
-        u15 = u15 + ((((struct o4_float *)0xC01F794)->v)) * (float)(*(signed char *)((t0 + 0xF)));
-        (((struct o4_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u15;
-        t16 = (((struct o2E0_int *)(t0))->v);
-        u21 = ((((struct oC_float *)0xC01F794)->v));
-        u21 = u21 + ((((struct o10_float *)0xC01F794)->v)) * (math_sin_angle16(((((struct oEC_short *)(t0))->v))));
-        (((struct o40_float *)(t16))->v) = u21;
-        t22 = 0xC01F7A4;
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, 0xF);
+        u13 = ((((struct o0_float *)0xC01F794)->v));
+        u13 = u13 + ((((struct o4_float *)0xC01F794)->v)) * (float)(*(signed char *)((t0 + 0xF)));
+        (((struct o4_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u13;
+        t14 = (((struct o2E0_int *)(t0))->v);
+        u19 = ((((struct oC_float *)0xC01F794)->v));
+        u19 = u19 + ((((struct o10_float *)0xC01F794)->v)) * (math_sin_angle16(((((struct oEC_short *)(t0))->v))));
+        (((struct o40_float *)(t14))->v) = u19;
+        t20 = 0xC01F7A4;
     }
-    return t22;
+    return t20;
 }
 
 int FUN_0c01f6fc(int a4)

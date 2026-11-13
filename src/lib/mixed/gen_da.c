@@ -89,9 +89,9 @@ int dbg_set_text_color(int);
 int dbg_printf(int, ...);
 int FUN_0c0e24f0(int);
 int FUN_0c0e4688(int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6fe8(void);
+int _divls(void);
+int _modls(void);
+int _quick_odd_mvn(void);
 int FUN_0c0ed7e4(int);
 int FUN_0c0ed8f4(int, int);
 int FUN_0c0fca2e(int);
@@ -263,13 +263,7 @@ int FUN_0c0e6834(int a4, int a5, int a6, int a7)
     int stk[3];
     register int t0;
     register int t14;
-    register int t119;
-    register int t120;
-    register int t121;
     register int t50;
-    register int t129;
-    register int t130;
-    register int t131;
 
     *(unsigned int *)(((int)stk + 8)) = a4;
     *(unsigned int *)(((int)stk + 4)) = a5;
@@ -280,9 +274,6 @@ int FUN_0c0e6834(int a4, int a5, int a6, int a7)
     *(volatile signed char *)(((*(int *)(((int)stk + 8))) + 0x8));
     t14 = *(int *)(((int)stk + 4));
     if (t14 != 0) {
-        t119 = a4;
-        t120 = a5;
-        t121 = a6;
         if (t14 != 1) {
             if (t14 != 2) {
                 if (t14 != 3) {
@@ -314,23 +305,11 @@ int FUN_0c0e6834(int a4, int a5, int a6, int a7)
                         break;
                     }
                 }
-                t119 = a4;
-                t120 = a5;
-                t121 = a6;
-            } else {
-                FUN_0c0e6d00();
-                FUN_0c0e6d00();
             }
         }
-        t129 = t119;
-        t130 = t120;
-        t131 = t121;
     } else {
         *(volatile short *)(((*(int *)(((int)stk + 8))) + 0x2A));
-        t129 = a4;
-        t130 = a5;
-        t131 = a6;
     }
-    return ((int (*)(int, int, int, int))(0xC0E69A4))(t129, t130, t131, a7);
+    return ((int (*)(int, int, int, int))(0xC0E69A4))(a4, a5, a6, a7);
 }
 

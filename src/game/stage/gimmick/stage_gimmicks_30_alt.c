@@ -22,10 +22,10 @@ struct o40_float { char p[0x40]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int snd_play_stage_obj_se(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o30D_uchar { char p[0x30D]; unsigned char v; };
@@ -36,51 +36,49 @@ int FUN_0c0b3614(int);
 int FUN_0c0b36bc(int);
 int cam_set_shake_ramp(int, int);
 
-int stage_gimmick_28_spawn_c(int a4);
+int stage_gimmick_28_spawn_c(int);
 
 int stage_gimmick_28_spawn_b(int a4)
 {
     register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
+    register int t14;
 
-    t1 = obj_create(0x2, 0x1, 0x1);
-    t2 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x1)) = 0x1;
-        *(unsigned char *)((t1 + 0x3)) = 0x2;
-        *(unsigned short *)((t1 + 0x6)) = 0x1;
-        *(unsigned char *)((t1 + 0x5)) = 0x19;
-        *(unsigned char *)((t1 + 0x8)) = 0x0;
-        *(unsigned char *)((t1 + 0x9)) = 0x0;
-        *(unsigned int *)((t1 + 0x10)) = 0xC0B36FC;
-        *(unsigned char *)((t1 + 0x4)) = 0x10;
-        (((struct o315_uchar *)(t1))->v) = 0x1;
-        (((struct o308_uint *)(t1))->v) = ((((struct o308_int *)(a4))->v));
-        (((struct o30E_uchar *)(t1))->v) = (*(signed char *)((a4 + 0x30E)));
-        (((struct o101_uchar *)(t1))->v) = 0x31;
-        (((struct o102_uchar *)(t1))->v) = 0x70;
-        (((struct o105_uchar *)(t1))->v) = 0x1;
-        (((struct o106_uchar *)(t1))->v) = 0x0;
-        (((struct o107_uchar *)(t1))->v) = 0x0;
-        (((struct o2D9_uchar *)(t1))->v) = (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x8)));
-        t3 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-        t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-        (((struct o38_float *)(t1))->v) = ((((struct o0_float *)0xC0B36A0)->v));
-        (((struct o3C_float *)(t1))->v) = ((((struct o4_float *)0xC0B36A0)->v));
-        (((struct oEC_ushort *)(t1))->v) = 0x1E;
-        (((struct oF0_ushort *)(t1))->v) = t0;
-        *(unsigned int *)((t1 + 0x1C)) = a4;
-        FUN_0c06233a(((((struct o2E0_int *)(t1))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
-        *(unsigned char *)((((((struct o2E0_int *)(t1))->v)) + 0x0)) = 0x1;
-        *(unsigned short *)((((((struct o2E0_int *)(t1))->v)) + 0x2)) = 0x40F;
-        (((struct o40_float *)(((((struct o2E0_int *)(t1))->v))))->v) = 1.0f;
-        t2 = 0x40;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x2, 0x1, 0x1, 0x0);
+    t14 = t0;
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned char *)((t0 + 0x3)) = 0x2;
+        *(unsigned short *)((t0 + 0x6)) = 0x1;
+        *(unsigned char *)((t0 + 0x5)) = 0x19;
+        *(unsigned char *)((t0 + 0x8)) = 0x0;
+        *(unsigned char *)((t0 + 0x9)) = 0x0;
+        *(unsigned int *)((t0 + 0x10)) = 0xC0B36FC;
+        *(unsigned char *)((t0 + 0x4)) = 0x10;
+        (((struct o315_uchar *)(t0))->v) = 0x1;
+        (((struct o308_uint *)(t0))->v) = ((((struct o308_int *)(a4))->v));
+        (((struct o30E_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x30E)));
+        (((struct o101_uchar *)(t0))->v) = 0x31;
+        (((struct o102_uchar *)(t0))->v) = 0x70;
+        (((struct o105_uchar *)(t0))->v) = 0x1;
+        (((struct o106_uchar *)(t0))->v) = 0x0;
+        (((struct o107_uchar *)(t0))->v) = 0x0;
+        (((struct o2D9_uchar *)(t0))->v) = (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x8)));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A7DC); }
+        (((struct o38_float *)(t0))->v) = ((((struct o0_float *)0xC0B36A0)->v));
+        (((struct o3C_float *)(t0))->v) = ((((struct o4_float *)0xC0B36A0)->v));
+        (((struct oEC_ushort *)(t0))->v) = 0x1E;
+        (((struct oF0_ushort *)(t0))->v) = 0x0;
+        *(unsigned int *)((t0 + 0x1C)) = a4;
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
+        *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
+        *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x40F;
+        (((struct o40_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
+        t14 = 0x40;
     }
-    return t2;
+    return t14;
 }
 
 int stage_gimmick_28_update_b(int a4, int a5, int a6, int a7)
@@ -189,15 +187,15 @@ int stage_gimmick_28_update_b(int a4, int a5, int a6, int a7)
 
 int stage_gimmick_28_spawn_c(int a4)
 {
-    register int t0;
     register int t1;
     register int t2;
     register int t3;
-    register int t4;
+    register int t5;
+    register int t6;
 
     t1 = *(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3));
     if (t1 != -1) {
-        t2 = obj_create(0x5, 0x1, 0x5);
+        t2 = obj_create(0x5, 0x1, 0x5, 0x0);
         if (t2 != 0) {
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned char *)((t2 + 0x1)) = 0x1;
@@ -210,19 +208,19 @@ int stage_gimmick_28_spawn_c(int a4)
             *(unsigned char *)((t2 + 0xB)) = 0x0;
             (((struct oEC_ushort *)(t2))->v) = 0x0;
             (((struct oEE_ushort *)(t2))->v) = 0x0;
-            t3 = ((int (*)(int))(FUN_0c0e6fe8))(0x0);
-            t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-            t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-            (((struct o118_uint *)(t2))->v) = t0;
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x2C)) = *(struct mv3 *)(0xC33A7E8); }
+            { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x50)) = *(struct mv3 *)(0xC33A7DC); }
+            (((struct o118_uint *)(t2))->v) = 0x0;
             *(unsigned int *)((t2 + 0x10)) = 0xC0B39BE;
-            t3 = t0;
+            t3 = 0x0;
             for (;;) {
-                t0 = *(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3));
-                t4 = *(int *)((((t3 << 2) + (0x2E0 + t2)) + 0x0));
-                FUN_0c06233a(t4, ((int)g_res_stage_c), (((t0 << 2) + t0) + t3));
-                *(unsigned char *)((t4 + 0x0)) = 0x1;
+                t5 = *(signed char *)((((((struct o308_int *)(a4))->v)) + 0x3));
+                t6 = *(int *)((((t3 << 2) + (0x2E0 + t2)) + 0x0));
+                FUN_0c06233a(t6, 0xC664970, (((t5 << 2) + t5) + t3));
+                *(unsigned char *)((t6 + 0x0)) = 0x1;
                 t3 = (t3 + 0x1);
-                *(unsigned short *)((t4 + 0x2)) = 0xF;
+                *(unsigned short *)((t6 + 0x2)) = 0xF;
                 if ((int)t3 >= (int)0x5) {
                     break;
                 }

@@ -102,10 +102,10 @@ float math_signed_sqrt(float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
-extern int FUN_0c0e7140();
+int _divls(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
+extern int _slow_mvn();
 int FUN_0c0f059e(int);
 int FUN_0c0f9c92(int);
 int FUN_0c0fdda0(int, int, int);
@@ -116,7 +116,7 @@ int FUN_0c104962(int, int, int);
 int FUN_0c1070a0(int);
 int FUN_0c1071b4(int);
 int FUN_0c107206(void);
-int FUN_0c107f44(int, int, int, int);
+int FUN_0c107f44(int, int, int, int, int, int, int);
 int FUN_0c114bae(int);
 int FUN_0c1151de(int, int, int, int);
 int FUN_0c11574c(int, int, int, int);
@@ -158,7 +158,7 @@ int FUN_0c114182(int a4, int a5, int a6);
 int fx_tick_034bfc(int a4, int a5, int a6, int a7);
 int fx_tick_03ed0c(int a4, int a5, int a6, int a7);
 int fx_spawn_03c1ec(int a4, int a5, int a6, int a7);
-int FUN_0c107234(int a4, int a5, int a6, int a7);
+int FUN_0c107234(int, int, int, int);
 int FUN_0c0a65a8(int a4, int a5, int a6, int a7, float f4);
 int stage_gimmick_34_update(int a4);
 int vmsfs_setwork(int a4, int a5, int a6);
@@ -558,13 +558,9 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
     register int t11;
     register int t15;
     register int t19;
-    register int t22;
-    register int t26;
     register int t30;
     register int t34;
     register int t38;
-    register int t41;
-    register int t45;
     register int t47;
     register int t49;
     register int t50;
@@ -573,7 +569,6 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
     register int t63;
     register int t67;
     register int t71;
-    register int t80;
     register int t82;
     register int t83;
 
@@ -622,7 +617,7 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                             FUN_0c1071b4(t0);
                             t1 = (unsigned char)(*(signed char *)((t4 + 0x3)));
                             t0 = t4;
-                            FUN_0c107f44(t0, t1, 0x0, 0x0);
+                            FUN_0c107f44(t0, t1, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
                             if ((int)a5 > 0) {
                                 t15 = 0x0;
                                 for (;;) {
@@ -636,15 +631,9 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                                         break;
                                     }
                                 }
-                                *(volatile int *)(((int)stk + 4));
-                                *(volatile int *)((t4 + 0x8));
-                                t22 = FUN_0c0e6d00();
-                                return ((t22 << 2) << 1);
+                                return ((((int)((int)(*(int *)(((int)stk + 4))) / (int)(*(int *)((t4 + 0x8))))) << 2) << 1);
                             }
-                            *(volatile int *)(((int)stk + 4));
-                            *(volatile int *)((t4 + 0x8));
-                            t26 = FUN_0c0e6d00();
-                            return ((t26 << 2) << 1);
+                            return ((((int)((int)(*(int *)(((int)stk + 4))) / (int)(*(int *)((t4 + 0x8))))) << 2) << 1);
                         }
                         t0 = a5;
                         (((struct o40_uint *)(t4))->v) = (FUN_0c114bae(t0));
@@ -657,7 +646,7 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                         FUN_0c1071b4(t0);
                         t1 = (unsigned char)(*(signed char *)((t4 + 0x3)));
                         t0 = t4;
-                        FUN_0c107f44(t0, t1, 0x0, 0x0);
+                        FUN_0c107f44(t0, t1, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
                         if ((int)a5 > 0) {
                             t34 = 0x0;
                             for (;;) {
@@ -671,15 +660,9 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                                     break;
                                 }
                             }
-                            *(volatile int *)(((int)stk + 4));
-                            *(volatile int *)((t4 + 0x8));
-                            t41 = FUN_0c0e6d00();
-                            return ((t41 << 2) << 1);
+                            return ((((int)((int)(*(int *)(((int)stk + 4))) / (int)(*(int *)((t4 + 0x8))))) << 2) << 1);
                         }
-                        *(volatile int *)(((int)stk + 4));
-                        *(volatile int *)((t4 + 0x8));
-                        t45 = FUN_0c0e6d00();
-                        return ((t45 << 2) << 1);
+                        return ((((int)((int)(*(int *)(((int)stk + 4))) / (int)(*(int *)((t4 + 0x8))))) << 2) << 1);
                     }
                 }
                 t47 = ((int (*)(int, int, int, int))(mwRnaErrCallFunc))(0xC15B29C, t1, a6, a7);
@@ -711,7 +694,7 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                 return ((int (*)(void))(0xC107344))();
             }
             FUN_0c1071b4(t49);
-            FUN_0c107f44(t49, (unsigned char)(*(signed char *)((t49 + 0x3))), 0x0, 0x0);
+            FUN_0c107f44(t49, (unsigned char)(*(signed char *)((t49 + 0x3))), 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
             if ((int)a5 > 0) {
                 t67 = 0x0;
                 for (;;) {
@@ -724,10 +707,7 @@ int FUN_0c107234(int a4, int a5, int a6, int a7)
                     }
                 }
             }
-            *(volatile int *)(((int)stk + 4));
-            *(volatile int *)((t49 + 0x8));
-            t80 = FUN_0c0e6d00();
-            return ((t80 << 2) << 1);
+            return ((((int)((int)(*(int *)(((int)stk + 4))) / (int)(*(int *)((t49 + 0x8))))) << 2) << 1);
         }
         t82 = ((int (*)(int, int, int, int))(mwRnaErrCallFunc))(0xC15B29C, a5, a6, a7);
         return 0x0;

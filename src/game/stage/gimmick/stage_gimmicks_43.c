@@ -2,13 +2,9 @@
 
 int math_rand_next(void);
 float math_rand_float(void);
-int _modls(void);
-
-/* r0 % r1-style division helper: result comes from the case */
 void stage_random_spawn_position(float *out_pos)
 {
-    math_rand_next();
-    switch (_modls()) {
+    switch (math_rand_next() % 10) {
     case 0: case 1: case 2: case 3:
         out_pos[0] = -450.0f + 900.0f * math_rand_float();
         out_pos[1] = 2.0f;

@@ -19,7 +19,7 @@ int fx_spawn_0396bc(int, int);
 int fx_spawn_039aa0(int, int);
 int FUN_0c039c6c(int, int, int);
 int FUN_0c0496f0(int, int, int, int, int, int, int, int, int);
-int fx_spawn_hit_effect(int, int, int, int);
+int fx_spawn_hit_effect(int, int, int, int, int, int, int, int, int, int, int, int);
 int pl_special_a_dispatch(int);
 int obj_force_owner_state27(int, int);
 int obj_set_owner_hit_record(int, int);
@@ -30,12 +30,12 @@ int pl_step_motion_owner(int);
 int obj_place_linked_ahead(int, int, float);
 int pl_apply_motion_translation(int);
 int pl_landed(int);
-int pl_end_action_choose_state(int, int, int, int, int);
+extern int pl_end_action_choose_state();
 int snd_play_side_se(int, int);
 int cam_force_mode(int, int, int);
 int cam_request_mode_03(int, int);
-int FUN_0c0e6fe8(int);
-int thunk_FUN_0c062242(int);
+int _quick_odd_mvn(int);
+int thunk_FUN_0c062242(int, int);
 
 int pl_ayame_special_move_dispatch(int a4)
 {
@@ -57,21 +57,21 @@ int pl_ayame_special_move_dispatch(int a4)
     register int t68;
     register int t69;
     register int t82;
-    register int t121;
     register int t118;
-    register int t139;
-    register int t144;
-    register int t157;
-    register int t162;
-    register int t192;
-    register int t191;
-    register int t210;
-    register int t222;
-    register int t226;
-    register int t250;
-    register int t249;
-    register int t259;
-    register int t268;
+    register int t115;
+    register int t136;
+    register int t141;
+    register int t151;
+    register int t156;
+    register int t186;
+    register int t185;
+    register int t204;
+    register int t216;
+    register int t220;
+    register int t244;
+    register int t243;
+    register int t253;
+    register int t262;
     int t3;
     register int t4;
     register int t5;
@@ -81,14 +81,12 @@ int pl_ayame_special_move_dispatch(int a4)
     int t61;
     register int t62;
     register int t63;
-    register int t116;
+    int t152;
+    register int t153;
     register int t154;
-    int t158;
-    register int t159;
-    register int t160;
-    int t223;
-    register int t224;
-    int t240;
+    int t217;
+    register int t218;
+    int t234;
 
     t0 = *(signed char *)((a4 + 0x7209));
     if (t0 != 0) {
@@ -107,8 +105,8 @@ int pl_ayame_special_move_dispatch(int a4)
                         t6 = *(signed char *)((a4 + 0x3));
                         *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
                         t8 = *(signed char *)((a4 + 0xEE));
-                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(unsigned char)(*(signed char *)(((signed char)((t8 << 1) + t8) + 0xC337495))) * (short)0xB0)));
-                        fx_spawn_hit_effect((((int)stk + 20) + 0x8), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x3);
+                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(unsigned char)(*(signed char *)(((signed char)((t8 << 1) + t8) + 0xC337495))) * (short)0xB0)), (((int)stk + 20) + 0x8));
+                        fx_spawn_hit_effect((((int)stk + 20) + 0x8), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x3, *(int *)((int)stk + 20), *(int *)((int)stk + 20 + 4), *(int *)((int)stk + 20 + 8), *(int *)((int)stk + 20 + 12), *(int *)((int)stk + 20 + 16), *(int *)((int)stk + 20 + 20), *(int *)((int)stk + 20 + 24), *(int *)((int)stk + 20 + 28));
                         t15 = *(signed char *)((a4 + 0x3));
                         t16 = 0x14;
                         if ((int)((((struct oEE_short *)(a4))->v)) < (int)0x6) {
@@ -130,7 +128,7 @@ int pl_ayame_special_move_dispatch(int a4)
                         if (((((struct oEC_short *)(a4))->v)) == ((*(int *)(((signed char)(((t42 << 1) + t42) << 2) + 0xC3374B0))) - 1)) {
                             t45 = *(signed char *)((a4 + 0x3));
                             *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4);
-                            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+                            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 20) + 0x8));
                             fx_spawn_0396bc(a4, (((int)stk + 20) + 0x8));
                         }
                     }
@@ -153,7 +151,7 @@ int pl_ayame_special_move_dispatch(int a4)
                     if (((((struct oEC_short *)(a4))->v)) == 0xC4) {
                         t82 = *(signed char *)((a4 + 0x3));
                         *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4);
-                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580));
+                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (((int)stk + 20) + 0x8));
                         fx_spawn_039aa0((((int)stk + 20) + 0x8), (*(signed char *)((a4 + 0x3))));
                     }
                     if (((((struct oEC_short *)(a4))->v)) == 0xC3) {
@@ -165,16 +163,16 @@ int pl_ayame_special_move_dispatch(int a4)
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
                     pl_step_motion(a4);
                     pl_apply_motion_translation(a4);
-                    t121 = 0x71AA;
+                    t118 = 0x71AA;
                     if ((*(signed char *)((a4 + 0x71AA))) != 0) {
-                        FUN_0c0e6fe8(0xC337368);
-                        FUN_0c0e6fe8(t116);
-                        t118 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int, int))(pl_end_action_choose_state))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 20), *(int *)((int)stk + 20 + 4), *(int *)((int)stk + 20 + 8), *(int *)((int)stk + 20 + 12), *(int *)((int)stk + 20 + 16), *(int *)((int)stk + 20 + 20), *(int *)((int)stk + 20 + 24), *(int *)((int)stk + 20 + 28));
+                        { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x38)) = *(struct mv3 *)(0xC337368); }
+                        { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x44)) = *(struct mv3 *)(0xC337368); }
+                        t115 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int, int))(pl_end_action_choose_state))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 20), *(int *)((int)stk + 20 + 4), *(int *)((int)stk + 20 + 8), *(int *)((int)stk + 20 + 12), *(int *)((int)stk + 20 + 16), *(int *)((int)stk + 20 + 20), *(int *)((int)stk + 20 + 24), *(int *)((int)stk + 20 + 28));
                         (((struct o71A9_uchar *)(a4))->v) = 0x1;
                         (((struct o71A8_uchar *)(a4))->v) = 0x1;
-                        t121 = (cam_force_mode(0x0, (*(signed char *)((a4 + 0x3))), 0x40));
+                        t118 = (cam_force_mode(0x0, (*(signed char *)((a4 + 0x3))), 0x40));
                     }
-                    return t121;
+                    return t118;
                 }
                 obj_place_linked_ahead(a4, 0x0, 142.0f);
                 (((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v) = ((((struct o24_float *)(a4))->v));
@@ -194,13 +192,13 @@ int pl_ayame_special_move_dispatch(int a4)
                 (((struct oF2_ushort *)(a4))->v) = 0x0;
                 return 0xF2;
             }
-            t139 = *(signed char *)((a4 + 0xA));
-            if (t139 != 0) {
-                if (t139 != 1) {
-                    if (t139 != 2) {
-                        if (t139 != 3) {
-                            if (t139 != 4) {
-                                return t139;
+            t136 = *(signed char *)((a4 + 0xA));
+            if (t136 != 0) {
+                if (t136 != 1) {
+                    if (t136 != 2) {
+                        if (t136 != 3) {
+                            if (t136 != 4) {
+                                return t136;
                             }
                             pl_step_motion(a4);
                             pl_apply_motion_translation(a4);
@@ -210,8 +208,8 @@ int pl_ayame_special_move_dispatch(int a4)
                             return 0x71AA;
                         }
                         pl_step_motion(a4);
-                        t144 = pl_landed(a4);
-                        if ((signed char)t144 != 0) {
+                        t141 = pl_landed(a4);
+                        if ((signed char)t141 != 0) {
                             *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
                             pl_start_motion(a4, 0x1, 0x92);
                             (((struct o71A9_uchar *)(a4))->v) = 0x1;
@@ -226,20 +224,20 @@ int pl_ayame_special_move_dispatch(int a4)
                     pl_start_motion(a4, 0x4, 0x4);
                     (((struct o71A9_uchar *)(a4))->v) = 0x1;
                     (((struct o71A8_uchar *)(a4))->v) = 0x1;
-                    FUN_0c0e6fe8(0xC337368);
+                    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x38)) = *(struct mv3 *)(0xC337368); }
                     (((struct o3C_float *)(a4))->v) = -7.0f;
-                    FUN_0c0e6fe8(t154);
+                    { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x44)) = *(struct mv3 *)(0xC337368); }
                     (((struct o48_float *)(a4))->v) = -1.0f;
                     return 0x48;
                 }
                 (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-                t157 = (((struct oEE_short *)(a4))->v);
-                if (((int)t157 < (int)0x6) && (t158 = (((struct oEC_short *)(a4))->v), t159 = (int)(((unsigned int)((short)t157 << 2)) >> 31), t160 = *(int *)(((((short)t157 << 2) << 1) + 0xC33745C)), t158 == t160)) {
+                t151 = (((struct oEE_short *)(a4))->v);
+                if (((int)t151 < (int)0x6) && (t152 = (((struct oEC_short *)(a4))->v), t153 = (int)(((unsigned int)((short)t151 << 2)) >> 31), t154 = *(int *)(((((short)t151 << 2) << 1) + 0xC33745C)), t152 == t154)) {
                     (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
-                    t162 = *(signed char *)((a4 + 0x3));
-                    *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t162) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t162) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t162) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEE_short *)(a4))->v)) << 2) << 1) + 0xC337460))) * (short)0xB0)));
-                    fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
+                    t156 = *(signed char *)((a4 + 0x3));
+                    *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
+                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEE_short *)(a4))->v)) << 2) << 1) + 0xC337460))) * (short)0xB0)), (((int)stk + 32) + 0x4));
+                    fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
                     if (((((struct oEE_short *)(a4))->v)) != 0) {
                         if (((((struct oEE_short *)(a4))->v)) == 6) {
                             obj_set_owner_hit_record(a4, 0x34);
@@ -252,13 +250,13 @@ int pl_ayame_special_move_dispatch(int a4)
                 }
                 pl_step_motion(a4);
                 pl_apply_motion_translation(a4);
-                t192 = 0x71AA;
+                t186 = 0x71AA;
                 if ((*(signed char *)((a4 + 0x71AA))) != 0) {
-                    t191 = *(signed char *)((a4 + 0xA));
-                    *(unsigned char *)((a4 + 0xA)) = (t191 + 0x1);
-                    t192 = (t191 + 0x1);
+                    t185 = *(signed char *)((a4 + 0xA));
+                    *(unsigned char *)((a4 + 0xA)) = (t185 + 0x1);
+                    t186 = (t185 + 0x1);
                 }
-                return t192;
+                return t186;
             }
             obj_place_linked_ahead(a4, 0x0, 0.0f);
             (((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v) = ((((struct o24_float *)(a4))->v));
@@ -281,10 +279,10 @@ int pl_ayame_special_move_dispatch(int a4)
         }
         return pl_special_a_dispatch(a4);
     }
-    t210 = *(signed char *)((a4 + 0xA));
-    if (t210 != 0) {
-        if (t210 != 1) {
-            return t210;
+    t204 = *(signed char *)((a4 + 0xA));
+    if (t204 != 0) {
+        if (t204 != 1) {
+            return t204;
         }
         pl_step_motion(a4);
         pl_apply_motion_translation(a4);
@@ -293,37 +291,37 @@ int pl_ayame_special_move_dispatch(int a4)
             pl_apply_motion_translation((*(int *)((a4 + 0x1C))));
         }
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-        t222 = (((struct oEE_short *)(a4))->v);
-        if (((int)t222 < (int)0x4) && (t223 = (((struct oEC_short *)(a4))->v), t224 = *(int *)((((short)t222 << 2) + 0xC337448)), t223 == t224)) {
+        t216 = (((struct oEE_short *)(a4))->v);
+        if (((int)t216 < (int)0x4) && (t217 = (((struct oEC_short *)(a4))->v), t218 = *(int *)((((short)t216 << 2) + 0xC337448)), t217 == t218)) {
             (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
-            t226 = *(signed char *)((a4 + 0x3));
-            *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t226) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t226) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t226) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
-            fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
+            t220 = *(signed char *)((a4 + 0x3));
+            *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
+            thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 32) + 0x4));
+            fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
             obj_set_owner_hit_record(a4, 0x31);
             snd_play_side_se(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x3);
         }
-        if ((((((struct oEC_short *)(a4))->v)) == (*(int *)0xC337458)) && (t240 = (((struct oF0_short *)(a4))->v), t240 == 0)) {
+        if ((((((struct oEC_short *)(a4))->v)) == (*(int *)0xC337458)) && (t234 = (((struct oF0_short *)(a4))->v), t234 == 0)) {
             (((struct oF0_ushort *)(a4))->v) = 0x1;
             obj_set_owner_hit_record(a4, 0x30);
             obj_force_owner_state27(a4, 0x30);
         }
-        t250 = 0x71AA;
+        t244 = 0x71AA;
         if ((*(signed char *)((a4 + 0x71AA))) != 0) {
-            t249 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int, int))(pl_end_action_choose_state))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
+            t243 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int, int))(pl_end_action_choose_state))(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
             (((struct o71A9_uchar *)(a4))->v) = 0x1;
             (((struct o71A8_uchar *)(a4))->v) = 0x1;
-            t250 = 0x71A8;
+            t244 = 0x71A8;
         }
-        return t250;
+        return t244;
     }
     pl_start_motion(a4, 0x4, 0x1);
     (((struct o71A9_uchar *)(a4))->v) = 0x1;
     (((struct o71A8_uchar *)(a4))->v) = 0x1;
     pl_start_motion_owner((*(int *)((a4 + 0x1C))), 0x4, 0x31);
-    t259 = *(int *)((a4 + 0x1C));
-    (((struct o71A9_uchar *)(t259))->v) = 0x1;
-    (((struct o71A8_uchar *)(t259))->v) = 0x1;
+    t253 = *(int *)((a4 + 0x1C));
+    (((struct o71A9_uchar *)(t253))->v) = 0x1;
+    (((struct o71A8_uchar *)(t253))->v) = 0x1;
     if ((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x71F1))) == 0) {
         (((struct o710A_uchar *)((*(int *)((a4 + 0x1C)))))->v) = 0x1;
     }
@@ -332,7 +330,7 @@ int pl_ayame_special_move_dispatch(int a4)
     (((struct oEC_ushort *)(a4))->v) = 0x0;
     (((struct oEE_ushort *)(a4))->v) = 0x0;
     (((struct oF0_ushort *)(a4))->v) = 0x0;
-    t268 = *(signed char *)((a4 + 0xA));
-    *(unsigned char *)((a4 + 0xA)) = (t268 + 0x1);
-    return (t268 + 0x1);
+    t262 = *(signed char *)((a4 + 0xA));
+    *(unsigned char *)((a4 + 0xA)) = (t262 + 0x1);
+    return (t262 + 0x1);
 }

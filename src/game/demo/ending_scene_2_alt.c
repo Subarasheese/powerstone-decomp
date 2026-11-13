@@ -9,13 +9,13 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int math_vec3_mul_xyz(int, float, float, float);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 
 void ending_spawn_vtx_wave(void)
 {
@@ -64,12 +64,12 @@ int FUN_0c016ac2(int a4, int a5, int a6, int a7)
             (((struct o44_float *)(t0))->v) = u0;
             return 0x44;
         }
-        return obj_destroy(a4, t0, a6, a7);
+        return obj_destroy(a4);
     }
     u0 = (((struct o4C_float *)(t0))->v);
     (((struct o4C_float *)(t0))->v) = (u0 + 0.0222222209f);
     if (!(1.0f > (u0 + 0.0222222209f))) {
-        return obj_destroy(a4, t0, a6, a7);
+        return obj_destroy(a4);
     }
     u0 = (((struct o4C_float *)(t0))->v);
     (((struct o48_float *)(t0))->v) = u0;
@@ -77,11 +77,10 @@ int FUN_0c016ac2(int a4, int a5, int a6, int a7)
     return 0x44;
 }
 
-int FUN_0c016bd2(int a4, int a5, int a6, int a7)
+int FUN_0c016bd2(int a4)
 {
     register int t0;
     register int t1;
-    register int t2;
     register float u0;
 
     if ((*(signed char *)((a4 + 0x8))) == 0) {
@@ -91,9 +90,9 @@ int FUN_0c016bd2(int a4, int a5, int a6, int a7)
         (((struct o28_float *)(a4))->v) = -10.0f;
     }
     (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + 0.00255491049f);
-    t1 = *(signed char *)((a4 + 0x9));
-    if (t1 != 0) {
-        if (t1 != 1) {
+    t0 = *(signed char *)((a4 + 0x9));
+    if (t0 != 0) {
+        if (t0 != 1) {
             (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) - 1.02094233f);
         } else {
             (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) - 0.510471165f);
@@ -107,24 +106,24 @@ int FUN_0c016bd2(int a4, int a5, int a6, int a7)
             *(unsigned char *)((a4 + 0x9)) = ((*(signed char *)((a4 + 0x9))) + 0x1);
         }
     }
-    t1 = 0x0;
+    t0 = 0x0;
     for (;;) {
-        if ((int)t1 >= (int)(*(signed char *)((a4 + 0x2DC)))) {
+        if ((int)t0 >= (int)(*(signed char *)((a4 + 0x2DC)))) {
             break;
         }
-        t2 = 0x2E0;
-        t2 = (t2 + a4);
-        t2 = (t2 + (t1 << 2));
-        t2 = (*(int *)((t2 + 0x0)));
-        FUN_0c0e6fe8((t1 << 2));
-        (((struct oC_float *)(t2))->v) = 0.0f;
-        u0 = (*(float *)((0xC116BDC + t0)));
-        math_vec3_mul_xyz((t2 + 0x4), u0, u0, u0);
-        t1 = (t1 + 0x1);
+        t1 = 0x2E0;
+        t1 = (t1 + a4);
+        t1 = (t1 + (t0 << 2));
+        t1 = (*(int *)((t1 + 0x0)));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x4)) = *(struct mv3 *)((a4 + 0x20)); }
+        (((struct oC_float *)(t1))->v) = 0.0f;
+        u0 = (*(float *)((0xC116BDC + (t0 << 2))));
+        math_vec3_mul_xyz((t1 + 0x4), u0, u0, u0);
+        t0 = (t0 + 0x1);
     }
     t0 = *(signed char *)0xC7F2EE5;
     if ((int)(unsigned char)t0 > (int)0x1) {
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
     return (unsigned char)t0;
 }

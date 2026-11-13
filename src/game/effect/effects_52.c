@@ -7,9 +7,9 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 int FUN_0c03a918(int a4, int a5, int a6)
 {
@@ -58,25 +58,25 @@ int FUN_0c03a918(int a4, int a5, int a6)
     register float u94;
     register int t95;
     register int t101;
-    register int t114;
+    register int t113;
+    register int t103;
     register int t104;
+    register int t105;
+    register int t106;
     register int t107;
-    register int t111;
-    register int t118;
+    register int t108;
     register int t120;
     register int t123;
-    register int t127;
-    register int t130;
+    register int t124;
+    register int t125;
+    register int t126;
+    register int t131;
     register int t17;
     register float u21;
     register int t61;
     register float u63;
-    register int t108;
-    register int t109;
-    register int t112;
-    register int t124;
-    register int t125;
-    register int t128;
+    register int t121;
+    register int t122;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
@@ -195,7 +195,7 @@ int FUN_0c03a918(int a4, int a5, int a6)
                 }
                 return t54;
             }
-            return obj_destroy(a4, a5, a6, 0x0);
+            return obj_destroy(a4);
         }
         t56 = (((struct o2E0_int *)(a4))->v);
         (((struct o4_float *)(t56))->v) = (((((struct o4_float *)(t56))->v)) + -2.34545445f);
@@ -281,43 +281,92 @@ int FUN_0c03a918(int a4, int a5, int a6)
         }
         t101 = (((struct oEC_short *)(a4))->v);
         (((struct oEC_ushort *)(a4))->v) = (t101 + 0x1);
-        t114 = 0xEC;
+        t113 = 0xEC;
         if ((int)(short)(t101 + 0x1) >= (int)0x37) {
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-            t104 = 0x1;
+            t103 = 0x400129E4;
+            t104 = 0x37;
+            t105 = (short)(t101 + 0x1);
+            t106 = 0x1;
+            t107 = a5;
+            t108 = a6;
             for (;;) {
-                if ((int)t104 >= (int)0x6) {
+                if ((int)t106 >= (int)0x6) {
                     break;
                 }
-                *(volatile int *)((((0x2E0 + a4) + (t104 << 2)) + 0x0));
-                t107 = ((int (*)(int, int, int, int))(FUN_0c0e6fe8))(t104, (t104 << 2), (signed char)(((t104 << 1) + t104) << 2), 0x0);
-                *(volatile int *)((((0x2E0 + a4) + t109) + 0x0));
-                t111 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(0x0, t109, t108);
-                t104 = (t112 + 0x1);
+                t103 = 0x2E0;
+                t108 = t106;
+                t108 = (t108 << 1);
+                t105 = t106;
+                t107 = t106;
+                t107 = (t107 << 2);
+                t108 = (t108 + t105);
+                t105 = 0xC0E6FE8;
+                t103 = (t103 + a4);
+                t103 = (t103 + t107);
+                t108 = (t108 << 2);
+                t103 = (*(int *)((t103 + 0x0)));
+                t108 = (signed char)t108;
+                t104 = t108;
+                t103 = (t103 + 0x4);
+                t104 = (t104 + 0xC3215B4);
+                { struct mv3 { int w[3]; }; *(struct mv3 *)(t103) = *(struct mv3 *)(t104); }
+                t103 = 0x2E0;
+                t104 = t108;
+                t104 = (t104 + 0xC3215FC);
+                t103 = (t103 + a4);
+                t103 = (t103 + t107);
+                t103 = (*(int *)((t103 + 0x0)));
+                t103 = (t103 + 0x10);
+                { struct mv3 { int w[3]; }; *(struct mv3 *)(t103) = *(struct mv3 *)(t104); }
+                t106 = (t106 + 0x1);
             }
             *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x1;
-            t114 = 0x2F4;
+            t113 = 0x2F4;
         }
-        return t114;
+        return t113;
     }
-    t118 = (((struct o2E0_int *)(a4))->v);
-    (((struct o4_float *)(t118))->v) = 179.0f;
-    (((struct o8_float *)(t118))->v) = 139.0f;
-    (((struct oC_float *)(t118))->v) = -99.0f;
-    *(unsigned int *)((t118 + 0x14)) = 0xDC73;
-    t120 = 0x1;
+    t120 = (((struct o2E0_int *)(a4))->v);
+    (((struct o4_float *)(t120))->v) = 179.0f;
+    (((struct o8_float *)(t120))->v) = 139.0f;
+    (((struct oC_float *)(t120))->v) = -99.0f;
+    *(unsigned int *)((t120 + 0x14)) = 0xDC73;
+    t123 = 0xDC73;
+    t124 = 0x1;
+    t125 = a5;
+    t126 = a6;
     for (;;) {
-        if ((int)t120 >= (int)0x6) {
+        if ((int)t124 >= (int)0x6) {
             break;
         }
-        *(volatile int *)((((0x2E0 + a4) + (t120 << 2)) + 0x0));
-        t123 = ((int (*)(int, int, int, int))(FUN_0c0e6fe8))(t120, (t120 << 2), (signed char)(((t120 << 1) + t120) << 2), 0x0);
-        *(volatile int *)((((0x2E0 + a4) + t125) + 0x0));
-        t127 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(0x0, t125, t124);
-        t120 = (t128 + 0x1);
+        t121 = 0x2E0;
+        t126 = t124;
+        t126 = (t126 << 1);
+        t123 = t124;
+        t125 = t124;
+        t125 = (t125 << 2);
+        t126 = (t126 + t123);
+        t121 = (t121 + a4);
+        t121 = (t121 + t125);
+        t126 = (t126 << 2);
+        t121 = (*(int *)((t121 + 0x0)));
+        t126 = (signed char)t126;
+        t122 = t126;
+        t121 = (t121 + 0x4);
+        t122 = (t122 + 0xC3215B4);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t121) = *(struct mv3 *)(t122); }
+        t121 = 0x2E0;
+        t122 = t126;
+        t122 = (t122 + 0xC3215FC);
+        t121 = (t121 + a4);
+        t121 = (t121 + t125);
+        t121 = (*(int *)((t121 + 0x0)));
+        t121 = (t121 + 0x10);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t121) = *(struct mv3 *)(t122); }
+        t124 = (t124 + 0x1);
     }
     *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x0;
-    t130 = *(signed char *)((a4 + 0x8));
-    *(unsigned char *)((a4 + 0x8)) = (t130 + 0x1);
-    return (t130 + 0x1);
+    t131 = *(signed char *)((a4 + 0x8));
+    *(unsigned char *)((a4 + 0x8)) = (t131 + 0x1);
+    return (t131 + 0x1);
 }

@@ -21,8 +21,8 @@ extern int math_atan_angle16();
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6f24(void);
-int thunk_FUN_0c062242(int);
+int _modlu(void);
+int thunk_FUN_0c062242(int, int);
 
 int fx_update_jack_projectile(int a4)
 {
@@ -42,18 +42,34 @@ int fx_update_jack_projectile(int a4)
     register float u20;
     register float u22;
     register float t23;
+    register float t29;
+    register float u32;
     register int t35;
+    register float t36;
+    register float u39;
     register int t41;
+    register float t42;
+    register float u45;
     register int t47;
     register float u50;
     register int t53;
+    register float t59;
+    register float u62;
     register int t65;
+    register float t66;
+    register float u69;
     register int t71;
+    register float t72;
+    register float u75;
     register int t77;
     register float u80;
     register int t83;
+    register float t84;
+    register float u87;
     register int t89;
     register float u92;
+    register float t95;
+    register float u98;
     register int t100;
     register float u102;
     register float t106;
@@ -105,7 +121,7 @@ int fx_update_jack_projectile(int a4)
                 } else {
                     t7 = *(signed char *)(((*(int *)(((*(int *)((a4 + 0x1C))) + 0x1C))) + 0x3));
                     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242(((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+                    thunk_FUN_0c062242(((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 4) + 0x4));
                     u10 = (((struct o20_float *)(a4))->v);
                     u11 = *(float *)(((int)stk + 8));
                     u12 = (((struct o24_float *)(a4))->v);
@@ -131,14 +147,26 @@ int fx_update_jack_projectile(int a4)
                     if (0.0f > u18) {
                         *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x8000);
                     }
-                    math_rand_float();
-                    t35 = (FUN_0c0e6f24());
+                    t29 = math_rand_float();
+                    u32 = (t29 * 255.0f);
+                    if (!(2.14748365e+09f > (t29 * 255.0f))) {
+                        u32 = (((t29 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t35 = ((int)((unsigned int)(int)u32 % (unsigned int)0xA));
                     *(int *)((int)stk + 0) = t35;
-                    math_rand_float();
-                    t41 = FUN_0c0e6f24();
+                    t36 = math_rand_float();
+                    u39 = (t36 * 255.0f);
+                    if (!(2.14748365e+09f > (t36 * 255.0f))) {
+                        u39 = (((t36 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t41 = (int)((unsigned int)(int)u39 % (unsigned int)0xA);
                     *(int *)((int)stk + 0) = (t41 + t35);
-                    math_rand_float();
-                    t47 = FUN_0c0e6f24();
+                    t42 = math_rand_float();
+                    u45 = (t42 * 255.0f);
+                    if (!(2.14748365e+09f > (t42 * 255.0f))) {
+                        u45 = (((t42 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t47 = (int)((unsigned int)(int)u45 % (unsigned int)0xA);
                     u50 = (float)((t47 + (t41 + t35)) + 0x4B);
                     if ((int)((t47 + (t41 + t35)) + 0x4B) < 0) {
                         u50 = ((float)((t47 + (t41 + t35)) + 0x4B) + 4.2949673e+09f);
@@ -150,14 +178,26 @@ int fx_update_jack_projectile(int a4)
                     if (0.0f > u16) {
                         *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x8000);
                     }
-                    math_rand_float();
-                    t65 = (FUN_0c0e6f24());
+                    t59 = math_rand_float();
+                    u62 = (t59 * 255.0f);
+                    if (!(2.14748365e+09f > (t59 * 255.0f))) {
+                        u62 = (((t59 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t65 = ((int)((unsigned int)(int)u62 % (unsigned int)0xA));
                     *(int *)((int)stk + 0) = t65;
-                    math_rand_float();
-                    t71 = FUN_0c0e6f24();
+                    t66 = math_rand_float();
+                    u69 = (t66 * 255.0f);
+                    if (!(2.14748365e+09f > (t66 * 255.0f))) {
+                        u69 = (((t66 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t71 = (int)((unsigned int)(int)u69 % (unsigned int)0xA);
                     *(int *)((int)stk + 0) = (t71 + t65);
-                    math_rand_float();
-                    t77 = FUN_0c0e6f24();
+                    t72 = math_rand_float();
+                    u75 = (t72 * 255.0f);
+                    if (!(2.14748365e+09f > (t72 * 255.0f))) {
+                        u75 = (((t72 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t77 = (int)((unsigned int)(int)u75 % (unsigned int)0xA);
                     u80 = (float)((t77 + (t71 + t65)) + 0x4B);
                     if ((int)((t77 + (t71 + t65)) + 0x4B) < 0) {
                         u80 = ((float)((t77 + (t71 + t65)) + 0x4B) + 4.2949673e+09f);
@@ -165,15 +205,23 @@ int fx_update_jack_projectile(int a4)
                     t83 = *(int *)(((int)stk + 4));
                     *(unsigned int *)(((int)stk + 4)) = (t83 + (int)((u80 * 65536.0f) / 360.0f));
                     *(unsigned int *)((a4 + 0x30)) = (unsigned short)(t83 + (int)((u80 * 65536.0f) / 360.0f));
-                    math_rand_float();
-                    t89 = FUN_0c0e6f24();
+                    t84 = math_rand_float();
+                    u87 = (t84 * 255.0f);
+                    if (!(2.14748365e+09f > (t84 * 255.0f))) {
+                        u87 = (((t84 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t89 = (int)((unsigned int)(int)u87 % (unsigned int)0x168);
                     u92 = (float)t89;
                     if ((int)t89 < 0) {
                         u92 = ((float)t89 + 4.2949673e+09f);
                     }
                     *(unsigned int *)((a4 + 0x34)) = (int)u92;
-                    math_rand_float();
-                    t100 = FUN_0c0e6f24();
+                    t95 = math_rand_float();
+                    u98 = (t95 * 255.0f);
+                    if (!(2.14748365e+09f > (t95 * 255.0f))) {
+                        u98 = (((t95 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t100 = (int)((unsigned int)(int)u98 % (unsigned int)0x14);
                     u102 = (float)(t100 + 0x32);
                     if (0.0f > (float)(t100 + 0x32)) {
                         u102 = ((float)(t100 + 0x32) + 4.2949673e+09f);

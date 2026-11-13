@@ -7,9 +7,9 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
@@ -21,7 +21,7 @@ int fx_spawn_034bfc(int a4)
     register int t2;
     register float u0;
 
-    t0 = obj_create(0x5, 0x1, 0x2);
+    t0 = obj_create(0x5, 0x1, 0x2, 0x0);
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -35,7 +35,7 @@ int fx_spawn_034bfc(int a4)
         (((struct o50_float *)(t0))->v) = u0;
         (((struct o5C_float *)(t0))->v) = 1.0f;
         (((struct oF2_ushort *)(t0))->v) = 0x0;
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         *(unsigned int *)((t0 + 0x30)) = 0x8000;
         t1 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t1 + 0x0)) = 0x1;

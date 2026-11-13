@@ -33,7 +33,7 @@ struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 struct o38_float { char p[0x38]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -68,7 +68,7 @@ extern float _builtin_sqrtf(float);
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
+int _modlu(void);
 struct o10_float { char p[0x10]; float v; };
 int ending_exec_command(int);
 int obj_create(int, int, int);
@@ -229,7 +229,7 @@ int ending_obj_update_t01(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, 0xC7F302C, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         (((struct o2_ushort *)0xC7F3042)->v) = 0x1;
@@ -262,7 +262,7 @@ int ending_obj_update_t02(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         (((struct o20_float *)(a4))->v) = 0.0f;
@@ -327,7 +327,7 @@ int ending_obj_update_t03(int a4)
     v0_0 = (v0_2);
     if ((v0_3 == 0)) goto L_C012E4A;
     if ((v0_1 == 1)) goto L_C012E50;
-    return obj_destroy(v0_0, R5, R6, R7);
+    return obj_destroy(v0_0);
     L_C012E50:;
     v0_3 = *(signed char *)((v0_0 + 0x4));
     v0_1 = (v0_3);
@@ -654,7 +654,7 @@ int ending_obj_update_t04(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         (((struct o20_float *)(a4))->v) = 0.0f;
@@ -704,7 +704,7 @@ int ending_obj_update_t05(int a4, int a5, int a6, int a7)
     v0_0 = (v0_3);
     if ((v0_6 == 0)) goto L_C0134E0;
     if ((v0_1 == 1)) goto L_C01351A;
-    v0_1 = ((obj_destroy(v0_0, v0_4, v0_2, v0_5)));
+    v0_1 = ((obj_destroy(v0_0)));
     L_C013706:;
     return v0_1;
     L_C01351A:;
@@ -833,7 +833,7 @@ int ending_obj_update_t06(int a4, int a5, int a6)
     w0_1 = (0.0f);
     if ((v0_1 == 0)) goto L_C01372C;
     if ((v0_2 == 1)) goto L_C013776;
-    return obj_destroy(v0_0, R5, a6, R7);
+    return obj_destroy(v0_0);
     L_C013776:;
     w0_3 = *(float *)0xC361C60;
     R5 = (0xC361C60);
@@ -910,7 +910,7 @@ int ending_obj_update_t07(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         (((struct o60_float *)(a4))->v) = 0.0f;
@@ -967,7 +967,7 @@ int ending_obj_update_t07(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int ending_obj_update_t09(int a4, int a5, int a6, int a7)
+int ending_obj_update_t09(int a4)
 {
     register int t0;
     int t1;
@@ -976,6 +976,7 @@ int ending_obj_update_t09(int a4, int a5, int a6, int a7)
     register int t4;
     register int t5;
     register float u0;
+    register float u1;
 
     t4 = *(signed char *)((a4 + 0x8));
     if (t4 != 0) {
@@ -999,11 +1000,14 @@ int ending_obj_update_t09(int a4, int a5, int a6, int a7)
             }
             return t5;
         }
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x100);
     u0 = (float)t0;
     if ((int)t0 < 0) {
         u0 = ((float)t0 + 4.2949673e+09f);
@@ -1011,32 +1015,49 @@ int ending_obj_update_t09(int a4, int a5, int a6, int a7)
     (((struct o20_float *)(a4))->v) = (u0 + -128.0f);
     (((struct o24_float *)(a4))->v) = 168.0f;
     (((struct o28_float *)(a4))->v) = -14.3099995f;
-    math_rand_float();
-    
-    (((struct oEE_ushort *)(a4))->v) = ((FUN_0c0e6f24()) - 256);
-    math_rand_float();
-    
-    (((struct oF0_ushort *)(a4))->v) = ((FUN_0c0e6f24()) - 256);
-    math_rand_float();
-    
-    (((struct oF2_ushort *)(a4))->v) = ((FUN_0c0e6f24()) - 256);
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    (((struct oEE_ushort *)(a4))->v) = (((int)((unsigned int)(int)u1 % (unsigned int)0x200)) - 256);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    (((struct oF0_ushort *)(a4))->v) = (((int)((unsigned int)(int)u1 % (unsigned int)0x200)) - 256);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    (((struct oF2_ushort *)(a4))->v) = (((int)((unsigned int)(int)u1 % (unsigned int)0x200)) - 256);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x10);
     (((struct o38_float *)(a4))->v) = (*(float *)(((((t0 << 2) << 1) + 0xC116700) + 0x0)));
     (((struct o3C_float *)(a4))->v) = ((((struct o4_float *)((((t0 << 2) << 1) + 0xC116700)))->v));
     (((struct o40_float *)(a4))->v) = 0.0f;
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
-    if (t0 != 0) {
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) != 0) {
         u0 = ((((struct o38_float *)(a4))->v));
         u0 *= -1.0f;
         (((struct o38_float *)(a4))->v) = u0;
     }
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x10);
     (((struct o50_float *)(a4))->v) = (*(float *)((((t0 << 2) << 1) + ((((((*(signed char *)((a4 + 0x4))) << 2) << 2) << 2) << 1) + 0xC116600))));
     (((struct o54_float *)(a4))->v) = ((((struct o4_float *)((((((((*(signed char *)((a4 + 0x4))) << 2) << 2) << 2) << 1) + 0xC116600) + ((t0 << 2) << 1))))->v));
     (((struct o58_float *)(a4))->v) = ((((struct o4_float *)(((0xC116600 + (((((*(signed char *)((a4 + 0x4))) << 2) << 2) << 2) << 1)) + ((t0 << 2) << 1))))->v));
@@ -1062,11 +1083,12 @@ int ending_obj_update_t09(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int ending_obj_update_t0c(int a4, int a5, int a6, int a7)
+int ending_obj_update_t0c(int a4)
 {
     register int t0;
     register int t1;
     register float u0;
+    register float u1;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
@@ -1095,14 +1117,20 @@ int ending_obj_update_t0c(int a4, int a5, int a6, int a7)
             }
             return t1;
         }
-        return obj_destroy(a4, a5, a6, a7);
+        return obj_destroy(a4);
     }
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
-    math_rand_float();
-    
-    t1 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x10);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t1 = (int)((unsigned int)(int)u1 % (unsigned int)0xF0);
     u0 = (float)(t1 << 1);
     if ((int)(t1 << 1) < 0) {
         u0 = ((float)(t1 << 1) + 4.2949673e+09f);
@@ -1116,9 +1144,12 @@ int ending_obj_update_t0c(int a4, int a5, int a6, int a7)
     (((struct o50_float *)(a4))->v) = (*(float *)(((0xC116780 + ((t0 << 2) << 1)) + 0x0)));
     (((struct o54_float *)(a4))->v) = ((((struct o4_float *)((0xC116780 + ((t0 << 2) << 1))))->v));
     (((struct o58_float *)(a4))->v) = 1.0f;
-    math_rand_float();
-    
-    *(unsigned int *)((a4 + 0x34)) = (((FUN_0c0e6f24()) << 8) << 2);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    *(unsigned int *)((a4 + 0x34)) = ((((int)((unsigned int)(int)u1 % (unsigned int)0xA)) << 8) << 2);
     (((struct oEC_ushort *)(a4))->v) = 0x78;
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) - ((((struct oC_float *)0xC361C60)->v)));
@@ -1146,18 +1177,19 @@ int ending_obj_update_t0c(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int ending_obj_update_t0d(int a4, int a5, int a6, int a7)
+int ending_obj_update_t0d(int a4)
 {
     int t0;
     int t1;
     register int t2;
     register int t3;
     register float u0;
+    register float u1;
 
     t2 = *(signed char *)((a4 + 0x8));
     if (t2 != 0) {
         if (t2 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         obj_apply_velocity(a4);
         u0 = *(float *)0xC361C60;
@@ -1187,20 +1219,29 @@ int ending_obj_update_t0d(int a4, int a5, int a6, int a7)
         }
         return t3;
     }
-    math_rand_float();
-    
-    t0 = FUN_0c0e6f24();
-    math_rand_float();
-    
-    t2 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t0 = (int)((unsigned int)(int)u1 % (unsigned int)0x10);
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t2 = (int)((unsigned int)(int)u1 % (unsigned int)0x5A);
     u0 = (float)t2;
     if ((int)t2 < 0) {
         u0 = ((float)t2 + 4.2949673e+09f);
     }
     (((struct o20_float *)(a4))->v) = (u0 + -35.0f);
-    math_rand_float();
-    
-    t2 = FUN_0c0e6f24();
+    u0 = math_rand_float();
+    u1 = (u0 * 255.0f);
+    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+    }
+    t2 = (int)((unsigned int)(int)u1 % (unsigned int)0x1E);
     u0 = (float)t2;
     if ((int)t2 < 0) {
         u0 = ((float)t2 + 4.2949673e+09f);
@@ -1247,125 +1288,144 @@ int ending_obj_update_t0d(int a4, int a5, int a6, int a7)
 
 int ending_obj_update_t0a(int a4, int a5, int a6, int a7)
 {
-    int t0;
-    int t1;
-    register int t2;
-    register int t3;
 
-    t2 = *(signed char *)((a4 + 0x8));
-    if (t2 != 0) {
-        if (t2 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
-        }
-        t2 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t2 - 1);
-        if ((short)(t2 - 1) != 0) {
-        } else {
-            t2 = *(signed char *)((a4 + 0x4));
-            switch (t2) {
-            case 0:
-                math_rand_float();
-                t2 = FUN_0c0e6f24();
-                t3 = 0x8;
-                if (t2 != 0) {
-                    t3 = 0x7;
-                }
-                ending_spawn_obj_typed_b(0x9, 0x0, t3);
-                math_rand_float();
-                (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x3);
-                break;
-            case 1:
-                ending_spawn_obj_typed_b(0x9, 0x1, 0x8);
-                math_rand_float();
-                (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-                break;
-            case 2:
-                ending_spawn_obj_typed_b(0x9, 0x1, 0x5);
-                math_rand_float();
-                (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-                break;
-            case 3:
-                ending_spawn_obj_typed_b(0xC, 0x0, 0x4);
-                math_rand_float();
-                (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x8);
-                break;
-            case 4:
-                ending_spawn_obj_typed_b(0xD, 0x0, 0x8);
-                math_rand_float();
-                (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-                break;
-            }
-        }
-        if ((((((struct o0_short *)0xC7F3040)->v)) == 0) && (t0 = (((struct o2_short *)0xC7F3040)->v), t0 == 0)) {
-            t2 = t0;
-        } else {
-            t0 = *(signed char *)((a4 + 0x8));
-            *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);
-            t2 = (t0 + 0x1);
-        }
-        return t2;
-    }
-    (((struct oEC_ushort *)(a4))->v) = 0x1;
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    t0 = (((struct oEC_short *)(a4))->v);
-    (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
-    if ((short)(t0 - 1) != 0) {
-    } else {
-        t0 = *(signed char *)((a4 + 0x4));
-        switch (t0) {
-        case 0:
-            math_rand_float();
-            t0 = FUN_0c0e6f24();
-            t2 = 0x8;
-            if (t0 != 0) {
-                t2 = 0x7;
-            }
-            ending_spawn_obj_typed_b(0x9, 0x0, t2);
-            math_rand_float();
-            (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x3);
-            break;
-        case 1:
-            ending_spawn_obj_typed_b(0x9, 0x1, 0x8);
-            math_rand_float();
-            (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-            break;
-        case 2:
-            ending_spawn_obj_typed_b(0x9, 0x1, 0x5);
-            math_rand_float();
-            (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-            break;
-        case 3:
-            ending_spawn_obj_typed_b(0xC, 0x0, 0x4);
-            math_rand_float();
-            (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0x8);
-            break;
-        case 4:
-            ending_spawn_obj_typed_b(0xD, 0x0, 0x8);
-            math_rand_float();
-            (((struct oEC_ushort *)(a4))->v) = ((FUN_0c0e6f24()) + 0xA);
-            break;
-        }
-    }
-    if ((((((struct o0_short *)0xC7F3040)->v)) == 0) && (t1 = (((struct o2_short *)0xC7F3040)->v), t1 == 0)) {
-        t0 = t1;
-    } else {
-        t1 = *(signed char *)((a4 + 0x8));
-        *(unsigned char *)((a4 + 0x8)) = (t1 + 0x1);
-        t0 = (t1 + 0x1);
-    }
-    return t0;
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R12;
+    register int R13;
+    register float F15;
+    register int T_;
+    register int FPUL_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register float w0_0;
+    register float w0_1;
+    register float w0_2;
+    v0_1 = a4;
+    v0_2 = a5;
+    v0_3 = a6;
+    v0_0 = a7;
+    v0_0 = R13;
+    v0_3 = *(signed char *)((v0_1 + 0x8));
+    v0_2 = (v0_3);
+    v0_0 = (v0_1);
+    if ((v0_3 == 0)) goto L_C01443E;
+    if ((v0_2 == 1)) goto L_C01444A;
+    return obj_destroy(v0_0);
+    L_C01444A:;
+    v0_1 = (((struct oEC_short *)(v0_0))->v);
+    (((struct oEC_ushort *)(v0_0))->v) = (v0_1 - 1);
+    if (((short)(v0_1 - 1) == 0)) goto L_C01445C;
+    L_C01455C:;
+    v0_2 = (*(short *)0xC7F3040) != 0;
+    v0_1 = (0xC7F3036);
+    if (v0_2) goto L_C01456A;
+    v0_1 = *(short *)((v0_1 + 0xC));
+    v0_2 = (v0_1);
+    if ((v0_1 == 0)) goto L_C014580;
+    L_C01456A:;
+    v0_1 = *(signed char *)((v0_0 + 0x8));
+    *(unsigned char *)((v0_0 + 0x8)) = (v0_1 + 0x1);
+    v0_2 = ((v0_1 + 0x1));
+    L_C014580:;
+    return v0_2;
+    L_C01445C:;
+    v0_1 = *(signed char *)((v0_0 + 0x4));
+    v0_2 = (v0_1);
+    R13 = (0xC0DF940);
+    F15 = (255.0f);
+    if ((v0_1 == 0)) goto L_C01449C;
+    if ((v0_2 == 1)) goto L_C0144F0;
+    if ((v0_2 == 2)) goto L_C0144F4;
+    if ((v0_2 == 3)) goto L_C014500;
+    if ((v0_2 == 4)) goto L_C01452C;
+    goto L_C01455C;
+    L_C01452C:;
+    ending_spawn_obj_typed_b(0xD, 0x0, 0x8);
+    L_C014534:;
+    w0_2 = math_rand_float();
+    w0_0 = (w0_2);
+    w0_1 = (2.14748365e+09f);
+    w0_0 = ((w0_2 * F15));
+    FPUL_ = (0x4F000000);
+    if ((2.14748365e+09f > (w0_2 * F15))) goto L_C01454A;
+    w0_0 = ((w0_0 - (w0_1 + w0_1)));
+    L_C01454A:;
+    v0_2 = ((((int)((unsigned int)(int)w0_0 % (unsigned int)0x4)) + 0xA));
+    FPUL_ = ((int)w0_0);
+    L_C014556:;
+    (((struct oEC_ushort *)(v0_0))->v) = v0_2;
+    goto L_C01455C;
+    L_C014500:;
+    ending_spawn_obj_typed_b(0xC, 0x0, 0x4);
+    w0_2 = math_rand_float();
+    w0_0 = (w0_2);
+    w0_1 = (2.14748365e+09f);
+    w0_0 = ((w0_2 * F15));
+    FPUL_ = (0x4F000000);
+    if ((2.14748365e+09f > (w0_2 * F15))) goto L_C01451E;
+    w0_0 = ((w0_0 - (w0_1 + w0_1)));
+    L_C01451E:;
+    v0_2 = ((((int)((unsigned int)(int)w0_0 % (unsigned int)0x4)) + 0x8));
+    FPUL_ = ((int)w0_0);
+    goto L_C014556;
+    L_C0144F4:;
+    v0_3 = (0x5);
+    L_C0144F6:;
+    ending_spawn_obj_typed_b(0x9, 0x1, v0_3);
+    goto L_C014534;
+    L_C0144F0:;
+    v0_3 = (0x8);
+    goto L_C0144F6;
+    L_C01449C:;
+    w0_2 = math_rand_float();
+    w0_1 = (2.14748365e+09f);
+    w0_0 = ((w0_2 * F15));
+    FPUL_ = (0x4F000000);
+    if ((2.14748365e+09f > (w0_2 * F15))) goto L_C0144B2;
+    w0_0 = ((w0_0 - (w0_1 + w0_1)));
+    L_C0144B2:;
+    v0_2 = (0x0);
+    FPUL_ = ((int)w0_0);
+    if ((((int)((unsigned int)(int)w0_0 % (unsigned int)0x2)) == 0)) goto L_C0144C6;
+    v0_3 = (0x7);
+    L_C0144C8:;
+    ending_spawn_obj_typed_b(0x9, v0_2, v0_3);
+    w0_2 = math_rand_float();
+    w0_0 = (w0_2);
+    w0_1 = (2.14748365e+09f);
+    w0_0 = ((w0_2 * F15));
+    FPUL_ = (0x4F000000);
+    if ((2.14748365e+09f > (w0_2 * F15))) goto L_C0144E2;
+    w0_0 = ((w0_0 - (w0_1 + w0_1)));
+    L_C0144E2:;
+    v0_2 = ((((int)((unsigned int)(int)w0_0 % (unsigned int)0x4)) + 0x3));
+    FPUL_ = ((int)w0_0);
+    goto L_C014556;
+    L_C0144C6:;
+    v0_3 = (0x8);
+    goto L_C0144C8;
+    L_C01443E:;
+    (((struct oEC_ushort *)(v0_0))->v) = 0x1;
+    *(unsigned char *)((v0_0 + 0x8)) = ((*(signed char *)((v0_0 + 0x8))) + 0x1);
+    goto L_C01444A;
 }
 
-int ending_obj_update_t0b(int a4, int a5, int a6, int a7)
+int ending_obj_update_t0b(int a4)
 {
     int t0;
     int t1;
     register int t2;
+    register float u0;
+    register float u1;
 
     t2 = *(signed char *)((a4 + 0x8));
     if (t2 != 0) {
         if (t2 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         (((struct o8_float *)0xC361C64)->v) = ((((struct o0_float *)0xC361C64)->v));
         (((struct oC_float *)0xC361C64)->v) = ((((struct o4_float *)0xC361C64)->v));
@@ -1379,11 +1439,19 @@ int ending_obj_update_t0b(int a4, int a5, int a6, int a7)
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) & 0x1);
                     if (((((struct oEC_short *)(a4))->v)) != 0) {
-                        math_rand_float();
-                        t2 = ((FUN_0c0e6f24()) + 0x1E);
+                        u0 = math_rand_float();
+                        u1 = (u0 * 255.0f);
+                        if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                            u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t2 = (((int)((unsigned int)(int)u1 % (unsigned int)0x1E)) + 0x1E);
                     } else {
-                        math_rand_float();
-                        t2 = ((FUN_0c0e6f24()) + 0x2);
+                        u0 = math_rand_float();
+                        u1 = (u0 * 255.0f);
+                        if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                            u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t2 = (((int)((unsigned int)(int)u1 % (unsigned int)0x3)) + 0x2);
                     }
                     (((struct oEE_ushort *)(a4))->v) = t2;
                 }
@@ -1424,11 +1492,19 @@ int ending_obj_update_t0b(int a4, int a5, int a6, int a7)
                 (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
                 (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) & 0x1);
                 if (((((struct oEC_short *)(a4))->v)) != 0) {
-                    math_rand_float();
-                    t0 = ((FUN_0c0e6f24()) + 0x1E);
+                    u0 = math_rand_float();
+                    u1 = (u0 * 255.0f);
+                    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t0 = (((int)((unsigned int)(int)u1 % (unsigned int)0x1E)) + 0x1E);
                 } else {
-                    math_rand_float();
-                    t0 = ((FUN_0c0e6f24()) + 0x2);
+                    u0 = math_rand_float();
+                    u1 = (u0 * 255.0f);
+                    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t0 = (((int)((unsigned int)(int)u1 % (unsigned int)0x3)) + 0x2);
                 }
                 (((struct oEE_ushort *)(a4))->v) = t0;
             }
@@ -1464,7 +1540,7 @@ int ending_obj_update_t0e(int a4, int a5, int a6, int a7)
     t2 = *(signed char *)((a4 + 0x8));
     if (t2 != 0) {
         if (t2 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
         (((struct o38_float *)(a4))->v) = (((((struct o38_float *)(a4))->v)) - (127.0f / (float)(*(signed char *)((a4 + 0x4)))));
         if (!(((((struct o38_float *)(a4))->v)) > 0.0f)) {

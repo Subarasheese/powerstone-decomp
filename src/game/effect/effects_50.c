@@ -7,12 +7,12 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6fe8(int, int, int, int);
+int _modls(int);
+int _quick_odd_mvn(int, int, int, int);
 
-int FUN_0c03a278(int a4, int a5, int a6)
+void FUN_0c03a278(int a4)
 {
     int stk[3];
     register int t0;
@@ -38,18 +38,12 @@ int FUN_0c03a278(int a4, int a5, int a6)
     register float t34;
     register float u36;
     register int t38;
-    register int t40;
-    register int t39;
     register int t42;
-    register float u45;
+    register int t43;
+    register float t46;
     register int t48;
-    register int t51;
     register int t56;
     register int t57;
-    register int t64;
-    register int t61;
-    register int t62;
-    register int t65;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
@@ -94,31 +88,27 @@ int FUN_0c03a278(int a4, int a5, int a6)
                 }
                 t38 = (((struct oEC_short *)(a4))->v);
                 (((struct oEC_ushort *)(a4))->v) = (t38 + 0x1);
-                t40 = 0xEC;
                 if ((int)(short)(t38 + 0x1) >= (int)0x78) {
-                    t39 = *(signed char *)((a4 + 0x8));
-                    *(unsigned char *)((a4 + 0x8)) = (t39 + 0x1);
-                    t40 = (t39 + 0x1);
+                    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                 }
-                return t40;
+                return;
             }
-            return obj_destroy(a4, a5, a6, 0x1);
+            obj_destroy(a4);
+    return;
         }
         t42 = (((struct o2E0_int *)(a4))->v);
-        *(volatile short *)((a4 + 0xEC));
-        u45 = (((float)(FUN_0c0e6e5c(a4)) * 65536.0f) / 360.0f);
-        *(unsigned int *)((t42 + 0x10)) = ((int)((((_builtin_fabsf((math_sin_angle16(((int)(u45 + 0.5f) & 0xFFFF)))) * 3932160.0f) / 360.0f)) + 0.5f) & 0xFFFF);
+        t43 = (((struct oEC_short *)(a4))->v);
+        t46 = math_sin_angle16(((int)(((((float)((int)((int)(((t43 << 2) + t43) << 2) % (int)0x168)) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF));
+        *(unsigned int *)((t42 + 0x10)) = ((int)((((_builtin_fabsf(t46) * 3932160.0f) / 360.0f)) + 0.5f) & 0xFFFF);
         t48 = (((struct oEC_short *)(a4))->v);
         (((struct oEC_ushort *)(a4))->v) = (t48 + 0x1);
-        t51 = 0xEC;
         if ((int)(short)(t48 + 0x1) < (int)0x29) {
         } else {
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
             *(unsigned int *)((t42 + 0x10)) = 0x0;
             *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x0;
-            t51 = 0x2F4;
         }
-        return t51;
+        return;
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     t56 = (((struct o2E0_int *)(a4))->v);
@@ -128,14 +118,11 @@ int FUN_0c03a278(int a4, int a5, int a6)
     *(unsigned int *)((t56 + 0x14)) = 0x31C7;
     t57 = 0x1;
     for (;;) {
-        *(volatile int *)((((0x2E0 + a4) + (t57 << 2)) + 0x0));
-        FUN_0c0e6fe8(t57, 0xC3215FC, 0xC3215B4, (signed char)(((t57 << 1) + t57) << 2));
-        *(volatile int *)((((0x2E0 + a4) + (t57 << 2)) + 0x0));
-        t64 = FUN_0c0e6fe8(0x0, t62, 0x0, t61);
-        t57 = (t65 + 0x1);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + a4) + (t57 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t57 << 1) + t57) << 2) + 0xC3215B4)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + a4) + (t57 << 2)) + 0x0))) + 0x10)) = *(struct mv3 *)(((signed char)(((t57 << 1) + t57) << 2) + 0xC3215FC)); }
+        t57 = (t57 + 0x1);
         if ((int)t57 >= (int)0x6) {
             break;
         }
     }
-    return t64;
 }

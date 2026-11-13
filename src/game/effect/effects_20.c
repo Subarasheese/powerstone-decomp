@@ -1,9 +1,9 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03598c-0c035c84) */
 
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o0_short { short v; };
 struct o2_short { char p[0x2]; short v; };
 struct o2E0_int { char p[0x2E0]; int v; };
@@ -23,9 +23,10 @@ int fx_spawn_03598c(int a4)
     register int t2;
     register int t3;
     register int t4;
-    register int t5;
+    register int t6;
+    register int t7;
 
-    t0 = obj_create(0x5, 0x1, 0x3);
+    t0 = obj_create(0x5, 0x1, 0x3, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -39,26 +40,37 @@ int fx_spawn_03598c(int a4)
         }
         *(unsigned char *)((t0 + 0x5)) = t2;
         *(unsigned int *)((t0 + 0x10)) = 0xC035A78;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x1);
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
         (((struct oEC_ushort *)(t0))->v) = (*(short *)0xC1496C4);
-        t2 = 0x0;
+        t2 = (t0 + 0x2C);
+        t3 = 0xC1496C4;
+        t4 = 0x0;
         for (;;) {
-            if ((int)t2 >= (int)(*(signed char *)((t0 + 0x2DC)))) {
+            if ((int)t4 >= (int)(*(signed char *)((t0 + 0x2DC)))) {
                 break;
             }
-            t3 = 0x2E0;
-            t4 = t2;
-            t4 = (t4 << 2);
-            t3 = (t3 + t0);
+            t2 = 0x2E0;
+            t6 = t4;
+            t6 = (t6 << 2);
+            t2 = (t2 + t0);
+            t2 = (t2 + t6);
+            t2 = (*(int *)((t2 + 0x0)));
+            *(unsigned char *)((t2 + 0x0)) = (*(short *)((0xC1496CA + (t4 << 1))));
+            *(unsigned short *)((t2 + 0x2)) = 0xF;
+            t7 = *(signed char *)(((0x3 + a4) + 0x0));
+            t3 = 0xC06233A;
+            FUN_0c06233a(t2, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), (*(int *)((t6 + 0xC149670))));
+            t3 = t4;
+            t3 = (t3 << 1);
             t3 = (t3 + t4);
-            t3 = (*(int *)((t3 + 0x0)));
-            *(unsigned char *)((t3 + 0x0)) = (*(short *)((0xC1496CA + (t2 << 1))));
-            *(unsigned short *)((t3 + 0x2)) = 0xF;
-            t5 = *(signed char *)(((0x3 + a4) + 0x0));
-            FUN_0c06233a(t3, ((signed char)((((t5 << 1) + t5) << 2) << 1) + 0xC6002D0), (*(int *)((t4 + 0xC149670))));
-            t3 = ((int (*)(void))(FUN_0c0e6fe8))();
-            t2 = (t2 + 0x1);
+            t3 = (t3 << 2);
+            t3 = (t3 << 1);
+            t3 = (signed char)t3;
+            t3 = (t3 + 0xC14967C);
+            t2 = (t2 + 0x4);
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(t2) = *(struct mv3 *)(t3); }
+            t4 = (t4 + 0x1);
         }
         t1 = 0x2DC;
     }

@@ -80,7 +80,7 @@ struct o107_uchar { char p[0x107]; unsigned char v; };
 int stage_obj_load_layout_pos(int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int FUN_0c0e6e5c(int);
+int _modls(int);
 int FUN_0c0555dc(void);
 typedef struct { int w0, w1, w2; } vec3i;
 extern int math_rand_next(void);
@@ -96,13 +96,13 @@ struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o30E_uchar { char p[0x30E]; unsigned char v; };
 struct o30F_uchar { char p[0x30F]; unsigned char v; };
 struct o314_uchar { char p[0x314]; unsigned char v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 
 void stage_type01_spawn_ground_fx(char *obj);
 int FUN_0c0addb0(int a4);
-int FUN_0c0addde(int a4);
+int FUN_0c0addde(int);
 
 float obj_update_distance_cull(int a4)
 {
@@ -348,21 +348,19 @@ int FUN_0c0addb0(int a4)
 int FUN_0c0addde(int a4)
 {
     register int t0;
-    register int t1;
 
-    t1 = *(signed char *)((a4 + 0x9));
-    if (t1 != 0) {
-        if (t1 != 1) {
-            return t1;
+    t0 = *(signed char *)((a4 + 0x9));
+    if (t0 != 0) {
+        if (t0 != 1) {
+            return t0;
         }
-        *(volatile short *)((a4 + 0xEC));
-        *(unsigned char *)((t0 + 0x1)) = (FUN_0c0e6e5c(a4));
-        t1 = (((struct oEC_short *)(t0))->v);
-        (((struct oEC_ushort *)(t0))->v) = (t1 + 0x1);
-        if ((int)(short)(t1 + 0x1) >= (int)0x5A) {
-            *(unsigned char *)((t0 + 0x8)) = ((*(signed char *)((t0 + 0x8))) + 0x1);
-            *(unsigned char *)((t0 + 0x1)) = 0x1;
-            return obj_set_mode_owner(t0, 0x0);
+        *(unsigned char *)((a4 + 0x1)) = ((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x2));
+        t0 = (((struct oEC_short *)(a4))->v);
+        (((struct oEC_ushort *)(a4))->v) = (t0 + 0x1);
+        if ((int)(short)(t0 + 0x1) >= (int)0x5A) {
+            *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
+            *(unsigned char *)((a4 + 0x1)) = 0x1;
+            return ((int (*)(int, int, int))obj_set_mode_owner)(a4, 0x0, 0x2);
         }
         return 0xEC;
     }
@@ -427,7 +425,7 @@ int stage_spawn_type01(int a4)
     register int t1;
     register int t2;
 
-    t0 = obj_create(0x2, 0x1, 0x1);
+    t0 = obj_create(0x2, 0x1, 0x1, 0x0);
     t1 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -452,7 +450,7 @@ int stage_spawn_type01(int a4)
         t2 = *(signed char *)((a4 + 0x6));
         (((struct o30F_uchar *)(t0))->v) = (*(signed char *)((0xC33BFE1 + (((t2 << 2) + t2) << 1))));
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC339F9C); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1;

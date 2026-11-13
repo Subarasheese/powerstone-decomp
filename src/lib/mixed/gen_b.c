@@ -101,7 +101,7 @@ int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int FUN_0c0e5d22(int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 int FUN_0c0ed9d4(int, int, int);
 int gdFsReadWG(int, int, int);
 int FUN_0c0fcea0(int, int);

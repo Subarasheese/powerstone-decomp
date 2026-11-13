@@ -15,7 +15,9 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int pl_apply_motion_translation(int);
 int pl_no_ground(int);
 int pl_end_action_choose_state(int);
-int FUN_0c0e6d00(void);
+int _divls(void);
+struct o7244_short { char p[0x7244]; short v; };
+
 
 int pl_state34_phase2(int a4)
 {
@@ -38,13 +40,17 @@ int pl_state34_phase2(int a4)
 int pl_state37_update(int a4)
 {
     register int t0;
+    register int t1;
+    register int t2;
 
     if (((((struct oEC_short *)(a4))->v)) != 0) {
-        *(volatile int *)((a4 + 0x30));
-        *(volatile short *)((a4 + 0x7244));
-        
-        *(volatile short *)((a4 + 0xEC));
-        *(unsigned int *)((a4 + 0x30)) = (unsigned short)((*(int *)((a4 + 0x30))) + (FUN_0c0e6d00()));
+        t0 = *(int *)((a4 + 0x30));
+        t1 = (((struct o7244_short *)(a4))->v);
+        t2 = (unsigned short)(t1 - t0);
+        if ((0x8000 & (unsigned short)(t1 - t0)) != 0) {
+            t2 = ((unsigned short)(t1 - t0) | 0xFFFF0000);
+        }
+        *(unsigned int *)((a4 + 0x30)) = (unsigned short)((*(int *)((a4 + 0x30))) + ((int)((int)t2 / (int)((((struct oEC_short *)(a4))->v)))));
     }
     t0 = (((struct oEC_short *)(a4))->v);
     (((struct oEC_ushort *)(a4))->v) = (t0 - 1);

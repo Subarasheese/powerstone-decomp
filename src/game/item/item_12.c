@@ -17,7 +17,7 @@ int snd_play_side_se(int, int);
 int FUN_0c0ac5c4(int);
 int math_rand_next(void);
 int FUN_0c0e24f0(int);
-extern int FUN_0c0e6e5c();
+extern int _modls();
 int obj_destroy(int);
 
 int FUN_0c05d536(int a4, int a5, int a6, int a7)

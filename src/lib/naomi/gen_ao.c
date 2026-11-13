@@ -9,7 +9,7 @@ int FUN_0c0e0ae0(int);
 int FUN_0c0e1240(int, int, int, float, float, float, float);
 int nlPopMatrix(int);
 int FUN_0c0e19b0(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 extern float _builtin_fipr(float *, float *);
 extern void _builtin_ftrv(float *, float *);
 extern void _builtin_ld_ext(float (*)[4]);

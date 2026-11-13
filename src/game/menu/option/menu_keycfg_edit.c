@@ -25,7 +25,7 @@ int opt_reset_key_config(int);
 int FUN_0c01dd08(int, int, int);
 extern int FUN_0c01e264();
 int snd_play_side_se(int, int);
-extern int FUN_0c0e6e5c();
+extern int _modls();
 int FUN_0c01e5cc(void);
 struct field_10_float { char p[0x10]; float field_10; };
 struct field_14_float { char p[0x14]; float field_14; };

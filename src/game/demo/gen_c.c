@@ -58,9 +58,9 @@ int FUN_0c09bc6e(int, int, int);
 extern int FUN_0c0a2f5c();
 int FUN_0c0a3308(int);
 int FUN_0c0b7998(int);
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(int, int, int, int);
+int _modls(int);
+int _modlu(void);
+int _quick_odd_mvn(int, int, int, int);
 int bgm_stop_streams(void);
 int cam_force_mode(int, int, int);
 int dbg_print_at(int, float, float);
@@ -86,7 +86,7 @@ int pl_start_motion(int, int, int);
 int res_switch_scene(int);
 int sprintf(int, int, int, int, int);
 int thunk_FUN_0c05fff4(void);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int ui_sprite_queue_add(int, int, int, int, int, int);
 int dbgedit_work_player_menu(int a4, int a5, int a6, int a7);
 int FUN_0c09bcbc(int a4);
@@ -1025,16 +1025,16 @@ float fx_spawn_08(int a4, int a5)
     register float w0_3;
     register float w0_4;
     v0_5 = a4;
-    v0_3 = a5;
+    v0_0 = a5;
     *(unsigned int *)(((int)stk + 4)) = v0_5;
-    *(unsigned char *)(((int)stk + 12)) = v0_3;
+    *(unsigned char *)(((int)stk + 12)) = v0_0;
     v0_2 = *(signed char *)(((int)stk + 12));
     *(unsigned int *)(((int)stk + 8)) = v0_2;
-    v0_6 = (v0_2);
+    v0_5 = (v0_2);
     v0_0 = (0x1);
     v0_1 = (0x0);
     if ((v0_2 == 0)) goto L_C0B7BD4;
-    if ((v0_6 != 1)) goto L_C0B7BC0;
+    if ((v0_5 != 1)) goto L_C0B7BC0;
     L_C0B7CD4:;
     v0_3 = (0x14000);
     v0_4 = (v0_1);
@@ -1043,10 +1043,10 @@ float fx_spawn_08(int a4, int a5)
     w0_2 = (65536.0f);
     w0_3 = (360.0f);
     L_C0B7CE6:;
-    v0_5 = obj_create(0x1, 0x1, 0x2, 0x0);
-    v0_6 = (v0_5);
-    v0_2 = (v0_5);
-    if (!((v0_5 != 0))) goto L_C0B7F58;
+    v0_6 = obj_create(0x1, 0x1, 0x2, 0x0);
+    v0_5 = (v0_6);
+    v0_2 = (v0_6);
+    if (!((v0_6 != 0))) goto L_C0B7F58;
     *(unsigned char *)((v0_2 + 0x0)) = v0_0;
     *(unsigned char *)((v0_2 + 0x3)) = (*(signed char *)(((*(int *)(((int)stk + 4))) + 0x3)));
     *(unsigned char *)((v0_2 + 0x1)) = v0_0;
@@ -1057,7 +1057,7 @@ float fx_spawn_08(int a4, int a5)
     (((struct o54_float *)(v0_2))->v) = 2.0f;
     (((struct o50_float *)(v0_2))->v) = 2.0f;
     v0_5 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
-    thunk_FUN_0c062242(((short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4))));
+    thunk_FUN_0c062242(((short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4))), (v0_2 + 0x20));
     v0_5 = (v0_1);
     goto L_C0B7D52;
     L_C0B7F58:;
@@ -1111,7 +1111,7 @@ float fx_spawn_08(int a4, int a5)
     (((struct oF2_ushort *)(v0_2))->v) = v0_4;
     v0_5 = *(signed char *)(((int)stk + 12));
     *(unsigned char *)((v0_2 + 0x8)) = v0_5;
-    v0_6 = (v0_5);
+    v0_5 = (v0_5);
     v0_5 = ((0x308 + v0_2));
     goto L_C0B7F58;
     L_C0B7DE0:;
@@ -1159,28 +1159,28 @@ float fx_spawn_08(int a4, int a5)
     *(unsigned char *)(((*(int *)((((0x2E0 + v0_2) + v0_6) + 0x0))) + 0x0)) = v0_1;
     goto L_C0B7D70;
     L_C0B7BC0:;
-    if ((v0_6 != 2)) goto L_C0B7BC8;
+    if ((v0_5 != 2)) goto L_C0B7BC8;
     goto L_C0B7CD4;
     L_C0B7BC8:;
     goto L_C0B7F64;
     L_C0B7BD4:;
-    v0_4 = obj_create(0x5, 0x1, 0xA, 0x0);
-    v0_6 = (v0_4);
-    v0_2 = (v0_4);
-    if ((v0_4 != 0)) goto L_C0B7BEA;
+    v0_3 = obj_create(0x5, 0x1, 0xA, 0x0);
+    v0_5 = (v0_3);
+    v0_2 = (v0_3);
+    if ((v0_3 != 0)) goto L_C0B7BEA;
     goto L_C0B7F64;
     L_C0B7BEA:;
     *(unsigned char *)((v0_2 + 0x0)) = v0_0;
-    v0_4 = *(int *)(((int)stk + 4));
-    *(unsigned char *)((v0_2 + 0x3)) = (*(signed char *)((v0_4 + 0x3)));
+    v0_3 = *(int *)(((int)stk + 4));
+    *(unsigned char *)((v0_2 + 0x3)) = (*(signed char *)((v0_3 + 0x3)));
     *(unsigned char *)((v0_2 + 0x1)) = v0_0;
     *(unsigned short *)((v0_2 + 0x6)) = 0xF;
     *(unsigned char *)((v0_2 + 0x5)) = 0x19;
     *(unsigned int *)((v0_2 + 0x10)) = 0xC0B8430;
-    FUN_0c0e6fe8(v0_5, v0_3, R6, R7);
-    v0_3 = *(signed char *)((v0_4 + 0x3));
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_2 + 0x2C)) = *(struct mv3 *)((v0_3 + 0x2C)); }
+    v0_3 = *(signed char *)((v0_3 + 0x3));
     *(unsigned int *)(((int)stk + 8)) = ((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (v0_2 + 0x20));
     v0_3 = (v0_1);
     v0_4 = (v0_1);
     L_C0B7C42:;
@@ -1198,7 +1198,7 @@ float fx_spawn_08(int a4, int a5)
     (((struct o105_uchar *)(v0_2))->v) = v0_0;
     *(unsigned int *)((v0_2 + 0x1C)) = (*(int *)(((int)stk + 4)));
     (((struct oEC_ushort *)(v0_2))->v) = 0x41;
-    v0_6 = (0xEC);
+    v0_5 = (0xEC);
     goto L_C0B7F64;
 }
 
@@ -1207,7 +1207,8 @@ int FUN_0c0a3988(int a4)
     register int t0;
     register int t1;
     register int t2;
-    register int t3;
+    register float u0;
+    register float u1;
 
     t0 = *(signed char *)(((0x71A5 + a4) + 0x0));
     t1 = *(signed char *)((a4 + 0x71A4));
@@ -1219,235 +1220,271 @@ int FUN_0c0a3988(int a4)
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x200) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x203) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x206) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x209) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x20C) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x20F) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x212) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x21B) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x221) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x224) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x227) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x22A) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x22D) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x230) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x233) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x23C) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x23F) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x245) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
@@ -1456,14 +1493,16 @@ int FUN_0c0a3988(int a4)
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x24B) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
@@ -1490,14 +1529,16 @@ int FUN_0c0a3988(int a4)
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x270) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
@@ -1521,53 +1562,61 @@ int FUN_0c0a3988(int a4)
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x2A0) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x2A1) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x2A2) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
     if (((t1 << 8) + (unsigned char)t0) == 0x2A3) {
         if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-            math_rand_float();
-            
-            t2 = FUN_0c0e6f24();
-            t3 = 0xB;
-            if (t2 == 0) {
-                t3 = 0xA;
+            u0 = math_rand_float();
+            u1 = (u0 * 255.0f);
+            if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
             }
-            return pl_play_voice_at_frame(a4, 0x0, t3);
+            t2 = 0xB;
+            if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                t2 = 0xA;
+            }
+            return pl_play_voice_at_frame(a4, 0x0, t2);
         }
         return 0x71D4;
     }
@@ -1575,54 +1624,62 @@ int FUN_0c0a3988(int a4)
         if (((t1 << 8) + (unsigned char)t0) != 0x2B0) {
             if (((t1 << 8) + (unsigned char)t0) == 0x2B1) {
                 if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-                    math_rand_float();
-                    
-                    t2 = FUN_0c0e6f24();
-                    t3 = 0xB;
-                    if (t2 == 0) {
-                        t3 = 0xA;
+                    u0 = math_rand_float();
+                    u1 = (u0 * 255.0f);
+                    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    return pl_play_voice_at_frame(a4, 0x0, t3);
+                    t2 = 0xB;
+                    if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                        t2 = 0xA;
+                    }
+                    return pl_play_voice_at_frame(a4, 0x0, t2);
                 }
                 return 0x71D4;
             }
             if (((t1 << 8) + (unsigned char)t0) != 0x2B4) {
                 if (((t1 << 8) + (unsigned char)t0) == 0x2B9) {
                     if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-                        math_rand_float();
-                        
-                        t2 = FUN_0c0e6f24();
-                        t3 = 0xB;
-                        if (t2 == 0) {
-                            t3 = 0xA;
+                        u0 = math_rand_float();
+                        u1 = (u0 * 255.0f);
+                        if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                            u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        return pl_play_voice_at_frame(a4, 0x0, t3);
+                        t2 = 0xB;
+                        if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                            t2 = 0xA;
+                        }
+                        return pl_play_voice_at_frame(a4, 0x0, t2);
                     }
                     return 0x71D4;
                 }
                 if (((t1 << 8) + (unsigned char)t0) == 0x2BB) {
                     if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-                        math_rand_float();
-                        
-                        t2 = FUN_0c0e6f24();
-                        t3 = 0xB;
-                        if (t2 == 0) {
-                            t3 = 0xA;
+                        u0 = math_rand_float();
+                        u1 = (u0 * 255.0f);
+                        if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                            u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        return pl_play_voice_at_frame(a4, 0x0, t3);
+                        t2 = 0xB;
+                        if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                            t2 = 0xA;
+                        }
+                        return pl_play_voice_at_frame(a4, 0x0, t2);
                     }
                     return 0x71D4;
                 }
                 if (((t1 << 8) + (unsigned char)t0) == 0x2BD) {
                     if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-                        math_rand_float();
-                        
-                        t2 = FUN_0c0e6f24();
-                        t3 = 0xB;
-                        if (t2 == 0) {
-                            t3 = 0xA;
+                        u0 = math_rand_float();
+                        u1 = (u0 * 255.0f);
+                        if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                            u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        return pl_play_voice_at_frame(a4, 0x0, t3);
+                        t2 = 0xB;
+                        if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                            t2 = 0xA;
+                        }
+                        return pl_play_voice_at_frame(a4, 0x0, t2);
                     }
                     return 0x71D4;
                 }
@@ -1648,14 +1705,16 @@ int FUN_0c0a3988(int a4)
                     return pl_play_voice_at_frame(a4, 0x4, 0x4);
                 }
                 if ((int)((((struct o71D4_short *)(a4))->v)) >= 0) {
-                    math_rand_float();
-                    
-                    t0 = FUN_0c0e6f24();
-                    t1 = 0xB;
-                    if (t0 == 0) {
-                        t1 = 0xA;
+                    u0 = math_rand_float();
+                    u1 = (u0 * 255.0f);
+                    if (!(2.14748365e+09f > (u0 * 255.0f))) {
+                        u1 = (((u0 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    return pl_play_voice_at_frame(a4, 0x0, t1);
+                    t0 = 0xB;
+                    if (((int)((unsigned int)(int)u1 % (unsigned int)0x2)) == 0) {
+                        t0 = 0xA;
+                    }
+                    return pl_play_voice_at_frame(a4, 0x0, t0);
                 }
                 return 0x71D4;
             }

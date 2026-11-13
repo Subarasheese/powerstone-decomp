@@ -7,10 +7,10 @@ struct o118_uint { char p[0x118]; unsigned int v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int fx_follow_owner_create(int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o308_float { char p[0x308]; float v; };
@@ -34,39 +34,39 @@ float math_sin_angle16(int);
 int FUN_0c0cb50c(int a4, int a5)
 {
     register int t0;
-    register int t1;
-    register int t2;
+    register int t3;
+    register int t4;
 
-    t1 = obj_create(0x1, 0x1, 0x1);
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x3)) = (*(signed char *)((a4 + 0x3)));
-        *(unsigned char *)((t1 + 0x1)) = 0x1;
-        *(unsigned short *)((t1 + 0x6)) = 0x41F;
-        *(unsigned char *)((t1 + 0x5)) = 0x19;
-        *(unsigned int *)((t1 + 0x10)) = 0xC0CB5D6;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(0x1);
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-        *(unsigned int *)((t1 + 0x30)) = (*(int *)((a4 + 0x30)));
-        (((struct o5C_float *)(t1))->v) = 1.0f;
-        (((struct oF2_ushort *)(t1))->v) = (signed char)a5;
-        *(unsigned int *)((t1 + 0x1C)) = a4;
-        (((struct o118_uint *)(t1))->v) = 0x0;
-        (((struct o105_uchar *)(t1))->v) = t0;
-        (((struct o106_uchar *)(t1))->v) = t0;
-        (((struct o107_uchar *)(t1))->v) = t0;
-        t2 = (((struct o2E0_int *)(t1))->v);
-        *(unsigned char *)((t2 + 0x0)) = t0;
-        t0 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x17);
-        *(unsigned short *)((t2 + 0x2)) = 0x1F;
+    t0 = obj_create(0x1, 0x1, 0x1, 0x0);
+    if (t0 != 0) {
+        *(unsigned char *)((t0 + 0x0)) = 0x1;
+        *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
+        *(unsigned char *)((t0 + 0x1)) = 0x1;
+        *(unsigned short *)((t0 + 0x6)) = 0x41F;
+        *(unsigned char *)((t0 + 0x5)) = 0x19;
+        *(unsigned int *)((t0 + 0x10)) = 0xC0CB5D6;
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC1533C0); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC1533D8); }
+        *(unsigned int *)((t0 + 0x30)) = (*(int *)((a4 + 0x30)));
+        (((struct o5C_float *)(t0))->v) = 1.0f;
+        (((struct oF2_ushort *)(t0))->v) = (signed char)a5;
+        *(unsigned int *)((t0 + 0x1C)) = a4;
+        (((struct o118_uint *)(t0))->v) = 0x0;
+        (((struct o105_uchar *)(t0))->v) = 0x1;
+        (((struct o106_uchar *)(t0))->v) = 0x1;
+        (((struct o107_uchar *)(t0))->v) = 0x1;
+        t3 = (((struct o2E0_int *)(t0))->v);
+        *(unsigned char *)((t3 + 0x0)) = 0x1;
+        t4 = *(signed char *)((a4 + 0x3));
+        FUN_0c06233a(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x17);
+        *(unsigned short *)((t3 + 0x2)) = 0x1F;
         if ((signed char)a5 == 2) {
-            return fx_follow_owner_create(t1, a5);
+            return fx_follow_owner_create(t0, a5);
         }
         return (signed char)a5;
     }
-    return t1;
+    return t0;
 }
 
 int FUN_0c0cb5d6(int a4)

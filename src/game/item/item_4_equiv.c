@@ -6,7 +6,7 @@ struct o274_float { char p[0x274]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_set_mode_owner(int, int, int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 int FUN_0c05aee4(int);
 int FUN_0c05af40(int);
 struct o71CC_uint { char p[0x71CC]; unsigned int v; };

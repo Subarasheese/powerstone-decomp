@@ -40,7 +40,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 float math_cos_angle16(int);
 int math_rand_next(void);
 float math_sin_angle16(int);
-int FUN_0c0e6fe8(int);
+int _quick_odd_mvn(int);
 
 void item_tick(char *actor)
 {

@@ -8,28 +8,25 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 int obj_tick_class(int, int, int, int);
 struct o0_short { short v; };
 struct o14_short { char p[0x14]; short v; };
 struct o2_short { char p[0x2]; short v; };
 
-int FUN_0c01b274(int a4)
+void FUN_0c01b274(int a4)
 {
     int stk[1];
     register int t0;
-    register int t14;
     register int t2;
     register int t3;
     register int t4;
     register int t11;
-    register int t13;
 
     *(unsigned short *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x2);
-    t14 = t0;
+    t0 = obj_create(0x5, 0x1, 0x2, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01B206;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -51,13 +48,12 @@ int FUN_0c01b274(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_art_model), (*(signed char *)((t3 + 0xC))));
+            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664AC0, (*(signed char *)((t3 + 0xC))));
             t11 = *(int *)((((0x2E0 + t0) + t4) + 0x0));
             (((struct o24_float *)(t11))->v) = 1.0f;
             (((struct o20_float *)(t11))->v) = 1.0f;
             (((struct o1C_float *)(t11))->v) = 1.0f;
-            *(volatile int *)((((0x2E0 + t0) + t4) + 0x0));
-            t13 = FUN_0c0e6fe8(t11);
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x4)) = *(struct mv3 *)(t3); }
             t2 = (t2 + 0x1);
             t3 = (t3 + 0x10);
             t4 = (t4 + 0x4);
@@ -65,9 +61,7 @@ int FUN_0c01b274(int a4)
                 break;
             }
         }
-        t14 = t13;
     }
-    return t14;
 }
 
 int opt_page3_run_objects_in_mask(int a4, int a5, int a6, int a7)

@@ -23,13 +23,13 @@ struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_apply_accel(int);
 int obj_apply_velocity(int);
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int math_atan2_angle16(int, float, float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(void);
+int _modls(void);
 
-int ending_obj_update_t08(int a4, int a5, int a6, int a7)
+int ending_obj_update_t08(int a4)
 {
     register int t0;
     register int t1;
@@ -38,7 +38,7 @@ int ending_obj_update_t08(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
@@ -49,7 +49,7 @@ int ending_obj_update_t08(int a4, int a5, int a6, int a7)
         if (t0 != 1) {
             if (t0 != 2) {
                 if (t0 != 3) {
-                    if ((*(signed char *)g_game_substate) != 6) {
+                    if ((*(signed char *)0xC7F302D) != 6) {
                         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                     }
                     t0 = 0x0;
@@ -135,8 +135,7 @@ int ending_obj_update_t08(int a4, int a5, int a6, int a7)
     (((struct o8_float *)(((((struct o2E4_int *)(a4))->v))))->v) = ((math_cos_angle16(t0)) * 40.0f);
     (((struct oC_float *)(((((struct o2E4_int *)(a4))->v))))->v) = ((math_sin_angle16(t0)) * 40.0f);
     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = ((((((((struct oF2_short *)(a4))->v)) & 2) == 0)) ? 1 : 0);
-    *(volatile short *)((a4 + 0xF2));
-    t0 = FUN_0c0e6e5c();
+    t0 = (int)((int)((((struct oF2_short *)(a4))->v)) % (int)0x8);
     switch (t0) {
     case 0:
         (((struct o1C_float *)(((((struct o2E4_int *)(a4))->v))))->v) = 0.199999988f;

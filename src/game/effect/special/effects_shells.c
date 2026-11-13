@@ -25,7 +25,7 @@ int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o2EC_int { char p[0x2EC]; int v; };
@@ -228,8 +228,6 @@ int FUN_0c0c9394(int a4)
     register int t4;
     register int t5;
     register int t14;
-    register int t18;
-    register int t21;
     register float u28;
     register float u29;
     register float u30;
@@ -274,13 +272,13 @@ int FUN_0c0c9394(int a4)
             break;
         }
         *(unsigned char *)((a4 + 0xF)) = 0x1;
-        t18 = ((int (*)(int, int))(FUN_0c0e6fe8))(0x1, 0x0);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x4)) = *(struct mv3 *)((t5 + 0x20)); }
         math_vec3_sub((((int)stk + 4) + 0x4), (((int)stk + 4) + 0x4), (a4 + 0x20));
         *(int *)((int)stk + 0) = (0xF0 + a4);
         (((struct oF0_float *)(a4))->v) = (math_vec3_length((((int)stk + 0) + 0x8)));
         *(unsigned char *)((a4 + 0xD)) = 0x5;
         *(unsigned char *)((a4 + 0xC)) = 0x4;
-        t21 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 4) + 0x4)) = *(struct mv3 *)((t5 + 0x20)); }
         u28 = ((math_sin_angle16((*(int *)((a4 + 0x30))))) * (*(float *)((0xC33C960 + (((((struct oEE_short *)(a4))->v)) << 2)))));
         u29 = *(float *)(((int)stk + 8));
         u30 = (u28 * (math_cos_angle16((*(int *)((a4 + 0x2C))))));

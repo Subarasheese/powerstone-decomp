@@ -104,10 +104,10 @@ int cam_set_shake_ramp(int, int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _divls(void);
+int _modls(int);
+int _modlu(void);
+int _quick_odd_mvn(void);
 int FUN_0c0fb0da(int, int);
 int FUN_0c0fb0fc(int, int);
 int FUN_0c0fcea0(int, int, int, int);
@@ -121,7 +121,7 @@ int kmiCopyFromFrameBuffer(int, int, int);
 int kmiCopyToFrameBuffer(int, int, int);
 int memset(int, int, int);
 int thunk_FUN_0c062242(int);
-int thunk_FUN_0c111b54(int);
+int thunk_FUN_0c111b54(int, int);
 int thunk_FUN_0c111b6e(int);
 int thunk_FUN_0c1155a8(void);
 int vmsio_ismount(int);
@@ -194,7 +194,7 @@ int vmsio_block_write(int a4, int a5, int a6)
                 return 0xFFFFFF30;
             }
             for (;;) {
-                t18 = thunk_FUN_0c111b54(t5);
+                t18 = thunk_FUN_0c111b54(t5, t16);
                 if (t18 == 0) {
                     thunk_FUN_0c1155a8();
                     continue;
@@ -223,8 +223,7 @@ int vmsio_block_write(int a4, int a5, int a6)
         for (;;) {
             t29 = thunk_FUN_0c111b6e(t5);
             if (t29 == 0) {
-                *(volatile int *)(((int)stk + 12));
-                t32 = (FUN_0c0e6d00());
+                t32 = ((int)((int)(*(int *)(((int)stk + 12))) / (int)0x4));
                 *(int *)((int)stk + 8) = t32;
                 t34 = (*(int *)(((int)stk + 16)));
                 *(int *)((int)stk + 4) = t34;
@@ -235,7 +234,7 @@ int vmsio_block_write(int a4, int a5, int a6)
                     continue;
                 }
                 for (;;) {
-                    t37 = thunk_FUN_0c111b54(t5);
+                    t37 = thunk_FUN_0c111b54(t5, t35);
                     if (t37 == 0) {
                         thunk_FUN_0c1155a8();
                         continue;
@@ -270,7 +269,7 @@ int vmsio_block_write(int a4, int a5, int a6)
                             return 0xFFFFFF30;
                         }
                         for (;;) {
-                            t55 = thunk_FUN_0c111b54(t5);
+                            t55 = thunk_FUN_0c111b54(t5, t53);
                             if (t55 == 0) {
                                 thunk_FUN_0c1155a8();
                                 continue;

@@ -50,7 +50,6 @@ int ai_clear_op_state(void);
 int ai_select_script(int, int, int);
 int FUN_0c08e8ac(int);
 float math_rand_float(void);
-int FUN_0c0e6f24(int);
 
 int ai_think(int player)
 {
@@ -280,7 +279,7 @@ int ai_think(int player)
     if ((2.14748365e+09f > (freg3 * freg0))) goto L_C04DA5C;
     freg2 = ((freg2 - (freg1 + freg1)));
     L_C04DA5C:;
-    reg6 = (unsigned int)(FUN_0c0e6f24(reg6)) >= (unsigned int)0x64;
+    reg6 = ((unsigned int)(int)freg2 % 100u) >= (unsigned int)0x64;
     if (reg6) goto L_C04DAE0;
     ai_push_state();
     (((struct fld38_ushort *)(((short)((short)(unsigned char)(*(signed char *)((reg3 + 0x0))) * (short)0x254) + reg2)))->value) = reg4;
@@ -502,7 +501,7 @@ int ai_think(int player)
     if ((2.14748365e+09f > (freg3 * freg0))) goto L_C04D3C8;
     freg2 = ((freg2 - (freg1 + freg1)));
     L_C04D3C8:;
-    reg7 = (FUN_0c0e6f24(reg6));
+    reg7 = (int)((unsigned int)(int)freg2 % 100u);
     *(int *)((int)stack_args + 0) = reg7;
     if (((unsigned int)reg7 < (unsigned int)(unsigned short)(*(short *)((((unsigned char)(*(signed char *)0xC7F305C) << 1) + 0xC32D768))))) goto L_C04D488;
     L_C04D3E8:;
@@ -517,7 +516,7 @@ int ai_think(int player)
     if ((2.14748365e+09f > (freg3 * freg0))) goto L_C04D468;
     freg2 = ((freg2 - (freg1 + freg1)));
     L_C04D468:;
-    reg6 = (FUN_0c0e6f24(reg6));
+    reg6 = (int)((unsigned int)(int)freg2 % 100u);
     *(int *)((int)stack_args + 0) = reg6;
     if (((unsigned int)reg6 >= (unsigned int)(unsigned short)(*(short *)((((unsigned char)(*(signed char *)0xC7F305C) << 1) + 0xC32D7A8))))) goto L_C04D4CE;
     L_C04D488:;

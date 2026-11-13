@@ -21,12 +21,12 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6f24(void);
-int thunk_FUN_0c062242(int);
+int _modlu(void);
+int thunk_FUN_0c062242(int, int);
 
 int fx_spawn_03d8b0(int a4, int a5)
 {
@@ -60,33 +60,39 @@ int fx_spawn_03d8b0(int a4, int a5)
     return t14;
 }
 
-int fx_tick_03d8b0(int a4, int a5, int a6, int a7)
+int fx_tick_03d8b0(int a4)
 {
     int stk[5];
     register int t0;
     register int t1;
     register int t26;
     register int t29;
-    register int t55;
-    register float u62;
+    register float t45;
+    register float u48;
+    register int t59;
     register float u66;
-    register int t72;
-    register float u75;
-    register int t83;
-    register float u86;
-    register int t90;
-    register int t92;
-    register float t93;
-    register float u95;
-    register float t96;
-    register float u98;
-    register int t132;
-    register int t135;
-    register int t137;
+    register float u70;
+    register float t71;
+    register float u74;
+    register int t76;
+    register float u79;
+    register float t82;
+    register float u85;
+    register int t87;
+    register float u90;
+    register int t94;
+    register int t96;
+    register float t97;
+    register float u99;
+    register float t100;
+    register float u102;
+    register int t136;
+    register int t139;
+    register int t141;
     register int t27;
     int t28;
-    register int t133;
-    int t134;
+    register int t137;
+    int t138;
 
     t0 = *(signed char *)((a4 + 0x8));
     t1 = *(int *)((a4 + 0x1C));
@@ -112,60 +118,72 @@ int fx_tick_03d8b0(int a4, int a5, int a6, int a7)
             t26 = (((struct oEC_short *)(a4))->v);
             (((struct oEC_ushort *)(a4))->v) = (t26 - 1);
             if (((short)(t26 - 1) != 0) && ((t27 = *(signed char *)((t1 + 0x71A4)), t27 == 1) && (t28 = *(signed char *)((t1 + 0x71A5)), (unsigned char)t28 == 108))) {
-                t137 = (unsigned char)t28;
+                t141 = (unsigned char)t28;
             } else {
                 t29 = *(signed char *)((a4 + 0x8));
                 *(unsigned char *)((a4 + 0x8)) = (t29 + 0x1);
-                t137 = (t29 + 0x1);
+                t141 = (t29 + 0x1);
             }
         } else {
             if (t0 == 2) {
                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
             }
-            t137 = (obj_destroy(a4, a5, a6, a7));
+            t141 = (obj_destroy(a4));
         }
     } else {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
         if ((int)(*(signed char *)((a4 + 0x4))) >= (int)0x3) {
-            math_rand_float();
-            *(unsigned int *)((a4 + 0x30)) = ((((FUN_0c0e6f24()) << 8) << 2) << 2);
+            t45 = math_rand_float();
+            u48 = (t45 * 255.0f);
+            if (!(2.14748365e+09f > (t45 * 255.0f))) {
+                u48 = (((t45 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+            }
+            *(unsigned int *)((a4 + 0x30)) = (((((int)((unsigned int)(int)u48 % (unsigned int)0xF)) << 8) << 2) << 2);
         }
-        t55 = *(signed char *)((t1 + 0x3));
-        *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t55 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t55 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t55 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+        t59 = *(signed char *)((t1 + 0x3));
+        *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t59 * (unsigned short)0x72D0) + 0xC7E40C4);
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t59 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t59 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (a4 + 0x20));
         (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + -15.0f);
         *(int *)((int)stk + 0) = (a4 + 0x20);
-        u62 = ((((struct o20_float *)(a4))->v));
-        u62 = u62 + 30.0f * (math_sin_angle16((*(int *)((t1 + 0x30)))));
-        (((struct o20_float *)(a4))->v) = u62;
+        u66 = ((((struct o20_float *)(a4))->v));
+        u66 = u66 + 30.0f * (math_sin_angle16((*(int *)((t1 + 0x30)))));
+        (((struct o20_float *)(a4))->v) = u66;
         *(int *)((int)stk + 0) = (a4 + 0x28);
-        u66 = ((((struct o28_float *)(a4))->v));
-        u66 = u66 + 30.0f * (math_cos_angle16((*(int *)((t1 + 0x30)))));
-        (((struct o28_float *)(a4))->v) = u66;
-        math_rand_float();
-        t72 = FUN_0c0e6f24();
-        u75 = (float)t72;
-        if ((int)t72 < 0) {
-            u75 = ((float)t72 + 4.2949673e+09f);
+        u70 = ((((struct o28_float *)(a4))->v));
+        u70 = u70 + 30.0f * (math_cos_angle16((*(int *)((t1 + 0x30)))));
+        (((struct o28_float *)(a4))->v) = u70;
+        t71 = math_rand_float();
+        u74 = (t71 * 255.0f);
+        if (!(2.14748365e+09f > (t71 * 255.0f))) {
+            u74 = (((t71 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
         }
-        math_rand_float();
-        t83 = FUN_0c0e6f24();
-        u86 = (float)t83;
-        if ((int)t83 < 0) {
-            u86 = ((float)t83 + 4.2949673e+09f);
+        t76 = (int)((unsigned int)(int)u74 % (unsigned int)0x3D);
+        u79 = (float)t76;
+        if ((int)t76 < 0) {
+            u79 = ((float)t76 + 4.2949673e+09f);
         }
-        t90 = (0xFFFFE000 + (int)((u86 * 65536.0f) / 360.0f));
-        if ((0x8000 & (0xFFFFE000 + (int)((u86 * 65536.0f) / 360.0f))) != 0) {
-            t90 = ((0xFFFFE000 + (int)((u86 * 65536.0f) / 360.0f)) | 0xFFFF0000);
+        t82 = math_rand_float();
+        u85 = (t82 * 255.0f);
+        if (!(2.14748365e+09f > (t82 * 255.0f))) {
+            u85 = (((t82 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
         }
-        t92 = *(int *)((t1 + 0x30));
-        t93 = math_sin_angle16(((int)((u75 * 65536.0f) / 360.0f) + 0x2AAB));
-        u95 = (t93 * 400.0f);
-        (((struct o4_float *)(((int)stk + 4)))->v) = ((math_sin_angle16((unsigned short)(t90 + t92))) * u95);
-        t96 = math_cos_angle16(((int)((u75 * 65536.0f) / 360.0f) + 0x2AAB));
-        (((struct o4_float *)((((int)stk + 4) + 0x4)))->v) = (t96 * 400.0f);
-        u98 = (t93 * 400.0f);
-        (((struct o8_float *)((((int)stk + 4) + 0x4)))->v) = ((math_cos_angle16((unsigned short)(t90 + t92))) * u98);
+        t87 = (int)((unsigned int)(int)u85 % (unsigned int)0x5B);
+        u90 = (float)t87;
+        if ((int)t87 < 0) {
+            u90 = ((float)t87 + 4.2949673e+09f);
+        }
+        t94 = (0xFFFFE000 + (int)((u90 * 65536.0f) / 360.0f));
+        if ((0x8000 & (0xFFFFE000 + (int)((u90 * 65536.0f) / 360.0f))) != 0) {
+            t94 = ((0xFFFFE000 + (int)((u90 * 65536.0f) / 360.0f)) | 0xFFFF0000);
+        }
+        t96 = *(int *)((t1 + 0x30));
+        t97 = math_sin_angle16(((int)((u79 * 65536.0f) / 360.0f) + 0x2AAB));
+        u99 = (t97 * 400.0f);
+        (((struct o4_float *)(((int)stk + 4)))->v) = ((math_sin_angle16((unsigned short)(t94 + t96))) * u99);
+        t100 = math_cos_angle16(((int)((u79 * 65536.0f) / 360.0f) + 0x2AAB));
+        (((struct o4_float *)((((int)stk + 4) + 0x4)))->v) = (t100 * 400.0f);
+        u102 = (t97 * 400.0f);
+        (((struct o8_float *)((((int)stk + 4) + 0x4)))->v) = ((math_cos_angle16((unsigned short)(t94 + t96))) * u102);
         (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + ((((struct o4_float *)(((int)stk + 4)))->v)));
         (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) + ((((struct o4_float *)((((int)stk + 4) + 0x4)))->v)));
         (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + ((((struct o8_float *)((((int)stk + 4) + 0x4)))->v)));
@@ -197,15 +215,15 @@ int fx_tick_03d8b0(int a4, int a5, int a6, int a7)
                 (((struct o68_float *)(a4))->v) = 1.0f;
             }
         }
-        t132 = (((struct oEC_short *)(a4))->v);
-        (((struct oEC_ushort *)(a4))->v) = (t132 - 1);
-        if (((short)(t132 - 1) != 0) && ((t133 = *(signed char *)((t1 + 0x71A4)), t133 == 1) && (t134 = *(signed char *)((t1 + 0x71A5)), (unsigned char)t134 == 108))) {
-            t137 = (unsigned char)t134;
+        t136 = (((struct oEC_short *)(a4))->v);
+        (((struct oEC_ushort *)(a4))->v) = (t136 - 1);
+        if (((short)(t136 - 1) != 0) && ((t137 = *(signed char *)((t1 + 0x71A4)), t137 == 1) && (t138 = *(signed char *)((t1 + 0x71A5)), (unsigned char)t138 == 108))) {
+            t141 = (unsigned char)t138;
         } else {
-            t135 = *(signed char *)((a4 + 0x8));
-            *(unsigned char *)((a4 + 0x8)) = (t135 + 0x1);
-            t137 = (t135 + 0x1);
+            t139 = *(signed char *)((a4 + 0x8));
+            *(unsigned char *)((a4 + 0x8)) = (t139 + 0x1);
+            t141 = (t139 + 0x1);
         }
     }
-    return t137;
+    return t141;
 }

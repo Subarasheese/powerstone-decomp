@@ -37,9 +37,9 @@ int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e6e5c(void);
-int FUN_0c0e6f24(void);
-int thunk_FUN_0c062242(int);
+int _modls(void);
+int _modlu(void);
+int thunk_FUN_0c062242(int, int);
 
 int fx_update_16(int a4)
 {
@@ -57,27 +57,43 @@ int fx_update_16(int a4)
     register int t39;
     register int t42;
     register int t54;
+    register float t55;
+    register float u58;
     register int t60;
     register float u63;
     register int t67;
+    register float t68;
+    register float u71;
     register int t73;
     register float u76;
     register int t80;
+    register float t81;
+    register float u84;
     register int t86;
     register float u89;
     register int t93;
+    register float t94;
+    register float u97;
     register int t99;
     register float u102;
     register int t106;
+    register float t107;
+    register float u110;
     register int t112;
     register float u115;
     register int t119;
+    register float t120;
+    register float u123;
     register int t125;
     register float u128;
     register int t132;
+    register float t133;
+    register float u136;
     register int t138;
     register float u141;
     register int t145;
+    register float t146;
+    register float u149;
     register int t151;
     register float u154;
     register int t158;
@@ -89,121 +105,177 @@ int fx_update_16(int a4)
     register float t173;
     register float u176;
     register int t180;
-    register int t199;
-    register int t205;
-    register float u208;
-    register int t212;
-    register int t218;
-    register float u221;
-    register int t225;
-    register int t231;
-    register float u234;
-    register int t238;
-    register int t244;
-    register float u247;
-    register int t251;
-    register int t257;
-    register float u260;
-    register int t264;
-    register int t270;
-    register float u273;
-    register int t277;
-    register int t283;
-    register float u286;
-    register int t290;
-    register int t296;
-    register float u299;
-    register int t304;
-    register float u307;
-    register float t309;
-    register float u312;
-    register float u314;
-    register float u318;
-    register float t320;
-    register float u323;
-    register int t342;
-    register int t346;
-    register int t347;
-    register int t360;
-    register int t369;
-    register int t383;
-    register int t392;
-    register float u399;
-    register int t400;
-    register int t406;
-    register float u409;
-    register int t412;
-    register int t418;
-    register float u421;
-    register int t424;
-    register int t430;
-    register float u433;
-    register int t436;
-    register int t442;
-    register float u445;
-    register int t449;
-    register int t455;
-    register float u458;
-    register int t462;
-    register int t468;
-    register float u471;
-    register int t475;
-    register int t481;
-    register float u484;
-    register int t488;
-    register int t494;
-    register float u497;
-    register int t501;
-    register int t507;
-    register float u510;
-    register int t514;
-    register int t520;
-    register float u523;
-    register int t527;
-    register int t533;
-    register float u536;
-    register int t545;
-    register int t568;
-    register int t574;
-    register float u577;
-    register int t581;
-    register int t587;
-    register float u590;
-    register int t594;
-    register int t597;
-    register float u601;
+    register int t200;
+    register float t201;
+    register float u204;
+    register int t206;
+    register float u209;
+    register int t213;
+    register float t214;
+    register float u217;
+    register int t219;
+    register float u222;
+    register int t226;
+    register float t227;
+    register float u230;
+    register int t232;
+    register float u235;
+    register int t239;
+    register float t240;
+    register float u243;
+    register int t245;
+    register float u248;
+    register int t252;
+    register float t253;
+    register float u256;
+    register int t258;
+    register float u261;
+    register int t265;
+    register float t266;
+    register float u269;
+    register int t271;
+    register float u274;
+    register int t278;
+    register float t279;
+    register float u282;
+    register int t284;
+    register float u287;
+    register int t291;
+    register float t292;
+    register float u295;
+    register int t297;
+    register float u300;
+    register int t305;
+    register float u308;
+    register float t310;
+    register float u313;
+    register float u315;
+    register float u319;
+    register float t321;
+    register float u324;
+    register int t349;
+    register int t366;
+    register int t375;
+    register int t393;
+    register int t404;
+    register float u413;
+    register int t414;
+    register float t415;
+    register float u418;
+    register int t420;
+    register float u423;
+    register int t426;
+    register float t427;
+    register float u430;
+    register int t432;
+    register float u435;
+    register int t438;
+    register float t439;
+    register float u442;
+    register int t444;
+    register float u447;
+    register int t450;
+    register float t451;
+    register float u454;
+    register int t456;
+    register float u459;
+    register int t463;
+    register float t464;
+    register float u467;
+    register int t469;
+    register float u472;
+    register int t476;
+    register float t477;
+    register float u480;
+    register int t482;
+    register float u485;
+    register int t489;
+    register float t490;
+    register float u493;
+    register int t495;
+    register float u498;
+    register int t502;
+    register float t503;
+    register float u506;
+    register int t508;
+    register float u511;
+    register int t515;
+    register float t516;
+    register float u519;
+    register int t521;
+    register float u524;
+    register int t528;
+    register float t529;
+    register float u532;
+    register int t534;
+    register float u537;
+    register int t541;
+    register float t542;
+    register float u545;
+    register int t547;
+    register float u550;
+    register int t559;
+    register int t583;
+    register float t584;
+    register float u587;
+    register int t589;
+    register float u592;
+    register int t596;
+    register float t597;
+    register float u600;
     register int t602;
-    register int t608;
-    register float u611;
-    register int t615;
-    register int t621;
-    register float u624;
-    register int t628;
-    register int t634;
-    register float u637;
-    register int t641;
-    register int t647;
-    register float u650;
-    register int t654;
-    register int t660;
-    register float u663;
-    register int t667;
-    register int t673;
-    register float u676;
-    register int t680;
-    register int t686;
-    register float u689;
-    register int t693;
-    register int t699;
-    register float u702;
-    register int t710;
-    register int t715;
-    register int t716;
-    register int t780;
-    register int t790;
-    register int t818;
-    register int t828;
+    register float u605;
+    register int t609;
+    register int t612;
+    register float u616;
+    register int t617;
+    register float t618;
+    register float u621;
+    register int t623;
+    register float u626;
+    register int t630;
+    register float t631;
+    register float u634;
+    register int t636;
+    register float u639;
+    register int t643;
+    register float t644;
+    register float u647;
+    register int t649;
+    register float u652;
+    register int t656;
+    register float t657;
+    register float u660;
+    register int t662;
+    register float u665;
+    register int t669;
+    register float t670;
+    register float u673;
+    register int t675;
+    register float u678;
+    register int t682;
+    register float t683;
+    register float u686;
+    register int t688;
+    register float u691;
+    register int t695;
+    register float t696;
+    register float u699;
+    register int t701;
+    register float u704;
+    register int t708;
+    register float t709;
+    register float u712;
+    register int t714;
+    register float u717;
+    register int t725;
+    register int t730;
+    register int t731;
+    register int t795;
+    register int t805;
+    register int t833;
     register int t843;
+    register int t858;
 
     t0 = FUN_0c0555dc();
     if (t0 != 0) {
@@ -215,14 +287,14 @@ int fx_update_16(int a4)
             if (t3 == 2) {
                 if ((*(signed char *)((0x71BA + (*(int *)((a4 + 0x1C)))))) != 11) {
                     *(unsigned char *)((a4 + 0x8)) = 0x6;
-                    t843 = 0x6;
+                    t858 = 0x6;
                 } else {
                     u9 = ((((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v));
                     u9 = u9 + 1000.0f * ((((struct o54_float *)(a4))->v));
                     (((struct o24_float *)(a4))->v) = (u9 + 225.0f);
                     t12 = *(signed char *)(((*(int *)(((*(int *)((a4 + 0x1C))) + 0x1C))) + 0x3));
                     *(unsigned int *)(((int)stk + 16)) = ((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stk + 4) + 0x10));
                     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 20))) - ((((struct o20_float *)(a4))->v)));
                     *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 24))) - ((((struct o24_float *)(a4))->v)));
                     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 28))) - ((((struct o28_float *)(a4))->v)));
@@ -258,8 +330,12 @@ int fx_update_16(int a4)
                     (((struct o58_float *)(a4))->v) = (((((struct o58_float *)(a4))->v)) + (((*(float *)(((0xC33C348 + (((((struct oF2_short *)(a4))->v)) << 2)) + 0x0))) / 1000.0f) / 50.0f));
                     t54 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t54);
-                    math_rand_float();
-                    t60 = FUN_0c0e6f24();
+                    t55 = math_rand_float();
+                    u58 = (t55 * 255.0f);
+                    if (!(2.14748365e+09f > (t55 * 255.0f))) {
+                        u58 = (((t55 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t60 = (int)((unsigned int)(int)u58 % (unsigned int)0x64);
                     u63 = (float)t60;
                     if ((int)t60 < 0) {
                         u63 = ((float)t60 + 4.2949673e+09f);
@@ -267,8 +343,12 @@ int fx_update_16(int a4)
                     (((struct o1C_float *)(t54))->v) = ((((((struct o50_float *)(a4))->v)) + (u63 / 1000.0f)) + -0.049999997f);
                     t67 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t67);
-                    math_rand_float();
-                    t73 = FUN_0c0e6f24();
+                    t68 = math_rand_float();
+                    u71 = (t68 * 255.0f);
+                    if (!(2.14748365e+09f > (t68 * 255.0f))) {
+                        u71 = (((t68 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t73 = (int)((unsigned int)(int)u71 % (unsigned int)0x64);
                     u76 = (float)t73;
                     if ((int)t73 < 0) {
                         u76 = ((float)t73 + 4.2949673e+09f);
@@ -276,8 +356,12 @@ int fx_update_16(int a4)
                     (((struct o20_float *)(t67))->v) = ((((((struct o54_float *)(a4))->v)) + (u76 / 1000.0f)) + -0.049999997f);
                     t80 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t80);
-                    math_rand_float();
-                    t86 = FUN_0c0e6f24();
+                    t81 = math_rand_float();
+                    u84 = (t81 * 255.0f);
+                    if (!(2.14748365e+09f > (t81 * 255.0f))) {
+                        u84 = (((t81 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t86 = (int)((unsigned int)(int)u84 % (unsigned int)0x64);
                     u89 = (float)t86;
                     if ((int)t86 < 0) {
                         u89 = ((float)t86 + 4.2949673e+09f);
@@ -285,8 +369,12 @@ int fx_update_16(int a4)
                     (((struct o24_float *)(t80))->v) = ((((((struct o58_float *)(a4))->v)) + (u89 / 1000.0f)) + -0.049999997f);
                     t93 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x1C + t93);
-                    math_rand_float();
-                    t99 = FUN_0c0e6f24();
+                    t94 = math_rand_float();
+                    u97 = (t94 * 255.0f);
+                    if (!(2.14748365e+09f > (t94 * 255.0f))) {
+                        u97 = (((t94 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t99 = (int)((unsigned int)(int)u97 % (unsigned int)0x64);
                     u102 = (float)t99;
                     if ((int)t99 < 0) {
                         u102 = ((float)t99 + 4.2949673e+09f);
@@ -294,8 +382,12 @@ int fx_update_16(int a4)
                     (((struct o1C_float *)(t93))->v) = ((((((struct o50_float *)(a4))->v)) + (u102 / 1000.0f)) + -0.049999997f);
                     t106 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x20 + t106);
-                    math_rand_float();
-                    t112 = FUN_0c0e6f24();
+                    t107 = math_rand_float();
+                    u110 = (t107 * 255.0f);
+                    if (!(2.14748365e+09f > (t107 * 255.0f))) {
+                        u110 = (((t107 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t112 = (int)((unsigned int)(int)u110 % (unsigned int)0x64);
                     u115 = (float)t112;
                     if ((int)t112 < 0) {
                         u115 = ((float)t112 + 4.2949673e+09f);
@@ -303,8 +395,12 @@ int fx_update_16(int a4)
                     (((struct o20_float *)(t106))->v) = ((((((struct o54_float *)(a4))->v)) + (u115 / 1000.0f)) + -0.049999997f);
                     t119 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x24 + t119);
-                    math_rand_float();
-                    t125 = FUN_0c0e6f24();
+                    t120 = math_rand_float();
+                    u123 = (t120 * 255.0f);
+                    if (!(2.14748365e+09f > (t120 * 255.0f))) {
+                        u123 = (((t120 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t125 = (int)((unsigned int)(int)u123 % (unsigned int)0x64);
                     u128 = (float)t125;
                     if ((int)t125 < 0) {
                         u128 = ((float)t125 + 4.2949673e+09f);
@@ -312,8 +408,12 @@ int fx_update_16(int a4)
                     (((struct o24_float *)(t119))->v) = ((((((struct o58_float *)(a4))->v)) + (u128 / 1000.0f)) + -0.049999997f);
                     t132 = (((struct o2E4_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t132);
-                    math_rand_float();
-                    t138 = FUN_0c0e6f24();
+                    t133 = math_rand_float();
+                    u136 = (t133 * 255.0f);
+                    if (!(2.14748365e+09f > (t133 * 255.0f))) {
+                        u136 = (((t133 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t138 = (int)((unsigned int)(int)u136 % (unsigned int)0x11);
                     u141 = (float)t138;
                     if ((int)t138 < 0) {
                         u141 = ((float)t138 + 4.2949673e+09f);
@@ -321,8 +421,12 @@ int fx_update_16(int a4)
                     *(unsigned int *)(((0x18 + t132) + 0x0)) = ((*(int *)(((0x18 + t132) + 0x0))) + (int)((u141 * 65536.0f) / 360.0f));
                     t145 = (((struct o2E8_int *)(a4))->v);
                     *(int *)((int)stk + 0) = (0x18 + t145);
-                    math_rand_float();
-                    t151 = FUN_0c0e6f24();
+                    t146 = math_rand_float();
+                    u149 = (t146 * 255.0f);
+                    if (!(2.14748365e+09f > (t146 * 255.0f))) {
+                        u149 = (((t146 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t151 = (int)((unsigned int)(int)u149 % (unsigned int)0x35);
                     u154 = (float)t151;
                     if ((int)t151 < 0) {
                         u154 = ((float)t151 + 4.2949673e+09f);
@@ -330,7 +434,7 @@ int fx_update_16(int a4)
                     *(unsigned int *)(((0x18 + t145) + 0x0)) = ((*(int *)(((0x18 + t145) + 0x0))) + (int)((u154 * 65536.0f) / 360.0f));
                     t158 = (((struct oEE_short *)(a4))->v);
                     (((struct oEE_ushort *)(a4))->v) = (t158 - 1);
-                    t843 = 0xEE;
+                    t858 = 0xEE;
                     if ((short)(t158 - 1) != 0) {
                     } else {
                         u160 = *(float *)((0xC33C358 + (((((struct oF2_short *)(a4))->v)) << 2)));
@@ -356,120 +460,148 @@ int fx_update_16(int a4)
                         (((struct o108_uchar *)(a4))->v) = 0x0;
                         t180 = *(signed char *)((a4 + 0x8));
                         *(unsigned char *)((a4 + 0x8)) = (t180 + 0x1);
-                        t843 = (t180 + 0x1);
+                        t858 = (t180 + 0x1);
                     }
                 }
             } else {
                 if (t3 == 3) {
                     *(unsigned int *)((a4 + 0x34)) = ((*(int *)((a4 + 0x34))) + 0x71C);
-                    t199 = (((struct o2E4_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x1C + t199);
-                    math_rand_float();
-                    t205 = FUN_0c0e6f24();
-                    u208 = (float)t205;
-                    if ((int)t205 < 0) {
-                        u208 = ((float)t205 + 4.2949673e+09f);
+                    t200 = (((struct o2E4_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x1C + t200);
+                    t201 = math_rand_float();
+                    u204 = (t201 * 255.0f);
+                    if (!(2.14748365e+09f > (t201 * 255.0f))) {
+                        u204 = (((t201 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    (((struct o1C_float *)(t199))->v) = ((((((struct o50_float *)(a4))->v)) + (u208 / 1000.0f)) + -0.049999997f);
-                    t212 = (((struct o2E4_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x20 + t212);
-                    math_rand_float();
-                    t218 = FUN_0c0e6f24();
-                    u221 = (float)t218;
-                    if ((int)t218 < 0) {
-                        u221 = ((float)t218 + 4.2949673e+09f);
+                    t206 = (int)((unsigned int)(int)u204 % (unsigned int)0x64);
+                    u209 = (float)t206;
+                    if ((int)t206 < 0) {
+                        u209 = ((float)t206 + 4.2949673e+09f);
                     }
-                    (((struct o20_float *)(t212))->v) = ((((((struct o54_float *)(a4))->v)) + (u221 / 1000.0f)) + -0.049999997f);
-                    t225 = (((struct o2E4_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x24 + t225);
-                    math_rand_float();
-                    t231 = FUN_0c0e6f24();
-                    u234 = (float)t231;
-                    if ((int)t231 < 0) {
-                        u234 = ((float)t231 + 4.2949673e+09f);
+                    (((struct o1C_float *)(t200))->v) = ((((((struct o50_float *)(a4))->v)) + (u209 / 1000.0f)) + -0.049999997f);
+                    t213 = (((struct o2E4_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x20 + t213);
+                    t214 = math_rand_float();
+                    u217 = (t214 * 255.0f);
+                    if (!(2.14748365e+09f > (t214 * 255.0f))) {
+                        u217 = (((t214 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    (((struct o24_float *)(t225))->v) = ((((((struct o58_float *)(a4))->v)) + (u234 / 1000.0f)) + -0.049999997f);
-                    t238 = (((struct o2E8_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x1C + t238);
-                    math_rand_float();
-                    t244 = FUN_0c0e6f24();
-                    u247 = (float)t244;
-                    if ((int)t244 < 0) {
-                        u247 = ((float)t244 + 4.2949673e+09f);
+                    t219 = (int)((unsigned int)(int)u217 % (unsigned int)0x64);
+                    u222 = (float)t219;
+                    if ((int)t219 < 0) {
+                        u222 = ((float)t219 + 4.2949673e+09f);
                     }
-                    (((struct o1C_float *)(t238))->v) = ((((((struct o50_float *)(a4))->v)) + (u247 / 1000.0f)) + -0.049999997f);
-                    t251 = (((struct o2E8_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x20 + t251);
-                    math_rand_float();
-                    t257 = FUN_0c0e6f24();
-                    u260 = (float)t257;
-                    if ((int)t257 < 0) {
-                        u260 = ((float)t257 + 4.2949673e+09f);
+                    (((struct o20_float *)(t213))->v) = ((((((struct o54_float *)(a4))->v)) + (u222 / 1000.0f)) + -0.049999997f);
+                    t226 = (((struct o2E4_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x24 + t226);
+                    t227 = math_rand_float();
+                    u230 = (t227 * 255.0f);
+                    if (!(2.14748365e+09f > (t227 * 255.0f))) {
+                        u230 = (((t227 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    (((struct o20_float *)(t251))->v) = ((((((struct o54_float *)(a4))->v)) + (u260 / 1000.0f)) + -0.049999997f);
-                    t264 = (((struct o2E8_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x24 + t264);
-                    math_rand_float();
-                    t270 = FUN_0c0e6f24();
-                    u273 = (float)t270;
-                    if ((int)t270 < 0) {
-                        u273 = ((float)t270 + 4.2949673e+09f);
+                    t232 = (int)((unsigned int)(int)u230 % (unsigned int)0x64);
+                    u235 = (float)t232;
+                    if ((int)t232 < 0) {
+                        u235 = ((float)t232 + 4.2949673e+09f);
                     }
-                    (((struct o24_float *)(t264))->v) = ((((((struct o58_float *)(a4))->v)) + (u273 / 1000.0f)) + -0.049999997f);
-                    t277 = (((struct o2E4_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x18 + t277);
-                    math_rand_float();
-                    t283 = FUN_0c0e6f24();
-                    u286 = (float)t283;
-                    if ((int)t283 < 0) {
-                        u286 = ((float)t283 + 4.2949673e+09f);
+                    (((struct o24_float *)(t226))->v) = ((((((struct o58_float *)(a4))->v)) + (u235 / 1000.0f)) + -0.049999997f);
+                    t239 = (((struct o2E8_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x1C + t239);
+                    t240 = math_rand_float();
+                    u243 = (t240 * 255.0f);
+                    if (!(2.14748365e+09f > (t240 * 255.0f))) {
+                        u243 = (((t240 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                     }
-                    *(unsigned int *)(((0x18 + t277) + 0x0)) = ((*(int *)(((0x18 + t277) + 0x0))) + (int)((u286 * 65536.0f) / 360.0f));
-                    t290 = (((struct o2E8_int *)(a4))->v);
-                    *(int *)((int)stk + 0) = (0x18 + t290);
-                    math_rand_float();
-                    t296 = FUN_0c0e6f24();
-                    u299 = (float)t296;
-                    if ((int)t296 < 0) {
-                        u299 = ((float)t296 + 4.2949673e+09f);
+                    t245 = (int)((unsigned int)(int)u243 % (unsigned int)0x64);
+                    u248 = (float)t245;
+                    if ((int)t245 < 0) {
+                        u248 = ((float)t245 + 4.2949673e+09f);
                     }
-                    *(unsigned int *)(((0x18 + t290) + 0x0)) = ((*(int *)(((0x18 + t290) + 0x0))) + (int)((u299 * 65536.0f) / 360.0f));
+                    (((struct o1C_float *)(t239))->v) = ((((((struct o50_float *)(a4))->v)) + (u248 / 1000.0f)) + -0.049999997f);
+                    t252 = (((struct o2E8_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x20 + t252);
+                    t253 = math_rand_float();
+                    u256 = (t253 * 255.0f);
+                    if (!(2.14748365e+09f > (t253 * 255.0f))) {
+                        u256 = (((t253 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t258 = (int)((unsigned int)(int)u256 % (unsigned int)0x64);
+                    u261 = (float)t258;
+                    if ((int)t258 < 0) {
+                        u261 = ((float)t258 + 4.2949673e+09f);
+                    }
+                    (((struct o20_float *)(t252))->v) = ((((((struct o54_float *)(a4))->v)) + (u261 / 1000.0f)) + -0.049999997f);
+                    t265 = (((struct o2E8_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x24 + t265);
+                    t266 = math_rand_float();
+                    u269 = (t266 * 255.0f);
+                    if (!(2.14748365e+09f > (t266 * 255.0f))) {
+                        u269 = (((t266 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t271 = (int)((unsigned int)(int)u269 % (unsigned int)0x64);
+                    u274 = (float)t271;
+                    if ((int)t271 < 0) {
+                        u274 = ((float)t271 + 4.2949673e+09f);
+                    }
+                    (((struct o24_float *)(t265))->v) = ((((((struct o58_float *)(a4))->v)) + (u274 / 1000.0f)) + -0.049999997f);
+                    t278 = (((struct o2E4_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x18 + t278);
+                    t279 = math_rand_float();
+                    u282 = (t279 * 255.0f);
+                    if (!(2.14748365e+09f > (t279 * 255.0f))) {
+                        u282 = (((t279 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t284 = (int)((unsigned int)(int)u282 % (unsigned int)0x11);
+                    u287 = (float)t284;
+                    if ((int)t284 < 0) {
+                        u287 = ((float)t284 + 4.2949673e+09f);
+                    }
+                    *(unsigned int *)(((0x18 + t278) + 0x0)) = ((*(int *)(((0x18 + t278) + 0x0))) + (int)((u287 * 65536.0f) / 360.0f));
+                    t291 = (((struct o2E8_int *)(a4))->v);
+                    *(int *)((int)stk + 0) = (0x18 + t291);
+                    t292 = math_rand_float();
+                    u295 = (t292 * 255.0f);
+                    if (!(2.14748365e+09f > (t292 * 255.0f))) {
+                        u295 = (((t292 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                    }
+                    t297 = (int)((unsigned int)(int)u295 % (unsigned int)0x37);
+                    u300 = (float)t297;
+                    if ((int)t297 < 0) {
+                        u300 = ((float)t297 + 4.2949673e+09f);
+                    }
+                    *(unsigned int *)(((0x18 + t291) + 0x0)) = ((*(int *)(((0x18 + t291) + 0x0))) + (int)((u300 * 65536.0f) / 360.0f));
                     if ((*(signed char *)((a4 + 0x108))) != 0) {
-                        t304 = pl_get_hit_count_of_opponent(a4);
-                        if ((signed char)t304 == 1) {
+                        t305 = pl_get_hit_count_of_opponent(a4);
+                        if ((signed char)t305 == 1) {
                             (((struct o108_uchar *)(a4))->v) = 0x0;
                             (((struct oF0_ushort *)(a4))->v) = (((((struct oF0_short *)(a4))->v)) + 0x1);
-                            u307 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
-                            *(float *)(((int)stk + 0)) = u307;
-                            t309 = math_sin_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000));
-                            *(float *)(((int)stk + 0)) = (u307 * t309);
-                            u312 = (u307 * t309);
-                            (((struct o38_float *)(a4))->v) = (u312 * (math_cos_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))));
-                            u314 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
-                            *(float *)(((int)stk + 0)) = u314;
-                            (((struct o3C_float *)(a4))->v) = (u314 * (math_cos_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000))));
-                            u318 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
-                            *(float *)(((int)stk + 0)) = u318;
-                            t320 = math_sin_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000));
-                            *(float *)(((int)stk + 0)) = (u318 * t320);
-                            u323 = (u318 * t320);
-                            (((struct o40_float *)(a4))->v) = (u323 * (math_sin_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))));
+                            u308 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
+                            *(float *)(((int)stk + 0)) = u308;
+                            t310 = math_sin_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000));
+                            *(float *)(((int)stk + 0)) = (u308 * t310);
+                            u313 = (u308 * t310);
+                            (((struct o38_float *)(a4))->v) = (u313 * (math_cos_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))));
+                            u315 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
+                            *(float *)(((int)stk + 0)) = u315;
+                            (((struct o3C_float *)(a4))->v) = (u315 * (math_cos_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000))));
+                            u319 = *(float *)((0xC33C368 + (((((struct oF2_short *)(a4))->v)) << 2)));
+                            *(float *)(((int)stk + 0)) = u319;
+                            t321 = math_sin_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000));
+                            *(float *)(((int)stk + 0)) = (u319 * t321);
+                            u324 = (u319 * t321);
+                            (((struct o40_float *)(a4))->v) = (u324 * (math_sin_angle16(((-(*(int *)((a4 + 0x30)))) + 0x14000))));
                         }
                     }
                     (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + ((((struct o38_float *)(a4))->v)));
                     (((struct o24_float *)(a4))->v) = (((((struct o24_float *)(a4))->v)) - ((((struct o3C_float *)(a4))->v)));
                     (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + ((((struct o40_float *)(a4))->v)));
-                    *(volatile short *)((a4 + 0xEC));
-                    t342 = FUN_0c0e6e5c();
-                    if (t342 == 0) {
+                    if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x4)) == 0) {
                         if ((int)((((struct oF0_short *)(a4))->v)) < (int)0x9) {
-                            *(volatile short *)((a4 + 0xEC));
-                            t346 = FUN_0c0e6e5c();
-                            t347 = 0x7A;
-                            if (t346 == 0) {
-                                t347 = 0x73;
+                            t349 = 0x7A;
+                            if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x8)) == 0) {
+                                t349 = 0x73;
                             }
-                            obj_set_record_char(a4, t347);
+                            obj_set_record_char(a4, t349);
                         } else {
                             obj_set_record_char(a4, 0x79);
                         }
@@ -478,146 +610,190 @@ int fx_update_16(int a4)
                         (((struct oF2_ushort *)(a4))->v) = 0x1;
                     }
                     if (((((struct oF0_short *)(a4))->v)) != 10) {
-                        t360 = (((struct oEC_short *)(a4))->v);
-                        (((struct oEC_ushort *)(a4))->v) = (t360 - 1);
-                        if ((short)(t360 - 1) != 0) {
-                            t843 = 0x2D8;
+                        t366 = (((struct oEC_short *)(a4))->v);
+                        (((struct oEC_ushort *)(a4))->v) = (t366 - 1);
+                        if ((short)(t366 - 1) != 0) {
+                            t858 = 0x2D8;
                             if ((*(signed char *)((a4 + 0x2D8))) == 0) {
                             } else {
-                                t843 = 0xF2;
+                                t858 = 0xF2;
                                 if (((((struct oF2_short *)(a4))->v)) == 0) {
                                 } else {
                                     snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x31);
                                     fx_spawn_0375d4(a4);
                                     (((struct oEC_ushort *)(a4))->v) = 0x3C;
-                                    t369 = *(signed char *)((a4 + 0x8));
-                                    *(unsigned char *)((a4 + 0x8)) = (t369 + 0x1);
-                                    t843 = (t369 + 0x1);
+                                    t375 = *(signed char *)((a4 + 0x8));
+                                    *(unsigned char *)((a4 + 0x8)) = (t375 + 0x1);
+                                    t858 = (t375 + 0x1);
                                 }
                             }
                         } else {
                             snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x31);
                             fx_spawn_0375d4(a4);
                             (((struct oEC_ushort *)(a4))->v) = 0x3C;
-                            t383 = *(signed char *)((a4 + 0x8));
-                            *(unsigned char *)((a4 + 0x8)) = (t383 + 0x1);
-                            t843 = (t383 + 0x1);
+                            t393 = *(signed char *)((a4 + 0x8));
+                            *(unsigned char *)((a4 + 0x8)) = (t393 + 0x1);
+                            t858 = (t393 + 0x1);
                         }
                     } else {
                         snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x31);
                         fx_spawn_0375d4(a4);
                         (((struct oEC_ushort *)(a4))->v) = 0x3C;
-                        t392 = *(signed char *)((a4 + 0x8));
-                        *(unsigned char *)((a4 + 0x8)) = (t392 + 0x1);
-                        t843 = (t392 + 0x1);
+                        t404 = *(signed char *)((a4 + 0x8));
+                        *(unsigned char *)((a4 + 0x8)) = (t404 + 0x1);
+                        t858 = (t404 + 0x1);
                     }
                 } else {
                     if (t3 == 4) {
                         *(unsigned int *)((a4 + 0x34)) = ((*(int *)((a4 + 0x34))) + 0xC16);
-                        u399 = (((struct o58_float *)(a4))->v);
-                        (((struct o58_float *)(a4))->v) = (u399 - 0.00999999978f);
-                        (((struct o54_float *)(a4))->v) = (u399 - 0.00999999978f);
-                        (((struct o50_float *)(a4))->v) = (u399 - 0.00999999978f);
-                        t400 = (((struct o2E0_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x1C + t400);
-                        math_rand_float();
-                        t406 = FUN_0c0e6f24();
-                        u409 = (float)t406;
-                        if ((int)t406 < 0) {
-                            u409 = ((float)t406 + 4.2949673e+09f);
+                        u413 = (((struct o58_float *)(a4))->v);
+                        (((struct o58_float *)(a4))->v) = (u413 - 0.00999999978f);
+                        (((struct o54_float *)(a4))->v) = (u413 - 0.00999999978f);
+                        (((struct o50_float *)(a4))->v) = (u413 - 0.00999999978f);
+                        t414 = (((struct o2E0_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x1C + t414);
+                        t415 = math_rand_float();
+                        u418 = (t415 * 255.0f);
+                        if (!(2.14748365e+09f > (t415 * 255.0f))) {
+                            u418 = (((t415 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        (((struct o1C_float *)(t400))->v) = ((u409 / 1000.0f) + -0.049999997f);
-                        t412 = (((struct o2E0_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x20 + t412);
-                        math_rand_float();
-                        t418 = FUN_0c0e6f24();
-                        u421 = (float)t418;
-                        if ((int)t418 < 0) {
-                            u421 = ((float)t418 + 4.2949673e+09f);
+                        t420 = (int)((unsigned int)(int)u418 % (unsigned int)0x64);
+                        u423 = (float)t420;
+                        if ((int)t420 < 0) {
+                            u423 = ((float)t420 + 4.2949673e+09f);
                         }
-                        (((struct o20_float *)(t412))->v) = ((u421 / 1000.0f) + -0.049999997f);
-                        t424 = (((struct o2E0_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x24 + t424);
-                        math_rand_float();
-                        t430 = FUN_0c0e6f24();
-                        u433 = (float)t430;
-                        if ((int)t430 < 0) {
-                            u433 = ((float)t430 + 4.2949673e+09f);
+                        (((struct o1C_float *)(t414))->v) = ((u423 / 1000.0f) + -0.049999997f);
+                        t426 = (((struct o2E0_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x20 + t426);
+                        t427 = math_rand_float();
+                        u430 = (t427 * 255.0f);
+                        if (!(2.14748365e+09f > (t427 * 255.0f))) {
+                            u430 = (((t427 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        (((struct o24_float *)(t424))->v) = ((u433 / 1000.0f) + -0.049999997f);
-                        t436 = (((struct o2E4_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x1C + t436);
-                        math_rand_float();
-                        t442 = FUN_0c0e6f24();
-                        u445 = (float)t442;
-                        if ((int)t442 < 0) {
-                            u445 = ((float)t442 + 4.2949673e+09f);
+                        t432 = (int)((unsigned int)(int)u430 % (unsigned int)0x64);
+                        u435 = (float)t432;
+                        if ((int)t432 < 0) {
+                            u435 = ((float)t432 + 4.2949673e+09f);
                         }
-                        (((struct o1C_float *)(t436))->v) = ((((((struct o50_float *)(a4))->v)) + (u445 / 1000.0f)) + -0.049999997f);
-                        t449 = (((struct o2E4_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x20 + t449);
-                        math_rand_float();
-                        t455 = FUN_0c0e6f24();
-                        u458 = (float)t455;
-                        if ((int)t455 < 0) {
-                            u458 = ((float)t455 + 4.2949673e+09f);
+                        (((struct o20_float *)(t426))->v) = ((u435 / 1000.0f) + -0.049999997f);
+                        t438 = (((struct o2E0_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x24 + t438);
+                        t439 = math_rand_float();
+                        u442 = (t439 * 255.0f);
+                        if (!(2.14748365e+09f > (t439 * 255.0f))) {
+                            u442 = (((t439 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        (((struct o20_float *)(t449))->v) = ((((((struct o54_float *)(a4))->v)) + (u458 / 1000.0f)) + -0.049999997f);
-                        t462 = (((struct o2E4_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x24 + t462);
-                        math_rand_float();
-                        t468 = FUN_0c0e6f24();
-                        u471 = (float)t468;
-                        if ((int)t468 < 0) {
-                            u471 = ((float)t468 + 4.2949673e+09f);
+                        t444 = (int)((unsigned int)(int)u442 % (unsigned int)0x64);
+                        u447 = (float)t444;
+                        if ((int)t444 < 0) {
+                            u447 = ((float)t444 + 4.2949673e+09f);
                         }
-                        (((struct o24_float *)(t462))->v) = ((((((struct o58_float *)(a4))->v)) + (u471 / 1000.0f)) + -0.049999997f);
-                        t475 = (((struct o2E8_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x1C + t475);
-                        math_rand_float();
-                        t481 = FUN_0c0e6f24();
-                        u484 = (float)t481;
-                        if ((int)t481 < 0) {
-                            u484 = ((float)t481 + 4.2949673e+09f);
+                        (((struct o24_float *)(t438))->v) = ((u447 / 1000.0f) + -0.049999997f);
+                        t450 = (((struct o2E4_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x1C + t450);
+                        t451 = math_rand_float();
+                        u454 = (t451 * 255.0f);
+                        if (!(2.14748365e+09f > (t451 * 255.0f))) {
+                            u454 = (((t451 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        (((struct o1C_float *)(t475))->v) = ((((((struct o50_float *)(a4))->v)) + (u484 / 1000.0f)) + -0.049999997f);
-                        t488 = (((struct o2E8_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x20 + t488);
-                        math_rand_float();
-                        t494 = FUN_0c0e6f24();
-                        u497 = (float)t494;
-                        if ((int)t494 < 0) {
-                            u497 = ((float)t494 + 4.2949673e+09f);
+                        t456 = (int)((unsigned int)(int)u454 % (unsigned int)0x64);
+                        u459 = (float)t456;
+                        if ((int)t456 < 0) {
+                            u459 = ((float)t456 + 4.2949673e+09f);
                         }
-                        (((struct o20_float *)(t488))->v) = ((((((struct o54_float *)(a4))->v)) + (u497 / 1000.0f)) + -0.049999997f);
-                        t501 = (((struct o2E8_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x24 + t501);
-                        math_rand_float();
-                        t507 = FUN_0c0e6f24();
-                        u510 = (float)t507;
-                        if ((int)t507 < 0) {
-                            u510 = ((float)t507 + 4.2949673e+09f);
+                        (((struct o1C_float *)(t450))->v) = ((((((struct o50_float *)(a4))->v)) + (u459 / 1000.0f)) + -0.049999997f);
+                        t463 = (((struct o2E4_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x20 + t463);
+                        t464 = math_rand_float();
+                        u467 = (t464 * 255.0f);
+                        if (!(2.14748365e+09f > (t464 * 255.0f))) {
+                            u467 = (((t464 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        (((struct o24_float *)(t501))->v) = ((((((struct o58_float *)(a4))->v)) + (u510 / 1000.0f)) + -0.049999997f);
-                        t514 = (((struct o2E4_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x18 + t514);
-                        math_rand_float();
-                        t520 = FUN_0c0e6f24();
-                        u523 = (float)t520;
-                        if ((int)t520 < 0) {
-                            u523 = ((float)t520 + 4.2949673e+09f);
+                        t469 = (int)((unsigned int)(int)u467 % (unsigned int)0x64);
+                        u472 = (float)t469;
+                        if ((int)t469 < 0) {
+                            u472 = ((float)t469 + 4.2949673e+09f);
                         }
-                        *(unsigned int *)(((0x18 + t514) + 0x0)) = ((*(int *)(((0x18 + t514) + 0x0))) + (int)((u523 * 65536.0f) / 360.0f));
-                        t527 = (((struct o2E8_int *)(a4))->v);
-                        *(int *)((int)stk + 0) = (0x18 + t527);
-                        math_rand_float();
-                        t533 = FUN_0c0e6f24();
-                        u536 = (float)t533;
-                        if ((int)t533 < 0) {
-                            u536 = ((float)t533 + 4.2949673e+09f);
+                        (((struct o20_float *)(t463))->v) = ((((((struct o54_float *)(a4))->v)) + (u472 / 1000.0f)) + -0.049999997f);
+                        t476 = (((struct o2E4_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x24 + t476);
+                        t477 = math_rand_float();
+                        u480 = (t477 * 255.0f);
+                        if (!(2.14748365e+09f > (t477 * 255.0f))) {
+                            u480 = (((t477 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                         }
-                        *(unsigned int *)(((0x18 + t527) + 0x0)) = ((*(int *)(((0x18 + t527) + 0x0))) + (int)((u536 * 65536.0f) / 360.0f));
-                        t843 = 0x50;
+                        t482 = (int)((unsigned int)(int)u480 % (unsigned int)0x64);
+                        u485 = (float)t482;
+                        if ((int)t482 < 0) {
+                            u485 = ((float)t482 + 4.2949673e+09f);
+                        }
+                        (((struct o24_float *)(t476))->v) = ((((((struct o58_float *)(a4))->v)) + (u485 / 1000.0f)) + -0.049999997f);
+                        t489 = (((struct o2E8_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x1C + t489);
+                        t490 = math_rand_float();
+                        u493 = (t490 * 255.0f);
+                        if (!(2.14748365e+09f > (t490 * 255.0f))) {
+                            u493 = (((t490 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t495 = (int)((unsigned int)(int)u493 % (unsigned int)0x64);
+                        u498 = (float)t495;
+                        if ((int)t495 < 0) {
+                            u498 = ((float)t495 + 4.2949673e+09f);
+                        }
+                        (((struct o1C_float *)(t489))->v) = ((((((struct o50_float *)(a4))->v)) + (u498 / 1000.0f)) + -0.049999997f);
+                        t502 = (((struct o2E8_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x20 + t502);
+                        t503 = math_rand_float();
+                        u506 = (t503 * 255.0f);
+                        if (!(2.14748365e+09f > (t503 * 255.0f))) {
+                            u506 = (((t503 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t508 = (int)((unsigned int)(int)u506 % (unsigned int)0x64);
+                        u511 = (float)t508;
+                        if ((int)t508 < 0) {
+                            u511 = ((float)t508 + 4.2949673e+09f);
+                        }
+                        (((struct o20_float *)(t502))->v) = ((((((struct o54_float *)(a4))->v)) + (u511 / 1000.0f)) + -0.049999997f);
+                        t515 = (((struct o2E8_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x24 + t515);
+                        t516 = math_rand_float();
+                        u519 = (t516 * 255.0f);
+                        if (!(2.14748365e+09f > (t516 * 255.0f))) {
+                            u519 = (((t516 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t521 = (int)((unsigned int)(int)u519 % (unsigned int)0x64);
+                        u524 = (float)t521;
+                        if ((int)t521 < 0) {
+                            u524 = ((float)t521 + 4.2949673e+09f);
+                        }
+                        (((struct o24_float *)(t515))->v) = ((((((struct o58_float *)(a4))->v)) + (u524 / 1000.0f)) + -0.049999997f);
+                        t528 = (((struct o2E4_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x18 + t528);
+                        t529 = math_rand_float();
+                        u532 = (t529 * 255.0f);
+                        if (!(2.14748365e+09f > (t529 * 255.0f))) {
+                            u532 = (((t529 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t534 = (int)((unsigned int)(int)u532 % (unsigned int)0x11);
+                        u537 = (float)t534;
+                        if ((int)t534 < 0) {
+                            u537 = ((float)t534 + 4.2949673e+09f);
+                        }
+                        *(unsigned int *)(((0x18 + t528) + 0x0)) = ((*(int *)(((0x18 + t528) + 0x0))) + (int)((u537 * 65536.0f) / 360.0f));
+                        t541 = (((struct o2E8_int *)(a4))->v);
+                        *(int *)((int)stk + 0) = (0x18 + t541);
+                        t542 = math_rand_float();
+                        u545 = (t542 * 255.0f);
+                        if (!(2.14748365e+09f > (t542 * 255.0f))) {
+                            u545 = (((t542 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                        }
+                        t547 = (int)((unsigned int)(int)u545 % (unsigned int)0x35);
+                        u550 = (float)t547;
+                        if ((int)t547 < 0) {
+                            u550 = ((float)t547 + 4.2949673e+09f);
+                        }
+                        *(unsigned int *)(((0x18 + t541) + 0x0)) = ((*(int *)(((0x18 + t541) + 0x0))) + (int)((u550 * 65536.0f) / 360.0f));
+                        t858 = 0x50;
                         if (!(0.099999994f > ((((struct o50_float *)(a4))->v)))) {
                         } else {
                             snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x22);
@@ -626,9 +802,9 @@ int fx_update_16(int a4)
                             (((struct o101_uchar *)(a4))->v) = 0x0;
                             (((struct o102_uchar *)(a4))->v) = 0x0;
                             (((struct oEC_ushort *)(a4))->v) = 0x1E;
-                            t545 = *(signed char *)((a4 + 0x8));
-                            *(unsigned char *)((a4 + 0x8)) = (t545 + 0x1);
-                            t843 = (t545 + 0x1);
+                            t559 = *(signed char *)((a4 + 0x8));
+                            *(unsigned char *)((a4 + 0x8)) = (t559 + 0x1);
+                            t858 = (t559 + 0x1);
                         }
                     } else {
                         if (t3 == 5) {
@@ -641,115 +817,155 @@ int fx_update_16(int a4)
                             (((struct o1C_float *)(((((struct o2E8_int *)(a4))->v))))->v) = ((((struct o50_float *)(a4))->v));
                             (((struct o20_float *)(((((struct o2E8_int *)(a4))->v))))->v) = ((((struct o54_float *)(a4))->v));
                             (((struct o24_float *)(((((struct o2E8_int *)(a4))->v))))->v) = ((((struct o58_float *)(a4))->v));
-                            t568 = (((struct o2E4_int *)(a4))->v);
-                            *(int *)((int)stk + 0) = (0x18 + t568);
-                            math_rand_float();
-                            t574 = FUN_0c0e6f24();
-                            u577 = (float)t574;
-                            if ((int)t574 < 0) {
-                                u577 = ((float)t574 + 4.2949673e+09f);
+                            t583 = (((struct o2E4_int *)(a4))->v);
+                            *(int *)((int)stk + 0) = (0x18 + t583);
+                            t584 = math_rand_float();
+                            u587 = (t584 * 255.0f);
+                            if (!(2.14748365e+09f > (t584 * 255.0f))) {
+                                u587 = (((t584 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                             }
-                            *(unsigned int *)(((0x18 + t568) + 0x0)) = ((*(int *)(((0x18 + t568) + 0x0))) + (int)((u577 * 65536.0f) / 360.0f));
-                            t581 = (((struct o2E8_int *)(a4))->v);
-                            *(int *)((int)stk + 0) = (0x18 + t581);
-                            math_rand_float();
-                            t587 = FUN_0c0e6f24();
-                            u590 = (float)t587;
-                            if ((int)t587 < 0) {
-                                u590 = ((float)t587 + 4.2949673e+09f);
+                            t589 = (int)((unsigned int)(int)u587 % (unsigned int)0x11);
+                            u592 = (float)t589;
+                            if ((int)t589 < 0) {
+                                u592 = ((float)t589 + 4.2949673e+09f);
                             }
-                            *(unsigned int *)(((0x18 + t581) + 0x0)) = ((*(int *)(((0x18 + t581) + 0x0))) + (int)((u590 * 65536.0f) / 360.0f));
-                            t594 = (((struct oEC_short *)(a4))->v);
-                            (((struct oEC_ushort *)(a4))->v) = (t594 - 1);
-                            t843 = 0xEC;
-                            if ((short)(t594 - 1) != 0) {
+                            *(unsigned int *)(((0x18 + t583) + 0x0)) = ((*(int *)(((0x18 + t583) + 0x0))) + (int)((u592 * 65536.0f) / 360.0f));
+                            t596 = (((struct o2E8_int *)(a4))->v);
+                            *(int *)((int)stk + 0) = (0x18 + t596);
+                            t597 = math_rand_float();
+                            u600 = (t597 * 255.0f);
+                            if (!(2.14748365e+09f > (t597 * 255.0f))) {
+                                u600 = (((t597 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                            }
+                            t602 = (int)((unsigned int)(int)u600 % (unsigned int)0x37);
+                            u605 = (float)t602;
+                            if ((int)t602 < 0) {
+                                u605 = ((float)t602 + 4.2949673e+09f);
+                            }
+                            *(unsigned int *)(((0x18 + t596) + 0x0)) = ((*(int *)(((0x18 + t596) + 0x0))) + (int)((u605 * 65536.0f) / 360.0f));
+                            t609 = (((struct oEC_short *)(a4))->v);
+                            (((struct oEC_ushort *)(a4))->v) = (t609 - 1);
+                            t858 = 0xEC;
+                            if ((short)(t609 - 1) != 0) {
                             } else {
                                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
                                 *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-                                t597 = *(signed char *)((a4 + 0x8));
-                                *(unsigned char *)((a4 + 0x8)) = (t597 + 0x1);
-                                t843 = (t597 + 0x1);
+                                t612 = *(signed char *)((a4 + 0x8));
+                                *(unsigned char *)((a4 + 0x8)) = (t612 + 0x1);
+                                t858 = (t612 + 0x1);
                             }
                         } else {
                             if (t3 == 6) {
                                 *(unsigned int *)((a4 + 0x34)) = ((*(int *)((a4 + 0x34))) + 0xC16);
-                                u601 = (((struct o58_float *)(a4))->v);
-                                (((struct o58_float *)(a4))->v) = (u601 - 0.00499999989f);
-                                (((struct o54_float *)(a4))->v) = (u601 - 0.00499999989f);
-                                (((struct o50_float *)(a4))->v) = (u601 - 0.00499999989f);
-                                t602 = (((struct o2E4_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x1C + t602);
-                                math_rand_float();
-                                t608 = FUN_0c0e6f24();
-                                u611 = (float)t608;
-                                if ((int)t608 < 0) {
-                                    u611 = ((float)t608 + 4.2949673e+09f);
+                                u616 = (((struct o58_float *)(a4))->v);
+                                (((struct o58_float *)(a4))->v) = (u616 - 0.00499999989f);
+                                (((struct o54_float *)(a4))->v) = (u616 - 0.00499999989f);
+                                (((struct o50_float *)(a4))->v) = (u616 - 0.00499999989f);
+                                t617 = (((struct o2E4_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x1C + t617);
+                                t618 = math_rand_float();
+                                u621 = (t618 * 255.0f);
+                                if (!(2.14748365e+09f > (t618 * 255.0f))) {
+                                    u621 = (((t618 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                                 }
-                                (((struct o1C_float *)(t602))->v) = ((((((struct o50_float *)(a4))->v)) + (u611 / 1000.0f)) + -0.049999997f);
-                                t615 = (((struct o2E4_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x20 + t615);
-                                math_rand_float();
-                                t621 = FUN_0c0e6f24();
-                                u624 = (float)t621;
-                                if ((int)t621 < 0) {
-                                    u624 = ((float)t621 + 4.2949673e+09f);
+                                t623 = (int)((unsigned int)(int)u621 % (unsigned int)0x64);
+                                u626 = (float)t623;
+                                if ((int)t623 < 0) {
+                                    u626 = ((float)t623 + 4.2949673e+09f);
                                 }
-                                (((struct o20_float *)(t615))->v) = ((((((struct o54_float *)(a4))->v)) + (u624 / 1000.0f)) + -0.049999997f);
-                                t628 = (((struct o2E4_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x24 + t628);
-                                math_rand_float();
-                                t634 = FUN_0c0e6f24();
-                                u637 = (float)t634;
-                                if ((int)t634 < 0) {
-                                    u637 = ((float)t634 + 4.2949673e+09f);
+                                (((struct o1C_float *)(t617))->v) = ((((((struct o50_float *)(a4))->v)) + (u626 / 1000.0f)) + -0.049999997f);
+                                t630 = (((struct o2E4_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x20 + t630);
+                                t631 = math_rand_float();
+                                u634 = (t631 * 255.0f);
+                                if (!(2.14748365e+09f > (t631 * 255.0f))) {
+                                    u634 = (((t631 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                                 }
-                                (((struct o24_float *)(t628))->v) = ((((((struct o58_float *)(a4))->v)) + (u637 / 1000.0f)) + -0.049999997f);
-                                t641 = (((struct o2E8_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x1C + t641);
-                                math_rand_float();
-                                t647 = FUN_0c0e6f24();
-                                u650 = (float)t647;
-                                if ((int)t647 < 0) {
-                                    u650 = ((float)t647 + 4.2949673e+09f);
+                                t636 = (int)((unsigned int)(int)u634 % (unsigned int)0x64);
+                                u639 = (float)t636;
+                                if ((int)t636 < 0) {
+                                    u639 = ((float)t636 + 4.2949673e+09f);
                                 }
-                                (((struct o1C_float *)(t641))->v) = ((((((struct o50_float *)(a4))->v)) + (u650 / 1000.0f)) + -0.049999997f);
-                                t654 = (((struct o2E8_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x20 + t654);
-                                math_rand_float();
-                                t660 = FUN_0c0e6f24();
-                                u663 = (float)t660;
-                                if ((int)t660 < 0) {
-                                    u663 = ((float)t660 + 4.2949673e+09f);
+                                (((struct o20_float *)(t630))->v) = ((((((struct o54_float *)(a4))->v)) + (u639 / 1000.0f)) + -0.049999997f);
+                                t643 = (((struct o2E4_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x24 + t643);
+                                t644 = math_rand_float();
+                                u647 = (t644 * 255.0f);
+                                if (!(2.14748365e+09f > (t644 * 255.0f))) {
+                                    u647 = (((t644 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                                 }
-                                (((struct o20_float *)(t654))->v) = ((((((struct o54_float *)(a4))->v)) + (u663 / 1000.0f)) + -0.049999997f);
-                                t667 = (((struct o2E8_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x24 + t667);
-                                math_rand_float();
-                                t673 = FUN_0c0e6f24();
-                                u676 = (float)t673;
-                                if ((int)t673 < 0) {
-                                    u676 = ((float)t673 + 4.2949673e+09f);
+                                t649 = (int)((unsigned int)(int)u647 % (unsigned int)0x64);
+                                u652 = (float)t649;
+                                if ((int)t649 < 0) {
+                                    u652 = ((float)t649 + 4.2949673e+09f);
                                 }
-                                (((struct o24_float *)(t667))->v) = ((((((struct o58_float *)(a4))->v)) + (u676 / 1000.0f)) + -0.049999997f);
-                                t680 = (((struct o2E4_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x18 + t680);
-                                math_rand_float();
-                                t686 = FUN_0c0e6f24();
-                                u689 = (float)t686;
-                                if ((int)t686 < 0) {
-                                    u689 = ((float)t686 + 4.2949673e+09f);
+                                (((struct o24_float *)(t643))->v) = ((((((struct o58_float *)(a4))->v)) + (u652 / 1000.0f)) + -0.049999997f);
+                                t656 = (((struct o2E8_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x1C + t656);
+                                t657 = math_rand_float();
+                                u660 = (t657 * 255.0f);
+                                if (!(2.14748365e+09f > (t657 * 255.0f))) {
+                                    u660 = (((t657 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
                                 }
-                                *(unsigned int *)(((0x18 + t680) + 0x0)) = ((*(int *)(((0x18 + t680) + 0x0))) + (int)((u689 * 65536.0f) / 360.0f));
-                                t693 = (((struct o2E8_int *)(a4))->v);
-                                *(int *)((int)stk + 0) = (0x18 + t693);
-                                math_rand_float();
-                                t699 = FUN_0c0e6f24();
-                                u702 = (float)t699;
-                                if ((int)t699 < 0) {
-                                    u702 = ((float)t699 + 4.2949673e+09f);
+                                t662 = (int)((unsigned int)(int)u660 % (unsigned int)0x64);
+                                u665 = (float)t662;
+                                if ((int)t662 < 0) {
+                                    u665 = ((float)t662 + 4.2949673e+09f);
                                 }
-                                *(unsigned int *)(((0x18 + t693) + 0x0)) = ((*(int *)(((0x18 + t693) + 0x0))) + (int)((u702 * 65536.0f) / 360.0f));
-                                t843 = 0x50;
+                                (((struct o1C_float *)(t656))->v) = ((((((struct o50_float *)(a4))->v)) + (u665 / 1000.0f)) + -0.049999997f);
+                                t669 = (((struct o2E8_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x20 + t669);
+                                t670 = math_rand_float();
+                                u673 = (t670 * 255.0f);
+                                if (!(2.14748365e+09f > (t670 * 255.0f))) {
+                                    u673 = (((t670 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                                }
+                                t675 = (int)((unsigned int)(int)u673 % (unsigned int)0x64);
+                                u678 = (float)t675;
+                                if ((int)t675 < 0) {
+                                    u678 = ((float)t675 + 4.2949673e+09f);
+                                }
+                                (((struct o20_float *)(t669))->v) = ((((((struct o54_float *)(a4))->v)) + (u678 / 1000.0f)) + -0.049999997f);
+                                t682 = (((struct o2E8_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x24 + t682);
+                                t683 = math_rand_float();
+                                u686 = (t683 * 255.0f);
+                                if (!(2.14748365e+09f > (t683 * 255.0f))) {
+                                    u686 = (((t683 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                                }
+                                t688 = (int)((unsigned int)(int)u686 % (unsigned int)0x64);
+                                u691 = (float)t688;
+                                if ((int)t688 < 0) {
+                                    u691 = ((float)t688 + 4.2949673e+09f);
+                                }
+                                (((struct o24_float *)(t682))->v) = ((((((struct o58_float *)(a4))->v)) + (u691 / 1000.0f)) + -0.049999997f);
+                                t695 = (((struct o2E4_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x18 + t695);
+                                t696 = math_rand_float();
+                                u699 = (t696 * 255.0f);
+                                if (!(2.14748365e+09f > (t696 * 255.0f))) {
+                                    u699 = (((t696 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                                }
+                                t701 = (int)((unsigned int)(int)u699 % (unsigned int)0x11);
+                                u704 = (float)t701;
+                                if ((int)t701 < 0) {
+                                    u704 = ((float)t701 + 4.2949673e+09f);
+                                }
+                                *(unsigned int *)(((0x18 + t695) + 0x0)) = ((*(int *)(((0x18 + t695) + 0x0))) + (int)((u704 * 65536.0f) / 360.0f));
+                                t708 = (((struct o2E8_int *)(a4))->v);
+                                *(int *)((int)stk + 0) = (0x18 + t708);
+                                t709 = math_rand_float();
+                                u712 = (t709 * 255.0f);
+                                if (!(2.14748365e+09f > (t709 * 255.0f))) {
+                                    u712 = (((t709 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+                                }
+                                t714 = (int)((unsigned int)(int)u712 % (unsigned int)0x35);
+                                u717 = (float)t714;
+                                if ((int)t714 < 0) {
+                                    u717 = ((float)t714 + 4.2949673e+09f);
+                                }
+                                *(unsigned int *)(((0x18 + t708) + 0x0)) = ((*(int *)(((0x18 + t708) + 0x0))) + (int)((u717 * 65536.0f) / 360.0f));
+                                t858 = 0x50;
                                 if (0.0f > ((((struct o50_float *)(a4))->v))) {
                                     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x0;
                                     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x0;
@@ -757,25 +973,25 @@ int fx_update_16(int a4)
                                     (((struct o101_uchar *)(a4))->v) = 0x0;
                                     (((struct o102_uchar *)(a4))->v) = 0x0;
                                     (((struct oEC_ushort *)(a4))->v) = 0x5A;
-                                    t710 = *(signed char *)((a4 + 0x8));
-                                    *(unsigned char *)((a4 + 0x8)) = (t710 + 0x1);
-                                    t843 = (t710 + 0x1);
+                                    t725 = *(signed char *)((a4 + 0x8));
+                                    *(unsigned char *)((a4 + 0x8)) = (t725 + 0x1);
+                                    t858 = (t725 + 0x1);
                                 }
                             } else {
                                 if (t3 == 7) {
-                                    t715 = (((struct oEC_short *)(a4))->v);
-                                    (((struct oEC_ushort *)(a4))->v) = (t715 - 1);
-                                    t843 = 0xEC;
-                                    if ((short)(t715 - 1) == 0) {
-                                        t716 = *(signed char *)((a4 + 0x8));
-                                        *(unsigned char *)((a4 + 0x8)) = (t716 + 0x1);
-                                        t843 = (t716 + 0x1);
+                                    t730 = (((struct oEC_short *)(a4))->v);
+                                    (((struct oEC_ushort *)(a4))->v) = (t730 - 1);
+                                    t858 = 0xEC;
+                                    if ((short)(t730 - 1) == 0) {
+                                        t731 = *(signed char *)((a4 + 0x8));
+                                        *(unsigned char *)((a4 + 0x8)) = (t731 + 0x1);
+                                        t858 = (t731 + 0x1);
                                     }
                                 } else {
-                                    t843 = t3;
+                                    t858 = t3;
                                     if (t3 == 8) {
                                         snd_play_char_voice((*(int *)((a4 + 0x1C))), 0x31);
-                                        t843 = (obj_destroy(a4));
+                                        t858 = (obj_destroy(a4));
                                     }
                                 }
                             }
@@ -786,12 +1002,12 @@ int fx_update_16(int a4)
         } else {
             if ((*(signed char *)((0x71BA + (*(int *)((a4 + 0x1C)))))) != 11) {
                 *(unsigned char *)((a4 + 0x8)) = 0x8;
-                t843 = 0x8;
+                t858 = 0x8;
             } else {
-                t780 = (((struct oEC_short *)(a4))->v);
-                (((struct oEC_ushort *)(a4))->v) = (t780 - 1);
-                t843 = 0xEC;
-                if ((short)(t780 - 1) != 0) {
+                t795 = (((struct oEC_short *)(a4))->v);
+                (((struct oEC_ushort *)(a4))->v) = (t795 - 1);
+                t858 = 0xEC;
+                if ((short)(t795 - 1) != 0) {
                 } else {
                     *(unsigned char *)((a4 + 0x1)) = 0x1;
                     obj_set_record_char(a4, 0x79);
@@ -805,9 +1021,9 @@ int fx_update_16(int a4)
                     (((struct oEC_ushort *)(a4))->v) = 0xF0;
                     (((struct oEE_ushort *)(a4))->v) = 0x32;
                     (((struct oF0_ushort *)(a4))->v) = 0x0;
-                    t790 = *(signed char *)((a4 + 0x8));
-                    *(unsigned char *)((a4 + 0x8)) = (t790 + 0x1);
-                    t843 = (t790 + 0x1);
+                    t805 = *(signed char *)((a4 + 0x8));
+                    *(unsigned char *)((a4 + 0x8)) = (t805 + 0x1);
+                    t858 = (t805 + 0x1);
                 }
             }
         }
@@ -817,12 +1033,12 @@ int fx_update_16(int a4)
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
         if ((*(signed char *)((0x71BA + (*(int *)((a4 + 0x1C)))))) != 11) {
             *(unsigned char *)((a4 + 0x8)) = 0x8;
-            t843 = 0x8;
+            t858 = 0x8;
         } else {
-            t818 = (((struct oEC_short *)(a4))->v);
-            (((struct oEC_ushort *)(a4))->v) = (t818 - 1);
-            t843 = 0xEC;
-            if ((short)(t818 - 1) != 0) {
+            t833 = (((struct oEC_short *)(a4))->v);
+            (((struct oEC_ushort *)(a4))->v) = (t833 - 1);
+            t858 = 0xEC;
+            if ((short)(t833 - 1) != 0) {
             } else {
                 *(unsigned char *)((a4 + 0x1)) = 0x1;
                 obj_set_record_char(a4, 0x79);
@@ -836,11 +1052,11 @@ int fx_update_16(int a4)
                 (((struct oEC_ushort *)(a4))->v) = 0xF0;
                 (((struct oEE_ushort *)(a4))->v) = 0x32;
                 (((struct oF0_ushort *)(a4))->v) = 0x0;
-                t828 = *(signed char *)((a4 + 0x8));
-                *(unsigned char *)((a4 + 0x8)) = (t828 + 0x1);
-                t843 = (t828 + 0x1);
+                t843 = *(signed char *)((a4 + 0x8));
+                *(unsigned char *)((a4 + 0x8)) = (t843 + 0x1);
+                t858 = (t843 + 0x1);
             }
         }
     }
-    return t843;
+    return t858;
 }

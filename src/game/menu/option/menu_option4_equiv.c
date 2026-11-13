@@ -23,9 +23,9 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o5C_float { char p[0x5C]; float v; };
 struct oEC_int { char p[0xEC]; int v; };
 struct oEC_uint { char p[0xEC]; unsigned int v; };
@@ -37,8 +37,8 @@ struct o18_short { char p[0x18]; short v; };
 struct o2_short { char p[0x2]; short v; };
 struct o4_short { char p[0x4]; short v; };
 
-int FUN_0c01b788(int a4);
-int FUN_0c01b898(void);
+void FUN_0c01b788(int);
+void FUN_0c01b898(void);
 int FUN_0c01b936(int a4, int a5);
 int pad_get_start_mask(void);
 
@@ -117,15 +117,13 @@ void FUN_0c01b744(void)
     
 }
 
-int FUN_0c01b788(int a4)
+void FUN_0c01b788(int a4)
 {
     int stk[1];
     register int t0;
-    register int t12;
 
     *(unsigned char *)(((int)stk + 0)) = a4;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t12 = t0;
+    t0 = ((int (*)(int, int, int, int))obj_create)(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01B744;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -140,15 +138,12 @@ int FUN_0c01b788(int a4)
         *(unsigned int *)((t0 + 0x34)) = 0x0;
         *(unsigned int *)((t0 + 0x30)) = 0x0;
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C24C))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C24C))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        *(volatile int *)((t0 + 0x2E0));
-        *(volatile signed char *)((t0 + 0x4));
-        t12 = (FUN_0c0e6fe8());
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C240)); }
     }
-    return t12;
 }
 
 int FUN_0c01b82e(int a4)
@@ -162,13 +157,11 @@ int FUN_0c01b82e(int a4)
     return 0xC01B894;
 }
 
-int FUN_0c01b898(void)
+void FUN_0c01b898(void)
 {
     register int t0;
-    register int t11;
 
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t11 = t0;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
     if (t0 != 0) {
         *(unsigned int *)((t0 + 0x10)) = 0xC01B82E;
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -183,15 +176,12 @@ int FUN_0c01b898(void)
         *(unsigned int *)((t0 + 0x34)) = 0x0;
         *(unsigned int *)((t0 + 0x30)) = 0x0;
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C26C))));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, (*(signed char *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C26C))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        *(volatile int *)((t0 + 0x2E0));
-        *(volatile signed char *)((t0 + 0x4));
-        t11 = (FUN_0c0e6fe8());
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)(((((*(signed char *)((t0 + 0x4))) << 2) << 2) + 0xC11C260)); }
     }
-    return t11;
 }
 
 int FUN_0c01b936(int a4, int a5)

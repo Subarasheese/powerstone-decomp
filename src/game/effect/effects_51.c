@@ -7,12 +7,12 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6e5c();
-extern int FUN_0c0e6fe8();
+extern int _modls();
+extern int _quick_odd_mvn();
 
-int FUN_0c03a58c(int a4, int a5, int a6, int a7)
+int FUN_0c03a58c(int a4, int a5, int a6)
 {
     int stk[3];
     register int t0;
@@ -28,22 +28,23 @@ int FUN_0c03a58c(int a4, int a5, int a6, int a7)
     register int t42;
     register int t41;
     register int t44;
-    register float u48;
-    register float u53;
+    register float t49;
+    register int t51;
+    register float t54;
     register int t56;
     register int t59;
     register int t64;
-    register int t66;
+    register int t67;
+    register int t68;
     register int t69;
-    register int t73;
-    register int t75;
+    register int t70;
+    register int t74;
     register int t6;
     register int t7;
     register int t8;
     register float u11;
-    register int t70;
-    register int t71;
-    register int t74;
+    register int t65;
+    register int t66;
 
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
@@ -130,17 +131,16 @@ int FUN_0c03a58c(int a4, int a5, int a6, int a7)
                 }
                 return t42;
             }
-            return obj_destroy(a4, 0x1, a6, a7);
+            return obj_destroy(a4);
         }
         t44 = (((struct o2E0_int *)(a4))->v);
         (((struct o4_float *)(t44))->v) = (((((struct o4_float *)(t44))->v)) + -1.15909088f);
-        *(volatile short *)((a4 + 0xEC));
-        u48 = (((float)(((int (*)(int))(FUN_0c0e6e5c))(a4)) * 65536.0f) / 360.0f);
-        (((struct o8_float *)(t44))->v) = (_builtin_fabsf((math_sin_angle16(((int)(u48 + 0.5f) & 0xFFFF)))) * 20.0f);
+        t49 = math_sin_angle16(((int)(((((float)((int)((int)((((((struct oEC_short *)(a4))->v)) << 2) << 2) % (int)0x168)) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF));
+        (((struct o8_float *)(t44))->v) = (_builtin_fabsf(t49) * 20.0f);
         (((struct oC_float *)(t44))->v) = (((((struct oC_float *)(t44))->v)) + -1.2954545f);
-        *(volatile short *)((a4 + 0xEC));
-        u53 = (((float)(((int (*)(void))(FUN_0c0e6e5c))()) * 65536.0f) / 360.0f);
-        *(unsigned int *)((t44 + 0x10)) = ((int)((((_builtin_fabsf((math_sin_angle16(((int)(u53 + 0.5f) & 0xFFFF)))) * 3932160.0f) / 360.0f)) + 0.5f) & 0xFFFF);
+        t51 = (((struct oEC_short *)(a4))->v);
+        t54 = math_sin_angle16(((int)(((((float)((int)((int)(((t51 << 2) + t51) << 2) % (int)0x168)) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF));
+        *(unsigned int *)((t44 + 0x10)) = ((int)((((_builtin_fabsf(t54) * 3932160.0f) / 360.0f)) + 0.5f) & 0xFFFF);
         t56 = (((struct oEC_short *)(a4))->v);
         (((struct oEC_ushort *)(a4))->v) = (t56 + 0x1);
         t59 = 0xEC;
@@ -159,18 +159,42 @@ int FUN_0c03a58c(int a4, int a5, int a6, int a7)
     (((struct o8_float *)(t64))->v) = 10.0f;
     (((struct oC_float *)(t64))->v) = 160.0f;
     *(unsigned int *)((t64 + 0x14)) = 0x8FA6;
-    t66 = 0x1;
+    t67 = 0x8FA6;
+    t68 = 0x1;
+    t69 = 0x1;
+    t70 = a6;
     for (;;) {
-        if ((int)t66 >= (int)0x6) {
+        if ((int)t68 >= (int)0x6) {
             break;
         }
-        *(volatile int *)((((0x2E0 + a4) + (t66 << 2)) + 0x0));
-        t69 = ((int (*)(int, int, int, int))(FUN_0c0e6fe8))(t66, (signed char)(((t66 << 1) + t66) << 2), (t66 << 2), 0xC3215B4);
-        *(volatile int *)((((0x2E0 + a4) + t71) + 0x0));
-        t73 = ((int (*)(int, int, int))(FUN_0c0e6fe8))(0x0, t70, t71);
-        t66 = (t74 + 0x1);
+        t65 = 0x2E0;
+        t69 = t68;
+        t69 = (t69 << 1);
+        t67 = t68;
+        t70 = t68;
+        t70 = (t70 << 2);
+        t69 = (t69 + t67);
+        t67 = 0xC0E6FE8;
+        t65 = (t65 + a4);
+        t65 = (t65 + t70);
+        t69 = (t69 << 2);
+        t65 = (*(int *)((t65 + 0x0)));
+        t69 = (signed char)t69;
+        t66 = t69;
+        t65 = (t65 + 0x4);
+        t66 = (t66 + 0xC3215B4);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t65) = *(struct mv3 *)(t66); }
+        t65 = 0x2E0;
+        t66 = t69;
+        t66 = (t66 + 0xC3215FC);
+        t65 = (t65 + a4);
+        t65 = (t65 + t70);
+        t65 = (*(int *)((t65 + 0x0)));
+        t65 = (t65 + 0x10);
+        { struct mv3 { int w[3]; }; *(struct mv3 *)(t65) = *(struct mv3 *)(t66); }
+        t68 = (t68 + 0x1);
     }
-    t75 = *(signed char *)((a4 + 0x8));
-    *(unsigned char *)((a4 + 0x8)) = (t75 + 0x1);
-    return (t75 + 0x1);
+    t74 = *(signed char *)((a4 + 0x8));
+    *(unsigned char *)((a4 + 0x8)) = (t74 + 0x1);
+    return (t74 + 0x1);
 }

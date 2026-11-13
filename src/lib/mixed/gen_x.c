@@ -136,10 +136,10 @@ int syRtcAicaGetCount(int);
 int FUN_0c0e5d22(int);
 int FUN_0c0e66f4(int, int, int);
 int FUN_0c0e69a8(int, int, int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6e5c(int);
-int FUN_0c0e6fdc(int, int, int);
-int FUN_0c0e6fe8(int, int);
+int _divls(void);
+int _modls(int);
+int _quick_evn_mvn(int, int, int);
+int _quick_odd_mvn(int, int);
 int FUN_0c0f1c44(int);
 int FUN_0c0f1fd2(int);
 int FUN_0c0f202c(int);
@@ -249,31 +249,30 @@ int FUN_0c1048e6(int a4, int a5, int a6, int a7)
 
 int FUN_0c114ef4(int a4, int a5)
 {
-    register int t13;
+    register int t11;
     register int t0;
-    register int t1;
 
-    t13 = 0x0;
+    t11 = 0x0;
     if ((int)a5 < (int)0xFF) {
-        t13 = 0x7F;
+        t11 = 0x7F;
         if ((int)a5 > 0) {
-            t0 = FUN_0c0e6d00();
-            t13 = 0x7F;
-            if ((int)(t1 - t0) > (int)t1) {
+            t0 = (int)((int)(((a5 << 2) + a5) << 2) / (int)0xA);
+            t11 = 0x7F;
+            if ((int)(0x7F - t0) > (int)0x7F) {
             } else {
-                t13 = (t1 - t0);
-                if ((int)(t1 - t0) < 0) {
-                    t13 = 0x0;
+                t11 = (0x7F - t0);
+                if ((int)(0x7F - t0) < 0) {
+                    t11 = 0x0;
                 }
             }
         }
     }
     if ((*(int *)((a4 + 0xC))) == 0) {
-        FUN_0c0e66f4((*(int *)(((*(int *)((a4 + 0x10))) + 0x4))), 0x0, t13);
-        FUN_0c0e66f4((*(int *)(((*(int *)((a4 + 0x10))) + 0x4))), 0x1, t13);
+        FUN_0c0e66f4((*(int *)(((*(int *)((a4 + 0x10))) + 0x4))), 0x0, t11);
+        FUN_0c0e66f4((*(int *)(((*(int *)((a4 + 0x10))) + 0x4))), 0x1, t11);
     } else {
-        FUN_0c0e69a8((*(short *)((a4 + 0x2))), 0x0, t13);
-        FUN_0c0e69a8((*(short *)((a4 + 0x2))), 0x1, t13);
+        FUN_0c0e69a8((*(short *)((a4 + 0x2))), 0x0, t11);
+        FUN_0c0e69a8((*(short *)((a4 + 0x2))), 0x1, t11);
     }
     return 0x0;
 }

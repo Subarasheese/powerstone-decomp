@@ -28,9 +28,9 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int math_rand_next(void);
-int FUN_0c0e6e5c(void);
+int _modls(void);
 float FUN_0c0e2240(int, int);
-extern int FUN_0c0e6fdc();
+extern int _quick_evn_mvn();
 struct o2_uchar { char p[0x2]; unsigned char v; };
 struct o3_uchar { char p[0x3]; unsigned char v; };
 struct o4_uchar { char p[0x4]; unsigned char v; };
@@ -38,11 +38,11 @@ struct o5_uchar { char p[0x5]; unsigned char v; };
 typedef struct { float x, y, z; } vec3;
 extern void FUN_0c05cb46(vec3 *, int, int);
 extern void fx_spawn_04463c(vec3 *);
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
-int item_director_roll_variant(int a4);
+int item_director_roll_variant(int);
 int FUN_0c0cc7fc(int a4);
 int FUN_0c0ccbfe(void);
 
@@ -81,8 +81,7 @@ int item_director_roll_variant(int a4)
         t19 = 0x1;
         if ((int)(*(short *)0xC7EB298) > (int)(*(short *)0xC7F2568)) {
         } else {
-            math_rand_next();
-            t19 = (FUN_0c0e6e5c());
+            t19 = ((int)((int)(math_rand_next()) % (int)0x2));
         }
     }
     t24 = t19;
@@ -272,35 +271,35 @@ int item_director_phase4(void)
 int FUN_0c0ccbfe(void)
 {
     register int t0;
-    register int t7;
     register int t4;
-    register int t5;
+    register int t1;
+    register int t2;
 
-    t0 = obj_create(0x5, 0x1, 0x2);
-    t7 = t0;
+    t0 = obj_create(0x5, 0x1, 0x2, 0x0);
+    t4 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = 0x2;
         *(unsigned short *)((t0 + 0x6)) = 0x1;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(0xC33CF68); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC33CF80); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33CF74); }
         *(unsigned int *)((t0 + 0x10)) = 0xC0CCC98;
-        t4 = 0x0;
+        t1 = 0x0;
         for (;;) {
-            t5 = *(int *)((((t4 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t5, ((int)g_res_kyoutsuu), (t4 + 0x1));
-            t4 = (t4 + 0x1);
-            *(unsigned short *)((t5 + 0x2)) = 0x1;
-            if ((int)t4 >= (int)0x2) {
+            t2 = *(int *)((((t1 << 2) + (0x2E0 + t0)) + 0x0));
+            FUN_0c06233a(t2, 0xC4CFA68, (t1 + 0x1));
+            t1 = (t1 + 0x1);
+            *(unsigned short *)((t2 + 0x2)) = 0x1;
+            if ((int)t1 >= (int)0x2) {
                 break;
             }
         }
-        t7 = 0x1;
+        t4 = 0x1;
     }
-    return t7;
+    return t4;
 }
 
 /* the item kind to drop for a slot: the slot's group (two group tables, by the flag at 0x0C7F4764), then a random kind of the

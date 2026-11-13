@@ -164,9 +164,9 @@ int FUN_0c0e55e0(int, int);
 int FUN_0c0e5884(int);
 int FUN_0c0e59e8(int, int, int);
 int FUN_0c0e6212(int, int, int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(int);
+int _divls(void);
+int _modlu(void);
+int _quick_odd_mvn(int);
 int FUN_0c0ee6f0(int, int);
 int FUN_0c0f1c72(int);
 int FUN_0c0f2968(int);
@@ -292,7 +292,7 @@ void FUN_0c0f5570(int a4);
 int vmsfs_ismount(int a4);
 int set_fat(int a4, int a5, int a6, int a7);
 int ADXSTM_ExecServer(void);
-int FUN_0c107fce(int a4, int a5, int a6, int a7);
+int FUN_0c107fce(int, int, int, int);
 int mpdrv_set_bread(Stk4 s);
 int mpdrv_set_getlerr(Stk4 s);
 int obj_tick_all(float f4);
@@ -934,21 +934,16 @@ int ADXSTM_ExecServer(void)
 
 int FUN_0c107fce(int a4, int a5, int a6, int a7)
 {
-    register int t0;
-    register int t1;
-    register int t2;
+    register int t4;
 
     if (a4 == 0) {
         return mwRnaErrCallFunc(0xC15B31C, a5, a6, a7);
     }
-    *(volatile int *)((a4 + 0x8));
-    *(volatile int *)((a4 + 0x30));
-    *(unsigned int *)((t1 + 0x30)) = (FUN_0c0e6d00());
-    *(unsigned int *)((t1 + 0x8)) = t0;
-    *(volatile int *)((t1 + 0x30));
-    t0 = FUN_0c0e6d00();
-    *(unsigned int *)((t2 + 0x30)) = ((t0 << 2) << 1);
-    return ((t0 << 2) << 1);
+    *(unsigned int *)((a4 + 0x30)) = ((int)((int)((*(int *)((a4 + 0x30))) * (*(int *)((a4 + 0x8)))) / (int)0x8));
+    *(unsigned int *)((a4 + 0x8)) = a5;
+    t4 = (int)((int)(*(int *)((a4 + 0x30))) / (int)a5);
+    *(unsigned int *)((a4 + 0x30)) = ((t4 << 2) << 1);
+    return ((t4 << 2) << 1);
 }
 
 int mpdrv_set_bread(Stk4 s)

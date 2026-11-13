@@ -13,11 +13,11 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
-int obj_destroy(int, int, int, int);
+int obj_destroy(int);
 int FUN_0c06233a(int, int, int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 
-int menu_ui_task_22(int a4, int a5, int a6, int a7)
+int menu_ui_task_22(int a4)
 {
     register int t0;
     register int t1;
@@ -25,7 +25,7 @@ int menu_ui_task_22(int a4, int a5, int a6, int a7)
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 != 1) {
-            return obj_destroy(a4, a5, a6, a7);
+            return obj_destroy(a4);
         }
     } else {
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
@@ -39,11 +39,10 @@ int menu_ui_task_22(int a4, int a5, int a6, int a7)
             if ((int)t0 < (int)0x2) {
                 t1 = 0x1;
             }
-            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), ((int)g_res_csel_ssel), (t1 + 0x25));
+            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A60, (t1 + 0x25));
             *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x2)) = 0x3F;
-            *(volatile int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0));
-            FUN_0c0e6fe8();
+            { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t0 << 1) + t0) << 2) + 0xC152BC0)); }
             t1 = (t0 << 2);
             t0 = (t0 + 0x1);
             (((struct o1C_float *)((*(int *)((((0x2E0 + a4) + t1) + 0x0)))))->v) = 2.0f;

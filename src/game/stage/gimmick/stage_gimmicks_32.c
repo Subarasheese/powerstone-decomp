@@ -7,23 +7,23 @@ struct o106_uchar { char p[0x106]; unsigned char v; };
 struct o107_uchar { char p[0x107]; unsigned char v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o308_uint { char p[0x308]; unsigned int v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int stage_obj_load_layout_pos(int);
-int FUN_0c0e6fe8(void);
+int _quick_odd_mvn(void);
 struct o8_float { char p[0x8]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c0ac640(int);
-int FUN_0c0e6e5c(int);
+int _modls(int);
 
 int stage_gimmick_30_spawn(int a4)
 {
     register int t0;
-    register int t10;
+    register int t9;
 
-    t0 = obj_create(0x4, 0x1, 0x1);
-    t10 = t0;
+    t0 = obj_create(0x4, 0x1, 0x1, 0x0);
+    t9 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x1)) = 0x1;
@@ -41,13 +41,13 @@ int stage_gimmick_30_spawn(int a4)
         (((struct o106_uchar *)(t0))->v) = 0x1;
         (((struct o107_uchar *)(t0))->v) = 0x0;
         stage_obj_load_layout_pos(t0);
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A934); }
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t10 = 0xF;
+        t9 = 0xF;
     }
-    return t10;
+    return t9;
 }
 
 int stage_gimmick_30_update(int a4, float f4, float f5)
@@ -61,12 +61,10 @@ int stage_gimmick_30_update(int a4, float f4, float f5)
         t1 = t0;
         if (t0 != 1) {
         } else {
-            *(volatile short *)((a4 + 0xEC));
-            t0 = FUN_0c0e6e5c(a4);
-            if (t0 != 0) {
-                (((struct o8_float *)(((((struct o2E0_int *)(a4))->v))))->v) = (((float)((((struct oEC_short *)(a4))->v)) * f5) / f4);
+            if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x2)) != 0) {
+                (((struct o8_float *)(((((struct o2E0_int *)(a4))->v))))->v) = (((float)((((struct oEC_short *)(a4))->v)) * 5.0f) / 15.0f);
             } else {
-                (((struct o8_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((-((float)((((struct oEC_short *)(a4))->v)) * f5)) / f4);
+                (((struct o8_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((-((float)((((struct oEC_short *)(a4))->v)) * 5.0f)) / 15.0f);
             }
             t0 = (((struct oEC_short *)(a4))->v);
             (((struct oEC_ushort *)(a4))->v) = (t0 - 1);

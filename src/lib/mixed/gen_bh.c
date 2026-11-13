@@ -144,9 +144,9 @@ int FUN_0c0e21b0(int, int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e2260(int, int, int);
 float FUN_0c0e24f0(int);
-int FUN_0c0e6d00(void);
-int FUN_0c0e6f24(void);
-extern int FUN_0c0e6fdc();
+int _divls(void);
+int _modlu(void);
+extern int _quick_evn_mvn();
 int gdFsLoadDirFast(void);
 int FUN_0c0f4328(int, int, int, int, int, int);
 int FUN_0c0fd18a(int, int, int);
@@ -354,8 +354,7 @@ int FUN_0c0f4cca(int a4, int a5, int a6, int a7)
         if (t0 == 5) {
             *(unsigned int *)((a5 + 0x0)) = (ADXSJD_GetTotalNumSmpl((*(int *)((a4 + 0x4)))));
             *(unsigned int *)((a6 + 0x0)) = (ADXSJD_GetSfreq((*(int *)((a4 + 0x4)))));
-            ADXSJD_GetOutBps((*(int *)((a4 + 0x4))));
-            t2 = FUN_0c0e6d00();
+            t2 = (int)((int)0x10 / (int)(ADXSJD_GetOutBps((*(int *)((a4 + 0x4))))));
             *(unsigned int *)((a5 + 0x0)) = ((*(int *)((a5 + 0x0))) * t2);
         } else {
             *(unsigned int *)((a5 + 0x0)) = 0x0;

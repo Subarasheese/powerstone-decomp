@@ -18,12 +18,12 @@ struct o5C_float { char p[0x5C]; float v; };
 struct o98_float { char p[0x98]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c0555dc(void);
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int obj_destroy(int);
 int FUN_0c06233a(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-extern int FUN_0c0e6fe8();
+extern int _quick_odd_mvn();
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
 struct o44_float { char p[0x44]; float v; };
@@ -32,7 +32,7 @@ int obj_set_record_char(int, int);
 
 int fx_swirl_create(int a4, int a5);
 
-int FUN_0c0cba6e(int a4, float f4)
+int FUN_0c0cba6e(int a4)
 {
     register int t0;
     register int t1;
@@ -85,7 +85,7 @@ int FUN_0c0cba6e(int a4, float f4)
         (((struct oEC_ushort *)(a4))->v) = 0x0;
         if (((((struct o274_float *)(a4))->v)) > 0.0f) {
             (((struct oEC_ushort *)(a4))->v) = 0x1;
-            t0 = obj_create(0x1, 0x1, 0x1);
+            t0 = obj_create(0x1, 0x1, 0x1, 0x0);
             t1 = t0;
             if (t0 == 0) {
             } else {
@@ -95,14 +95,13 @@ int FUN_0c0cba6e(int a4, float f4)
                 *(unsigned short *)((t0 + 0x6)) = 0x41F;
                 *(unsigned char *)((t0 + 0x5)) = 0x19;
                 *(unsigned int *)((t0 + 0x10)) = 0xC0CBD88;
-                t2 = ((int (*)(void))(FUN_0c0e6fe8))();
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC1533F8); }
                 (((struct o54_float *)(t0))->v) = 1.0f;
-                *(volatile int *)((a4 + 0x1C));
-                t2 = ((int (*)(float))(FUN_0c0e6fe8))(1.0f);
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(((*(int *)((a4 + 0x1C))) + 0x2C)); }
                 *(unsigned int *)((t0 + 0x1C)) = (*(int *)((a4 + 0x1C)));
                 (((struct o118_uint *)(t0))->v) = 0x0;
-                (((struct o5C_float *)(t0))->v) = f4;
-                t2 = ((int (*)(float))(FUN_0c0e6fe8))(f4);
+                (((struct o5C_float *)(t0))->v) = 1.0f;
+                { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
                 (((struct o24_float *)(t0))->v) = 0.0f;
                 (((struct o20_float *)(t0))->v) = (((((struct o20_float *)(t0))->v)) - (((math_sin_angle16((*(int *)((t0 + 0x30))))) * 100.0f)));
                 (((struct o28_float *)(t0))->v) = (((((struct o28_float *)(t0))->v)) - (((math_cos_angle16((*(int *)((t0 + 0x30))))) * 100.0f)));
@@ -148,10 +147,7 @@ int fx_swirl_create(int a4, int a5)
 {
     int stk[2];
     register int t0;
-    register int t2;
     register int t4;
-    register int t7;
-    register int t8;
 
     *(unsigned char *)(((int)stk + 4)) = a5;
     *(int *)((int)stk + 0) = 0x0;
@@ -163,9 +159,8 @@ int fx_swirl_create(int a4, int a5)
         *(unsigned short *)((t0 + 0x6)) = 0x1F;
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0CBF1C;
-        t2 = ((int (*)(void))(FUN_0c0e6fe8))();
-        *(volatile int *)((a4 + 0x1C));
-        t4 = ((int (*)(void))(FUN_0c0e6fe8))();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC153404); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(((*(int *)((a4 + 0x1C))) + 0x2C)); }
         *(unsigned int *)((t0 + 0x1C)) = a4;
         (((struct o118_uint *)(t0))->v) = 0x0;
         (((struct o101_uchar *)(t0))->v) = 0xF;
@@ -174,8 +169,9 @@ int fx_swirl_create(int a4, int a5)
         (((struct o105_uchar *)(t0))->v) = 0x0;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         (((struct o107_uchar *)(t0))->v) = 0x1;
-        t7 = ((int (*)(int))(FUN_0c0e6fe8))(((((*(signed char *)(((int)stk + 4))) << 2) << 2) + 0xC33CA40));
-        (((struct o44_float *)(t0))->v) = (*(float *)((t8 + 0x0)));
+        t4 = *(signed char *)(((int)stk + 4));
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x38)) = *(struct mv3 *)(((((t4 << 2) << 2) + 0xC33CA40) + 0x4)); }
+        (((struct o44_float *)(t0))->v) = (*(float *)(((((t4 << 2) << 2) + 0xC33CA40) + 0x0)));
     }
     return t0;
 }

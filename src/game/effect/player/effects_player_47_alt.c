@@ -26,11 +26,11 @@ struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 float math_rand_float(void);
-int FUN_0c0e6f24(void);
-int FUN_0c0e6fe8(void);
+int _modlu(void);
+int _quick_odd_mvn(void);
 
 void fx31_follow_circle(char *obj)
 {
@@ -152,14 +152,16 @@ int fx_spawn_33(int a4, int a5, int a6, int a7)
 {
     int stk[3];
     register int t0;
-    register int t32;
-    register int t17;
+    register int t29;
+    register float t5;
+    register float u8;
+    register int t14;
 
     *(unsigned char *)(((int)stk + 0)) = a5;
     *(unsigned int *)(((int)stk + 4)) = a6;
     *(unsigned int *)(((int)stk + 8)) = a7;
-    t0 = obj_create(0x5, 0x1, 0x1);
-    t32 = t0;
+    t0 = obj_create(0x5, 0x1, 0x1, 0x0);
+    t29 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned char *)((t0 + 0x3)) = (*(signed char *)((a4 + 0x3)));
@@ -168,20 +170,21 @@ int fx_spawn_33(int a4, int a5, int a6, int a7)
         *(unsigned char *)((t0 + 0x5)) = 0x19;
         *(unsigned int *)((t0 + 0x10)) = 0xC0C5140;
         *(unsigned int *)((t0 + 0x1C)) = a4;
-        *(volatile int *)(((int)stk + 8));
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)((*(int *)(((int)stk + 8)))); }
         *(unsigned char *)((t0 + 0x4)) = (*(signed char *)(((int)stk + 0)));
-        FUN_0c0e6fe8();
-        *(volatile int *)(((int)stk + 4));
-        FUN_0c0e6fe8();
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
+        { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
         (((struct oF0_ushort *)(t0))->v) = 0x4;
-        math_rand_float();
-        
-        (((struct oF2_ushort *)(t0))->v) = (FUN_0c0e6f24());
+        t5 = math_rand_float();
+        u8 = (t5 * 255.0f);
+        if (!(2.14748365e+09f > (t5 * 255.0f))) {
+            u8 = (((t5 * 255.0f)) - (2.14748365e+09f + 2.14748365e+09f));
+        }
+        (((struct oF2_ushort *)(t0))->v) = ((int)((unsigned int)(int)u8 % (unsigned int)0x10));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x23F;
-        t17 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t17 << 1) + t17) << 2) << 1) + 0xC6002D0), ((*(signed char *)((t0 + 0xF2))) + 0xA));
+        t14 = *(signed char *)((t0 + 0x3));
+        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t14 << 1) + t14) << 2) << 1) + 0xC6002D0), ((*(signed char *)((t0 + 0xF2))) + 0xA));
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = ((((struct o50_float *)(t0))->v));
         (((struct o20_float *)(((((struct o2E0_int *)(t0))->v))))->v) = ((((struct o54_float *)(t0))->v));
         (((struct o24_float *)(((((struct o2E0_int *)(t0))->v))))->v) = ((((struct o58_float *)(t0))->v));
@@ -189,7 +192,7 @@ int fx_spawn_33(int a4, int a5, int a6, int a7)
         (((struct o44_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
         (((struct o48_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
         (((struct o4C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
-        t32 = 0x4C;
+        t29 = 0x4C;
     }
-    return t32;
+    return t29;
 }

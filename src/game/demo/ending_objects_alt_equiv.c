@@ -23,8 +23,8 @@ int obj_apply_velocity(int);
 int obj_child_color_a_step(int);
 int obj_apply_scale_rate(int);
 int obj_child_color_b_step(int);
-int obj_destroy(int, int, int, int);
-int FUN_0c0e6e5c(int);
+int obj_destroy(int);
+int _modls(int);
 struct o0_uchar { unsigned char v; };
 struct o13_float { char p[0x13]; float v; };
 struct o13_ushort { char p[0x13]; unsigned short v; };
@@ -48,12 +48,11 @@ int bgm_play_by_index(int);
 int FUN_0c0a3eec(int);
 int FUN_0c0a3fa4(int, int);
 
-int ending_obj_update_t00(int a4, int a5, int a6, int a7)
+int ending_obj_update_t00(int a4)
 {
 
     register int R1;
     register int R2;
-    register int R5;
     register float F2;
     register float F3;
     register int T_;
@@ -69,11 +68,11 @@ int ending_obj_update_t00(int a4, int a5, int a6, int a7)
     v0_2 = (0x0);
     if ((v0_3 == 0)) goto L_C012B08;
     if ((v0_1 == 1)) goto L_C012B20;
-    return obj_destroy(v0_0, R5, a6, a7);
+    return obj_destroy(v0_0);
     L_C012B20:;
-    R5 = (0xC7F3036);
+    v0_4 = (0xC7F3036);
     if (((*(short *)0xC7F3040) != 0)) goto L_C012B2E;
-    if (!(((*(short *)((R5 + 0xC))) == 0))) goto L_C012B2E;
+    if (!(((*(short *)((v0_4 + 0xC))) == 0))) goto L_C012B2E;
     if (((*(signed char *)((v0_0 + 0xC))) != 0)) goto L_C012B70;
     (((struct o20_float *)(v0_0))->v) = (((((struct o20_float *)(v0_0))->v)) - ((((struct oC_float *)0xC361C60)->v)));
     (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) - ((((struct o10_float *)0xC361C60)->v)));
@@ -125,13 +124,12 @@ int ending_obj_update_t00(int a4, int a5, int a6, int a7)
     v0_1 = (0x20);
     v0_3 = (0xC116468);
     v0_2 = (v0_4);
-    R5 = (((v0_4 << 2) << 1));
+    v0_4 = (((v0_4 << 2) << 1));
     L_C012CA0:;
-    *(float *)((v0_0 + v0_1)) = ((*(float *)((v0_0 + v0_1))) + (*(float *)(((R5 + v0_3) + 0x0))));
-    (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) + ((((struct o4_float *)((R5 + v0_3)))->v)));
+    *(float *)((v0_0 + v0_1)) = ((*(float *)((v0_0 + v0_1))) + (*(float *)(((v0_4 + v0_3) + 0x0))));
+    (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) + ((((struct o4_float *)((v0_4 + v0_3)))->v)));
     *(unsigned char *)((v0_0 + 0xB)) = ((*(signed char *)((v0_0 + 0xB))) + 0x1);
-    *(volatile signed char *)((v0_0 + 0xB));
-    v0_1 = ((FUN_0c0e6e5c(v0_2)));
+    v0_1 = (((int)((int)(*(signed char *)((v0_0 + 0xB))) % (int)0x23)));
     L_C012CC8:;
     *(unsigned char *)((v0_0 + 0xB)) = v0_1;
     goto L_C012D0C;
@@ -142,7 +140,7 @@ int ending_obj_update_t00(int a4, int a5, int a6, int a7)
     v0_1 = (0x20);
     v0_3 = (0xC116348);
     v0_2 = (v0_4);
-    R5 = (((v0_4 << 2) << 1));
+    v0_4 = (((v0_4 << 2) << 1));
     goto L_C012CA0;
     L_C012C24:;
     obj_apply_velocity(v0_0);
@@ -151,8 +149,7 @@ int ending_obj_update_t00(int a4, int a5, int a6, int a7)
     (((struct o20_float *)(v0_0))->v) = (((((struct o20_float *)(v0_0))->v)) + (*(float *)(((((v0_1 << 2) << 1) + 0xC1162B8) + 0x0))));
     (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) + ((((struct o4_float *)((((v0_1 << 2) << 1) + 0xC1162B8)))->v)));
     *(unsigned char *)((v0_0 + 0xB)) = ((*(signed char *)((v0_0 + 0xB))) + 0x1);
-    *(volatile signed char *)((v0_0 + 0xB));
-    v0_1 = ((FUN_0c0e6e5c(v0_1)));
+    v0_1 = (((int)((int)(*(signed char *)((v0_0 + 0xB))) % (int)0x11)));
     goto L_C012CC8;
     L_C012C14:;
     obj_child_color_a_step(v0_0);
@@ -178,7 +175,7 @@ int ending_obj_update_t00(int a4, int a5, int a6, int a7)
     v0_1 = (0xEE);
     v0_3 = (v0_2);
     if ((v0_2 != 0)) goto L_C012BA8;
-    ending_obj_run_script(v0_0, R5);
+    ending_obj_run_script(v0_0, v0_4);
     goto L_C012BAC;
     L_C012BA8:;
     *(unsigned short *)((v0_0 + v0_1)) = (v0_3 - 1);
