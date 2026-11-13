@@ -87,7 +87,7 @@ float math_tan_angle16(int);
 int FUN_0c0e3510(void);
 int nlMultiMatrix(int);
 int sprintf(int, int, ...);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int testmode_memory_check_screen(float f4);
 int obj_tick_0367e4(int a4);
 int FUN_0c08c304(int a4);

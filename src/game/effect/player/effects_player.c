@@ -5,7 +5,7 @@ float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
 struct fx_obj { float pad0; float vx; float vy; float vz; int ang_y; int ang_x; int ang_z; float sx; float sy; float sz;
                 float dx; float dy; float dz; char pad34[0x94 - 0x34]; float frames; };
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 int math_atan_angle16(float x);
 float math_signed_sqrt(float x);
 int FUN_0c0555dc(void);
@@ -76,7 +76,7 @@ void FUN_0c0b8084(char *o)
     }
     if (H(o, 0xEC) >= 7 && H(o, 0xEC) < 40) {
         s.pl = PL(1 - B(o, 3));
-        thunk_FUN_0c062242(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520), &s.x);
+        thunk_math_mat_get_translate(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520), &s.x);
         s.x = s.x - F(o, 0x20);
         s.y = s.y - F(o, 0x24);
         s.z = s.z - F(o, 0x28);

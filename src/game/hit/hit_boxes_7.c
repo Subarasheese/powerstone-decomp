@@ -38,7 +38,7 @@ struct o8_int { char p[0x8]; int v; };
 struct oC_int { char p[0xC]; int v; };
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
-int FUN_0c02466e(int);
+int hit_list_reset(int);
 int conv_s16x4_to_f32(int, int);
 int hit_load_sphere_world(int, int, int);
 struct o14_float { char p[0x14]; float v; };
@@ -216,11 +216,11 @@ int hit_world_reset(void)
     (((struct o4_uint *)0xC7EB3A8)->v) = 0x0;
     *(unsigned char *)0xC7E4340 = 0x0;
     *(unsigned char *)0xC7EB610 = 0x0;
-    FUN_0c02466e(0xC7E40C4);
-    FUN_0c02466e(((((struct o0_int *)g_obj_list_heads)->v)));
-    FUN_0c02466e(((((struct o4_int *)g_obj_list_heads)->v)));
-    FUN_0c02466e(((((struct o8_int *)g_obj_list_heads)->v)));
-    return FUN_0c02466e(((((struct oC_int *)g_obj_list_heads)->v)));
+    hit_list_reset(0xC7E40C4);
+    hit_list_reset(((((struct o0_int *)g_obj_list_heads)->v)));
+    hit_list_reset(((((struct o4_int *)g_obj_list_heads)->v)));
+    hit_list_reset(((((struct o8_int *)g_obj_list_heads)->v)));
+    return hit_list_reset(((((struct oC_int *)g_obj_list_heads)->v)));
 }
 
 

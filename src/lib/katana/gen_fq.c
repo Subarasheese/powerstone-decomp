@@ -83,7 +83,7 @@ int kmiBGPlaneSetPCW(int, int, int);
 int memset(int, int, int);
 int set_fat(int, int, int);
 int set_vmstime(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vmsio_ismount(int);
 int FUN_0c0cba6e(int a4, float f4);
 int vmsfs_format(int a4, int a5, int a6, int a7, int a8);

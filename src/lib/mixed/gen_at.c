@@ -20,7 +20,7 @@ int FUN_0c0d3fbe(void);
 int FUN_0c0d4136(int a4, int a5, int a6, int a7);
 int ADXT_SetOutVol(int a4, int a5, int a6, int a7);
 int gfx_set_background_color(int a4, int a5, int a6);
-int thunk_FUN_0c062242(int a4, int a5);
+int thunk_math_mat_get_translate(int a4, int a5);
 int gdFsChangeDir(int a4);
 int thunk_FUN_0c111b54(int a4);
 void fmMngMcpy(int a4, int a5, int a6);

@@ -10,7 +10,7 @@ int pl_apply_motion_translation(int);
 int pl_end_action_choose_state(int, int, int, int, int, int, int, int, int, int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int pl_kraken_mode04_phase0(int);
 int pl_kraken_mode04_phase1(int);
 int pl_kraken_mode04_phase2(int, float);
@@ -30,7 +30,7 @@ int pl_kraken_mode13_update_v1(int a4)
     if ((unsigned short)((((struct o719E_short *)(a4))->v)) == 14) {
         t3 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
         u10 = (*(float *)(((int)stk + 4)));
         u10 = u10 + ((((struct o0_float *)0xC084574)->v)) * (math_sin_angle16((*(int *)((a4 + 0x30)))));
         *(float *)(((int)stk + 4)) = u10;

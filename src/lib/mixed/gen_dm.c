@@ -124,8 +124,8 @@ int math_rand_next(void);
 float math_rand_float(void);
 float math_sin_angle16(int);
 int dbg_set_text_color(int);
-int FUN_0c0e5178(int, int, int);
-int FUN_0c0e51d0(void);
+int snd_driver_memmove_start(int, int, int);
+int snd_driver_memmove_busy(void);
 int snd_send_command(int);
 int _divls(void);
 extern int _modls();
@@ -161,7 +161,7 @@ static void iaOcbp(void *p)
 int open_file_handle(void);
 int search_exec_file(int, int);
 int search_free_dir(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);
@@ -369,7 +369,7 @@ int FUN_0c0e572c(void)
                         return 0x0;
                     }
                 } else {
-                    t0 = FUN_0c0e51d0();
+                    t0 = snd_driver_memmove_busy();
                     if (t0 != 0) {
                         return 0x1;
                     }
@@ -400,7 +400,7 @@ int FUN_0c0e572c(void)
                 return 0x1;
             }
             if (((((struct oC_int *)0xC7FD0F8)->v)) != 0) {
-                FUN_0c0e5178(((((struct o14_int *)0xC7FD0F8)->v)), (((((struct o14_int *)0xC7FD0F8)->v)) + ((((struct o8_int *)0xC7FD0F8)->v))), ((((struct oC_int *)0xC7FD0F8)->v)));
+                snd_driver_memmove_start(((((struct o14_int *)0xC7FD0F8)->v)), (((((struct o14_int *)0xC7FD0F8)->v)) + ((((struct o8_int *)0xC7FD0F8)->v))), ((((struct oC_int *)0xC7FD0F8)->v)));
             }
             (((struct o0_uint *)0xC7FD0F8)->v) = 0x3;
             return 0x1;

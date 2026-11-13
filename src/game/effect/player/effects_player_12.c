@@ -8,7 +8,7 @@ extern char g_players[];
 extern char g_spr_bank_player_fx[];
 extern struct N *obj_create(int, int, int, int);
 extern void fx_update_16(void);
-extern void thunk_FUN_0c062242(char *, char *);
+extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(struct N *, int);
 extern void FUN_0c06233a(struct F *, char *, int);
 void fx_spawn_16(struct O *o, char c)
@@ -23,7 +23,7 @@ void fx_spawn_16(struct O *o, char c)
         e->w6 = 31;
         e->b5 = 25;
 #define ENT ((struct EE *)(g_players + (unsigned short)(o->b3 * 29392)))
-        thunk_FUN_0c062242(ENT->r + (short)(ENT->sc * 3520) + 704, (char *)e + 32);
+        thunk_math_mat_get_translate(ENT->r + (short)(ENT->sc * 3520) + 704, (char *)e + 32);
         e->f36 += 50.0f;
         e->i44 = o->i44;
         e->i48 = o->i48;

@@ -21,7 +21,7 @@ int obj_set_record_char(int, int);
 float math_rand_float(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
@@ -32,7 +32,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_destroy(int, int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 
 int fx_spawn_25(int a4, int a5);
 
@@ -63,7 +63,7 @@ int fx_spawn_25(int a4, int a5)
         (((struct o50_float *)(t0))->v) = 0.049999997f;
         t3 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x23F;
         t8 = math_rand_float();
@@ -231,8 +231,8 @@ int fx_update_25(int a4, int a5, int a6, int a7, float f4)
         (((struct o1C_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((((struct o50_float *)(a4))->v));
         (((struct o20_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((((struct o54_float *)(a4))->v));
         (((struct o24_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((((struct o58_float *)(a4))->v));
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
         return ((int (*)(int, int, int, int))(0xC0C1D42))(a4, a5, a6, a7);
     }
     if (((((struct oEC_short *)(a4))->v)) != 0) {

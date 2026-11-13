@@ -16,7 +16,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int _quick_odd_mvn(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_state11_aura(int a4)
 {
@@ -47,7 +47,7 @@ int fx_spawn_state11_aura(int a4)
         t2 = *(signed char *)((a4 + 0x3));
         FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x3);
         t2 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
         t2 = (((struct o2E0_int *)(t0))->v);
         (((struct o24_float *)(t2))->v) = 1.0f;
         (((struct o20_float *)(t2))->v) = 1.0f;

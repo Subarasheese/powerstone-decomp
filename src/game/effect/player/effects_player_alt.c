@@ -16,7 +16,7 @@ int FUN_0c0b7998(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct o94_float { char p[0x94]; float v; };
@@ -45,7 +45,7 @@ int FUN_0c0b7fa0(int a4)
     register float u0;
 
     t3 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), a4 + 0x20);
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), a4 + 0x20);
     t3 = (0x2E0 + a4);
     t4 = 0x0;
     t5 = 0x0;

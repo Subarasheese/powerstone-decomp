@@ -36,7 +36,7 @@ struct effect_task {
 };
 struct effect_task *obj_create(int a, int b, int c, int d);
 void FUN_0c0c00aa(void);
-void thunk_FUN_0c062242(char *m, struct vec3_int *v);
+void thunk_math_mat_get_translate(char *m, struct vec3_int *v);
 void FUN_0c06233a(struct sub_obj *s, int tbl, int n);
 
 void FUN_0c0bfecc(char *obj, char kind)
@@ -62,7 +62,7 @@ void FUN_0c0bfecc(char *obj, char kind)
     task->scale_x = 1.0f;
     task->parent = obj;
     player_base = (char *)(0xC7E40C4 + (unsigned short)((unsigned char)obj[3] * 0x72D0));
-    thunk_FUN_0c062242(player_base + 768 + (short)(*(signed char *)(player_base + 0x71F1) * 3520), &task->pos);
+    thunk_math_mat_get_translate(player_base + 768 + (short)(*(signed char *)(player_base + 0x71F1) * 3520), &task->pos);
     task->counter_236 = 0;
     FUN_0c06233a(task->sub[0], 0xC6002D0 + (signed char)(obj[3] * 24), 20);
     task->sub[0]->active = 1;

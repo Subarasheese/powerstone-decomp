@@ -103,7 +103,7 @@ int fx_spawn_039424(int a4);
 int FUN_0c03a12c(int a4, int a5, int a6);
 int menu_ui_task_03(int a4, int a5, int a6, int a7);
 int stage_gimmick_08_spawn(void);
-int FUN_0c0e52b6(int a4, int a5, int a6, int a7);
+int snd_bank_place(int a4, int a5, int a6, int a7);
 int FUN_0c0a703e(int a4, int a5, int a6, int a7);
 int FUN_0c018b96(int a4, int a5);
 int FUN_0c025332(int a4, int a5, int a6);
@@ -436,7 +436,7 @@ float FUN_0c0ef980(int a4)
     goto L_C0EF9F2;
 }
 
-int FUN_0c0e52b6(int a4, int a5, int a6, int a7)
+int snd_bank_place(int a4, int a5, int a6, int a7)
 {
     int stk[7];
 

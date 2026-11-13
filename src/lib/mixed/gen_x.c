@@ -186,7 +186,7 @@ int FUN_0c0e6c78(int a4, int a5, int a6);
 int vmsfs_c_setfname(int a4, int a5, int a6);
 int ending_spawn_obj_t02(int a4);
 int FUN_0c02279a(int a4, int a5, int a6, int a7);
-int FUN_0c02ccbc(int a4, int a5, int a6, int a7);
+int mdl_apply_transform(int a4, int a5, int a6, int a7);
 int FUN_0c02c9f6(void);
 int FUN_0c053dcc(void);
 int pl_stick_zone(int a4);

@@ -14,7 +14,7 @@ extern int g_res_eyecatch[];
 extern char g_item_state[];
 
 /* from other modules */
-int thunk_FUN_0c062242(char *mat, Vec3 *out);   /* math_mat_get_translate */
+int thunk_math_mat_get_translate(char *mat, Vec3 *out);   /* math_mat_get_translate */
 int nlPushMatrix(float *matrix);
 void nlCalcPoint(Vec3 *in, Vec3 *out);
 void nlCalcPoint44(Vec3 *in, float *out);
@@ -31,7 +31,7 @@ void ui_project_fighter_to_screen(char slot, Vec3 *out)
     Vec3 pos;
     Fighter *f = FIGHTER(slot);
 
-    thunk_FUN_0c062242((char *)f + 0x300 + (short)((short)f->power_form * 0xDC0) + 0x2C0, &pos);
+    thunk_math_mat_get_translate((char *)f + 0x300 + (short)((short)f->power_form * 0xDC0) + 0x2C0, &pos);
     nlPushMatrix(0);
     nlSelectMatrixStack(2);
     nlCalcPoint(&pos, &pos);

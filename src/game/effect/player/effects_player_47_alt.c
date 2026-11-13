@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c3544-0c0c571c) */
 
 typedef struct { float x, y, z; } Vec3f;
-extern void thunk_FUN_0c062242(char *, Vec3f *);
+extern void thunk_math_mat_get_translate(char *, Vec3f *);
 extern float math_sin_angle16(int);
 extern float math_cos_angle16(int);
 struct o105_uchar { char p[0x105]; unsigned char v; };
@@ -40,7 +40,7 @@ void fx31_follow_circle(char *obj)
 
     owner = *(signed char **)(obj + 28);
     owner_base = (signed char *)0xC7E40C4 + (unsigned short)((unsigned short)owner[3] * 0x72D0);
-    thunk_FUN_0c062242(owner_base + 0x300 + (short)(owner_base[0x71F1] * 3520) + 704, &anchor);
+    thunk_math_mat_get_translate(owner_base + 0x300 + (short)(owner_base[0x71F1] * 3520) + 704, &anchor);
     *(int *)(obj + 48) += 0x400;
     *(int *)(obj + 48) &= 0xFFFF;
     anchor.x += 100.0f * math_sin_angle16(*(int *)(obj + 48));

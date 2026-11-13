@@ -7,7 +7,7 @@ extern char g_proj_def_tbl[];
 float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
 float FUN_0c02649a(char *obj, int top);
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 float FUN_0c0e2340(float *v);
 extern float _builtin_sqrtf(float);
 extern float _builtin_fabsf(float);
@@ -45,7 +45,7 @@ void obj_collect_slot_contacts(char *o)
             t = B(n, 0x30D);
             if (t == 12 || t == 10 || t == 11 || t == 6 || t == 7 || t == 8 || t == 9) {
                 s.pl = PL(B(o, 3));
-                thunk_FUN_0c062242(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520) + 704, s.hand);
+                thunk_math_mat_get_translate(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520) + 704, s.hand);
                 s.v[0] = s.hand[0] - F(n, 32);
                 s.v[1] = s.hand[1] - F(n, 36);
                 s.v[2] = s.hand[2] - F(n, 40);
@@ -151,7 +151,7 @@ void obj_collect_slot_contacts(char *o)
             continue;
         if (B(n, 0x30D) == 15) {
             s.pl = PL(B(o, 3));
-            thunk_FUN_0c062242(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520) + 704, s.hand);
+            thunk_math_mat_get_translate(s.pl + 0x300 + (short)(B(s.pl, 0x71F1) * 3520) + 704, s.hand);
             s.v[0] = s.hand[0] - F(n, 32);
             s.v[1] = s.hand[1] - F(n, 36);
             s.v[2] = s.hand[2] - F(n, 40);

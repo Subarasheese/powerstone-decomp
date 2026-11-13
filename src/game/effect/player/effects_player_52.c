@@ -22,7 +22,7 @@ float math_cos_angle16(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
 struct Vec3i { int x, y, z; };
-int thunk_FUN_0c062242(int, float *);
+int thunk_math_mat_get_translate(int, float *);
 int math_vec3_sub(float *, float *, int);
 float math_signed_sqrt(float);
 int math_atan_angle16(float);
@@ -119,7 +119,7 @@ void fx35_calc_angles_to_point(char *obj, char *other, int arg2, int arg3, struc
     char *pl = (char *)(0xC7E40C4 + (unsigned short)((unsigned short)obj[3] * (unsigned short)0x72D0));
     float dx, dz;
 
-    thunk_FUN_0c062242((int)(pl + 0x300 + (short)((short)pl[0x71F1] * (short)0xDC0)), delta);
+    thunk_math_mat_get_translate((int)(pl + 0x300 + (short)((short)pl[0x71F1] * (short)0xDC0)), delta);
     math_vec3_sub(delta, delta, (int)other + 0x20);
     if (delta[2] == 0.0f)
         delta[2] = 9.99999975e-06f;

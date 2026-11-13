@@ -5,7 +5,7 @@ extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } vec3i;
 extern char *obj_create(int, int, int, int);
 extern void FUN_0c06233a(int owner_id, int b, int c);
-extern int thunk_FUN_0c062242(int, float *);
+extern int thunk_math_mat_get_translate(int, float *);
 extern float math_rand_float(void);
 struct o8_float { char p[0x8]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -46,7 +46,7 @@ void fx_spawn_044e38(char owner_id)
     for (i = 0; i < 8; i++) {
         FUN_0c06233a(*(int *)(effect + 736 + i * 4), ((int)g_res_kyoutsuu), 92);
         row = player_base[0x71F1];
-        thunk_FUN_0c062242((int)(player_base + 768 + (short)(row * 3520) + (short)(block_tbl[i] * 176)), pos);
+        thunk_math_mat_get_translate((int)(player_base + 768 + (short)(row * 3520) + (short)(block_tbl[i] * 176)), pos);
         pos[0] = pos[0] + ((float)((unsigned)(math_rand_float() * rand_scale) % 30) + jitter_min);
         pos[1] = pos[1] + ((float)((unsigned)(math_rand_float() * rand_scale) % 30) + jitter_min);
         pos[2] = pos[2] + ((float)((unsigned)(math_rand_float() * rand_scale) % 30) + jitter_min);

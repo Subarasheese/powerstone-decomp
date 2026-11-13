@@ -7,7 +7,7 @@ int FUN_0c026554(int);
 int FUN_0c0555dc(void);
 int obj_destroy(int);
 int snd_play_char_voice(int, int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(void);
 struct o101_uchar { char p[0x101]; unsigned char v; };
 struct o102_uchar { char p[0x102]; unsigned char v; };
@@ -52,7 +52,7 @@ int fx_update_22(int a4)
                         if ((int)(short)(t1 + 0x1) >= (int)0xA) {
                             *(unsigned char *)((a4 + 0x9)) = ((*(signed char *)((a4 + 0x9))) + 0x1);
                         }
-                        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
+                        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
                         t1 = (((struct o2E0_int *)(a4))->v);
                         *(unsigned int *)((t1 + 0x10)) = ((*(int *)((t1 + 0x10))) + 0x1555);
                         t2 = 0x2E0;

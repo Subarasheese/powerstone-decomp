@@ -93,7 +93,7 @@ int ADXB_GetOutBps(int);
 int ADXB_GetTotalNumSmpl(int);
 int ADXB_Stop(int);
 int FUN_0c02067e(int);
-int FUN_0c020be0(int);
+int hit_list_save_positions(int);
 int conv_s16x5_to_f32(int, int);
 int hit_debug_draw_object_parts(int);
 int FUN_0c0240e8(int, int, int);
@@ -356,7 +356,7 @@ int game_play_state_05(void);
 float FUN_0c0d5bc0(void);
 int FUN_0c0d7e74(void);
 float FUN_0c0e2340(int a4);
-int FUN_0c0e51d0(void);
+int snd_driver_memmove_busy(void);
 int gdFsToUpper(int a4);
 int FUN_0c0fcb8a(void);
 int ADXSJD_Init(void);
@@ -402,7 +402,7 @@ void FUN_0c10b434(int a4, int a5);
 int mpdrv_get_deviceinfo(int a4);
 int vmu_defrag_disk(int a4);
 int vmu_check_mode_04(int a4, int a5, int a6, int a7);
-int FUN_0c02466e(int a4);
+int hit_list_reset(int a4);
 int res_option_load(void);
 int FUN_0c098ac8(int a4, int a5, int a6, int a7);
 int obj_node_scale_one(int a4);
@@ -675,7 +675,7 @@ int FUN_0c112f1e(int a4);
 int thunk_FUN_0c1155a8(void);
 int FUN_0c114338(int a4);
 int thunk_FUN_0c115240(int a4, int a5, int a6);
-int thunk_FUN_0c020cba(int a4);
+int hit_list_calc_displacement(int a4);
 int FUN_0c0235ca(void);
 void FUN_0c02ee3c(void);
 int ui_draw_text_stub(int a4, int a5, float f4, float f5, float f6, float f7);
@@ -1309,7 +1309,7 @@ float FUN_0c0e2340(int a4)
     return _builtin_sqrtf((_builtin_fipr(u3, u4)));
 }
 
-int FUN_0c0e51d0(void)
+int snd_driver_memmove_busy(void)
 {
     if ((*(int *)0xA0800098) != 0) {
         return 0x1;

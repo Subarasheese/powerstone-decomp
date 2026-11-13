@@ -11,7 +11,7 @@ void FUN_0c0210c8(char *, float *, signed char *);
 void FUN_0c024300(float *, float, float, float, float);
 void FUN_0c024298(float *, float, float, float, float, float);
 void FUN_0c0243b0(float *, float *, float, float, float);
-int FUN_0c020be0(int);
+int hit_list_save_positions(int);
 int FUN_0c024446(int);
 struct o2D8_uchar { char p[0x2D8]; unsigned char v; };
 int FUN_0c0246b2(int);
@@ -85,9 +85,9 @@ void hit_debug_draw_object_parts(char *obj)
     }
 }
 
-int FUN_0c02466e(int a4)
+int hit_list_reset(int a4)
 {
-    FUN_0c020be0(a4);
+    hit_list_save_positions(a4);
     return FUN_0c024446(a4);
 }
 

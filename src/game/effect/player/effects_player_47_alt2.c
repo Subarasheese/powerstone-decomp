@@ -5,7 +5,7 @@ int obj_set_record_char(char *, int);
 int snd_play_char_voice(char *, int);
 int fx29_spawn_burst8(char *, int);
 int cam_set_shake_ramp(int, int);
-int thunk_FUN_0c062242(int, float *);
+int thunk_math_mat_get_translate(int, float *);
 #define FLOAT_AT(off) (*(float *)(popup + (off)))
 struct o107_uchar { char p[0x107]; unsigned char v; };
 struct o50_float { char p[0x50]; float v; };
@@ -54,7 +54,7 @@ void fx31_popup_update(char *popup)
         FLOAT_AT(84) = scale;
         if (*(short *)(popup + 0xF2) < 16) {
             player = (char *)0xC7E40C4 + (unsigned short)((unsigned short)target[3] * (unsigned short)0x72D0);
-            thunk_FUN_0c062242((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + 0x840, target_pos);
+            thunk_math_mat_get_translate((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + 0x840, target_pos);
             *(struct vec3i *)(popup + 56) = *(struct vec3i *)(target + 32);
             FLOAT_AT(60) = target_pos[1] + 20.0f;
             FLOAT_AT(32) = FLOAT_AT(32) + (FLOAT_AT(56) - FLOAT_AT(32)) / 5.0f;
@@ -62,7 +62,7 @@ void fx31_popup_update(char *popup)
             FLOAT_AT(40) = FLOAT_AT(40) + (FLOAT_AT(64) - FLOAT_AT(40)) / 5.0f;
         } else {
             player = (char *)0xC7E40C4 + (unsigned short)((unsigned short)target[3] * (unsigned short)0x72D0);
-            thunk_FUN_0c062242((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + 0x840, target_pos);
+            thunk_math_mat_get_translate((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + 0x840, target_pos);
             *(struct vec3i *)(popup + 32) = *(struct vec3i *)(target + 32);
             FLOAT_AT(36) = target_pos[1] + 20.0f;
         }

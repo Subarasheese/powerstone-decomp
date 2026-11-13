@@ -10,7 +10,7 @@
 08c0000b8 SYS_VEC_B8
 0a05f688c REG_688C
 0c0b1028 FUN_0c0b1028
-0c0ccf32 thunk_FUN_0c062242
+0c0ccf32 thunk_math_mat_get_translate
 0c0eb708 _slow_strcpy
 0c1437b0 g_1437b0
 0c1437b8 g_1437b8

@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0bb2e8-0c0bbaf8) */
 
 extern char *obj_create(int, int, int, int);
-extern int thunk_FUN_0c062242(int, float *);
+extern int thunk_math_mat_get_translate(int, float *);
 extern float math_cos_angle16(int shooter);
 extern float math_sin_angle16(int shooter);
 extern void obj_set_record_char(char *proj, int shooter);
@@ -34,7 +34,7 @@ void fx_spawn_jack_projectile(char *shooter, char variant)
     block_off = (unsigned short)(shooter[3] * 29392);
     shooter_base = (char *)(0xC7E40C4 + block_off);
     slot_idx = (signed char)shooter_base[0x71F1];
-    thunk_FUN_0c062242((int)(shooter_base + 768 + (short)(slot_idx * 3520)), (float *)(proj + 32));
+    thunk_math_mat_get_translate((int)(shooter_base + 768 + (short)(slot_idx * 3520)), (float *)(proj + 32));
     amplitude = *(float *)(0xC33C378 + (unsigned char)variant * 4);
     angle = (int)(*(float *)(0xC33C3B8 + (unsigned char)variant * 4) * 65536.0f / 360.0f);
     cos_val = math_cos_angle16(angle + 16384);

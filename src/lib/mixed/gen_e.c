@@ -121,10 +121,10 @@ int nlSelectMatrixStack(int);
 int nlMultiMatrix(int);
 int nlPopMatrix(int);
 int nlPushMatrix(int);
-int FUN_0c0e5178(int, int, int);
-int FUN_0c0e51d0(void);
-int FUN_0c0e51e8(int, int, int, int);
-int FUN_0c0e52b6(int, int, int, int);
+int snd_driver_memmove_start(int, int, int);
+int snd_driver_memmove_busy(void);
+int snd_bank_check_slot(int, int, int, int);
+int snd_bank_place(int, int, int, int);
 int snd_send_command(int);
 int FUN_0c0e60ce(int, int);
 int FUN_0c0e6834(int, int, int);
@@ -150,7 +150,7 @@ int fmMngChkEmptyData(int, int);
 extern int _builtin_get_imask(void);
 int buIsFormat(int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vmsfs_fread1(int a4, int a5);
 int fx_spawn_036fe4(int a4, int a5);
 int fx_spawn_03cf50(int a4, int a5);
@@ -402,14 +402,14 @@ int snd_bank_load(int a4, int a5, int a6, int a7)
 
     *(unsigned int *)(((int)stk + 24)) = a4;
     *(unsigned int *)(((int)stk + 20)) = a5;
-    t2 = FUN_0c0e51e8((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))), a6, a7);
+    t2 = snd_bank_check_slot((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))), a6, a7);
     *(unsigned int *)(((int)stk + 4)) = t2;
     t33 = t2;
     if (t2 == 0) {
         t3 = *(int *)(((int)stk + 24));
         *(unsigned int *)(((int)stk + 12)) = (*(int *)((t3 + 0x8)));
         *(unsigned int *)(((int)stk + 8)) = (*(int *)((t3 + 0x4)));
-        *(unsigned int *)(((int)stk + 16)) = (FUN_0c0e52b6((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), ((int)stk + 0)));
+        *(unsigned int *)(((int)stk + 16)) = (snd_bank_place((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), ((int)stk + 0)));
         for (;;) {
             t10 = snd_send_command(0x18A0);
             if (t10 != -1) {
@@ -423,9 +423,9 @@ int snd_bank_load(int a4, int a5, int a6, int a7)
         }
         t13 = *(int *)(((int)stk + 0));
         if (t13 != 0) {
-            FUN_0c0e5178((*(int *)(((int)stk + 16))), ((*(int *)(((int)stk + 16))) + (*(int *)(((int)stk + 12)))), (*(int *)(((int)stk + 0))));
+            snd_driver_memmove_start((*(int *)(((int)stk + 16))), ((*(int *)(((int)stk + 16))) + (*(int *)(((int)stk + 12)))), (*(int *)(((int)stk + 0))));
             for (;;) {
-                t19 = FUN_0c0e51d0();
+                t19 = snd_driver_memmove_busy();
                 if (t19 == 0) {
                     break;
                 }

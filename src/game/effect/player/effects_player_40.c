@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c1360-0c0c18ec) */
 
 char *obj_create(int a, int b, int c, int d);
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 void obj_set_record_char(char *e, int action);
 void FUN_0c06233a(char *model, char *palette, int kind);
 int math_rand_next(void);
@@ -35,7 +35,7 @@ void FUN_0c0c1360(char *src, char kind)
     e[4] = kind;
     *(char **)(e + 28) = src;
     pl = PL(B(src, 3));
-    thunk_FUN_0c062242(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520), (float *)(e + 32));
+    thunk_math_mat_get_translate(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520), (float *)(e + 32));
     *(VEC3 *)(e + 44) = *(VEC3 *)(src + 44);
     *(VEC3 *)(e + 80) = *(VEC3 *)0x0C33C764;
     I(e, 0x118) = 0;

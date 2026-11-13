@@ -153,7 +153,7 @@ int FUN_0c02cb8e(int a4, float f4)
     return FUN_0c0e34a0(u1);
 }
 
-int FUN_0c02ccbc(int a4, int a5, int a6, int a7)
+int mdl_apply_transform(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;

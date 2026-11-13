@@ -180,7 +180,7 @@ int FUN_0c02565a(int a4, int a5, int a6, int a7);
 int FUN_0c0255ae(int a4, int a5, int a6, int a7);
 int FUN_0c053720(int a4);
 int keycfg_load_settings_to_screen(void);
-int FUN_0c020be0(int a4, int a5, int a6, int a7);
+int hit_list_save_positions(int a4, int a5, int a6, int a7);
 int FUN_0c02c95c(int a4, int a5);
 
 int FUN_0c0ffdfc(void)

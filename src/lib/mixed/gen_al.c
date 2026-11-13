@@ -297,7 +297,7 @@ int nlInitMatrixStack(int a4, int a5, int a6);
 int gfx_set_fog_color(int a4);
 int nl_sprite_set_register(int a4, int a5);
 int nl_sprite_set_release(int a4, int a5);
-int FUN_0c0e5178(int a4, int a5, int a6);
+int snd_driver_memmove_start(int a4, int a5, int a6);
 int FUN_0c0e50ec(int a4, int a5, int a6);
 int FUN_0c0e67f4(int a4, int a5);
 int FUN_0c0ef158(float f4, float f5);
@@ -955,7 +955,7 @@ int nl_sprite_set_release(int a4, int a5)
     return t4;
 }
 
-int FUN_0c0e5178(int a4, int a5, int a6)
+int snd_driver_memmove_start(int a4, int a5, int a6)
 {
     register int t0;
 

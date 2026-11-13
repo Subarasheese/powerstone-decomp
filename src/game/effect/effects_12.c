@@ -17,7 +17,7 @@ int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_034884(int a4)
 {
@@ -196,6 +196,6 @@ int fx_tick_034884(int a4)
     *(unsigned char *)((v0_0 + 0x8)) = ((*(signed char *)((v0_0 + 0x8))) + 0x1);
     (((struct oEC_ushort *)(v0_0))->v) = 0x4;
     v0_1 = *(signed char *)((v0_0 + 0x3));
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), a4 + 0x20);
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), a4 + 0x20);
     goto L_C034A2C;
 }

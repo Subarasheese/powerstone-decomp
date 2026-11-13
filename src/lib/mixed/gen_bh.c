@@ -140,7 +140,7 @@ int dbg_set_cursor_cell(int, int);
 int dbg_set_text_color(int);
 int dbg_printf(int, ...);
 int nlRotateAxeSC(int, float, float);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e2260(int, int, int);
 float FUN_0c0e24f0(int);

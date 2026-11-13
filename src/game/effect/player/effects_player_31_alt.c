@@ -25,7 +25,7 @@ int snd_play_char_voice(int, int);
 int fx_spawn_four_particle_trail(int);
 float math_rand_float(void);
 int _modlu(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int FUN_0c0bf046(int a4)
 {
@@ -118,7 +118,7 @@ int FUN_0c0bf046(int a4)
             } else {
                 t39 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0x4));
+                thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t39) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0x4));
                 t44 = 0x0;
                 if (((((struct o24_float *)(a4))->v)) > ((*(float *)(((int)stk + 8))) + 0.0f)) {
                     t44 = 0x1;
@@ -177,7 +177,7 @@ int FUN_0c0bf046(int a4)
             if (((((struct oEC_short *)(a4))->v)) == 10) {
                 t123 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (a4 + 0x20));
+                thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t123) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (a4 + 0x20));
                 if ((int)(*(signed char *)((a4 + 0xF))) > (int)0x2) {
                     t127 = math_rand_float();
                     u130 = (t127 * 255.0f);

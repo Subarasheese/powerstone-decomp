@@ -22,7 +22,7 @@ int math_vec3_sub(int, int, int);
 int math_vec3_mul_xyz(int, float, float, float);
 int math_vec3_normalize(int);
 int snd_play_char_voice(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_update_11(int a4, int a5, int a6)
 {
@@ -127,7 +127,7 @@ int fx_update_11(int a4, int a5, int a6)
     *(unsigned short *)((v0_1 + v0_2)) = R4;
     v0_2 = *(signed char *)(((*(int *)((v0_1 + 0x1C))) + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
     math_vec3_sub((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x4), (v0_1 + 0x20));
     math_vec3_normalize((v0_1 + 0x38));
     math_vec3_normalize((((int)stk + 0) + 0x4));

@@ -139,8 +139,8 @@ float math_signed_sqrt(float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e5178(int, int, int);
-int FUN_0c0e51d0(void);
+int snd_driver_memmove_start(int, int, int);
+int snd_driver_memmove_busy(void);
 int snd_send_command(int);
 int _modlu(void);
 int _quick_odd_mvn(void);
@@ -157,7 +157,7 @@ int gdFsWaitCompleteReq(int);
 int memcpy(int, int, int);
 int memset(int, int, int);
 int syCfgSetSoundMode(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8);
 int FUN_0c0265de(int a4);
 int snd_bank_unload(int a4);
@@ -361,9 +361,9 @@ int snd_bank_unload(int a4)
                 }
             }
             if (t8 != 0) {
-                FUN_0c0e5178(t8, (t8 - t2), t7);
+                snd_driver_memmove_start(t8, (t8 - t2), t7);
                 for (;;) {
-                    t2 = FUN_0c0e51d0();
+                    t2 = snd_driver_memmove_busy();
                     if (t2 == 0) {
                         break;
                     }

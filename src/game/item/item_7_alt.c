@@ -16,8 +16,8 @@ struct o8_float { char p[0x8]; float v; };
 int FUN_0c026554(int, Stk8);
 int FUN_0c0555dc(void);
 int obj_destroy(int);
-int FUN_0c05ae26(int);
-int FUN_0c05aeca(int);
+int item_tick_falling(int);
+int item_tick_free(int);
 int item_tick_held(int);
 int item_tick_thrown(int);
 int FUN_0c05c6e0(int);
@@ -26,10 +26,10 @@ int fx_spawn_thrown_item_kind(int, int);
 int FUN_0c0c07bc(int, int, int, int, float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _quick_evn_mvn(int);
 extern int _quick_odd_mvn();
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 void FUN_0c05c728(int a4)
 {
@@ -68,7 +68,7 @@ void FUN_0c05c728(int a4)
             if (t8 != 5) {
                 if (t8 != 15) {
                     if (t8 == 16) {
-                        FUN_0c05ae26(a4);
+                        item_tick_falling(a4);
                         FUN_0c05c6e0(a4);
     return;
                     }
@@ -110,8 +110,8 @@ void FUN_0c05c728(int a4)
                     } else {
                         *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) + 0x38E);
                         *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + 0x71C);
-                        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-                        FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+                        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+                        math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
                     }
                     return;
                 }
@@ -146,7 +146,7 @@ void FUN_0c05c728(int a4)
                 { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 20) + 0x14)) = *(struct mv3 *)((a4 + 0x20)); }
                 t54 = *(signed char *)((t35 + 0x3));
                 *(unsigned int *)(((int)stk + 24)) = ((unsigned short)((unsigned short)((-t54) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t54) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t54) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stk + 20) + 0x8));
+                thunk_math_mat_get_translate((((((unsigned short)((unsigned short)((-t54) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t54) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stk + 20) + 0x8));
                 FUN_0c0c07bc((a4 + 0x38), (((int)stk + 20) + 0x14), (((int)stk + 20) + 0x8), (*(int *)((t35 + 0x30))), (*(float *)(((int)stk + 20))));
                 { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x44)) = *(struct mv3 *)(0xC3362F8); }
                 return;
@@ -159,6 +159,6 @@ void FUN_0c05c728(int a4)
         item_tick_thrown(a4);
     return;
     }
-    FUN_0c05aeca(a4);
+    item_tick_free(a4);
     FUN_0c05c6e0(a4);
 }

@@ -35,7 +35,7 @@ int snd_play_side_se(int, int);
 int cam_force_mode(int, int, int);
 int cam_request_mode_03(int, int);
 int _quick_odd_mvn(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int pl_ayame_special_move_dispatch(int a4)
 {
@@ -105,7 +105,7 @@ int pl_ayame_special_move_dispatch(int a4)
                         t6 = *(signed char *)((a4 + 0x3));
                         *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
                         t8 = *(signed char *)((a4 + 0xEE));
-                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(unsigned char)(*(signed char *)(((signed char)((t8 << 1) + t8) + 0xC337495))) * (short)0xB0)), (((int)stk + 20) + 0x8));
+                        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t6) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(unsigned char)(*(signed char *)(((signed char)((t8 << 1) + t8) + 0xC337495))) * (short)0xB0)), (((int)stk + 20) + 0x8));
                         fx_spawn_hit_effect((((int)stk + 20) + 0x8), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x3, *(int *)((int)stk + 20), *(int *)((int)stk + 20 + 4), *(int *)((int)stk + 20 + 8), *(int *)((int)stk + 20 + 12), *(int *)((int)stk + 20 + 16), *(int *)((int)stk + 20 + 20), *(int *)((int)stk + 20 + 24), *(int *)((int)stk + 20 + 28));
                         t15 = *(signed char *)((a4 + 0x3));
                         t16 = 0x14;
@@ -128,7 +128,7 @@ int pl_ayame_special_move_dispatch(int a4)
                         if (((((struct oEC_short *)(a4))->v)) == ((*(int *)(((signed char)(((t42 << 1) + t42) << 2) + 0xC3374B0))) - 1)) {
                             t45 = *(signed char *)((a4 + 0x3));
                             *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4);
-                            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 20) + 0x8));
+                            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t45 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 20) + 0x8));
                             fx_spawn_0396bc(a4, (((int)stk + 20) + 0x8));
                         }
                     }
@@ -151,7 +151,7 @@ int pl_ayame_special_move_dispatch(int a4)
                     if (((((struct oEC_short *)(a4))->v)) == 0xC4) {
                         t82 = *(signed char *)((a4 + 0x3));
                         *(unsigned int *)(((int)stk + 20)) = ((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4);
-                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (((int)stk + 20) + 0x8));
+                        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t82 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (((int)stk + 20) + 0x8));
                         fx_spawn_039aa0((((int)stk + 20) + 0x8), (*(signed char *)((a4 + 0x3))));
                     }
                     if (((((struct oEC_short *)(a4))->v)) == 0xC3) {
@@ -236,7 +236,7 @@ int pl_ayame_special_move_dispatch(int a4)
                     (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
                     t156 = *(signed char *)((a4 + 0x3));
                     *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEE_short *)(a4))->v)) << 2) << 1) + 0xC337460))) * (short)0xB0)), (((int)stk + 32) + 0x4));
+                    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t156) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEE_short *)(a4))->v)) << 2) << 1) + 0xC337460))) * (short)0xB0)), (((int)stk + 32) + 0x4));
                     fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
                     if (((((struct oEE_short *)(a4))->v)) != 0) {
                         if (((((struct oEE_short *)(a4))->v)) == 6) {
@@ -296,7 +296,7 @@ int pl_ayame_special_move_dispatch(int a4)
             (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
             t220 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 32)) = ((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 32) + 0x4));
+            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t220) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 32) + 0x4));
             fx_spawn_hit_effect((((int)stk + 32) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 32), *(int *)((int)stk + 32 + 4), *(int *)((int)stk + 32 + 8), *(int *)((int)stk + 32 + 12), *(int *)((int)stk + 32 + 16), *(int *)((int)stk + 32 + 20), *(int *)((int)stk + 32 + 24), *(int *)((int)stk + 32 + 28));
             obj_set_owner_hit_record(a4, 0x31);
             snd_play_side_se(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x3);

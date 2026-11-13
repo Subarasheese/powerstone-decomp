@@ -2,7 +2,7 @@
    _divls/_modls/_quick_*mvn/_slow_mvn run for real. Cases: partial/cases/fx_FUN_0c0c44d6.json (synthetic). */
 /* Boss/effect stage machine (stage bytes at +12, +13, +14): slides a scale up and down, steers the position, and finally eases +0x20.. toward +0x38.. */
 struct v3 { float x, y, z; };
-extern void thunk_FUN_0c062242(int, float *);
+extern void thunk_math_mat_get_translate(int, float *);
 extern void FUN_0c0c3408(char *, int);
 extern void cam_set_shake_ramp(int);
 extern int pl_angle_to_opponent(char *);
@@ -43,7 +43,7 @@ void fx31_thrown_update(char *o)
     c02 = *(float *)&b02;
     base = (char *)0xC7E40C4 + (unsigned short)((unsigned short)p[3] * (unsigned short)0x72D0);
     b = *(signed char *)(base + 0x71F1);
-    thunk_FUN_0c062242((int)(base + 0x300 + (short)(b * 3520) + 0x840), buf);
+    thunk_math_mat_get_translate((int)(base + 0x300 + (short)(b * 3520) + 0x840), buf);
     *(struct v3 *)(o + 56) = *(struct v3 *)(p + 32);
     *(float *)(o + 60) = buf[1] + 100.0f;
     step = 0;          /* 0: nothing, 1: call fx_spawn_33 with v = c005 * o[80], 2: with v = c02 */

@@ -12,7 +12,7 @@ struct at_ee_short { char pad[0xEE]; short field_ee; };
 struct at_ee_ushort { char pad[0xEE]; unsigned short field_ee; };
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct v3 { int x, y, z; };
 struct pos_x_float { char pad[0x20]; float value; };
 struct pos_y_float { char pad[0x24]; float value; };
@@ -107,7 +107,7 @@ int fx31_orbit_idle(int obj)
 
     link_player = *(signed char *)(((*(int *)((obj + 0x1C))) + 0x3));
     *(unsigned int *)(((int)frame + 0)) = ((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)frame + 0) + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)frame + 0) + 0x4));
     *(struct Vec3i *)(obj + 0x2C) = *(struct Vec3i *)((*(int *)(obj + 0x1C)) + 0x2C);
     *(float *)(((int)frame + 4)) = ((*(float *)(((int)frame + 4))) - (((math_sin_angle16((*(int *)((obj + 0x30))))) * 50.0f)));
     *(float *)(((int)frame + 12)) = ((*(float *)(((int)frame + 12))) - (((math_cos_angle16((*(int *)((obj + 0x30))))) * 50.0f)));
@@ -129,7 +129,7 @@ int fx31_orbit_attack(int obj)
 
     tmp1 = *(signed char *)(((*(int *)((obj + 0x1C))) + 0x3));
     *(unsigned int *)(((int)stack_args + 0)) = ((unsigned short)((unsigned short)tmp1 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)tmp1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)tmp1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stack_args + 0) + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)tmp1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)tmp1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stack_args + 0) + 0x4));
     *(struct v3 *)(obj + 0x2C) = *(struct v3 *)((*(int *)(obj + 0x1C)) + 0x2C);
     *(float *)(((int)stack_args + 4)) = ((*(float *)(((int)stack_args + 4))) - (((math_sin_angle16((*(int *)((obj + 0x30))))) * 50.0f)));
     *(float *)(((int)stack_args + 12)) = ((*(float *)(((int)stack_args + 12))) - (((math_cos_angle16((*(int *)((obj + 0x30))))) * 50.0f)));
@@ -156,7 +156,7 @@ int fx31_follow_phase_a(int obj)
     *(unsigned int *)(((int)frame + 4)) = link;
     link_player = *(signed char *)((link + 0x3));
     *(unsigned int *)(((int)frame + 0)) = ((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)frame + 0) + 0x8));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)frame + 0) + 0x8));
     *(float *)(((int)frame + 12)) = ((*(float *)(((int)frame + 12))) + 50.0f);
     *(unsigned int *)((obj + 0x30)) = ((*(int *)((obj + 0x30))) + 0x400);
     yaw = *(int *)((obj + 0x30));
@@ -188,7 +188,7 @@ float fx31_follow_phase_b(int obj)
     *(unsigned int *)(((int)frame + 4)) = link;
     link_player = *(signed char *)((link + 0x3));
     *(unsigned int *)(((int)frame + 0)) = ((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)frame + 0) + 0x8));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)link_player * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)frame + 0) + 0x8));
     *(float *)(((int)frame + 12)) = ((*(float *)(((int)frame + 12))) + ((((struct at_0_float *)0xC0C3AE0)->field_0)));
     *(unsigned int *)((obj + 0x30)) = ((*(int *)((obj + 0x30))) + 0x800);
     yaw = *(int *)((obj + 0x30));
@@ -366,7 +366,7 @@ void fx31_thrown_update(int arg_obj)
     L_C0C4518:;
     tmp_b = *(signed char *)((tmp_c + 0x3));
     *(unsigned int *)(((int)frame_buf + 0)) = ((unsigned short)((unsigned short)tmp_b * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)tmp_b * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)tmp_b * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)frame_buf + 0) + 0x1C));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)tmp_b * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)tmp_b * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)frame_buf + 0) + 0x1C));
     *(struct V *)(obj + 0x38) = *(struct V *)(tmp_c + 0x20);
     (((struct target_y_float *)(obj))->target_y) = ((*(float *)(((int)frame_buf + 32))) + 100.0f);
     tmp_d = *(signed char *)((obj + 0xD));

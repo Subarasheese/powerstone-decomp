@@ -40,7 +40,7 @@ int math_atan_angle16(float);
 float math_sin_angle16(int);
 float math_cos_angle16(int);
 void pl_start_motion(struct O *, int, int);
-void thunk_FUN_0c062242(void *, void *);
+void thunk_math_mat_get_translate(void *, void *);
 void FUN_0c064a1c(struct O *o);
 void FUN_0c064a1c(struct O *o)
 {
@@ -67,7 +67,7 @@ void FUN_0c064a1c(struct O *o)
         {
             int b = p + 768;
             int sc = *(signed char *)(p + 29169);
-            thunk_FUN_0c062242((char *)(b + (short)(sc * 3520) + 352), (char *)o + 32);
+            thunk_math_mat_get_translate((char *)(b + (short)(sc * 3520) + 352), (char *)o + 32);
         }
         o->s236 = 40;
         o->s242 = 2;

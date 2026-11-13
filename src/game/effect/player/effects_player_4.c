@@ -13,7 +13,7 @@ int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_11(int a4)
 {
@@ -39,7 +39,7 @@ int fx_spawn_11(int a4)
         *(unsigned int *)((t0 + 0x30)) = (*(int *)((a4 + 0x30)));
         *(unsigned int *)((t0 + 0x34)) = 0x0;
         t2 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), t0 + 0x20);
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), t0 + 0x20);
         u0 = ((((struct o38_float *)(t0))->v));
         u0 = u0 + 8.0f * (math_cos_angle16(((-(*(int *)((t0 + 0x30)))) + 0x14000)));
         (((struct o38_float *)(t0))->v) = u0;

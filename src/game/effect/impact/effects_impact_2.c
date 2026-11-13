@@ -30,9 +30,9 @@ int obj_destroy(int);
 int fx_spawn_03(int, int, int, float);
 float math_signed_sqrt(float);
 int math_atan_angle16(float);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_02(int a4, int a5, int a6)
 {
@@ -139,7 +139,7 @@ int fx_update_02(int a4)
                     } else {
                         t20 = *(signed char *)((a4 + 0x3));
                         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t20) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                        thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t20) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t20) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0xC));
+                        thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t20) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t20) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0xC));
                         *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) - ((((struct o20_float *)(a4))->v)));
                         *(float *)(((int)stk + 16)) = ((*(float *)(((int)stk + 16))) - ((((struct o24_float *)(a4))->v)));
                         *(float *)(((int)stk + 20)) = ((*(float *)(((int)stk + 20))) - ((((struct o28_float *)(a4))->v)));
@@ -192,8 +192,8 @@ int fx_update_02(int a4)
                     u79 = (t76 * (math_sin_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000))));
                     (((struct o40_float *)(a4))->v) = (u79 * 20.0f);
                     (((struct o3C_float *)(a4))->v) = (-((math_cos_angle16(((-(*(int *)((a4 + 0x2C)))) + 0x14000))) * 20.0f));
-                    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-                    t104 = (FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44)));
+                    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+                    t104 = (math_vec3_accumulate((a4 + 0x38), (a4 + 0x44)));
                 }
             }
         }

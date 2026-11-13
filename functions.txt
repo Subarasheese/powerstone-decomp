@@ -344,8 +344,8 @@ F 0c0208ec 172 FUN_0c0208ec
 F 0c020998 46 FUN_0c020998
 F 0c0209c6 172 FUN_0c0209c6
 F 0c020a80 352 FUN_0c020a80
-F 0c020be0 170 FUN_0c020be0
-F 0c020c8a 56 thunk_FUN_0c020cba
+F 0c020be0 170 hit_list_save_positions
+F 0c020c8a 56 hit_list_calc_displacement
 F 0c020cc2 70 FUN_0c020cc2
 F 0c020d20 286 FUN_0c020d20
 F 0c020e3e 58 conv_s16x5_to_f32
@@ -418,7 +418,7 @@ F 0c0243b0 94 FUN_0c0243b0
 F 0c02440e 24 FUN_0c02440e
 F 0c024426 32 FUN_0c024426
 F 0c024446 552 FUN_0c024446
-F 0c02466e 16 FUN_0c02466e
+F 0c02466e 16 hit_list_reset
 F 0c02467e 52 hit_world_reset
 F 0c0246b2 178 FUN_0c0246b2
 F 0c024764 108 FUN_0c024764
@@ -443,7 +443,7 @@ F 0c025a0e 738 FUN_0c025a0e
 F 0c025d10 98 FUN_0c025d10
 F 0c025d72 454 FUN_0c025d72
 F 0c025f38 24 FUN_0c025f38
-F 0c025f50 42 FUN_0c025f50
+F 0c025f50 42 hit_world_calc_displacement
 F 0c025f7a 252 hit_dispatch_shape_pair
 F 0c026076 332 FUN_0c026076
 F 0c026200 32 FUN_0c026200
@@ -543,7 +543,7 @@ F 0c02cade 108 FUN_0c02cade
 F 0c02cb4a 68 FUN_0c02cb4a
 F 0c02cb8e 56 FUN_0c02cb8e
 F 0c02cc18 164 FUN_0c02cc18
-F 0c02ccbc 116 FUN_0c02ccbc
+F 0c02ccbc 116 mdl_apply_transform
 F 0c02cd60 372 mdl_setup_part_matrices
 F 0c02ced4 68 FUN_0c02ced4
 F 0c02cf18 674 FUN_0c02cf18
@@ -1194,11 +1194,11 @@ F 0c05a6e8 254 FUN_0c05a6e8
 F 0c05a80c 236 item_draw_marker
 F 0c05a8f8 64 item_init_hold_pose
 F 0c05a96c 1020 FUN_0c05a96c
-F 0c05ad7c 170 FUN_0c05ad7c
-F 0c05ae26 164 FUN_0c05ae26
-F 0c05aeca 26 FUN_0c05aeca
-F 0c05aee4 56 FUN_0c05aee4
-F 0c05af40 266 FUN_0c05af40
+F 0c05ad7c 170 item_tick_by_mode
+F 0c05ae26 164 item_tick_falling
+F 0c05aeca 26 item_tick_free
+F 0c05aee4 56 item_free_init
+F 0c05af40 266 item_free_update
 F 0c05b090 74 item_tick_held
 F 0c05b0da 174 item_attach_to_hand
 F 0c05b188 4 FUN_0c05b188
@@ -3549,7 +3549,7 @@ F 0c0ccbca 52 FUN_0c0ccbca
 F 0c0ccbfe 154 FUN_0c0ccbfe
 F 0c0ccc98 580 FUN_0c0ccc98
 F 0c0ccefc 54 dbg_print_at
-F 0c0ccf32 6 thunk_FUN_0c062242
+F 0c0ccf32 6 thunk_math_mat_get_translate
 F 0c0ccf38 130 FUN_0c0ccf38
 F 0c0ccfba 106 FUN_0c0ccfba
 F 0c0cd028 182 FUN_0c0cd028
@@ -4052,7 +4052,7 @@ F 0c0e2110 16 nlTranslate
 F 0c0e2120 26 FUN_0c0e2120
 F 0c0e2140 20 nlTranslateV
 F 0c0e2160 36 nlUnitMatrix
-F 0c0e21b0 32 FUN_0c0e21b0
+F 0c0e21b0 32 math_vec3_accumulate
 F 0c0e2220 24 FUN_0c0e2220
 F 0c0e2240 32 FUN_0c0e2240
 F 0c0e2260 52 FUN_0c0e2260
@@ -4135,10 +4135,10 @@ F 0c0e502c 72 syRtcMakeAgeOfMoon
 F 0c0e50c0 32 syRtcDbgWriteLog
 F 0c0e50ec 58 FUN_0c0e50ec
 F 0c0e5126 70 sys_get_video_standard
-F 0c0e5178 58 FUN_0c0e5178
-F 0c0e51d0 20 FUN_0c0e51d0
-F 0c0e51e8 180 FUN_0c0e51e8
-F 0c0e52b6 322 FUN_0c0e52b6
+F 0c0e5178 58 snd_driver_memmove_start
+F 0c0e51d0 20 snd_driver_memmove_busy
+F 0c0e51e8 180 snd_bank_check_slot
+F 0c0e52b6 322 snd_bank_place
 F 0c0e540c 382 snd_driver_upload
 F 0c0e55e0 192 snd_bank_load
 F 0c0e56a0 106 FUN_0c0e56a0

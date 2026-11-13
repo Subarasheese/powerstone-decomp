@@ -32,7 +32,7 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int pl_hitreact_00_phase0(int);
 int pl_step_motion(int);
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 void FUN_0c08e5b4(char *o);
 void fx_spawn_04b054(int side);
 void pl_start_motion(char *o, int layer, int motion);
@@ -281,7 +281,7 @@ void pl_hitreact_01_phase0(char *o)
     float t;
 
     pl = PL(B(o, 3));
-    thunk_FUN_0c062242(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 0x160, (float *)(o + 0x20));
+    thunk_math_mat_get_translate(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 0x160, (float *)(o + 0x20));
     FUN_0c08e5b4(o);
     B(o, 0x71BC) = 2;
     H(o, 0xEC) = 0;

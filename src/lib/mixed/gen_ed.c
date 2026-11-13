@@ -85,7 +85,7 @@ int lsfts(int, int, int);
 int memcpy(int, int, int);
 int mvito4b(int, int);
 int sprintf(int, int, ...);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vmsfs_fclose(int, int);
 int vmsfs_fcreate(int, int, int, int);
 int vmsfs_fopen(int, int, int);

@@ -152,7 +152,7 @@ int res_switch_scene(int);
 int snd_play_char_voice(int, int);
 int snd_play_side_se(int, int);
 int stage_type01_start_thrown_item(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int ui_enable_hud(void);
 int ui_fade_start(int, int, int, int);
 int FUN_0c090c7a(int a4);
@@ -492,7 +492,7 @@ int FUN_0c08fc84(int a4)
     (((struct o71BC_uchar *)(a4))->v) = 0x2;
     FUN_0c08e5b4(a4);
     t0 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
     pl_start_motion(a4, 0x2, 0x70);
     (((struct o71A9_uchar *)(a4))->v) = 0x1;
     (((struct o71A8_uchar *)(a4))->v) = 0x1;

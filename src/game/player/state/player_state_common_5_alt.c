@@ -5,7 +5,7 @@ extern float math_sin_angle16(int);
 extern int math_atan_angle16(float);
 char pl_step_motion(char *);
 void pl_start_motion(char *, int, int);
-int thunk_FUN_0c062242(char *, char *);
+int thunk_math_mat_get_translate(char *, char *);
 int pl_mode12_phase0(int);
 int pl_mode12_phase1(int);
 int pl_wait_anim_end_c(int);
@@ -47,7 +47,7 @@ void pl_mode08_09_phase0_launch(char *obj)
         obj[0x71a9] = 1;
         obj[0x71a8] = 1;
         player_blk = (char *)(0xC7E40C4 + (unsigned short)((unsigned char)obj[3] * 0x72D0));
-        thunk_FUN_0c062242(player_blk + 0x300 + (short)(player_blk[0x71f1] * 3520) + 352, obj + 32);
+        thunk_math_mat_get_translate(player_blk + 0x300 + (short)(player_blk[0x71f1] * 3520) + 352, obj + 32);
     }
     *(short *)(obj + 0xEC) = 40;
     *(short *)(obj + 0xF2) = 2;

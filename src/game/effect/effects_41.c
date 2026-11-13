@@ -4,7 +4,7 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o2E0_int { char p[0x2E0]; int v; };
 
 
@@ -132,7 +132,7 @@ int fx_tick_039090(int a4)
                     t6 = (t6 - 1);
                 }
                 t0 = *(signed char *)((a4 + 0x3));
-                thunk_FUN_0c062242(((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(a4))->v)) + 0x4));
+                thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(a4))->v)) + 0x4));
                 t0 = (((struct oEC_short *)(a4))->v);
                 (((struct oEC_ushort *)(a4))->v) = (t0 + 0x1);
                 t3 = 0xEC;
@@ -165,7 +165,7 @@ int fx_tick_039090(int a4)
                 t5 = (t5 - 1);
             }
             t2 = *(signed char *)((a4 + 0x3));
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(a4))->v)) + 0x4));
+            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(a4))->v)) + 0x4));
             t2 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0xB));
             t3 = t2;
             if (t2 == 0) {

@@ -24,7 +24,7 @@ int obj_set_record_char(int, int);
 float math_rand_float(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int FUN_0c0bd640(int a4, int a5)
 {
@@ -90,11 +90,11 @@ int FUN_0c0bd640(int a4, int a5)
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t15 * (unsigned short)0x72D0) + 0xC7E40C4);
                 t20 = ((((unsigned short)((unsigned short)t15 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t15 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0));
             }
-            thunk_FUN_0c062242(t20, (t0 + 0x20));
+            thunk_math_mat_get_translate(t20, (t0 + 0x20));
         } else {
             t24 = *(signed char *)((t0 + 0x3));
             *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t24 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)t24 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t24 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (t0 + 0x20));
+            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t24 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t24 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (t0 + 0x20));
             t27 = *(signed char *)(((int)stk + 0));
             (((struct o20_float *)(t0))->v) = (((((struct o20_float *)(t0))->v)) + (*(float *)((((((unsigned char)(t27 & 0x3) << 1) << 2) + 0xC33C4B8) + 0x0))));
             (((struct o28_float *)(t0))->v) = (((((struct o28_float *)(t0))->v)) + ((((struct o4_float *)(((((unsigned char)(t27 & 0x3) << 1) << 2) + 0xC33C4B8)))->v)));
@@ -127,7 +127,7 @@ int FUN_0c0bd640(int a4, int a5)
         }
         t67 = *(signed char *)((t0 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t67) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t67) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t67) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0x8));
+        thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t67) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t67) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 0) + 0x8));
         u70 = *(float *)(((int)stk + 12));
         *(float *)(((int)stk + 12)) = (u70 + 800.0f);
         (((struct o24_float *)(t0))->v) = (u70 + 800.0f);

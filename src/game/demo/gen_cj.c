@@ -47,7 +47,7 @@ int FUN_0c0ce530(int, int, int, int);
 int FUN_0c0ce634(int, int, int);
 int FUN_0c0ce6b0(int, int, int);
 int FUN_0c0ce72c(int, int, int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int cam_update_view_matrices(void);
 int dbg_print_at(int, float, float);
 extern int dbg_printf();
@@ -729,8 +729,8 @@ int FUN_0c0ad670(int a4)
     if (((int)((int)(short)(t0 + 0x1) % (int)0x2)) != 0) {
         FUN_0c04a8ec(a4, ((((struct o9C_int *)(((((struct o2E0_int *)(a4))->v))))->v)));
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
 }
 
 int FUN_0c0cdb34(float f4)

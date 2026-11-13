@@ -81,7 +81,7 @@ float math_sin_angle16(int);
 int _modls(void);
 int _modlu(void);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int fx_update_16(int a4);
 int pl_update_frame(int a4, int a5, int a6, int a7);
 int pl_update_frame(int a4, int a5, int a6, int a7)

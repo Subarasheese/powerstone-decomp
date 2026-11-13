@@ -74,7 +74,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int FUN_0c0209c6(int, float);
 int pl_angle_to_opponent(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o7264_float { char p[0x7264]; float v; };

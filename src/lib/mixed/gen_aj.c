@@ -189,7 +189,7 @@ extern void _builtin_st_ext(float (*)[4]);
 int memcpy(int, int, int);
 int memset(int, int, int);
 int pdVmsLcdIsReady(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vsprintf(int, int, int);
 int FUN_0c0e4750(int a4, int a5);
 int FUN_0c0f2d9e(int a4, int a5);

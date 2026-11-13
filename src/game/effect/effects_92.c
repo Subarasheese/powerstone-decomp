@@ -10,7 +10,7 @@ struct vec3_int { int x, y, z; };
 int nlLoadMatrix(char *);
 int nlInvertMatrix(int);
 int nlCalcPoint(float *, float *);
-int thunk_FUN_0c062242(int, float *);
+int thunk_math_mat_get_translate(int, float *);
 
 int FUN_0c041e14(int a4)
 {
@@ -65,7 +65,7 @@ void cam_frame_stage_corners(char *cam)
     nlInvertMatrix(0);
     for (i = 0; i < 19; i++) {
         float x, z;
-        thunk_FUN_0c062242((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + (short)((short)i * (short)0xB0), pts);
+        thunk_math_mat_get_translate((int)(player + 0x300) + (short)((short)player[0x71F1] * (short)0xDC0) + (short)((short)i * (short)0xB0), pts);
         nlCalcPoint(pts, pts + 3);
         x = pts[3];
         if (x > max_x) max_x = x;

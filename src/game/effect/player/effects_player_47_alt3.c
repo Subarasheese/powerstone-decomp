@@ -1,6 +1,6 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c3544-0c0c571c) */
 
-extern void thunk_FUN_0c062242(unsigned char *, float *);
+extern void thunk_math_mat_get_translate(unsigned char *, float *);
 extern float math_sin_angle16(int);
 extern float math_cos_angle16(int);
 extern float math_signed_sqrt(float);
@@ -15,7 +15,7 @@ void fx31_steer_toward_target(unsigned char *obj, int max_deg)
     int step;
     int diff;
 
-    thunk_FUN_0c062242(other + 768 + (short)((signed char)other[0x71F1] * 3520) + 704, vec);
+    thunk_math_mat_get_translate(other + 768 + (short)((signed char)other[0x71F1] * 3520) + 704, vec);
     vec[0] = vec[0] + 50.0f * math_sin_angle16(*(int *)(players + (unsigned short)((1 - (signed char)obj[3]) * 0x72D0) + 48));
     vec[2] = vec[2] + 50.0f * math_cos_angle16(*(int *)(players + (unsigned short)((1 - (signed char)obj[3]) * 0x72D0) + 48));
     vec[0] = vec[0] - *(float *)(obj + 32);

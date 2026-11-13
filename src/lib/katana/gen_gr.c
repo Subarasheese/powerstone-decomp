@@ -70,7 +70,7 @@ float math_sin_angle16(int);
 extern int _quick_odd_mvn();
 extern int FUN_0c0f7e80();
 extern float _builtin_sqrtf(float);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 float FUN_0c0c5920(int a4, int a5, int a6, int a7, float f4, float f5);
 int FUN_0c0f8180(int a4);
 int FUN_0c03a918(int a4, int a5, int a6);

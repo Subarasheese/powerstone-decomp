@@ -7,9 +7,9 @@ int FUN_0c0555dc(void);
 int obj_destroy(int);
 int obj_set_record_char(int, int);
 int math_atan2_angle16(float, float);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int FUN_0c0e24f0(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 extern float _builtin_sqrtf(float);
 struct Obj {
     char p0[8];
@@ -100,7 +100,7 @@ void fx_update_23(struct Obj *obj)
         }
         owner_idx = ((struct Obj *)*(char **)(obj->owner + 0x1C))->p0[3];
         owner_base = (unsigned char *)(0xC7E40C4 + (unsigned short)((unsigned short)owner_idx * 0x72D0));
-        thunk_FUN_0c062242((int)(owner_base + 0x300 + (short)((short)(signed char)owner_base[0x71F1] * (short)0xDC0)), (int)tgt);
+        thunk_math_mat_get_translate((int)(owner_base + 0x300 + (short)((short)(signed char)owner_base[0x71F1] * (short)0xDC0)), (int)tgt);
         obj->dir[0] = tgt[0] - obj->pos[0];
         obj->dir[1] = tgt[1] - obj->pos[1];
         obj->dir[2] = tgt[2] - obj->pos[2];
@@ -121,6 +121,6 @@ void fx_update_23(struct Obj *obj)
     if (obj->age >= 180) {
         obj->state = obj->state + 1;
     }
-    FUN_0c0e21b0((int)obj->pos, (int)obj->dir);
+    math_vec3_accumulate((int)obj->pos, (int)obj->dir);
     obj->link[4] = obj->link[4] + 0x1555;
 }

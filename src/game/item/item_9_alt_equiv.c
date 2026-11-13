@@ -6,7 +6,7 @@ extern void FUN_0c05cff8(unsigned char *);
 extern void FUN_0c05d0d8(unsigned char *);
 extern void FUN_0c0cc7fc(int);
 extern void obj_set_mode_owner(unsigned char *, int, int);
-extern void FUN_0c0e21b0(unsigned char *, unsigned char *);
+extern void math_vec3_accumulate(unsigned char *, unsigned char *);
 
 void FUN_0c05cdb2(unsigned char *obj)
 {
@@ -57,8 +57,8 @@ void FUN_0c05cdb2(unsigned char *obj)
             FUN_0c05cff8(obj);
             break;
         }
-        FUN_0c0e21b0(obj + 32, obj + 56);
-        FUN_0c0e21b0(obj + 56, obj + 68);
+        math_vec3_accumulate(obj + 32, obj + 56);
+        math_vec3_accumulate(obj + 56, obj + 68);
         return;
     case 2:
         FUN_0c05d0d8(obj);

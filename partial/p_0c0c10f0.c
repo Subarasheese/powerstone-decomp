@@ -11,11 +11,11 @@ extern char g_players[];
 extern int g_frame_counter;
 extern int FUN_0c0555dc(O *);
 extern void obj_destroy(O *);
-extern void thunk_FUN_0c062242(char *, V3 *);
+extern void thunk_math_mat_get_translate(char *, V3 *);
 extern void FUN_0c0e24f0(float *);
 extern int math_atan2_angle16(float, float);
 extern void obj_set_record_char(O *, int);
-extern void FUN_0c0e21b0(float *, float *);
+extern void math_vec3_accumulate(float *, float *);
 extern float _builtin_sqrtf(float);
 extern char g_stage_id;
 char fx23_outside_arena_bounds(O *p)
@@ -40,7 +40,7 @@ void fx_update_23(O *p)
     if (fx23_outside_arena_bounds(p)) {
         if (p->q28->b9 == 3 || ++p->s238 > 3) { p->b8++; return; }
         base = g_players + (unsigned short)(p->q28->q28->b3 * 29392);
-        thunk_FUN_0c062242(base + 768 + (short)(base[29169] * 3520) + 1408, &v);
+        thunk_math_mat_get_translate(base + 768 + (short)(base[29169] * 3520) + 1408, &v);
         p->f56 = v.x - p->x;
         p->f60 = v.y - p->y;
         p->f64 = v.z - p->z;
@@ -54,6 +54,6 @@ void fx_update_23(O *p)
     }
     if ((unsigned int)g_frame_counter % 30u == 0) /* _modlu */  obj_set_record_char(p, 114);
     if (++p->s236 >= 180) p->b8++;
-    FUN_0c0e21b0(&p->x, &p->f56);
+    math_vec3_accumulate(&p->x, &p->f56);
     p->p736[4] += 0x1555;
 }

@@ -22,7 +22,7 @@ int FUN_0c0555dc(void);
 int obj_destroy(int);
 int snd_play_stage_obj_se(int, int, int);
 int fx_spawn_03(int, int, int, float);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 
 int fx_spawn_04(int a4, int a5)
 {
@@ -89,8 +89,8 @@ int fx_update_04(int a4)
             *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);
             return (t0 + 0x1);
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     fx_spawn_with_params((a4 + 0x20), 1.0f, 1.0f, 1.0f, 3.0f);

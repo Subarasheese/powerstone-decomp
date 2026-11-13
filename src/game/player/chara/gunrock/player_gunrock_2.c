@@ -51,7 +51,7 @@ int pl_mode13_update(int);
 int pl_mode14_update(int);
 int pl_mode15_update(int);
 int pl_start_motion(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int pl_apply_motion_translation(int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEE_short { char p[0xEE]; short v; };
@@ -438,7 +438,7 @@ int pl_gunrock_mode08_09_update_v0(int a4)
         (((struct o71A9_uchar *)(a4))->v) = 0x1;
         (((struct o71A8_uchar *)(a4))->v) = 0x1;
         t0 = *(signed char *)((a4 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
         (((struct oEC_ushort *)(a4))->v) = 0x28;
         (((struct oEE_ushort *)(a4))->v) = 0x4;
         t0 = *(signed char *)((a4 + 0xA));

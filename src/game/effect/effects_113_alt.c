@@ -13,7 +13,7 @@ int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
 float math_rand_float(void);
 int _modlu(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_tick_0485f8(int a4)
 {
@@ -71,7 +71,7 @@ int fx_tick_0485f8(int a4)
     v0_2 = *(signed char *)((v0_0 + 0x3));
     v0_6 = *(int *)(((*(int *)(((int)stk + 0))) + 0x0));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    v0_2 = thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(signed char *)(((v0_6 + 0x28) + 0x2))) * (short)0xB0)), (v0_0 + 0x20));
+    v0_2 = thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(signed char *)(((v0_6 + 0x28) + 0x2))) * (short)0xB0)), (v0_0 + 0x20));
     v0_7 = *(signed char *)(((v0_6 + 0x28) + 0x0));
     (((struct o28_uchar *)(v0_6))->v) = (v0_7 - 1);
     v0_5 = (v0_2);

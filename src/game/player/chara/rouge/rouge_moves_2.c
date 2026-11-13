@@ -27,7 +27,7 @@ int pl_landed(int);
 int pl_end_action_choose_state(int, int, int, int, int);
 int pl_change_state(int, int, int);
 int _modls(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int pl_rouge_move10_init(int a4)
 {
@@ -128,7 +128,7 @@ int pl_rouge_attack_update(int a4, int a5, int a6, int a7)
                     (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) - 1);
                     t4 = *(signed char *)((a4 + 0x3));
                     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)stk + 0) + 0x4));
+                    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (((int)stk + 0) + 0x4));
                     if (((int)((int)((((struct oEC_short *)(a4))->v)) % (int)0x3)) == 0) {
                         u10 = 0.049999997f;
                         u10 = u10 + 0.0199999996f * (float)((((struct oEE_short *)(a4))->v));

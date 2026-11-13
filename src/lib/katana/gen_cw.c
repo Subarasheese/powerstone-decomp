@@ -120,7 +120,7 @@ int kdSetGetLastError(int, int, int, int, int);
 int kmiCopyFromFrameBuffer(int, int, int);
 int kmiCopyToFrameBuffer(int, int, int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int thunk_FUN_0c111b54(int, int);
 int thunk_FUN_0c111b6e(int);
 int thunk_FUN_0c1155a8(void);

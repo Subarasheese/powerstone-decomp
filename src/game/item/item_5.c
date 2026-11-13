@@ -8,7 +8,7 @@ typedef struct { int x, y, z; } S12;
 extern int FUN_0c0555dc(void);
 extern int obj_destroy(void *);
 extern int item_draw_marker(void *);
-extern int FUN_0c05ae26(void *);
+extern int item_tick_falling(void *);
 extern int item_tick_thrown(void *);
 extern int item_tick_held(void *);
 extern int FUN_0c05b9a4(void *);
@@ -17,7 +17,7 @@ extern void obj_set_mode_owner(void *, int, int);
 extern float math_sin_angle16(int);
 extern int math_rand_next(void);
 extern void fx_spawn_item_sparkle(void *);
-extern void FUN_0c0e21b0(void *, void *);
+extern void math_vec3_accumulate(void *, void *);
 #define ST (*(signed char *)(actor + 8))
 #define CNT (*(short *)(actor + 0xEC))
 #define TIMER (*(short *)(actor + 0xEE))
@@ -101,8 +101,8 @@ void item_tick(char *actor)
                 actor[1] = 1;
                 TIMER = 0;
             }
-            FUN_0c0e21b0(actor + 32, actor + 56);
-            FUN_0c0e21b0(actor + 56, actor + 68);
+            math_vec3_accumulate(actor + 32, actor + 56);
+            math_vec3_accumulate(actor + 56, actor + 68);
         }
         break;
     case 4:
@@ -128,7 +128,7 @@ void item_tick(char *actor)
         *(char **)(owner + 29132) = actor;
         break;
     case 16:
-        FUN_0c05ae26(actor);
+        item_tick_falling(actor);
         break;
     default:
         obj_destroy(actor);

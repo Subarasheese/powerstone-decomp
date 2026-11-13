@@ -39,7 +39,7 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int _modls(void);
 int _modlu(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_update_16(int a4)
 {
@@ -294,7 +294,7 @@ int fx_update_16(int a4)
                     (((struct o24_float *)(a4))->v) = (u9 + 225.0f);
                     t12 = *(signed char *)(((*(int *)(((*(int *)((a4 + 0x1C))) + 0x1C))) + 0x3));
                     *(unsigned int *)(((int)stk + 16)) = ((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stk + 4) + 0x10));
+                    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t12 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (((int)stk + 4) + 0x10));
                     *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 20))) - ((((struct o20_float *)(a4))->v)));
                     *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 24))) - ((((struct o24_float *)(a4))->v)));
                     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 28))) - ((((struct o28_float *)(a4))->v)));

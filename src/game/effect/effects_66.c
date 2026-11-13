@@ -15,7 +15,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
 float math_cos_angle16(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int FUN_0c03cc48(int a4);
 
@@ -98,7 +98,7 @@ int fx_tick_03cb28(int a4)
     if ((v0_2 != 3)) goto L_C03CDA0;
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_0 + 0x2C)) = *(struct mv3 *)((v0_1 + 0x2C)); }
     v0_2 = *(signed char *)((v0_1 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (v0_0 + 0x20));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (v0_0 + 0x20));
     (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) - 35.0f);
     v0_1 = *(signed char *)((v0_1 + 0x71BA));
     v0_2 = (v0_1);
@@ -115,7 +115,7 @@ int fx_tick_03cb28(int a4)
     L_C03CDE4:;
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_0 + 0x2C)) = *(struct mv3 *)((v0_1 + 0x2C)); }
     v0_2 = *(signed char *)((v0_1 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (v0_0 + 0x20));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (v0_0 + 0x20));
     (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) - 28.0f);
     w0_0 = ((((struct o20_float *)(v0_0))->v));
     w0_0 = w0_0 + 30.0f * (math_sin_angle16(((*(int *)((v0_0 + 0x30))) + 0x4000)));

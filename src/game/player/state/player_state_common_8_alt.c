@@ -9,7 +9,7 @@ extern void pl_apply_motion_translation(char *);
 extern void FUN_0c063468(char *);
 extern float math_cos_angle16(int);
 extern float math_sin_angle16(int);
-extern void thunk_FUN_0c062242(char *, char *);
+extern void thunk_math_mat_get_translate(char *, char *);
 extern void fx_spawn_effect_at_point(int, float *);
 extern void pl_start_motion(char *, int, int);
 extern char g_players[];
@@ -49,11 +49,11 @@ void pl_mode15_cls02_f0(char *obj)
         *(short *)(obj + 0xF0) = *(short *)(obj + 0xF0) - 1;
         if ((g_frame_counter & 3) == 0) {
             player = g_players + (unsigned short)((unsigned short)obj[3] * 0x72D0);
-            thunk_FUN_0c062242(player + 0x300 + (short)(player[0x71F1] * 3520) + 3168, (char *)vec);
+            thunk_math_mat_get_translate(player + 0x300 + (short)(player[0x71F1] * 3520) + 3168, (char *)vec);
             vec[1] = *(float *)(obj + 724);
             fx_spawn_effect_at_point(obj[3], vec);
             player = g_players + (unsigned short)((unsigned short)obj[3] * 0x72D0);
-            thunk_FUN_0c062242(player + 0x300 + (short)(player[0x71F1] * 3520) + 2640, (char *)vec);
+            thunk_math_mat_get_translate(player + 0x300 + (short)(player[0x71F1] * 3520) + 2640, (char *)vec);
             vec[1] = *(float *)(obj + 724);
             fx_spawn_effect_at_point(obj[3], vec);
         }

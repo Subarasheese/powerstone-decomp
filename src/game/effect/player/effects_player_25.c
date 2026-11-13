@@ -4,7 +4,7 @@ typedef struct { int x, y, z; } Vec12;
 extern char *obj_create(int, int, int, int);
 extern char g_players[];
 extern char g_spr_bank_player_fx[];
-extern void thunk_FUN_0c062242(char *, char *);
+extern void thunk_math_mat_get_translate(char *, char *);
 extern void FUN_0c06233a(char *, char *, int);
 extern int pl_motion_length(char *);
 extern void fx_update_garuda_debris(void);
@@ -40,7 +40,7 @@ void fx_spawn_garuda_debris(char *owner, char mode)
     FUN_0c06233a(*(char **)(debris + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 2);
     pl_base = g_players + (unsigned short)((unsigned short)owner[3] * 0x72D0);
     if (mode == 0) {
-        thunk_FUN_0c062242(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 1408, debris + 32);
+        thunk_math_mat_get_translate(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 1408, debris + 32);
         child = *(char **)(debris + 0x2E0);
         *(float *)(child + 36) = 0.699999988f;
         *(float *)(child + 32) = 0.699999988f;
@@ -52,7 +52,7 @@ void fx_spawn_garuda_debris(char *owner, char mode)
         child = *(char **)(debris + 0x2E0);
         *(float *)(child + 4) = *(float *)(child + 4) - 10.0f;
     } else if (mode == 1) {
-        thunk_FUN_0c062242(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 2112, debris + 32);
+        thunk_math_mat_get_translate(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 2112, debris + 32);
         child = *(char **)(debris + 0x2E0);
         *(float *)(child + 36) = zero;
         *(float *)(child + 32) = zero;
@@ -64,7 +64,7 @@ void fx_spawn_garuda_debris(char *owner, char mode)
         child = *(char **)(debris + 0x2E0);
         *(float *)(child + 4) = *(float *)(child + 4) + zero;
     } else if (mode == 2) {
-        thunk_FUN_0c062242(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 176, debris + 32);
+        thunk_math_mat_get_translate(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 176, debris + 32);
         child = *(char **)(debris + 0x2E0);
         *(float *)(child + 36) = zero;
         *(float *)(child + 32) = zero;

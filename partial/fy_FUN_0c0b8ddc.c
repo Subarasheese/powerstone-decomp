@@ -17,7 +17,7 @@ void fx_spawn_ryoma_spray(char *a, int b)
     o[5] = 25;
     *(void (**)(void))(o + 16) = fx_update_ryoma_spray;
     p = (char *)0x0C7E40C4 + (unsigned short)(a[3] * 29392);
-    thunk_FUN_0c062242(p + 0x300 + (short)(p[0x71F1] * 3520), o + 32);
+    thunk_math_mat_get_translate(p + 0x300 + (short)(p[0x71F1] * 3520), o + 32);
     *(S12 *)(o + 44) = *(S12 *)(a + 44);
     *(int *)(o + 48) = *(int *)(o + 48) + ((int *)0x0C33C300)[b];
     *(int *)(o + 44) = *(int *)(o + 44) + ((int *)0x0C33C314)[b];

@@ -13,7 +13,7 @@ int FUN_0c0555dc(void);
 int obj_destroy(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_tick_034dd0(int a4)
 {
@@ -61,7 +61,7 @@ int fx_tick_034dd0(int a4)
     return obj_destroy(v0_0);
     L_C034F56:;
     v0_1 = *(signed char *)((v0_0 + 0x3));
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_0 + 0x2C)) = *(struct mv3 *)(((*(int *)((v0_0 + 0x1C))) + 0x2C)); }
     *(unsigned int *)((v0_0 + 0x30)) = ((*(int *)((v0_0 + 0x30))) + 0x4000);
     v0_1 = (((struct o2E4_int *)(v0_0))->v);

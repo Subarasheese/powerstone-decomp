@@ -3,16 +3,16 @@
 
 struct o2E4_int { char p[0x2E4]; int v; };
 int FUN_0c0555dc(void);
-int FUN_0c05ae26(int);
-int FUN_0c05aeca(int);
+int item_tick_falling(int);
+int item_tick_free(int);
 int FUN_0c05b18c(int);
 int item_draw_marker(int);
 int item_tick_held(int);
 int item_tick_thrown(int);
 int obj_destroy(int);
-int FUN_0c05ad7c(int a4);
+int item_tick_by_mode(int a4);
 
-int FUN_0c05ad7c(int a4)
+int item_tick_by_mode(int a4)
 {
     int t0;
     int t1;
@@ -39,7 +39,7 @@ int FUN_0c05ad7c(int a4)
             if (t0 != 5) {
                 if (t0 != 14) {
                     if (t0 == 16) {
-                        return FUN_0c05ae26(a4);
+                        return item_tick_falling(a4);
                     }
                     return obj_destroy(a4);
                 }
@@ -49,5 +49,5 @@ int FUN_0c05ad7c(int a4)
         }
         return item_tick_thrown(a4);
     }
-    return FUN_0c05aeca(a4);
+    return item_tick_free(a4);
 }

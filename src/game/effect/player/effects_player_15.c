@@ -16,7 +16,7 @@ int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_jack_projectile_alt(int owner, int variant)
 {
@@ -55,7 +55,7 @@ int fx_spawn_jack_projectile_alt(int owner, int variant)
         (((struct field_58_float *)(effect))->field_58) = 1.0f;
         char_id = *(signed char *)((owner + 0x3));
         *(unsigned int *)(((int)frame_buf + 4)) = ((unsigned short)((unsigned short)char_id * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242(((((unsigned short)((unsigned short)char_id * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)char_id * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (effect + 0x20));
+        thunk_math_mat_get_translate(((((unsigned short)((unsigned short)char_id * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)char_id * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (effect + 0x20));
         *(int *)((int)frame_buf + 0) = (effect + 0x20);
         variant_b = *(signed char *)(((int)frame_buf + 8));
         *(unsigned int *)(((int)frame_buf + 4)) = ((unsigned char)variant_b << 2);

@@ -17,7 +17,7 @@ int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_homing_shell_create(int a4, int a5)
 {
@@ -35,7 +35,7 @@ int fx_homing_shell_create(int a4, int a5)
     *(unsigned char *)((t0 + 0x5)) = 0x19;
     *(unsigned int *)((t0 + 0x10)) = 0xC0C7780;
     t1 = *(signed char *)(((0x3 + a4) + 0x0));
-    thunk_FUN_0c062242((((short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4))) + (short)((short)(*(signed char *)(((unsigned char)a5 + 0xC153220))) * (short)0xB0)), (t0 + 0x20));
+    thunk_math_mat_get_translate((((short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4))) + (short)((short)(*(signed char *)(((unsigned char)a5 + 0xC153220))) * (short)0xB0)), (t0 + 0x20));
     { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
     *(unsigned int *)((t0 + 0x2C)) = (*(int *)((((unsigned char)a5 << 2) + 0xC153228)));
     (((struct o58_float *)(t0))->v) = 0.099999994f;

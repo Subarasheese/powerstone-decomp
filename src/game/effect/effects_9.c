@@ -25,7 +25,7 @@ int nlSelectMatrixStack(int);
 int _modls(int);
 int _modlu(int);
 int nlCalcPoint(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 float fx_tick_033ba8(int a4, int a5, int a6, int a7, float f4, float f5, float f6)
 {
@@ -105,7 +105,7 @@ float fx_tick_033ba8(int a4, int a5, int a6, int a7, float f4, float f5, float f
     (((struct oEC_ushort *)(v0_0))->v) = (((((struct oEC_short *)(v0_0))->v)) + 0x1);
     v0_5 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
     *(float *)(((int)stk + 8)) = w0_4;
     *(float *)(((int)stk + 4)) = w0_4;
     *(float *)(((int)stk + 12)) = 100.0f;
@@ -225,7 +225,7 @@ float fx_tick_033ba8(int a4, int a5, int a6, int a7, float f4, float f5, float f
     L_C033E14:;
     v0_5 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)), (v0_0 + 0x20));
     (((struct oEC_ushort *)(v0_0))->v) = (((((struct oEC_short *)(v0_0))->v)) + 0x1);
     w0_3 = (0.299999982f);
     if (((((((struct oEC_short *)(v0_0))->v)) & 2) == 0)) goto L_C033E84;

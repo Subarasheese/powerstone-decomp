@@ -151,8 +151,8 @@ int nl_sprite_draw(int);
 int sys_set_interrupt_handler(int, int);
 int FUN_0c0e49c0(int, int, int, int);
 int FUN_0c0e4a80(int);
-int FUN_0c0e51e8(int, int);
-int FUN_0c0e52b6(int, int, int, int);
+int snd_bank_check_slot(int, int);
+int snd_bank_place(int, int, int, int);
 int snd_send_command(int);
 int _divls(void);
 int _modls(int);
@@ -677,7 +677,7 @@ int FUN_0c0e56a0(int a4, int a5, int a6)
     *(unsigned int *)(((int)stk + 24)) = a4;
     *(unsigned int *)(((int)stk + 20)) = a5;
     *(unsigned int *)(((int)stk + 16)) = a6;
-    t2 = FUN_0c0e51e8((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))));
+    t2 = snd_bank_check_slot((*(int *)(((int)stk + 24))), (*(int *)(((int)stk + 20))));
     *(unsigned int *)(((int)stk + 4)) = t2;
     if (t2 != 0) {
         return t2;
@@ -685,7 +685,7 @@ int FUN_0c0e56a0(int a4, int a5, int a6)
     t3 = *(int *)(((int)stk + 24));
     *(unsigned int *)(((int)stk + 12)) = (*(int *)((t3 + 0x8)));
     *(unsigned int *)(((int)stk + 8)) = (*(int *)((t3 + 0x4)));
-    (((struct o14_uint *)0xC7FD0F8)->v) = (FUN_0c0e52b6((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), ((int)stk + 0)));
+    (((struct o14_uint *)0xC7FD0F8)->v) = (snd_bank_place((*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), ((int)stk + 0)));
     (((struct o10_uint *)0xC7FD0F8)->v) = (*(int *)(((int)stk + 24)));
     (((struct o0_uint *)0xC7FD0F8)->v) = 0x1;
     (((struct o4_uint *)0xC7FD0F8)->v) = (*(int *)(((int)stk + 16)));

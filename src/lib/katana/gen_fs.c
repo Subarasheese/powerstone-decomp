@@ -85,7 +85,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor(int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int fx_tick_03ef18(int a4);
 int kmiProcessVertex_06(int a4);
 int pl_ryoma_mode01_03_update_v1(int a4);

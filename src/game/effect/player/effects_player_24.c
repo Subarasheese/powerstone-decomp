@@ -18,7 +18,7 @@ int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
 int obj_set_record_char(int, int);
 struct V12 { int x, y, z; };
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_garuda_fan_shot(int owner, int variant)
 {
@@ -51,7 +51,7 @@ int fx_spawn_garuda_fan_shot(int owner, int variant)
         (((struct at_50_float *)(new_obj))->field_50) = 1.5f;
         owner_idx = *(signed char *)((owner + 0x3));
         *(unsigned int *)(((int)frame + 0)) = ((unsigned short)((unsigned short)owner_idx * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)owner_idx * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)owner_idx * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (new_obj + 0x20));
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)owner_idx * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)owner_idx * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (new_obj + 0x20));
         *(unsigned char *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x2)) = 0x41F;
         owner_idx2 = *(signed char *)((owner + 0x3));

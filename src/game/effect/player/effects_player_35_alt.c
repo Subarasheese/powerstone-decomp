@@ -23,7 +23,7 @@ int obj_destroy(int);
 int pl_tick_hitstop(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int FUN_0c0c0532(int a4)
 {
@@ -89,7 +89,7 @@ int FUN_0c0c0532(int a4)
                     *(unsigned int *)((a4 + 0x34)) = (*(int *)(((*(int *)((a4 + 0x1C))) + 0x34)));
                     if ((*(signed char *)((a4 + 0x9))) == 0) {
                         t0 = *(signed char *)((a4 + 0x3));
-                        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x20);
+                        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x20);
                         *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) - 0x31C7);
                     } else {
                         *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) - 0x4000);

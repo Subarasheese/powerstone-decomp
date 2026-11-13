@@ -12,7 +12,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c03bdb2(int);
 int obj_destroy(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int FUN_0c03c0fa(int);
 
 int fx_tick_03bcac(int a4)
@@ -108,7 +108,7 @@ int fx_tick_03bcac(int a4)
     (((struct o1C_float *)(v0_2))->v) = 0.099999994f;
     v0_2 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEC_short *)((*(int *)(((int)stk + 0)))))->v)) << 2) << 2) + 0xC1496FC))) * (short)0xB0)), (((int)stk + 0) + 0x8));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((((((struct oEC_short *)((*(int *)(((int)stk + 0)))))->v)) << 2) << 2) + 0xC1496FC))) * (short)0xB0)), (((int)stk + 0) + 0x8));
     { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((((((struct oEC_short *)(v0_0))->v)) << 2) + (0x2E0 + v0_0)) + 0x0))) + 0x4)) = *(struct mv3 *)((((int)stk + 0) + 0x8)); }
     goto L_C03BF2A;
     L_C03BE70:;

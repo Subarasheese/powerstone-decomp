@@ -59,7 +59,7 @@ int FUN_0c06233a(int, int, int);
 int FUN_0c097eb6(int);
 int FUN_0c0bf488(int, int);
 int FUN_0c0c571c(int, int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 extern float _builtin_sqrtf(float);
 int cam_request_mode_03(int, int);
 int cam_set_shake_ramp(int, int);
@@ -93,7 +93,7 @@ int pl_start_motion_owner(int, int, int);
 int pl_step_motion(int);
 int pl_stick_dir_angle(int);
 int snd_play_char_voice(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int FUN_0c086070(int a4);
 int FUN_0c05e244(int a4);
 int FUN_0c05dd38(int a4);
@@ -141,7 +141,7 @@ int FUN_0c086070(int a4)
     pl_step_motion(a4);
     t2 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 8);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 8);
     *(float *)(((int)stk + 12)) = (((((struct o20_float *)(t0))->v)) - (*(float *)(((int)stk + 12))));
     *(float *)(((int)stk + 16)) = (((((struct o24_float *)(t0))->v)) - (*(float *)(((int)stk + 16))));
     *(float *)(((int)stk + 20)) = (((((struct o28_float *)(t0))->v)) - (*(float *)(((int)stk + 20))));
@@ -272,8 +272,8 @@ int FUN_0c05e244(int a4)
         *(unsigned char *)((a4 + 0x1)) = 0x1;
         (((struct oEE_ushort *)(a4))->v) = 0x0;
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
 }
 
 int FUN_0c05dd38(int a4)
@@ -318,8 +318,8 @@ int FUN_0c05dd38(int a4)
         *(unsigned char *)((a4 + 0x1)) = 0x1;
         (((struct oEE_ushort *)(a4))->v) = 0x0;
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
 }
 
 int FUN_0c085e8a(int a4)
@@ -437,7 +437,7 @@ int FUN_0c07cf8e(int a4)
     }
     t13 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t13 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t13 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t13 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t13 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t13 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
     fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
     FUN_0c0bf488(a4, 0x8);
     cam_request_mode_03(0x1C, (*(signed char *)((a4 + 0x3))));
@@ -573,7 +573,7 @@ int FUN_0c07cdf8(int a4)
     (((struct o710C_uchar *)((*(int *)((a4 + 0x1C)))))->v) = 0x1;
     t9 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t9 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t9 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t9 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t9 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t9 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 4);
     fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1);
     *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
     *(unsigned char *)(((*(int *)((a4 + 0x1C))) + 0xB)) = 0x4;
