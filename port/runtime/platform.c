@@ -1,12 +1,12 @@
 /* platform.c: the host's window, controller, sound output and vsync (SDL3), standing in for the Dreamcast's video
    output, Maple bus and interrupts.
 
-   - vsync: a 60 Hz timer signal advances the frame counter the game registers (FUN_0c0e4ac0), as the console's vsync
+   - vsync: a 60 Hz timer signal advances the frame counter the game registers (sys_set_exception_area), as the console's vsync
      interrupt does; the game spins on that word (the file loader, the frame pacing).
    - the frame: gfx_flip_frame_buffer ends a frame. The renderer (render.c) draws what the frame recorded, the window
      shows it, the controller is read, and the flip waits for the next vsync.
    - the controller: SDL's gamepad API (XInput and other pads), or the keyboard, as a Dreamcast standard controller in
-     port 0 (pdGetPeripheral, FUN_0c0f263a).
+     port 0 (pdGetPeripheral, pdGetPeripheral).
    - sound: an SDL audio stream that pulls 44.1 kHz stereo from the mixer (sound.c). */
 #define _GNU_SOURCE
 #include <SDL3/SDL.h>
@@ -34,7 +34,7 @@ static volatile uint32_t interrupt_handler[12];
 static volatile int in_vsync;
 
 /* the vsync interrupt: the game's handler for it runs here, on the signal stack, as the console's interrupt runs it
-   wherever the game was (the file loader's handler, FUN_0c061694, advances the frame counter it waits on) */
+   wherever the game was (the file loader's handler, sys_vsync_handler, advances the frame counter it waits on) */
 static void on_vsync(int sig)
 {
     (void)sig;
@@ -49,9 +49,9 @@ static void on_vsync(int sig)
     }
 }
 
-/* FUN_0c0e48b0(kind, handler): the library's interrupt handler table (0x0C346AD8 holds a setter per kind). Kind 1 is
+/* sys_set_interrupt_handler(kind, handler): the library's interrupt handler table (0x0C346AD8 holds a setter per kind). Kind 1 is
    the vsync: the game puts its handler there while it waits on the frame counter, and takes it off (0) after */
-int32_t set_interrupt_handler(int32_t kind, uint32_t fn) __asm__("FUN_0c0e48b0");
+int32_t set_interrupt_handler(int32_t kind, uint32_t fn) __asm__("sys_set_interrupt_handler");
 int32_t set_interrupt_handler(int32_t kind, uint32_t fn)
 {
     if (kind >= 0 && kind < 12)
@@ -59,8 +59,8 @@ int32_t set_interrupt_handler(int32_t kind, uint32_t fn)
     return 0;
 }
 
-/* FUN_0c0e4ac0(p): records an address for the library's exception code; nothing on the host reads it */
-void exception_area(uint32_t addr) __asm__("FUN_0c0e4ac0");
+/* sys_set_exception_area(p): records an address for the library's exception code; nothing on the host reads it */
+void exception_area(uint32_t addr) __asm__("sys_set_exception_area");
 void exception_area(uint32_t addr) { (void)addr; }
 
 static void start_vsync(void)
@@ -184,8 +184,8 @@ static void read_controller(void)
     p->r = (uint16_t)(r > 255 ? 255 : r);
 }
 
-/* pdGetPeripheral(port): FUN_0c0f263a. Port A (0) holds the controller; the others are empty */
-struct pds_peripheral *pdGetPeripheral(uint32_t port) __asm__("FUN_0c0f263a");
+/* pdGetPeripheral(port): pdGetPeripheral. Port A (0) holds the controller; the others are empty */
+struct pds_peripheral *pdGetPeripheral(uint32_t port) __asm__("pdGetPeripheral");
 struct pds_peripheral *pdGetPeripheral(uint32_t port)
 {
     struct pds_peripheral *p = &peripheral[(port / 6) & 3];

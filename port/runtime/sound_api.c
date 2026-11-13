@@ -5,30 +5,30 @@
 
 #include "port.h"
 
-/* the vibration pack (Puru Puru) over the Maple bus: none yet (FUN_0c0f4128 answers that no port has one) */
+/* the vibration pack (Puru Puru) over the Maple bus: none yet (vib_port_has_vibration answers that no port has one) */
 #define QUIET(sym)                                                                                                     \
     int32_t quiet_##sym(void) __asm__(#sym);                                                                           \
     int32_t quiet_##sym(void) { return 0; }
 
-QUIET(FUN_0c0f4128)
+QUIET(vib_port_has_vibration)
 QUIET(FUN_0c0f414e)
 QUIET(FUN_0c0f4202)
 
 /* exit to the console's menu (the BIOS vector at 0x8C0000E0) */
-void bios_exit(void) __asm__("FUN_0c0f4104");
+void bios_exit(void) __asm__("sys_exit_to_bios");
 void bios_exit(void)
 {
     extern void exit(int);
     exit(0);
 }
 
-/* FUN_0c0e540c(image, mode): the AICA driver's upload and start, as the console does it: the memory mode, the ARM held
+/* snd_driver_upload(image, mode): the AICA driver's upload and start, as the console does it: the memory mode, the ARM held
    in reset, the driver copied to sound RAM, the mailbox's mode and empty bank slots, the reset released; then the wait
    for the driver's ready flag (the ARM runs on the sound thread, aica.c). The SH-4 side's pointers into sound RAM go
    where the library keeps them (0x0C7FD0E0 the command ring, 0x0C7FD0E4 the bank area, 0x0C7FD0E8) */
 #include <string.h>
 #include <time.h>
-int32_t aica_upload(uint32_t image, int32_t mode) __asm__("FUN_0c0e540c");
+int32_t aica_upload(uint32_t image, int32_t mode) __asm__("snd_driver_upload");
 int32_t aica_upload(uint32_t image, int32_t mode)
 {
     volatile uint32_t *regs = (volatile uint32_t *)(uintptr_t)0xA0700000u;
@@ -54,7 +54,7 @@ int32_t aica_upload(uint32_t image, int32_t mode)
     return 0;
 }
 
-/* --- sound banks: FUN_0c0e55e0 (load) and FUN_0c0e5884 (unload) -------------------------------------------------------
+/* --- sound banks: snd_bank_load (load) and snd_bank_unload (unload) -------------------------------------------------------
    The driver keeps the banks (DTPK) end to end from 0x10000 in sound RAM, in slot order; the mailbox's slot words
    (0x60 + 4 slot) hold each bank's id, -1 when empty. A change goes through the driver's lock: command 0x18A0, then the
    driver sets 0xB4; banks that move go by its memmove (0x90 source, 0x94 destination, 0x98 length, command 0x2000A0,
@@ -78,7 +78,7 @@ static int wait_for(uint32_t off, int nonzero)
     return 0;
 }
 
-/* the command ring (FUN_0c0e5d22's): a 64-word ring at 0x400, the driver clears each word it takes */
+/* the command ring (snd_send_command's): a 64-word ring at 0x400, the driver clears each word it takes */
 static int send_command(uint32_t word)
 {
     uint32_t *wp = (uint32_t *)(uintptr_t)0x0C7FD0E0u;
@@ -107,7 +107,7 @@ static void driver_memmove(uint32_t src, uint32_t dst, uint32_t len)
     wait_for(0x98, 0);
 }
 
-int32_t sound_bank_load(uint32_t src, int32_t slot) __asm__("FUN_0c0e55e0");
+int32_t sound_bank_load(uint32_t src, int32_t slot) __asm__("snd_bank_load");
 int32_t sound_bank_load(uint32_t src, int32_t slot)
 {
     const uint8_t *d = (const uint8_t *)(uintptr_t)src;
@@ -148,7 +148,7 @@ int32_t sound_bank_load(uint32_t src, int32_t slot)
     return 0;
 }
 
-int32_t sound_bank_unload(int32_t slot) __asm__("FUN_0c0e5884");
+int32_t sound_bank_unload(int32_t slot) __asm__("snd_bank_unload");
 int32_t sound_bank_unload(int32_t slot)
 {
     if (slot < 0 || slot >= 8 || MB(0x60 + 4 * slot) == 0xFFFFFFFFu)

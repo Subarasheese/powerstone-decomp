@@ -53,7 +53,7 @@ static struct adxf *handle(uint32_t h)
 }
 
 /* ADXF_Open(name, attribute): a handle, or 0 where the data folder has no such file */
-uint32_t adxf_open(uint32_t name, uint32_t atr) __asm__("FUN_0c0f547e");
+uint32_t adxf_open(uint32_t name, uint32_t atr) __asm__("ADXF_Open");
 uint32_t adxf_open(uint32_t name, uint32_t atr)
 {
     const char *n = (const char *)(uintptr_t)name;
@@ -81,7 +81,7 @@ uint32_t adxf_open(uint32_t name, uint32_t atr)
 }
 
 /* ADXF_GetNumSct: the file's length in 2048-byte sectors */
-int32_t adxf_get_num_sct(uint32_t h) __asm__("FUN_0c0f5810");
+int32_t adxf_get_num_sct(uint32_t h) __asm__("ADXF_GetFsizeSct");
 int32_t adxf_get_num_sct(uint32_t h)
 {
     struct adxf *a = handle(h);
@@ -89,7 +89,7 @@ int32_t adxf_get_num_sct(uint32_t h)
 }
 
 /* ADXF_GetFsizeByte */
-int32_t adxf_get_fsize_byte(uint32_t h) __asm__("FUN_0c0f581e");
+int32_t adxf_get_fsize_byte(uint32_t h) __asm__("ADXF_GetFsizeByte");
 int32_t adxf_get_fsize_byte(uint32_t h)
 {
     struct adxf *a = handle(h);
@@ -97,7 +97,7 @@ int32_t adxf_get_fsize_byte(uint32_t h)
 }
 
 /* ADXF_ReadNw(handle, sectors, buffer): the read completes at once */
-int32_t adxf_read_nw(uint32_t h, int32_t sectors, uint32_t buf) __asm__("FUN_0c0f5630");
+int32_t adxf_read_nw(uint32_t h, int32_t sectors, uint32_t buf) __asm__("ADXF_ReadNw");
 int32_t adxf_read_nw(uint32_t h, int32_t sectors, uint32_t buf)
 {
     struct adxf *a = handle(h);
@@ -111,7 +111,7 @@ int32_t adxf_read_nw(uint32_t h, int32_t sectors, uint32_t buf)
 }
 
 /* ADXF_GetStat */
-int32_t adxf_get_stat(uint32_t h) __asm__("FUN_0c0f5850");
+int32_t adxf_get_stat(uint32_t h) __asm__("ADXF_GetStat");
 int32_t adxf_get_stat(uint32_t h)
 {
     struct adxf *a = handle(h);
@@ -119,7 +119,7 @@ int32_t adxf_get_stat(uint32_t h)
 }
 
 /* ADXF_Close */
-void adxf_close(uint32_t h) __asm__("FUN_0c0f5570");
+void adxf_close(uint32_t h) __asm__("ADXF_Close");
 void adxf_close(uint32_t h)
 {
     struct adxf *a = handle(h);

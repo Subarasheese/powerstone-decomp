@@ -1,7 +1,7 @@
 /* video.c: the NAOMI library's drawing, on the host. The library's own C keeps the matrix stacks, the object set-up
    and the texture bookkeeping (the SH-4's XMTRX is shim.c's port_xmtrx); this file is what the library hands to the
    PowerVR: textures (Kamui's surfaces, decoded from the PowerVR formats into OpenGL), the models' vertex kernel
-   (nl_objasm_draw_obj: transform, light, strips) and the sprites (FUN_0c0e3c54). Plus the matrix functions the
+   (nl_objasm_draw_obj: transform, light, strips) and the sprites (nl_sprite_draw). Plus the matrix functions the
    library has no C for.
 
    Screen space as the PowerVR takes it: x, y in pixels of 640x480, and W (the depth test compares 1/W, greater is
@@ -29,11 +29,11 @@ void port_host_fp_leave(unsigned);
 
 /* a console function by name, for the library C this file calls on to */
 #define CALL(name, ...) name(__VA_ARGS__)
-void FUN_0c0e0ae0(uint32_t dst);
-void FUN_0c0e1240(uint32_t src);
+void nlStoreMatrix(uint32_t dst);
+void nlLoadMatrix(uint32_t src);
 int32_t nlInitMatrixStack(uint32_t desc, uint32_t buf, int32_t depth);
 void FUN_0c0e3510(void);
-void FUN_0c0e3bf2(float w, float h);
+void nl_set_virtual_screen(float w, float h);
 
 /* --- matrices ------------------------------------------------------------------------------------------------------ */
 
@@ -71,17 +71,17 @@ void nl_scale(float sx, float sy, float sz)
 #define ACTIVE 0x0C7FCCB4u /* the active stack's descriptor (12 bytes); stack k's own at ACTIVE + 12 k */
 #define SELECT 0x0C7FCCB0u
 
-/* FUN_0c0e1550(n): switch to matrix stack n (1 model, 2 view, 3 projection): the current matrix goes to the old
+/* nlSelectMatrixStack(n): switch to matrix stack n (1 model, 2 view, 3 projection): the current matrix goes to the old
    stack's top, the new stack's top becomes current */
-void nl_select_stack(int32_t n) __asm__("FUN_0c0e1550");
+void nl_select_stack(int32_t n) __asm__("nlSelectMatrixStack");
 void nl_select_stack(int32_t n)
 {
-    FUN_0c0e0ae0(0);
+    nlStoreMatrix(0);
     int8_t old = *(int8_t *)(uintptr_t)SELECT;
     memcpy((void *)(uintptr_t)(ACTIVE + (uint32_t)(old * 12)), (void *)(uintptr_t)ACTIVE, 12);
     *(int8_t *)(uintptr_t)SELECT = (int8_t)n;
     memcpy((void *)(uintptr_t)ACTIVE, (void *)(uintptr_t)(ACTIVE + (uint32_t)((int8_t)n * 12)), 12);
-    FUN_0c0e1240(U32(ACTIVE + 8));
+    nlLoadMatrix(U32(ACTIVE + 8));
 }
 
 /* nlInitMatrix(buffer, depth): the three stacks; the model stack (1) becomes the active one */
@@ -96,9 +96,9 @@ int32_t nl_init_matrix(uint32_t buf, int32_t depth)
     return r;
 }
 
-/* FUN_0c0e2790(fov, aspect, near, far): M = M . perspective (gluPerspective, fov as a 16-bit angle), then the screen
+/* nlPerspective(fov, aspect, near, far): M = M . perspective (gluPerspective, fov as a 16-bit angle), then the screen
    matrices (FUN_0c0e3510) */
-void nl_perspective(int32_t fov, float aspect, float n, float f) __asm__("FUN_0c0e2790");
+void nl_perspective(int32_t fov, float aspect, float n, float f) __asm__("nlPerspective");
 void nl_perspective(int32_t fov, float aspect, float n, float f)
 {
     float sc[2];
@@ -114,16 +114,16 @@ void nl_perspective(int32_t fov, float aspect, float n, float f)
     FUN_0c0e3510();
 }
 
-/* 0x0C0E1280: the load of XMTRX from memory, natural layout (FUN_0c0e1240's C jumps there for it) */
+/* 0x0C0E1280: the load of XMTRX from memory, natural layout (nlLoadMatrix's C jumps there for it) */
 void port_entry_0c0e1280(uint32_t p) { memcpy(port_xmtrx, (void *)(uintptr_t)p, sizeof port_xmtrx); }
 
-/* FUN_0c0e3564(base, records, ids): the sprite textures' tables: an id -> record map (s16, -1 none), a bitmap of
+/* nl_sprite_tables_init(base, records, ids): the sprite textures' tables: an id -> record map (s16, -1 none), a bitmap of
    free records, the 32-byte records; and the virtual screen (640x480) */
-void sprite_tables_init(uint32_t base, int32_t records, int32_t ids) __asm__("FUN_0c0e3564");
+void sprite_tables_init(uint32_t base, int32_t records, int32_t ids) __asm__("nl_sprite_tables_init");
 void sprite_tables_init(uint32_t base, int32_t records, int32_t ids)
 {
     U32(0x0C7FD040) = 0xFFFFFFFF;
-    FUN_0c0e3bf2(640.0f, 480.0f);
+    nl_set_virtual_screen(640.0f, 480.0f);
     U32(0x0C7FD048) = (uint32_t)records;
     U32(0x0C7FD044) = base;
     uint32_t bitmap = (base + (uint32_t)ids * 2 + 3) & ~3u;
@@ -136,8 +136,8 @@ void sprite_tables_init(uint32_t base, int32_t records, int32_t ids)
         U32(bitmap + i * 4) = 0;
 }
 
-/* FUN_0c0e07c0(colour): the fog colour (fog comes later) */
-void fog_colour(uint32_t c) __asm__("FUN_0c0e07c0");
+/* gfx_set_fog_color(colour): the fog colour (fog comes later) */
+void fog_colour(uint32_t c) __asm__("gfx_set_fog_color");
 void fog_colour(uint32_t c) { (void)c; }
 
 /* --- textures ------------------------------------------------------------------------------------------------------ */
@@ -204,9 +204,9 @@ static int size_code(int n)
     return c;
 }
 
-/* kmCreateTextureSurface(surface, w, h, type): FUN_0c0fc38c. The surface's TSP size bits (+0x30) and TCW (+0x34) are
+/* kmCreateTextureSurface(surface, w, h, type): kmCreateTextureSurface. The surface's TSP size bits (+0x30) and TCW (+0x34) are
    what the library copies into the meshes and sprite records */
-int32_t km_create_texture(uint32_t surface, int32_t w, int32_t h, uint32_t type) __asm__("FUN_0c0fc38c");
+int32_t km_create_texture(uint32_t surface, int32_t w, int32_t h, uint32_t type) __asm__("kmCreateTextureSurface");
 int32_t km_create_texture(uint32_t surface, int32_t w, int32_t h, uint32_t type)
 {
     struct tex *t = tex_new(surface);
@@ -258,8 +258,8 @@ static uint32_t to_rgba(uint16_t p, int fmt)
     return r | g << 8 | b << 16 | a << 24;
 }
 
-/* kmLoadTexture(surface, data, ...): FUN_0c0fc5da. Decodes the PowerVR data into an OpenGL texture */
-int32_t km_load_texture(uint32_t surface, uint32_t data, uint32_t a, uint32_t b) __asm__("FUN_0c0fc5da");
+/* kmLoadTexture(surface, data, ...): kmLoadTexture. Decodes the PowerVR data into an OpenGL texture */
+int32_t km_load_texture(uint32_t surface, uint32_t data, uint32_t a, uint32_t b) __asm__("kmLoadTexture");
 int32_t km_load_texture(uint32_t surface, uint32_t data, uint32_t a, uint32_t b)
 {
     (void)a;
@@ -507,17 +507,17 @@ static void draw_object(uint32_t obj, uint32_t light, float alpha)
     }
 }
 
-/* nl_objasm_draw_obj(obj, light block, alpha) and its entry with alpha 1 (FUN_0c0e7240) */
+/* nl_objasm_draw_obj(obj, light block, alpha) and its entry with alpha 1 (nl_objasm_draw_obj_opaque) */
 void nl_draw_obj(uint32_t obj, uint32_t light, float alpha) __asm__("nl_objasm_draw_obj");
 void nl_draw_obj(uint32_t obj, uint32_t light, float alpha) { draw_object(obj, light, alpha); }
-void nl_draw_obj1(uint32_t obj, uint32_t light) __asm__("FUN_0c0e7240");
+void nl_draw_obj1(uint32_t obj, uint32_t light) __asm__("nl_objasm_draw_obj_opaque");
 void nl_draw_obj1(uint32_t obj, uint32_t light) { draw_object(obj, light, 1.0f); }
 
 /* --- sprites ------------------------------------------------------------------------------------------------------- */
 
-/* FUN_0c0e3c54(request): a screen sprite. The request: +0 texture id, +4 x, +8 y, +12 z (depth 1/z), +16 sx, +20 sy,
+/* nl_sprite_draw(request): a screen sprite. The request: +0 texture id, +4 x, +8 y, +12 z (depth 1/z), +16 sx, +20 sy,
    +24 u0 v0 u1 v1, +40 angle, +44 alpha, +48 mode, +52 flags */
-void sprite_draw(uint32_t req) __asm__("FUN_0c0e3c54");
+void sprite_draw(uint32_t req) __asm__("nl_sprite_draw");
 void sprite_draw(uint32_t req)
 {
     int32_t id = I32(req);
@@ -585,12 +585,12 @@ void sprite_draw(uint32_t req)
 
 /* --- sprite texture sets ------------------------------------------------------------------------------------------- */
 
-int32_t FUN_0c0ddb40(void);                                  /* a free texture slot */
-int32_t FUN_0c0dd880(uint32_t entry, int32_t slot, uint32_t data); /* create the slot's surface and load it, 0 done */
-void FUN_0c0dde00(int32_t slot);
+int32_t nl_texture_slot_alloc(void);                                  /* a free texture slot */
+int32_t nl_texture_slot_load(uint32_t entry, int32_t slot, uint32_t data); /* create the slot's surface and load it, 0 done */
+void nl_texture_slot_finish(int32_t slot);
 
-/* FUN_0c0e45e2: a free sprite record (the bitmap at *0xC7FD04C, *0xC7FD048 records), -1 none */
-int32_t sprite_record_alloc(void) __asm__("FUN_0c0e45e2");
+/* nl_sprite_record_alloc: a free sprite record (the bitmap at *0xC7FD04C, *0xC7FD048 records), -1 none */
+int32_t sprite_record_alloc(void) __asm__("nl_sprite_record_alloc");
 int32_t sprite_record_alloc(void)
 {
     uint32_t bitmap = U32(0x0C7FD04C), n = U32(0x0C7FD048);
@@ -602,9 +602,9 @@ int32_t sprite_record_alloc(void)
     return -1;
 }
 
-/* FUN_0c0e454e(record, slot): the sprite's polygon record from the slot's surface: +0x0C TCW, +0x14 has alpha,
+/* nl_sprite_record_build(record, slot): the sprite's polygon record from the slot's surface: +0x0C TCW, +0x14 has alpha,
    +0x18 width, +0x1C height */
-void sprite_record_build(uint32_t rec, int32_t slot) __asm__("FUN_0c0e454e");
+void sprite_record_build(uint32_t rec, int32_t slot) __asm__("nl_sprite_record_build");
 void sprite_record_build(uint32_t rec, int32_t slot)
 {
     uint32_t surf = U32(0x0C7FC4F0) + (uint32_t)slot * 60;
@@ -620,10 +620,10 @@ void sprite_record_build(uint32_t rec, int32_t slot)
     F32(rec + 0x1C) = t ? (float)t->h : 0.0f;
 }
 
-/* FUN_0c0e365c(list, palettes, i): entry i of a sprite texture list (16 bytes: w, h, type, data) bound to global id
+/* nl_sprite_texture_bind(list, palettes, i): entry i of a sprite texture list (16 bytes: w, h, type, data) bound to global id
    *0xC7FD490 + i: a texture slot (shared, counted), its surface loaded once, and the id's sprite record. The palette
    part (palettes != 0) is not taken: the game's sprite lists have no palette textures */
-int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i) __asm__("FUN_0c0e365c");
+int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i) __asm__("nl_sprite_texture_bind");
 int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i)
 {
     (void)pal;
@@ -631,7 +631,7 @@ int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i)
     uint32_t entry = list + (uint32_t)i * 16;
     uint32_t te = U32(0x0C7F87C8) + (uint32_t)g * 8;
     if (U32(te) == 0)
-        U32(te + 4) = (uint32_t)FUN_0c0ddb40();
+        U32(te + 4) = (uint32_t)nl_texture_slot_alloc();
     U32(te) += 1;
     int32_t slot = I32(te + 4);
     uint32_t surf = U32(0x0C7FC4F0) + (uint32_t)slot * 60;
@@ -640,9 +640,9 @@ int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i)
         S16(map + (uint32_t)g * 2) = (int16_t)sprite_record_alloc();
     int16_t rec_i = S16(map + (uint32_t)g * 2);
     if (U32(surf + 44) == 0) {
-        if (FUN_0c0dd880(entry, slot, U32(entry + 8)) != 0)
+        if (nl_texture_slot_load(entry, slot, U32(entry + 8)) != 0)
             fprintf(stderr, "powerstone: sprite texture %d did not load\n", g);
-        FUN_0c0dde00(slot);
+        nl_texture_slot_finish(slot);
         U32(surf + 56) = (uint32_t)slot;
         if (rec_i >= 0)
             sprite_record_build(U32(0x0C7FD050) + (uint32_t)rec_i * 32, slot);
@@ -651,17 +651,17 @@ int32_t sprite_texture_bind(uint32_t list, uint32_t pal, int32_t i)
     return 0;
 }
 
-/* kmFreeTexture(surface): FUN_0c0fca2e. The texture stays: meshes may still hold its index; the ring reuses it */
-int32_t km_free_texture(uint32_t surface) __asm__("FUN_0c0fca2e");
+/* kmFreeTexture(surface): kmFreeTexture. The texture stays: meshes may still hold its index; the ring reuses it */
+int32_t km_free_texture(uint32_t surface) __asm__("kmFreeTexture");
 int32_t km_free_texture(uint32_t surface) { (void)surface; return 0; }
 
-/* FUN_0c0ddd70(surface): the surface's TSP size bits and TCW from Kamui's surface fields; the port wrote both when it
+/* nl_texture_surface_words(surface): the surface's TSP size bits and TCW from Kamui's surface fields; the port wrote both when it
    created the surface (km_create_texture), with its own texture's index in the TCW */
-int32_t surface_words(uint32_t surface) __asm__("FUN_0c0ddd70");
+int32_t surface_words(uint32_t surface) __asm__("nl_texture_surface_words");
 int32_t surface_words(uint32_t surface) { (void)surface; return 0; }
 
-/* FUN_0c0ddb40: a free texture slot from the bitmap at *0xC7F87CC (*0xC3468E4 words), -1 none */
-int32_t texture_slot_alloc(void) __asm__("FUN_0c0ddb40");
+/* nl_texture_slot_alloc: a free texture slot from the bitmap at *0xC7F87CC (*0xC3468E4 words), -1 none */
+int32_t texture_slot_alloc(void) __asm__("nl_texture_slot_alloc");
 int32_t texture_slot_alloc(void)
 {
     uint32_t bitmap = U32(0x0C7F87CC);
@@ -679,12 +679,12 @@ int32_t texture_slot_alloc(void)
     return -1;
 }
 
-/* FUN_0c0dd5d0(model, texture list): binds every textured mesh of a model to its texture (global id = *0xC7FD490 +
+/* nl_model_bind_textures(model, texture list): binds every textured mesh of a model to its texture (global id = *0xC7FD490 +
    the mesh's number): the slot is shared and counted, the texture loaded on its first use, the mesh's TSP size bits and
-   TCW patched (FUN_0c0ddd10). Untextured meshes get the PCW's bit 0 and the ISP's 0x400000; every mesh gets the
-   global PCW bits. One pass over all meshes (the library resumes FUN_0c0dd320 mesh by mesh) */
-void FUN_0c0ddd10(uint32_t mesh, int32_t slot);
-int32_t model_bind(uint32_t model, uint32_t list) __asm__("FUN_0c0dd5d0");
+   TCW patched (nl_mesh_set_texture). Untextured meshes get the PCW's bit 0 and the ISP's 0x400000; every mesh gets the
+   global PCW bits. One pass over all meshes (the library resumes nl_model_bind_step mesh by mesh) */
+void nl_mesh_set_texture(uint32_t mesh, int32_t slot);
+int32_t model_bind(uint32_t model, uint32_t list) __asm__("nl_model_bind_textures");
 int32_t model_bind(uint32_t model, uint32_t list)
 {
     if (I32(model) < 0)
@@ -704,8 +704,8 @@ int32_t model_bind(uint32_t model, uint32_t list)
             uint32_t surf = U32(0x0C7FC4F0) + (uint32_t)slot * 60;
             if (U32(surf + 0x2C) == 0) {
                 uint32_t entry = list + (uint32_t)texno * 16;
-                err |= FUN_0c0dd880(entry, slot, U32(entry + 8));
-                FUN_0c0dde00(slot);
+                err |= nl_texture_slot_load(entry, slot, U32(entry + 8));
+                nl_texture_slot_finish(slot);
                 U32(surf + 0x38) = (uint32_t)slot;
             }
             U32(surf + 0x2C) += 1;
@@ -715,7 +715,7 @@ int32_t model_bind(uint32_t model, uint32_t list)
         }
         U32(mesh) = (U32(mesh) & 0xFFFCFFFFu) | (U32(0x0C3468EC) << 16) | 0x8C0000u;
         if (slot >= 0)
-            FUN_0c0ddd10(mesh, slot);
+            nl_mesh_set_texture(mesh, slot);
         mesh = mesh + 0x50 + U32(mesh + 0x4C);
     }
     return err;

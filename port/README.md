@@ -43,7 +43,7 @@ Every library function the game calls but no C defines gets a stub that reports 
   the NAOMI `nl` renderer and math, CRI ADXF, and unnamed library code in 0c0dd000-0c0ff000).
 - The run clears the bss, goes through the whole start-up (hardware, display, GD-ROM, clock, config, sound and renderer
   init, the controller poll) and reaches the first file load, where `ADXF_Open` finds no file and the loader retries.
-- Host code so far: the controller record (`pdGetPeripheral`, FUN_0c0f263a) and SHC's intrinsics.
+- Host code so far: the controller record (`pdGetPeripheral`, pdGetPeripheral) and SHC's intrinsics.
 
 ## Next steps, in order
 

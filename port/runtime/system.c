@@ -61,21 +61,21 @@ int32_t sy_rtc_get_date(uint32_t out)
 
 /* the Maple bus (controllers): its DMA set-up and per-frame server; the port reads the controller through SDL
    (platform.c, pdGetPeripheral) */
-NOOP("FUN_0c0f2114", pd_init_peripheral)
+NOOP("pdInitPeripheral", pd_init_peripheral)
 NOOP("FUN_0c0f250a", pd_exec_server)
 NOOP("FUN_0c0f2664", pd_exit)
 NOOP("FUN_0c0f283e", pd_stop)
 /* the GD-ROM's error callback: no drive, no errors */
 NOOP("FUN_0c0f1ffe", gd_set_error_callback)
 /* Kamui's video hardware set-up (frame buffers, texture memory, the tile accelerator's buffers) */
-NOOP("FUN_0c0de890", km_setup_a)
-NOOP("FUN_0c0de8a0", km_setup_b)
-NOOP("FUN_0c0de960", km_setup_c)
-NOOP("FUN_0c0dea30", km_setup_d)
-NOOP("FUN_0c0debe0", km_setup_e)
+NOOP("gfx_set_buffer_size", km_setup_a)
+NOOP("gfx_init_renderer", km_setup_b)
+NOOP("gfx_set_display_mode", km_setup_c)
+NOOP("gfx_set_vertex_buffer", km_setup_d)
+NOOP("gfx_set_list_buffers", km_setup_e)
 
-/* FUN_0c0e5126: the video standard from the BIOS (0 NTSC, 2 PAL: the main loop then runs a frame's step twice every
+/* sys_get_video_standard: the video standard from the BIOS (0 NTSC, 2 PAL: the main loop then runs a frame's step twice every
    fifth frame). The port runs at 60 Hz */
-NOOP("FUN_0c0e5126", video_standard)
-/* FUN_0c0e46c0: the interrupt handler table's reset (the port keeps its own, platform.c) */
-NOOP("FUN_0c0e46c0", interrupt_table_reset)
+NOOP("sys_get_video_standard", video_standard)
+/* sys_reset_interrupt_handlers: the interrupt handler table's reset (the port keeps its own, platform.c) */
+NOOP("sys_reset_interrupt_handlers", interrupt_table_reset)

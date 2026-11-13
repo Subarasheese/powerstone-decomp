@@ -124,9 +124,9 @@ static void stop(struct adxt *a)
 }
 
 /* ADXT_Init, ADXT_Finish */
-void adxt_init(void) __asm__("FUN_0c0f4644");
+void adxt_init(void) __asm__("ADXT_Init");
 void adxt_init(void) {}
-void adxt_finish(void) __asm__("FUN_0c0f4686");
+void adxt_finish(void) __asm__("ADXT_Finish");
 void adxt_finish(void)
 {
     for (int i = 0; i < HANDLES; i++)
@@ -135,7 +135,7 @@ void adxt_finish(void)
 }
 
 /* ADXT_Create(channels, work, size): the handle is the work area */
-uint32_t adxt_create(int32_t maxnch, uint32_t work, int32_t worksize) __asm__("FUN_0c0f46d0");
+uint32_t adxt_create(int32_t maxnch, uint32_t work, int32_t worksize) __asm__("ADXT_Create");
 uint32_t adxt_create(int32_t maxnch, uint32_t work, int32_t worksize)
 {
     (void)maxnch;
@@ -153,7 +153,7 @@ uint32_t adxt_create(int32_t maxnch, uint32_t work, int32_t worksize)
 }
 
 /* ADXT_StartFname(handle, name) */
-void adxt_start_fname(uint32_t h, uint32_t name) __asm__("FUN_0c0f4a06");
+void adxt_start_fname(uint32_t h, uint32_t name) __asm__("ADXT_StartFname");
 void adxt_start_fname(uint32_t h, uint32_t name)
 {
     struct adxt *a = player(h);
@@ -214,7 +214,7 @@ void adxt_start_fname(uint32_t h, uint32_t name)
 }
 
 /* ADXT_Stop(handle) */
-void adxt_stop(uint32_t h) __asm__("FUN_0c0f4c2c");
+void adxt_stop(uint32_t h) __asm__("ADXT_Stop");
 void adxt_stop(uint32_t h)
 {
     struct adxt *a = player(h);
@@ -223,7 +223,7 @@ void adxt_stop(uint32_t h)
 }
 
 /* ADXT_GetStat(handle) */
-int32_t adxt_get_stat(uint32_t h) __asm__("FUN_0c0f4cc6");
+int32_t adxt_get_stat(uint32_t h) __asm__("ADXT_GetStat");
 int32_t adxt_get_stat(uint32_t h)
 {
     struct adxt *a = player(h);
@@ -240,7 +240,7 @@ int32_t adxt_get_stat(uint32_t h)
 }
 
 /* ADXT_SetOutVol(handle, vol) and ADXT_GetOutVol: 0.1 dB, 0 full, -960 silent */
-void adxt_set_out_vol(uint32_t h, int32_t vol) __asm__("FUN_0c0f4db4");
+void adxt_set_out_vol(uint32_t h, int32_t vol) __asm__("ADXT_SetOutVol");
 void adxt_set_out_vol(uint32_t h, int32_t vol)
 {
     struct adxt *a = player(h);
@@ -249,7 +249,7 @@ void adxt_set_out_vol(uint32_t h, int32_t vol)
     if (h)
         *(int32_t *)(uintptr_t)(h + 0x40) = vol;
 }
-int32_t adxt_get_out_vol(uint32_t h) __asm__("FUN_0c0f4dc8");
+int32_t adxt_get_out_vol(uint32_t h) __asm__("ADXT_GetOutVol");
 int32_t adxt_get_out_vol(uint32_t h)
 {
     struct adxt *a = player(h);
@@ -257,7 +257,7 @@ int32_t adxt_get_out_vol(uint32_t h)
 }
 
 /* ADXT_ExecServer: the decoding happens on the mixer's thread */
-void adxt_exec_server(void) __asm__("FUN_0c0f4eac");
+void adxt_exec_server(void) __asm__("ADXT_ExecServer");
 void adxt_exec_server(void)
 {
     for (int i = 0; i < HANDLES; i++)
@@ -266,13 +266,13 @@ void adxt_exec_server(void)
 }
 
 /* ADXT_GetErrCode, ADXT_ClearErrCode */
-int32_t adxt_get_err_code(uint32_t h) __asm__("FUN_0c0f4f14");
+int32_t adxt_get_err_code(uint32_t h) __asm__("ADXT_GetErrCode");
 int32_t adxt_get_err_code(uint32_t h) { (void)h; return 0; }
-void adxt_clear_err_code(uint32_t h) __asm__("FUN_0c0f4f1a");
+void adxt_clear_err_code(uint32_t h) __asm__("ADXT_ClearErrCode");
 void adxt_clear_err_code(uint32_t h) { (void)h; }
 
 /* ADXT_SetLpFlg(handle, flag) */
-void adxt_set_lp_flg(uint32_t h, int32_t flg) __asm__("FUN_0c0f4f28");
+void adxt_set_lp_flg(uint32_t h, int32_t flg) __asm__("ADXT_SetLpFlg");
 void adxt_set_lp_flg(uint32_t h, int32_t flg)
 {
     struct adxt *a = player(h);
