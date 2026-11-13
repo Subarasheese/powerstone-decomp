@@ -20,7 +20,8 @@ between two runs of this interpreter is meaningful, never a value against the co
 
 The case (JSON): {"exe": path, "base": hex, "dump": path, "entry": hex, "end": hex,
 "regs": {"r4": hex, "fr4": float, ...}, "sr": hex (optional, the starting SR), "poke": {hex addr: hex bytes}, "calls": [{"r0": hex,
-"fr0": float, "poke_arg": {"r7": hexbytes}}, ...], "steps": max}. Paths are relative to the case file.
+"fr0": float, "t": 0|1, "poke_arg": {"r7": hexbytes}}, ...], "steps": max}. Paths are relative to the case file.
+A call's "t" sets the T flag on return (a hand-written callee that answers in T); without it T is left as it was.
 A call's "poke_arg" writes those bytes at the address the named register holds when the call is made.
 """
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
@@ -802,6 +803,8 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
             c.r[0] = 0                           # an answer that gives no r0 / fr0: the callee's result is 0, not a leftover register
         if 'fr0' not in ret:
             c.fr[0] = 0
+        if 't' in ret:
+            c.t = int(ret['t']) & 1              # a hand-written callee that answers in the T flag (the renderer's bump/strip drawers)
         n_args = argc(target & M32) if argc else None             # the callee's integer argument count, or the set of registers it reads
         set_for = [bool(wrote >> i & 1) or (i in given_args and not after_call) for i in range(4, 8)]      # which of r4-r7 were set for this call: the others are leftovers
         for k, v in ret.get('poke_arg', {}).items():             # the callee filled an output slot
@@ -823,7 +826,7 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
             # returns no structure, and not a word that is a value: the fill went to page 0 on one side only, playerPut case 4)
             mem.load(sp_word, bytes.fromhex(ret['poke_stack']))
         for k, v in ret.items():
-            if k in ('poke_arg', 'poke_stack'):
+            if k in ('poke_arg', 'poke_stack', 't'):
                 continue
             if k.startswith('fr'):
                 c.fr[int(k[2:])] = f_bits(float(v)) if not isinstance(v, str) else int(v, 16)

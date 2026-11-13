@@ -10893,7 +10893,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 12 of 12 instructions
 
 ### FUN_0c030368 (`0C030368`, 1222 bytes, `src/ui_hud_4_alt2_equiv.c`)
-- equivalent on 19 development and 18 holdout cases, in `tests/ui_hud_4_alt2_equiv/FUN_0c030368.json`
+- equivalent on 25 development and 23 holdout cases, in `tests/ui_hud_4_alt2_equiv/FUN_0c030368.json`
 - not running
 - idle none
 - m2 s0 p1
@@ -10913,6 +10913,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - m3 s2
 - m3 s4
 - m3 cancelled
+- coverage case 1: reaches 0C030514 (+16 instructions)
+- coverage case 3: reaches 0C0304E2 (+9 instructions)
+- coverage case 5: reaches 0C030660 (+7 instructions)
+- coverage case 7: reaches 0C0305C6 (+5 instructions)
+- m2 s1 count out, result 99 -> s9
+- m2 s1 count out, result 5 -> s5
 - idle to 2
 - m2 s0 p0
 - m2 s1 p0
@@ -10931,7 +10937,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - m3 s1
 - m3 s3
 - m3 s5
-- the cases run 522 of 581 instructions
+- coverage case 2: reaches 0C0307B2 (+10 instructions)
+- coverage case 4: reaches 0C03056E (+8 instructions)
+- coverage case 6: reaches 0C030638 (+5 instructions)
+- coverage case 8: reaches 0C030774 (+3 instructions)
+- coverage case 10: reaches 0C03059C (+3 instructions) m2 s2 count out, result 99 -> s9 (p1)
+- the cases run 588 of 588 instructions
 
 ### FUN_0c03082e (`0C03082E`, 4 bytes, `src/ui_hud_4.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_4_equiv/FUN_0c03082e.json`
@@ -60954,7 +60965,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 49 of 49 instructions
 
 ### cam_compute_follow (`0C0D9288`, 3950 bytes, `src/camera_3.c`)
-- equivalent on 39 development and 39 holdout cases, in `tests/camera_3/cam_compute_follow.json`
+- equivalent on 43 development and 43 holdout cases, in `tests/camera_3/cam_compute_follow.json`
 - free la0 eye0 ip0
 - free la0 eye10 ip2
 - free la0 eye40 ip2
@@ -60994,6 +61005,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - orbit la8 ym90 f10
 - orbit la8 ym50 f10
 - orbit same distance
+- coverage case 1: reaches 0C0D9B2E (+57 instructions)
+- coverage case 3: reaches 0C0D9B72 (+29 instructions)
+- coverage case 5: reaches 0C0D9A1C (+16 instructions)
+- coverage case 7: reaches 0C0D9BC6 (+4 instructions)
 - free la0 eye0 ip3
 - free la0 eye20 ip1
 - free la0 eye30 ip0
@@ -61033,7 +61048,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - orbit la8 ym90 f1
 - orbit la8 ym50 f1
 - orbit snap eased roll
-- the cases run 1619 of 1814 instructions
+- coverage case 2: reaches 0C0D99CC (+34 instructions)
+- coverage case 4: reaches 0C0D9BE2 (+17 instructions)
+- coverage case 6: reaches 0C0D9DCE (+10 instructions)
+- coverage case 8: reaches 0C0D9870 (+2 instructions)
+- the cases run 1788 of 1818 instructions
 
 ### cam_force_mode (`0C0D8F10`, 80 bytes, `src/camera_2.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/camera_2/cam_force_mode.json`
@@ -90735,14 +90754,22 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 135 of 136 instructions
 
 ### nl_objasm_draw_obj_ofst (`0C0E8340`, 960 bytes, `src/hx_FUN_0c0e8340.c`)
-- equivalent on 3 development and 3 holdout cases, in `tests/hx_FUN_0c0e8340/nl_objasm_draw_obj_ofst.json`
+- equivalent on 7 development and 7 holdout cases, in `tests/hx_FUN_0c0e8340/nl_objasm_draw_obj_ofst.json`
 - generated list 0
 - extra 2
 - extra 4
+- coverage case 1: reaches 0C0E83E8 (+27 instructions)
+- coverage case 3: reaches 0C0E8588 (+15 instructions)
+- coverage case 5: reaches 0C0E8664 (+4 instructions)
+- coverage case 7: reaches 0C0E84B2 (+36 instructions) flag20
 - generated list 1
 - extra 3
 - extra 5
-- the cases run 309 of 433 instructions
+- coverage case 2: reaches 0C0E85EC (+16 instructions)
+- coverage case 4: reaches 0C0E8592 (+4 instructions)
+- coverage case 6: reaches 0C0E85B8 (+2 instructions)
+- coverage case 8: reaches 0C0E859A (+4 instructions) t0
+- the cases run 417 of 437 instructions
 
 ### nl_objasm_draw_obj_spd_ofst (`0C0EA0AA`, 202 bytes, `src/fy_FUN_0c0ea0aa.c`)
 - equivalent on 5 development and 4 holdout cases, in `tests/fy_FUN_0c0ea0aa/nl_objasm_draw_obj_spd_ofst.json`

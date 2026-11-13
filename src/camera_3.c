@@ -100,7 +100,7 @@ void cam_compute_follow(char *o, char *p)
             break;
         }
         switch (H(p, 4) & 0xF0) {
-        case 3:     /* as above: the y midpoint overwrites x, +0xB4 is left as it was */
+        case 3:     /* as above: the y midpoint overwrites x, +0xB4 is left as it was; unreachable (the value is masked with 0xF0) */
             F(o, 0xB0) = (FA[0] + FB[0]) / 2.0f;
             F(o, 0xB0) = (FA[1] + FB[1]) / 2.0f;
             F(o, 0xB8) = (FA[2] + FB[2]) / 2.0f;
