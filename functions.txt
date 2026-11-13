@@ -608,6 +608,7 @@ F 0c0318e0 1226 fx_spawn_0318e0
 F 0c031daa 616 fx_tick_0318e0
 F 0c03202c 566 fx_randomize_particle
 F 0c032262 1386 FUN_0c032262
+F 0c0327e4 2032 FUN_0c0327e4
 F 0c032fd4 274 fx_spawn_032fd4
 F 0c033114 378 fx_tick_032fd4
 F 0c0332a0 240 fx_spawn_0332a0
@@ -791,6 +792,11 @@ F 0c04179a 92 fx_tick_0416d8
 F 0c041820 148 fx_spawn_041820
 F 0c0418b4 234 fx_tick_041820
 F 0c0419a8 402 FUN_0c0419a8
+F 0c041b3a 134 FUN_0c041b3a
+F 0c041bc0 122 FUN_0c041bc0
+F 0c041c3a 192 FUN_0c041c3a
+F 0c041d14 180 FUN_0c041d14
+F 0c041dc8 42 FUN_0c041dc8
 F 0c041e14 112 FUN_0c041e14
 F 0c041e84 704 cam_frame_stage_corners
 F 0c042150 158 fx_init_subblock_effect
@@ -828,6 +834,7 @@ F 0c044250 112 fx_spawn_044250
 F 0c0442c0 86 FUN_0c0442c0
 F 0c044316 224 fx_tick_044250
 F 0c044408 418 FUN_0c044408
+F 0c0445aa 114 FUN_0c0445aa
 F 0c04463c 146 fx_spawn_04463c
 F 0c0446ce 194 fx_spawn_0446ce
 F 0c0447bc 172 FUN_0c0447bc
@@ -856,6 +863,7 @@ F 0c046534 582 fx_tick_046360
 F 0c046798 72 fx_spawn_linked_effect
 F 0c0467e0 56 fx_tick_linked_effect
 F 0c046830 234 fx_spawn_on_player_part
+F 0c04694c 174 FUN_0c04694c
 F 0c0469fa 4706 fx_tick_model_effect
 F 0c047c6c 334 fx_spawn_model_effect
 F 0c047df4 490 fx_spawn_item_sparkle
@@ -911,6 +919,7 @@ F 0c04b428 644 fx_tick_04b2d4
 F 0c04b6b8 218 fx_spawn_04b6b8
 F 0c04b7b4 140 fx_tick_04b6b8
 F 0c04b840 424 fx_spawn_random_offset_task
+F 0c04ba14 146 FUN_0c04ba14
 F 0c04baa6 338 fx_spawn_04baa6
 F 0c04bbf8 112 fx_tick_04baa6
 F 0c04bc94 232 fx_spawn_04bc94
@@ -1185,6 +1194,7 @@ F 0c05a6e8 254 FUN_0c05a6e8
 F 0c05a80c 236 item_draw_marker
 F 0c05a8f8 64 item_init_hold_pose
 F 0c05a96c 1020 FUN_0c05a96c
+F 0c05ad7c 170 FUN_0c05ad7c
 F 0c05ae26 164 FUN_0c05ae26
 F 0c05aeca 26 FUN_0c05aeca
 F 0c05aee4 56 FUN_0c05aee4
@@ -1199,10 +1209,13 @@ F 0c05b538 410 item_tick_thrown
 F 0c05b6dc 712 item_tick
 F 0c05b9a4 64 FUN_0c05b9a4
 F 0c05b9e4 4 FUN_0c05b9e4
+F 0c05ba04 44 FUN_0c05ba04
+F 0c05ba30 408 FUN_0c05ba30
 F 0c05bbc8 278 FUN_0c05bbc8
 F 0c05bcde 364 FUN_0c05bcde
 F 0c05be4a 560 obj_tick_owner_projectile
 F 0c05c07a 122 FUN_0c05c07a
+F 0c05c118 168 FUN_0c05c118
 F 0c05c1c0 56 FUN_0c05c1c0
 F 0c05c220 266 FUN_0c05c220
 F 0c05c370 78 FUN_0c05c370
@@ -1231,19 +1244,24 @@ F 0c05d4e4 82 FUN_0c05d4e4
 F 0c05d536 94 FUN_0c05d536
 F 0c05d594 790 FUN_0c05d594
 F 0c05d8aa 6 thunk_FUN_0c059330
+F 0c05d8c4 172 FUN_0c05d8c4
 F 0c05d970 56 FUN_0c05d970
 F 0c05d9d4 272 FUN_0c05d9d4
 F 0c05db2c 74 FUN_0c05db2c
 F 0c05db76 126 FUN_0c05db76
 F 0c05dbf4 4 FUN_0c05dbf4
+F 0c05dc20 224 FUN_0c05dc20
 F 0c05dd00 56 FUN_0c05dd00
+F 0c05dd38 362 FUN_0c05dd38
 F 0c05dea2 74 FUN_0c05dea2
 F 0c05deec 170 FUN_0c05deec
 F 0c05df96 4 FUN_0c05df96
 F 0c05dfd4 74 FUN_0c05dfd4
 F 0c05e01e 80 FUN_0c05e01e
 F 0c05e06e 126 FUN_0c05e06e
+F 0c05e118 244 FUN_0c05e118
 F 0c05e20c 56 FUN_0c05e20c
+F 0c05e244 372 FUN_0c05e244
 F 0c05e3b8 84 FUN_0c05e3b8
 F 0c05e424 196 FUN_0c05e424
 F 0c05e4e8 4 FUN_0c05e4e8
@@ -1251,6 +1269,7 @@ F 0c05e4ec 74 FUN_0c05e4ec
 F 0c05e564 58 FUN_0c05e564
 F 0c05e59e 1076 FUN_0c05e59e
 F 0c05e9d2 410 FUN_0c05e9d2
+F 0c05eb84 162 FUN_0c05eb84
 F 0c05ec26 56 FUN_0c05ec26
 F 0c05ec88 266 FUN_0c05ec88
 F 0c05ed92 238 FUN_0c05ed92
@@ -1536,6 +1555,7 @@ F 0c067a68 184 pl_falcon_state_update
 F 0c067b20 40 pl_falcon_update_action_default
 F 0c067b48 52 pl_falcon_update_action_7
 F 0c067bcc 268 pl_falcon_spawn_timed_fx
+F 0c067d10 60 FUN_0c067d10
 F 0c067d4c 158 pl_falcon_attack_kind24_phase0
 F 0c067e1c 244 FUN_0c067e1c
 F 0c067f40 162 pl_falcon_attack_kind24_phase1
@@ -1611,6 +1631,7 @@ F 0c06a7a8 214 pl_ryoma_start_action
 F 0c06a8ac 176 FUN_0c06a8ac
 F 0c06a95c 804 pl_ryoma_update_action_default
 F 0c06ac80 108 pl_ryoma_update_action_9
+F 0c06acec 1102 FUN_0c06acec
 F 0c06b13a 248 FUN_0c06b13a
 F 0c06b284 408 pl_ryoma_attack_kind68_phase1
 F 0c06b41c 164 pl_ryoma_attack_kind68_phase2
@@ -2010,8 +2031,14 @@ F 0c07cc52 60 FUN_0c07cc52
 F 0c07cc8e 90 FUN_0c07cc8e
 F 0c07cd24 130 FUN_0c07cd24
 F 0c07cda6 42 pl_garuda_special_id3
+F 0c07cdf8 186 FUN_0c07cdf8
+F 0c07ceb2 102 FUN_0c07ceb2
+F 0c07cf5c 50 FUN_0c07cf5c
+F 0c07cf8e 252 FUN_0c07cf8e
+F 0c07d0c0 246 FUN_0c07d0c0
 F 0c07d1b6 318 FUN_0c07d1b6
 F 0c07d2f4 58 FUN_0c07d2f4
+F 0c07d378 42 FUN_0c07d378
 F 0c07d3a2 212 FUN_0c07d3a2
 F 0c07d4a8 114 FUN_0c07d4a8
 F 0c07d51a 42 pl_garuda_special_id9
@@ -2216,6 +2243,14 @@ F 0c085d0e 94 FUN_0c085d0e
 F 0c085d6c 36 FUN_0c085d6c
 F 0c085d90 12 FUN_0c085d90
 F 0c085d9c 42 pl_kraken_attack_kind3
+F 0c085df8 146 FUN_0c085df8
+F 0c085e8a 328 FUN_0c085e8a
+F 0c085fd2 112 FUN_0c085fd2
+F 0c086070 532 FUN_0c086070
+F 0c086284 36 FUN_0c086284
+F 0c0862a8 12 FUN_0c0862a8
+F 0c0862b4 116 FUN_0c0862b4
+F 0c086350 66 FUN_0c086350
 F 0c086392 154 FUN_0c086392
 F 0c08642c 138 FUN_0c08642c
 F 0c0864b6 62 FUN_0c0864b6
@@ -2277,6 +2312,9 @@ F 0c08818c 96 pl_valgas_mode04_phase2
 F 0c0881f2 38 pl_valgas_mode04_phase3
 F 0c088218 34 pl_valgas_mode04_phase4
 F 0c08823a 442 pl_valgas_mode04_update
+F 0c088fb2 114 FUN_0c088fb2
+F 0c08933c 584 FUN_0c08933c
+F 0c089584 472 FUN_0c089584
 F 0c08975c 138 pl_valgas_state21_update
 F 0c0897e6 42 FUN_0c0897e6
 F 0c08982c 66 FUN_0c08982c
@@ -2603,6 +2641,7 @@ F 0c097864 30 pl_state41_update
 F 0c097882 6 pl_state42_update
 F 0c09788c 644 FUN_0c09788c
 F 0c097b10 112 FUN_0c097b10
+F 0c097bb0 118 FUN_0c097bb0
 F 0c097c26 508 FUN_0c097c26
 F 0c097e22 66 FUN_0c097e22
 F 0c097e64 6 FUN_0c097e64
@@ -2610,6 +2649,7 @@ F 0c097e6a 6 FUN_0c097e6a
 F 0c097e70 6 FUN_0c097e70
 F 0c097e76 4 FUN_0c097e76
 F 0c097e7a 26 FUN_0c097e7a
+F 0c097eb0 6 FUN_0c097eb0
 F 0c097eb6 134 FUN_0c097eb6
 F 0c097f3c 32 FUN_0c097f3c
 F 0c097f5c 68 FUN_0c097f5c
@@ -3176,14 +3216,18 @@ F 0c0af3a8 106 stage_gimmick_06_update
 F 0c0af448 126 stage_gimmick_07_spawn
 F 0c0af4c6 4 stage_gimmick_07_update
 F 0c0af4ec 292 stage_gimmick_08_spawn
+F 0c0af644 356 FUN_0c0af644
 F 0c0af7e8 180 stage_gimmick_09_spawn
 F 0c0af89c 312 stage_gimmick_09_update
+F 0c0af9f0 210 FUN_0c0af9f0
 F 0c0afac2 72 FUN_0c0afac2
 F 0c0afb0a 40 FUN_0c0afb0a
 F 0c0afb68 976 FUN_0c0afb68
+F 0c0aff3c 268 FUN_0c0aff3c
 F 0c0b0048 254 FUN_0c0b0048
 F 0c0b0150 122 stage_gimmick_11_spawn
 F 0c0b01ca 318 stage_gimmick_11_update
+F 0c0b0314 16 FUN_0c0b0314
 F 0c0b0324 218 stage_gimmick_11_spawn_b
 F 0c0b03fe 204 stage_gimmick_11_update_b
 F 0c0b0600 222 FUN_0c0b0600
@@ -3257,6 +3301,7 @@ F 0c0b482e 486 stage_gimmick_33_update
 F 0c0b4a18 186 stage_gimmick_34_spawn
 F 0c0b4ad2 264 stage_gimmick_34_update
 F 0c0b4c0c 278 stage_gimmick_35_spawn
+F 0c0b4d54 88 FUN_0c0b4d54
 F 0c0b4dc4 202 stage_gimmick_36_spawn
 F 0c0b4e8e 754 stage_gimmick_36_update
 F 0c0b5180 76 stage_gimmick_36_update_b
@@ -3287,6 +3332,7 @@ F 0c0b6702 416 fx_update_heading_shot
 F 0c0b68b4 218 fx_spawn_04
 F 0c0b698e 248 fx_update_04
 F 0c0b6a9c 396 fx_spawn_thrown_item_kind
+F 0c0b6c5c 364 FUN_0c0b6c5c
 F 0c0b6dcc 226 fx_spawn_05
 F 0c0b6eae 102 fx_update_05
 F 0c0b6f5c 124 fx_spawn_06
@@ -3338,6 +3384,7 @@ F 0c0bd40c 216 fx_update_burst_sprites
 F 0c0bd4fc 178 fx_spawn_20
 F 0c0bd5ae 104 fx_update_20
 F 0c0bd640 698 FUN_0c0bd640
+F 0c0bd930 254 FUN_0c0bd930
 F 0c0bda68 440 fx_spawn_garuda_fan_shot
 F 0c0bdc20 880 fx_update_garuda_fan_shot
 F 0c0bdf9c 672 fx_spawn_garuda_debris
@@ -3351,6 +3398,7 @@ F 0c0bea16 862 FUN_0c0bea16
 F 0c0bed78 718 FUN_0c0bed78
 F 0c0bf046 1062 FUN_0c0bf046
 F 0c0bf488 998 FUN_0c0bf488
+F 0c0bf86e 1440 FUN_0c0bf86e
 F 0c0bfe20 86 FUN_0c0bfe20
 F 0c0bfe76 66 FUN_0c0bfe76
 F 0c0bfecc 478 FUN_0c0bfecc
@@ -3366,6 +3414,7 @@ F 0c0c0f44 352 fx_spawn_23
 F 0c0c10f0 150 fx23_outside_arena_bounds
 F 0c0c1186 412 fx_update_23
 F 0c0c1360 606 FUN_0c0c1360
+F 0c0c15be 794 FUN_0c0c15be
 F 0c0c18ec 270 fx_spawn_24
 F 0c0c19fa 336 fx_update_24
 F 0c0c1b64 352 fx_spawn_25
@@ -3466,6 +3515,7 @@ F 0c0ca050 182 FUN_0c0ca050
 F 0c0ca124 116 FUN_0c0ca124
 F 0c0ca198 170 FUN_0c0ca198
 F 0c0ca268 1046 FUN_0c0ca268
+F 0c0ca67e 2432 FUN_0c0ca67e
 F 0c0cb00c 582 fx_spawn_spark_pair
 F 0c0cb252 88 FUN_0c0cb252
 F 0c0cb2aa 154 FUN_0c0cb2aa
@@ -3715,6 +3765,7 @@ F 0c0d7a9c 32 FUN_0c0d7a9c
 F 0c0d7abc 308 menu_option_item_sound_mode
 F 0c0d7bf0 232 FUN_0c0d7bf0
 F 0c0d7cd8 68 FUN_0c0d7cd8
+F 0c0d7d1c 322 FUN_0c0d7d1c
 F 0c0d7e5e 22 FUN_0c0d7e5e
 F 0c0d7e74 20 FUN_0c0d7e74
 F 0c0d7e88 68 FUN_0c0d7e88

@@ -12,7 +12,7 @@ struct oEE_short { char p[0xEE]; short v; };
 int obj_destroy(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int fx_tick_03ef18(int a4)
 {
@@ -31,7 +31,7 @@ int fx_tick_03ef18(int a4)
         *(unsigned char *)((a4 + 0x8)) = 0x1;
     }
     t3 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xB0));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xB0), a4 + 0x20);
     u0 = math_sin_angle16((*(int *)((t2 + 0x30))));
     t3 = *(signed char *)(((0xEE + a4) + 0x0));
     u1 = (((struct o8_float *)(((signed char)(((t3 << 1) + t3) << 2) + 0xC149958)))->v);

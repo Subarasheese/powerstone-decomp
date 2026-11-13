@@ -120,7 +120,7 @@ int FUN_0c10b260(int, int);
 int FUN_0c10b388(void);
 int FUN_0c10b3e0(int);
 int FUN_0c10b434(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c1096a2(int a4);
 int stage_gimmick_35_spawn(void);
 int fx_spawn_15(int a4, int a5);

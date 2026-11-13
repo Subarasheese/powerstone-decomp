@@ -88,7 +88,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor2(int, int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c052b9e(void);
 int fx_tick_03d254(int a4);
 int pl_ryoma_special2_phase3(int a4);

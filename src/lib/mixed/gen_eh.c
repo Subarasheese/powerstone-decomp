@@ -161,7 +161,7 @@ int fmMngInit(int, int, int);
 int fmMngRead(int, int);
 int fmMngWrite(int, int);
 int open_file_handle(void);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

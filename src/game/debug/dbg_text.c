@@ -3,7 +3,7 @@
 int FUN_0c0ccfba(int a4, int a5, int a6, int a7);
 int dbg_set_cursor_cell(int, int);
 int dbg_print_string(int, int, int, int);
-int math_mat_get_translate(int);
+int math_mat_get_translate(int, int);
 
 int dbg_print_at(int obj_ptr, float val_x, float val_y)
 {
@@ -13,9 +13,9 @@ int dbg_print_at(int obj_ptr, float val_x, float val_y)
     return dbg_print_string(obj_ptr, quot_y, 0, 0);
 }
 
-int thunk_FUN_0c062242(int a4)
+int thunk_FUN_0c062242(int a4, int a5)
 {
-    return math_mat_get_translate(a4);
+    return math_mat_get_translate(a4, a5);
 }
 
 int FUN_0c0ccf38(int a4, int a5, int a6)

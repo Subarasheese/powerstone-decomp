@@ -9,7 +9,7 @@ int pl_start_motion(int, int, int);
 int pl_start_motion_owner(int, int, int);
 int obj_place_linked_ahead(int, int, float);
 int FUN_0c0a3762(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o24_float { char p[0x24]; float v; };
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
@@ -52,7 +52,7 @@ int pl_valgas_special_id3(int a4)
     *(unsigned char *)(((*(int *)((a4 + 0x1C))) + 0xC)) = 0x0;
     t8 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t8 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t8 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t8 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)t8 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t8 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (int)stk + 4);
     fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
     return (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
 }

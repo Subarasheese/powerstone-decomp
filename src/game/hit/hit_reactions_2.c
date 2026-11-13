@@ -26,7 +26,7 @@ struct o71A8_uchar { char p[0x71A8]; unsigned char v; };
 struct o71A9_uchar { char p[0x71A9]; unsigned char v; };
 struct oF8_int { char p[0xF8]; int v; };
 int pl_start_motion(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c0555c4(void);
 int pl_end_action_choose_state(int);
 int sys_return_zero_098c82(void);
@@ -180,7 +180,7 @@ int pl_hitreact_23_phase0(int a4)
                             t1 = (*(signed char *)(((((unsigned char)(*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x6))) - 1) + (0xC1507CE + (signed char)((t0 << 1) + (t0 << 2)))) + 0x0)));
                         } else {
                             t0 = *(signed char *)((a4 + 0x3));
-                            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160));
+                            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), a4 + 0x20);
                             t0 = *(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x6));
                             t1 = 0x60;
                             if ((unsigned char)t0 != 1) {

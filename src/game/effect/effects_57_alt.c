@@ -9,7 +9,7 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c03b5da(int);
 int obj_destroy(int, int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int fx_tick_03b4d0(int a4, int a5, int a6, int a7)
 {
@@ -97,7 +97,7 @@ int fx_tick_03b4d0(int a4, int a5, int a6, int a7)
             (((struct oEC_ushort *)(a4))->v) = 0xA;
         }
         t0 = *(signed char *)((a4 + 0x3));
-        return thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+        return thunk_FUN_0c062242((((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x20);
     }
     t0 = (((struct oEC_short *)(a4))->v);
     (((struct oEC_ushort *)(a4))->v) = (t0 - 1);

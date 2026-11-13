@@ -137,7 +137,7 @@ extern int mwRnaErrCallFunc();
 int open_file_handle(void);
 int search_free_dir(int);
 int set_fat(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

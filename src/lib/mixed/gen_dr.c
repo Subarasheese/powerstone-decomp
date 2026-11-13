@@ -91,7 +91,7 @@ int FUN_0c10c280(int, int, int, int);
 extern void _builtin_ftrv(float *, float *);
 extern void _builtin_prefetch(void *);
 int nlMultiMatrix(int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int FUN_0c0d6874(int a4, int a5, int a6, int a7);
 int FUN_0c0fb820(int a4, int a5, int a6, int a7);
 int fx_spawn_burst_sprites(int a4);

@@ -9,7 +9,7 @@ extern char g_model_scale_tab[];
 void mot_read_vec3_scaled(char *dst, char *src);
 void mot_read_vec3_float(char *dst, char *src);
 void math_angle3_delta_scaled(char *dst, char *a, char *b, float f);
-void math_vec3_sub_scaled(char *dst, char *src);
+void math_vec3_sub_scaled(char *dst, char *a, char *b, float s);
 void math_vec3i_add(char *dst, char *a, char *b);
 void math_vec3_add(char *dst, char *a, char *b);
 void math_vec3_sub(char *dst, char *a, char *b);
@@ -53,7 +53,7 @@ void pl_blend_motion_pose(char *player)
     mot_read_vec3_float(buf_bytes + 444, buf_bytes + 4);
     FLOAT_AT(buf_bytes + 460) = FLOAT_AT(buf_bytes + 460) * FLOAT_AT(0xC150CD8 + player[4] * 8 + SLOT * 4);
     FLOAT_AT(buf_bytes + 448) = FLOAT_AT(buf_bytes + 448) * FLOAT_AT(0xC150CD8 + player[4] * 8 + SLOT * 4);
-    math_vec3_sub_scaled(buf_bytes + 396, buf_bytes + 444);
+    math_vec3_sub_scaled(buf_bytes + 396, buf_bytes + 444, buf_bytes + 456, blend);
     math_vec3_add(buf_bytes + 396, buf_bytes + 396, buf_bytes + 444);
     for (idx = 0; idx < 19; idx++) {
         mot_read_vec3_scaled(buf_bytes + 432, buf_bytes);

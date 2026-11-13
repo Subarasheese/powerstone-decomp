@@ -2,7 +2,7 @@
 
 int obj_create(int, int, int);
 int FUN_0c06233a(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -43,7 +43,7 @@ int fx_spawn_03d60c(int a4, int a5)
         *(unsigned char *)((t0 + 0x4)) = (*(signed char *)(((int)stk + 0)));
         t3 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), t0 + 0x20);
         *(unsigned int *)((t0 + 0x2C)) = ((*(int *)((t0 + 0x2C))) - 16384);
         *(unsigned int *)((t0 + 0x30)) = (*(int *)((a4 + 0x30)));
         t8 = 0x0;
@@ -109,7 +109,7 @@ int fx_tick_03d60c(int a4, int a5, int a6, int a7)
             (((struct o54_float *)(a4))->v) = ((_builtin_fabsf(((((struct o4_float *)((0x308 + t0)))->v))) / 10.0f) / 100.0f);
             t16 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t16 * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t16 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t16 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t16 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t16 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 20);
             (((struct o8_float *)(((int)stk + 0)))->v) = (((((struct o20_float *)(t0))->v)) - (*(float *)(((int)stk + 20))));
             (((struct o4_float *)((((int)stk + 0) + 0x8)))->v) = (((((struct o24_float *)(t0))->v)) - (*(float *)(((int)stk + 24))));
             (((struct o8_float *)((((int)stk + 0) + 0x8)))->v) = (((((struct o28_float *)(t0))->v)) - (*(float *)(((int)stk + 28))));
@@ -139,7 +139,7 @@ int fx_tick_03d60c(int a4, int a5, int a6, int a7)
         (((struct o54_float *)(a4))->v) = ((_builtin_fabsf(((((struct o4_float *)((0x308 + t0)))->v))) / 10.0f) / 100.0f);
         t54 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t54 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t54 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t54 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t54 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t54 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 20);
         (((struct o8_float *)(((int)stk + 0)))->v) = (((((struct o20_float *)(t0))->v)) - (*(float *)(((int)stk + 20))));
         (((struct o4_float *)((((int)stk + 0) + 0x8)))->v) = (((((struct o24_float *)(t0))->v)) - (*(float *)(((int)stk + 24))));
         (((struct o8_float *)((((int)stk + 0) + 0x8)))->v) = (((((struct o28_float *)(t0))->v)) - (*(float *)(((int)stk + 28))));

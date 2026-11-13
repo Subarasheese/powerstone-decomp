@@ -138,7 +138,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlaneSetPCW(int, int, int);
 int nlCalcPoint(int, int);
 int nlInvertMatrix(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int pl_special_c_start(int a4);
 int kmiProcessVertex_00(int a4);
 int fx_spawn_01(int a4, int a5, int a6);

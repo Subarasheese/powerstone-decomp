@@ -15,7 +15,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_hit_effect(int, int, int, int, int, int, int, int, int, int, int, int);
 int pl_step_motion(int);
 int FUN_0c0a3762(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int pl_start_motion(int, int, int);
 int pl_apply_velocity(int);
 int pl_apply_acceleration(int);
@@ -55,7 +55,7 @@ int pl_rouge_special_id5(int a4)
     if (t19 == 1) {
         t21 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t21 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t21 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t21 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t21 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t21 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 4);
         t24 = *(int *)((a4 + 0x1C));
         *(unsigned int *)(((int)stk + 0)) = t24;
         fx_spawn_hit_effect((((int)stk + 0) + 0x4), ((*(int *)(((int)stk + 0))) + 0x2C), (*(signed char *)((t24 + 0x3))), 0x1, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));

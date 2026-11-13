@@ -112,7 +112,7 @@ int nlSelectMatrixStack(int);
 int _modls(void);
 int _modlu(int);
 extern int _quick_odd_mvn();
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int pl_state05_init(int a4, int a5);
 int fx_spawn_038b98(int a4);
 int FUN_0c02d1cc(int a4, int a5, int a6, int a7);

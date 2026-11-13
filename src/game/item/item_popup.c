@@ -12,7 +12,7 @@ struct o28_float { char p[0x28]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 int ui_draw_world_text(int, int, int, float);
 int obj_destroy(int, int, int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 struct o0_float { float v; };
 struct oC_float { char p[0xC]; float v; };
 
@@ -124,11 +124,11 @@ int item_tick_pickup_popup(int a4, int a5, int a6, int a7)
             if (t91 != 1) {
             } else {
                 *(int *)((int)stk + 0) = 0xC14AA40;
-                sprintf(((int)stk + 4), a5, a6, a7, 0xC14AA40);
+                sprintf(((int)stk + 4), 0xC14AA40);
             }
         } else {
             *(int *)((int)stk + 0) = 0xC14AA34;
-            sprintf(((int)stk + 4), a5, a6, a7, 0xC14AA34);
+            sprintf(((int)stk + 4), 0xC14AA34);
         }
         t122 = (ui_draw_world_text((a4 + 0x20), ((int)stk + 4), 0x1, ((((struct o50_float *)(a4))->v))));
     }

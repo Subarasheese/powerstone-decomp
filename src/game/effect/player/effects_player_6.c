@@ -18,7 +18,7 @@ int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
@@ -196,7 +196,7 @@ float fx_update_ryoma_spray(int a4, int a5, int a6, int a7)
     L_C0B9010:;
     v0_5 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
+    thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 12);
     math_vec3_sub((((int)stk + 0) + 0xC), (((int)stk + 0) + 0xC), (v0_0 + 0x20));
     if (((*(float *)(((int)stk + 12))) != 0.0f)) goto L_C0B9062;
     *(float *)(((int)stk + 12)) = 9.99999997e-07f;

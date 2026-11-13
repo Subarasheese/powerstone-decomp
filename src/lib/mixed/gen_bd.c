@@ -153,7 +153,7 @@ extern int _builtin_tas(char *);
 int mwRnaErrCallFunc(int, int, int, int);
 int strcpy(int, int, int);
 int strlen(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c023050(int a4, int a5, int a6, int a7);
 int pl_hitreact_21_phase1(int a4);
 int FUN_0c0f2b1c(int a4, int a5);

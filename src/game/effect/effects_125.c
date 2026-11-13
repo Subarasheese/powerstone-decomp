@@ -22,7 +22,7 @@ struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_destroy(int, int, int);
 int FUN_0c06231c(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int fx_spawn_04a294(int a4)
 {
@@ -83,7 +83,7 @@ int fx_tick_04a294(int a4)
     register float w0_0;
     v0_2 = a4;
     v0_0 = *(signed char *)((v0_2 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0));
+    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), a4 + 0x20);
     v0_4 = *(signed char *)((v0_2 + 0x8));
     v0_1 = (v0_4);
     v0_0 = (v0_2);

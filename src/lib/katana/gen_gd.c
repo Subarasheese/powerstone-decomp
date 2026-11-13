@@ -22,7 +22,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor2(int, int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
-int sprintf(int, int, int, int, int);
+int sprintf(int, int, ...);
 int rank_draw_vs_rows(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 int kmiProcessVertex_07(int a4);
 

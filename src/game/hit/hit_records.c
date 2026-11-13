@@ -60,7 +60,7 @@ struct o7214_uchar { char p[0x7214]; unsigned char v; };
 struct o7294_int { char p[0x7294]; int v; };
 struct o72A8_int { char p[0x72A8]; int v; };
 int fx_spawn_hit_effect(int, int, int, int, int, int, int, int, int, int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 struct o7225_uchar { char p[0x7225]; unsigned char v; };
 struct o4_float { char p[0x4]; float v; };
 struct o6C_float { char p[0x6C]; float v; };
@@ -419,7 +419,7 @@ int FUN_0c08de3a(int a4, int a5)
         FUN_0c08dacc((*(int *)((a4 + 0x1C))), a5);
         t5 = *(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xC60));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xC60), (int)stk + 4);
         t8 = *(int *)((a4 + 0x1C));
         *(unsigned int *)(((int)stk + 0)) = t8;
         fx_spawn_hit_effect((((int)stk + 0) + 0x4), ((*(int *)(((int)stk + 0))) + 0x2C), (*(signed char *)((t8 + 0x3))), 0x4, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));

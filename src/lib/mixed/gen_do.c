@@ -157,7 +157,7 @@ int gdFsWaitCompleteReq(int);
 int memcpy(int, int, int);
 int memset(int, int, int);
 int syCfgSetSoundMode(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8);
 int FUN_0c0265de(int a4);
 int snd_bank_unload(int a4);

@@ -124,7 +124,7 @@ int FUN_0c115270(int, int);
 int SJ_SplitChunk(int, int, int, int);
 int memset(int, int, int);
 int mpdrv_clear_deviceinfo(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int fx_spawn_31(int a4);
 int fx_spawn_0492a4(int a4);
 int pl_state36_update(int a4, int a5, int a6, int a7);

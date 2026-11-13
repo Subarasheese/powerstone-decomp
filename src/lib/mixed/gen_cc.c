@@ -98,7 +98,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutColor(int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int FUN_0c06358e(int a4);
 int FUN_0c09788c(int a4);
 int FUN_0c115d7c(int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);

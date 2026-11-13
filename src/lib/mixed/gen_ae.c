@@ -196,7 +196,7 @@ int buSaveFile(int, int, int, int, int, int);
 int memcpy(int, int, int);
 int memset(int, int, int);
 int mwRnaErrCallFunc(int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 int fmMngMcpy(void);
 int umemcmp(int, int, int);
 int part_pool2_init(void);

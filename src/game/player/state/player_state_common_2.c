@@ -49,7 +49,7 @@ int pl_apply_acceleration(int);
 int FUN_0c0a022e(int, float);
 int pl_set_velocity_forward(int, int, float);
 int FUN_0c0a3e64(int, int);
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int FUN_0c06428a(int a4);
 int FUN_0c064534(int a4);
@@ -270,7 +270,7 @@ int FUN_0c0648d4(int a4)
     if (((*(signed char *)((a4 + 0x4))) != 2) && (t1 = *(int *)0xC7F307C, (t1 & 3) == 0)) {
         t2 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xC60));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xC60), (int)stk + 4);
         *(float *)(((int)stk + 8)) = ((((struct o2D4_float *)(a4))->v));
         fx_spawn_effect_at_point((*(signed char *)((a4 + 0x3))), (((int)stk + 0) + 0x4));
     }

@@ -11,7 +11,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int thunk_FUN_0c062242(int);
+int thunk_FUN_0c062242(int, int);
 
 int fx31_shrink_follow_owner(int a4, float f4)
 {
@@ -34,7 +34,7 @@ int fx31_shrink_follow_owner(int a4, float f4)
                 *(unsigned char *)((a4 + 0xC)) = ((*(signed char *)((a4 + 0xC))) + 0x1);
             }
             t1 = *(signed char *)((t0 + 0x3));
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x38);
             (((struct o50_float *)(a4))->v) = (((((struct o50_float *)(a4))->v)) - 0.099999994f);
             if (0.5f > ((((struct o50_float *)(a4))->v))) {
                 (((struct o50_float *)(a4))->v) = 0.5f;
@@ -57,7 +57,7 @@ int fx31_shrink_follow_owner(int a4, float f4)
             *(unsigned char *)((a4 + 0xC)) = ((*(signed char *)((a4 + 0xC))) + 0x1);
         }
         t2 = *(signed char *)((t0 + 0x3));
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840));
+        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), a4 + 0x38);
         (((struct o50_float *)(a4))->v) = (((((struct o50_float *)(a4))->v)) - 0.099999994f);
         if (0.5f > ((((struct o50_float *)(a4))->v))) {
             (((struct o50_float *)(a4))->v) = 0.5f;
