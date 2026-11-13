@@ -1823,12 +1823,6 @@ int FUN_0c0607f0(void)
     return FUN_0c05fcf2(0xC17FE70);
 }
 
-int FUN_0c062a7e(int a4)
-{
-    *(volatile int *)0xC439DC8;
-    FUN_0c0e6fe8(a4);
-    return 0x0;
-}
 
 int FUN_0c062436(int a4, int a5, int a6)
 {

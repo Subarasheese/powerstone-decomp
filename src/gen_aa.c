@@ -15,22 +15,6 @@ int get_fat(int, int);
 int FUN_0c0d873a(int a4, float f4);
 int FUN_0c1045b4(int a4);
 
-int FUN_0c0d873a(int a4, float f4)
-{
-    int stk[6];
-
-    FUN_0c0d8468(a4, f4);
-    FUN_0c0e6fe8();
-    FUN_0c0e6fe8();
-    FUN_0c0dc27c(a4, (((int)stk + 0) + 0xC), ((int)stk + 0));
-    FUN_0c0e1550(0x2);
-    nlUnitMatrix();
-    nlLookAt((((int)stk + 0) + 0xC), ((int)stk + 0), ((((struct o124_int *)(a4))->v)));
-    FUN_0c0e0ae0((a4 + 0x6C));
-    FUN_0c0e0ae0((a4 + 0x2C));
-    nlInvertMatrix((a4 + 0x6C));
-    return (FUN_0c0e1550(0x1));
-}
 
 int FUN_0c1045b4(int a4)
 {

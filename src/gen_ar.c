@@ -731,13 +731,6 @@ void vmsfs_c_setvolume(int a4, int a5)
     }
 }
 
-void DECtoBCD(int a4)
-{
-    register int t1;
-
-    FUN_0c0e6db4();
-    FUN_0c0e6f24(t1);
-}
 
 int kmiCopyFromFrameBuffer(int a4, int a5, int a6)
 {
@@ -2556,13 +2549,6 @@ int FUN_0c0db0ca(int a4)
     return t1;
 }
 
-int FUN_0c0dcd20(float f4, float f5, float f6)
-{
-    (((struct o0_float *)0xC3468B0)->v) = f4;
-    (((struct o4_float *)0xC3468B0)->v) = f5;
-    (((struct o8_float *)0xC3468B0)->v) = f6;
-    return (FUN_0c0e6fe8(0xC3468B0, f4, f5, f6));
-}
 
 int FUN_0c0df920(void)
 {
@@ -3363,10 +3349,6 @@ int FUN_0c09e7b8(int a4)
     return 0x0;
 }
 
-int FUN_0c0de590(int a4)
-{
-    return (kmSetBorderColor((a4 | 0xFF000000)));
-}
 
 int FUN_0c0e2120(int a4)
 {

@@ -100,7 +100,7 @@ int FUN_0c0a2e26(int, int, int);
 int FUN_0c0a3762(int, int);
 int FUN_0c0a3796(int, int);
 int FUN_0c0a3914(int, int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df4d0(int);
 float FUN_0c0df940(void);
 float FUN_0c0dfa50(int);
@@ -427,7 +427,7 @@ int FUN_0c09f4b0(int a4)
     FUN_0c09c422(a4);
     t35 = *(signed char *)((a4 + 0x4));
     if (t35 == 4) {
-        return FUN_0c0dc18e(0xA);
+        return FUN_0c0dc18e(0xA, 0xA);
     }
     return t35;
 }

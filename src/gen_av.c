@@ -23,7 +23,7 @@ int FUN_0c06233a(int, int, int);
 int FUN_0c0a1d88(int, int);
 int FUN_0c0ac600(int);
 int FUN_0c0b2dc0(int, int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 int FUN_0c0e6fe8(void);
 int FUN_0c0c2342(int a4);
 int FUN_0c01c4dc(int a4, int a5, int a6, int a7);
@@ -192,7 +192,7 @@ int FUN_0c0b2cfe(int a4, int a5, int a6, int a7)
         (((struct oEC_ushort *)(a4))->v) = (t0 - 1);
         t1 = 0xEC;
         if ((short)(t0 - 1) == 0) {
-            FUN_0c0dc18e(0x14);
+            FUN_0c0dc18e(0x14, 0x14);
             t0 = *(signed char *)((a4 + 0x8));
             *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);
             t1 = (t0 + 0x1);

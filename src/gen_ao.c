@@ -175,31 +175,7 @@ float nlMultiMatrixRevOrder8(int a4)
     return u1;
 }
 
-int FUN_0c062210(int a4, int a5)
-{
-    int stk[5];
 
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    *(unsigned int *)(((int)stk + 4)) = a5;
-    FUN_0c0e19b0(a5);
-    *(volatile int *)(((int)stk + 0));
-    FUN_0c0e6fe8();
-    nlCalcPoint((((int)stk + 0) + 0x8), (*(int *)(((int)stk + 0))));
-    return (nlPopMatrix(0x1));
-}
-
-int FUN_0c0621de(int a4, int a5)
-{
-    int stk[5];
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    *(unsigned int *)(((int)stk + 4)) = a5;
-    FUN_0c0e19b0(a5);
-    *(volatile int *)(((int)stk + 0));
-    FUN_0c0e6fe8();
-    nlCalcVector((((int)stk + 0) + 0x8), (*(int *)(((int)stk + 0))));
-    return (nlPopMatrix(0x1));
-}
 
 int FUN_0c0e09f0(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7)
 {

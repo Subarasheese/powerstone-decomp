@@ -414,13 +414,6 @@ float nlRotateYSC(float f4, float f5);
 void nlUnitMatrix(void);
 int kmSetBackGroundPlane(int a4, int a5, int a6, int a7);
 
-int FUN_0c059b6c(int a4)
-{
-    register int t5;
-
-    t5 = *(signed char *)(((unsigned char)(FUN_0c0e6d00()) + 0xC32E210));
-    return FUN_0c0599fc(t5);
-}
 
 int FUN_0c069cd4(int a4)
 {
@@ -2696,16 +2689,6 @@ int FUN_0c107e7e(int a4, int a5, int a6, int a7)
     return (0x1 & (unsigned char)(*(signed char *)((a4 + 0x1))));
 }
 
-int adxt_eos_entry(int a4)
-{
-    register int t0;
-    register int t3;
-
-    t0 = *(int *)((a4 + 0x8));
-    ADXSJD_GetLpStartOfst((*(int *)((a4 + 0x4))));
-    t3 = FUN_0c0e6d00();
-    return FUN_0c106688(t0, t3);
-}
 
 int FUN_0c10822c(int a4, int a5, int a6, int a7)
 {
@@ -2734,11 +2717,6 @@ int FUN_0c024274(void)
     return (FUN_0c0dd5d0(0xC179D00, 0xC320008));
 }
 
-int FUN_0c050180(int a4)
-{
-    *(volatile short *)0xC7F31E0;
-    return (*(short *)((0xC32D7E8 + ((unsigned char)(0x7 & (FUN_0c0e6d00())) << 1))));
-}
 
 int FUN_0c06144e(void)
 {

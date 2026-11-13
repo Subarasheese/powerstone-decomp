@@ -1,0 +1,13 @@
+{"dev":[
+{"about":"timer still running","poke":{"0C7F3036":"0500"}},
+{"about":"timer 1->0 mode 0 b35=0","poke":{"0C7F3036":"0100","0C7F3053":"00","0C7F3055":"00"}},
+{"about":"timer 1->0 mode 0 b35=3","poke":{"0C7F3036":"0100","0C7F3053":"03","0C7F3055":"00"}},
+{"about":"timer 0->-1 mode 0x10","poke":{"0C7F3036":"0000","0C7F3055":"10"}},
+{"about":"timer 1 mode 0x20","poke":{"0C7F3036":"0100","0C7F3055":"2f"}},
+{"about":"timer 1 mode 0x30","poke":{"0C7F3036":"0100","0C7F3055":"30"}}
+],"holdout":[
+{"about":"b35 negative mode 0","poke":{"0C7F3036":"0100","0C7F3053":"fe","0C7F3055":"0f","0C7F302D":"09"}},
+{"about":"timer neg already","poke":{"0C7F3036":"00f0","0C7F3055":"10"}},
+{"about":"timer 2","poke":{"0C7F3036":"0200","0C7F3055":"00"}},
+{"about":"mode 0x1f","poke":{"0C7F3036":"0100","0C7F3055":"1f"}}
+]}

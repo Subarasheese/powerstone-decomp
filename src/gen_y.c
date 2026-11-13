@@ -84,35 +84,3 @@ int FUN_0c0ca124(int a4)
     return t9;
 }
 
-int FUN_0c0574d2(int a4)
-{
-    register int t1;
-    register int t8;
-    register int t2;
-    register int t3;
-    register int t5;
-
-    FUN_0c0e6fe8(a4);
-    t1 = *(signed char *)((a4 + 0xC32DE68));
-    t8 = 0xC32DE68;
-    if ((int)t1 > 0) {
-        t2 = 0x0;
-        for (;;) {
-            t3 = FUN_0c059132(0x5, 0x1, 0x2);
-            t5 = t3;
-            if (t3 != 0) {
-                *(unsigned char *)((t3 + 0x0)) = 0x1;
-                *(unsigned char *)((t3 + 0x4)) = t2;
-                (((struct oF2_ushort *)(t3))->v) = a4;
-                *(unsigned int *)((t3 + 0x10)) = 0xC0571A2;
-                t5 = (FUN_0c0e6fe8(t3));
-            }
-            t2 = (t2 + 0x1);
-            if ((int)t2 >= (int)t1) {
-                break;
-            }
-        }
-        t8 = t5;
-    }
-    return t8;
-}

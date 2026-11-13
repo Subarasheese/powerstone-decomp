@@ -7,10 +7,3 @@ int FUN_0c062210(int, int);
 int FUN_0c0e6fe8(void);
 int FUN_0c021090(int a4, int a5, int a6);
 
-int FUN_0c021090(int a4, int a5, int a6)
-{
-    FUN_0c062210(a6, (a4 + 0x6C));
-    FUN_0c0e6fe8();
-    (((struct oC_float *)(a5))->v) = (((((struct oC_float *)(a6))->v)) * ((((struct o50_float *)(a4))->v)));
-    return 0xC;
-}

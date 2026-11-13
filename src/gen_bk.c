@@ -87,7 +87,7 @@ int FUN_0c0a5630(int);
 int FUN_0c0a56d8(int, int, int, int);
 int FUN_0c0a58f4(int);
 int FUN_0c0cb252(int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df340(float);
 float FUN_0c0df4d0(int);
 float FUN_0c0dfa50(int);
@@ -379,7 +379,7 @@ int FUN_0c077960(int a4)
     if (0.0f > ((((struct o3C_float *)(a4))->v))) {
         t0 = FUN_0c09e7b8(a4);
         if ((signed char)t0 != 0) {
-            FUN_0c0dc18e(0x1E);
+            FUN_0c0dc18e(0x1E, 0x1E);
             FUN_0c09a808(a4, 0x1, 0x37);
             (((struct o71A9_uchar *)(a4))->v) = 0x1;
             (((struct o71A8_uchar *)(a4))->v) = 0x1;
@@ -401,7 +401,7 @@ int FUN_0c08818c(int a4)
     if (0.0f > ((((struct o3C_float *)(a4))->v))) {
         t0 = FUN_0c09e7b8(a4);
         if ((signed char)t0 != 0) {
-            FUN_0c0dc18e(0x1E);
+            FUN_0c0dc18e(0x1E, 0x1E);
             FUN_0c09a808(a4, 0x1, 0x38);
             (((struct o71A9_uchar *)(a4))->v) = 0x1;
             (((struct o71A8_uchar *)(a4))->v) = 0x1;

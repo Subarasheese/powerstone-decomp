@@ -116,7 +116,7 @@ int FUN_0c0ce836(void);
 int FUN_0c0cfeb0(void);
 extern int FUN_0c0cfec2();
 int FUN_0c0d02ee(int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df5d0(int, int, int, int, float);
 int nlCalcPoint(int, int);
 int nlMultiMatrixRevOrder8(int);
@@ -1094,7 +1094,7 @@ int FUN_0c06b41c(int a4)
         (((struct o14_uchar *)(((int)stk + 0)))->v) = t4;
         FUN_0c0496f0((*(signed char *)(((int)stk + 20))), 0x1, 0x5, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x6, 0x10, 0x42, 0xC14EEC0, 0xC14EECC);
         FUN_0c034530(a4);
-        FUN_0c0dc18e(0x14);
+        FUN_0c0dc18e(0x14, 0x14);
         (((struct o71BC_uchar *)(a4))->v) = 0x0;
         *(unsigned char *)((a4 + 0xB)) = ((*(signed char *)((a4 + 0xB))) + 0x1);
         FUN_0c0b9694(a4);

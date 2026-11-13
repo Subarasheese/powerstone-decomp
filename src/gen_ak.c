@@ -13,16 +13,6 @@ extern int _builtin_tas(char *);
 int FUN_0c0ad1b8(int a4);
 int mpdrv_frame_recv_pre(void);
 
-int FUN_0c0ad1b8(int a4)
-{
-    int stk[3];
-
-    FUN_0c0e6fe8(a4);
-    *(float *)(((int)stk + 4)) = (FUN_0c02649a(a4, 0x1));
-    FUN_0c0427bc(((int)stk + 0), (a4 + 0x38), ((((struct oEC_short *)(a4))->v)), (*(signed char *)((a4 + 0x3))));
-    (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-    return 0xEC;
-}
 
 int mpdrv_frame_recv_pre(void)
 {

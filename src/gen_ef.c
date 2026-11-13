@@ -1129,57 +1129,6 @@ int vmsfs_frename(int a4, int a5, int a6)
     return 0xFFFFFF01;
 }
 
-int FUN_0c10cf60(int a4, int a5, int a6, int a7)
-{
-    int stk[63];
-
-    *(unsigned int *)((((int)stk + 0) + 0x8)) = 0x359;
-    *(unsigned int *)((((int)stk + 0) + 0x14)) = 0x20C;
-    *(unsigned int *)((((int)stk + 0) + 0x0)) = 0x7E;
-    *(unsigned int *)((((int)stk + 0) + 0x4)) = 0x345;
-    *(unsigned int *)((((int)stk + 0) + 0xC)) = 0x28;
-    *(unsigned int *)((((int)stk + 0) + 0x10)) = 0x208;
-    *(unsigned int *)((((int)stk + 0) + 0x18)) = 0x3F;
-    *(unsigned int *)((((int)stk + 0) + 0x1C)) = 0x3;
-    *(unsigned int *)((((int)stk + 0) + 0x20)) = 0x319;
-    *(unsigned int *)((((int)stk + 0) + 0x24)) = 0xF;
-    (((struct o74_uint *)(((int)stk + 0)))->v) = 0x208;
-    (((struct o78_uint *)(((int)stk + 0)))->v) = 0x15;
-    *(unsigned int *)((((int)stk + 0) + 0x34)) = 0x0;
-    *(unsigned int *)((((int)stk + 0) + 0x38)) = 0x0;
-    *(unsigned int *)((((int)stk + 0) + 0x3C)) = 0x0;
-    (((struct o40_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o44_uint *)(((int)stk + 0)))->v) = 0x0;
-    if ((*(int *)0xC816FC4) == 6) {
-        (((struct o70_uint *)(((int)stk + 0)))->v) = 0x16;
-    } else {
-        (((struct o70_uint *)(((int)stk + 0)))->v) = 0x1F;
-    }
-    (((struct o6C_uint *)(((int)stk + 0)))->v) = 0x0;
-    *(unsigned int *)((((int)stk + 0) + 0x28)) = 0x0;
-    *(unsigned int *)((((int)stk + 0) + 0x2C)) = 0x0;
-    *(unsigned int *)((((int)stk + 0) + 0x30)) = 0x0;
-    (((struct o48_uint *)(((int)stk + 0)))->v) = 0x1;
-    (((struct o4C_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o50_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o54_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o58_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o5C_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o68_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o60_uint *)(((int)stk + 0)))->v) = 0x0;
-    (((struct o64_uint *)(((int)stk + 0)))->v) = 0x1E0;
-    (((struct oF8_uint *)(((int)stk + 0)))->v) = 0x90;
-    (((struct oF0_uint *)(((int)stk + 0)))->v) = 0x23;
-    (((struct oF4_uint *)(((int)stk + 0)))->v) = 0x23;
-    (((struct oF8_uint *)(((int)stk + 0)))->v) = 0xA8;
-    (((struct oF0_uint *)(((int)stk + 0)))->v) = 0x28;
-    (((struct oF4_uint *)(((int)stk + 0)))->v) = 0x28;
-    (((struct o8_uint *)0xC8172D0)->v) = 0x1E0;
-    (((struct o0_uint *)0xC8172D0)->v) = ((*(int *)((((int)stk + 0) + 0xC))) + ((((struct o8_int *)0xC8172D0)->v)));
-    (((struct o4_uint *)0xC8172D0)->v) = (*(int *)((((int)stk + 0) + 0xC)));
-    FUN_0c0e7080(0x1E0, 0x28, 0x23, a7);
-    return (FUN_0c10c760());
-}
 
 int ADXB_ExecOneWav16(int a4, int a5, int a6, int a7)
 {

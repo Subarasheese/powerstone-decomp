@@ -1,0 +1,97 @@
+{
+ "dev": [
+  {
+   "about": "mode 1",
+   "regs": {
+    "r4": "1"
+   },
+   "steps": 80,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "mode 2",
+   "regs": {
+    "r4": "2"
+   },
+   "steps": 22,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "mode 3",
+   "regs": {
+    "r4": "3"
+   },
+   "steps": 22,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "mode 4",
+   "regs": {
+    "r4": "4"
+   },
+   "steps": 22,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "mode 0",
+   "regs": {
+    "r4": "0"
+   },
+   "steps": 22,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "mode 1",
+   "regs": {
+    "r4": "1"
+   },
+   "steps": 80,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  },
+  {
+   "about": "mode 5",
+   "regs": {
+    "r4": "5"
+   },
+   "steps": 22,
+   "endless": true,
+   "calls": [
+    {
+     "r0": "0"
+    }
+   ]
+  }
+ ]
+}

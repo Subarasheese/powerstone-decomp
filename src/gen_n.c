@@ -19,22 +19,6 @@ int FUN_0c0ae2fc(int a4);
 int FUN_0c0ccbfe(void);
 int FUN_0c04b114(int a4, int a5, int a6, int a7);
 
-int FUN_0c0ae2fc(int a4)
-{
-    int stk[3];
-    register int t1;
-
-    t1 = *(int *)((a4 + 0x1C));
-    *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
-    FUN_0c0ace56(a4);
-    FUN_0c0e6fe8();
-    *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + ((((struct o0_float *)0xC0AE430)->v)));
-    FUN_0c042eac(((int)stk + 0), 1.0f, 1.0f, 1.0f, ((((struct o4_float *)0xC0AE430)->v)));
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x1))));
-    (((struct o118_uint *)(a4))->v) = (((short)((short)(*(signed char *)((t1 + 0x71F1))) * (short)0xDC0) + (0x300 + t1)) + 0x580);
-    FUN_0c0e6fe8();
-    return (FUN_0c0e6fe8());
-}
 
 int FUN_0c0ccbfe(void)
 {

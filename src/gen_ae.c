@@ -308,19 +308,6 @@ int FUN_0c05963e(void)
     return (t4 << 2);
 }
 
-int FUN_0c05f8f8(int a4)
-{
-    register int t1;
-
-    (((struct o70_float *)(a4))->v) = 1.0f;
-    FUN_0c0e6fe8(0xC7F29F8);
-    FUN_0c0e6fe8(t1);
-    FUN_0c06206e((a4 + 0x44), (a4 + 0x14), (a4 + 0x2C));
-    (((struct o48_float *)(a4))->v) = 0.0f;
-    FUN_0c0620dc((a4 + 0x44));
-    (((struct o48_float *)(a4))->v) = 1.0f;
-    return FUN_0c0620dc((a4 + 0x44));
-}
 
 int FUN_0c0f2ccc(int a4)
 {
@@ -382,30 +369,6 @@ int FUN_0c04571c(int a4, int a5, int a6)
     return t4;
 }
 
-int FUN_0c0588d8(int a4, int a5)
-{
-    int stk[5];
-    register int t0;
-    register int t1;
-    register int t7;
-    register int t2;
-    register int t3;
-
-    *(unsigned char *)(((int)stk + 4)) = a4;
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    t0 = ((int (*)(int, int))(FUN_0c0e6fe8))(a4, a5);
-    t1 = FUN_0c059132(0x6, 0x1, 0x2);
-    t7 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t2 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC05876C;
-        *(unsigned char *)((t3 + 0x4)) = (*(signed char *)(((int)stk + 4)));
-        *(volatile int *)(((int)stk + 0));
-        t7 = (((int (*)(int))(FUN_0c0e6fe8))(t3));
-    }
-    return t7;
-}
 
 int FUN_0c066340(int a4)
 {
@@ -452,24 +415,6 @@ int FUN_0c0cb252(int a4, float f4)
     return (*(signed char *)((t0 + 0x0)));
 }
 
-int FUN_0c0d0024(int a4)
-{
-    int stk[12];
-    register int t0;
-    register int t1;
-    register int t6;
-    register int t2;
-    register int t5;
-    register int t7;
-    register int t10;
-
-    t0 = ((int (*)(int, int))(FUN_0c0e6fdc))(a4, (((int)stk + 0) + 0x18));
-    t1 = ((int (*)(int, int, int))(FUN_0c0e6fdc))(0x0, 0x0, ((int)stk + 0));
-    *(volatile signed char *)((t2 + 0x3));
-    t6 = ((int (*)(int, int))(FUN_0c0e6fe8))(t2, t5);
-    *(volatile signed char *)((t7 + 0x3));
-    return (((int (*)(int, int, int))(FUN_0c0e6fe8))(t7, 0x0, t10));
-}
 
 int FUN_0c0dfc50(int a4, int a5, int a6, int a7, float f4)
 {
@@ -630,105 +575,7 @@ int FUN_0c015b4a(int a4)
     return 0x30;
 }
 
-int FUN_0c01f3e0(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
 
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            *(volatile signed char *)((a4 + 0x34));
-            *(volatile int *)((a4 + 0x20));
-            t0 = FUN_0c011870();
-            t2 = t0;
-            if (t0 != -1) {
-                if (t0 == 0) {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0xF;
-                } else {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0xD;
-                }
-                (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0x12);
-        (((struct o32_uchar *)(a4))->v) = 0x3C;
-        *(volatile signed char *)((a4 + 0x34));
-        *(volatile int *)((a4 + 0x20));
-        t1 = FUN_0c011870();
-        t2 = t1;
-        if (t1 != -1) {
-            if (t1 == 0) {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0xF;
-            } else {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0xD;
-            }
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
-
-int FUN_0c01f436(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            *(volatile signed char *)((a4 + 0x34));
-            *(volatile int *)((a4 + 0x20));
-            t0 = FUN_0c011c4a();
-            t2 = t0;
-            if (t0 != -1) {
-                if (t0 == 0) {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0xF;
-                } else {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0xD;
-                }
-                (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0x12);
-        (((struct o32_uchar *)(a4))->v) = 0x3C;
-        *(volatile signed char *)((a4 + 0x34));
-        *(volatile int *)((a4 + 0x20));
-        t1 = FUN_0c011c4a();
-        t2 = t1;
-        if (t1 != -1) {
-            if (t1 == 0) {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0xF;
-            } else {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0xD;
-            }
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 void FUN_0c03b5da(int a4)
 {
@@ -900,22 +747,6 @@ int FUN_0c065d10(int a4)
     return (unsigned short)t0;
 }
 
-int FUN_0c08cc90(int a4, int a5)
-{
-    register int t5;
-    register int t8;
-    register int t9;
-
-    FUN_0c0df940();
-    
-    t5 = FUN_0c0e6f24();
-    *(volatile signed char *)0xC7F305C;
-    t8 = *(signed char *)((a5 + (FUN_0c0e6e5c((unsigned char)t5))));
-    if ((int)t9 < (int)(unsigned char)t8) {
-        return 0x1;
-    }
-    return 0x0;
-}
 
 int FUN_0c08d050(int a4, int a5)
 {
@@ -1816,53 +1647,6 @@ int FUN_0c020ed4(int a4, int a5)
     return 0x18;
 }
 
-int FUN_0c01f1f6(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            *(volatile int *)((a4 + 0x20));
-            t0 = FUN_0c011150();
-            t2 = t0;
-            if (t0 != -1) {
-                if (t0 == 0) {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0x7;
-                } else {
-                    (((struct o2D_uchar *)0xC362A54)->v) = 0x8;
-                }
-                (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0xA);
-        (((struct o32_uchar *)(a4))->v) = 0x3C;
-        *(volatile int *)((a4 + 0x20));
-        t1 = FUN_0c011150();
-        t2 = t1;
-        if (t1 != -1) {
-            if (t1 == 0) {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0x7;
-            } else {
-                (((struct o2D_uchar *)0xC362A54)->v) = 0x8;
-            }
-            (((struct o0_uchar *)0xC362A54)->v) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 int FUN_0c03c660(int a4)
 {

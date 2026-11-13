@@ -469,37 +469,6 @@ int FUN_0c0730c4(int a4)
     return t0;
 }
 
-int FUN_0c0b7094(int a4, int a5, float f4)
-{
-    int stk[2];
-    register float u1;
-    register float u3;
-    register float u5;
-    register float u8;
-    register float t10;
-    register float u11;
-    register float u17;
-    register float u18;
-
-    u1 = (((struct o7298_float *)(a5))->v);
-    u3 = 200.0f;
-    u3 = u3 + 70.0f * (float)((((struct oEC_short *)(a4))->v));
-    u5 = (u3 * u1);
-    *(float *)(((int)stk + 4)) = ((FUN_0c0df4d0(((-(*(int *)((a5 + 0x30)))) + 0x14000))) * u5);
-    u8 = (u3 * u1);
-    *(float *)(((int)stk + 0)) = ((FUN_0c0dfa50(((-(*(int *)((a5 + 0x30)))) + 0x14000))) * u8);
-    t10 = FUN_0c0dfa50((*(int *)((a5 + 0x2C))));
-    u11 = (u3 * u1);
-    FUN_0c0e6fe8((t10 * u11));
-    (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) + ((((struct o4_float *)(((int)stk + 0)))->v)));
-    (((struct o28_float *)(a4))->v) = (((((struct o28_float *)(a4))->v)) + (*(float *)(((int)stk + 0))));
-    u17 = (((struct o24_float *)(a4))->v);
-    (((struct o24_float *)(a4))->v) = (u17 - f4);
-    u18 = (u17 - f4);
-    u18 = u18 + 100.0f * u1;
-    (((struct o24_float *)(a4))->v) = u18;
-    return 0x24;
-}
 
 int FUN_0c01dada(int a4)
 {

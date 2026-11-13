@@ -66,7 +66,7 @@ int FUN_0c09d9bc(int);
 int FUN_0c09db78(int);
 int FUN_0c09e7b8(int);
 int FUN_0c0a2e26(int, int, int, int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df4d0(int);
 float FUN_0c0df940(void);
 float FUN_0c0dfa50(int);
@@ -1647,7 +1647,7 @@ int FUN_0c0990fc(int a4, int a5, int a6, int a7)
         }
         return t0;
     }
-    FUN_0c0dc18e(0xA);
+    FUN_0c0dc18e(0xA, 0xA);
     FUN_0c09a808(a4, 0x2, 0xAB);
     (((struct o38_float *)(a4))->v) = (-(((((struct o38_float *)(a4))->v)) / 4.0f));
     (((struct o3C_float *)(a4))->v) = 20.0f;

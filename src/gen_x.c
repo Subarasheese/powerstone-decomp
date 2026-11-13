@@ -476,40 +476,6 @@ int FUN_0c0a022e(int a4, float f4)
     return t15;
 }
 
-int FUN_0c1080f0(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t4;
-    register int t5;
-
-    if (a4 == 0) {
-        return mwRnaErrCallFunc(0xC15B31C, a5, a6, a7);
-    }
-    t0 = 0x0;
-    t1 = a6;
-    if ((int)a6 < (int)0xFFFFFFD6) {
-    } else {
-        t2 = 0xF;
-        if ((int)a6 >= 0) {
-            t1 = a6;
-        } else {
-            t4 = FUN_0c0e6d00();
-            t5 = t4;
-            t2 = (t4 + 0xF);
-        }
-        t4 = t5;
-        t0 = t2;
-    }
-    t2 = t4;
-    if (((int)a5 >= 0) && ((int)a5 <= (int)0x10)) {
-        (((struct o6C_uint *)(a4))->v) = a5;
-        (((struct o70_uint *)(a4))->v) = t1;
-        t2 = (FUN_0c114f90(((((struct o40_int *)(a4))->v)), a5, t0));
-    }
-    return t2;
-}
 
 int FUN_0c107f44(int a4, int a5, int a6, int a7)
 {

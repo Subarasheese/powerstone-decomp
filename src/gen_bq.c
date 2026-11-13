@@ -2096,13 +2096,6 @@ int FUN_0c04a9d8(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC04A9A0))(a4, a5, a6, a7);
 }
 
-int FUN_0c061094(int a4, int a5, int a6)
-{
-    FUN_0c0e06e0();
-    *(volatile int *)(((a6 << 2) + 0xC3365C8));
-    FUN_0c0e0720(0xC14E130);
-    return FUN_0c0ddf80();
-}
 
 int FUN_0c06d5ba(int a4, int a5, int a6, int a7)
 {

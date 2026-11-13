@@ -64,32 +64,3 @@ float FUN_0c02629e(int a4, int a5)
     return u24;
 }
 
-float FUN_0c0263b2(int a4, int a5)
-{
-    int stk[15];
-    register float u24;
-    register float u15;
-    register float u6;
-    register int t1;
-    register int t10;
-    register int t19;
-
-    if (((signed char)a4 & 0xF) != 0) {
-        if (((signed char)a4 & 0xF) != 1) {
-            if (((signed char)a4 & 0xF) != 2) {
-            } else {
-                FUN_0c0e6fdc((((int)stk + 0) + 0x14), a5);
-                u6 = (((((struct o4_float *)(t1))->v)) - ((((struct o10_float *)(t1))->v)));
-            }
-            u15 = u6;
-        } else {
-            FUN_0c0e6fe8(((int)stk + 0), a5);
-            u15 = (((((struct o4_float *)(t10))->v)) - ((((struct o10_float *)(t10))->v)));
-        }
-        u24 = u15;
-    } else {
-        FUN_0c0e6fdc((((int)stk + 0) + 0x2C), a5);
-        u24 = (((((struct o4_float *)(t19))->v)) - ((((struct oC_float *)(t19))->v)));
-    }
-    return u24;
-}

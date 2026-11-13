@@ -113,7 +113,7 @@ int FUN_0c0a3796(int, int);
 int FUN_0c0a3914(int, int);
 int FUN_0c0a3ebc(int, int, int);
 int FUN_0c0ace56(int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 extern int FUN_0c0df400();
 float FUN_0c0df4d0(int);
 extern float FUN_0c0df870();
@@ -558,7 +558,7 @@ int FUN_0c0b2044(int a4, int a5, int a6, int a7)
             *(unsigned int *)((a4 + 0x34)) = 0xC000;
             FUN_0c042d68((*(signed char *)((a4 + 0x3))), (a4 + 0x20), 2.0f, 240.0f);
             FUN_0c0a3ebc((*(signed char *)0xC7F3051), (*(signed char *)((a4 + 0x3))), 0x3);
-            FUN_0c0dc18e(0x14);
+            FUN_0c0dc18e(0x14, 0x14);
             (((struct oEC_ushort *)(a4))->v) = 0x3C;
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
             return FUN_0c0ace56(a4);

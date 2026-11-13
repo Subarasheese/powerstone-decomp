@@ -375,21 +375,6 @@ int FUN_0c114c70(int a4)
     return t13;
 }
 
-int FUN_0c0972b2(int a4)
-{
-    int stk[7];
-    register int t0;
-    register int t4;
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    t0 = FUN_0c09caea(a4, 0xA);
-    *(volatile int *)((((((signed char)t0 - 1) << 2) + (0x2C0 + (*(int *)(((int)stk + 0))))) + 0x0));
-    FUN_0c0e6fdc((((int)stk + 0) + 0x4), t0);
-    if (((((struct oC_float *)(t4))->v)) > ((((struct o14_float *)(t4))->v))) {
-        return 0x0;
-    }
-    return 0x1;
-}
 
 int FUN_0c09939c(void)
 {
@@ -436,18 +421,6 @@ int FUN_0c0d87aa(float f4)
     return FUN_0c0d873a(0xC7F29F8, f4);
 }
 
-int syRtcMakeAgeOfMoon(void)
-{
-    int stk[1];
-
-    syRtcDateToCount();
-    if ((unsigned int)(*(int *)(((int)stk + 0))) >= (unsigned int)0x5CB417D1) {
-        FUN_0c0e6f24(((*(int *)(((int)stk + 0))) + 0xA34BE82F));
-    } else {
-        FUN_0c0e6f24((0x5CB417D1 - (*(int *)(((int)stk + 0)))));
-    }
-    return (FUN_0c0e6db4());
-}
 
 int FUN_0c0f2664(void)
 {
@@ -844,38 +817,7 @@ int FUN_0c0a3d16(int a4)
     return FUN_0c0a2eec(t9);
 }
 
-int FUN_0c0aba84(void)
-{
-    register int t1;
-    register int t4;
 
-    FUN_0c0e6fe8();
-    t1 = FUN_0c059132(0x5, 0x1, 0x8);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned int *)((t1 + 0x10)) = 0xC0ABACA;
-        FUN_0c0e6fe8();
-        t4 = FUN_0c0a5042();
-        *(unsigned int *)((t1 + 0x1C)) = t4;
-    }
-    return t4;
-}
-
-int FUN_0c0b1652(int a4, int a5, float f4)
-{
-    int stk[6];
-    register int t0;
-    register int t2;
-    register int t1;
-
-    t0 = ((int (*)(int, int))(FUN_0c0e6fe8))(a4, a5);
-    *(float *)(((int)stk + 16)) = 0.0f;
-    t2 = ((int (*)(int, float))(FUN_0c0e6fe8))(t1, 0.0f);
-    *(float *)(((int)stk + 4)) = f4;
-    FUN_0c06206e((((int)stk + 0) + 0xC), (((int)stk + 0) + 0xC), ((int)stk + 0));
-    return (FUN_0c0620a4((((int)stk + 0) + 0xC)));
-}
 
 int FUN_0c0cf898(int a4, int a5)
 {
@@ -1039,14 +981,6 @@ int FUN_0c110be0(void)
     return 0xC817424;
 }
 
-int FUN_0c021042(int a4, int a5, int a6)
-{
-    FUN_0c062210(a6, (a4 + 0x6C));
-    FUN_0c0e6fe8();
-    (((struct oC_float *)(a5))->v) = (((((struct oC_float *)(a6))->v)) * ((((struct o50_float *)(a4))->v)));
-    (((struct o10_float *)(a5))->v) = (((((struct o10_float *)(a6))->v)) * ((((struct o54_float *)(a4))->v)));
-    return 0x10;
-}
 
 int FUN_0c02ced4(int a4, float f4, float f5)
 {
@@ -1926,43 +1860,6 @@ int FUN_0c0ffdba(void)
     return t12;
 }
 
-int FUN_0c01f3a0(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            t0 = FUN_0c01fff4(0x3060E);
-            t2 = (signed char)t0;
-            if ((signed char)t0 != 0) {
-                *(unsigned char *)0xC362A50 = 0x1;
-                *(unsigned char *)((a4 + 0x2)) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0x7);
-        FUN_0c01f4c8(0x16);
-        t1 = FUN_0c01fff4(0x3060E);
-        t2 = (signed char)t1;
-        if ((signed char)t1 != 0) {
-            *(unsigned char *)0xC362A50 = 0x1;
-            *(unsigned char *)((a4 + 0x2)) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 int FUN_0c051092(int a4)
 {

@@ -1,0 +1,771 @@
+/* INLINE-ASM: asm fallback: an ordinary compiled game function (a C form exists) whose original instructions are wrapped as inline assembly because the C was not written in this pass; calls out go through push/load/jsr sequences. */
+#pragma inline_asm(FUN_0c0624ea)
+int FUN_0c0624ea(void)
+{
+    NOP
+    MOV.L R14,@-R15
+    MOV.L R13,@-R15
+    MOV.L R12,@-R15
+    MOV.L R11,@-R15
+    MOV.L R10,@-R15
+    MOV.L R9,@-R15
+    MOV.L R8,@-R15
+    STS.L PR,@-R15
+    STS.L MACL,@-R15
+    ADD #-4,R15
+    MOV R4,R9
+    MOV.W L_0C062584,R4
+    MOV #0,R8
+    ADD R9,R4
+    MOV #19,R11
+    MOV R11,R0
+    NOP
+    MOV.B R0,@(1,R4)
+    MOV R5,R12
+    MOV.B R0,@R4
+    MOV #2,R0
+    MOV.W L_0C062586,R4
+    ADD R9,R4
+    MOV.B R0,@(1,R4)
+    MOV.B R0,@R4
+    MOV #4,R0
+    MOV.W L_0C062588,R4
+    ADD R9,R4
+    MOV.B R0,@(1,R4)
+    MOV.B R0,@R4
+    MOV.W L_0C06258A,R4
+    ADD R9,R4
+    MOV.B R0,@(1,R4)
+    MOV.B R0,@R4
+    BRA L_0C06287C
+    MOV.L R8,@R15
+L_0C062532:
+    MOV.W L_0C06258C,R3
+    MOV R8,R5
+    MOV.L @R15,R13
+    MOV.L @R15,R10
+    MULS.W R3,R13
+    MOV R10,R2
+    SHLL R10
+    ADD R2,R10
+    SHLL2 R10
+    STS MACL,R13
+    SHLL R10
+    EXTS.W R13,R13
+    BRA L_0C062612
+    EXTS.B R10,R10
+L_0C06254E:
+    MOV.W L_0C062590,R3
+    MOV.W L_0C06258E,R4
+    MULS.W R3,R5
+    MOV.B @(4,R9),R0
+    ADD R9,R4
+    ADD R13,R4
+    CMP/EQ #10,R0
+    STS MACL,R3
+    EXTS.W R3,R3
+    ADD R3,R4
+    BF S_1
+    BRA L_0C06256C
+    NOP
+S_1:
+    MOV.L L_0C0625A4,R0
+    MOV R5,R7
+    BRA L_0C062572
+    SHLL2 R7
+L_0C06256C:
+    MOV.L L_0C0625A8,R0
+    MOV R5,R7
+    SHLL2 R7
+L_0C062572:
+    MOV.W L_0C062592,R3
+    MOV.L @(R0,R7),R7
+    CMP/EQ R3,R7
+    BT/S S_2
+    MOV #66,R0
+    BRA L_0C0625AC
+    NOP
+S_2:
+    MOV #-1,R14
+    BRA L_0C0625AE
+    MOV R14,R7
+    .DATA.W H'0090
+L_0C062584:
+    .DATA.W H'7100
+L_0C062586:
+    .DATA.W H'7104
+L_0C062588:
+    .DATA.W H'7106
+L_0C06258A:
+    .DATA.W H'7108
+L_0C06258C:
+    .DATA.W H'0DC0
+L_0C06258E:
+    .DATA.W H'0300
+L_0C062590:
+    .DATA.W H'00B0
+L_0C062592:
+    .DATA.W H'0080
+    .DATA.W H'E3B0
+    .DATA.W H'0C14
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+    .DATA.W H'E3BC
+    .DATA.W H'0C14
+    .DATA.W H'E3C8
+    .DATA.W H'0C14
+L_0C0625A4:
+    .DATA.W H'E3D4
+    .DATA.W H'0C14
+L_0C0625A8:
+    .DATA.W H'E420
+    .DATA.W H'0C14
+L_0C0625AC:
+    MOV R8,R14
+L_0C0625AE:
+    MOV.B R14,@(R0,R4)
+    MOV #68,R0
+    MOV.B R14,@(R0,R4)
+    MOV #67,R0
+    MOV.B R7,@(R0,R4)
+    MOV #69,R0
+    MOV.B R7,@(R0,R4)
+    MOV R5,R1
+    MOV.W C_1,R3
+    SHLL2 R1
+    MOV.B @(3,R9),R0
+    MOV.L C_2,R2
+    MULS.W R3,R0
+    MOV R5,R3
+    STS MACL,R0
+    EXTS.W R0,R0
+    ADD R2,R0
+    MOV R5,R2
+    ADD R10,R0
+    MOV.L @(8,R0),R0
+    SHLL R2
+    ADD R3,R2
+    MOV.L C_3,R3
+    MOV.L @(R0,R1),R1
+    SHLL2 R2
+    MOV.W C_4,R0
+    MOV.L R1,@(R0,R4)
+    MOV.L @(40,R12),R1
+    ADD R1,R2
+    MOV.W C_5,R1
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.W C_6,R1
+    MOV.L C_7,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L C_8,R2
+    MOV R4,R1
+    MOV.L C_9,R3
+    ADD #84,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L C_10,R3
+    MOV R4,R1
+    ADD #96,R1
+    JSR @R3
+    MOV #12,R0
+    ADD #1,R5
+L_0C062612:
+    CMP/GE R11,R5
+    BT S_3
+    BRA L_0C06254E
+    NOP
+S_3:
+    MOV.W L_0C0626D8,R2
+    MOV R8,R5
+    MOV.L @R15,R3
+    ADD R9,R2
+    MOV.L @(52,R12),R1
+    ADD R3,R2
+    MOV.W L_0C0626DA,R3
+    MOV.B R1,@R2
+    MOV.L @R15,R7
+    MULS.W R3,R7
+    STS MACL,R7
+    BRA L_0C0626BC
+    EXTS.W R7,R7
+L_0C062630:
+    MOV.W L_0C0626DE,R3
+    MOV R5,R14
+    MOV.W L_0C0626DC,R4
+    SHLL R14
+    MULS.W R3,R5
+    MOV.L @(56,R12),R2
+    ADD R9,R4
+    ADD R7,R4
+    ADD R14,R2
+    STS MACL,R3
+    MOV #66,R0
+    MOV #67,R1
+    EXTS.W R3,R3
+    ADD R3,R4
+    MOV.B @R2,R3
+    ADD R4,R1
+    MOV.B R3,@(R0,R4)
+    MOV #68,R0
+    MOV.B R3,@(R0,R4)
+    MOV.L @(56,R12),R2
+    MOV.W L_0C0626D0,R3
+    ADD R2,R14
+    MOV #69,R2
+    MOV.B @(1,R14),R0
+    ADD R4,R2
+    MOV.B R0,@R1
+    MOV.B R0,@R2
+    MOV.B @(3,R9),R0
+    MOV.L L_0C0626E4,R2
+    MULS.W R3,R0
+    STS MACL,R0
+    EXTS.W R0,R0
+    ADD R2,R0
+    MOV R5,R1
+    ADD R10,R0
+    MOV R5,R14
+    MOV.L @(56,R0),R0
+    SHLL2 R1
+    SHLL R14
+    MOV R5,R3
+    MOV.L @(R0,R1),R1
+    ADD R3,R14
+    MOV.W L_0C0626D2,R0
+    SHLL2 R14
+    MOV.L L_0C0626E8,R3
+    MOV.L R1,@(R0,R4)
+    MOV.L @(44,R12),R2
+    MOV.W L_0C0626D4,R1
+    ADD R14,R2
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.W L_0C0626D6,R1
+    MOV.L L_0C0626E8,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L @(48,R12),R2
+    MOV R4,R1
+    MOV.L L_0C0626E8,R3
+    ADD #84,R1
+    ADD R14,R2
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C0626E8,R3
+    MOV R4,R1
+    ADD #96,R1
+    BRA J_1
+    NOP
+    .DATA.W H'0009
+C_1:
+    .DATA.W H'00F0
+    .DATA.W H'0000
+C_2:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+C_3:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+C_4:
+    .DATA.W H'0090
+    .DATA.W H'0000
+C_5:
+    .DATA.W H'0098
+    .DATA.W H'0000
+C_6:
+    .DATA.W H'00A4
+    .DATA.W H'0000
+C_7:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+C_8:
+    .DATA.W H'E478
+    .DATA.W H'0C14
+C_9:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+C_10:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+    .DATA.W H'0009
+J_1:
+    JSR @R3
+    MOV #12,R0
+    ADD #1,R5
+L_0C0626BC:
+    MOV.L @(52,R12),R2
+    CMP/GE R2,R5
+    BT S_4
+    BRA L_0C062630
+    NOP
+S_4:
+    MOV.W L_0C0626E0,R3
+    MOV R8,R5
+    MOV.L @R15,R14
+    MULS.W R3,R14
+    STS MACL,R14
+    BRA L_0C06275E
+    EXTS.W R14,R14
+L_0C0626D0:
+    .DATA.W H'00F0
+L_0C0626D2:
+    .DATA.W H'0090
+L_0C0626D4:
+    .DATA.W H'0098
+L_0C0626D6:
+    .DATA.W H'00A4
+L_0C0626D8:
+    .DATA.W H'7102
+L_0C0626DA:
+    .DATA.W H'14A0
+L_0C0626DC:
+    .DATA.W H'1E80
+L_0C0626DE:
+    .DATA.W H'00B0
+L_0C0626E0:
+    .DATA.W H'06E0
+    .DATA.W H'0000
+L_0C0626E4:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+L_0C0626E8:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+L_0C0626EC:
+    .DATA.W H'E478
+    .DATA.W H'0C14
+L_0C0626F0:
+    MOV.W C_11,R3
+    MOV #66,R0
+    MOV.W C_12,R4
+    MOV R5,R1
+    MULS.W R3,R5
+    ADD R9,R4
+    MOV.L C_13,R2
+    ADD R14,R4
+    SHLL2 R1
+    STS MACL,R3
+    EXTS.W R3,R3
+    ADD R3,R4
+    MOV.B R8,@(R0,R4)
+    MOV #68,R0
+    MOV.B R8,@(R0,R4)
+    MOV #67,R0
+    MOV #4,R3
+    MOV.B R3,@(R0,R4)
+    MOV #69,R0
+    MOV.B R3,@(R0,R4)
+    MOV.W C_14,R3
+    MOV.B @(3,R9),R0
+    MULS.W R3,R0
+    STS MACL,R0
+    EXTS.W R0,R0
+    ADD R2,R0
+    MOV #104,R2
+    ADD R10,R0
+    MOV.L @(R0,R2),R0
+    MOV.L @(R0,R1),R1
+    MOV.W L_0C0627E6,R0
+    MOV.L R1,@(R0,R4)
+    MOV.W L_0C0627E8,R1
+    MOV.L L_0C0627F4,R2
+    MOV.L L_0C0627F8,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.W L_0C0627EA,R1
+    MOV.L L_0C0627F8,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C0627FC,R2
+    MOV R4,R1
+    MOV.L L_0C0627F8,R3
+    ADD #84,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C0627F8,R3
+    MOV R4,R1
+    ADD #96,R1
+    JSR @R3
+    MOV #12,R0
+    ADD #1,R5
+L_0C06275E:
+    MOV #2,R2
+    CMP/GE R2,R5
+    BT S_5
+    BRA L_0C0626F0
+    NOP
+S_5:
+    BRA L_0C0627D6
+    MOV R8,R5
+L_0C062768:
+    MOV.W L_0C0627E2,R3
+    MOV #66,R0
+    MOV.W L_0C0627EC,R4
+    MOV R5,R1
+    MULS.W R3,R5
+    ADD R9,R4
+    MOV.L L_0C0627F0,R2
+    ADD R14,R4
+    SHLL2 R1
+    STS MACL,R3
+    EXTS.W R3,R3
+    ADD R3,R4
+    MOV.B R8,@(R0,R4)
+    MOV #68,R0
+    MOV.B R8,@(R0,R4)
+    MOV #67,R0
+    MOV #8,R3
+    MOV.B R3,@(R0,R4)
+    MOV #69,R0
+    MOV.B R3,@(R0,R4)
+    MOV.W L_0C0627E4,R3
+    MOV.B @(3,R9),R0
+    MULS.W R3,R0
+    STS MACL,R0
+    EXTS.W R0,R0
+    ADD R2,R0
+    MOV.W L_0C0627E8,R2
+    ADD R10,R0
+    MOV.L @(R0,R2),R0
+    MOV.L @(R0,R1),R1
+    MOV.W L_0C0627E6,R0
+    MOV.L R1,@(R0,R4)
+    MOV R2,R1
+    MOV.L L_0C0627F4,R2
+    MOV.L L_0C0627F8,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.W L_0C0627EA,R1
+    MOV.L L_0C0627F8,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C0627FC,R2
+    MOV R4,R1
+    MOV.L L_0C0627F8,R3
+    ADD #84,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C0627F8,R3
+    MOV R4,R1
+    ADD #96,R1
+    JSR @R3
+    MOV #12,R0
+    ADD #1,R5
+L_0C0627D6:
+    MOV #4,R2
+    CMP/GE R2,R5
+    BT S_6
+    BRA L_0C062768
+    NOP
+S_6:
+    BRA L_0C06286E
+    MOV R8,R5
+L_0C0627E0:
+    .DATA.W H'47C0
+L_0C0627E2:
+    .DATA.W H'00B0
+L_0C0627E4:
+    .DATA.W H'00F0
+L_0C0627E6:
+    .DATA.W H'0090
+L_0C0627E8:
+    .DATA.W H'0098
+L_0C0627EA:
+    .DATA.W H'00A4
+L_0C0627EC:
+    .DATA.W H'5580
+    .DATA.W H'0000
+L_0C0627F0:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+L_0C0627F4:
+    .DATA.W H'E46C
+    .DATA.W H'0C14
+L_0C0627F8:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+L_0C0627FC:
+    .DATA.W H'E478
+    .DATA.W H'0C14
+    BRA J_2
+    NOP
+C_11:
+    .DATA.W H'00B0
+    .DATA.W H'0000
+C_12:
+    .DATA.W H'47C0
+    .DATA.W H'0000
+C_13:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+C_14:
+    .DATA.W H'00F0
+    .DATA.W H'0000
+J_2:
+L_0C062800:
+    MOV.W C_15,R3
+    MOV #66,R0
+    MOV.W C_16,R4
+    MOV R5,R1
+    MULS.W R3,R5
+    ADD R9,R4
+    MOV.L C_17,R2
+    ADD R14,R4
+    SHLL2 R1
+    STS MACL,R3
+    EXTS.W R3,R3
+    ADD R3,R4
+    MOV.B R8,@(R0,R4)
+    MOV #68,R0
+    MOV.B R8,@(R0,R4)
+    MOV #67,R0
+    MOV #12,R3
+    MOV.B R3,@(R0,R4)
+    MOV #69,R0
+    MOV.B R3,@(R0,R4)
+    MOV.W C_18,R3
+    MOV.B @(3,R9),R0
+    MULS.W R3,R0
+    STS MACL,R0
+    EXTS.W R0,R0
+    ADD R2,R0
+    MOV.W L_0C0628FC,R2
+    ADD R10,R0
+    MOV.L @(R0,R2),R0
+    MOV.L @(R0,R1),R1
+    MOV.W L_0C0628FE,R0
+    MOV.L R1,@(R0,R4)
+    MOV.W L_0C062900,R1
+    MOV.L C_19,R2
+    MOV.L C_20,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.W L_0C062902,R1
+    MOV.L L_0C062914,R3
+    ADD R4,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C062918,R2
+    MOV R4,R1
+    MOV.L L_0C062914,R3
+    ADD #84,R1
+    JSR @R3
+    MOV #12,R0
+    MOV.L L_0C062914,R3
+    MOV R4,R1
+    ADD #96,R1
+    JSR @R3
+    MOV #12,R0
+    ADD #1,R5
+L_0C06286E:
+    MOV #4,R2
+    CMP/GE R2,R5
+    BT S_7
+    BRA L_0C062800
+    NOP
+S_7:
+    MOV.L @R15,R2
+    MOV R6,R12
+    ADD #1,R2
+    MOV.L R2,@R15
+L_0C06287C:
+    MOV.L @R15,R1
+    MOV #2,R3
+    CMP/GE R3,R1
+    BF S_8
+    BRA L_0C062888
+    NOP
+S_8:
+    BRA L_0C062532
+    NOP
+L_0C062888:
+    BRA L_0C062934
+    MOV R8,R12
+L_0C06288C:
+    MOV.W L_0C062906,R14
+    MOV.W L_0C062908,R3
+    MULS.W R14,R12
+    MOV.W L_0C062904,R0
+    ADD R9,R3
+    MOV.B R12,@(R0,R9)
+    STS MACL,R14
+    EXTS.W R14,R14
+    ADD R3,R14
+    BRA L_0C062926
+    MOV R8,R11
+L_0C0628A2:
+    MOV R14,R13
+L_0C0628A4:
+    MOV #66,R0
+    MOV.B @(R0,R13),R0
+    CMP/EQ #-1,R0
+    BT S_9
+    BRA L_0C0628B8
+    NOP
+S_9:
+    MOV #70,R0
+    MOV #-1,R2
+    MOV R2,R3
+    MOV.B R2,@(R0,R14)
+    BRA L_0C0628DE
+    NOP
+L_0C0628B8:
+    CMP/EQ #2,R0
+    BT S_10
+    BRA L_0C0628C0
+    NOP
+S_10:
+    BRA L_0C0628D6
+    MOV #2,R2
+L_0C0628C0:
+    MOV #66,R0
+    MOV.B @(R0,R13),R0
+    CMP/EQ #3,R0
+    BT S_11
+    BRA L_0C0628D0
+    NOP
+S_11:
+    MOV #70,R0
+    MOV #3,R4
+    BRA L_0C0628DA
+    MOV.B R4,@(R0,R14)
+L_0C0628D0:
+    CMP/EQ #4,R0
+    BT S_12
+    BRA L_0C0628E4
+    NOP
+S_12:
+    MOV #4,R2
+L_0C0628D6:
+    MOV #70,R0
+    MOV.B R2,@(R0,R14)
+L_0C0628DA:
+    MOV #67,R0
+    MOV.B @(R0,R13),R3
+L_0C0628DE:
+    MOV #71,R0
+    BRA L_0C062920
+    MOV.B R3,@(R0,R14)
+    BRA J_3
+    NOP
+C_15:
+    .DATA.W H'00B0
+    .DATA.W H'0000
+C_16:
+    .DATA.W H'6340
+    .DATA.W H'0000
+C_17:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+C_18:
+    .DATA.W H'00F0
+    .DATA.W H'0000
+C_19:
+    .DATA.W H'E46C
+    .DATA.W H'0C14
+C_20:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+J_3:
+L_0C0628E4:
+    MOV #67,R0
+    MOV.L L_0C06291C,R10
+    MOV.B @(R0,R13),R6
+    MOV #66,R0
+    MOV.B @(R0,R13),R5
+    JSR @R10
+    MOV R9,R4
+    BRA L_0C0628A4
+    MOV R0,R13
+L_0C0628F6:
+    .DATA.W H'6340
+L_0C0628F8:
+    .DATA.W H'00B0
+L_0C0628FA:
+    .DATA.W H'00F0
+L_0C0628FC:
+    .DATA.W H'00C8
+L_0C0628FE:
+    .DATA.W H'0090
+L_0C062900:
+    .DATA.W H'0098
+L_0C062902:
+    .DATA.W H'00A4
+L_0C062904:
+    .DATA.W H'71F1
+L_0C062906:
+    .DATA.W H'14A0
+L_0C062908:
+    .DATA.W H'1E80
+    .DATA.W H'0000
+L_0C06290C:
+    .DATA.W H'FAB0
+    .DATA.W H'0C4C
+L_0C062910:
+    .DATA.W H'E46C
+    .DATA.W H'0C14
+L_0C062914:
+    .DATA.W H'6FE8
+    .DATA.W H'0C0E
+L_0C062918:
+    .DATA.W H'E478
+    .DATA.W H'0C14
+L_0C06291C:
+    .DATA.W H'CF38
+    .DATA.W H'0C0C
+L_0C062920:
+    MOV.W C_21,R3
+    ADD #1,R11
+    ADD R3,R14
+L_0C062926:
+    MOV.W C_22,R2
+    ADD R9,R2
+    ADD R12,R2
+    MOV.B @R2,R3
+    CMP/GE R3,R11
+    BT S_13
+    BRA L_0C0628A2
+    NOP
+S_13:
+    ADD #1,R12
+L_0C062934:
+    MOV #2,R3
+    CMP/GE R3,R12
+    BT S_14
+    BRA L_0C06288C
+    NOP
+S_14:
+    MOV.W C_23,R0
+    MOV.B R8,@(R0,R9)
+    ADD #4,R15
+    LDS.L @R15+,MACL
+    LDS.L @R15+,PR
+    MOV.L @R15+,R8
+    MOV.L @R15+,R9
+    MOV.L @R15+,R10
+    MOV.L @R15+,R11
+    MOV.L @R15+,R12
+    MOV.L @R15+,R13
+    RTS
+    MOV.L @R15+,R14
+C_21:
+    .DATA.W H'00B0
+    .DATA.W H'0000
+C_22:
+    .DATA.W H'7102
+    .DATA.W H'0000
+C_23:
+    .DATA.W H'71F1
+    .DATA.W H'0000
+}

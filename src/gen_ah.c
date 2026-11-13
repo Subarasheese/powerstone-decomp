@@ -166,7 +166,7 @@ float FUN_0c0d5bc0(void);
 int FUN_0c0d7032(int, int);
 int FUN_0c0d7054(int);
 int FUN_0c0d7076(void);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df340(float);
 int FUN_0c0df360(float);
 int FUN_0c0df920(void);
@@ -878,7 +878,7 @@ int FUN_0c08f71c(int a4)
         FUN_0c09a808(a4, 0x2, 0x63);
         (((struct o7205_uchar *)(a4))->v) = 0x0;
     }
-    FUN_0c0dc18e(0xA);
+    FUN_0c0dc18e(0xA, 0xA);
     (((struct o71BC_uchar *)(a4))->v) = 0x3;
     return 0x71BC;
 }
@@ -1726,16 +1726,6 @@ int vmsio_ismount(int a4)
     return 0x0;
 }
 
-int FUN_0c115128(int a4, int a5)
-{
-    register int t1;
-    int t4;
-
-    t1 = *(signed char *)((0xC15B774 + (FUN_0c0e6d00())));
-    t4 = FUN_0c0e6d00();
-    FUN_0c0e6668((*(int *)(((*(int *)((a4 + 0x10))) + 0x4))), (0xF & (-t1)), (0x3FF & t4));
-    return 0x0;
-}
 
 int FUN_0c01869c(int a4)
 {
@@ -1939,16 +1929,6 @@ int FUN_0c0ccb60(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int, float, float))(0xC0CCBC6))(t9, (((t2 << 2) << 2) + 0xC33CF8C), a6, a7, u0, u1);
 }
 
-void nlInitMatrix(int a4, int a5)
-{
-    register int t2;
-
-    nlInitMatrixStack(0xC7FCCCC, 0xC7FCCE4, 0x3);
-    nlInitMatrixStack(0xC7FCCD8, 0xC7FCDA4, 0x3);
-    t2 = nlInitMatrixStack(0xC7FCCC0, a4, (a5 + 0x1));
-    *(unsigned char *)0xC7FCCB0 = 0x1;
-    FUN_0c0e6fe8(t2);
-}
 
 int FUN_0c0eaef0(int a4, int a5)
 {
@@ -2150,18 +2130,6 @@ int FUN_0c05c4ea(int a4)
     return FUN_0c0a3796((*(signed char *)((a4 + 0x3))), 0x1C);
 }
 
-int FUN_0c05c6e0(int a4)
-{
-    register int t6;
-
-    FUN_0c0624c4((((((struct o2E4_int *)(a4))->v)) + 0x9C), 0xC4CFA68, (0x84 + ((*(signed char *)0xC7F307C) & 0x7)));
-    *(volatile int *)(((0x2E0 + a4) + 0x0));
-    *(volatile int *)(((0x2E0 + a4) + 0x4));
-    FUN_0c0e6fe8((0x2E0 + a4));
-    t6 = (((struct o2E4_int *)(a4))->v);
-    (((struct o8_float *)(t6))->v) = (((((struct o8_float *)(t6))->v)) + 25.0f);
-    return t6;
-}
 
 int FUN_0c08d662(int a4)
 {

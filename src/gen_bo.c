@@ -123,7 +123,7 @@ int FUN_0c0ae39a(int);
 int FUN_0c0ae5a6(void);
 int FUN_0c0c1b64(int, int);
 int FUN_0c0d8fb0(int, int, int, int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 int FUN_0c0ddd70(int);
 float FUN_0c0dfa50(int);
 float FUN_0c0dfce0(int);
@@ -309,7 +309,7 @@ int FUN_0c06511c(int a4)
     if (0.0f > ((((struct o3C_float *)(a4))->v))) {
         t2 = FUN_0c09e7b8(a4);
         if ((signed char)t2 != 0) {
-            FUN_0c0dc18e(0xA);
+            FUN_0c0dc18e(0xA, 0xA);
             (((struct o71BC_uchar *)(a4))->v) = 0x3;
             *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
         }

@@ -333,23 +333,6 @@ int gdFsClose(int a4);
 int FUN_0c0fca52(int a4, int a5);
 int FUN_0c011a70(void);
 
-int FUN_0c0581b4(void)
-{
-    register int t0;
-    register int t1;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x6, 0x1, 0x2);
-    t3 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        *(unsigned char *)((t1 + 0x4)) = 0x0;
-        *(unsigned int *)((t1 + 0x10)) = 0xC057E28;
-        t3 = (((int (*)(int))(FUN_0c0e6fe8))(t1));
-    }
-    return t3;
-}
 
 int FUN_0c08cb4c(int a4)
 {
@@ -390,15 +373,6 @@ int FUN_0c0a3cd6(int a4)
     return FUN_0c0a2eec((((*(int *)0xC151EB4) + (((*(signed char *)(((unsigned short)((unsigned short)(signed char)(a4 & 0x1) * (unsigned short)0x72D0) + 0xC7E40C8))) << 8) << 1)) + (signed char)(a4 & 0x1)));
 }
 
-int FUN_0c0b36bc(int a4)
-{
-    int stk[4];
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    FUN_0c0e6fe8(a4);
-    *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) - 80.0f);
-    return (FUN_0c042d68((*(signed char *)(((*(int *)(((int)stk + 0))) + 0x3))), (((int)stk + 0) + 0x4), 2.0f, 150.0f));
-}
 
 int ADXF_ExecServer(void)
 {
@@ -881,41 +855,6 @@ int FUN_0c01f350(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-int FUN_0c01f0a8(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            t0 = FUN_0c01fff4(0x3060E);
-            t2 = (signed char)t0;
-            if ((signed char)t0 != 0) {
-                *(unsigned char *)((a4 + 0x2)) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0x8);
-        FUN_0c01f9a0();
-        t1 = FUN_0c01fff4(0x3060E);
-        t2 = (signed char)t1;
-        if ((signed char)t1 != 0) {
-            *(unsigned char *)((a4 + 0x2)) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 int FUN_0c061f60(int a4, int a5, int a6)
 {
@@ -1025,275 +964,20 @@ void FUN_0c0a2f16(int a4, int a5)
     }
 }
 
-int FUN_0c0a5f94(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A5FD0;
-    }
-    return t4;
-}
 
-int FUN_0c0a5eba(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A5EF6;
-    }
-    return t4;
-}
 
-int FUN_0c0a60e4(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A6120;
-    }
-    return t4;
-}
 
-int FUN_0c0a6244(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x2);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A6280;
-    }
-    return t4;
-}
 
-int FUN_0c0a6454(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A6490;
-    }
-    return t4;
-}
 
-int FUN_0c0a66b0(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0xA);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A66EC;
-    }
-    return t4;
-}
 
-int FUN_0c0a6a7e(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
 
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A6980;
-    }
-    return t4;
-}
 
-int FUN_0c0a7478(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A74B4;
-    }
-    return t4;
-}
-
-int FUN_0c0a7cec(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x2);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A7DFC;
-    }
-    return t4;
-}
-
-int FUN_0c0a832a(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0xA);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A8388;
-    }
-    return t4;
-}
-
-int FUN_0c0a889a(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0xA);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A88D6;
-    }
-    return t4;
-}
-
-int FUN_0c0a8b78(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x4);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A8BB4;
-    }
-    return t4;
-}
-
-int FUN_0c0a9972(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x2);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A9AA4;
-    }
-    return t4;
-}
-
-int FUN_0c0ab940(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x1);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0AB97C;
-    }
-    return t4;
-}
-
-int FUN_0c0a84d4(void)
-{
-    register int t0;
-    register int t1;
-    register int t4;
-    register int t3;
-
-    t0 = ((int (*)(void))(FUN_0c0e6fe8))();
-    t1 = FUN_0c059132(0x5, 0x1, 0x2);
-    t4 = t1;
-    if (t1 != 0) {
-        *(unsigned char *)((t1 + 0x0)) = 0x1;
-        t4 = ((int (*)(int))(FUN_0c0e6fe8))(t1);
-        *(unsigned int *)((t3 + 0x10)) = 0xC0A8510;
-    }
-    return t4;
-}
 
 int FUN_0c0ccad6(int a4, int a5)
 {
@@ -1313,15 +997,6 @@ int FUN_0c0ccad6(int a4, int a5)
     return 0xEC;
 }
 
-int FUN_0c0cf73a(int a4)
-{
-    register int t3;
-
-    *(volatile signed char *)((a4 + 0x3));
-    FUN_0c0e6fe8(a4);
-    *(volatile signed char *)((t3 + 0x3));
-    return (FUN_0c0e6fe8(t3));
-}
 
 int FUN_0c0d4fb8(void)
 {
@@ -1351,13 +1026,6 @@ float FUN_0c0e22e0(int a4, int a5, float f4)
     return t0;
 }
 
-int syRtcMakeDayOfWeek(int a4, int a5)
-{
-    register int t4;
-
-    FUN_0c0e6d00();
-    return (FUN_0c0e6e5c(t4));
-}
 
 int FUN_0c0e5d22(int a4)
 {
@@ -1663,41 +1331,6 @@ int FUN_0c01f164(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-int FUN_0c01f28e(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = *(signed char *)((a4 + 0x4));
-    if (t0 != 0) {
-        t1 = t0;
-        if (t0 != 1) {
-        } else {
-            t0 = FUN_0c01fff4(0x3060E);
-            t2 = (signed char)t0;
-            if ((signed char)t0 != 0) {
-                *(unsigned char *)((a4 + 0x2)) = 0x0;
-                t2 = 0x0;
-            }
-            t1 = t2;
-        }
-        t0 = t1;
-    } else {
-        *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
-        FUN_0c01fdc8(a4, a5, a6, a7);
-        FUN_0c01f4c8(0xC);
-        FUN_0c01f4c8(0x16);
-        t1 = FUN_0c01fff4(0x3060E);
-        t2 = (signed char)t1;
-        if ((signed char)t1 != 0) {
-            *(unsigned char *)((a4 + 0x2)) = 0x0;
-            t2 = 0x0;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 int FUN_0c020e3e(int a4, int a5)
 {
@@ -1981,19 +1614,6 @@ int nlInitMatrixStack(int a4, int a5, int a6)
     return (*(int *)((a4 + 0x4)));
 }
 
-int FUN_0c0e07c0(int a4)
-{
-    int stk[2];
-    register int t1;
-
-    *(unsigned char *)((((int)stk + 4) + 0x3)) = (signed char)((unsigned int)((unsigned int)a4 >> 16) >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x2)) = (short)((unsigned int)a4 >> 16);
-    *(unsigned char *)((((int)stk + 4) + 0x1)) = ((int)a4 >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x0)) = a4;
-    t1 = (*(int *)((((int)stk + 4) + 0x0)));
-    *(int *)((int)stk + 0) = t1;
-    return (kmSetFogTableColor(t1));
-}
 
 int FUN_0c0e3900(int a4, int a5)
 {

@@ -113,7 +113,7 @@ int FUN_0c0a1e0a(int, int);
 int FUN_0c0b3614(int);
 int FUN_0c0b36bc(int);
 int FUN_0c0b38cc(int);
-int FUN_0c0dc18e(int);
+int FUN_0c0dc18e(int, int);
 float FUN_0c0df940(void);
 int FUN_0c0e21b0(int, int);
 int FUN_0c0e6d00(void);
@@ -1004,7 +1004,7 @@ int FUN_0c0b36fc(int a4, int a5, int a6, int a7)
                                     t2 = *(signed char *)((a4 + 0x8));
                                     *(unsigned char *)((a4 + 0x8)) = (t2 + 0x1);
                                     if ((signed char)(t2 + 0x1) == 4) {
-                                        FUN_0c0dc18e(0x1E);
+                                        FUN_0c0dc18e(0x1E, 0x1E);
                                         (((struct o3C_float *)(a4))->v) = 10.0f;
                                         (((struct oEC_ushort *)(a4))->v) = 0x1;
                                     } else {

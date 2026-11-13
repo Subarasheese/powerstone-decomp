@@ -1580,34 +1580,6 @@ int FUN_0c084444(int a4)
     return t24;
 }
 
-int FUN_0c0da990(int a4, int a5)
-{
-    int stk[1];
-    register int t14;
-    register int t4;
-    register int t5;
-
-    *(unsigned char *)(((int)stk + 0)) = a5;
-    t14 = 0xAC;
-    if ((int)(unsigned char)(*(signed char *)0xC7F2AA4) <= (int)0x60) {
-        *(unsigned char *)0xC7F2AA4 = 0x60;
-        (((struct o0_uchar *)0xC7F29FA)->v) = 0x13;
-        (((struct o2_uchar *)0xC7F29FA)->v) = 0x0;
-        (((struct o3_uchar *)0xC7F29FA)->v) = 0x0;
-        (((struct o4_uchar *)0xC7F29FA)->v) = 0x0;
-        (((struct o0_uchar *)0xC7F2B7C)->v) = (*(signed char *)((a4 + 0x3)));
-        (((struct o1C_uint *)0xC7F2B7C)->v) = (((unsigned short)((unsigned short)(*(signed char *)((a4 + 0x3))) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x20);
-        (((struct o20_uint *)0xC7F2B7C)->v) = ((0xC7E40C4 + (unsigned short)((unsigned short)((((*(signed char *)((a4 + 0x3))) == 0)) ? 1 : 0) * (unsigned short)0x72D0)) + 0x20);
-        t4 = *(signed char *)((a4 + 0x4));
-        t5 = *(signed char *)(((int)stk + 0));
-        FUN_0c0df940();
-        *(volatile float *)0xC0DAAE4;
-        
-        t14 = *(signed char *)((((((t4 << 2) << 2) + 0xC344E34) + (t5 << 2)) + (FUN_0c0e6f24())));
-        (((struct o1_uchar *)0xC7F29FA)->v) = t14;
-    }
-    return t14;
-}
 
 int FUN_0c0b1d96(int a4, int a5, int a6, int a7)
 {
