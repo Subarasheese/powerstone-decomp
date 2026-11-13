@@ -20,7 +20,7 @@ void FUN_0c09f8e0(char *o);
 int pl_stick_dir_angle(char *o);
 float math_cos_angle16(int angle);
 float math_sin_angle16(int angle);
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 void FUN_0c0421ee(float *pos, int kind);
 void FUN_0c0a3e10(int side, int ground, int foot);
 void pl_step_motion(char *o);
@@ -119,7 +119,7 @@ steer:
     if (H(o, 0xF2) == 0) {
         if (B(o, 0x27C) == 2) {
             pl = PL(B(o, 3));
-            thunk_FUN_0c062242(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 2640, (float *)(o + 0x727C));
+            thunk_math_mat_get_translate(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 2640, (float *)(o + 0x727C));
             F(o, 0x7280) = F(o, 36);
             FUN_0c0421ee((float *)(o + 0x727C), 0);
         }
@@ -129,7 +129,7 @@ steer:
     if (H(o, 0xF2) == 18) {
         if (B(o, 0x27C) == 2) {
             pl = PL(B(o, 3));
-            thunk_FUN_0c062242(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 3168, (float *)(o + 0x727C));
+            thunk_math_mat_get_translate(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 3168, (float *)(o + 0x727C));
             F(o, 0x7280) = F(o, 36);
             FUN_0c0421ee((float *)(o + 0x727C), 0);
         }

@@ -23,7 +23,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 int obj_destroy(int, int, int, int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 
 int fx_spawn_05(int a4, int a5, int a6)
 {
@@ -84,7 +84,7 @@ int fx_update_05(int a4, int a5, int a6, int a7, float f4)
                 (((struct o54_float *)(a4))->v) = (((((struct o54_float *)(a4))->v)) + 0.0299999993f);
                 (((struct o58_float *)(a4))->v) = (((((struct o58_float *)(a4))->v)) + 0.0299999993f);
             }
-            return FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
+            return math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
         }
         t0 = *(signed char *)((a4 + 0x8));
         *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);

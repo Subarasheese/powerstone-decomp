@@ -24,7 +24,7 @@ int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -78,7 +78,7 @@ int FUN_0c0c6094(int a4, int a5)
         *(unsigned int *)((t0 + 0x10)) = 0xC0C62BC;
         t6 = *(signed char *)((a4 + 0x3));
         *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4);
-        thunk_FUN_0c062242((((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
+        thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t6 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
         (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + 30.0f);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)((a4 + 0x2C)); }
         (((struct o58_float *)(t0))->v) = 1.0f;

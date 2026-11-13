@@ -137,7 +137,7 @@ int FUN_0c114342(int);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int thunk_FUN_0c062d78(void);
 int fx_spawn_04a13c(int a4);
 int pl_valgas_special_id3(int a4);

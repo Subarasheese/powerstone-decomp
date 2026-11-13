@@ -21,7 +21,7 @@ int fx_spawn_item_sparkle(char *);
 void obj_set_mode_owner(char *, int, int);
 float math_sin_angle16(int);
 int math_rand_next(void);
-void FUN_0c0e21b0(char *, char *);
+void math_vec3_accumulate(char *, char *);
 #define F(o) (*(float *)(p + (o)))
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -76,8 +76,8 @@ void FUN_0c05d9d4(char *p)
         p[1] = 1;
         *(short *)(p + 0xEE) = 0;
     }
-    FUN_0c0e21b0(p + 32, p + 56);
-    FUN_0c0e21b0(p + 56, p + 68);
+    math_vec3_accumulate(p + 32, p + 56);
+    math_vec3_accumulate(p + 56, p + 68);
 }
 
 int FUN_0c05db76(int a4)

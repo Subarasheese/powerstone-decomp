@@ -114,7 +114,7 @@ int nlLoadMatrix(int);
 int nlMultiMatrixRevOrder8(int);
 int nlPopMatrix(int);
 int nlPushMatrix(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e2260(int, int, int);
 int _divls(void);
@@ -165,7 +165,7 @@ int pl_falcon_state11_update(int a4);
 int pl_hitreact_01_02_update(int a4);
 int stage_gimmick_29_update(int a4);
 int FUN_0c104168(int a4, int a5);
-int FUN_0c05ae26(int a4, int a5, int a6, int a7);
+int item_tick_falling(int a4, int a5, int a6, int a7);
 int pl_garuda_victim_phase5(int a4);
 int FUN_0c08740a(int a4);
 

@@ -28,7 +28,7 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int _modls(int);
 int _modlu(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int FUN_0c03e096(int a4);
 
@@ -149,7 +149,7 @@ int fx_tick_03dfd0(int a4)
         *(unsigned char *)((a4 + 0x8)) = 0x2;
     }
     t0 = *(signed char *)((a4 + 0x3));
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (a4 + 0x20));
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t0 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (a4 + 0x20));
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {
         if (t0 == 1) {

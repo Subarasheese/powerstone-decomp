@@ -142,7 +142,7 @@ int FUN_0c114ed2(int, int, int);
 int FUN_0c1156c8(int, int, int, int);
 int memset(int, int, int);
 int mwRnaErrCallFunc(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int pl_end_action_reset(int a4);
 int ADXF_ReadNw(int a4, int a5, int a6, int a7);
 int set_vmstime(int a4, int a5);

@@ -85,7 +85,7 @@ int pl_start_motion(int, int, int);
 int pl_step_motion(int);
 int pl_turn_to_opponent(int, int);
 int snd_play_side_se(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 float FUN_0c0ca67e(int a4);
 int FUN_0c0327e4(int a4);
 int FUN_0c0bf86e(int a4);
@@ -218,7 +218,7 @@ float FUN_0c0ca67e(int a4)
     L_C0CA960:;
     v0_5 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 12);
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-v0_5) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 12);
     *(float *)(((int)stk + 16)) = ((*(float *)(((int)stk + 16))) - ((((struct o20_float *)(v0_0))->v)));
     *(float *)(((int)stk + 20)) = ((*(float *)(((int)stk + 20))) - ((((struct o24_float *)(v0_0))->v)));
     *(float *)(((int)stk + 24)) = ((*(float *)(((int)stk + 24))) - ((((struct o28_float *)(v0_0))->v)));

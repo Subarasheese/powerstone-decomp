@@ -86,7 +86,7 @@ int pl_start_motion(int, int, int);
 int res_switch_scene(int);
 int sprintf(int, int, ...);
 int thunk_FUN_0c05fff4(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int ui_sprite_queue_add(int, int, int, int, int, int);
 int dbgedit_work_player_menu(int a4, int a5, int a6, int a7);
 int FUN_0c09bcbc(int a4);
@@ -1057,7 +1057,7 @@ float fx_spawn_08(int a4, int a5)
     (((struct o54_float *)(v0_2))->v) = 2.0f;
     (((struct o50_float *)(v0_2))->v) = 2.0f;
     v0_5 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
-    thunk_FUN_0c062242(((short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4))), (v0_2 + 0x20));
+    thunk_math_mat_get_translate(((short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4))), (v0_2 + 0x20));
     v0_5 = (v0_1);
     goto L_C0B7D52;
     L_C0B7F58:;
@@ -1180,7 +1180,7 @@ float fx_spawn_08(int a4, int a5)
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_2 + 0x2C)) = *(struct mv3 *)((v0_3 + 0x2C)); }
     v0_3 = *(signed char *)((v0_3 + 0x3));
     *(unsigned int *)(((int)stk + 8)) = ((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242(((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (v0_2 + 0x20));
+    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (v0_2 + 0x20));
     v0_3 = (v0_1);
     v0_4 = (v0_1);
     L_C0B7C42:;

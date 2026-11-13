@@ -21,7 +21,7 @@ int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
 int _modls(void);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_045f9c(int a4)
 {
@@ -121,7 +121,7 @@ int fx_tick_045f9c(int a4)
     w0_0 = (0.099999994f);
     if (((*(signed char *)((v0_7 + 0x0))) == 0)) goto L_C0461AE;
     v0_7 = *(signed char *)((v0_0 + 0x3));
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x210), (v0_6 + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x210), (v0_6 + 0x4));
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_6 + 0x10)) = *(struct mv3 *)(((*(int *)((v0_0 + 0x1C))) + 0x2C)); }
     *(unsigned int *)((v0_6 + 0x10)) = ((*(int *)((v0_6 + 0x10))) - 10922);
     (((struct o24_float *)(v0_6))->v) = (((((struct o24_float *)(v0_6))->v)) + 0.125f);
@@ -163,7 +163,7 @@ int fx_tick_045f9c(int a4)
     v0_7 = *(signed char *)((v0_0 + 0x3));
     v0_7 = (((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)));
     v0_8 = ((v0_6 + 0x4));
-    thunk_FUN_0c062242((v0_7 + 0x160), v0_8);
+    thunk_math_mat_get_translate((v0_7 + 0x160), v0_8);
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_6 + 0x10)) = *(struct mv3 *)(((*(int *)((v0_0 + 0x1C))) + 0x2C)); }
     *(unsigned int *)((v0_6 + 0x10)) = ((*(int *)((v0_6 + 0x10))) - 10922);
     *(unsigned char *)((v0_4 + 0x2)) = ((int)((int)((*(signed char *)((v0_4 + 0x2))) + 0x1) % (int)0x3));

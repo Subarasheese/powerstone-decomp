@@ -24,7 +24,7 @@ int fx_spawn_item_sparkle(char *);
 void obj_set_mode_owner(char *, int, int);
 float math_sin_angle16(int);
 int math_rand_next(void);
-void FUN_0c0e21b0(char *, char *);
+void math_vec3_accumulate(char *, char *);
 #define F(o) (*(float *)(p + (o)))
 struct Vec12 { int a, b, c; };
 struct Link {
@@ -56,7 +56,7 @@ int fx_spawn_05(int, int, int);
 float math_cos_angle16(int, Stk3);
 int _quick_odd_mvn(int);
 
-void FUN_0c05aee4(ObjRec *obj)
+void item_free_init(ObjRec *obj)
 {
     obj->state = obj->state + 1;
     obj->h238 = 0;
@@ -68,7 +68,7 @@ void FUN_0c05aee4(ObjRec *obj)
     obj->b263 = 0;
 }
 
-void FUN_0c05af40(char *p)
+void item_free_update(char *p)
 {
     char *q;
     int n;
@@ -100,8 +100,8 @@ void FUN_0c05af40(char *p)
         p[1] = 1;
         *(short *)(p + 0xEE) = 0;
     }
-    FUN_0c0e21b0(p + 32, p + 56);
-    FUN_0c0e21b0(p + 56, p + 68);
+    math_vec3_accumulate(p + 32, p + 56);
+    math_vec3_accumulate(p + 56, p + 68);
 }
 
 void item_attach_to_hand(char *obj)

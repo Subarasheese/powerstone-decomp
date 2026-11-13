@@ -14,7 +14,7 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(int);
 int _quick_odd_mvn(int);
 float math_cos_angle16(int);
@@ -48,8 +48,8 @@ void FUN_0c05e9d2(int a4)
             (((struct oEC_ushort *)(a4))->v) = 0x0;
             return;
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
         t0 = (((struct o2E0_int *)(a4))->v);
         *(unsigned int *)((t0 + 0x10)) = ((*(int *)((t0 + 0x10))) + 0xB6);
         t0 = (((struct o2E0_int *)(a4))->v);

@@ -18,8 +18,8 @@
 0c01f350 FUN_0c01f350 0c01eee0
 0c01f3a0 vmu_menu_step_notice_wait_ok_flag 0c01eee0
 0c020cba FUN_0c020cba 0c020c8a
-0c05aee4 FUN_0c05aee4 0c05ad7c 0c05aeca
-0c05af40 FUN_0c05af40 0c05ad7c 0c05aeca
+0c05aee4 item_free_init 0c05ad7c 0c05aeca
+0c05af40 item_free_update 0c05ad7c 0c05aeca
 0c05b18c FUN_0c05b18c 0c05ad7c
 0c05c07a FUN_0c05c07a 0c05ba30
 0c05c1c0 FUN_0c05c1c0 0c05c118

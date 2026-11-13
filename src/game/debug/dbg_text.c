@@ -13,7 +13,7 @@ int dbg_print_at(int obj_ptr, float val_x, float val_y)
     return dbg_print_string(obj_ptr, quot_y, 0, 0);
 }
 
-int thunk_FUN_0c062242(int a4, int a5)
+int thunk_math_mat_get_translate(int a4, int a5)
 {
     return math_mat_get_translate(a4, a5);
 }

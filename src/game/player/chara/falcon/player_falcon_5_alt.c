@@ -1,7 +1,7 @@
 /* character 0 (Falcon): frame hook, state dispatchers, start-action wrappers, specials, victim hooks (0c067d4c-0c068e10) */
 
 extern int pl_angle_to_opponent(unsigned char *);
-extern void thunk_FUN_0c062242(unsigned char *, float *);
+extern void thunk_math_mat_get_translate(unsigned char *, float *);
 extern float math_signed_sqrt(float);
 extern int math_atan_angle16(float);
 extern float math_cos_angle16(int);
@@ -28,9 +28,9 @@ void pl_falcon_aim_at_target(unsigned char *obj)
     target = *(unsigned char **)(obj + 28);
     player_blk = (unsigned char *)0xC7E40C4 + (unsigned short)((1 - (signed char)obj[3]) * 0x72D0);
     if ((signed char)target[4] == 10)
-        thunk_FUN_0c062242(player_blk + 768 + (short)((signed char)player_blk[0x71F1] * 3520) + 704, rel);
+        thunk_math_mat_get_translate(player_blk + 768 + (short)((signed char)player_blk[0x71F1] * 3520) + 704, rel);
     else
-        thunk_FUN_0c062242(player_blk + 768 + (short)((signed char)player_blk[0x71F1] * 3520), rel);
+        thunk_math_mat_get_translate(player_blk + 768 + (short)((signed char)player_blk[0x71F1] * 3520), rel);
     if (obj[15])
         *(int *)(obj + 48) = (unsigned short)(*(int *)(obj + 48) + 0x8000);
     obj[15] = 0;

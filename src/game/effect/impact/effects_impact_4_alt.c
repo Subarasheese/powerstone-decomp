@@ -14,7 +14,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c048ea0(int, int);
 int obj_destroy(int);
 int FUN_0c0624c4(int, int, int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _divls(void);
 
 int fx_update_heading_shot(int a4)
@@ -71,8 +71,8 @@ int fx_update_heading_shot(int a4)
                 (((struct oEC_ushort *)(a4))->v) = 0x0;
             }
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     t0 = *(signed char *)((a4 + 0x8));
     *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);

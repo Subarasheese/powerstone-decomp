@@ -23,7 +23,7 @@ int pl_stick_dir_angle(char *player);
 void pl_set_velocity_from_move_table(char *player, int anim_id);
 signed char pl_step_motion(char *player);
 void pl_apply_velocity(char *player);
-void thunk_FUN_0c062242(char *mat, char *vec);
+void thunk_math_mat_get_translate(char *mat, char *vec);
 void FUN_0c0421ee(char *p, int anim_id);
 void FUN_0c0a3e10(int slot, int anim_id, int anim_flag);
 void pl_change_state(char *player, int anim_id, int anim_flag);
@@ -142,7 +142,7 @@ post_update:
     if (I16(242) == 0) {
         if (I8(0x27C) == 2) {
             block = PLAYER_BLOCK;
-            thunk_FUN_0c062242(block + 768 + (short)((signed char)block[0x71F1] * 3520) + 3168, player + 0x727C);
+            thunk_math_mat_get_translate(block + 768 + (short)((signed char)block[0x71F1] * 3520) + 3168, player + 0x727C);
             F32(0x7280) = F32(36);
             FUN_0c0421ee(player + 0x727C, 0);
         }
@@ -152,7 +152,7 @@ post_update:
     if (I16(242) == 16) {
         if (I8(0x27C) == 2) {
             block = PLAYER_BLOCK;
-            thunk_FUN_0c062242(block + 768 + (short)((signed char)block[0x71F1] * 3520) + 2640, player + 0x727C);
+            thunk_math_mat_get_translate(block + 768 + (short)((signed char)block[0x71F1] * 3520) + 2640, player + 0x727C);
             F32(0x7280) = F32(36);
             FUN_0c0421ee(player + 0x727C, 0);
         }

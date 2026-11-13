@@ -93,7 +93,7 @@ int vmu_menu_pad_pressed(int);
 int FUN_0c02078c(void);
 int FUN_0c020886(int);
 int FUN_0c020998(int);
-int FUN_0c02466e(int);
+int hit_list_reset(int);
 int fx_init_subblock_effect(int, int, int, int);
 int fx_spawn_eight_point_effect(int, int, int, int, float, float, float, float, float, float);
 int ai_clear_op_state(void);

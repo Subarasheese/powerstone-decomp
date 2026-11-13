@@ -25,7 +25,7 @@ float math_signed_sqrt(float);
 int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_update_garuda_fan_shot(int a4)
 {
@@ -99,7 +99,7 @@ int fx_update_garuda_fan_shot(int a4)
         } else {
             t43 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t43) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t43) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t43) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 12);
+            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t43) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t43) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 12);
             *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) - ((((struct o20_float *)(a4))->v)));
             *(float *)(((int)stk + 16)) = ((*(float *)(((int)stk + 16))) - ((((struct o24_float *)(a4))->v)));
             *(float *)(((int)stk + 20)) = ((*(float *)(((int)stk + 20))) - ((((struct o28_float *)(a4))->v)));

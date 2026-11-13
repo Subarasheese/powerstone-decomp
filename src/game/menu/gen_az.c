@@ -80,7 +80,7 @@ int FUN_0c0d7a0a(void);
 int FUN_0c0d7a44(int);
 int nlSetLightColor(float, float, float);
 int nlSelectMatrixStack(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(void);
 extern int _quick_evn_mvn();
 extern int _quick_odd_mvn();
@@ -1005,8 +1005,8 @@ int FUN_0c05bbc8(int a4)
         if (((((struct o274_float *)(a4))->v)) > 0.0f) {
             (((struct o3C_float *)(a4))->v) = 0.0f;
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     *(unsigned char *)((a4 + 0x1)) = 0x1;

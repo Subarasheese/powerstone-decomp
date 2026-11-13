@@ -2,7 +2,7 @@
 
 char *obj_create(int a, int b, int c, int d);
 void FUN_0c06233a(char *model, char *palette, int kind);
-void thunk_FUN_0c062242(char *slot, float *pos);
+void thunk_math_mat_get_translate(char *slot, float *pos);
 typedef struct { float x, y, z; } VEC3;
 #define PL(i) ((char *)((unsigned short)((unsigned short)(i) * (unsigned short)0x72D0) + 0xC7E40C4))
 #define B(o, n) (*(signed char *)((o) + (n)))
@@ -68,7 +68,7 @@ void FUN_0c0bf488(char *src, char kind)
         *(char **)(e + 28) = src;
         escale(e, 0.599999964f, 0.599999964f, 0.599999964f);
         pl = PL(B(src, 3));
-        thunk_FUN_0c062242(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 0x160, (float *)(e + 32));
+        thunk_math_mat_get_translate(pl + 0x300 + (short)(B(pl, 0x71F1) * 3520) + 0x160, (float *)(e + 32));
         H(e, 0xEC) = 20;
         break;
     case 2:

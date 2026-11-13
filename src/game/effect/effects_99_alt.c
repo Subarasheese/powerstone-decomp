@@ -19,7 +19,7 @@ int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
 int FUN_0c0e24f0(int);
 extern int _modls();
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_tick_043bdc(int a4)
 {
@@ -70,7 +70,7 @@ int fx_tick_043bdc(int a4)
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4);
             t8 = *(signed char *)((t3 + 0x0));
             t3 = (t3 + 0x1);
-            thunk_FUN_0c062242((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)t8 * (short)0xB0)), (t6 + 0x4));
+            thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)t8 * (short)0xB0)), (t6 + 0x4));
             math_vec3_sub((((int)stk + 0) + 0x8), ((*(int *)((((0x2E0 + a4) + t4) + 0x0))) + 0x4), (((*(int *)(((int)stk + 4))) + 0xB0) + 0xC));
             FUN_0c0e24f0((((int)stk + 0) + 0x8));
             *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) * 30.0f);

@@ -70,7 +70,7 @@ int FUN_0c0cd0de(int, int, int, int);
 int FUN_0c0ce404(int, int, int, int);
 int FUN_0c0d48ea(int);
 int FUN_0c0d51d2(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 extern float _builtin_sqrtf(float);
 int bgm_play_win(void);
 extern int bgm_stop_all();
@@ -1027,8 +1027,8 @@ int FUN_0c0adaa6(int a4)
             (((struct o3C_float *)(a4))->v) = 0.0f;
             stage_type01_spawn_ground_fx(a4);
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     return (signed char)t0;
 }
@@ -1095,8 +1095,8 @@ int FUN_0c0ae682(int a4)
     if ((int)(short)(t0 + 0x1) >= (int)0x78) {
         return obj_set_mode_owner(a4, 0x3, 0x2);
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) + 0xB6);
     *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + 0x16C);
     t0 = *(int *)((a4 + 0x34));
@@ -1149,8 +1149,8 @@ int FUN_0c0adf60(int a4)
         u0 *= -0.5f;
         (((struct o3C_float *)(a4))->v) = u0;
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) + 0xB6);
     *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + 0x16C);
     t0 = *(int *)((a4 + 0x34));
@@ -1174,8 +1174,8 @@ int FUN_0c0ad91c(int a4)
             (((struct o3C_float *)(a4))->v) = 0.0f;
             stage_type01_spawn_ground_fx(a4);
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     return (signed char)t0;
 }
@@ -1196,8 +1196,8 @@ int FUN_0c0adc60(int a4)
             (((struct o3C_float *)(a4))->v) = 0.0f;
             stage_type01_spawn_ground_fx(a4);
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     return (signed char)t0;
 }
@@ -1216,8 +1216,8 @@ int FUN_0c0ad2f2(int a4)
         (((struct o3C_float *)(a4))->v) = 0.0f;
     }
     if ((*(signed char *)((a4 + 0x2D9))) == 0) {
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     }
     return 0x2D9;
 }

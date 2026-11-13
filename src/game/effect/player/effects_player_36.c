@@ -12,7 +12,7 @@ int fx_spawn_039828(int, int);
 int fx_spawn_03b1ec(int, int);
 int FUN_0c0555dc(void);
 int obj_destroy(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 struct Kid { char pad0[0x10]; int field_10; int pad; int field_18; };
 struct Own { char pad0[0x1C]; struct Own *inner; };
 struct Obj {
@@ -140,7 +140,7 @@ void fx_update_state11_pulse(struct Obj *obj)
     *(float *)(child + 0x48) = 1.0f - amp;
     child = *(char **)((char *)obj + 0x2E4);
     *(float *)(child + 0x4C) = 1.0f - amp;
-    FUN_0c0e21b0((int)obj->pos, (int)obj->target);
+    math_vec3_accumulate((int)obj->pos, (int)obj->target);
     for (idx = 0; idx < 2; idx++) {
         obj->kid[idx]->field_10 = obj->kid[idx]->field_10 + 0x1555;
         obj->kid[idx]->field_18 = obj->kid[idx]->field_18 + 0x71C;

@@ -90,7 +90,7 @@ int FUN_0c0d0e50(int, int, int);
 int FUN_0c0d2a70(int);
 int FUN_0c0d2a84(void);
 int FUN_0c0d2d22(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(int);
 int _modlu(int);
 int _quick_evn_mvn(void);
@@ -910,8 +910,8 @@ int item_tick_thrown(int a4)
             (((struct oEC_ushort *)(a4))->v) = 0x0;
             return 0xEC;
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
         t0 = (((struct o2E0_int *)(a4))->v);
         *(unsigned int *)((t0 + 0x10)) = ((*(int *)((t0 + 0x10))) + 0xB6);
         t0 = (((struct o2E0_int *)(a4))->v);
@@ -1285,8 +1285,8 @@ int FUN_0c05bcde(int a4)
             (((struct oEC_ushort *)(a4))->v) = 0x0;
             return 0xEC;
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        t0 = FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        t0 = math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
         *(unsigned int *)((a4 + 0x2C)) = ((*(int *)((a4 + 0x2C))) + 0xB6);
         *(unsigned int *)((a4 + 0x30)) = ((*(int *)((a4 + 0x30))) + 0x16C);
         return t0;

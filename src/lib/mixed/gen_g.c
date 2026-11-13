@@ -198,7 +198,7 @@ int FUN_0c059934(int a4, int a5, int a6, int a7);
 float obj_place_linked_ahead(int a4, int a5, float f4);
 int fx_swirl_create(int a4, int a5);
 int FUN_0c0e393a(int a4);
-int FUN_0c0e51e8(int a4, int a5);
+int snd_bank_check_slot(int a4, int a5);
 int FUN_0c0eae20(int a4, int a5);
 int FUN_0c101148(int a4, int a5);
 int FUN_0c1058e2(int a4, int a5, int a6, int a7, int a8);
@@ -593,7 +593,7 @@ int FUN_0c0e393a(int a4)
     return (*(int *)(((int)stk + 12)));
 }
 
-int FUN_0c0e51e8(int a4, int a5)
+int snd_bank_check_slot(int a4, int a5)
 {
     int stk[7];
     register int t7;

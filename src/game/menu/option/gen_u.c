@@ -80,7 +80,7 @@ int FUN_0c0d0e50(int, int, int, int);
 int FUN_0c0d2424(int);
 int nlLoadMatrix(int);
 int nlSelectMatrixStack(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _modls(int);
 int _quick_odd_mvn(int);
 int conv_s16x4_to_f32(int, int);
@@ -129,9 +129,9 @@ int FUN_0c033390(int a4);
 int FUN_0c0246b2(int a4);
 int FUN_0c01eee0(int a4, int a5, int a6, int a7);
 int FUN_0c02bc0e(int a4);
-int FUN_0c020be0(int a4, int a5, int a6);
+int hit_list_save_positions(int a4, int a5, int a6);
 int FUN_0c028ea0(int a4, int a5, float f4);
-void FUN_0c05ae26(int);
+void item_tick_falling(int);
 int FUN_0c0d0d80(int a4, int a5, int a6, int a7);
 int FUN_0c053dcc(void);
 int FUN_0c09c2ce(void);
@@ -2247,7 +2247,7 @@ int FUN_0c02bc0e(int a4)
     return t1;
 }
 
-int FUN_0c020be0(int a4, int a5, int a6)
+int hit_list_save_positions(int a4, int a5, int a6)
 {
     register int t0;
     register int t1;
@@ -2363,7 +2363,7 @@ int FUN_0c028ea0(int a4, int a5, float f4)
     return 0x58;
 }
 
-void FUN_0c05ae26(int a4)
+void item_tick_falling(int a4)
 {
     register int t0;
     float u0;
@@ -2379,8 +2379,8 @@ void FUN_0c05ae26(int a4)
             obj_set_mode_owner(a4, 0x0, (*(signed char *)((a4 + 0x3))));
     return;
         }
-        FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-        FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+        math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+        math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     return;
     }
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);

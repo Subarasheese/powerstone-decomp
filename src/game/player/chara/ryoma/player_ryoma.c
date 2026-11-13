@@ -31,7 +31,7 @@ int pl_turn_to_opponent(int, int);
 int pl_landed(int);
 int pl_enter_state_27_28(int, int, int, int, int, int);
 int FUN_0c0a3762(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int pl_ryoma_mode04_phase2(int);
 int pl_ryoma_wait_anim_end(int);
 int pl_apply_motion_translation(int);
@@ -191,7 +191,7 @@ int pl_ryoma_mode07_phase1(int a4)
                 pl_enter_state_27_28(a4, 0x3, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4));
                 t41 = *(signed char *)((a4 + 0x3));
                 *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t41) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-                thunk_FUN_0c062242((((((unsigned short)((unsigned short)((-t41) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t41) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 4);
+                thunk_math_mat_get_translate((((((unsigned short)((unsigned short)((-t41) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t41) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (int)stk + 4);
                 fx_spawn_hit_effect((((int)stk + 0) + 0x4), (a4 + 0x2C), (*(signed char *)((a4 + 0x3))), 0x2, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
                 t85 = (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
             }

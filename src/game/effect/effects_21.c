@@ -20,7 +20,7 @@ float math_rand_float(void);
 float math_sin_angle16(int);
 int _modls(int);
 int _modlu(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_035c84(int a4)
 {
@@ -180,7 +180,7 @@ int fx_tick_035c84(int a4, int a5, int a6, int a7)
     v0_5 = *(signed char *)((v0_0 + 0x3));
     v0_4 = *(int *)(((((*(int *)(((int)stk + 8))) << 2) + (0x2E0 + v0_0)) + 0x0));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)) + v0_2), (v0_4 + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + v0_1) + 0x71F1))) * (short)0xDC0)) + v0_2), (v0_4 + 0x4));
     (((struct o90_uint *)(v0_4))->v) = v0_3;
     v0_5 = (*(int *)((((unsigned short)((unsigned short)(*(signed char *)((v0_0 + 0x3))) * (unsigned short)0x72D0) + v0_1) + 0x30)));
     *(int *)((int)stk + 0) = v0_5;

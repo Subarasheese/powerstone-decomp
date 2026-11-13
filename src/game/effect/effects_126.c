@@ -21,7 +21,7 @@ float math_rand_float(void);
 int _modls(int);
 int _modlu(int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_spawn_04a4c4(int a4)
 {
@@ -114,7 +114,7 @@ int fx_tick_04a4c4(int a4)
     v0_2 = (((struct o2FC_int *)(v0_0))->v);
     v0_3 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (v0_2 + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (v0_2 + 0x4));
     (((struct o8_float *)(v0_2))->v) = (((((struct o8_float *)(v0_2))->v)) + 40.0f);
     *(unsigned int *)((v0_2 + 0x14)) = (unsigned short)((*(int *)((v0_2 + 0x14))) + 0xFC00);
     v0_4 = (((struct oEC_short *)(v0_0))->v);
@@ -179,7 +179,7 @@ int fx_tick_04a4c4(int a4)
     FUN_0c06231c(v0_4, 0xC4CFA68, ((*(signed char *)((((*(signed char *)((v0_1 + 0x10))) + (v0_1 + 0x8)) + 0x0))) + 0x65));
     v0_5 = *(signed char *)((v0_0 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (v0_4 + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)v0_5 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x2C0), (v0_4 + 0x4));
     *(int *)((int)stk + 0) = (0x4 + v0_4);
     w0_3 = math_rand_float();
     *(unsigned int *)(((int)stk + 0)) = (0x4 + v0_4);

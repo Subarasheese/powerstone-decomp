@@ -235,7 +235,7 @@ static float iaFscaS(int a)
 }
 int memset(int, int, int);
 int mwRnaErrCallFunc(int, int, int, int);
-int thunk_FUN_0c020cba(void);
+int hit_list_calc_displacement(void);
 int pdVibMxIsReady(int);
 int thunk_FUN_0c0fbcf0(int);
 int mpdrv_set_hreset(void);
@@ -299,7 +299,7 @@ int mpdrv_set_getminfo(int a4, int a5, int a6);
 int mpdrv_set_setcond(int a4, int a5, int a6, int a7);
 int mpdrv_set_arctrl(int a4, int a5);
 int mpdrv_set_ft4ctrl(int a4, int a5);
-int FUN_0c025f50(void);
+int hit_world_calc_displacement(void);
 int obj_release(int a4);
 int FUN_0c062d78(void);
 int pl_mode07_enter(int a4);

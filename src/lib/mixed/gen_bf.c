@@ -146,7 +146,7 @@ int kmiCopyToFrameBuffer(int, int, int, int);
 int mpdrv_dpf(int, int, int, int, int);
 int mpdrv_set_dreset_ns(int);
 extern int _builtin_tas(char *);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int thunk_FUN_0c0fbcf0(int);
 int pl_garuda_mode13_phase0(int a4);
 int kmSetPaletteBankData(int a4, int a5, int a6);

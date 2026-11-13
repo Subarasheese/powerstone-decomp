@@ -25,7 +25,7 @@ int stage_gimmick_36_spawn_b(int);
 int cam_set_priority(int, int);
 int cam_request_mode_with_args(int, int, int, int);
 int _modls(int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int stage_gimmick_36_spawn(int a4)
 {
@@ -115,7 +115,7 @@ int stage_gimmick_36_update(int a4)
     goto L_C0B5172;
     L_C0B5010:;
     *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)(signed char)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_FUN_0c062242((((((unsigned short)((unsigned short)(signed char)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)(signed char)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xB0), (((int)stk + 0) + 0x4));
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)(signed char)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)(signed char)v0_3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xB0), (((int)stk + 0) + 0x4));
     *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) + 30.0f);
     (((struct o20_float *)(v0_0))->v) = (((((struct o20_float *)(v0_0))->v)) + ((((((struct o4_float *)(((int)stk + 0)))->v)) - ((((struct o20_float *)(v0_0))->v))) / 40.0f));
     (((struct o24_float *)(v0_0))->v) = (((((struct o24_float *)(v0_0))->v)) + ((((((struct o8_float *)(((int)stk + 0)))->v)) - ((((struct o24_float *)(v0_0))->v))) / 40.0f));

@@ -7,7 +7,7 @@ int nlSelectMatrixStack(int);
 int nlLoadMatrix(char *);
 void nlStoreMatrix(char *);
 void nlSetTranslate(float *);
-void FUN_0c02ccbc(int, char *, char *, char *);
+void mdl_apply_transform(int, char *, char *, char *);
 
 void mdl_setup_part_matrices(char *model)
 {
@@ -19,7 +19,7 @@ void mdl_setup_part_matrices(char *model)
     if (*(unsigned short *)(model + 6) & 0x1bf) {
         nlUnitMatrix();
         if (*(unsigned short *)(model + 6) & 32) {
-            FUN_0c02ccbc(*(short *)(model + 6) & -2, model + 32, model + 44, model + 80);
+            mdl_apply_transform(*(short *)(model + 6) & -2, model + 32, model + 44, model + 80);
             nlStoreMatrix(model + 108);
             nlLoadMatrix((char *)(0xC7F29F8 + 108));
             nlSetTranslate((float *)(model + 32));
@@ -27,7 +27,7 @@ void mdl_setup_part_matrices(char *model)
         } else {
             if (*(int *)(model + 0x118) != 0)
                 nlLoadMatrix(*(char **)(model + 0x118));
-            FUN_0c02ccbc(*(short *)(model + 6), model + 32, model + 44, model + 80);
+            mdl_apply_transform(*(short *)(model + 6), model + 32, model + 44, model + 80);
         }
         nlStoreMatrix(model + 108);
     }
@@ -41,13 +41,13 @@ void mdl_setup_part_matrices(char *model)
             if (*(unsigned short *)(part + 2) & 32) {
                 nlCalcPoint(part + 4, pt);
                 nlUnitMatrix();
-                FUN_0c02ccbc(*(short *)(part + 2) & -2, part + 4, part + 16, part + 28);
+                mdl_apply_transform(*(short *)(part + 2) & -2, part + 4, part + 16, part + 28);
                 nlStoreMatrix(part + 80);
                 nlLoadMatrix((char *)(0xC7F29F8 + 108));
                 nlSetTranslate(pt);
                 nlMultiMatrix(part + 80);
             } else {
-                FUN_0c02ccbc(*(short *)(part + 2), part + 4, part + 16, part + 28);
+                mdl_apply_transform(*(short *)(part + 2), part + 4, part + 16, part + 28);
             }
             nlStoreMatrix(part + 80);
         }

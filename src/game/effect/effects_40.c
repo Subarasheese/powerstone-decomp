@@ -11,7 +11,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int _quick_odd_mvn(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o2E0_int { char p[0x2E0]; int v; };
 
 
@@ -63,7 +63,7 @@ void fx_spawn_039090(int a4)
             }
         }
         t1 = *(signed char *)((t0 + 0x3));
-        thunk_FUN_0c062242(((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(t0))->v)) + 0x4));
+        thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((((struct o2E0_int *)(t0))->v)) + 0x4));
         t1 = 0x4;
         t2 = 0x1;
         for (;;) {

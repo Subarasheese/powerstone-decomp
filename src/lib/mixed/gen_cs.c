@@ -115,7 +115,7 @@ int FUN_0c0b36bc(int);
 int stage_gimmick_28_spawn_c(int);
 int cam_set_shake_ramp(int, int);
 float math_rand_float(void);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int _divls(void);
 extern int _modls();
 int _modlu(void);

@@ -2,7 +2,7 @@
 
 typedef struct { int x, y, z; } Vec3i;
 extern char *obj_create(int, int, int, int);
-extern int thunk_FUN_0c062242(int, float *);
+extern int thunk_math_mat_get_translate(int, float *);
 extern void FUN_0c06233a(int a, char *b, int c);
 extern float math_cos_angle16(int a);
 extern float math_sin_angle16(int a);
@@ -32,7 +32,7 @@ void fx_spawn_falcon_shot(char *shooter, char throw_type)
     *(float *)(proj + 80) = one;
     shooter_base = (char *)(0xC7E40C4 + (unsigned short)(shooter[3] * 29392));
     slot = (signed char)shooter_base[0x71F1];
-    thunk_FUN_0c062242((int)(shooter_base + 768 + (short)(slot * 3520) + 1408), (float *)(proj + 32));
+    thunk_math_mat_get_translate((int)(shooter_base + 768 + (short)(slot * 3520) + 1408), (float *)(proj + 32));
     for (idx = 0; idx < 2; idx++) {
         *(char *)*(int *)(proj + 736 + idx * 4) = 1;
         *(short *)(*(int *)(proj + 736 + idx * 4) + 2) = 31;

@@ -170,7 +170,7 @@ int nlUnitMatrix(void);
 int search_fat(int, int);
 int set_fat(int, int, int);
 int sprintf(int, int, ...);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
 int vmsio_isready(int);

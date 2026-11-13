@@ -164,7 +164,7 @@ int mpdrv_get_rootplay(int);
 int FUN_0c111c9c(int);
 int adxf_ChkPrmGfr(int, int);
 int memset(int, int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int fx_spawn_03c3ca(int a4, int a5);
 int FUN_0c042980(int a4, int a5);
 int ai_op85_set_goal_stage_table(void);

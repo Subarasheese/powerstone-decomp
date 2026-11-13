@@ -44,7 +44,7 @@ struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int FUN_0c026554(int);
 int FUN_0c0555dc(void);
-int FUN_0c05ae26(int);
+int item_tick_falling(int);
 int FUN_0c05bbc8(int);
 int FUN_0c05bcde(int);
 int FUN_0c05c07a(int);
@@ -74,7 +74,7 @@ int FUN_0c098136(int);
 int FUN_0c0c6424(int, int, int, float);
 int FUN_0c0d7e5e(void);
 int FUN_0c0d7e74(void);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 int fx_spawn_random_burst_sprites(int);
 int fx_tick_model_effect(int);
 int game_reset_objects(void);
@@ -106,7 +106,7 @@ int pl_step_motion(int);
 int snd_play_char_voice(int, int);
 int snd_play_side_se(int, int);
 int stage_gimmick_11_spawn_b(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int FUN_0c05ba30(int a4, int a5, int a6, int a7);
 int FUN_0c0b6c5c(int a4);
 float FUN_0c0af644(int a4);
@@ -193,7 +193,7 @@ int FUN_0c05ba30(int a4, int a5, int a6, int a7)
                         }
                         return FUN_0c05c07a(a4);
                     }
-                    FUN_0c05ae26(a4);
+                    item_tick_falling(a4);
                     return ((int (*)(int, int, int, int))(0xC05BA04))(a4, a5, a6, a7);
                 }
                 obj_tick_owner_projectile(a4);
@@ -222,8 +222,8 @@ int FUN_0c0b6c5c(int a4)
     if (((((struct o274_float *)(a4))->v)) > 0.0f) {
         { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x38)) = *(struct mv3 *)(0xC33C258); }
     }
-    FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-    FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+    math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+    math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
     t2 = *(signed char *)((a4 + 0x8));
     if (t2 != 0) {
         if (t2 != 1) {
@@ -417,7 +417,7 @@ int FUN_0c0bd930(int a4)
         } else {
             t9 = *(signed char *)((a4 + 0x3));
             *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)((-t9) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4);
-            thunk_FUN_0c062242(((((unsigned short)((unsigned short)((-t9) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t9) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
+            thunk_math_mat_get_translate(((((unsigned short)((unsigned short)((-t9) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)((-t9) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (int)stk + 4);
             t14 = 0x0;
             if (((((struct o24_float *)(a4))->v)) > ((*(float *)(((int)stk + 8))) + 0.0f)) {
                 t14 = 0x1;
@@ -476,7 +476,7 @@ int FUN_0c05dc20(int a4, int a5, int a6, int a7)
             if (t0 != 5) {
                 if (t0 != 13) {
                     if (t0 == 16) {
-                        return FUN_0c05ae26(a4);
+                        return item_tick_falling(a4);
                     }
                     return obj_destroy(a4);
                 }
@@ -603,7 +603,7 @@ int FUN_0c05d8c4(int a4)
         if (t0 != 4) {
             if (t0 != 5) {
                 if (t0 == 16) {
-                    return FUN_0c05ae26(a4);
+                    return item_tick_falling(a4);
                 }
                 return obj_destroy(a4);
             }
@@ -642,7 +642,7 @@ int FUN_0c05c118(int a4)
             if (t0 != 5) {
                 if (t0 != 14) {
                     if (t0 == 16) {
-                        return FUN_0c05ae26(a4);
+                        return item_tick_falling(a4);
                     }
                     return obj_destroy(a4);
                 }
@@ -690,7 +690,7 @@ int FUN_0c05eb84(int a4)
             }
             return FUN_0c05ed92(a4);
         }
-        return FUN_0c05ae26(a4);
+        return item_tick_falling(a4);
     }
     t0 = *(signed char *)((a4 + 0x8));
     if (t0 != 0) {

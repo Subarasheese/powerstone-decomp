@@ -95,7 +95,7 @@ int kmiBGPlanePutColor(int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
 int kmiWriteRegister(int, int);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int fx_spawn_12(int a4, int a5, int a6, float f4);
 int fx_tick_0588d8(int a4, int a5, int a6, int a7);
 int FUN_0c0f5238(int a4, int a5, int a6, int a7);

@@ -3,7 +3,7 @@
 int fx_spawn_hit_effect(float *, int, int, int);
 int pl_start_motion(int, int, int);
 int pl_start_motion_owner(int, int, int);
-int thunk_FUN_0c062242(int, float *);
+int thunk_math_mat_get_translate(int, float *);
 struct Vec3 { float x, y, z; };
 struct ActorObj {
     char pad_00[3];
@@ -29,7 +29,7 @@ void FUN_0c08c4ca(struct ActorObj *actor)
     *(struct Vec3 *)(actor->owner + 0x20) = actor->pos;
     *(unsigned *)(actor->owner + 0x30) = (unsigned short)(actor->yaw + 0x8000);
     pl = (unsigned char *)(0xC7E40C4 + (unsigned short)((unsigned short)actor->stage * 0x72D0));
-    thunk_FUN_0c062242((int)(pl + 0x300 + (short)((short)(signed char)pl[0x71F1] * 0xDC0) + 0x840), (float *)&spawn);
+    thunk_math_mat_get_translate((int)(pl + 0x300 + (short)((short)(signed char)pl[0x71F1] * 0xDC0) + 0x840), (float *)&spawn);
     fx_spawn_hit_effect((float *)&spawn, (int)actor + 0x2C, actor->stage, 1);
     pl_start_motion_owner((int)actor->owner, 4, 0x37);
     owner_obj = actor->owner;

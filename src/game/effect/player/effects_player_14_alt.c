@@ -22,7 +22,7 @@ float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
 int _modlu(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 
 int fx_update_jack_projectile(int a4)
 {
@@ -121,7 +121,7 @@ int fx_update_jack_projectile(int a4)
                 } else {
                     t7 = *(signed char *)(((*(int *)(((*(int *)((a4 + 0x1C))) + 0x1C))) + 0x3));
                     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4);
-                    thunk_FUN_0c062242(((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 4) + 0x4));
+                    thunk_math_mat_get_translate(((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t7 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)), (((int)stk + 4) + 0x4));
                     u10 = (((struct o20_float *)(a4))->v);
                     u11 = *(float *)(((int)stk + 8));
                     u12 = (((struct o24_float *)(a4))->v);

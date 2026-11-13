@@ -4,7 +4,7 @@ typedef struct { int a, b, c; } vec12;
 extern char *obj_create(int, int, int, int);
 extern char g_players[];
 extern char g_spr_bank_player_fx[];
-extern void thunk_FUN_0c062242(char *, char *);
+extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(char *, int);
 extern void FUN_0c06233a(char *, char *, int);
 extern void FUN_0c0c5920(void);
@@ -26,7 +26,7 @@ char *FUN_0c0c571c(char *fighter, char marker_kind)
     slot[5] = (fighter[3] != 0) ? 4 : 2;
     *(void (**)(void))(slot + 16) = FUN_0c0c5920;
     rec = g_players + (unsigned short)((unsigned short)fighter[3] * 0x72D0);
-    thunk_FUN_0c062242(rec + 0x300 + (short)(rec[0x71F1] * 3520) + 1408, slot + 32);
+    thunk_math_mat_get_translate(rec + 0x300 + (short)(rec[0x71F1] * 3520) + 1408, slot + 32);
     *(vec12 *)(slot + 44) = *(vec12 *)(fighter + 44);
     *(char **)(slot + 28) = fighter;
     slot[4] = marker_kind;

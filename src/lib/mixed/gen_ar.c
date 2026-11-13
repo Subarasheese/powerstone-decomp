@@ -72,7 +72,7 @@ int hit_world_reset(void);
 int FUN_0c025706(void);
 int FUN_0c025d10(void);
 int FUN_0c025f38(void);
-int FUN_0c025f50(void);
+int hit_world_calc_displacement(void);
 int hit_dispatch_shape_pair(int, int, int, int);
 float FUN_0c02649a(int, int);
 int fx_spawn_03c904(int, int);
@@ -83,8 +83,8 @@ int game_reset_objects(void);
 int obj_create(int, int, int);
 int obj_destroy(int);
 int pl_adjust_power_gauge(int);
-int FUN_0c05aee4(int);
-int FUN_0c05af40(int);
+int item_free_init(int);
+int item_free_update(int);
 int res_player_entry_release(int);
 int res_cockpit_face_release(int);
 int res_pl_textures_release(int);
@@ -323,7 +323,7 @@ int item_director_phase0(int a4);
 int FUN_0c0d479e(void);
 int FUN_0c0d7a7c(void);
 int FUN_0c0d7a9c(void);
-float FUN_0c0e21b0(int a4, int a5);
+float math_vec3_accumulate(int a4, int a5);
 float FUN_0c0e2240(int a4, int a5);
 float FUN_0c0e2390(int a4, int a5, int a6);
 int nlRotateAxe(int a4, int a5);
@@ -425,7 +425,7 @@ int FUN_0c026554(int a4);
 int FUN_0c055634(void);
 int FUN_0c054a78(void);
 int FUN_0c05d1d0(int a4);
-int FUN_0c05aeca(int a4);
+int item_tick_free(int a4);
 void math_vec3i_add(int a4, int a5, int a6);
 void math_vec3i_sub(int a4, int a5, int a6);
 int pl_falcon_attack_kind57(int a4);
@@ -802,7 +802,7 @@ int FUN_0c115416(int a4, int a5, int a6, int a7)
     return 0x118;
 }
 
-float FUN_0c0e21b0(int a4, int a5)
+float math_vec3_accumulate(int a4, int a5)
 {
     register float u0;
     register float u1;

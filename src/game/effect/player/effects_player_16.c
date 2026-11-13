@@ -4,7 +4,7 @@ typedef struct { int x, y, z; } vec3i;
 extern char *obj_create(int, int, int, int);
 extern char g_players[];
 extern char g_spr_bank_player_fx[];
-extern void thunk_FUN_0c062242(char *, char *);
+extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(char *, int);
 extern void FUN_0c06233a(char *, char *, int);
 extern float math_signed_sqrt(float);
@@ -37,7 +37,7 @@ void fx_spawn_gunrock_spark(char *owner, char mode)
     *(float *)(spark + 84) = 1.0f;
     *(float *)(spark + 80) = 1.0f;
     target = g_players + (unsigned short)((unsigned short)owner[3] * 0x72D0);
-    thunk_FUN_0c062242(target + 0x300 + (short)(target[0x71F1] * 3520) + 1408, spark + 32);
+    thunk_math_mat_get_translate(target + 0x300 + (short)(target[0x71F1] * 3520) + 1408, spark + 32);
     spark[0x101] = 1;
     spark[0x102] = 1;
     obj_set_record_char(spark, 113);
@@ -54,7 +54,7 @@ void fx_spawn_gunrock_spark(char *owner, char mode)
         *(int *)(spark + 44) = (unsigned short)(*(int *)(spark + 44) + 0xF8E4);
     } else if (mode == 1) {
         target = g_players + (unsigned short)((unsigned short)(1 - spark[3]) * 0x72D0);
-        thunk_FUN_0c062242(target + 0x300 + (short)(target[0x71F1] * 3520), (char *)delta);
+        thunk_math_mat_get_translate(target + 0x300 + (short)(target[0x71F1] * 3520), (char *)delta);
         delta[1] = delta[1] - *(float *)(spark + 36);
         delta[0] = delta[0] - *(float *)(spark + 32);
         delta[2] = delta[2] - *(float *)(spark + 40);

@@ -2,7 +2,7 @@
 
 /* named globals (symbols.txt) */
 int FUN_0c021238(int a4, int a5, int a6, int a7);
-int FUN_0c020be0(int a4, int a5, int a6, int a7);
+int hit_list_save_positions(int a4, int a5, int a6, int a7);
 int FUN_0c0207ca(int a4, int a5, int a6, int a7);
 int FUN_0c02067e(int a4, int a5, int a6, int a7);
 extern char g_obj_list_heads[];
@@ -13,7 +13,7 @@ int hit_world_reset(void);
 int FUN_0c025706(void);
 int FUN_0c025d10(void);
 int FUN_0c025f38(void);
-int FUN_0c025f50(void);
+int hit_world_calc_displacement(void);
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 struct oC_float { char p[0xC]; float v; };
@@ -84,7 +84,7 @@ int hit_world_step(void)
     FUN_0c025706();
     FUN_0c025d10();
     FUN_0c025f38();
-    return FUN_0c025f50();
+    return hit_world_calc_displacement();
 }
 
 int FUN_0c0203f6(void)
@@ -348,7 +348,7 @@ float FUN_0c020a80(int a4, float f4)
 }
 
 
-int thunk_FUN_0c020cba(int a4)
+int hit_list_calc_displacement(int a4)
 {
     register int t1;
     register int t0;

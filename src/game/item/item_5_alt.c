@@ -27,9 +27,9 @@ extern float math_sin_angle16(int);
 extern int FUN_0c0ac5c4(char *);
 extern char FUN_0c026554(char *);
 extern void obj_set_mode_owner(char *, int, int);
-extern void FUN_0c0e21b0(char *, char *);
+extern void math_vec3_accumulate(char *, char *);
 extern void obj_destroy(char *);
-extern void thunk_FUN_0c062242(int, float *);
+extern void thunk_math_mat_get_translate(int, float *);
 extern void FUN_0c0c07bc(char *, float *, float *, int, float);
 
 int FUN_0c05b9a4(int a4)
@@ -81,7 +81,7 @@ void obj_tick_owner_projectile(char *obj)
         *(struct v3 *)vec_a = *(struct v3 *)(obj + 32);
         other_player = (char *)0xC7E40C4 + (unsigned short)((unsigned short)(1 - owner[3]) * (unsigned short)0x72D0);
         variant = *(signed char *)(other_player + 0x71F1);
-        thunk_FUN_0c062242((int)(other_player + 0x300 + 0x2C0 + (short)(variant * 3520)), vec_b);
+        thunk_math_mat_get_translate((int)(other_player + 0x300 + 0x2C0 + (short)(variant * 3520)), vec_b);
         FUN_0c0c07bc(obj + 56, vec_a, vec_b, *(int *)(owner + 48), scale);
         *(struct v3 *)(obj + 68) = *(struct v3 *)0xC336298;
         return;
@@ -95,8 +95,8 @@ void obj_tick_owner_projectile(char *obj)
             return;
         }
         *(int *)(obj + 0x2C) = *(int *)(obj + 0x2C) + 910;
-        FUN_0c0e21b0(obj + 32, obj + 56);
-        FUN_0c0e21b0(obj + 56, obj + 68);
+        math_vec3_accumulate(obj + 32, obj + 56);
+        math_vec3_accumulate(obj + 56, obj + 68);
         return;
     case 2:
         obj_destroy(obj);

@@ -7,7 +7,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_destroy(int);
 int obj_set_record(int, int);
 int fx_calc_orbit_position(int, int, float);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 
 int fx_update_06(int a4, float f4)
 {
@@ -35,9 +35,9 @@ int fx_update_06(int a4, float f4)
                         obj_set_record(a4, 0xB);
                     }
                     (((struct oEE_ushort *)(a4))->v) = (((((struct oEE_short *)(a4))->v)) + 0x1);
-                    return FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
+                    return math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
                 }
-                return FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
+                return math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
             }
             t0 = *(signed char *)((a4 + 0x8));
             *(unsigned char *)((a4 + 0x8)) = (t0 + 0x1);

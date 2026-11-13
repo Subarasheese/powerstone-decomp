@@ -26,7 +26,7 @@ int obj_set_record(int, int);
 int snd_play_side_se(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e21b0(int, int);
+int math_vec3_accumulate(int, int);
 extern int _quick_odd_mvn();
 
 int fx_spawn_07(int a4, int a5, int a6)
@@ -106,8 +106,8 @@ int fx_update_07(int a4, int a5, int a6, int a7)
                 t0 = (((struct o2E4_int *)(a4))->v);
                 (((struct o24_float *)(t0))->v) = (((((struct o24_float *)(t0))->v)) + 0.199999988f);
             }
-            FUN_0c0e21b0((a4 + 0x20), (a4 + 0x38));
-            return FUN_0c0e21b0((a4 + 0x38), (a4 + 0x44));
+            math_vec3_accumulate((a4 + 0x20), (a4 + 0x38));
+            return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
         }
     }
     fx_spawn_with_params((a4 + 0x20), 1.0f, 1.0f, 1.0f, 1.0f);

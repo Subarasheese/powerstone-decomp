@@ -7,7 +7,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 extern int _quick_odd_mvn();
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
@@ -46,7 +46,7 @@ int fx_spawn_03de24(int a4)
         (((struct o20_float *)(t1))->v) = u0;
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x44)) = *(struct mv3 *)(0xC149814); }
         t2 = *(signed char *)((a4 + 0x3));
-        return thunk_FUN_0c062242((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xA50), (t1 + 0x4));
+        return thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0xA50), (t1 + 0x4));
     }
     return t0;
 }

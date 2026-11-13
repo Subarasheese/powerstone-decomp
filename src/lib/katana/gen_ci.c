@@ -107,7 +107,7 @@ int buCalcCRC(int, int, int, int);
 int memcpy(int, int, int);
 int memset(int, int, int);
 int nlUnitMatrix(void);
-int thunk_FUN_0c062242(int, int);
+int thunk_math_mat_get_translate(int, int);
 int game_draw_frame(void);
 float FUN_0c097c26(int a4);
 int FUN_0c0c9b08(int a4);

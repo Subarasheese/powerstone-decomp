@@ -11,7 +11,7 @@
 /* the joint matrix n of fighter f, in the block of its power form */
 #define JOINT(f, n) ((char *)(f) + 0x300 + (short)((signed char)(f)->power_form * 3520) + (short)((n) * 176))
 
-void thunk_FUN_0c062242(char *joint, float *pos);   /* position of a joint */
+void thunk_math_mat_get_translate(char *joint, float *pos);   /* position of a joint */
 
 /* moves the record one frame toward the goals of key k */
 void cam_compute_follow(CamRecord *c, CamKey *k)
@@ -274,11 +274,11 @@ void cam_compute_follow(CamRecord *c, CamKey *k)
         break;
     case 7:
         s.pl = FIGHTER(c->target);
-        thunk_FUN_0c062242(JOINT(s.pl, k->u.orbit.pitch), &c->look[CAM_GOAL].x);
+        thunk_math_mat_get_translate(JOINT(s.pl, k->u.orbit.pitch), &c->look[CAM_GOAL].x);
         break;
     case 8:
         s.pl = FIGHTER(1 - c->target);
-        thunk_FUN_0c062242(JOINT(s.pl, k->u.orbit.pitch), &c->look[CAM_GOAL].x);
+        thunk_math_mat_get_translate(JOINT(s.pl, k->u.orbit.pitch), &c->look[CAM_GOAL].x);
         break;
     }
     c->look[CAM_CUR].x = c->look[CAM_CUR].x + (float)((short)(int)(c->look[CAM_GOAL].x - c->look[CAM_CUR].x) / (k->u.orbit.look_div + 1));

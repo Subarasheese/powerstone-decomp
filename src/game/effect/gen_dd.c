@@ -2,7 +2,7 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 int FUN_0c0555dc(void);
-int FUN_0c05ae26(int);
+int item_tick_falling(int);
 int FUN_0c05e20c(int);
 int FUN_0c05e3b8(int);
 int FUN_0c05e4ec(int);
@@ -60,7 +60,7 @@ int FUN_0c05e118(int a4)
             if (t0 != 5) {
                 if (t0 != 14) {
                     if (t0 == 16) {
-                        return FUN_0c05ae26(a4);
+                        return item_tick_falling(a4);
                     }
                     return obj_destroy(a4);
                 }
