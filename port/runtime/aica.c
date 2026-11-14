@@ -475,6 +475,7 @@ static void arm_reset(void)
 
 struct channel {
     int playing;
+    int keyed;               /* the key state KYONB last set: a channel whose sample ended stays keyed until KYONB drops */
     uint32_t sa, cur, frac;  /* start address, current sample and fraction (16.16) */
     int fmt, loop;
     int16_t sample, prev;
@@ -695,12 +696,18 @@ static void reg_write(uint32_t off, uint32_t v, int size)
         int c = off / 0x80, i = (off % 0x80) / 4;
         set_reg16(off, (uint16_t)(i == 0 ? v & 0x7FFF : v));
         if (i == 0 && (v & 0x8000)) { /* KYONEX: every channel keys on or off by its KYONB */
+            /* the AICA acts on a change of the key state, not on the bit alone: a channel that is keyed and whose
+               sample has run out is not started again by the next KYONEX (another sound's key-on writes it for every
+               channel), or every finished sound would replay each time one starts */
             for (int k = 0; k < 64; k++) {
-                if (CREG(k, 0) & 0x4000) {
-                    if (!ch[k].playing || ch[k].env_state == 3)
-                        key_on(k);
-                } else
+                int want = (CREG(k, 0) & 0x4000) != 0;
+                if (want && !ch[k].keyed) {
+                    ch[k].keyed = 1;
+                    key_on(k);
+                } else if (!want && ch[k].keyed) {
+                    ch[k].keyed = 0;
                     key_off(k);
+                }
             }
         }
         (void)c;

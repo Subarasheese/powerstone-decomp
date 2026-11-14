@@ -163,13 +163,17 @@ static void read_controller(void)
         if (on & PDD_DGT_KU) y = -128;
         if (on & PDD_DGT_KD) y = 127;
     }
-    /* --press N: Start held for 10 frames from frame N (and A from N + 120), to test the input path unattended */
+    /* --press N: Start held for 10 frames from frame N (A from N + 120, Start again from N + 900 for the pause menu, then down), to test the input path unattended */
     extern unsigned long port_press_frame, port_frames;
     if (port_press_frame) {
         if (port_frames >= port_press_frame && port_frames < port_press_frame + 10)
             on |= PDD_DGT_ST;
         if (port_frames >= port_press_frame + 120 && port_frames < port_press_frame + 130)
             on |= PDD_DGT_TA;
+        if (port_frames >= port_press_frame + 900 && port_frames < port_press_frame + 910) /* Start in the fight: the pause menu */
+            on |= PDD_DGT_ST;
+        if (port_frames >= port_press_frame + 1000 && port_frames < port_press_frame + 1010)
+            on |= PDD_DGT_KD;
     }
     x = x < -128 ? -128 : x > 127 ? 127 : x;
     y = y < -128 ? -128 : y > 127 ? 127 : y;

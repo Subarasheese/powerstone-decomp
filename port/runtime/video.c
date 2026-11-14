@@ -537,6 +537,11 @@ void sprite_draw(uint32_t req)
     if (getenv("PORT_DEBUG"))
         fprintf(stderr, "sprite id %d rec %d tcw %08X tex %s %gx%g\n", id, rec_i, U32(rec + 0xC), t ? "yes" : "no", tw, th);
     float x = F32(req + 4), y = F32(req + 8), z = F32(req + 12);
+    /* the menus (key configuration, the pause menu) give z of 2e-6 to 5e-6: in front of everything, the HUD (z 7) included.
+       The PowerVR does not clip a 2D sprite for that, but the vertex shader treats z as W and clips below 0.1, so such a
+       sprite vanished. Lifted to just past the clip it keeps its order against the others (smaller z is nearer). */
+    if (z < 0.1f)
+        z = 0.1f + (z > 0.0f ? z : 0.0f);
     float sx = F32(req + 16), sy = F32(req + 20);
     float u0 = F32(req + 24), v0 = F32(req + 28), u1 = F32(req + 32), v1 = F32(req + 36);
     int32_t angle = I32(req + 40);
