@@ -59,7 +59,7 @@ int FUN_0c01e65e(int, int, int);
 int FUN_0c01e6b4(int);
 int FUN_0c01e75e(int, int);
 int FUN_0c0209c6(int, float);
-int FUN_0c02114c(int, int, int, int, float, float, float, float);
+int math_dir_xz_normalized(int, int, int, int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int FUN_0c0a3eec(int);
 int FUN_0c0a3fa4(int, int);
@@ -98,7 +98,7 @@ int pl_angle_to_opponent(int);
 int pl_stick_dir_angle(int);
 int snd_play_side_se(int, int);
 int thunk_math_mat_get_translate(int, int);
-int FUN_0c01d336(int, int, int, int, float, float, float, float, float, float, float);
+int pause_menu_update(int, int, int, int, float, float, float, float, float, float, float);
 int FUN_0c021e20(int a4, int a5, int a6, int a7);
 int pl_detect_special_input(int a4, int a5);
 int FUN_0c0215b8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7);
@@ -111,7 +111,7 @@ int FUN_0c015fda(int a4);
 int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int FUN_0c09f2e2(int a4);
 
-int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
+int pause_menu_update(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
 {
     int stk[7];
 
@@ -469,7 +469,7 @@ int FUN_0c021e20(int a4, int a5, int a6, int a7)
     if (((*(signed char *)((v0_1 + 0x2D9))) == 0)) goto L_C021EFC;
     goto L_C02220C;
     L_C021EFC:;
-    FUN_0c02114c(((int)stk + 0), v0_6, v0_7, v0_8, (*(float *)((v0_5 + 0x0))), ((((struct o8_float *)(v0_5))->v)), (*(float *)((v0_4 + 0x0))), ((((struct o8_float *)(v0_4))->v)));
+    math_dir_xz_normalized(((int)stk + 0), v0_6, v0_7, v0_8, (*(float *)((v0_5 + 0x0))), ((((struct o8_float *)(v0_5))->v)), (*(float *)((v0_4 + 0x0))), ((((struct o8_float *)(v0_4))->v)));
     w0_3 = *(float *)((v0_0 + 0x0));
     w0_0 = (2.0f);
     w0_1 = (w0_3);
@@ -983,7 +983,7 @@ int FUN_0c0215b8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     goto L_C0217F0;
     L_C021682:;
     if ((!(w0_4 > w0_3))) goto L_C0216B0;
-    FUN_0c02114c((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
+    math_dir_xz_normalized((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
     v0_0 = (0x2D9);
     if (((*(signed char *)((v0_4 + 0x2D9))) != 0)) goto L_C021730;
     if (((*(signed char *)((v0_5 + v0_0))) != 0)) goto L_C02175C;
@@ -1011,7 +1011,7 @@ int FUN_0c0215b8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     w0_0 = (5.0f);
     if ((!(((((struct o4_float *)(v0_7))->v)) > ((((struct o4_float *)(v0_6))->v))))) goto L_C02170A;
     if (((*(signed char *)((v0_5 + 0x2DA))) == 0)) goto L_C0216EE;
-    FUN_0c02114c((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
+    math_dir_xz_normalized((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
     if ((!(w0_3 > w0_0))) goto L_C0216DC;
     w0_3 = (w0_0);
     L_C0216DC:;
@@ -1028,7 +1028,7 @@ int FUN_0c0215b8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     goto L_C0217F0;
     L_C02170A:;
     if (((*(signed char *)((v0_4 + 0x2DA))) == 0)) goto L_C0217D6;
-    FUN_0c02114c((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
+    math_dir_xz_normalized((((int)stk + 0) + 0x18), v0_0, v0_1, v0_2, (*(float *)((v0_6 + 0x0))), ((((struct o8_float *)(v0_6))->v)), (*(float *)((v0_7 + 0x0))), ((((struct o8_float *)(v0_7))->v)));
     if ((!(w0_3 > w0_0))) goto L_C021728;
     w0_3 = (w0_0);
     L_C021728:;

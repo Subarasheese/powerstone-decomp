@@ -73,9 +73,9 @@ struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int FUN_0c01d304(int);
+int pause_menu_init(int);
 int FUN_0c01d328(void);
-int FUN_0c01d336(int, int, int);
+int pause_menu_update(int, int, int);
 int FUN_0c01d924(void);
 extern int FUN_0c02c95c();
 int FUN_0c0419a8(int, int);
@@ -1068,14 +1068,14 @@ int game_play_step(void)
                         if (((unsigned char)(*(signed char *)0xC7F2EE2) - 0x1) != 0) {
                             t13 = 0x1;
                         }
-                        FUN_0c01d304(t13);
+                        pause_menu_init(t13);
                         (((struct o0_uint *)0xC7F3028)->v) = 0x1;
                     } else {
                         t20 = 0xC7F2EE1;
                         t21 = 0xC7F2EE0;
                         t22 = 0xC494AF8;
                     }
-                    t24 = FUN_0c01d336(t20, t21, t22);
+                    t24 = pause_menu_update(t20, t21, t22);
                     switch (t24) {
                     case 0:
                         break;

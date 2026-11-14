@@ -8,7 +8,7 @@ extern char g_save_options[];
 typedef struct { char pad[0xbc]; V a; char pad2[0xec-0xc8]; V b; } G;
 extern G g_cam_records[];
 extern V t335f70[], t336048[];
-extern void FUN_0c0e24f0(V *);
+extern void math_vec3_normalize_fast(V *);
 extern float FUN_0c0e2220(V *, V *);
 extern void ui_draw_world_number(V *, int, int, int);
 extern char _quick_odd_mvn;
@@ -19,11 +19,11 @@ void item_draw_marker(P *p)
         b.x = g_cam_records[0].b.x - g_cam_records[0].a.x;
         b.y = g_cam_records[0].b.y - g_cam_records[0].a.y;
         b.z = g_cam_records[0].b.z - g_cam_records[0].a.z;
-        FUN_0c0e24f0(&b);
+        math_vec3_normalize_fast(&b);
         a.x = p->pos.x - g_cam_records[0].a.x;
         a.y = p->pos.y - g_cam_records[0].a.y;
         a.z = p->pos.z - g_cam_records[0].a.z;
-        FUN_0c0e24f0(&a);
+        math_vec3_normalize_fast(&a);
         if (FUN_0c0e2220(&b, &a) < 0.0f) return;
         if (p->o) {
             c = p->o->pos;

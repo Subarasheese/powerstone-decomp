@@ -780,7 +780,7 @@ void cam_mode_27_debug_free(CamRecord *c)
                 d.z = 9.99999975e-05f;
                 d.x = 9.99999975e-05f;
             }
-            FUN_0c0e24f0(&d);
+            math_vec3_normalize_fast(&d);
             pad = g_debug_pad;
             f5 = d.z * 10.0f;
             if (pad & 0x40) {

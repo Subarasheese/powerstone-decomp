@@ -221,7 +221,7 @@ int FUN_0c0865c0(int a4);
 int FUN_0c0734a8(int a4);
 int FUN_0c081940(int a4);
 int FUN_0c089938(int a4);
-int FUN_0c0a4fea(void);
+int menu_check_start_for_mode(void);
 int FUN_0c065214(int a4);
 int FUN_0c07d8ca(int a4);
 int FUN_0c079a5c(int a4);
@@ -1779,7 +1779,7 @@ int FUN_0c089938(int a4)
     return 0xEC;
 }
 
-int FUN_0c0a4fea(void)
+int menu_check_start_for_mode(void)
 {
     register int t0;
     register int t1;

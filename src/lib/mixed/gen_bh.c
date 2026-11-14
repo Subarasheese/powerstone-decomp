@@ -143,7 +143,7 @@ int nlRotateAxeSC(int, float, float);
 int math_vec3_accumulate(int, int);
 float FUN_0c0e2220(int, int);
 int FUN_0c0e2260(int, int, int);
-float FUN_0c0e24f0(int);
+float math_vec3_normalize_fast(int);
 int _divls(void);
 int _modlu(void);
 extern int _quick_evn_mvn();
@@ -253,7 +253,7 @@ int nlRotateV(int a4, int a5)
 
     *(unsigned int *)(((int)stk + 0)) = a5;
     FUN_0c0e2260(a4, a5, (((int)stk + 0) + 0x4));
-    t1 = FUN_0c0e24f0((((int)stk + 0) + 0x4));
+    t1 = math_vec3_normalize_fast((((int)stk + 0) + 0x4));
     t3 = FUN_0c0e2220(a4, (*(int *)(((int)stk + 0))));
     if (t1 != 0.0f) {
         t13 = (nlRotateAxeSC((((int)stk + 0) + 0x4), t1, t3));

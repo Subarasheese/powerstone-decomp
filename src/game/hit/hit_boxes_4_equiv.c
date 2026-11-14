@@ -20,7 +20,7 @@ extern void conv_s16x5_to_f32(int, Rec10 *);
 void math_mat_get_translate(char *m, float *offset_vec);
 void math_mat_transform_vector(float *vec, char *m);
 struct o0_float { float v; };
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int FUN_0c0210f4(int, int, int);
 struct o14_float { char p[0x14]; float v; };
 
@@ -365,7 +365,7 @@ int hit_part_pair_overlap(int a4, int a5, int a6, float f4)
                 *(float *)(((int)stk + 20)) = u25;
                 *(float *)(((int)stk + 12)) = u25;
             }
-            FUN_0c0e24f0((((int)stk + 0) + 0xC));
+            math_vec3_normalize_fast((((int)stk + 0) + 0xC));
             u29 = (((struct o8_float *)0xC023468)->v);
             u34 = (*(float *)((a4 + 0x0)));
             u34 = u34 + (*(float *)(((int)stk + 12))) * ((((((struct oC_float *)(a4))->v)) - (((u2 + u3) - t16) / u29)));

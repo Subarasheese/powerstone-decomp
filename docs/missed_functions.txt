@@ -374,7 +374,7 @@ F 0c097bb0 0 FUN_0c097bb0
 F 0c0986e6 0 FUN_0c0986e6
 F 0c09eae0 0 FUN_0c09eae0
 F 0c09eb04 0 FUN_0c09eb04
-F 0c0a4fea 0 FUN_0c0a4fea
+F 0c0a4fea 0 menu_check_start_for_mode
 F 0c0a5598 0 FUN_0c0a5598
 F 0c0a55c6 0 FUN_0c0a55c6
 F 0c0a5612 0 FUN_0c0a5612

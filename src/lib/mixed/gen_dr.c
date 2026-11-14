@@ -63,7 +63,7 @@ struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 struct o0_uint { unsigned int v; };
 struct o20_int { char p[0x20]; int v; };
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int FUN_0c02b884(int);
 int fx_scroll_model_uv(int);

@@ -23,7 +23,7 @@ void cam_mode_00_variant2(CamRecord *c)
         dir.z = 9.99999975e-05f;
         dir.x = 9.99999975e-05f;
     }
-    FUN_0c0e24f0(&dir);
+    math_vec3_normalize_fast(&dir);
     eye.x = eye.x + 800.0f * dir.x;
     eye.z = eye.z + 800.0f * dir.z;
     eye.y = eye.y + 800.0f * dir.y;

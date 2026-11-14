@@ -64,13 +64,13 @@ int snd_play_side_se(int, int);
 int vmu_menu_draw_buttons(void);
 int vmu_menu_pad_pressed(int);
 int vmu_menu_update_objs(int, int, int, int);
-int FUN_0c0d57a4(int a4, int a5, int a6, int a7);
+int game_pad_update(int a4, int a5, int a6, int a7);
 int FUN_0c0d6a56(int a4);
 int FUN_0c01e860(int a4, int a5, int a6, int a7);
 int FUN_0c05b18c(int a4, float f4);
 int pl_turn_to_opponent(int a4, int a5);
 
-int FUN_0c0d57a4(int a4, int a5, int a6, int a7)
+int game_pad_update(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;

@@ -28,7 +28,7 @@ int FUN_0c042980(int, int);
 int obj_destroy(int);
 int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int _modls(int);
 int thunk_math_mat_get_translate(int, int);
 
@@ -58,7 +58,7 @@ int fx_tick_046360(int a4)
         *(unsigned int *)(((int)stk + 0)) = ((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4);
         thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t4 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x160), (t3 + 0x4));
         math_vec3_sub((((int)stk + 0) + 0x4), (((((struct o2E0_int *)(a4))->v)) + 0x4), 0xC7F2AB4);
-        FUN_0c0e24f0((((int)stk + 0) + 0x4));
+        math_vec3_normalize_fast((((int)stk + 0) + 0x4));
         *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) * 30.0f);
         *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) * 30.0f);
         *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) * 30.0f);

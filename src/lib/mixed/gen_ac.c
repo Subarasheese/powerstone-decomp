@@ -157,7 +157,7 @@ int nlScale(float, float, float);
 int nlScaleV(int);
 int nlTranslateV(int);
 int nlUnitMatrix(void);
-int FUN_0c0e24f0(int, int, int, float, float, float, float);
+int math_vec3_normalize_fast(int, int, int, float, float, float, float);
 int syRtcDbgWriteLog(int);
 int _modls(int);
 int _quick_evn_mvn(int);

@@ -153,7 +153,7 @@ float math_cos_angle16(int);
 int math_rand_next(void);
 float math_sin_angle16(int);
 float FUN_0c0e2220(int, int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int _modls(void);
 int _quick_odd_mvn(float);
 int FUN_0c0f2292(int);

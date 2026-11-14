@@ -98,7 +98,7 @@ extern int vmu_menu_update_objs();
 int vmu_menu_pad_pressed(int);
 int FUN_0c01fe52(int);
 int FUN_0c0210f4(int, int, int);
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int hit_find_part_entry(int, int, int, int);
 int ui_draw_text_stub(void);

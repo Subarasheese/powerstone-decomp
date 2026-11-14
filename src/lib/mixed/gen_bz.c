@@ -32,7 +32,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int FUN_0c08c198(int, int, int, int);
-int FUN_0c0a4fea(void);
+int menu_check_start_for_mode(void);
 int FUN_0c0ad1fa(int);
 int FUN_0c0ae4c0(int, int, int, int);
 int FUN_0c0d60e2(int);
@@ -246,7 +246,7 @@ int FUN_0c0a5cb8(int a4, int a5, int a6, int a7)
     } else {
         menu_vs_intro_step();
     }
-    return FUN_0c0a4fea();
+    return menu_check_start_for_mode();
 }
 
 int FUN_0c07fc34(int a4)
