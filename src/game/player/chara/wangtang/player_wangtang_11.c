@@ -7,7 +7,7 @@ typedef struct T {
 extern void pl_step_motion(T *), pl_apply_motion_translation(T *), pl_step_motion_owner(T *), snd_play_char_voice(T *, int);
 extern void pl_apply_velocity(T *), pl_apply_acceleration(T *), cam_set_shake_ramp(int, int), obj_set_owner_hit_record(T *, int), obj_force_owner_state27(T *, int), FUN_0c09c45a(T *), pl_start_motion(T *, int, int);
 extern char pl_landed(T *, float);
-extern void FUN_0c071b94(T *);
+extern void pl_wangtang_special2_phase2(T *);
 void pl_wangtang_special2_phase1(T *p)
 {
     pl_step_motion(p);
@@ -20,10 +20,10 @@ void pl_wangtang_special2_phase1(T *p)
     } else {
         p->b10++;
         snd_play_char_voice(p->o, 12);
-        FUN_0c071b94(p);
+        pl_wangtang_special2_phase2(p);
     }
 }
-void FUN_0c071b94(T *p)
+void pl_wangtang_special2_phase2(T *p)
 {
     pl_apply_velocity(p);
     pl_apply_acceleration(p);

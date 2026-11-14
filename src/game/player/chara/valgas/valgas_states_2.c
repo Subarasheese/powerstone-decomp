@@ -57,12 +57,10 @@ int pl_valgas_special_id3(int a4)
     return (FUN_0c0a3762(((-(*(signed char *)((a4 + 0x3)))) + 0x1), 0x0));
 }
 
+int pl_valgas_special_id5(int);
+
 int pl_valgas_special_id4(int a4)
 {
-    int stk[5];
-    register int t19;
-    register int t35;
-
     pl_step_motion(a4);
     pl_apply_motion_translation(a4);
     if (((((struct oEC_short *)(a4))->v)) != 0) {
@@ -76,28 +74,7 @@ int pl_valgas_special_id4(int a4)
     (((struct o3C_float *)(a4))->v) = 22.0f;
     (((struct o48_float *)(a4))->v) = -1.19999993f;
     *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
-    *(int *)((int)stk + 16) = a4;
-    if ((int)(unsigned short)((((struct o719E_short *)(a4))->v)) < (int)0x3C) {
-        pl_step_motion(a4);
-        pl_apply_motion_translation(a4);
-    }
-    pl_apply_velocity(a4);
-    pl_apply_acceleration(a4);
-    (((struct o24_float *)((*(int *)((a4 + 0x1C)))))->v) = ((((struct o24_float *)(a4))->v));
-    t19 = pl_landed(a4);
-    t35 = (signed char)t19;
-    if ((signed char)t19 != 0) {
-        *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
-        pl_step_motion(a4);
-        pl_step_motion_owner((*(int *)((a4 + 0x1C))));
-        obj_set_owner_hit_record(a4, 0x32);
-        obj_force_owner_state27(a4, 0x32);
-        { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)(((*(int *)((a4 + 0x1C))) + 0x20)); }
-        *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + (*(float *)0xC08A058));
-        fx_spawn_double_ring((*(signed char *)(((*(int *)((a4 + 0x1C))) + 0x3))), ((int)stk + 0), *(Stk3 *)(((int)stk + 0)));
-        t35 = (FUN_0c0a3d5c(((-(*(signed char *)((a4 + 0x3)))) + 0x1), (*(signed char *)((a4 + 0x27C)))));
-    }
-    return t35;
+    return pl_valgas_special_id5(a4);      /* the original branches to the next phase's code, 0c089f28 */
 }
 
 int FUN_0c089fca(int a4)

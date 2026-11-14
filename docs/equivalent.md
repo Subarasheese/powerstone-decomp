@@ -20285,46 +20285,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 40
 - the cases run 13 of 23 instructions
 
-### pl_falcon_attack_dispatch (`0C067D10`, 60 bytes, `src/game/effect/gen_db.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/pl_falcon_attack_dispatch.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 63
-- case 98
-- case 71
-- case 107
-- case 102
-- case 53
-- case 79
-- case 117
-- case 44
-- case 52
-- case 116
-- case 99
-- case 49
-- case 91
-- case 43
-- case 39
-- case 96
-- case 103
-- the cases run 22 of 26 instructions
-
 ### FUN_0c067e1c (`0C067E1C`, 244 bytes, `src/game/flow/gen_bn.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_bn/FUN_0c067e1c.json`
 - rescue: empty case
@@ -23513,12 +23473,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 72
 - the cases run 16 of 16 instructions
 
-### pl_rouge_attack_motion_update (`0C08123A`, 40 bytes, `src/game/player/chara/wangtang/gen_dq.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dq/pl_rouge_attack_motion_update.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 15 of 20 instructions
-
 ### FUN_0c081284 (`0C081284`, 516 bytes, `src/lib/mixed/gen_dn.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_dn/FUN_0c081284.json`
 - rescue: empty case
@@ -25604,122 +25558,33 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 17 of 59 instructions
 
-### pl_valgas_attack_dispatch (`0C088290`, 80 bytes, `src/lib/mixed/gen_dn.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_dn/pl_valgas_attack_dispatch.json`
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 112
-- case 105
-- case 109
-- case 97
-- case 102
-- case 63
-- case 88
-- case 108
-- case 49
-- case 75
-- case 73
-- case 54
-- case 37
-- case 67
-- case 115
-- case 96
-- case 44
-- case 66
-- the cases run 22 of 32 instructions
-
-### pl_valgas_attack_type1 (`0C0882E0`, 60 bytes, `src/lib/mixed/gen_dl.c`)
-- equivalent on 7 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type1.json`
-- case 19
-- case 24
-- case 28
-- case 30
-- case 32
-- case 34
-- case 35
-- case 43
-- case 117
-- case 104
-- case 91
-- case 69
-- case 56
-- case 105
-- case 87
-- case 48
-- case 118
-- case 89
-- case 73
-- case 70
-- case 64
-- case 97
-- case 96
-- case 110
-- case 61
-- the cases run 15 of 20 instructions
-
 ### FUN_0c08831c (`0C08831C`, 372 bytes, `src/game/player/chara/valgas/gen_dv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_dv/FUN_0c08831c.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 68 of 68 instructions
 
-### pl_valgas_attack_type2 (`0C088490`, 1696 bytes, `src/lib/mixed/gen_dl.c`)
-- equivalent on 15 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type2.json`
-- case 12
-- case 15
-- case 16
-- case 19
-- case 20
-- case 23
-- case 24
-- case 25
-- case 26
-- case 29
-- case 30
-- case 32
-- case 33
-- case 34
-- case 35
-- case 85
-- case 123
-- case 153
-- case 134
-- case 139
-- case 105
-- case 57
-- case 56
-- case 131
-- case 151
-- case 42
-- case 110
-- case 100
-- case 91
-- case 97
-- case 116
-- case 94
-- case 70
-- the cases run 23 of 700 instructions
+### FUN_0c0883a4 (`0C0883A4`, 78 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dy/FUN_0c0883a4.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 23 of 39 instructions
 
-### pl_valgas_attack_type3 (`0C088B30`, 538 bytes, `src/lib/mixed/gen_dl.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type3.json`
+### FUN_0c0883f2 (`0C0883F2`, 66 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dy/FUN_0c0883f2.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 24 of 33 instructions
+
+### FUN_0c088434 (`0C088434`, 36 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dy/FUN_0c088434.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 15 of 18 instructions
+
+### FUN_0c088484 (`0C088484`, 12 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dy/FUN_0c088484.json`
 - case 0
-- case 15
 - case 1
 - case 2
 - case 3
@@ -25734,105 +25599,28 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 12
 - case 13
 - case 14
+- case 15
 - case 16
 - case 17
-- case 56
-- case 64
-- case 44
-- case 41
-- case 68
-- case 114
+- case 111
+- case 83
+- case 110
+- case 52
 - case 88
-- case 94
-- case 39
-- case 34
-- case 83
-- case 109
-- case 90
-- case 112
-- case 60
-- case 38
-- case 59
-- case 84
-- the cases run 47 of 207 instructions
-
-### pl_valgas_attack_type4 (`0C088D4A`, 502 bytes, `src/lib/mixed/gen_dl.c`)
-- equivalent on 16 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type4.json`
-- case 12
-- case 13
-- case 14
-- case 15
-- case 18
-- case 19
-- case 20
-- case 21
-- case 24
-- case 25
-- case 26
-- case 30
-- case 31
-- case 32
-- case 34
-- case 35
-- case 114
-- case 60
-- case 89
-- case 37
-- case 156
-- case 141
-- case 144
-- case 115
-- case 127
-- case 39
-- case 148
-- case 128
-- case 97
-- case 68
-- case 143
-- case 49
-- case 41
-- case 159
-- the cases run 11 of 219 instructions
-
-### pl_valgas_attack_type5 (`0C088F80`, 50 bytes, `src/lib/mixed/gen_dn.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_dn/pl_valgas_attack_type5.json`
-- case 13
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 14
-- case 15
-- case 16
-- case 17
-- case 80
-- case 56
-- case 110
-- case 83
-- case 62
-- case 71
-- case 64
-- case 70
-- case 99
-- case 39
-- case 47
-- case 104
+- case 61
+- case 46
+- case 63
+- case 48
 - case 42
-- case 65
-- case 41
-- case 113
+- case 79
+- case 98
+- case 69
+- case 49
+- case 86
 - case 51
-- case 45
-- the cases run 17 of 21 instructions
+- case 102
+- case 105
+- the cases run 6 of 6 instructions
 
 ### FUN_0c088fb2 (`0C088FB2`, 114 bytes, `src/game/effect/gen_dh.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c088fb2.json`
@@ -25897,83 +25685,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - case 78
 - the cases run 6 of 6 instructions
-
-### pl_valgas_attack_type6 (`0C089164`, 472 bytes, `src/lib/mixed/gen_dl.c`)
-- equivalent on 9 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type6.json`
-- case 12
-- case 16
-- case 20
-- case 22
-- case 25
-- case 26
-- case 28
-- case 29
-- case 32
-- case 111
-- case 69
-- case 94
-- case 102
-- case 48
-- case 66
-- case 39
-- case 119
-- case 53
-- case 56
-- case 98
-- case 84
-- case 114
-- case 89
-- case 105
-- case 51
-- case 62
-- case 46
-- the cases run 13 of 183 instructions
-
-### pl_valgas_attack_type7 (`0C08933C`, 584 bytes, `src/game/player/chara/valgas/gen_cz.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_cz/pl_valgas_attack_type7.json`
-- case 0
-- case 14
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 15
-- case 16
-- case 17
-- case 44
-- case 107
-- case 36
-- case 64
-- case 41
-- case 82
-- case 94
-- case 89
-- case 57
-- case 62
-- case 113
-- case 58
-- case 72
-- case 112
-- case 97
-- case 85
-- case 81
-- case 76
-- the cases run 45 of 241 instructions
-
-### pl_valgas_attack_type8 (`0C089584`, 472 bytes, `src/game/player/chara/valgas/gen_cz.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_cz/pl_valgas_attack_type8.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 53 of 182 instructions
 
 ### FUN_0c0897e6 (`0C0897E6`, 42 bytes, `src/lib/mixed/gen_bz.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bz/FUN_0c0897e6.json`
@@ -72909,6 +72620,206 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 92
 - the cases run 3 of 3 instructions
 
+### cache_run_uncached_purge (`0C0FEC20`, 10 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dy/cache_run_uncached_purge.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 60
+- case 44
+- case 79
+- case 69
+- case 104
+- case 74
+- case 67
+- case 111
+- case 38
+- case 95
+- case 114
+- case 83
+- case 102
+- case 78
+- case 113
+- case 92
+- case 68
+- case 61
+- the cases run 5 of 5 instructions
+
+### cache_run_uncached_writeback (`0C0FEE44`, 10 bytes, `src/lib/mixed/gen_dy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dy/cache_run_uncached_writeback.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 44
+- case 116
+- case 102
+- case 75
+- case 56
+- case 101
+- case 58
+- case 94
+- case 109
+- case 85
+- case 77
+- case 80
+- case 99
+- case 106
+- case 104
+- case 71
+- case 45
+- case 96
+- the cases run 5 of 5 instructions
+
+### cache_scan_pop_frame_invalidate (`0C0FEB9C`, 10 bytes, `src/lib/mixed/gen_ea.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ea/cache_scan_pop_frame_invalidate.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 100
+- case 98
+- case 78
+- case 86
+- case 40
+- case 110
+- case 105
+- case 111
+- case 50
+- case 71
+- case 94
+- case 85
+- case 42
+- case 64
+- case 76
+- case 63
+- case 52
+- case 51
+- the cases run 5 of 5 instructions
+
+### cache_scan_pop_frame_purge (`0C0FEDC0`, 10 bytes, `src/lib/mixed/gen_ea.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ea/cache_scan_pop_frame_purge.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 36
+- case 112
+- case 111
+- case 48
+- case 104
+- case 47
+- case 106
+- case 65
+- case 61
+- case 107
+- case 66
+- case 92
+- case 41
+- case 84
+- case 82
+- case 95
+- case 109
+- case 117
+- the cases run 5 of 5 instructions
+
+### cache_scan_pop_frame_writeback (`0C0FEFE4`, 10 bytes, `src/lib/mixed/gen_ea.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ea/cache_scan_pop_frame_writeback.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 84
+- case 81
+- case 115
+- case 82
+- case 113
+- case 53
+- case 69
+- case 87
+- case 119
+- case 78
+- case 68
+- case 42
+- case 67
+- case 37
+- case 62
+- case 63
+- case 50
+- case 41
+- the cases run 5 of 5 instructions
+
 ### cam_apply_shake (`0C0DC27C`, 340 bytes, `src/game/camera/cam_shake.c`)
 - equivalent on 8 development and 8 holdout cases, in `tests/cam_shake/cam_apply_shake.json`
 - kind 0 count 0 amp 5 rand 0
@@ -111206,6 +111117,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - o3 100
 - the cases run 173 of 173 instructions
 
+### pl_falcon_attack_dispatch (`0C067D10`, 60 bytes, `src/game/effect/gen_db.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/pl_falcon_attack_dispatch.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 63
+- case 98
+- case 71
+- case 107
+- case 102
+- case 53
+- case 79
+- case 117
+- case 44
+- case 52
+- case 116
+- case 99
+- case 49
+- case 91
+- case 43
+- case 39
+- case 96
+- case 103
+- the cases run 22 of 26 instructions
+
 ### pl_falcon_attack_kind13 (`0C068466`, 536 bytes, `src/game/player/chara/falcon/player_falcon_5.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/player_falcon_5/pl_falcon_attack_kind13.json`
 - case 12
@@ -122481,6 +122432,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mode 0 handler 1
 - the cases run 35 of 35 instructions
 
+### pl_rouge_attack_motion_update (`0C08123A`, 40 bytes, `src/game/player/chara/wangtang/gen_dq.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dq/pl_rouge_attack_motion_update.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 15 of 20 instructions
+
 ### pl_rouge_attack_update (`0C081204`, 1678 bytes, `src/game/player/chara/rouge/rouge_moves_2.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/rouge_moves_2/pl_rouge_attack_update.json`
 - case 13
@@ -128438,6 +128395,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - same zone, flag -8 (0xf8) -> proceed
 - the cases run 122 of 122 instructions
 
+### pl_valgas_attack_dispatch (`0C088290`, 80 bytes, `src/lib/mixed/gen_dn.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dn/pl_valgas_attack_dispatch.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 112
+- case 105
+- case 109
+- case 97
+- case 102
+- case 63
+- case 88
+- case 108
+- case 49
+- case 75
+- case 73
+- case 54
+- case 37
+- case 67
+- case 115
+- case 96
+- case 44
+- case 66
+- the cases run 22 of 32 instructions
+
 ### pl_valgas_attack_init (`0C087D60`, 228 bytes, `src/game/player/chara/valgas/valgas_moves_2.c`)
 - equivalent on 9 development and 9 holdout cases, in `tests/valgas_moves_2/pl_valgas_attack_init.json`
 - fuzz 31.29
@@ -128459,6 +128456,267 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fuzz 31.1
 - case 15
 - the cases run 96 of 96 instructions
+
+### pl_valgas_attack_type1 (`0C0882E0`, 60 bytes, `src/lib/mixed/gen_dl.c`)
+- equivalent on 7 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type1.json`
+- case 19
+- case 24
+- case 28
+- case 30
+- case 32
+- case 34
+- case 35
+- case 43
+- case 117
+- case 104
+- case 91
+- case 69
+- case 56
+- case 105
+- case 87
+- case 48
+- case 118
+- case 89
+- case 73
+- case 70
+- case 64
+- case 97
+- case 96
+- case 110
+- case 61
+- the cases run 15 of 20 instructions
+
+### pl_valgas_attack_type2 (`0C088490`, 1696 bytes, `src/lib/mixed/gen_dl.c`)
+- equivalent on 15 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type2.json`
+- case 12
+- case 15
+- case 16
+- case 19
+- case 20
+- case 23
+- case 24
+- case 25
+- case 26
+- case 29
+- case 30
+- case 32
+- case 33
+- case 34
+- case 35
+- case 85
+- case 123
+- case 153
+- case 134
+- case 139
+- case 105
+- case 57
+- case 56
+- case 131
+- case 151
+- case 42
+- case 110
+- case 100
+- case 91
+- case 97
+- case 116
+- case 94
+- case 70
+- the cases run 23 of 700 instructions
+
+### pl_valgas_attack_type3 (`0C088B30`, 538 bytes, `src/lib/mixed/gen_dl.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type3.json`
+- case 0
+- case 15
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 16
+- case 17
+- case 56
+- case 64
+- case 44
+- case 41
+- case 68
+- case 114
+- case 88
+- case 94
+- case 39
+- case 34
+- case 83
+- case 109
+- case 90
+- case 112
+- case 60
+- case 38
+- case 59
+- case 84
+- the cases run 47 of 207 instructions
+
+### pl_valgas_attack_type4 (`0C088D4A`, 502 bytes, `src/lib/mixed/gen_dl.c`)
+- equivalent on 16 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type4.json`
+- case 12
+- case 13
+- case 14
+- case 15
+- case 18
+- case 19
+- case 20
+- case 21
+- case 24
+- case 25
+- case 26
+- case 30
+- case 31
+- case 32
+- case 34
+- case 35
+- case 114
+- case 60
+- case 89
+- case 37
+- case 156
+- case 141
+- case 144
+- case 115
+- case 127
+- case 39
+- case 148
+- case 128
+- case 97
+- case 68
+- case 143
+- case 49
+- case 41
+- case 159
+- the cases run 11 of 219 instructions
+
+### pl_valgas_attack_type5 (`0C088F80`, 50 bytes, `src/lib/mixed/gen_dn.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dn/pl_valgas_attack_type5.json`
+- case 13
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 14
+- case 15
+- case 16
+- case 17
+- case 80
+- case 56
+- case 110
+- case 83
+- case 62
+- case 71
+- case 64
+- case 70
+- case 99
+- case 39
+- case 47
+- case 104
+- case 42
+- case 65
+- case 41
+- case 113
+- case 51
+- case 45
+- the cases run 17 of 21 instructions
+
+### pl_valgas_attack_type6 (`0C089164`, 472 bytes, `src/lib/mixed/gen_dl.c`)
+- equivalent on 9 development and 18 holdout cases, in `tests/gen_dl/pl_valgas_attack_type6.json`
+- case 12
+- case 16
+- case 20
+- case 22
+- case 25
+- case 26
+- case 28
+- case 29
+- case 32
+- case 111
+- case 69
+- case 94
+- case 102
+- case 48
+- case 66
+- case 39
+- case 119
+- case 53
+- case 56
+- case 98
+- case 84
+- case 114
+- case 89
+- case 105
+- case 51
+- case 62
+- case 46
+- the cases run 13 of 183 instructions
+
+### pl_valgas_attack_type7 (`0C08933C`, 584 bytes, `src/game/player/chara/valgas/gen_cz.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cz/pl_valgas_attack_type7.json`
+- case 0
+- case 14
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 15
+- case 16
+- case 17
+- case 44
+- case 107
+- case 36
+- case 64
+- case 41
+- case 82
+- case 94
+- case 89
+- case 57
+- case 62
+- case 113
+- case 58
+- case 72
+- case 112
+- case 97
+- case 85
+- case 81
+- case 76
+- the cases run 45 of 241 instructions
+
+### pl_valgas_attack_type8 (`0C089584`, 472 bytes, `src/game/player/chara/valgas/gen_cz.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cz/pl_valgas_attack_type8.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 53 of 182 instructions
 
 ### pl_valgas_attack_update (`0C087EDC`, 182 bytes, `src/game/player/chara/valgas/valgas_moves_2.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/valgas_moves_2/pl_valgas_attack_update.json`
@@ -129276,11 +129534,17 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 87 of 87 instructions
 
-### pl_valgas_special_id4 (`0C089E96`, 308 bytes, `src/game/player/chara/valgas/valgas_states_2.c`)
+### pl_valgas_special_id4 (`0C089E96`, 146 bytes, `src/game/player/chara/valgas/valgas_states_2.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/valgas_states_2/pl_valgas_special_id4.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 73 of 122 instructions
+- the cases run 36 of 43 instructions
+
+### pl_valgas_special_id5 (`0C089F28`, 162 bytes, `src/lib/mixed/gen_ea.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_ea/pl_valgas_special_id5.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 37 of 81 instructions
 
 ### pl_valgas_special_move_dispatch (`0C089BBA`, 18 bytes, `src/game/player/chara/valgas/valgas_states_1.c`)
 - equivalent on 2 development and 2 holdout cases, in `tests/valgas_states_1/pl_valgas_special_move_dispatch.json`
@@ -130443,6 +130707,18 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - other objects
 - angle zero
 - the cases run 78 of 78 instructions
+
+### pl_wangtang_special2_phase1 (`0C071B2C`, 104 bytes, `src/game/player/chara/wangtang/player_wangtang_11.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/player_wangtang_11/pl_wangtang_special2_phase1.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 36 of 52 instructions
+
+### pl_wangtang_special2_phase2 (`0C071B94`, 130 bytes, `src/game/player/chara/wangtang/player_wangtang_11.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/player_wangtang_11/pl_wangtang_special2_phase2.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 34 of 65 instructions
 
 ### pl_wangtang_special2_phase3 (`0C071C50`, 138 bytes, `src/game/player/chara/wangtang/player_wangtang_12_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/player_wangtang_12_equiv/pl_wangtang_special2_phase3.json`
