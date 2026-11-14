@@ -78,7 +78,7 @@ int gdFsGetDrvStatG(int, int, int, int);
 int strlen(int);
 int pl_hitreact_00_phase0(int a4, int a5);
 int FUN_0c028f48(int a4);
-int FUN_0c03107e(void);
+int ui_update_item_radar(void);
 int fx_spawn_048c18(int a4, int a5, float f4);
 int fx_tick_057128(int a4, int a5, int a6, int a7);
 int gdFsGetStatG(int a4, int a5, int a6, int a7);

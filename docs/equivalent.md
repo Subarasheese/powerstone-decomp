@@ -10893,8 +10893,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 71
 - the cases run 4 of 4 instructions
 
-### FUN_0c02dc86 (`0C02DC86`, 786 bytes, `src/game/ui/ui_hud_draw.c`)
-- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_draw/FUN_0c02dc86.json`
+### ui_draw_round_clock (`0C02DC86`, 786 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_draw/ui_draw_round_clock.json`
 - infinite
 - idle no flip late frame
 - idle reset by frame
@@ -11247,8 +11247,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - state -1, side 1
 - the cases run 70 of 70 instructions
 
-### FUN_0c02e998 (`0C02E998`, 1188 bytes, `src/game/ui/ui_hud_draw.c`)
-- equivalent on 5 development and 5 holdout cases, in `tests/ui_hud_draw/FUN_0c02e998.json`
+### ui_draw_hud_panels (`0C02E998`, 1188 bytes, `src/game/ui/ui_hud_draw.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/ui_hud_draw/ui_draw_hud_panels.json`
 - all panels
 - char 10 hides
 - stone rule half
@@ -11347,8 +11347,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - chip y 80, gauge of slot 0 with 2 bars
 - the cases run 38 of 38 instructions
 
-### FUN_0c02f3f2 (`0C02F3F2`, 916 bytes, `src/game/ui/ui_hud_gauge.c`)
-- equivalent on 19 development and 16 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f3f2.json`
+### ui_update_gauge (`0C02F3F2`, 916 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 19 development and 16 holdout cases, in `tests/ui_hud_gauge/ui_update_gauge.json`
 - case 12
 - case 62
 - case 6
@@ -11386,8 +11386,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - nothing lost; a chip at its last frame
 - the cases run 399 of 399 instructions
 
-### FUN_0c02f786 (`0C02F786`, 516 bytes, `src/game/ui/ui_hud_gauge.c`)
-- equivalent on 22 development and 20 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f786.json`
+### ui_update_gauge_shards (`0C02F786`, 516 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 22 development and 20 holdout cases, in `tests/ui_hud_gauge/ui_update_gauge_shards.json`
 - case 7
 - case 4
 - case 0
@@ -11432,8 +11432,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - turning past the end without landing: 0xFC00
 - the cases run 218 of 218 instructions
 
-### FUN_0c02f98a (`0C02F98A`, 1422 bytes, `src/game/ui/ui_hud_gauge.c`)
-- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_gauge/FUN_0c02f98a.json`
+### ui_draw_hud_gauges (`0C02F98A`, 1422 bytes, `src/game/ui/ui_hud_gauge.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/ui_hud_gauge/ui_draw_hud_gauges.json`
 - full bars
 - ko side 1
 - red only
@@ -11448,14 +11448,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - red longer than a bar under a short hp
 - the cases run 624 of 624 instructions
 
-### FUN_0c02ff18 (`0C02FF18`, 228 bytes, `src/game/ui/ui_hud_counter.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_counter/FUN_0c02ff18.json`
+### ui_draw_hud_faces (`0C02FF18`, 228 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/ui_hud_counter/ui_draw_hud_faces.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 112 of 114 instructions
 
-### FUN_0c0301d2 (`0C0301D2`, 172 bytes, `src/game/ui/ui_hud_counter.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/FUN_0c0301d2.json`
+### ui_hud_combo_message (`0C0301D2`, 172 bytes, `src/game/ui/ui_hud_counter.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_counter/ui_hud_combo_message.json`
 - case 6
 - case 0
 - case 1
@@ -11668,8 +11668,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 95
 - the cases run 39 of 39 instructions
 
-### FUN_0c03107e (`0C03107E`, 730 bytes, `src/game/ui/ui_hud_world.c`)
-- equivalent on 26 development and 22 holdout cases, in `tests/ui_hud_world/FUN_0c03107e.json`
+### ui_update_item_radar (`0C03107E`, 730 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 26 development and 22 holdout cases, in `tests/ui_hud_world/ui_update_item_radar.json`
 - case 1
 - case 0
 - case 2
@@ -11720,8 +11720,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - running, timer not out, three in one quadrant
 - the cases run 337 of 337 instructions
 
-### FUN_0c031388 (`0C031388`, 94 bytes, `src/game/ui/ui_hud_world.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_world/FUN_0c031388.json`
+### ui_draw_no_intro_bar (`0C031388`, 94 bytes, `src/game/ui/ui_hud_world.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/ui_hud_world/ui_draw_no_intro_bar.json`
 - case 61
 - case 0
 - case 1

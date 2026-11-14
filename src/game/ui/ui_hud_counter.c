@@ -28,7 +28,7 @@ int FUN_0c0555c4(void);
 int FUN_0c0a3f30(int voice);
 
 /* the two faces; Falcon (character 0) shows his other face while FACE_ALT_FLAG is set */
-void FUN_0c02ff18(void)
+void ui_draw_hud_faces(void)
 {
     struct { int a, b; UiSprite s; } f;
     int alt;
@@ -103,7 +103,7 @@ void ui_draw_hit_counter(int slot, int steps, float y_offset)
 }
 
 /* the message after a combo (or message 14 while the other message runs) */
-void FUN_0c0301d2(int slot, int frames)
+void ui_hud_combo_message(int slot, int frames)
 {
     HudHitCounter *h = (HudHitCounter *)((char *)g_hud_state.hit + (signed char)(slot * 24));
     HudMessage m;
@@ -161,7 +161,7 @@ void FUN_0c0302fe(int slot, int frames)
     HudHitCounter *h = (HudHitCounter *)((char *)g_hud_state.hit + (signed char)(slot * 24));
 
     h->rating = 14;
-    FUN_0c0301d2(slot, frames);
+    ui_hud_combo_message(slot, frames);
 }
 
 /* per frame: start, count, rate and fade the hit counter of each player */
@@ -278,7 +278,7 @@ void ui_update_hit_counter(void)
                     h->step = h->step + 1;
                     FUN_0c0302b6(i);
                 }
-                FUN_0c0301d2(i, 8);
+                ui_hud_combo_message(i, 8);
                 break;
             case 6:
                 if (!GAME_PAUSED)
@@ -287,10 +287,10 @@ void ui_update_hit_counter(void)
                     h->step = h->step + 1;
                     h->timer = 30;
                 }
-                FUN_0c0301d2(i, 8);
+                ui_hud_combo_message(i, 8);
                 break;
             case 7:
-                FUN_0c0301d2(i, 8);
+                ui_hud_combo_message(i, 8);
                 if (!GAME_PAUSED)
                     h->timer = h->timer - 1;
                 if (h->timer == 0) {
@@ -306,7 +306,7 @@ void ui_update_hit_counter(void)
                     h->mode = 0;
                     h->step = 0;
                 }
-                FUN_0c0301d2(i, 8);
+                ui_hud_combo_message(i, 8);
                 break;
             default:
                 if (!GAME_PAUSED)

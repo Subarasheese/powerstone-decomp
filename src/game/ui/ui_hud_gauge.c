@@ -44,7 +44,7 @@ void FUN_0c02f3a6(HudChip *c, HudGauge *g)
 }
 
 /* one gauge from its fighter: hp, the full gauge growing (all bars again) or shrinking (chips break off), the chips drawn */
-void FUN_0c02f3f2(HudGauge *g)
+void ui_update_gauge(HudGauge *g)
 {
     UiSprite s;
     HudChip *c;
@@ -134,7 +134,7 @@ void FUN_0c02f3f2(HudGauge *g)
 }
 
 /* the shards: placed over their bar, they turn a quarter, then fall and shrink. The first bar's waits for the KO. */
-void FUN_0c02f786(void)
+void ui_update_gauge_shards(void)
 {
     HudShard *sh;
     Fighter *f;
@@ -194,7 +194,7 @@ void FUN_0c02f786(void)
 }
 
 /* both gauges: the bars (red under the hp), the bars' glints and frames, the shards, and the gauges' end pieces */
-void FUN_0c02f98a(void)
+void ui_draw_hud_gauges(void)
 {
     UiSprite t, s;
     HudGauge *g;
@@ -203,10 +203,10 @@ void FUN_0c02f98a(void)
     short hp, red;
     int i, k, n, off;
 
-    FUN_0c02f3f2(&g_hud_state.gauge[0]);
-    FUN_0c02f3f2(&g_hud_state.gauge[1]);
+    ui_update_gauge(&g_hud_state.gauge[0]);
+    ui_update_gauge(&g_hud_state.gauge[1]);
     if (GAME_PAUSED == 0)
-        FUN_0c02f786();
+        ui_update_gauge_shards();
 
     /* the bars: 48 hp each, from the face outward */
     step = 24.0f;

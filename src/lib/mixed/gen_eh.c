@@ -171,7 +171,7 @@ int fx_spawn_03de24(int a4);
 int pl_mode15_cls04_16_f0(int a4);
 int ADXSJD_Create(int a4, int a5, int a6);
 int FUN_0c103e50(int a4, int a5, int a6, int a7);
-int FUN_0c02ff18(void);
+int ui_draw_hud_faces(void);
 int obj_spawn_037848(int a4);
 int obj_spawn_037ab8(int a4);
 int fx_spawn_038640(int a4);

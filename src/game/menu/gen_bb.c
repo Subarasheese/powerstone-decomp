@@ -27,7 +27,7 @@ int FUN_0c02828e(void);
 int FUN_0c0282cc(void);
 int FUN_0c02d420(void);
 int FUN_0c02d458(void);
-int FUN_0c031388(void);
+int ui_draw_no_intro_bar(void);
 int FUN_0c0421ee(int, int);
 int FUN_0c0634b4(int);
 int FUN_0c096a64(int);
@@ -133,7 +133,7 @@ int game_draw_frame(void)
             FUN_0c0dcac0(0xF, 0x3);
             FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
             *(unsigned int *)0xC321190 = 0x0;
-            FUN_0c031388();
+            ui_draw_no_intro_bar();
             FUN_0c0dcac0(0xF, 0x0);
         }
     }

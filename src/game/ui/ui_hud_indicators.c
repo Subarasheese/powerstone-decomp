@@ -151,7 +151,9 @@ void ui_draw_hud_cell_pair(void)
     cell.alpha = g_hud_state.layout[4];
     cell.layer = 5;
     ui_sprite_queue_add(&cell, (int *)((char *)g_res_cockpit_faces + (unsigned char)(g_players[0].chara * 12)), 0, 0, 0, 0);
-    cell.z = 544.0f;
-    cell.layer = *(int *)&g_hud_state.layout[5];
+    /* the right-hand face: x 544, its own alpha. (The first call's two argument words are still pushed when the original writes
+       these, so its stores at +12 and +52 from the stack pointer land on the struct's x (+4) and alpha (+44).) */
+    cell.x = 544.0f;
+    cell.alpha = g_hud_state.layout[5];
     ui_sprite_queue_add(&cell, (int *)((char *)g_res_cockpit_faces + (unsigned char)(g_players[1].chara * 12)), 0, 0, 1, 0);
 }

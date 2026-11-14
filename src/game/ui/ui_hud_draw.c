@@ -20,7 +20,7 @@
 
 typedef struct PlateFrames {    /* 20 bytes, by (plate_kind * 2 + side) */
     int frame[2];
-    float dz, dscale_x;         /* from the first sprite to the second */
+    float dx, dy;               /* from the first sprite to the second (32 / -160 and 32 for the left and right plate) */
     float z;
 } PlateFrames;
 #define PLATE_FRAMES ((char *)0x0C321198)
@@ -114,7 +114,7 @@ void ui_draw_sprite_string(char *str, int mode, float x, float y, float scale_x,
 }
 
 /* the round clock: two digits at the top, the ones rolling over each second; "infinite" without a time limit */
-void FUN_0c02dc86(void)
+void ui_draw_round_clock(void)
 {
     UiSprite s;
     HudClock *k = &g_hud_state.clock;
@@ -578,7 +578,7 @@ void ui_update_stone_effects(HudPanel *p)
 }
 
 /* both panels: their state machines, then the plate, the stones (glinting) and the power meter, then the stone effects */
-void FUN_0c02e998(void)
+void ui_draw_hud_panels(void)
 {
     UiSprite s;
     HudPanel *p;
@@ -603,8 +603,10 @@ void FUN_0c02e998(void)
             s.y = p->y + g_hud_state.layout[1];
             s.z = pf->z;
             ui_sprite_queue_add(&s, g_res_cockpit, 2, pf->frame[0], i, 0);
-            s.z = s.z + pf->dz;
-            s.scale_x = s.scale_x + pf->dscale_x;
+            /* The second plate half sits dx, dy from the first. (The original adds these while the first call's two argument
+               words are still pushed, so its stack-pointer offsets 16 and 20 are the struct's x and y.) */
+            s.x = s.x + pf->dx;
+            s.y = s.y + pf->dy;
             ui_sprite_queue_add(&s, g_res_cockpit, 2, pf->frame[1], i, 0);
         }
         if (p->show_stones != 0) {

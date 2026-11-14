@@ -100,7 +100,7 @@ int FUN_0c0240e8(int, int, int);
 int FUN_0c024446(int);
 int FUN_0c025d72(int, int);
 int ui_draw_sprite_string(int, int, float, float, float, float, float);
-int FUN_0c0301d2(int, int, int, int);
+int ui_hud_combo_message(int, int, int, int);
 int fx_spawn_039c78(int, int, int, int);
 int fx_spawn_049b7c(void);
 int fx_spawn_hit_effect_set(int, int);

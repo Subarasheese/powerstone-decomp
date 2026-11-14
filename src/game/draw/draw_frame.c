@@ -39,7 +39,7 @@ struct o15_uchar { char p[0x15]; unsigned char v; };
 struct o8_int { char p[0x8]; int v; };
 int FUN_0c02828e(void);
 int FUN_0c02d420(void);
-int FUN_0c031388(void);
+int ui_draw_no_intro_bar(void);
 int FUN_0c0dca60(int, int, int, int, int);
 int FUN_0c0dcac0(int, int);
 int gfx_set_background_color(int, int, int);

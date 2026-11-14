@@ -96,7 +96,7 @@ int gdFsReopenHn(int, int, int, int);
 int gdFsWaitCompleteReq(int, int, int, int);
 int stage_gimmick_20_run(int a4, int a5, int a6, int a7, float f4);
 int testmode_input_test_screen(void);
-int FUN_0c02f3f2(int a4, int a5, int a6, int a7, float f4, float f5);
+int ui_update_gauge(int a4, int a5, int a6, int a7, float f4, float f5);
 int FUN_0c0f05c8(int a4, int a5, int a6, int a7);
 int fx_update_30(int a4);
 int FUN_0c0f94a0(int a4, int a5, int a6, int a7, int a8);
