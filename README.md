@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.0&b=96.9&m=1.4&a=61&s=0)
+![decomp progress](badges/progress.svg?p=98.1&b=97.0&m=1.4&a=61&s=0)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,18 +24,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            60.9%  the instructions the cases ran, of all instructions, over the 5483 functions that can be C; the 5133 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (98.0% complete) 108  of the 5483 functions that can be C (44 with no C form are counted apart)
-BYTES LEFT    (96.9% complete) 30114  of 981552 bytes of code that can be C
+TOTAL TEST COVERAGE            60.8%  the instructions the cases ran, of all instructions, over the 5546 functions that can be C; the 5196 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (98.1% complete) 108  of the 5546 functions that can be C (45 with no C form are counted apart)
+BYTES LEFT    (97.0% complete) 30114  of 993612 bytes of code that can be C
 FUNCTIONS                             
-  unnamed                       2331  functions still called FUN_... (2331 of 5527)
+  unnamed                       2384  functions still called FUN_... (2384 of 5591)
   Not written C                   42  12672 bytes
   Written C with errors            0  0 bytes
   Not drawn                        8  1298 bytes
-  Drawn with errors               23  5668 bytes
-  Checked with errors             35  10476 bytes
+  Drawn with errors               22  5350 bytes
+  Checked with errors             36  10794 bytes
   No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   53.9%  2980 named functions in docs/*.md
+  documented                   53.5%  2991 named functions in docs/*.md
 ```
 <!-- /progress -->
 

@@ -41,10 +41,10 @@ int pl_start_hit_freeze(int);
 int pl_start_motion(int, int, int);
 int pl_step_motion(int);
 int snd_play_char_voice(int, int);
-int FUN_0c08933c(int a4, int a5, int a6, int a7);
-int FUN_0c089584(int a4);
+int pl_valgas_attack_type7(int a4, int a5, int a6, int a7);
+int pl_valgas_attack_type8(int a4);
 
-int FUN_0c08933c(int a4, int a5, int a6, int a7)
+int pl_valgas_attack_type7(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -146,7 +146,7 @@ int FUN_0c08933c(int a4, int a5, int a6, int a7)
     return snd_play_char_voice(a4, 0x34);
 }
 
-int FUN_0c089584(int a4)
+int pl_valgas_attack_type8(int a4)
 {
     register int t0;
     register int t1;

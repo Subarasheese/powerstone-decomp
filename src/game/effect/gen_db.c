@@ -123,7 +123,7 @@ int FUN_0c097bb0(int a4, int a5, int a6, int a7);
 int FUN_0c0445aa(int a4);
 int FUN_0c0b4d54(int a4);
 int FUN_0c086350(int a4, int a5, int a6, int a7);
-int FUN_0c067d10(int a4, int a5, int a6, int a7);
+int pl_falcon_attack_dispatch(int a4, int a5, int a6, int a7);
 int FUN_0c07cf5c(int a4, int a5, int a6, int a7);
 int FUN_0c041dc8(int a4, int a5, int a6, int a7);
 int FUN_0c07d378(int a4, int a5, int a6, int a7);
@@ -856,7 +856,7 @@ int FUN_0c086350(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xC085DF8))(a4, a5, a6, a7);
 }
 
-int FUN_0c067d10(int a4, int a5, int a6, int a7)
+int pl_falcon_attack_dispatch(int a4, int a5, int a6, int a7)
 {
     register int t0;
 
