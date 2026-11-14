@@ -3,7 +3,7 @@
 extern void hit_build_part_shape(char *obj, void *bounds);
 extern char hit_dispatch_shape_pair(int a, int b, void *bounds, int c);
 extern float FUN_0c02629e(int a, int b);
-extern char FUN_0c026076(int a, int b, void *bounds, int c, int d);
+extern char hit_test_part_vs_slot(int a, int b, void *bounds, int c, int d);
 extern float FUN_0c02649a(int a, int b);
 extern int obj_can_interact(int a, int b, int c);
 
@@ -28,7 +28,7 @@ int hit_probe_step_first(char *obj, float *out, float thresh)
     for (idx = 0; idx < obj[680]; idx++) {
         if (*(signed char *)(*(int *)(obj + 660 + idx * 4) + 2) != 2)
             continue;
-        hit = (signed char)FUN_0c026076(1, obj[681 + idx], bounds, *(int *)(obj + 640 + idx * 4), *(int *)(obj + 660 + idx * 4));
+        hit = (signed char)hit_test_part_vs_slot(1, obj[681 + idx], bounds, *(int *)(obj + 640 + idx * 4), *(int *)(obj + 660 + idx * 4));
         if (hit == sector || hit == 8) {
             dist = FUN_0c02649a(*(int *)(obj + 660 + idx * 4), 0) - *(float *)(obj + 36);
             *out = dist;

@@ -7,7 +7,7 @@ struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 float math_signed_sqrt(float);
 int FUN_0c020d20(int, int);
 int conv_s16x7_to_f32(int, int);
@@ -51,7 +51,7 @@ int FUN_0c0228ac(int a4, int a5, int a6, int a7)
     u4 = (((struct o10_float *)(a7))->v);
     u5 = (((struct o4_float *)(a6))->v);
     u6 = (((struct oC_float *)(a6))->v);
-    u7 = FUN_0c0211d0((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
+    u7 = math_interval_overlap((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
     t0 = 0x0;
     if (!(0.0f > ((u0 + u1) - u2)) && !(0.0f > u7)) {
         t0 = 0x1;
@@ -420,7 +420,7 @@ int FUN_0c0235ce(int a4, int a5)
     u4 = (((struct o10_float *)(a5))->v);
     u5 = (((struct o4_float *)(a4))->v);
     u6 = (((struct oC_float *)(a4))->v);
-    u7 = FUN_0c0211d0((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
+    u7 = math_interval_overlap((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
     t0 = 0x8;
     if (u7 > ((u0 + u1) - u2)) {
     } else {
@@ -531,7 +531,7 @@ int FUN_0c02374e(int a4, int a5)
     u4 = (((struct o10_float *)(a4))->v);
     u5 = (((struct o4_float *)(a5))->v);
     u6 = (((struct oC_float *)(a5))->v);
-    u7 = FUN_0c0211d0((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
+    u7 = math_interval_overlap((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
     t0 = 0x8;
     if (u7 > ((u0 + u1) - u2)) {
     } else {
@@ -543,10 +543,10 @@ int FUN_0c02374e(int a4, int a5)
     return t0;
 }
 
-/* the 12-byte hit box entry `index` of the object's table (by kind and side), handed to FUN_0c020cc2 with `out`; returns it */
+/* the 12-byte hit box entry `index` of the object's table (by kind and side), handed to conv_s16x6_to_f32 with `out`; returns it */
 struct HitBox12 { char b[12]; };      /* copied byte by byte (_slow_mvn), as the original does */
 extern char g_hit_table_desc[];
-extern int FUN_0c020cc2(int out, struct HitBox12 *box);
+extern int conv_s16x6_to_f32(int out, struct HitBox12 *box);
 
 char *hit_get_box_entry(char *obj, int index, int out)
 {
@@ -572,6 +572,6 @@ char *hit_get_box_entry(char *obj, int index, int out)
     }
     entry = *(char **)(g_hit_table_desc + 0x14 + slot * 32) + (unsigned short)index * 12;
     box = *(struct HitBox12 *)entry;
-    FUN_0c020cc2(out, &box);
+    conv_s16x6_to_f32(out, &box);
     return entry;
 }

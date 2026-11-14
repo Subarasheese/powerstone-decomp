@@ -4,11 +4,11 @@ struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 float math_signed_sqrt(float);
 struct o14_float { char p[0x14]; float v; };
 
-int FUN_0c022634(int a4, int a5, int a6, int a7)
+int hit_cylinders_overlap(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register float u0;
@@ -33,7 +33,7 @@ int FUN_0c022634(int a4, int a5, int a6, int a7)
     u4 = (((struct o10_float *)(a7))->v);
     u5 = (((struct o4_float *)(a6))->v);
     u6 = (((struct o10_float *)(a6))->v);
-    u7 = FUN_0c0211d0((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
+    u7 = math_interval_overlap((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
     t0 = 0x0;
     if (!(0.0f > ((u0 + u1) - u2)) && !(0.0f > u7)) {
         t0 = 0x1;
@@ -90,7 +90,7 @@ int FUN_0c0226da(int a4, int a5, int a6, int a7)
     *(float *)(((int)stk + 0)) = u15;
     u16 = (((struct o10_float *)(a6))->v);
     *(float *)(((int)stk + 4)) = u16;
-    (((struct o4_float *)((((int)stk + 0) + 0x10)))->v) = (FUN_0c0211d0((u16 + (*(float *)(((int)stk + 0)))), (u15 - u16), (u13 + u14), (u12 - u13)));
+    (((struct o4_float *)((((int)stk + 0) + 0x10)))->v) = (math_interval_overlap((u16 + (*(float *)(((int)stk + 0)))), (u15 - u16), (u13 + u14), (u12 - u13)));
     t22 = 0x0;
     if (!(0.0f > ((((struct o10_float *)(((int)stk + 0)))->v))) && ((u20 = (((struct o8_float *)((((int)stk + 0) + 0x10)))->v), !(0.0f > u20)) && (u21 = (((struct o4_float *)((((int)stk + 0) + 0x10)))->v), !(0.0f > u21)))) {
         t22 = 0x1;

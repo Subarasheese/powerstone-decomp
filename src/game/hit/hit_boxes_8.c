@@ -18,7 +18,7 @@ extern int FUN_0c0238be(int, int);
 extern int FUN_0c0239b6(int, int);
 extern int FUN_0c023a52(int, int);
 extern int FUN_0c023b22(int, int);
-int FUN_0c020cc2(int, int);
+int conv_s16x6_to_f32(int, int);
 int conv_s16x5_to_f32(int, int);
 int conv_s16x4_to_f32(int, int);
 int hit_load_box_world(int, int, int);
@@ -38,7 +38,15 @@ int hit_get_cylinder_entry(int, int, int);
 int hit_get_box_entry(int, int, int);
 struct o8_float { char p[0x8]; float v; };
 float math_signed_sqrt(float);
-int FUN_0c026076(int, int, int, int);
+/* hit_test_part_vs_slot takes a fifth argument, the slot record, that the SH-4 passes on the stack (the callers store it at stk[0], the
+   outgoing word, just before the call). On the host it travels in a register, so it has to be named in the call. */
+#ifdef NATIVE_PORT
+int hit_test_part_vs_slot(int, int, int, int, int);
+#define CALL_FUN_0c026076(a, b, c, d) hit_test_part_vs_slot(a, b, c, d, *(int *)((int)stk + 0))
+#else
+int hit_test_part_vs_slot(int, int, int, int);
+#define CALL_FUN_0c026076(a, b, c, d) hit_test_part_vs_slot(a, b, c, d)
+#endif
 struct o14_float { char p[0x14]; float v; };
 
 int hit_dispatch_shape_pair(int kind, int subkind, int arg_c, int arg_d);
@@ -159,7 +167,7 @@ float FUN_0c026220(int a4, int a5, int a6)
         if (((signed char)a4 & 0xF) != 1) {
             if (((signed char)a4 & 0xF) != 2) {
             } else {
-                FUN_0c020cc2((((int)stk + 0) + 0x14), a5);
+                conv_s16x6_to_f32((((int)stk + 0) + 0x14), a5);
                 hit_load_box_world(a6, (((int)stk + 0) + 0x14), (((int)stk + 0) + 0x14));
                 u7 = ((*(float *)(((int)stk + 24))) + (*(float *)(((int)stk + 36))));
             }
@@ -224,7 +232,7 @@ float FUN_0c026334(int a4, int a5, int a6)
         if (((signed char)a4 & 0xF) != 1) {
             if (((signed char)a4 & 0xF) != 2) {
             } else {
-                FUN_0c020cc2((((int)stk + 0) + 0x14), a5);
+                conv_s16x6_to_f32((((int)stk + 0) + 0x14), a5);
                 hit_load_box_world(a6, (((int)stk + 0) + 0x14), (((int)stk + 0) + 0x14));
                 u7 = ((*(float *)(((int)stk + 24))) - (*(float *)(((int)stk + 36))));
             }
@@ -375,7 +383,7 @@ int FUN_0c0265de(int a4)
         t23 = (t23 << 2);
         *(int *)((int)stk + 0) = ((*(int *)((((0x294 + a4) + t23) + 0x0))));
         t22 = (*(signed char *)((t1 + 0x1)));
-        t31 = FUN_0c026076(t22, (*(signed char *)((((0x2A9 + a4) + t24) + 0x0))), t19, (*(int *)((((0x280 + a4) + t23) + 0x0))));
+        t31 = CALL_FUN_0c026076(t22, (*(signed char *)((((0x2A9 + a4) + t24) + 0x0))), t19, (*(int *)((((0x280 + a4) + t23) + 0x0))));
         t22 = t31;
         if ((int)(signed char)t31 < (int)0x4) {
             t24 = (t24 + 0x1);
@@ -457,7 +465,7 @@ int FUN_0c026880(int a4)
         t21 = (t21 + t24);
         *(int *)((int)stk + 0) = ((*(int *)((t21 + 0x0))));
         t23 = (*(signed char *)((t1 + 0x1)));
-        t36 = FUN_0c026076(t23, (*(signed char *)((((0x2A9 + a4) + t25) + 0x0))), t19, (*(int *)((((0x280 + a4) + t24) + 0x0))));
+        t36 = CALL_FUN_0c026076(t23, (*(signed char *)((((0x2A9 + a4) + t25) + 0x0))), t19, (*(int *)((((0x280 + a4) + t24) + 0x0))));
         t23 = t36;
         if ((int)(signed char)t36 < (int)0x4) {
             t25 = (t25 + 0x1);

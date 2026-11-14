@@ -4919,8 +4919,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 112
 - the cases run 101 of 101 instructions
 
-### FUN_0c01e264 (`0C01E264`, 128 bytes, `src/game/menu/option/gen_w.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_w/FUN_0c01e264.json`
+### keycfg_menu_update_elements (`0C01E264`, 128 bytes, `src/game/menu/option/gen_w.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_w/keycfg_menu_update_elements.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 31 of 47 instructions
@@ -6703,8 +6703,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 140
 - the cases run 77 of 77 instructions
 
-### FUN_0c020cc2 (`0C020CC2`, 70 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/FUN_0c020cc2.json`
+### conv_s16x6_to_f32 (`0C020CC2`, 70 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/conv_s16x6_to_f32.json`
 - case 0
 - case 1
 - case 2
@@ -6841,14 +6841,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 46
 - the cases run 22 of 22 instructions
 
-### FUN_0c021178 (`0C021178`, 88 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/FUN_0c021178.json`
+### math_dir_xyz_normalized (`0C021178`, 88 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/math_dir_xyz_normalized.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 44 of 44 instructions
 
-### FUN_0c0211d0 (`0C0211D0`, 104 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/FUN_0c0211d0.json`
+### math_interval_overlap (`0C0211D0`, 104 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/math_interval_overlap.json`
 - case 2
 - case 3
 - case 66
@@ -7036,8 +7036,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 143
 - the cases run 73 of 73 instructions
 
-### FUN_0c022634 (`0C022634`, 166 bytes, `src/game/hit/hit_boxes_3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_3/FUN_0c022634.json`
+### hit_cylinders_overlap (`0C022634`, 166 bytes, `src/game/hit/hit_boxes_3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_3/hit_cylinders_overlap.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 82 of 83 instructions
@@ -8328,8 +8328,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 21 of 21 instructions
 
-### FUN_0c026076 (`0C026076`, 332 bytes, `src/game/hit/hit_boxes_8_alt.c`)
-- equivalent on 16 development and 18 holdout cases, in `tests/hit_boxes_8_alt/FUN_0c026076.json`
+### hit_test_part_vs_slot (`0C026076`, 332 bytes, `src/game/hit/hit_boxes_8_alt.c`)
+- equivalent on 16 development and 18 holdout cases, in `tests/hit_boxes_8_alt/hit_test_part_vs_slot.json`
 - case 10
 - case 14
 - case 1

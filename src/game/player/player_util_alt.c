@@ -28,7 +28,7 @@ struct Obj {
     signed char bytes[8];       /* 0x2a9 */
 };
 void hit_build_part_shape(struct Obj *, void *);
-signed char FUN_0c026076(int, int, void *, int, struct Ent *);
+signed char hit_test_part_vs_slot(int, int, void *, int, struct Ent *);
 
 int pl_check_item_pickup(int a4)
 {
@@ -148,7 +148,7 @@ int FUN_0c09ce3a(struct Obj *obj)
     for (idx = 0; idx < obj->count; idx++) {
         struct Ent *ent = obj->ent[idx];
         if (ent->kind == 2 && ent->mode == 1 && ent->flag != 2) {
-            if (FUN_0c026076(1, obj->bytes[idx], buf, obj->values[idx], obj->ent[idx]) == 2)
+            if (hit_test_part_vs_slot(1, obj->bytes[idx], buf, obj->values[idx], obj->ent[idx]) == 2)
                 return idx + 1;
         }
     }

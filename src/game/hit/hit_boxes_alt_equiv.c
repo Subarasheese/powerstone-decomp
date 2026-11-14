@@ -24,11 +24,11 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int math_dir_xz_normalized(int, float, float, float, float);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 float math_signed_sqrt(float);
 struct Vec3f { float x, y, z; };
 extern float math_signed_sqrt(float x);
-extern void FUN_0c021178(struct Vec3f *out, struct Vec3f body_a, struct Vec3f body_b);
+extern void math_dir_xyz_normalized(struct Vec3f *out, struct Vec3f body_a, struct Vec3f body_b);
 
 int FUN_0c02078c(void)
 {
@@ -139,7 +139,7 @@ int hit_push_apart_spheres(char *body_a, char *body_b, float *sphere_a, float *s
     if (body_a[729] == 2) return 1;
     if (body_b[729] == 2) return 1;
     if (body_a[729] != 0 && body_b[729] != 0) return 1;
-    FUN_0c021178(&dir, *(struct Vec3f *)sphere_b, *(struct Vec3f *)sphere_a);
+    math_dir_xyz_normalized(&dir, *(struct Vec3f *)sphere_b, *(struct Vec3f *)sphere_a);
     push_x = dir.x * pen;
     if (body_a[729] != 0) {
         *(float *)(body_b + 32) += -push_x;

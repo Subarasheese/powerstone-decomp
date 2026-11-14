@@ -191,7 +191,7 @@ int stage_type11_scroll_uv(int a4);
 void FUN_0c0f2842(int a4, int a5);
 int FUN_0c0f44fc(int a4);
 int keycfg_queue_table_sprite(int a4);
-int FUN_0c01e264(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+int keycfg_menu_update_elements(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int FUN_0c02642c(int a4, int a5);
 int pl_mode11_phase0(int a4);
 int pl_state04_update(int a4);

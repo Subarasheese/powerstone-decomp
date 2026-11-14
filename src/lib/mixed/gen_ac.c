@@ -262,7 +262,7 @@ int FUN_0c01b936(int a4, int a5);
 int FUN_0c01d1ce(int a4, int a5);
 int FUN_0c01e606(int a4, int a5);
 int vec3s_midpoint_to_vec3f(int a4, int a5, int a6, int a7, int a8);
-int FUN_0c021178(int a4, Stk6 s, float f4, float f5, float f6, float f7);
+int math_dir_xyz_normalized(int a4, Stk6 s, float f4, float f5, float f6, float f7);
 int ai_calc_angle_to_target(int a4);
 int game_poll_start_button(void);
 int FUN_0c0557d6(int a4);

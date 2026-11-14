@@ -229,7 +229,7 @@ int FUN_0c0fd04e(int a4);
 int FUN_0c1084b6(int a4, int a5);
 int FUN_0c108776(int a4, int a5, int a6);
 int keycfg_commit_screen_to_settings(void);
-float FUN_0c0211d0(float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+float math_interval_overlap(float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int stage_point_in_sphere(int a4, int a5);
 int FUN_0c0408d0(int a4);
 int FUN_0c0da5b2(int a4, int a5, int a6, int a7);

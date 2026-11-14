@@ -15,7 +15,7 @@ int hit_list_save_positions(int);
 int FUN_0c024446(int);
 struct o2D8_uchar { char p[0x2D8]; unsigned char v; };
 int FUN_0c0246b2(int);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 void math_dir_xz_normalized(float *, float, float, float, float);
 int FUN_0c020468(int);
 int FUN_0c023bf4(int, int);
@@ -134,7 +134,7 @@ int hit_box_vs_box_push(float *box_a, char *obj, float *box_b)
     tmp[3] = box_a[4];
     tmp[0] = box_b[1];
     tmp[1] = box_b[4];
-    overlap[1] = FUN_0c0211d0(tmp[1] + tmp[0], box_b[1] - box_b[4], box_a[4] + tmp[2], box_a[1] - box_a[4]);
+    overlap[1] = math_interval_overlap(tmp[1] + tmp[0], box_b[1] - box_b[4], box_a[4] + tmp[2], box_a[1] - box_a[4]);
     if (0.0f > overlap[0])
         return 0;
     if (0.0f > overlap[2])

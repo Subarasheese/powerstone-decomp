@@ -8,7 +8,7 @@ int math_atan_angle16(float x);
 int hit_dispatch_shape_pair(int a, int id, float *bounds, int val);
 float FUN_0c02629e(int id, int val);
 int obj_can_interact(char *other, int z, int kind);
-int FUN_0c026076(int a, int id, float *bounds, int val, char *other);
+int hit_test_part_vs_slot(int a, int id, float *bounds, int val, char *other);
 float FUN_0c02649a(char *other, int z);
 
 int hit_probe_step_by_velocity(char *obj, float *out, float thresh)
@@ -45,7 +45,7 @@ int hit_probe_step_by_velocity(char *obj, float *out, float thresh)
         if (other[2] == 2 && other[729] != 2) {
             if (obj_can_interact((char *)INT_AT(obj, 660 + 4 * idx), 0, BYTE_AT(obj, 3)) == 0)
                 return 1;
-            if ((signed char)FUN_0c026076(1, BYTE_AT(obj, 681 + idx), bounds, INT_AT(obj, 640 + 4 * idx), (char *)INT_AT(obj, 660 + 4 * idx)) == want_sector) {
+            if ((signed char)hit_test_part_vs_slot(1, BYTE_AT(obj, 681 + idx), bounds, INT_AT(obj, 640 + 4 * idx), (char *)INT_AT(obj, 660 + 4 * idx)) == want_sector) {
                 float delta = FUN_0c02649a((char *)INT_AT(obj, 660 + 4 * idx), 0) - FLOAT_AT(obj, 36);
                 *out = delta;
                 if (delta > best)

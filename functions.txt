@@ -261,7 +261,7 @@ F 0c01dde2 256 FUN_0c01dde2
 F 0c01dee2 376 FUN_0c01dee2
 F 0c01e05a 252 FUN_0c01e05a
 F 0c01e156 270 FUN_0c01e156
-F 0c01e264 128 FUN_0c01e264
+F 0c01e264 128 keycfg_menu_update_elements
 F 0c01e2e4 102 FUN_0c01e2e4
 F 0c01e34a 214 FUN_0c01e34a
 F 0c01e444 92 FUN_0c01e444
@@ -346,7 +346,7 @@ F 0c0209c6 172 FUN_0c0209c6
 F 0c020a80 352 FUN_0c020a80
 F 0c020be0 170 hit_list_save_positions
 F 0c020c8a 56 hit_list_calc_displacement
-F 0c020cc2 70 FUN_0c020cc2
+F 0c020cc2 70 conv_s16x6_to_f32
 F 0c020d20 286 FUN_0c020d20
 F 0c020e3e 58 conv_s16x5_to_f32
 F 0c020e78 46 conv_s16x4_to_f32
@@ -362,8 +362,8 @@ F 0c0210c8 44 FUN_0c0210c8
 F 0c0210f4 44 FUN_0c0210f4
 F 0c021120 44 FUN_0c021120
 F 0c02114c 44 math_dir_xz_normalized
-F 0c021178 88 FUN_0c021178
-F 0c0211d0 104 FUN_0c0211d0
+F 0c021178 88 math_dir_xyz_normalized
+F 0c0211d0 104 math_interval_overlap
 F 0c021238 888 FUN_0c021238
 F 0c0215b8 596 FUN_0c0215b8
 F 0c02180c 1200 FUN_0c02180c
@@ -371,7 +371,7 @@ F 0c021cbc 356 hit_push_apart_spheres
 F 0c021e20 1026 FUN_0c021e20
 F 0c022228 886 hit_push_apart_boxes
 F 0c02259e 150 FUN_0c02259e
-F 0c022634 166 FUN_0c022634
+F 0c022634 166 hit_cylinders_overlap
 F 0c0226da 192 FUN_0c0226da
 F 0c02279a 116 FUN_0c02279a
 F 0c02280e 150 FUN_0c02280e
@@ -445,7 +445,7 @@ F 0c025d72 454 FUN_0c025d72
 F 0c025f38 24 FUN_0c025f38
 F 0c025f50 42 hit_world_calc_displacement
 F 0c025f7a 252 hit_dispatch_shape_pair
-F 0c026076 332 FUN_0c026076
+F 0c026076 332 hit_test_part_vs_slot
 F 0c026200 32 FUN_0c026200
 F 0c026220 126 FUN_0c026220
 F 0c02629e 90 FUN_0c02629e

@@ -42,7 +42,7 @@ int hit_list_reset(int);
 int conv_s16x4_to_f32(int, int);
 int hit_load_sphere_world(int, int, int);
 struct o14_float { char p[0x14]; float v; };
-float FUN_0c0211d0(float, float, float, float, float, float, float);
+float math_interval_overlap(float, float, float, float, float, float, float);
 void math_dir_xz_normalized(float *dir, float ax, float az, float bx, float bz);
 #define F(o, n) (*(float *)((o) + (n)))
 
