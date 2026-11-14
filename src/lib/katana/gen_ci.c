@@ -70,7 +70,7 @@ struct oF8_uint { char p[0xF8]; unsigned int v; };
 int FUN_0c02828e(void);
 int FUN_0c02d420(void);
 int FUN_0c02d458(void);
-int FUN_0c031388(void);
+int ui_draw_no_intro_bar(void);
 int FUN_0c03bdb2(int);
 int FUN_0c042222(int, int);
 int FUN_0c042256(int, int, int);

@@ -173,7 +173,7 @@ int FUN_0c0647f0(int a4, int a5);
 int vmu_menu_spawn_message(int a4);
 int FUN_0c0209c6(int a4, float f4);
 int hit_offset_point_by_owner(int a4, int a5, int a6);
-int FUN_0c0301d2(int a4, int a5, int a6, int a7);
+int ui_hud_combo_message(int a4, int a5, int a6, int a7);
 int FUN_0c0447bc(int a4);
 int FUN_0c0a10b6(int a4, int a5, float f4);
 int FUN_0c0d6ef6(int a4);

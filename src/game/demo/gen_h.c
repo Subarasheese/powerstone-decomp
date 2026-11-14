@@ -105,7 +105,7 @@ int FUN_0c0215b8(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
 int FUN_0c053910(void);
 int FUN_0c024446(int a4);
 int ending_exec_command(int a4, int a5, int a6, int a7);
-int FUN_0c02f786(void);
+int ui_update_gauge_shards(void);
 int FUN_0c0a58f4(int a4);
 int FUN_0c015fda(int a4);
 int FUN_0c0158ee(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);

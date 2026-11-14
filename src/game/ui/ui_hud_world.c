@@ -247,7 +247,7 @@ typedef struct ItemRadar {
 #define RADAR_ITEMS_FIXED (g_save_options[5] != 0 && g_save_options[21] != 0)   /* the marks never cycle */
 #define ITEM_OBJ(i) (((char **)(g_item_state + 0x318))[i])
 
-void FUN_0c03107e(void)
+void ui_update_item_radar(void)
 {
     ItemRadar *r = &ITEM_RADAR;
     UiSprite s;
@@ -341,7 +341,7 @@ void FUN_0c03107e(void)
 }
 
 /* without the intro: a bar across the top of the screen */
-void FUN_0c031388(void)
+void ui_draw_no_intro_bar(void)
 {
     UiSprite s;
 
@@ -364,15 +364,15 @@ void ui_draw_hud(void)
     if (g_hud_state.enabled == 0)
         return;
     FUN_0c030920();
-    FUN_0c02f98a();
-    FUN_0c02dc86();
+    ui_draw_hud_gauges();
+    ui_draw_round_clock();
     ui_draw_hud_cell_pair();
     ui_update_hud_indicators();
-    FUN_0c02e998();
+    ui_draw_hud_panels();
     FUN_0c02ee3c();
     ui_update_hit_counter();
     FUN_0c03082e();
-    FUN_0c02ff18();
+    ui_draw_hud_faces();
     if (HUD_NO_INTRO == 0)
-        FUN_0c03107e();
+        ui_update_item_radar();
 }

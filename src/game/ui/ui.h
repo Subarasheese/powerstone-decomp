@@ -12,7 +12,7 @@
 
 typedef struct UiSprite {       /* a sprite request (56 bytes) */
     int _00;
-    float x, y, z;              /* 0x04 screen position; z orders (the cockpit faces put their x there) */
+    float x, y, z;              /* 0x04 screen position; z orders */
     float scale_x, scale_y;     /* 0x10 */
     int _18[4];
     int rot;                    /* 0x28 rotation, 0x10000 = 360 degrees */
@@ -202,16 +202,16 @@ void ui_draw_hud_cell_pair(void);
 /* --- ui_hud_gauge.c --------------------------------------------------------------------------------------------------- */
 void FUN_0c02f328(char slot);
 void FUN_0c02f3a6(HudChip *c, HudGauge *g);
-void FUN_0c02f3f2(HudGauge *g);
-void FUN_0c02f786(void);
-void FUN_0c02f98a(void);
+void ui_update_gauge(HudGauge *g);
+void ui_update_gauge_shards(void);
+void ui_draw_hud_gauges(void);
 
 /* --- ui_hud_counter.c ------------------------------------------------------------------------------------------------- */
-void FUN_0c02ff18(void);
+void ui_draw_hud_faces(void);
 struct HudMessage;
 void ui_hud_slide_text(struct HudMessage *m);
 void ui_draw_hit_counter(int slot, int steps, float y_offset);
-void FUN_0c0301d2(int slot, int frames);
+void ui_hud_combo_message(int slot, int frames);
 int FUN_0c03027e(int slot);
 void FUN_0c0302b6(int slot);
 void FUN_0c0302fe(int slot, int frames);
@@ -225,14 +225,14 @@ void ui_draw_world_text(Vec3 *world, char *text, char mode, float height);
 void ui_draw_digit_string(Vec3 *pos, char *text, float scale);
 void ui_draw_world_number(Vec3 *pos, unsigned short kind, unsigned short count, int unused);
 void FUN_0c031030(void);
-void FUN_0c03107e(void);
-void FUN_0c031388(void);
+void ui_update_item_radar(void);
+void ui_draw_no_intro_bar(void);
 void ui_draw_hud(void);
 
 /* --- ui_hud_draw.c ------------------------------------------------------------------------------------------------------ */
 void ui_draw_text_stub(char *str, int mode, float x, float y, float scale_x, float scale_y);
 void ui_draw_sprite_string(char *str, int mode, float x, float y, float scale_x, float scale_y, float z);
-void FUN_0c02dc86(void);
+void ui_draw_round_clock(void);
 int FUN_0c02df98(HudPanel *p, int dir, float lo, float hi);
 void FUN_0c02e00a(HudPanel *p);
 void FUN_0c02e050(HudPanel *p);
@@ -242,7 +242,7 @@ void FUN_0c02e2bc(HudPanel *p);
 void FUN_0c02e2da(HudPanel *p);
 void FUN_0c02e438(HudPanel *p, char side);
 void ui_update_stone_effects(HudPanel *p);
-void FUN_0c02e998(void);
+void ui_draw_hud_panels(void);
 
 /* --- stub units ---------------------------------------------------------------------------------------------------------- */
 void FUN_0c02ee3c(void);
