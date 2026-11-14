@@ -39,7 +39,7 @@ int obj_destroy(int a4);
 int FUN_0c0255ae(int a4, int a5, int a6, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int FUN_0c02565a(int a4, int a5, int a6, int a7, float f4);
 int FUN_0c09bb9e(int a4, int a5);
-int FUN_0c01e264(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+int keycfg_menu_update_elements(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int FUN_0c0d3366(void);
 int FUN_0c05941e(int a4);
 int FUN_0c09c45a(int a4);
@@ -397,7 +397,7 @@ int FUN_0c09bb9e(int a4, int a5)
     return t0;
 }
 
-int FUN_0c01e264(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
+int keycfg_menu_update_elements(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
 {
     register int t0;
     register int t1;

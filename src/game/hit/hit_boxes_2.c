@@ -2,8 +2,8 @@
 
 struct vec3 { float x, y, z; };
 extern float math_signed_sqrt(float);
-extern float FUN_0c0211d0(float, float, float, float);
-extern void FUN_0c021178(float *, struct vec3, struct vec3);
+extern float math_interval_overlap(float, float, float, float);
+extern void math_dir_xyz_normalized(float *, struct vec3, struct vec3);
 struct o10_float { char p[0x10]; float v; };
 struct o14_float { char p[0x14]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -25,7 +25,7 @@ int hit_push_apart_boxes(char *obj_a, char *obj_b, float *box_a, float *box_b)
     dx = box_a[0] - box_b[0];
     dz = box_a[2] - box_b[2];
     pen_xz = radius_sum - math_signed_sqrt(dz * dz + dx * dx);
-    pen_y = FUN_0c0211d0(box_a[1] + box_a[3], box_a[1] - box_a[3], box_b[4] + box_b[1], box_b[1] - box_b[4]);
+    pen_y = math_interval_overlap(box_a[1] + box_a[3], box_a[1] - box_a[3], box_b[4] + box_b[1], box_b[1] - box_b[4]);
     if (0.0f > pen_xz)
         return 0;
     if (0.0f > pen_y)
@@ -36,7 +36,7 @@ int hit_push_apart_boxes(char *obj_a, char *obj_b, float *box_a, float *box_b)
         return 1;
     if (obj_a[0x2D9] != 0 && obj_b[0x2D9] != 0)
         return 1;
-    FUN_0c021178(push_dir, *(struct vec3 *)box_b, *(struct vec3 *)box_a);
+    math_dir_xyz_normalized(push_dir, *(struct vec3 *)box_b, *(struct vec3 *)box_a);
     two_bits = 0x40000000;
     two_f = *(float *)&two_bits;
     if (pen_y > pen_xz) {

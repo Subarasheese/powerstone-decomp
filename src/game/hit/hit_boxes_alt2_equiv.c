@@ -21,7 +21,7 @@ struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int math_dir_xz_normalized(int, float, float, float, float);
-float FUN_0c0211d0(float, float, float, float, float, float, float);
+float math_interval_overlap(float, float, float, float, float, float, float);
 
 void hit_load_sphere_world(struct owner_obj *obj, struct vec4 *dst, struct vec4 *src)
 {

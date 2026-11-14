@@ -70,7 +70,7 @@ int FUN_0c01a5cc(int, int, int, int);
 int FUN_0c01a800(int);
 int FUN_0c01a928(int);
 int math_dir_xz_normalized(int, float, float, float, float);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 int FUN_0c0229d8(int, int, int);
 int FUN_0c022e90(int, int, int);
 int FUN_0c055562(void);
@@ -1355,7 +1355,7 @@ int FUN_0c024ea6(int a4, int a5, int a6)
     *(float *)(((int)stk + 8)) = u13;
     u14 = (((struct o10_float *)(a4))->v);
     *(float *)(((int)stk + 12)) = u14;
-    t16 = FUN_0c0211d0((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
+    t16 = math_interval_overlap((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
     t71 = 0x0;
     if (!(0.0f > ((u0 + u1) - t9)) && !(0.0f > t16)) {
         t71 = 0x1;

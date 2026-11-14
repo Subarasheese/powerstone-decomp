@@ -5,7 +5,7 @@ struct o10_float { char p[0x10]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 float math_signed_sqrt(float);
 struct o14_float { char p[0x14]; float v; };
 
@@ -34,7 +34,7 @@ int FUN_0c02380c(int a4, int a5)
     u4 = (((struct o10_float *)(a5))->v);
     u5 = (((struct o4_float *)(a4))->v);
     u6 = (((struct o10_float *)(a4))->v);
-    u7 = FUN_0c0211d0((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
+    u7 = math_interval_overlap((u6 + u5), (u5 - u6), (u4 + u3), (u3 - u4));
     t0 = 0x8;
     if (u7 > ((u0 + u1) - u2)) {
     } else {

@@ -50,7 +50,7 @@ struct oC_short { char p[0xC]; short v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
 struct oF8_int { char p[0xF8]; int v; };
 int FUN_0c02259e(int, int, int, int);
-int FUN_0c022634(int, int, int, int);
+int hit_cylinders_overlap(int, int, int, int);
 int FUN_0c0226da(int, int, int, int);
 int FUN_0c02279a(int, int, int, int);
 int FUN_0c02280e(int, int, int, int);
@@ -3117,7 +3117,7 @@ int FUN_0c025d72(int a4, int a5)
     if ((v0_2 == 0)) goto L_C025F1A;
     goto L_C025F14;
     L_C025E7C:;
-    v0_2 = FUN_0c022634(v0_0, v0_1, (0x24C + v0_0), (0x24C + v0_1));
+    v0_2 = hit_cylinders_overlap(v0_0, v0_1, (0x24C + v0_0), (0x24C + v0_1));
     R0 = (v0_2);
     if ((v0_2 == 0)) goto L_C025F1A;
     goto L_C025F14;

@@ -22,7 +22,7 @@ struct actor {
 };
 void hit_build_part_shape(struct actor *, void *);
 signed char hit_dispatch_shape_pair(int, int, void *, int);
-signed char FUN_0c026076(int, int, void *, int, struct entry *);
+signed char hit_test_part_vs_slot(int, int, void *, int, struct entry *);
 
 int FUN_0c09cee4(struct actor *actor_obj)
 {
@@ -39,7 +39,7 @@ int FUN_0c09cee4(struct actor *actor_obj)
     for (i = 0; i < actor_obj->count; i++) {
         struct entry *ent = actor_obj->ents[i];
         if (ent->kind == 2 && ent->flag != 2) {
-            if (FUN_0c026076(1, actor_obj->bytes_a[i], vec, actor_obj->vals[i], actor_obj->ents[i]) == quadrant)
+            if (hit_test_part_vs_slot(1, actor_obj->bytes_a[i], vec, actor_obj->vals[i], actor_obj->ents[i]) == quadrant)
                 return 1;
         }
     }

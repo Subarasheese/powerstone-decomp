@@ -67,9 +67,9 @@ int FUN_0c01f164(int);
 int FUN_0c01f350(int, int, int, int);
 int FUN_0c01fd48(int);
 int FUN_0c0207a2(int, int);
-int FUN_0c020cc2(int, int);
+int conv_s16x6_to_f32(int, int);
 int math_dir_xz_normalized(int, float, float, float, float);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 int FUN_0c059c44(int, int);
 int FUN_0c059cec(int, int, int);
 int FUN_0c05d254(int);
@@ -1770,7 +1770,7 @@ int FUN_0c024fe4(int a4, int a5, int a6)
     *(float *)(((int)stk + 8)) = u13;
     u14 = (((struct oC_float *)(a6))->v);
     *(float *)(((int)stk + 12)) = u14;
-    t16 = FUN_0c0211d0((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
+    t16 = math_interval_overlap((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
     t64 = 0x0;
     if (!(0.0f > ((u0 + u1) - t9)) && !(0.0f > t16)) {
         t64 = 0x1;
@@ -1847,7 +1847,7 @@ int FUN_0c025332(int a4, int a5, int a6)
     *(float *)(((int)stk + 8)) = u13;
     u14 = (((struct oC_float *)(a4))->v);
     *(float *)(((int)stk + 12)) = u14;
-    t16 = FUN_0c0211d0((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
+    t16 = math_interval_overlap((u14 + (*(float *)(((int)stk + 8)))), (u13 - u14), (u11 + u12), (u10 - u11));
     t47 = 0x0;
     if (!(0.0f > ((u0 + u1) - t9)) && !(0.0f > t16)) {
         t47 = 0x1;
@@ -2137,7 +2137,7 @@ int FUN_0c0246b2(int a4)
             t13 = t0;
             if (t0 != 2) {
             } else {
-                FUN_0c020cc2((((int)stk + 0) + 0x14), (0x264 + a4));
+                conv_s16x6_to_f32((((int)stk + 0) + 0x14), (0x264 + a4));
                 t13 = (hit_load_box_world(a4, (0x24C + a4), (((int)stk + 0) + 0x14)));
             }
         } else {

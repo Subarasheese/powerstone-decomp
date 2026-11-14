@@ -208,7 +208,7 @@ int FUN_0c01c7c4(int a4);
 int FUN_0c01c80a(int a4);
 int FUN_0c01c75e(int a4);
 int FUN_0c01f248(int a4, int a5, int a6, int a7);
-int FUN_0c020cc2(int a4, int a5);
+int conv_s16x6_to_f32(int a4, int a5);
 int ui_fade_start(int a4, int a5, int a6, int a7);
 int FUN_0c04ca94(int a4, int a5, int a6, int a7);
 int FUN_0c04cb50(int a4);

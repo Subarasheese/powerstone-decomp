@@ -7,7 +7,7 @@ struct o4_int { char p[0x4]; int v; };
 struct o8_int { char p[0x8]; int v; };
 extern int FUN_0c025a0e();
 int FUN_0c025d72(int, int);
-int FUN_0c020cc2(int, int);
+int conv_s16x6_to_f32(int, int);
 int conv_s16x5_to_f32(int, int);
 int conv_s16x4_to_f32(int, int);
 int hit_load_box_world(int, int, int);
@@ -61,7 +61,7 @@ int FUN_0c025f38(void)
     return FUN_0c025d72(0xC7E40C4, ((((struct o4_int *)0xC7E407C)->v)));
 }
 
-int FUN_0c026076(int a4, int a5, int a6, int a7, int a8)
+int hit_test_part_vs_slot(int a4, int a5, int a6, int a7, int a8)
 {
     int stk[16];
     register int t21;
@@ -76,7 +76,7 @@ int FUN_0c026076(int a4, int a5, int a6, int a7, int a8)
                 t83 = a5;
                 t19 = a6;
             } else {
-                FUN_0c020cc2((((int)stk + 0) + 0x18), a7);
+                conv_s16x6_to_f32((((int)stk + 0) + 0x18), a7);
                 hit_load_box_world(a8, (((int)stk + 0) + 0x18), (((int)stk + 0) + 0x18));
             }
         } else {

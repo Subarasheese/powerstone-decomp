@@ -23,7 +23,7 @@ struct oC_uchar { char p[0xC]; unsigned char v; };
 struct oD_uchar { char p[0xD]; unsigned char v; };
 int opt_reset_key_config(int);
 int FUN_0c01dd08(int, int, int);
-extern int FUN_0c01e264();
+extern int keycfg_menu_update_elements();
 int snd_play_side_se(int, int);
 extern int _modls();
 int FUN_0c01e5cc(void);

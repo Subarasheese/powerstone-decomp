@@ -5,7 +5,7 @@ extern int hit_build_part_shape(char *obj, void *buf);
 extern char hit_dispatch_shape_pair(int a, int b, void *buf, int c);
 extern float FUN_0c02629e(int a, int b);
 extern int obj_can_interact(int a, int b, int c);
-extern char FUN_0c026076(int a, int b, void *buf, int c, int d);
+extern char hit_test_part_vs_slot(int a, int b, void *buf, int c, int d);
 extern float FUN_0c02649a(int a, int b);
 struct o7270_float { char p[0x7270]; float v; };
 struct o7278_float { char p[0x7278]; float v; };
@@ -43,7 +43,7 @@ int hit_probe_step_max(char *obj, float *out_val, float thresh)
             continue;
         if (obj_can_interact(*(int *)(obj + 660 + idx * 4), 0, obj[3]) == 0)
             return 1;
-        result = (signed char)FUN_0c026076(target, obj[681 + idx], buf, *(int *)(obj + 640 + idx * 4), *(int *)(obj + 660 + idx * 4));
+        result = (signed char)hit_test_part_vs_slot(target, obj[681 + idx], buf, *(int *)(obj + 640 + idx * 4), *(int *)(obj + 660 + idx * 4));
         if (result != sector)
             continue;
         dist = FUN_0c02649a(*(int *)(obj + 660 + idx * 4), 0) - ref_h;

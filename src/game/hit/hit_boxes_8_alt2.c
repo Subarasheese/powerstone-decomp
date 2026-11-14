@@ -7,7 +7,7 @@ extern void hit_get_cylinder_entry(char *, int, char *);
 extern void hit_load_cylinder_world(char *, char *, char *);
 extern void hit_get_box_entry(char *, int, char *);
 extern void hit_load_box_world(char *, char *, char *);
-extern int FUN_0c026076(int, int, char *, int, int);
+extern int hit_test_part_vs_slot(int, int, char *, int, int);
 extern int hit_dispatch_shape_pair(int, int, char *, int);
 
 int hit_probe_object_vs_slots(char *obj)
@@ -39,7 +39,7 @@ int hit_probe_object_vs_slots(char *obj)
     for (i = 0; i < *(signed char *)(obj + 0x2A8); i++) {
         slot_ptr = *(char **)(obj + 0x294 + i * 4);
         if (slot_ptr[2] == 0 || slot_ptr[2] == 1 || slot_ptr[2] == 2) {
-            result = FUN_0c026076(entry[1], *(signed char *)(obj + 0x2A9 + i), data_ptr, *(int *)(obj + 0x280 + i * 4), *(int *)(obj + 0x294 + i * 4));
+            result = hit_test_part_vs_slot(entry[1], *(signed char *)(obj + 0x2A9 + i), data_ptr, *(int *)(obj + 0x280 + i * 4), *(int *)(obj + 0x294 + i * 4));
             if ((signed char)result >= 4) {
                 return result;
             }

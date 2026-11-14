@@ -63,7 +63,7 @@ struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int pad_get_type(int);
 int ui_draw_element_sprite(int);
 int FUN_0c01e75e(int, int);
-float FUN_0c0211d0(float, float, float, float, float, float, float);
+float math_interval_overlap(float, float, float, float, float, float, float);
 int FUN_0c026554(int);
 int ui_project_fighter_to_screen(int, int);
 int fx_spawn_039ed8(int, int);

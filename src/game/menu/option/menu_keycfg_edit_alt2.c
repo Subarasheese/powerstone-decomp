@@ -1,6 +1,6 @@
 /* key config editing screen (state 0c362378, reset keys) (0c01d304-0c01e798) */
 
-int FUN_0c01e264(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+int keycfg_menu_update_elements(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 int FUN_0c01db74(int, int, int, int);
 int FUN_0c01dd6a(int, int, float);
 int FUN_0c01dde2(int);

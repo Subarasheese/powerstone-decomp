@@ -106,7 +106,7 @@ int FUN_0c01fa70(void);
 extern int vmu_menu_update_objs();
 int vmu_menu_pad_pressed(int);
 int FUN_0c01fe52(int);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 int fx_spawn_043bdc(int);
 int game_reset_objects(void);
 int obj_create(int, int, int);

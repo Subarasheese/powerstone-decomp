@@ -91,7 +91,7 @@ int hit_get_sphere_entry(int, int, int);
 int hit_get_cylinder_entry(int, int, int);
 int hit_get_box_entry(int, int, int);
 int hit_dispatch_shape_pair(int, int, int, int);
-int FUN_0c026076(int, int, int, int);
+int hit_test_part_vs_slot(int, int, int, int);
 int fx_spawn_spark_rings(int, int, float, float);
 int ai_clear_op_state(void);
 int ai_calc_goal_angle(int, float);

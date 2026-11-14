@@ -74,7 +74,7 @@ int save_reset_all_data(void);
 int vmu_check_step(int, int, int, int, int, int, int, int, int, int, int);
 int ending_exec_command(int);
 int FUN_0c01b4d6(int);
-float FUN_0c0211d0(float, float, float, float);
+float math_interval_overlap(float, float, float, float);
 int game_draw_frame(void);
 int FUN_0c055562(void);
 int FUN_0c0555c4(void);

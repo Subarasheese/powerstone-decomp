@@ -386,7 +386,7 @@ int hit_list_calc_displacement(int a4)
     return t0;
 }
 
-int FUN_0c020cc2(int a4, int a5)
+int conv_s16x6_to_f32(int a4, int a5)
 {
     *(float *)((a4 + 0x0)) = (float)(*(short *)((a5 + 0x0)));
     (((struct o4_float *)(a4))->v) = (float)(*(short *)((a5 + 0x2)));
@@ -521,7 +521,25 @@ int math_dir_xz_normalized(int a4, int a5, int a6, float f4, float f5, float f6,
     return math_vec3_normalize_fast(a4, a5, a6, f4, f5, (f6 - f4), (f7 - f5));
 }
 
-int FUN_0c021178(int a4, Stk6 s, float f4, float f5, float f6, float f7)
+#ifdef NATIVE_PORT
+/* The direction from point a to point b, normalized, into out. The SH-4 gets the two vectors by value on the stack (the
+   24-byte block of the definition below); on the host a 12-byte struct of floats travels in two SSE registers, which is how
+   the callers pass them, so the host definition takes them as the callers declare them. Taking the stack block there read
+   whatever the stack held and made the push direction garbage. */
+typedef struct { float x, y, z; } PortV3;
+int math_dir_xyz_normalized(float *out, PortV3 a, PortV3 b)
+{
+    out[0] = b.x - a.x;
+    out[1] = b.y - a.y;
+    out[2] = b.z - a.z;
+    if (out[0] == 0.0f && out[2] == 0.0f && out[1] == 0.0f) {
+        float u = *(float *)0xC0212BC;
+        out[0] = out[1] = out[2] = u;
+    }
+    return math_vec3_normalize_fast((int)out, 0, 0, 0.0f, 0.0f, 0.0f, 0.0f);
+}
+#else
+int math_dir_xyz_normalized(int a4, Stk6 s, float f4, float f5, float f6, float f7)
 {
     int stk[15];
     register float u9;
@@ -545,8 +563,9 @@ int FUN_0c021178(int a4, Stk6 s, float f4, float f5, float f6, float f7)
     }
     return (math_vec3_normalize_fast(a4, (((int)stk + 4) + 0x10), (((int)stk + 4) + 0x4), f4, f5, f6, f7));
 }
+#endif
 
-float FUN_0c0211d0(float f4, float f5, float f6, float f7, float f8, float f9, float f10)
+float math_interval_overlap(float f4, float f5, float f6, float f7, float f8, float f9, float f10)
 {
     register float u0;
     register float u1;

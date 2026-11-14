@@ -6,7 +6,7 @@ struct o14_float { char p[0x14]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-float FUN_0c0211d0(float, float, float, float, float, float, float);
+float math_interval_overlap(float, float, float, float, float, float, float);
 int FUN_0c023a52(int a4, int a5, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 
 int FUN_0c023a52(int a4, int a5, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
@@ -58,7 +58,7 @@ int FUN_0c023a52(int a4, int a5, float f4, float f5, float f6, float f7, float f
     *(float *)(((int)stk + 0)) = u15;
     u16 = (((struct o10_float *)(a4))->v);
     *(float *)(((int)stk + 4)) = u16;
-    t18 = FUN_0c0211d0((u16 + (*(float *)(((int)stk + 0)))), (u15 - u16), (u13 + u14), (u12 - u13), f8, f9, f10);
+    t18 = math_interval_overlap((u16 + (*(float *)(((int)stk + 0)))), (u15 - u16), (u13 + u14), (u12 - u13), f8, f9, f10);
     (((struct o4_float *)((((int)stk + 0) + 0x10)))->v) = t18;
     t29 = 0x8;
     if (!(t18 > ((((struct o10_float *)(((int)stk + 0)))->v))) && (u20 = (((struct o8_float *)((((int)stk + 0) + 0x10)))->v), !(t18 > u20))) {

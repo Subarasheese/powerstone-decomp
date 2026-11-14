@@ -27,7 +27,7 @@ int hit_find_contact_direction(int a4)
             t3 = (t3 << 2);
             *(int *)((int)stk + 0) = ((*(int *)((((0x294 + a4) + t3) + 0x0))));
             t2 = 0x1;
-            t24 = FUN_0c026076(t2, (*(signed char *)((((0x2A9 + a4) + t4) + 0x0))), ((int)stk + 4), (*(int *)((((0x280 + a4) + t3) + 0x0))));
+            t24 = hit_test_part_vs_slot(t2, (*(signed char *)((((0x2A9 + a4) + t4) + 0x0))), ((int)stk + 4), (*(int *)((((0x280 + a4) + t3) + 0x0))));
             t2 = t24;
             if ((int)(signed char)t24 < (int)0x4) {
                 t4 = (t4 + 0x1);
