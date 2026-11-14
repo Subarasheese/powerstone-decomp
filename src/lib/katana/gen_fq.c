@@ -68,7 +68,7 @@ int FUN_0c06233a(int, int, int);
 int fx_swirl_create(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int _divls(void);
 extern int _modls();
 extern int _quick_odd_mvn();

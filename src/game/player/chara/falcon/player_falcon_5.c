@@ -49,7 +49,7 @@ int pl_end_action_choose_state(int);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
 float FUN_0c0e2220(int, int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 struct o274_float { char p[0x274]; float v; };
 int hit_find_contact_direction(int);
 int pl_detect_special_input(int, int);
@@ -300,13 +300,13 @@ int FUN_0c068488(int a4)
     }
     t6 = math_vec3_length((((int)stk + 0) + 0xC));
     if (!(u4 > t6)) {
-        FUN_0c0e24f0((((int)stk + 0) + 0xC));
+        math_vec3_normalize_fast((((int)stk + 0) + 0xC));
         t9 = math_sin_angle16((*(int *)((a4 + 0x30))));
         *(float *)(((int)stk + 0)) = (t9 * (math_cos_angle16((*(int *)((a4 + 0x2C))))));
         t13 = math_cos_angle16((*(int *)((a4 + 0x30))));
         *(float *)(((int)stk + 8)) = (t13 * (math_cos_angle16((*(int *)((a4 + 0x2C))))));
         *(float *)(((int)stk + 4)) = (-(math_sin_angle16((*(int *)((a4 + 0x2C))))));
-        FUN_0c0e24f0(((int)stk + 0));
+        math_vec3_normalize_fast(((int)stk + 0));
         t19 = FUN_0c0e2220(((int)stk + 0), (((int)stk + 0) + 0xC));
         if (t19 > 0.0f)
             return 0;

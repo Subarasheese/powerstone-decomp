@@ -23,7 +23,7 @@ struct pad_state { char gap0[8]; unsigned short bits_8; char gap1[2]; unsigned s
 void FUN_0c0f250a(void);
 void syRtcExecServer(void);
 void pad_poll_all(void);
-void FUN_0c0d57a4(void);
+void game_pad_update(void);
 void vmu_unmount_current(void);
 void vmu_check_task(void);
 void boot_screens_update(void);
@@ -41,7 +41,7 @@ void sys_main_loop_step(void)
     FUN_0c0f250a();
     syRtcExecServer();
     pad_poll_all();
-    FUN_0c0d57a4();
+    game_pad_update();
     vmu_unmount_current();
     set_sr(get_sr() & -241);
     if (G[317] == 0) {

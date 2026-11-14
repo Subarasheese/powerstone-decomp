@@ -94,7 +94,7 @@ int keycfg_settings_changed(void);
 int hit_load_box_world(int, int, int);
 int hit_load_cylinder_world(int, int, int);
 int hit_load_sphere_world(int, int, int);
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int hit_find_part_entry(int, int, int, int);
 int hit_get_sphere_entry(int, int, int);

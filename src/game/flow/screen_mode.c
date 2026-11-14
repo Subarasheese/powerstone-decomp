@@ -1,6 +1,6 @@
 /* game mode function (unidentified) (0c0d57a4-0c0d5bc0) */
 
-int FUN_0c0d57a4(int a4, int a5, int a6, int a7);
+int game_pad_update(int a4, int a5, int a6, int a7);
 struct o0_short { short v; };
 struct o0_uchar { unsigned char v; };
 struct o0_uint { unsigned int v; };

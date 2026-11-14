@@ -243,10 +243,10 @@ F 0c01d0ec 226 omake_is_item_unlocked
 F 0c01d1ce 88 FUN_0c01d1ce
 F 0c01d226 34 FUN_0c01d226
 F 0c01d254 162 ui_draw_object_sprite
-F 0c01d304 22 FUN_0c01d304
+F 0c01d304 22 pause_menu_init
 F 0c01d31a 14 FUN_0c01d31a
 F 0c01d328 14 FUN_0c01d328
-F 0c01d336 1208 FUN_0c01d336
+F 0c01d336 1208 pause_menu_update
 F 0c01d7ee 300 FUN_0c01d7ee
 F 0c01d924 62 FUN_0c01d924
 F 0c01d962 126 ui_draw_element_sprite
@@ -361,7 +361,7 @@ F 0c021090 56 hit_load_sphere_world
 F 0c0210c8 44 FUN_0c0210c8
 F 0c0210f4 44 FUN_0c0210f4
 F 0c021120 44 FUN_0c021120
-F 0c02114c 44 FUN_0c02114c
+F 0c02114c 44 math_dir_xz_normalized
 F 0c021178 88 FUN_0c021178
 F 0c0211d0 104 FUN_0c0211d0
 F 0c021238 888 FUN_0c021238
@@ -2976,7 +2976,7 @@ F 0c0a4724 2026 menu_player_select_slot_update
 F 0c0a4f28 690 menu_player_select_scene_update
 F 0c0a4f92 52 menu_check_start_button
 F 0c0a4fc6 36 menu_check_start_any_pad
-F 0c0a4fea 68 FUN_0c0a4fea
+F 0c0a4fea 68 menu_check_start_for_mode
 F 0c0a502e 20 FUN_0c0a502e
 F 0c0a5042 20 menu_find_cursor_task
 F 0c0a5056 48 menu_stage_select_spawn_ui
@@ -3706,7 +3706,7 @@ F 0c0d5544 14 boot_advance_to_version_screen
 F 0c0d5552 246 version_screen_draw
 F 0c0d5648 14 boot_advance_to_warning_screen
 F 0c0d5656 318 warning_screen_draw
-F 0c0d57a4 682 FUN_0c0d57a4
+F 0c0d57a4 682 game_pad_update
 F 0c0d5a4e 346 dbg_print_entry_flag_bits
 F 0c0d5ba8 12 FUN_0c0d5ba8
 F 0c0d5bc0 20 FUN_0c0d5bc0
@@ -4061,7 +4061,7 @@ F 0c0e2340 20 FUN_0c0e2340
 F 0c0e2390 32 FUN_0c0e2390
 F 0c0e23b0 152 FUN_0c0e23b0
 F 0c0e2450 152 FUN_0c0e2450
-F 0c0e24f0 68 FUN_0c0e24f0
+F 0c0e24f0 68 math_vec3_normalize_fast
 F 0c0e2590 180 FUN_0c0e2590
 F 0c0e2650 176 FUN_0c0e2650
 F 0c0e2700 32 FUN_0c0e2700

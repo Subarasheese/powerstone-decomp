@@ -23,7 +23,7 @@ float nlMultiMatrixRevOrder8(int a4);
 int math_mat_transform_point(int a4, int a5);
 int math_mat_transform_vector(int a4, int a5);
 void FUN_0c0e09f0(int a4, int a5, int a6, float f4, float f5, float f6, float f7);
-float FUN_0c0e24f0(int a4);
+float math_vec3_normalize_fast(int a4);
 
 /* nlMultiMatrixRevOrder8(m): XMTRX = m . XMTRX, the reverse order of nlMultiMatrix8 (m 8-aligned, moved in pairs). The
    original loads m into the front bank, swaps banks and transforms the old matrix's columns; fr0 is left holding m[0] */
@@ -81,7 +81,7 @@ void FUN_0c0e09f0(int a4, int a5, int a6, float f4, float f5, float f6, float f7
     }
 }
 
-float FUN_0c0e24f0(int a4)
+float math_vec3_normalize_fast(int a4)
 {
     register float u0;
     register float u1;

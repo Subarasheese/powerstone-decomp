@@ -22,7 +22,7 @@ struct oA0_float { char p[0xA0]; float v; };
 struct oC_float { char p[0xC]; float v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
-int FUN_0c02114c(int, int, int, int, float, float, float, float);
+int math_dir_xz_normalized(int, int, int, int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float, float, float, float);
 int FUN_0c05c4ea(int);
 int FUN_0c0ccf38(int, int, int);
@@ -152,7 +152,7 @@ int FUN_0c02180c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     if (((*(signed char *)((v0_0 + 0x2D9))) == 0)) goto L_C0218FE;
     goto L_C021CA6;
     L_C0218FE:;
-    FUN_0c02114c((((int)stk + 0) + 0x10), v0_5, v0_6, v0_7, (*(float *)((v0_4 + 0x0))), ((((struct o8_float *)(v0_4))->v)), (*(float *)((v0_3 + 0x0))), ((((struct o8_float *)(v0_3))->v)));
+    math_dir_xz_normalized((((int)stk + 0) + 0x10), v0_5, v0_6, v0_7, (*(float *)((v0_4 + 0x0))), ((((struct o8_float *)(v0_4))->v)), (*(float *)((v0_3 + 0x0))), ((((struct o8_float *)(v0_3))->v)));
     w0_2 = *(float *)((v0_1 + 0x0));
     w0_0 = (w0_2);
     w0_1 = (w0_2);

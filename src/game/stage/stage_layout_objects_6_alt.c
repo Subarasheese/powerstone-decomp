@@ -4,7 +4,7 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
 int math_rand_next(void);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int _modls(void);
 int _quick_odd_mvn(void);
 struct o28_float { char p[0x28]; float v; };
@@ -103,7 +103,7 @@ int FUN_0c0acf90(int a4)
         t23 = (math_rand_next());
         u29 = (float)(((int)((int)t23 % (int)0xA)) - 5);
         (((struct o30_float *)(t27))->v) = u29;
-        FUN_0c0e24f0((t27 + 0x28));
+        math_vec3_normalize_fast((t27 + 0x28));
         u29 = ((((struct o28_float *)(t27))->v));
         t23 = t27;
         t23 = (t23 + 0x10);

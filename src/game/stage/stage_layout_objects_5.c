@@ -10,7 +10,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
-int FUN_0c0e24f0(int, int, int, int);
+int math_vec3_normalize_fast(int, int, int, int);
 
 int fx_update_debris_10(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7)
 {
@@ -117,7 +117,7 @@ int fx_update_debris_10(int a4, int a5, int a6, int a7, float f4, float f5, floa
             *(float *)(((int)stk + 4)) = (((((struct o8_float *)(t61))->v)) - ((((struct o4_float *)(((signed char)(((t66 << 1) + t66) << 2) + 0xC339DA4)))->v)));
             t70 = *(signed char *)((a4 + 0xEE));
             *(float *)(((int)stk + 8)) = (((((struct oC_float *)(t61))->v)) - ((((struct o8_float *)(((signed char)(((t70 << 1) + t70) << 2) + 0xC339DA4)))->v)));
-            FUN_0c0e24f0(((int)stk + 0), 0x0, a6, a7);
+            math_vec3_normalize_fast(((int)stk + 0), 0x0, a6, a7);
             t60 = (t60 + 0x1);
             (((struct o28_float *)(t61))->v) = ((*(float *)(((int)stk + 0))) * 10.0f);
             (((struct o2C_float *)(t61))->v) = ((*(float *)(((int)stk + 4))) * 10.0f);

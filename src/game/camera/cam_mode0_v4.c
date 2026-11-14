@@ -31,7 +31,7 @@ void cam_mode_00_variant4(CamRecord *c)
         dir.z = 9.99999975e-05f;
         dir.x = 9.99999975e-05f;
     }
-    FUN_0c0e24f0(&dir);
+    math_vec3_normalize_fast(&dir);
     pt_a.x = pt_a.x + 500.0f * dir.x;
     pt_a.z = pt_a.z + 500.0f * dir.z;
     pt_a.y = pt_a.y + 500.0f * dir.y;

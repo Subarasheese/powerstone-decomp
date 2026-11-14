@@ -16,7 +16,7 @@ int FUN_0c024446(int);
 struct o2D8_uchar { char p[0x2D8]; unsigned char v; };
 int FUN_0c0246b2(int);
 float FUN_0c0211d0(float, float, float, float);
-void FUN_0c02114c(float *, float, float, float, float);
+void math_dir_xz_normalized(float *, float, float, float, float);
 int FUN_0c020468(int);
 int FUN_0c023bf4(int, int);
 int FUN_0c0247d0(int, int);
@@ -143,7 +143,7 @@ int hit_box_vs_box_push(float *box_a, char *obj, float *box_b)
         return 0;
     if (obj[0x2d9] != 0)
         return 1;
-    FUN_0c02114c(dir, box_a[0], box_a[2], box_b[0], box_b[2]);
+    math_dir_xz_normalized(dir, box_a[0], box_a[2], box_b[0], box_b[2]);
     min_pen = overlap[0];
     if (!(min_pen > overlap[1]) && !(min_pen > overlap[2])) {
         obj_f[8] = obj_f[8] + min_pen * dir[0];

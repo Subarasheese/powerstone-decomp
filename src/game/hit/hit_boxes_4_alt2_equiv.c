@@ -7,7 +7,7 @@ extern int FUN_0c0229d8();
 int hit_offset_point_by_owner(int, int, int);
 int FUN_0c022e90(int, int, int);
 float math_signed_sqrt(float);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 extern int FUN_0c022a5a();
 extern char *hit_find_part_entry(char *, int, int, int);
 extern void hit_get_sphere_entry(char *, int, char *);
@@ -76,7 +76,7 @@ int FUN_0c022ed8(int a4, int a5, int a6, int a7, int a8)
                 *(float *)(((int)stk + 20)) = u37;
                 *(float *)(((int)stk + 12)) = u37;
             }
-            FUN_0c0e24f0((((int)stk + 0) + 0xC));
+            math_vec3_normalize_fast((((int)stk + 0) + 0xC));
             u41 = (((struct o8_float *)0xC02313C)->v);
             u46 = (*(float *)(((int)stk + 40)));
             u46 = u46 + (*(float *)(((int)stk + 12))) * (((*(float *)(((int)stk + 52))) - (((u15 + u14) - t28) / u41)));

@@ -6,7 +6,7 @@ struct E { char pad[32]; struct V v; };
 struct P { signed char k; char pad[391]; struct V a; struct V b; struct V *pa; struct V *pb; struct B t; };
 extern char g_players[];
 extern struct B g_cam_key_v2;
-extern void FUN_0c0e24f0(struct V *);
+extern void math_vec3_normalize_fast(struct V *);
 extern void cam_compute_follow(struct P *, void *);
 extern void cam_publish_heading(struct P *);
 void cam_mode_00_variant2(struct P *p0)
@@ -27,7 +27,7 @@ void cam_mode_00_variant2(struct P *p0)
     d.y = q1->y - q0->y;
     if (d.x == 0.0f && d.z == 0.0f && d.y == 0.0f)
         d.y = d.z = d.x = 0.0001f;
-    FUN_0c0e24f0(&d);
+    math_vec3_normalize_fast(&d);
     q1->x += d.x * 800.0f;
     q1->z += d.z * 800.0f;
     q1->y += d.y * 800.0f;

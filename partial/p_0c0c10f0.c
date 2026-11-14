@@ -12,7 +12,7 @@ extern int g_frame_counter;
 extern int FUN_0c0555dc(O *);
 extern void obj_destroy(O *);
 extern void thunk_math_mat_get_translate(char *, V3 *);
-extern void FUN_0c0e24f0(float *);
+extern void math_vec3_normalize_fast(float *);
 extern int math_atan2_angle16(float, float);
 extern void obj_set_record_char(O *, int);
 extern void math_vec3_accumulate(float *, float *);
@@ -44,7 +44,7 @@ void fx_update_23(O *p)
         p->f56 = v.x - p->x;
         p->f60 = v.y - p->y;
         p->f64 = v.z - p->z;
-        FUN_0c0e24f0(&p->f56);
+        math_vec3_normalize_fast(&p->f56);
         if (p->f64 == 0.0f) p->f64 = 1.0e-5f;
         a = p->f56;
         b = p->f64;

@@ -85,7 +85,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int ADXERR_CallErrFunc(int, int, int, int, int);
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int FUN_0c0496f0(int, int, int, int, int, int, int, int, int);
 int ai_clear_op_state(void);

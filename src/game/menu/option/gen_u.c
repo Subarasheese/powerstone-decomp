@@ -68,7 +68,7 @@ int FUN_0c01f350(int, int, int, int);
 int FUN_0c01fd48(int);
 int FUN_0c0207a2(int, int);
 int FUN_0c020cc2(int, int);
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 int FUN_0c059c44(int, int);
 int FUN_0c059cec(int, int, int);
@@ -1776,7 +1776,7 @@ int FUN_0c024fe4(int a4, int a5, int a6)
         t64 = 0x1;
         if ((*(signed char *)((a5 + 0x2D9))) != 0) {
         } else {
-            FUN_0c02114c((((int)stk + 0) + 0x18), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)));
+            math_dir_xz_normalized((((int)stk + 0) + 0x18), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)));
             if (t16 > ((u0 + u1) - t9)) {
                 u29 = (((((struct o18_float *)(((int)stk + 0)))->v)) * ((u0 + u1) - t9));
                 u29 = -u29;
@@ -1853,7 +1853,7 @@ int FUN_0c025332(int a4, int a5, int a6)
         t47 = 0x1;
         if ((*(signed char *)((a5 + 0x2D9))) != 0) {
         } else {
-            FUN_0c02114c((((int)stk + 0) + 0x18), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)));
+            math_dir_xz_normalized((((int)stk + 0) + 0x18), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)));
             if (!(t16 > ((u0 + u1) - t9)) && (u25 = (((struct o4_float *)(a4))->v), u26 = (((struct o4_float *)(a6))->v), u25 > u26)) {
                 (((struct o24_float *)(a5))->v) = ((((((((struct o4_float *)(a4))->v)) - ((((struct oC_float *)(a4))->v))) - ((((struct o10_float *)(a6))->v))) - ((((struct o4_float *)(a6))->v))) + ((((struct o24_float *)(a5))->v)));
                 t47 = 0x3;

@@ -146,7 +146,7 @@ int math_atan_angle16(float);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int _modlu(void);
 int _quick_odd_mvn(void);
 int _slow_mvn(int);

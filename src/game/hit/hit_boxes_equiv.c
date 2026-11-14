@@ -28,7 +28,7 @@ int nlStoreMatrix(int);
 int nlPopMatrix(int);
 int nlPushMatrix(int);
 int nlSetTranslate(int);
-int FUN_0c0e24f0(int, int, int, float, float, float, float);
+int math_vec3_normalize_fast(int, int, int, float, float, float, float);
 int math_mat_transform_vector(int, int);
 int math_mat_get_translate(int, int);
 typedef struct { float x, y, z; } Vec3f;
@@ -506,7 +506,7 @@ int FUN_0c021120(int a4, int a5, int a6)
     return (hit_load_sphere_world((*(int *)(((int)stk + 0))), (*(int *)(((int)stk + 4))), (((int)stk + 0) + 0xC)));
 }
 
-int FUN_0c02114c(int a4, int a5, int a6, float f4, float f5, float f6, float f7)
+int math_dir_xz_normalized(int a4, int a5, int a6, float f4, float f5, float f6, float f7)
 {
     float u0;
 
@@ -518,7 +518,7 @@ int FUN_0c02114c(int a4, int a5, int a6, float f4, float f5, float f6, float f7)
         (((struct o8_float *)(a4))->v) = u0;
         *(float *)((a4 + 0x0)) = u0;
     }
-    return FUN_0c0e24f0(a4, a5, a6, f4, f5, (f6 - f4), (f7 - f5));
+    return math_vec3_normalize_fast(a4, a5, a6, f4, f5, (f6 - f4), (f7 - f5));
 }
 
 int FUN_0c021178(int a4, Stk6 s, float f4, float f5, float f6, float f7)
@@ -543,7 +543,7 @@ int FUN_0c021178(int a4, Stk6 s, float f4, float f5, float f6, float f7)
         (((struct o8_float *)(a4))->v) = u9;
         *(float *)((a4 + 0x0)) = u9;
     }
-    return (FUN_0c0e24f0(a4, (((int)stk + 4) + 0x10), (((int)stk + 4) + 0x4), f4, f5, f6, f7));
+    return (math_vec3_normalize_fast(a4, (((int)stk + 4) + 0x10), (((int)stk + 4) + 0x4), f4, f5, f6, f7));
 }
 
 float FUN_0c0211d0(float f4, float f5, float f6, float f7, float f8, float f9, float f10)

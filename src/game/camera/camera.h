@@ -226,7 +226,7 @@ float math_tan_angle16(int angle);
 int math_atan2_angle16(float x, float z);
 float math_vec2_cos_between(float ax, float az, float bx, float bz);
 float math_rand_float(void);
-void FUN_0c0e24f0(Vec3 *v);                  /* normalise */
+void math_vec3_normalize_fast(Vec3 *v);                  /* normalise */
 void nlProjectScreen(Vec3 *point, float *screen);
 void nlUnitMatrix(void);
 void nlLookAt(Vec3 *eye, Vec3 *target, int roll);

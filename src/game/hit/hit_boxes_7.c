@@ -43,7 +43,7 @@ int conv_s16x4_to_f32(int, int);
 int hit_load_sphere_world(int, int, int);
 struct o14_float { char p[0x14]; float v; };
 float FUN_0c0211d0(float, float, float, float, float, float, float);
-void FUN_0c02114c(float *dir, float ax, float az, float bx, float bz);
+void math_dir_xz_normalized(float *dir, float ax, float az, float bx, float bz);
 #define F(o, n) (*(float *)((o) + (n)))
 
 int FUN_0c024298(int a4, float f4, float f5, float f6, float f7, float f8);
@@ -428,7 +428,7 @@ int FUN_0c02512e(float *a, char *o, float *b)
         return 0;
     if (o[0x2D9] != 0)
         return 1;
-    FUN_0c02114c(s.dir, a[0], a[2], b[0], b[2]);
+    math_dir_xz_normalized(s.dir, a[0], a[2], b[0], b[2]);
     if (!(s.pen[0] > s.pen[1]) && !(s.pen[0] > s.pen[2])) {
         if (a[0] > b[0])
             d = a[0] - a[3] - b[3];

@@ -149,10 +149,10 @@ FUN_0c01cb1e
 FUN_0c01cb86
 FUN_0c01d1ce
 FUN_0c01d226
-FUN_0c01d304
+pause_menu_init
 FUN_0c01d31a
 FUN_0c01d328
-FUN_0c01d336
+pause_menu_update
 FUN_0c01d7ee
 FUN_0c01d924
 FUN_0c01d9e0
@@ -230,7 +230,7 @@ FUN_0c020d20
 FUN_0c0210c8
 FUN_0c0210f4
 FUN_0c021120
-FUN_0c02114c
+math_dir_xz_normalized
 FUN_0c021178
 FUN_0c0211d0
 FUN_0c021238
@@ -1290,7 +1290,7 @@ FUN_0c0a413a
 FUN_0c0a416c
 FUN_0c0a43b8
 FUN_0c0a4604
-FUN_0c0a4fea
+menu_check_start_for_mode
 FUN_0c0a502e
 FUN_0c0a5086
 FUN_0c0a519c
@@ -1554,7 +1554,7 @@ FUN_0c0d5292
 FUN_0c0d52aa
 FUN_0c0d52e8
 FUN_0c0d5428
-FUN_0c0d57a4
+game_pad_update
 FUN_0c0d5ba8
 FUN_0c0d5bc0
 FUN_0c0d5c9a
@@ -1691,7 +1691,7 @@ FUN_0c0e2340
 FUN_0c0e2390
 FUN_0c0e23b0
 FUN_0c0e2450
-FUN_0c0e24f0
+math_vec3_normalize_fast
 FUN_0c0e2590
 FUN_0c0e2650
 FUN_0c0e2700

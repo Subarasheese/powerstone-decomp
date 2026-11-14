@@ -91,7 +91,7 @@ float math_sin_angle16(int);
 int dbg_set_cursor_cell(int, int);
 int dbg_set_text_color(int);
 int dbg_printf(int, ...);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int FUN_0c0e4688(int);
 int _divls(void);
 int _modls(void);

@@ -25,7 +25,7 @@ struct o28_float { char p[0x28]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int FUN_0c02114c(int, float, float, float, float);
+int math_dir_xz_normalized(int, float, float, float, float);
 float FUN_0c0211d0(float, float, float, float);
 float math_signed_sqrt(float);
 struct o0_int { int v; };
@@ -131,7 +131,7 @@ int FUN_0c02545c(int a4, int a5, int a6)
         t29 = 0x1;
         if ((*(signed char *)((a5 + 0x2D9))) != 0) {
         } else {
-            FUN_0c02114c((((int)stk + 0) + 0x8), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)));
+            math_dir_xz_normalized((((int)stk + 0) + 0x8), (*(float *)((a4 + 0x0))), ((((struct o8_float *)(a4))->v)), (*(float *)((a6 + 0x0))), ((((struct o8_float *)(a6))->v)));
             u19 = (((((struct o8_float *)(((int)stk + 0)))->v)) * ((u0 + u1) - t9));
             u19 = -u19;
             (((struct o20_float *)(a5))->v) = (((((struct o20_float *)(a5))->v)) + u19);

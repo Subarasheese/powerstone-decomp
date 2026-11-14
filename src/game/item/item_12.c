@@ -16,7 +16,7 @@ struct oEE_short { char p[0xEE]; short v; };
 int snd_play_side_se(int, int);
 int FUN_0c0ac5c4(int);
 int math_rand_next(void);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 extern int _modls();
 int obj_destroy(int);
 
@@ -100,7 +100,7 @@ void FUN_0c05d594(int a4, float f4)
             PF(PART(o, i), 0x28) = (float)(math_rand_next() % 10 - 10);
             PF(PART(o, i), 0x2C) = (float)(math_rand_next() % 10 + 40);
             PF(PART(o, i), 0x30) = -(float)(math_rand_next() % 20);
-            FUN_0c0e24f0((int)(PART(o, i) + 0x28));
+            math_vec3_normalize_fast((int)(PART(o, i) + 0x28));
             PF(PART(o, i), 0x28) = PF(PART(o, i), 0x28) * 10.0f;
             PF(PART(o, i), 0x2C) = PF(PART(o, i), 0x2C) * 10.0f;
             PF(PART(o, i), 0x30) = PF(PART(o, i), 0x30) * 10.0f;

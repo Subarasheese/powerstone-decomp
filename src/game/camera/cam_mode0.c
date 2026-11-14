@@ -179,7 +179,7 @@ void cam_mode_00_variant1(CamRecord *c)
         s.d.z = 9.99999975e-05f;
         s.d.x = 9.99999975e-05f;
     }
-    FUN_0c0e24f0(&s.d);
+    math_vec3_normalize_fast(&s.d);
     s.a.x = s.a.x + 900.0f * s.d.x;
     s.a.z = s.a.z + 900.0f * s.d.z;
     s.a.y = s.a.y + 900.0f * s.d.y;
@@ -234,7 +234,7 @@ void cam_mode_00_variant3(CamRecord *c)
         s.d.z = 9.99999975e-05f;
         s.d.x = 9.99999975e-05f;
     }
-    FUN_0c0e24f0(&s.d);
+    math_vec3_normalize_fast(&s.d);
     s.a.x = s.a.x + 500.0f * s.d.x;
     s.a.z = s.a.z + 500.0f * s.d.z;
     s.a.y = s.a.y + 500.0f * s.d.y;

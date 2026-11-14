@@ -4321,8 +4321,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 107
 - the cases run 7 of 17 instructions
 
-### FUN_0c01d304 (`0C01D304`, 22 bytes, `src/game/menu/option/menu_keycfg_edit.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/menu_keycfg_edit/FUN_0c01d304.json`
+### pause_menu_init (`0C01D304`, 22 bytes, `src/game/menu/option/menu_keycfg_edit.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/menu_keycfg_edit/pause_menu_init.json`
 - case 0
 - case 1
 - case 2
@@ -4441,8 +4441,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 107
 - the cases run 7 of 7 instructions
 
-### FUN_0c01d336 (`0C01D336`, 1208 bytes, `src/game/demo/gen_h.c`)
-- equivalent on 19 development and 18 holdout cases, in `tests/gen_h/FUN_0c01d336.json`
+### pause_menu_update (`0C01D336`, 1208 bytes, `src/game/demo/gen_h.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/gen_h/pause_menu_update.json`
 - case 12
 - case 3
 - case 15
@@ -6801,8 +6801,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 22 of 22 instructions
 
-### FUN_0c02114c (`0C02114C`, 44 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/FUN_0c02114c.json`
+### math_dir_xz_normalized (`0C02114C`, 44 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/math_dir_xz_normalized.json`
 - case 112
 - case 0
 - case 1
@@ -34670,8 +34670,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 59
 - the cases run 63 of 128 instructions
 
-### FUN_0c0a4fea (`0C0A4FEA`, 68 bytes, `src/game/effect/gen_bx.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bx/FUN_0c0a4fea.json`
+### menu_check_start_for_mode (`0C0A4FEA`, 68 bytes, `src/game/effect/gen_bx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bx/menu_check_start_for_mode.json`
 - case 18
 - case 8
 - case 11
@@ -42378,8 +42378,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 87
 - the cases run 36 of 36 instructions
 
-### FUN_0c0d57a4 (`0C0D57A4`, 682 bytes, `src/game/menu/gen_bg.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bg/FUN_0c0d57a4.json`
+### game_pad_update (`0C0D57A4`, 682 bytes, `src/game/menu/gen_bg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bg/game_pad_update.json`
 - case 2
 - case 3
 - case 4
@@ -47316,8 +47316,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 56 of 75 instructions
 
-### FUN_0c0e24f0 (`0C0E24F0`, 68 bytes, `src/lib/naomi/gen_ao.c`)
-- equivalent on 36 development and 36 holdout cases, in `tests/gen_ao/FUN_0c0e24f0.json`
+### math_vec3_normalize_fast (`0C0E24F0`, 68 bytes, `src/lib/naomi/gen_ao.c`)
+- equivalent on 36 development and 36 holdout cases, in `tests/gen_ao/math_vec3_normalize_fast.json`
 - case 0
 - case 1
 - case 2

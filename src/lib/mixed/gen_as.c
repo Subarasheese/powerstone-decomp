@@ -296,7 +296,7 @@ int opt_page3_run_objects_in_mask(int a4, int a5, int a6, int a7);
 int opt_page3_obj_in_mask(int a4);
 int opt_page2_run_objects_in_mask(int a4, int a5, int a6, int a7);
 int omake_state_reset(void);
-int FUN_0c01d304(int a4);
+int pause_menu_init(int a4);
 int FUN_0c02078c(void);
 int res_player_entry_release(int a4);
 int mdl_vtx_get_uv(int a4, int a5);

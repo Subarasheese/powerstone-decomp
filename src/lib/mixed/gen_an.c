@@ -164,7 +164,7 @@ int nlScaleV(int);
 int nlTransposeMatrix(void);
 int nlTranslateV(int);
 int FUN_0c0e22e0(int, int, float);
-int FUN_0c0e24f0(int, int, int, float, float, float, float);
+int math_vec3_normalize_fast(int, int, int, float, float, float, float);
 int FUN_0c0e34d0(int);
 int snd_bank_load(int, int);
 int snd_bank_unload(int);
@@ -447,7 +447,7 @@ int nlRotate(int a4, int a5, int a6, float f4, float f5, float f6, float f7)
     *(float *)(((int)stk + 4)) = (*(float *)((a4 + 0x0)));
     *(float *)(((int)stk + 8)) = ((((struct o4_float *)(a4))->v));
     *(float *)(((int)stk + 12)) = ((((struct o8_float *)(a4))->v));
-    FUN_0c0e24f0((((int)stk + 0) + 0x4), a5, a6, f4, f5, f6, f7);
+    math_vec3_normalize_fast((((int)stk + 0) + 0x4), a5, a6, f4, f5, f6, f7);
     return (nlRotateAxe((((int)stk + 0) + 0x4), (*(int *)(((int)stk + 0)))));
 }
 

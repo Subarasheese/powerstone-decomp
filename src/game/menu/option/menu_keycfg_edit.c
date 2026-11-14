@@ -3,7 +3,7 @@
 /* named globals (symbols.txt) */
 int FUN_0c01e156(int a4, int a5, int a6);
 int FUN_0c01db74(int a4, int a5, int a6, int a7);
-int FUN_0c01d336(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+int pause_menu_update(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
 extern char g_key_config[];
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -61,7 +61,7 @@ int FUN_0c01e65e(int a4, int a5, int a6);
 int FUN_0c01e6b4(int a4);
 int FUN_0c01e75e(int a4, int a5);
 
-int FUN_0c01d304(int a4)
+int pause_menu_init(int a4)
 {
     (((struct o3_uchar *)0xC362378)->v) = 0x0;
     (((struct o2_uchar *)0xC362378)->v) = 0x0;

@@ -8,7 +8,7 @@ int obj_destroy(int);
 int obj_set_record_char(int, int);
 int math_atan2_angle16(float, float);
 int math_vec3_accumulate(int, int);
-int FUN_0c0e24f0(int);
+int math_vec3_normalize_fast(int);
 int thunk_math_mat_get_translate(int, int);
 extern float _builtin_sqrtf(float);
 struct Obj {
@@ -104,7 +104,7 @@ void fx_update_23(struct Obj *obj)
         obj->dir[0] = tgt[0] - obj->pos[0];
         obj->dir[1] = tgt[1] - obj->pos[1];
         obj->dir[2] = tgt[2] - obj->pos[2];
-        FUN_0c0e24f0((int)obj->dir);
+        math_vec3_normalize_fast((int)obj->dir);
         if (obj->dir[2] == 0.0f) {
             obj->dir[2] = 9.99999975e-06f;
         }
