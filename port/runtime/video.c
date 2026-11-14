@@ -415,6 +415,8 @@ static int culled(const struct rvert *t, int mode)
     return mode == 2 ? det < 0 : det > 0;
 }
 
+static uint32_t polygon_counter; /* ids of polygons for the renderer to sort translucent ones whole */
+
 static void draw_object(uint32_t obj, uint32_t light, float alpha)
 {
     uint32_t fmt = U32(obj);
@@ -437,7 +439,7 @@ static void draw_object(uint32_t obj, uint32_t light, float alpha)
         m.alpha = alpha;
         struct tex *t = (pcw & 8) ? tex_of_tcw(tcw) : 0;
         if (getenv("PORT_DEBUG"))
-            fprintf(stderr, "mesh obj %08X pcw %08X tsp %08X tcw %08X texno %d tex %s%ld alpha %g col %g %g %g %g\n", obj, pcw, tsp, tcw,
+            fprintf(stderr, "mesh obj %08X pcw %08X isp %08X tsp %08X tcw %08X texno %d tex %s%ld alpha %g col %g %g %g %g\n", obj, pcw, isp, tsp, tcw,
                     I32(mesh + 0x20), t ? "yes" : "no", t ? (long)(t - tex + 1) : 0L, alpha, F32(mesh + 0x2C), F32(mesh + 0x30), F32(mesh + 0x34), F32(mesh + 0x38));
         m.mode.texture = t ? t->gl : 0;
         if (getenv("PORT_DEBUG") && (pcw & 8) && (!t || !t->gl))
@@ -463,7 +465,10 @@ static void draw_object(uint32_t obj, uint32_t light, float alpha)
             int cull = (int)(flags & 3) ^ (mirror && (flags & 2) ? 1 : 0);
             int strip = flags & 0x10;
             int nv = strip ? count : count * 3;
+            uint32_t gid = ++polygon_counter;       /* a strip is one polygon */
             for (int k = 0; k < nv && p < end; k++) {
+                if (!strip && k % 3 == 0)
+                    gid = ++polygon_counter;        /* the triangles of a list are separate polygons */
                 uint32_t vp = p;
                 if (!(U32(p) & 1)) { /* a reference to an earlier vertex */
                     vp = p + 8 + (uint32_t)I32(p + 4);
@@ -474,6 +479,7 @@ static void draw_object(uint32_t obj, uint32_t light, float alpha)
                 float nrm[3] = {F32(vp + 12), F32(vp + 16), F32(vp + 20)};
                 struct rvert v;
                 project(pos, &v);
+                v.group = gid;
                 if (k == 0 && getenv("PORT_DEBUG_VTX"))
                     fprintf(stderr, "vtx obj %08X pos %g %g %g -> x %g y %g w %g  m0 %g %g %g %g  m3 %g %g %g %g\n", obj, pos[0],
                             pos[1], pos[2], v.x, v.y, v.z, port_xmtrx[0], port_xmtrx[4], port_xmtrx[8], port_xmtrx[12],
@@ -567,6 +573,7 @@ void sprite_draw(uint32_t req)
         g = F32(LIGHT_COLOUR + 4);
         b = F32(LIGHT_COLOUR + 8);
     }
+    uint32_t gid = ++polygon_counter;
     for (int i = 0; i < 4; i++) {
         float dx = (float)(corner[i][0] - ax), dy = (float)(corner[i][1] - ay);
         q[i].x = x + dx * hw * c + dy * hh * s;
@@ -576,6 +583,7 @@ void sprite_draw(uint32_t req)
         q[i].v = flags & 0x20 ? uv[i][1] : 1.0f - uv[i][1];
         q[i].argb = argb(alpha, r, g, b);
         q[i].offset = 0;
+        q[i].group = gid;
     }
     struct rdraw d;
     memset(&d, 0, sizeof d);

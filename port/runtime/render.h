@@ -10,6 +10,8 @@ struct rvert {
     float u, v;
     uint32_t argb;
     uint32_t offset; /* the specular (offset) colour PowerVR adds */
+    float flatw;     /* set by render_tris: W of a triangle whose three vertices share one W (a screen sprite), else 0 */
+    uint32_t group;  /* the polygon (a strip, a lone triangle or a sprite) this vertex belongs to: translucent polygons are sorted whole */
 };
 
 /* a draw: a run of triangles sharing one texture and blend mode */

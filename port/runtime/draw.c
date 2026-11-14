@@ -2,8 +2,9 @@
 
    The PowerVR takes screen-space vertices: x and y in pixels of the 640x480 frame, and 1/w for depth (larger is nearer).
    Its colour is texture x base colour + offset colour. Opaque and punch-through polygons are drawn first, translucent
-   ones after, in the order the game submitted them (the PowerVR sorts translucent polygons itself; submission order
-   is the first approximation). */
+   ones after, sorted back to front by triangle (the PowerVR auto-sorts translucent polygons; the game relies on it for
+   glass over objects). Depth is written per fragment as a logarithm of W: the PowerVR keeps 1/W in a 32-bit float, whose
+   relative precision a 24-bit fixed buffer holding 0.1/W cannot match at a distance (wall decals fought the wall). */
 #define GL_GLEXT_PROTOTYPES
 #include <GL/gl.h>
 #include <GL/glext.h>
@@ -28,20 +29,21 @@ static const char *vs_src =
     "layout(location=1) in vec2 uv;\n"
     "layout(location=2) in vec4 col;\n"
     "layout(location=3) in vec4 ofs;\n"
+    "layout(location=4) in float flatw;\n"
     "uniform vec2 screen;\n"
-    "out vec2 v_uv; out vec4 v_col; out vec4 v_ofs;\n"
+    "out vec2 v_uv; out vec4 v_col; out vec4 v_ofs; noperspective out float v_invw; flat out float v_flat;\n"
     "void main() {\n"
     /* pos.z is W: depth = 0.1 / W (1/W, as the PowerVR compares it), written as clip-space z = 0.2 - W so that GL
        interpolates and clips it (behind the eye, or nearer than W = 0.1) */
     "  float w = pos.z;\n"
     "  vec2 ndc = vec2(pos.x / screen.x * 2.0 - 1.0, 1.0 - pos.y / screen.y * 2.0);\n"
     "  gl_Position = vec4(ndc * w, 0.2 - w, w);\n"
-    "  v_uv = uv; v_col = col; v_ofs = ofs;\n"
+    "  v_uv = uv; v_col = col; v_ofs = ofs; v_invw = 1.0 / w; v_flat = flatw;\n"
     "}\n";
 
 static const char *fs_src =
     "#version 330 core\n"
-    "in vec2 v_uv; in vec4 v_col; in vec4 v_ofs;\n"
+    "in vec2 v_uv; in vec4 v_col; in vec4 v_ofs; noperspective in float v_invw; flat in float v_flat;\n"
     "uniform sampler2D tex;\n"
     "uniform int alpha_test;\n"
     "out vec4 o;\n"
@@ -51,6 +53,11 @@ static const char *fs_src =
     "  c.rgb += v_ofs.rgb;\n"
     "  if (alpha_test != 0 && c.a < 0.5) discard;\n"
     "  o = c;\n"
+    /* nearness as a logarithm of W, 0 at W = 2^20 and 1 at W = 0.05: even relative steps in W over the whole range */
+    /* a screen sprite has one W over the whole triangle: its constant, not an interpolation that rounding can tilt (two
+       sprites at the same depth, the menu's text over its shadow, would otherwise win by triangle halves) */
+    "  float w = v_flat > 0.0 ? v_flat : 1.0 / v_invw;\n"
+    "  gl_FragDepth = clamp((20.0 - log2(max(w, 1e-6))) / (20.0 + 4.3219281), 0.0, 1.0);\n"
     "}\n";
 
 static GLuint shader(GLenum kind, const char *src)
@@ -88,7 +95,8 @@ void render_setup(void)
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(struct rvert), (void *)12);
     glVertexAttribPointer(2, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(struct rvert), (void *)20);
     glVertexAttribPointer(3, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(struct rvert), (void *)24);
-    for (int i = 0; i < 4; i++)
+    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(struct rvert), (void *)28);
+    for (int i = 0; i < 5; i++)
         glEnableVertexAttribArray(i);
     uint32_t px = 0xFFFFFFFF;
     glGenTextures(1, &white);
@@ -123,35 +131,102 @@ void render_tris(const struct rvert *v, unsigned n, const struct rdraw *mode)
         verts[nverts].offset = argb_to_rgba(v[i].offset);
         nverts++;
     }
+    for (unsigned i = 0; i + 2 < n; i += 3) {     /* flat triangles: one W at all three vertices */
+        float w = v[i].z;
+        float f = (w > 0.0f && v[i + 1].z == w && v[i + 2].z == w) ? w : 0.0f;
+        verts[nverts - n + i].flatw = verts[nverts - n + i + 1].flatw = verts[nverts - n + i + 2].flatw = f;
+    }
 }
 
 static const GLenum blend_factor[8] = {GL_ZERO, GL_ONE, GL_DST_COLOR, GL_ONE_MINUS_DST_COLOR,
                                        GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_DST_ALPHA, GL_ONE_MINUS_DST_ALPHA};
 
-static void draw_pass(int translucent)
+static void bind_state(const struct rdraw *d)
+{
+    static const GLenum func[8] = {GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, GL_ALWAYS};
+    glBindTexture(GL_TEXTURE_2D, d->texture ? d->texture : white);
+    GLint filter = d->filter ? GL_LINEAR : GL_NEAREST;
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, d->clamp_u ? GL_CLAMP_TO_EDGE : d->flip_u ? GL_MIRRORED_REPEAT : GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, d->clamp_v ? GL_CLAMP_TO_EDGE : d->flip_v ? GL_MIRRORED_REPEAT : GL_REPEAT);
+    if (d->blend == 2) {
+        glEnable(GL_BLEND);
+        glBlendFunc(blend_factor[d->src & 7], blend_factor[d->dst & 7]);
+    } else {
+        glDisable(GL_BLEND);
+    }
+    glUniform1i(u_alpha_test, d->blend == 1);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(func[d->depth_func & 7]);
+    glDepthMask(d->depth_write ? GL_TRUE : GL_FALSE);
+}
+
+static void draw_opaque(void)
 {
     for (unsigned i = 0; i < ndraws; i++) {
         struct rdraw *d = &draws[i];
-        if ((d->blend == 2) != translucent)
+        if (d->blend == 2)
             continue;
-        glBindTexture(GL_TEXTURE_2D, d->texture ? d->texture : white);
-        GLint filter = d->filter ? GL_LINEAR : GL_NEAREST;
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, d->clamp_u ? GL_CLAMP_TO_EDGE : d->flip_u ? GL_MIRRORED_REPEAT : GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, d->clamp_v ? GL_CLAMP_TO_EDGE : d->flip_v ? GL_MIRRORED_REPEAT : GL_REPEAT);
-        if (d->blend == 2) {
-            glEnable(GL_BLEND);
-            glBlendFunc(blend_factor[d->src & 7], blend_factor[d->dst & 7]);
-        } else {
-            glDisable(GL_BLEND);
-        }
-        glUniform1i(u_alpha_test, d->blend == 1);
-        static const GLenum func[8] = {GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, GL_ALWAYS};
-        glEnable(GL_DEPTH_TEST);
-        glDepthFunc(func[d->depth_func & 7]);
-        glDepthMask(d->depth_write ? GL_TRUE : GL_FALSE);
+        bind_state(d);
         glDrawArrays(GL_TRIANGLES, d->first, d->count);
+    }
+}
+
+/* translucent polygons, farthest first, the game's order among equals: the PowerVR's auto-sort. It sorts whole polygons (a
+   strip, a lone triangle, a sprite) by their farthest vertex; sorting single triangles split a quad and drew half of a
+   panel over the text on it. */
+struct tpoly {
+    float key;                   /* the largest W of its vertices */
+    unsigned first, count, draw; /* its vertices in the buffer, and the draw whose state it uses */
+};
+static struct tpoly *tpolys;
+
+static int tpoly_cmp(const void *a, const void *b)
+{
+    const struct tpoly *x = a, *y = b;
+    if (x->key != y->key)
+        return x->key > y->key ? -1 : 1;
+    return x->first < y->first ? -1 : x->first > y->first;
+}
+
+static void draw_translucent(void)
+{
+    if (!tpolys)
+        tpolys = malloc(sizeof *tpolys * (MAX_VERTS / 3));
+    unsigned n = 0;
+    for (unsigned i = 0; i < ndraws; i++) {
+        const struct rdraw *d = &draws[i];
+        if (d->blend != 2)
+            continue;
+        for (unsigned k = d->first; k + 2 < d->first + d->count;) {
+            unsigned e = k + 3;                                   /* the triangles of one polygon follow each other */
+            while (e + 2 < d->first + d->count && verts[e].group == verts[k].group)
+                e += 3;
+            if (n >= MAX_VERTS / 3)
+                break;
+            float key = 0.0f;
+            for (unsigned q = k; q < e; q++)
+                if (verts[q].z > key)
+                    key = verts[q].z;
+            tpolys[n].key = key;
+            tpolys[n].first = k;
+            tpolys[n].count = e - k;
+            tpolys[n].draw = i;
+            n++;
+            k = e;
+        }
+    }
+    qsort(tpolys, n, sizeof *tpolys, tpoly_cmp);
+    for (unsigned i = 0; i < n;) {
+        unsigned j = i + 1, total = tpolys[i].count;     /* a run: the same state, consecutive in the buffer */
+        while (j < n && tpolys[j].draw == tpolys[i].draw && tpolys[j].first == tpolys[j - 1].first + tpolys[j - 1].count) {
+            total += tpolys[j].count;
+            j++;
+        }
+        bind_state(&draws[tpolys[i].draw]);
+        glDrawArrays(GL_TRIANGLES, tpolys[i].first, total);
+        i = j;
     }
 }
 
@@ -188,8 +263,8 @@ void render_flush(int w, int h)
         glBindVertexArray(vao);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
         glBufferData(GL_ARRAY_BUFFER, sizeof(struct rvert) * nverts, verts, GL_STREAM_DRAW);
-        draw_pass(0);
-        draw_pass(1);
+        draw_opaque();
+        draw_translucent();
         glDepthMask(GL_TRUE);
         glDisable(GL_BLEND);
     }
