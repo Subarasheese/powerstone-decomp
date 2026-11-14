@@ -24,18 +24,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            60.8%  the instructions the cases ran, of all instructions, over the 5546 functions that can be C; the 5196 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (98.1% complete) 108  of the 5546 functions that can be C (45 with no C form are counted apart)
-BYTES LEFT    (97.0% complete) 30114  of 993612 bytes of code that can be C
+TOTAL TEST COVERAGE            60.8%  the instructions the cases ran, of all instructions, over the 5560 functions that can be C; the 5208 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (98.1% complete) 108  of the 5560 functions that can be C (45 with no C form are counted apart)
+BYTES LEFT    (97.0% complete) 30114  of 993676 bytes of code that can be C
 FUNCTIONS                             
-  unnamed                       2384  functions still called FUN_... (2384 of 5591)
-  Not written C                   42  12672 bytes
+  unnamed                       2386  functions still called FUN_... (2386 of 5605)
+  Not written C                   44  12904 bytes
   Written C with errors            0  0 bytes
   Not drawn                        8  1298 bytes
   Drawn with errors               22  5350 bytes
-  Checked with errors             36  10794 bytes
+  Checked with errors             34  10562 bytes
   No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   53.5%  2991 named functions in docs/*.md
+  documented                   53.5%  2999 named functions in docs/*.md
 ```
 <!-- /progress -->
 

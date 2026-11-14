@@ -99,7 +99,7 @@ int ADXT_Stop(int, int, int, int);
 int FUN_0c0f5898(int, int, int, int);
 int kmLoadTexture(int, int, int, int);
 int FUN_0c0fe978(int, int);
-int FUN_0c0feba6(int, int);
+int cache_purge_range(int, int);
 int FUN_0c0ff4b4(int);
 int FUN_0c100260(void);
 int FUN_0c105a14(int, int, int);
@@ -519,7 +519,7 @@ int gdDcfTrans32_(int a4, int a5, int a6)
             if ((0x1F & a5) == 0) {
                 FUN_0c0fe978(a5, a6);
             } else {
-                FUN_0c0feba6(a5, a6);
+                cache_purge_range(a5, a6);
             }
         }
     }

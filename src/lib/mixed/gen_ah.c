@@ -189,7 +189,7 @@ int ADXT_SetOutVol(int, int);
 int ADXT_SetLpFlg(int, int);
 int gdFsToUpper(int);
 int gdFsSearchName(int, int, int);
-int FUN_0c0fedca(int, int);
+int cache_writeback_range(int, int);
 int FUN_0c0ffdba(void);
 int FUN_0c0ffdfc(void);
 int kdGetDevice(int);
@@ -504,7 +504,7 @@ int FUN_0c1059ac(int a4, int a5, int a6)
     if ((t1 == 0) && ((t2 = *(signed char *)(((((int)stk + 0) + 0x4) + 0x0)), (unsigned char)t2 != 0xFF) || (t3 = *(signed char *)(((((int)stk + 0) + 0x4) + 0x1)), (unsigned char)t3 != 0xFF))) {
         (((struct o0_uchar *)0x8C000070)->v) = (*(signed char *)(((((int)stk + 0) + 0x4) + 0x0)));
         (((struct o1_uchar *)0x8C000070)->v) = (*(signed char *)(((((int)stk + 0) + 0x4) + 0x1)));
-        FUN_0c0fedca(0x8C000070, 0x2);
+        cache_writeback_range(0x8C000070, 0x2);
     }
     return (*(int *)(((int)stk + 0)));
 }

@@ -131,7 +131,7 @@ int gdFsWaitCompleteReq(int);
 int gdFsReopenHn(int, int, int, int);
 int FUN_0c0f28b6(int);
 int FUN_0c0fe978(int, int, int, int);
-int FUN_0c0feba6(int, int, int, int);
+int cache_purge_range(int, int, int, int);
 int FUN_0c100260(void);
 int kdSetCallback(int, int, int);
 int FUN_0c1070a0(int);
@@ -461,7 +461,7 @@ int gdDcfRead_(int a4, int a5, int a6, int a7)
     L_C0FE094:;
     return v0_0;
     L_C0FE08C:;
-    FUN_0c0feba6(R13, v0_3, R6, v0_0);
+    cache_purge_range(R13, v0_3, R6, v0_0);
     goto L_C0FE092;
     L_C0FE04A:;
     if ((v0_0 != 0)) goto L_C0FE058;
