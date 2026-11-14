@@ -389,6 +389,8 @@ F 0c022e90 72 FUN_0c022e90
 F 0c022ed8 376 FUN_0c022ed8
 F 0c023050 146 FUN_0c023050
 F 0c0230e2 86 FUN_0c0230e2
+F 0c023148 218 FUN_0c023148
+F 0c023230 154 FUN_0c023230
 F 0c0232ca 94 FUN_0c0232ca
 F 0c023328 276 hit_part_pair_overlap
 F 0c02343c 142 hit_any_part_pair_overlap
@@ -644,6 +646,7 @@ F 0c03598c 236 fx_spawn_03598c
 F 0c035a78 520 fx_tick_03598c
 F 0c035c84 194 fx_spawn_035c84
 F 0c035d46 1080 fx_tick_035c84
+F 0c036180 200 FUN_0c036180
 F 0c036248 834 fx_tick_035d46
 F 0c036598 148 fx_spawn_036598
 F 0c03662c 398 fx_tick_036598
@@ -1038,6 +1041,7 @@ F 0c052150 352 ai_op66
 F 0c0522b0 524 ai_op67
 F 0c0524bc 192 ai_op68
 F 0c05257c 132 ai_op69
+F 0c052630 88 FUN_0c052630
 F 0c052708 88 game_poll_start_button
 F 0c052774 46 game_poll_start_button_pl
 F 0c0527a2 558 game_frame_update
@@ -1555,7 +1559,7 @@ F 0c067a68 184 pl_falcon_state_update
 F 0c067b20 40 pl_falcon_update_action_default
 F 0c067b48 52 pl_falcon_update_action_7
 F 0c067bcc 268 pl_falcon_spawn_timed_fx
-F 0c067d10 60 FUN_0c067d10
+F 0c067d10 60 pl_falcon_attack_dispatch
 F 0c067d4c 158 pl_falcon_attack_kind24_phase0
 F 0c067e1c 244 FUN_0c067e1c
 F 0c067f40 162 pl_falcon_attack_kind24_phase1
@@ -1759,6 +1763,7 @@ F 0c06f1fe 88 pl_wangtang_mode10_phase2
 F 0c06f256 50 pl_wangtang_mode10_phase3
 F 0c06f2c4 42 pl_wangtang_mode10_update
 F 0c06f2ee 68 pl_wangtang_attack_state_update
+F 0c06f440 138 FUN_0c06f440
 F 0c06f4f0 62 FUN_0c06f4f0
 F 0c06f52e 50 FUN_0c06f52e
 F 0c06f56c 148 FUN_0c06f56c
@@ -1784,6 +1789,10 @@ F 0c070618 502 FUN_0c070618
 F 0c07080e 504 FUN_0c07080e
 F 0c070a06 320 FUN_0c070a06
 F 0c070b46 82 pl_wangtang_attack_kind13
+F 0c070b98 82 FUN_0c070b98
+F 0c070bf4 282 FUN_0c070bf4
+F 0c070d3c 282 FUN_0c070d3c
+F 0c070e84 206 FUN_0c070e84
 F 0c070f52 86 FUN_0c070f52
 F 0c070fd0 186 FUN_0c070fd0
 F 0c0710a8 232 FUN_0c0710a8
@@ -1861,6 +1870,16 @@ F 0c0733f4 122 pl_jack_mode12_phase2
 F 0c0734a8 68 FUN_0c0734a8
 F 0c0734ec 34 pl_jack_wait_anim_end_b
 F 0c07350e 464 pl_jack_mode12_update
+F 0c073744 52 FUN_0c073744
+F 0c073778 126 FUN_0c073778
+F 0c073814 184 FUN_0c073814
+F 0c0738cc 52 FUN_0c0738cc
+F 0c073920 126 FUN_0c073920
+F 0c07399e 192 FUN_0c07399e
+F 0c073a84 52 FUN_0c073a84
+F 0c073ab8 120 FUN_0c073ab8
+F 0c073b30 62 FUN_0c073b30
+F 0c073b6e 54 FUN_0c073b6e
 F 0c073bd4 238 FUN_0c073bd4
 F 0c073d0c 150 FUN_0c073d0c
 F 0c073da2 142 FUN_0c073da2
@@ -2117,7 +2136,14 @@ F 0c0811e4 8 pl_rouge_move15_init
 F 0c0811ec 8 pl_rouge_move16_init
 F 0c0811f4 8 pl_rouge_move17_init
 F 0c0811fc 8 pl_rouge_move18_init
-F 0c081204 1678 pl_rouge_attack_update
+F 0c081204 54 pl_rouge_attack_update
+F 0c08123a 40 pl_rouge_attack_motion_update
+F 0c081284 516 FUN_0c081284
+F 0c081488 456 FUN_0c081488
+F 0c081670 98 FUN_0c081670
+F 0c0816d2 184 FUN_0c0816d2
+F 0c0817cc 164 FUN_0c0817cc
+F 0c081870 34 FUN_0c081870
 F 0c0818c4 124 FUN_0c0818c4
 F 0c081940 68 FUN_0c081940
 F 0c081984 114 FUN_0c081984
@@ -2170,6 +2196,8 @@ F 0c083166 18 pl_rouge_special_move_dispatch
 F 0c083194 112 FUN_0c083194
 F 0c08321c 478 FUN_0c08321c
 F 0c0833fa 26 pl_rouge_special_id0
+F 0c083414 124 FUN_0c083414
+F 0c0834c0 108 FUN_0c0834c0
 F 0c08352c 126 pl_rouge_special_id4
 F 0c0835dc 198 pl_rouge_special_id5
 F 0c0836a2 76 pl_rouge_special_id6
@@ -2311,10 +2339,22 @@ F 0c0880be 140 pl_valgas_mode04_phase1
 F 0c08818c 96 pl_valgas_mode04_phase2
 F 0c0881f2 38 pl_valgas_mode04_phase3
 F 0c088218 34 pl_valgas_mode04_phase4
-F 0c08823a 442 pl_valgas_mode04_update
+F 0c08823a 50 pl_valgas_mode04_update
+F 0c088290 80 pl_valgas_attack_dispatch
+F 0c0882e0 60 pl_valgas_attack_type1
+F 0c08831c 372 FUN_0c08831c
+F 0c088490 1696 pl_valgas_attack_type2
+F 0c088b30 538 pl_valgas_attack_type3
+F 0c088d4a 502 pl_valgas_attack_type4
+F 0c088f80 50 pl_valgas_attack_type5
 F 0c088fb2 114 FUN_0c088fb2
-F 0c08933c 584 FUN_0c08933c
-F 0c089584 472 FUN_0c089584
+F 0c089024 88 FUN_0c089024
+F 0c0890b4 122 FUN_0c0890b4
+F 0c08912e 42 FUN_0c08912e
+F 0c089158 12 FUN_0c089158
+F 0c089164 472 pl_valgas_attack_type6
+F 0c08933c 584 pl_valgas_attack_type7
+F 0c089584 472 pl_valgas_attack_type8
 F 0c08975c 138 pl_valgas_state21_update
 F 0c0897e6 42 FUN_0c0897e6
 F 0c08982c 66 FUN_0c08982c
@@ -2484,6 +2524,8 @@ F 0c0908da 40 pl_hitreact_08_update
 F 0c090902 52 FUN_0c090902
 F 0c090936 44 FUN_0c090936
 F 0c09098c 26 pl_hitreact_09_update
+F 0c0909a6 62 FUN_0c0909a6
+F 0c0909e4 72 FUN_0c0909e4
 F 0c090a2c 8 pl_hitreact_10_update
 F 0c090a34 74 FUN_0c090a34
 F 0c090aac 104 FUN_0c090aac
@@ -2557,6 +2599,7 @@ F 0c092908 294 keycfg_remap_player_buttons
 F 0c092a58 118 FUN_0c092a58
 F 0c092ace 148 FUN_0c092ace
 F 0c092b8c 1200 game_update_fighters
+F 0c09303c 536 FUN_0c09303c
 F 0c093254 1246 pl_update_frame
 F 0c09375c 150 FUN_0c09375c
 F 0c0937f2 32 pl_state08_update
@@ -2808,6 +2851,7 @@ F 0c09e7b8 26 pl_landed
 F 0c09e7d2 20 pl_no_ground
 F 0c09e7fc 158 FUN_0c09e7fc
 F 0c09e89a 44 FUN_0c09e89a
+F 0c09e8e4 44 FUN_0c09e8e4
 F 0c09e910 334 FUN_0c09e910
 F 0c09ea5e 34 pl_start_state28_item
 F 0c09ea80 46 pl_start_item_action
@@ -3230,6 +3274,7 @@ F 0c0b01ca 318 stage_gimmick_11_update
 F 0c0b0314 16 FUN_0c0b0314
 F 0c0b0324 218 stage_gimmick_11_spawn_b
 F 0c0b03fe 204 stage_gimmick_11_update_b
+F 0c0b04d4 246 FUN_0c0b04d4
 F 0c0b0600 222 FUN_0c0b0600
 F 0c0b0710 226 stage_gimmick_15_spawn
 F 0c0b07f2 164 stage_gimmick_15_update
@@ -3288,6 +3333,7 @@ F 0c0b36fc 428 stage_gimmick_28_update_b
 F 0c0b38cc 242 stage_gimmick_28_spawn_c
 F 0c0b39be 376 stage_gimmick_28_update_c
 F 0c0b3b36 154 mdl_scroll_uv_by_speed
+F 0c0b3bd0 344 FUN_0c0b3bd0
 F 0c0b3d30 172 stage_gimmick_29_spawn
 F 0c0b3ddc 142 stage_gimmick_29_update
 F 0c0b3ea0 166 stage_gimmick_30_spawn
@@ -3586,6 +3632,7 @@ F 0c0cf12e 212 testmode_game_data_screen
 F 0c0cf202 4 FUN_0c0cf202
 F 0c0cf240 204 FUN_0c0cf240
 F 0c0cf30c 196 testmode_main
+F 0c0cf3d2 36 FUN_0c0cf3d2
 F 0c0cf408 22 dbgmotion_select_text_color
 F 0c0cf428 372 dbgmotion_draw_info
 F 0c0cf5ec 334 dbgmotion_update_camera
@@ -3647,6 +3694,8 @@ F 0c0d3be6 362 FUN_0c0d3be6
 F 0c0d3d50 272 FUN_0c0d3d50
 F 0c0d3e60 12 FUN_0c0d3e60
 F 0c0d3e6c 30 attract_screen_adx_logo
+F 0c0d3eb0 80 FUN_0c0d3eb0
+F 0c0d3f00 98 FUN_0c0d3f00
 F 0c0d3f6e 80 FUN_0c0d3f6e
 F 0c0d3fbe 22 FUN_0c0d3fbe
 F 0c0d4010 110 FUN_0c0d4010
@@ -3908,6 +3957,7 @@ F 0c0de510 22 gfx_set_fog_table_color
 F 0c0de530 22 gfx_set_fog_vertex_color
 F 0c0de590 26 gfx_set_border_color
 F 0c0de640 82 FUN_0c0de640
+F 0c0de6d2 84 FUN_0c0de6d2
 F 0c0de730 20 FUN_0c0de730
 F 0c0de820 98 FUN_0c0de820
 F 0c0de890 6 gfx_set_buffer_size
@@ -4147,6 +4197,7 @@ F 0c0e5884 314 snd_bank_unload
 F 0c0e59e8 162 snd_send_port_command
 F 0c0e5a94 130 FUN_0c0e5a94
 F 0c0e5b20 262 FUN_0c0e5b20
+F 0c0e5c28 158 FUN_0c0e5c28
 F 0c0e5cc6 92 FUN_0c0e5cc6
 F 0c0e5d22 60 snd_send_command
 F 0c0e5d82 6 FUN_0c0e5d82
@@ -4413,6 +4464,7 @@ F 0c0f184c 210 FUN_0c0f184c
 F 0c0f1924 232 gdFsReqRd32
 F 0c0f1a0e 222 FUN_0c0f1a0e
 F 0c0f1aec 172 FUN_0c0f1aec
+F 0c0f1bb2 146 FUN_0c0f1bb2
 F 0c0f1c44 24 FUN_0c0f1c44
 F 0c0f1c72 300 FUN_0c0f1c72
 F 0c0f1eb8 28 gdFsInitOvl
@@ -4601,11 +4653,16 @@ F 0c0f5fc0 262 kmiStartRenderTextureEntry
 F 0c0f6128 114 FUN_0c0f6128
 F 0c0f619a 4 FUN_0c0f619a
 F 0c0f61c0 3194 FUN_0c0f61c0
+F 0c0f6e4c 2124 FUN_0c0f6e4c
+F 0c0f7698 614 FUN_0c0f7698
+F 0c0f7a60 132 FUN_0c0f7a60
 F 0c0f7b60 330 FUN_0c0f7b60
 F 0c0f7d04 320 gfx_set_frame_buffer_size
 F 0c0f7e80 128 FUN_0c0f7e80
 F 0c0f8180 1890 FUN_0c0f8180
 F 0c0f8920 716 FUN_0c0f8920
+F 0c0f8eb0 76 FUN_0c0f8eb0
+F 0c0f93a2 54 FUN_0c0f93a2
 F 0c0f94a0 978 FUN_0c0f94a0
 F 0c0f9872 196 FUN_0c0f9872
 F 0c0f9936 124 FUN_0c0f9936
@@ -4655,6 +4712,7 @@ F 0c0fb54c 144 FUN_0c0fb54c
 F 0c0fb5dc 328 FUN_0c0fb5dc
 F 0c0fb7b6 72 FUN_0c0fb7b6
 F 0c0fb820 392 FUN_0c0fb820
+F 0c0fba00 92 FUN_0c0fba00
 F 0c0fba80 360 FUN_0c0fba80
 F 0c0fbc20 58 kmSetAlphaThreshold
 F 0c0fbc5a 28 kmSetCullingRegister
@@ -4676,8 +4734,10 @@ F 0c0fc212 20 FUN_0c0fc212
 F 0c0fc280 38 FUN_0c0fc280
 F 0c0fc2a6 10 FUN_0c0fc2a6
 F 0c0fc2b0 42 FUN_0c0fc2b0
+F 0c0fc300 36 FUN_0c0fc300
 F 0c0fc360 44 FUN_0c0fc360
 F 0c0fc38c 68 kmCreateTextureSurface
+F 0c0fc400 178 FUN_0c0fc400
 F 0c0fc4b2 296 FUN_0c0fc4b2
 F 0c0fc5da 98 kmLoadTexture
 F 0c0fc63c 154 FUN_0c0fc63c
@@ -4708,6 +4768,7 @@ F 0c0fd8c0 12 FUN_0c0fd8c0
 F 0c0fd8cc 510 FUN_0c0fd8cc
 F 0c0fdaca 186 FUN_0c0fdaca
 F 0c0fdb84 122 FUN_0c0fdb84
+F 0c0fdc60 248 FUN_0c0fdc60
 F 0c0fdda0 30 FUN_0c0fdda0
 F 0c0fddbe 16 FUN_0c0fddbe
 F 0c0fddce 6 FUN_0c0fddce
@@ -4819,6 +4880,7 @@ F 0c100748 6 thunk_FUN_0c111b7e
 F 0c10074e 48 kdDevGetFD
 F 0c10077e 74 FUN_0c10077e
 F 0c1007c8 100 kdDevGetStorageInfo
+F 0c10084c 74 FUN_0c10084c
 F 0c100896 108 kdDevGetLCDInfo
 F 0c100902 58 kdDevGetTimerInfo
 F 0c10093c 74 kdDevGetGunInfo
@@ -5199,6 +5261,7 @@ F 0c10b3e0 84 FUN_0c10b3e0
 F 0c10b434 18 FUN_0c10b434
 F 0c10b480 48 FUN_0c10b480
 F 0c10b4b0 172 FUN_0c10b4b0
+F 0c10b580 114 FUN_0c10b580
 F 0c10b5f2 34 FUN_0c10b5f2
 F 0c10b614 64 FUN_0c10b614
 F 0c10b680 114 FUN_0c10b680
@@ -5273,6 +5336,7 @@ F 0c110be0 70 FUN_0c110be0
 F 0c110c26 486 FUN_0c110c26
 F 0c110ea8 20 FUN_0c110ea8
 F 0c110f6c 320 FUN_0c110f6c
+F 0c1110e2 328 FUN_0c1110e2
 F 0c111310 236 FUN_0c111310
 F 0c11142c 490 FUN_0c11142c
 F 0c11163a 256 FUN_0c11163a
