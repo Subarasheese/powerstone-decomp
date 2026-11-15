@@ -1,7 +1,7 @@
 /* Straight-line functions with calls and guards (batch gen_bn): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
-int FUN_0c085d0e(int);
+int pl_kraken_attack_kind3_phase1(int);
 struct o0_float { float v; };
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -127,7 +127,7 @@ int thunk_math_mat_get_translate(int, int);
 int ui_disable_hud(void);
 int FUN_0c091378(int a4);
 int FUN_0c0986e6(int a4);
-int FUN_0c085c54(int a4);
+int pl_kraken_attack_kind3_phase0(int a4);
 int FUN_0c07030a(int a4);
 int FUN_0c09413a(int a4);
 int FUN_0c06a146(int a4);
@@ -249,7 +249,7 @@ int FUN_0c0986e6(int a4)
     return (unsigned short)t24;
 }
 
-int FUN_0c085c54(int a4)
+int pl_kraken_attack_kind3_phase0(int a4)
 {
     register int t0;
 
@@ -276,7 +276,7 @@ int FUN_0c085c54(int a4)
         (((struct o71F4_ushort *)(a4))->v) = 0x0;
     }
     (((struct oEC_ushort *)(a4))->v) = 0x15;
-    return FUN_0c085d0e(a4);
+    return pl_kraken_attack_kind3_phase1(a4);
 }
 
 int FUN_0c07030a(int a4)

@@ -34,7 +34,7 @@ struct Task {
     struct Sub *sub[8];
 };
 struct Task *obj_create(int arg_a, int arg_b, int arg_c, int arg_d);
-void FUN_0c06233a(struct Sub *dst, int tbl, int n);
+void obj_part_set_model(struct Sub *dst, int tbl, int n);
 float math_rand_float(void);
 struct Vec3i { int x, y, z; };
 struct Sub_r2 {
@@ -101,7 +101,7 @@ void fx_spawn_random_offset_task(char *parent, int unused, struct V3 *pos, struc
     }
     for (i = 0; i < 8; i++) {
         sub_obj = task->sub[i];
-        FUN_0c06233a(sub_obj, ((int)g_res_kyoutsuu), 25);
+        obj_part_set_model(sub_obj, ((int)g_res_kyoutsuu), 25);
         sub_obj->field_00 = 1;
         sub_obj->field_02 = 561;
         sub_obj->scale_x = 0.299999982f;
@@ -151,7 +151,7 @@ void fx_spawn_04baa6(char *parent, int unused, struct Vec3i *pos, int kind)
     }
     for (i = 0; i < 8; i++) {
         sub_obj = task->sub[i];
-        FUN_0c06233a(sub_obj, ((int)g_res_kyoutsuu), 26);
+        obj_part_set_model(sub_obj, ((int)g_res_kyoutsuu), 26);
         sub_obj->b0 = 1;
         sub_obj->s2 = 0x21E;
         sub_obj->w16 = math_rand_next() % 0x10000;

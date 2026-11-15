@@ -8,7 +8,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int fx_follow_owner_create(int, int);
 extern int _quick_odd_mvn();
 struct o20_float { char p[0x20]; float v; };
@@ -59,7 +59,7 @@ int FUN_0c0cb50c(int a4, int a5)
         t3 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t3 + 0x0)) = 0x1;
         t4 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x17);
+        obj_part_set_model(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x17);
         *(unsigned short *)((t3 + 0x2)) = 0x1F;
         if ((signed char)a5 == 2) {
             return fx_follow_owner_create(t0, a5);

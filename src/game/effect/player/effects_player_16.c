@@ -6,7 +6,7 @@ extern char g_players[];
 extern char g_spr_bank_player_fx[];
 extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(char *, int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern float math_signed_sqrt(float);
 extern int math_atan2_angle16(float, float);
 extern void fx_update_gunrock_spark(void);
@@ -45,7 +45,7 @@ void fx_spawn_gunrock_spark(char *owner, char mode)
     child[0] = 1;
     child = *(char **)(spark + 0x2E0);
     *(short *)(child + 2) = 15;
-    FUN_0c06233a(*(char **)(spark + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 0);
+    obj_part_set_model(*(char **)(spark + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 0);
     *(char **)(spark + 28) = owner;
     *(short *)(spark + 236) = 180;
     spark[8] = mode;

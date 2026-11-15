@@ -5,7 +5,7 @@ extern char g_cam_split_flag[];
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 
 int stage_gimmick_37_spawn(int a4)
@@ -31,7 +31,7 @@ int stage_gimmick_37_spawn(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x1C))) + (((t2 << 1) + t2) << 2))); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33AA4C); }
         t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(t2, 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x1;
         t1 = 0x1;

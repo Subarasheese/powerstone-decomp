@@ -27,7 +27,7 @@ struct at_f0_short { char pad[0xF0]; short field_f0; };
 struct at_f0_ushort { char pad[0xF0]; unsigned short field_f0; };
 struct at_f2_ushort { char pad[0xF2]; unsigned short field_f2; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0c63c4(int, int);
 struct V12 { int x, y, z; };
 
@@ -90,7 +90,7 @@ int FUN_0c05a96c(int slot, int kind)
         *(struct V12 *)(new_obj + 32) = *(struct V12 *)(0xC33CA80 + (short)(72 * *(signed char *)(0xC7F302C + 37)) + (signed char)(slot_idx * 24));
         *(struct V12 *)(new_obj + 44) = *(struct V12 *)(0xC33CA80 + (short)(72 * *(signed char *)(0xC7F302C + 37)) + (signed char)(slot_idx * 24) + 12);
         *(struct V12 *)(new_obj + 80) = *(struct V12 *)0xC336174;
-        FUN_0c06233a(((((struct at_2e0_int *)(new_obj))->field_2e0)), ((int)g_res_item), (*(signed char *)(((kind_idx << 2) + 0xC335F28))));
+        obj_part_set_model(((((struct at_2e0_int *)(new_obj))->field_2e0)), ((int)g_res_item), (*(signed char *)(((kind_idx << 2) + 0xC335F28))));
         *(unsigned char *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x0)) = 0x1;
         kind_code = *(signed char *)((new_obj + 0x30C));
         if ((unsigned int)(kind_code - 1) >= (unsigned int)0xE) {
@@ -101,7 +101,7 @@ int FUN_0c05a96c(int slot, int kind)
                 case 0:
                 {
                     *(unsigned short *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x2)) = 0xF;
-                    FUN_0c06233a(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_kyoutsuu), 0x79);
+                    obj_part_set_model(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_kyoutsuu), 0x79);
                     *(unsigned char *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x0)) = 0x0;
                     *(unsigned short *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x2)) = 0x1F;
                     (((struct at_4_float *)(((((struct at_2e4_int *)(new_obj))->field_2e4))))->field_4) = 0.0f;
@@ -165,7 +165,7 @@ int FUN_0c05a96c(int slot, int kind)
                 case 18:
                 {
                     *(unsigned short *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x2)) = 0xF;
-                    FUN_0c06233a(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_kyoutsuu), 0x84);
+                    obj_part_set_model(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_kyoutsuu), 0x84);
                     *(unsigned char *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x0)) = 0x1;
                     *(unsigned short *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x2)) = 0x3F;
                     (((struct at_1c_float *)(((((struct at_2e4_int *)(new_obj))->field_2e4))))->field_1c) = 0.199999988f;
@@ -193,7 +193,7 @@ int FUN_0c05a96c(int slot, int kind)
                 case 24:
                 {
                     *(unsigned short *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x2)) = 0xF;
-                    FUN_0c06233a(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_item), 0x13);
+                    obj_part_set_model(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_item), 0x13);
                     *(unsigned char *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x0)) = 0x1;
                     child_ptr = (((struct at_2e4_int *)(new_obj))->field_2e4);
                     *(unsigned short *)((child_ptr + 0x2)) = 0xF;
@@ -203,7 +203,7 @@ int FUN_0c05a96c(int slot, int kind)
                         if ((int)loop_i >= (int)0x5) {
                             break;
                         }
-                        FUN_0c06233a((*(int *)((((0x2E0 + new_obj) + child_off) + 0x0))), ((int)g_res_item), 0x14);
+                        obj_part_set_model((*(int *)((((0x2E0 + new_obj) + child_off) + 0x0))), ((int)g_res_item), 0x14);
                         child_ptr = 0x2E0;
                         child_ptr = (child_ptr + new_obj);
                         child_ptr = (child_ptr + child_off);
@@ -217,7 +217,7 @@ int FUN_0c05a96c(int slot, int kind)
                         *(unsigned short *)((child + 0x2)) = 0xF;
                         loop_i = (loop_i + 0x1);
                     }
-                    FUN_0c06233a(((((struct at_2f4_int *)(new_obj))->field_2f4)), ((int)g_res_item), 0x19);
+                    obj_part_set_model(((((struct at_2f4_int *)(new_obj))->field_2f4)), ((int)g_res_item), 0x19);
                     *(unsigned short *)((((((struct at_2f4_int *)(new_obj))->field_2f4)) + 0x2)) = 0x29;
                     (((struct at_8_float *)(((((struct at_2f4_int *)(new_obj))->field_2f4))))->field_8) = 7.0f;
                     (((struct at_c_float *)(((((struct at_2f4_int *)(new_obj))->field_2f4))))->field_c) = 93.1719971f;
@@ -227,7 +227,7 @@ int FUN_0c05a96c(int slot, int kind)
                 default:
                 {
                     *(unsigned short *)((((((struct at_2e0_int *)(new_obj))->field_2e0)) + 0x2)) = 0xF;
-                    FUN_0c06233a(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_item), 0x1E);
+                    obj_part_set_model(((((struct at_2e4_int *)(new_obj))->field_2e4)), ((int)g_res_item), 0x1E);
                     *(unsigned char *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x0)) = 0x1;
                     *(unsigned short *)((((((struct at_2e4_int *)(new_obj))->field_2e4)) + 0x2)) = 0x219;
                     child_mask = 0x219;

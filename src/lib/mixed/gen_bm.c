@@ -114,7 +114,7 @@ int bgm_play_here(void);
 int snd_play_side_se(int, int);
 int snd_play_char_voice(int, int);
 int FUN_0c0a3dcc(int, int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 int obj_set_mode_owner(int, int, int);
 int obj_find_hitting_player(int);
 int FUN_0c0ad408(int);

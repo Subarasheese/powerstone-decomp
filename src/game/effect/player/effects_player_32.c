@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0bf488-0c0bfe20) */
 
 char *obj_create(int a, int b, int c, int d);
-void FUN_0c06233a(char *model, char *palette, int kind);
+void obj_part_set_model(char *model, char *palette, int kind);
 void thunk_math_mat_get_translate(char *slot, float *pos);
 typedef struct { float x, y, z; } VEC3;
 #define PL(i) ((char *)((unsigned short)((unsigned short)(i) * (unsigned short)0x72D0) + 0xC7E40C4))
@@ -20,7 +20,7 @@ static void escale(char *e, float x, float y, float z)
 
 static void model(char *e, char *src, int kind, int blend)
 {
-    FUN_0c06233a(MDL(e), PAL(src), kind);
+    obj_part_set_model(MDL(e), PAL(src), kind);
     MDL(e)[0] = 1;
     H(MDL(e), 2) = blend;
     F(MDL(e), 64) = 1.0f;

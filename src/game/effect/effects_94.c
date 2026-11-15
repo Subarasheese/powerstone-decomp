@@ -4,7 +4,7 @@
 extern char g_res_kyoutsuu[];
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int, int);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
@@ -39,7 +39,7 @@ int fx_spawn_042514(int a4, int a5)
         *(unsigned int *)((t0 + 0x30)) = a5;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x55);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x55);
     }
     return t0;
 }

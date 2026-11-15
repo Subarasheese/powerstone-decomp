@@ -70,7 +70,7 @@ int FUN_0c0555c4(void);
 int FUN_0c0555dc(void);
 int obj_create(int, int, int);
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0634b4(int);
 int pl_valgas_play_motion_sounds(int);
 int ai_difficulty_tier(void);

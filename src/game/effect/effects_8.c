@@ -11,7 +11,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int fx_spawn_033ba8(int a4, int a5, int a6)
@@ -43,7 +43,7 @@ int fx_spawn_033ba8(int a4, int a5, int a6)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         t2 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x7);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x7);
         t2 = 0x1;
         t3 = 0x1;
         for (;;) {
@@ -57,7 +57,7 @@ int fx_spawn_033ba8(int a4, int a5, int a6)
             *(unsigned char *)((t3 + 0x0)) = 0x0;
             *(unsigned short *)((t3 + 0x2)) = 0x41F;
             t4 = *(signed char *)((t0 + 0x3));
-            FUN_0c06233a(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x8);
+            obj_part_set_model(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x8);
             (((struct o20_float *)(t3))->v) = 0.0f;
             t2 = (t2 + 0x1);
             (((struct o40_float *)(t3))->v) = 1.0f;

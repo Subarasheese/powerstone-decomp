@@ -51,7 +51,7 @@ struct hud_obj {
     char pad2[736 - 44];
     struct hud_part *parts[2];
 };
-void FUN_0c06233a(struct hud_part *part, int model_table, int n);
+void obj_part_set_model(struct hud_part *part, int model_table, int n);
 
 void menu_ui_task_27(struct Obj *obj)
 {
@@ -111,7 +111,7 @@ void menu_ui_task_32_layout(struct hud_obj *hud)
                 model = 71;
             else
                 model = model_table[hud->mode] + 15;
-            FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), model);
+            obj_part_set_model(hud->parts[i], ((int)g_res_csel_ksel), model);
             hud->parts[i]->facing = hud->side == 0 ? 0x8000 : 0;
             hud->parts[i]->offset_x = (float)(hud->side == 0 ? 50 : -50);
             hud->parts[i]->offset_y = 50.0f;
@@ -123,13 +123,13 @@ void menu_ui_task_32_layout(struct hud_obj *hud)
             hud->parts[i]->scale_y = -(hud->scale * 0.699999988f) / 480.0f;
         } else {
             if (*(char *)0xC7F2F08 != 0 && hud->mode == 0) {
-                FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), 3);
+                obj_part_set_model(hud->parts[i], ((int)g_res_csel_ksel), 3);
             } else {
                 if (hud->mode == 10)
                     model = 70;
                 else
                     model = model_table[hud->mode] + 25;
-                FUN_0c06233a(hud->parts[i], ((int)g_res_csel_ksel), model);
+                obj_part_set_model(hud->parts[i], ((int)g_res_csel_ksel), model);
             }
             hud->parts[i]->offset_x = (float)(hud->side == 0 ? 50 : -50);
             hud->parts[i]->offset_y = -80.0f;

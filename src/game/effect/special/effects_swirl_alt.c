@@ -20,7 +20,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int FUN_0c0555dc(void);
 int obj_create(int, int, int, int);
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 extern int _quick_odd_mvn();
@@ -110,7 +110,7 @@ int FUN_0c0cba6e(int a4)
                 (((struct o107_uchar *)(t0))->v) = 0x1;
                 *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
                 t2 = *(signed char *)((t0 + 0x3));
-                FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x14);
+                obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x14);
                 *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x100F;
                 (((struct o98_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 2.0f;
                 *(unsigned char *)((t0 + 0xE)) = 0x0;

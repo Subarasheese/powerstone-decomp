@@ -72,9 +72,9 @@ int _modlu(void);
 struct o10_float { char p[0x10]; float v; };
 int ending_exec_command(int);
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
-int FUN_0c06233a(int a4, int a5, int a6);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
+int obj_part_set_model(int a4, int a5, int a6);
+int obj_part_set_model(int, int, int);
 struct o0_uchar { unsigned char v; };
 struct o3_uchar { char p[0x3]; unsigned char v; };
 struct oA_short { char p[0xA]; short v; };
@@ -1621,7 +1621,7 @@ int ending_spawn_obj_typed(int a4, int a5, int a6, int a7)
             t10 = 0xC6649D0;
             t11 = (*(signed char *)(((int)stk + 0)));
         }
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), t10, t11);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), t10, t11);
     }
     return t0;
 }
@@ -1646,7 +1646,7 @@ int ending_spawn_obj_t02(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x1);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x1);
     }
     return t0;
 }
@@ -1688,7 +1688,7 @@ int ending_spawn_obj_t03(int a4)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t9) + 0x0))) + 0x2)) = 0xF;
             t12 = *(signed char *)((t7 + 0x0));
             t7 = (t7 + 0x1);
-            t14 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t9) + 0x0))), 0xC6649D0, t12);
+            t14 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t9) + 0x0))), 0xC6649D0, t12);
             t8 = (t8 + 0x1);
             t9 = (t9 + 0x4);
             if ((int)t8 >= (int)0x6) {
@@ -1734,7 +1734,7 @@ int ending_spawn_obj_t05(int a4)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x2)) = 0x41F;
             t9 = *(signed char *)((t5 + 0x0));
             t5 = (t5 + 0x1);
-            t11 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC6649D0, t9);
+            t11 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC6649D0, t9);
             t4 = (t4 + 0x1);
             t6 = (t6 + 0x4);
             if ((int)t4 >= (int)0x2) {
@@ -1766,7 +1766,7 @@ int ending_spawn_obj_t04(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0xB);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0xB);
     }
     return t0;
 }
@@ -1791,7 +1791,7 @@ int ending_spawn_obj_t06(int a4)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x3);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x3);
     }
     return t0;
 }
@@ -1813,7 +1813,7 @@ int ending_spawn_obj_t07(void)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x14);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC6649D0, 0x14);
     }
     return t0;
 }
@@ -1848,7 +1848,7 @@ int ending_spawn_obj_t08(void)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t5) + 0x0))) + 0x2)) = 0x1F;
             t8 = *(signed char *)((t4 + 0x0));
             t4 = (t4 + 0x1);
-            t10 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t5) + 0x0))), 0xC6649D0, t8);
+            t10 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t5) + 0x0))), 0xC6649D0, t8);
             t3 = (t3 + 0x1);
             t5 = (t5 + 0x4);
             if ((int)t3 >= (int)0x3) {
@@ -1884,7 +1884,7 @@ int ending_spawn_obj_typed_b(int a4, int a5, int a6)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        t10 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_ending), (*(signed char *)(((int)stk + 4)))));
+        t10 = (obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_ending), (*(signed char *)(((int)stk + 4)))));
     }
     return t10;
 }

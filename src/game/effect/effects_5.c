@@ -3,7 +3,7 @@
 int FUN_0c033390(int a4, int a5, int a6, int a7);
 struct o118_uint { char p[0x118]; unsigned int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -39,7 +39,7 @@ int fx_spawn_0332a0(int a4)
         for (;;) {
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x1;
             t4 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), (t2 + 0xE));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), (t2 + 0xE));
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)((a4 + 0x20)); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x1C)) = *(struct mv3 *)(0xC149628); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x10)) = *(struct mv3 *)(0xC149640); }

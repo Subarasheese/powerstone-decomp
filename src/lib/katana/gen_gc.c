@@ -25,7 +25,7 @@ int ai_calc_goal_angle(int, int, float);
 int ai_calc_dist_to_goal_obj(int);
 int ai_angle_to_pad_dir(int);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 int FUN_0c103e50(int, int, int, int);
 int FUN_0c105190(int, int, int, int);

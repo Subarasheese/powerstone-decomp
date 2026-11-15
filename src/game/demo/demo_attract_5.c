@@ -13,7 +13,7 @@ typedef struct { float x, y, z; } VEC3;
 #define PART(o, i) (((char **)((o) + 0x2E0))[i])
 #define END ((float *)0x0C148DDC)
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct pair_ints { int vals[2]; };
 struct actor_rec {
     char active;                /* 0x00 */
@@ -139,7 +139,7 @@ void demo_spawn_effect_actors(int kind, int sprite_count)
                 child->active = 1;
                 child->field_1 = 0;
                 child->flags = 0x101F;
-                FUN_0c06233a((int)child, ((int)g_res_syukyaku), 0x1C);
+                obj_part_set_model((int)child, ((int)g_res_syukyaku), 0x1C);
                 j++;
             } while (j < child_count);
         }

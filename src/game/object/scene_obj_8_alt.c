@@ -9,7 +9,7 @@ extern struct Obj *obj_create(int, int, int, int);
 typedef struct { int x, y, z; } S12;
 extern int FUN_0c0d5188(void);
 extern int FUN_0c055634(void);
-extern void FUN_0c06233a(void *, int, int);
+extern void obj_part_set_model(void *, int, int);
 extern int obj_destroy(void *);
 #define ST (*(signed char *)(actor + 8))
 #define SUB (*(signed char *)(actor + 9))
@@ -61,9 +61,9 @@ void fx_tick_0577ca(char *actor)
         *(short *)(actor + 6) = 31;
         actor[5] = 25;
         row = (char *)0xC14B8A0 + (unsigned char)((unsigned short)(signed char)actor[4] * 28);
-        FUN_0c06233a(O1, ((int)g_res_font), row[24]);
+        obj_part_set_model(O1, ((int)g_res_font), row[24]);
         setup(O1, row);
-        FUN_0c06233a(O2, ((int)g_res_font), row[25] + 1);
+        obj_part_set_model(O2, ((int)g_res_font), row[25] + 1);
         setup(O2, row);
         CNT = 1;
         ST = ST + 1;

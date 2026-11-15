@@ -74,7 +74,7 @@ int math_vec3_add(int, int, int);
 int math_vec3_sub(int, int, int);
 int math_vec3_mul_xyz(int, float, float, float);
 int math_vec3_normalize(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_state28_sub3_update(int);
 int pl_angle_to_opponent(int);
 int obj_set_record_char(int, int);

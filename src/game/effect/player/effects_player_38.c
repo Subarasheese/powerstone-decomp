@@ -20,7 +20,7 @@ struct o40_float { char p[0x40]; float v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_linked_effect(int, int, int, int, int, int, int, int, int);
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -146,7 +146,7 @@ int fx_spawn_23(int a4, int a5, int a6)
         obj_set_record_char(t0, 0x72);
         t19 = (((struct o2E0_int *)(t0))->v);
         t20 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t19, ((signed char)((((t20 << 1) + t20) << 2) << 1) + 0xC6002D0), 0x3);
+        obj_part_set_model(t19, ((signed char)((((t20 << 1) + t20) << 2) << 1) + 0xC6002D0), 0x3);
         *(unsigned char *)((t19 + 0x0)) = 0x1;
         *(unsigned short *)((t19 + 0x2)) = 0xB;
         *(unsigned int *)((t19 + 0x18)) = 0x4000;

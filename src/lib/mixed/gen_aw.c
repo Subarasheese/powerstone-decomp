@@ -98,7 +98,7 @@ int ai_clear_op_state(void);
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int math_mat_transform_point(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0623a6(int, int, int);
 int mdl_vtx_iter_begin(int, int);
 int mdl_vtx_iter_next(void);

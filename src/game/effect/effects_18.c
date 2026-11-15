@@ -10,7 +10,7 @@ struct o90_uint { char p[0x90]; unsigned int v; };
 struct oC_float { char p[0xC]; float v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o2E4_int { char p[0x2E4]; int v; };
 struct oF0_short { char p[0xF0]; short v; };
@@ -67,7 +67,7 @@ int fx_spawn_0355cc(int a4)
             *(unsigned short *)((t5 + 0x2)) = 0xF;
             t7 = *(signed char *)(((0x3 + a4) + 0x0));
             t4 = 0xC06233A;
-            FUN_0c06233a(t5, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), (*(int *)((t6 + 0xC149658))));
+            obj_part_set_model(t5, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), (*(int *)((t6 + 0xC149658))));
             if (t2 == 0) {
                 t4 = (*(signed char *)((a4 + 0x71F1)));
                 if (t4 == 0) {

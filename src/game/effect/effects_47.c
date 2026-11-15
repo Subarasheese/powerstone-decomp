@@ -7,7 +7,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct linked_obj { char pad_00[0x71A4]; unsigned char byte_71a4; unsigned char byte_71a5; };
 struct counter_obj {
@@ -49,7 +49,7 @@ int fx_spawn_039ed8(int a4, int a5)
         *(unsigned int *)((t0 + 0x10)) = 0xC039FAE;
         t2 = (((struct o2E0_int *)(t0))->v);
         t0 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x13);
+        obj_part_set_model(t2, ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x13);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x1;
         t1 = 0x1;

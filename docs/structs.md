@@ -271,11 +271,11 @@ pos (0..11) float x,y,z; normal (12..23); u (24), v (28). Cursors at 0xc439dc8..
 | 0x10 | ptr | script pointer | ai_run_script |
 | 0x18 | u32 | button bits to press | ai_pick_reaction stores into player +2DC/+2E4 |
 
-## Sprite child record (what FUN_0c06233a fills)
+## Sprite child record (what obj_part_set_model fills)
 +0 active u8, +2 flags u16, +4 pos xyz f32, +0x10 rot xyz s32, +0x1C scale xyz f32, +0x28/0x2C/0x30 vel xyz (debris), +0x40 alpha f32, +0x94 float (frame timer in debris).
 
 ## Stage placement record (13 bytes, array g_stage_layout_tbl[stage_id] = {recs,count})
-+0 type (1,2,3,4,8,11,12,13,15), +1 byte used by gimmicks (rec_byte1), +2 sprite/frame id (FUN_0c06233a arg), +4/+5 hit record id params, +6 record index for obj_set_record, +7 gimmick kind (index into 0xC33A09C), +8/+9 stored in object 0x2D9/0x2DA.
++0 type (1,2,3,4,8,11,12,13,15), +1 byte used by gimmicks (rec_byte1), +2 sprite/frame id (obj_part_set_model arg), +4/+5 hit record id params, +6 record index for obj_set_record, +7 gimmick kind (index into 0xC33A09C), +8/+9 stored in object 0x2D9/0x2DA.
 
 ## Stage position entry (g_stage_obj_pos_tbl, 52 bytes per stage)
 +24 pointer to pos table (3 ints each), +28 pointer to rot table; both indexed by record+2 (stage_obj_load_layout_pos).

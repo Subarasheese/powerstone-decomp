@@ -10,7 +10,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
 int math_mat_transform_point(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 int _quick_odd_mvn(void);
 struct o50_float { char p[0x50]; float v; };
@@ -57,7 +57,7 @@ int FUN_0c0cb994(int a4, int a5)
         t7 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t7 + 0x0)) = 0x1;
         t8 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t7, ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x13);
+        obj_part_set_model(t7, ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x13);
         *(unsigned short *)((t7 + 0x2)) = 0xF;
         t12 = 0xF;
     }

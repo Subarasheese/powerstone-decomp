@@ -28,14 +28,14 @@ TOTAL TEST COVERAGE            61.3%  the instructions the cases ran, of all ins
 FUNCTIONS LEFT  (98.1% complete) 104  of the 5573 functions that can be C (45 with no C form are counted apart)
 BYTES LEFT    (97.1% complete) 28504  of 994536 bytes of code that can be C
 FUNCTIONS                             
-  unnamed                       2379  functions still called FUN_... (2379 of 5618)
+  unnamed                       2356  functions still called FUN_... (2356 of 5618)
   Not written C                   44  12904 bytes
   Written C with errors            0  0 bytes
   Not drawn                        8  1298 bytes
   Drawn with errors               22  5350 bytes
   Checked with errors             30  8952 bytes
   No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   53.7%  3019 named functions in docs/*.md
+  documented                   54.1%  3042 named functions in docs/*.md
 ```
 <!-- /progress -->
 

@@ -257,10 +257,10 @@ F 0c0855b0 0 FUN_0c0855b0
 F 0c0858f0 0 FUN_0c0858f0
 F 0c085ad4 0 FUN_0c085ad4
 F 0c085bb4 0 FUN_0c085bb4
-F 0c085c54 0 FUN_0c085c54
-F 0c085d6c 0 FUN_0c085d6c
+F 0c085c54 0 pl_kraken_attack_kind3_phase0
+F 0c085d6c 0 pl_kraken_attack_kind3_phase2
 F 0c085df4 0 FUN_0c085df4
-F 0c086070 0 FUN_0c086070
+F 0c086070 0 pl_kraken_attack_kind4_phase3
 F 0c086348 0 FUN_0c086348
 F 0c0863c4 0 FUN_0c0863c4
 F 0c086578 0 FUN_0c086578

@@ -5,7 +5,7 @@ struct o2E4_int { char p[0x2E4]; int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int stage_gimmick_19_spawn(int a4)
@@ -29,14 +29,14 @@ int stage_gimmick_19_spawn(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(0xC33A528); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x2C)) = *(struct mv3 *)(0xC33A540); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A534); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1;
         t2 = *(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x2));
         { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x18))) + (((t2 << 1) + t2) << 2))); }
         t2 = *(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x2));
         { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x10)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x1C))) + (((t2 << 1) + t2) << 2))); }
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664958, (*(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x0))));
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), 0xC664958, (*(short *)((((((*(signed char *)((t0 + 0x4))) << 2) << 1) + 0xC33A518) + 0x0))));
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         t1 = 0x2E4;
     }

@@ -22,7 +22,7 @@ int obj_destroy(int);
 int mdl_vtx_iter_begin(int, int);
 extern char *obj_create(int, int, int, int);
 extern char omake_is_item_unlocked(int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 
 int omake_tick_vtx_morph(int obj)
 {
@@ -149,12 +149,12 @@ void FUN_0c01c99e(char arg_byte, int variant)
         *(short *)(*(char **)(obj + 0x2E0 + 4 * i) + 2) = 0x41F;
         *(float *)(*(char **)(obj + 0x2E0 + 4 * i) + 64) = 1.0f;
         if (i < 4) {
-            FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, ((signed char *)0x0C180542)[i]);
+            obj_part_set_model(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, ((signed char *)0x0C180542)[i]);
         } else {
             if (omake_is_item_unlocked(variant) != 0)
-                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_b);
+                obj_part_set_model(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_b);
             else
-                FUN_0c06233a(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_a);
+                obj_part_set_model(*(char **)(obj + 0x2E0 + 4 * i), (char *)g_res_omake, *tbl_a);
         }
     }
 }

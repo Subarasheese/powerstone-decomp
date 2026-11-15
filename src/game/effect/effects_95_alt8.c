@@ -4,7 +4,7 @@
 extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } Vec3i;
 extern char *obj_create(int, int, int, int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern float math_rand_float(void);
 extern void FUN_0c043706(void);
 
@@ -34,7 +34,7 @@ char *fx_spawn_burst_slot(char owner_idx, char child_count, char kind_byte, Vec3
     if (count > 0) {
         idx = 0;
         do {
-            FUN_0c06233a(*(char **)(slot + 0x2E0 + (signed char)idx * 4), (char *)g_res_kyoutsuu, 33);
+            obj_part_set_model(*(char **)(slot + 0x2E0 + (signed char)idx * 4), (char *)g_res_kyoutsuu, 33);
             child = *(char **)(slot + 0x2E0 + (signed char)idx * 4);
             child[0] = 0;
             child = *(char **)(slot + 0x2E0 + (signed char)idx * 4);

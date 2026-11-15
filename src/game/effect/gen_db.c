@@ -61,7 +61,7 @@ int FUN_0c05dfd4(int);
 int FUN_0c05ec26(int);
 int FUN_0c05ec88(int);
 int FUN_0c05ed92(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0624c4(int, int, int);
 int FUN_0c07cc52(int);
 int FUN_0c07cc8e(int);
@@ -122,7 +122,7 @@ int FUN_0c04ba14(int a4);
 int FUN_0c097bb0(int a4, int a5, int a6, int a7);
 int FUN_0c0445aa(int a4);
 int FUN_0c0b4d54(int a4);
-int FUN_0c086350(int a4, int a5, int a6, int a7);
+int pl_kraken_attack_kind4(int a4, int a5, int a6, int a7);
 int pl_falcon_attack_dispatch(int a4, int a5, int a6, int a7);
 int FUN_0c07cf5c(int a4, int a5, int a6, int a7);
 int FUN_0c041dc8(int a4, int a5, int a6, int a7);
@@ -518,10 +518,10 @@ int FUN_0c0af9f0(int a4, int a5, int a6, int a7)
         (((struct o105_uchar *)(t0))->v) = 0x1;
         (((struct o106_uchar *)(t0))->v) = 0x1;
         (((struct o107_uchar *)(t0))->v) = 0x1;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, 0x2F);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, 0x2F);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), 0xC664958, 0x27);
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), 0xC664958, 0x27);
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x0;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x211;
         (((struct o44_float *)(((((struct o2E4_int *)(t0))->v))))->v) = 1.0f;
@@ -827,7 +827,7 @@ int FUN_0c0b4d54(int a4)
     return 0xEC;
 }
 
-int FUN_0c086350(int a4, int a5, int a6, int a7)
+int pl_kraken_attack_kind4(int a4, int a5, int a6, int a7)
 {
     register int t0;
 

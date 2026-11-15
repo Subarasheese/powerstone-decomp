@@ -35,7 +35,7 @@ struct o4E_uchar { char p[0x4E]; unsigned char v; };
 struct o56_uchar { char p[0x56]; unsigned char v; };
 struct o58_short { char p[0x58]; short v; };
 struct o58_ushort { char p[0x58]; unsigned short v; };
-void FUN_0c0a3f30(int);
+void snd_play_se_indexed(int);
 void fx_spawn_056340(void);
 void fx_spawn_056b2c(void);
 void fx_spawn_0565b4(void);
@@ -396,15 +396,15 @@ void game_stage_intro_start(void)
         match_rec = (signed char *)(0xC7F2DF0 + (unsigned char)(((state_blk[39] & 15) - 1) * 120));
         value = match_rec[80 + match_rec[79] - 1];
         if (value == 48 || value == 64)
-            FUN_0c0a3f30(10);
+            snd_play_se_indexed(10);
         else
-            FUN_0c0a3f30(9);
+            snd_play_se_indexed(9);
         fx_spawn_056340();
         goto common_sounds;
     case 16:
         *(short *)(state_blk + 10) = 90;
         state_blk[76] = 1;
-        FUN_0c0a3f30(9);
+        snd_play_se_indexed(9);
         fx_spawn_056b2c();
     common_sounds:
         snd_play_side_se(0, 47);
@@ -413,7 +413,7 @@ void game_stage_intro_start(void)
         break;
     case 32:
         *(short *)(state_blk + 10) = 180;
-        FUN_0c0a3f30(27);
+        snd_play_se_indexed(27);
         fx_spawn_0565b4();
         break;
     }

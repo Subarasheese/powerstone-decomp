@@ -39,7 +39,7 @@ typedef struct { float x, y, z; } vec3;
 extern void FUN_0c05cb46(vec3 *, int, int);
 extern void fx_spawn_04463c(vec3 *);
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int item_director_roll_variant(int);
@@ -290,7 +290,7 @@ int FUN_0c0ccbfe(void)
         t1 = 0x0;
         for (;;) {
             t2 = *(int *)((((t1 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t2, 0xC4CFA68, (t1 + 0x1));
+            obj_part_set_model(t2, 0xC4CFA68, (t1 + 0x1));
             t1 = (t1 + 0x1);
             *(unsigned short *)((t2 + 0x2)) = 0x1;
             if ((int)t1 >= (int)0x2) {

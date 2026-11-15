@@ -16,7 +16,7 @@ struct TaskObj *obj_create(int, int, int, int);
 void fx_tick_05600c(void);
 typedef struct { int a, b, c; } vec3i;
 extern int FUN_0c0d5188(void);
-extern void FUN_0c06233a(void *, int, int);
+extern void obj_part_set_model(void *, int, int);
 extern int obj_destroy(void *);
 #define STATE (*(signed char *)(effect + 8))
 #define SUBSTATE (*(signed char *)(effect + 9))
@@ -55,12 +55,12 @@ void fx_tick_056340(char *effect)
         *(short *)(effect + 6) = 31;
         effect[5] = 25;
         row = (char *)0xC14AE58 + (signed char)((short)PARAM4 * 28);
-        FUN_0c06233a(PART1, ((int)g_res_font), row[24]);
+        obj_part_set_model(PART1, ((int)g_res_font), row[24]);
         *PART1 = 0;
         *(vec3i *)(PART1 + 4) = *(vec3i *)row;
         *(vec3i *)(PART1 + 28) = *(vec3i *)(row + 12);
         *(short *)(PART1 + 2) = 0x11F;
-        FUN_0c06233a(PART2, ((int)g_res_font), row[25]);
+        obj_part_set_model(PART2, ((int)g_res_font), row[25]);
         *PART2 = 0;
         *(vec3i *)(PART2 + 4) = *(vec3i *)row;
         *(vec3i *)(PART2 + 28) = *(vec3i *)(row + 12);

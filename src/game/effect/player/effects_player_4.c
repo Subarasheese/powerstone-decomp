@@ -9,7 +9,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -64,7 +64,7 @@ int fx_spawn_11(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x2)) = (*(short *)((0xC153150 + (t2 << 1))));
             t4 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), (t2 + 0x3));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t3) + 0x0))), ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), (t2 + 0x3));
             t2 = (t2 + 0x1);
         }
         t1 = 0x2DC;

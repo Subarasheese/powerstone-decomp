@@ -21,7 +21,7 @@ int _modlu(void);
 extern int _quick_odd_mvn();
 struct o24_float { char p[0x24]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 
 int FUN_0c029660(int a4, int a5, float f4)
 {
@@ -431,7 +431,7 @@ int FUN_0c029abc(int a4, int a5)
                 *(unsigned char *)(((*(int *)((((0x2E0 + t10) + t9) + 0x0))) + 0x0)) = 0x1;
                 *(unsigned char *)(((*(int *)((((0x2E0 + t10) + t9) + 0x0))) + 0x1)) = 0x0;
                 *(unsigned short *)(((*(int *)((((0x2E0 + t10) + t9) + 0x0))) + 0x2)) = 0x1F;
-                FUN_0c06233a((*(int *)((((0x2E0 + t10) + t9) + 0x0))), ((int)g_res_syukyaku), 0x1A);
+                obj_part_set_model((*(int *)((((0x2E0 + t10) + t9) + 0x0))), ((int)g_res_syukyaku), 0x1A);
                 t8 = (t8 + 0x1);
                 t9 = (t9 + 0x4);
                 if ((int)t8 >= (int)0xA) {

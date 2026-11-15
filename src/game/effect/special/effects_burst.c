@@ -11,7 +11,7 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 extern int _quick_odd_mvn();
 
@@ -51,7 +51,7 @@ int fx_burst_create(int a4, int a5)
         t5 = 0x0;
         for (;;) {
             t6 = *(signed char *)((t0 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t5) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), 0x21);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t5) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), 0x21);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t5) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t5) + 0x0))) + 0x2)) = 0x21F;
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + t5) + 0x0))) + 0x4)) = *(struct mv3 *)(0xC153270); }

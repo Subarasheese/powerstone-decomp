@@ -25,8 +25,8 @@ int FUN_0c01f874(int);
 int FUN_0c01fe52(int);
 int FUN_0c02828e(void);
 int FUN_0c0282cc(void);
-int FUN_0c02d420(void);
-int FUN_0c02d458(void);
+int draw_world(void);
+int draw_frame_should_skip(void);
 int ui_draw_no_intro_bar(void);
 int FUN_0c0421ee(int, int);
 int FUN_0c0634b4(int);
@@ -78,7 +78,7 @@ int game_draw_frame(void)
     int t6;
     register int t7;
 
-    t7 = FUN_0c02d458();
+    t7 = draw_frame_should_skip();
     if (t7 != 0) {
         return FUN_0c02828e();
     }
@@ -109,7 +109,7 @@ int game_draw_frame(void)
             nlPerspective(0x1D28, 1.33333325f, 0.299999982f, 12000.0f);
             nlSelectMatrixStack(0x2);
             nlLoadMatrix(0xC7F2A24);
-            FUN_0c02d420();
+            draw_world();
         } else {
             FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
             nlSelectMatrixStack(0x3);
@@ -119,7 +119,7 @@ int game_draw_frame(void)
             nlSelectMatrixStack(0x2);
             nlLoadMatrix(0xC7F2A24);
             *(unsigned int *)0xC321190 = 0x2;
-            FUN_0c02d420();
+            draw_world();
             FUN_0c0dcac0(0xF, 0x2);
             FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
             nlSelectMatrixStack(0x3);
@@ -129,7 +129,7 @@ int game_draw_frame(void)
             nlSelectMatrixStack(0x2);
             nlLoadMatrix(0xC7F2C20);
             *(unsigned int *)0xC321190 = 0x3;
-            FUN_0c02d420();
+            draw_world();
             FUN_0c0dcac0(0xF, 0x3);
             FUN_0c0dca60(0x0, 0x0, 0x9, 0xE, 0x5);
             *(unsigned int *)0xC321190 = 0x0;

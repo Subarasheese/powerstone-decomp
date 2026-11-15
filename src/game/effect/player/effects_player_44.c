@@ -14,7 +14,7 @@ struct o308_uchar { char p[0x308]; unsigned char v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_angle_to_opponent(int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
@@ -78,7 +78,7 @@ int fx_spawn_29(int a4, int a5, int a6)
     *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
     t25 = *(signed char *)((t0 + 0x3));
-    FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t25 << 1) + t25) << 2) << 1) + 0xC6002D0), 0x1D);
+    obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t25 << 1) + t25) << 2) << 1) + 0xC6002D0), 0x1D);
     t30 = (((struct o2E0_int *)(t0))->v);
     (((struct o24_float *)(t30))->v) = 1.0f;
     (((struct o20_float *)(t30))->v) = 1.0f;

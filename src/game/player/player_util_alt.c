@@ -11,7 +11,7 @@ struct o7231_uchar { char p[0x7231]; unsigned char v; };
 int item_spawn_pickup_popup(int, int);
 int FUN_0c0555c4(void);
 int FUN_0c09ca88(int, int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 struct Ent {
     char pad0[2];
     signed char kind;       /* 2 */
@@ -124,7 +124,7 @@ int pl_check_item_pickup(int a4)
     if (((*(signed char *)((v0_0 + 0x3))) != 0)) goto L_C09CC24;
     v0_1 = (0x16);
     L_C09CC26:;
-    FUN_0c0a3f30(v0_1);
+    snd_play_se_indexed(v0_1);
     L_C09CC2C:;
     v0_1 = (FUN_0c0555c4()) == 0;
     if (v0_1) goto L_C09CC4E;

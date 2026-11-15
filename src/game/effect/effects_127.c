@@ -11,7 +11,7 @@ struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
 struct o9C_uint { char p[0x9C]; unsigned int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 
 int FUN_0c04a8ec(int a4, int a5)
@@ -42,7 +42,7 @@ int FUN_0c04a8ec(int a4, int a5)
         (((struct o68_float *)(t0))->v) = 1.0f;
         (((struct o118_uint *)(t0))->v) = ((((struct o118_int *)(a4))->v));
         t3 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t3, 0xC4CFA68, 0x0);
+        obj_part_set_model(t3, 0xC4CFA68, 0x0);
         (((struct o9C_uint *)(t3))->v) = a5;
         *(unsigned char *)((t3 + 0x0)) = 0x1;
         *(unsigned short *)((t3 + 0x2)) = 0xF;

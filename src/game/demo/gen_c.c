@@ -48,7 +48,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int FUN_0c0593e0(int);
 int FUN_0c05f2d4(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c062cf4(int, int);
 int FUN_0c062d78(void);
 int FUN_0c062da2(void);
@@ -1074,7 +1074,7 @@ float fx_spawn_08(int a4, int a5)
     L_C0B7D70:;
     *(unsigned short *)(((*(int *)((((0x2E0 + v0_2) + v0_6) + 0x0))) + 0x2)) = 0x1F;
     v0_7 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
-    FUN_0c06233a((*(int *)((((0x2E0 + v0_2) + v0_6) + 0x0))), ((signed char)((((v0_7 << 1) + v0_7) << 2) << 1) + 0xC6002D0), v0_5);
+    obj_part_set_model((*(int *)((((0x2E0 + v0_2) + v0_6) + 0x0))), ((signed char)((((v0_7 << 1) + v0_7) << 2) << 1) + 0xC6002D0), v0_5);
     v0_6 = *(int *)((((0x2E0 + v0_2) + v0_6) + 0x0));
     (((struct o24_float *)(v0_6))->v) = w0_0;
     (((struct o20_float *)(v0_6))->v) = w0_0;
@@ -1187,7 +1187,7 @@ float fx_spawn_08(int a4, int a5)
     *(unsigned char *)(((*(int *)((((0x2E0 + v0_2) + v0_4) + 0x0))) + 0x0)) = v0_0;
     *(unsigned short *)(((*(int *)((((0x2E0 + v0_2) + v0_4) + 0x0))) + 0x2)) = 0x1F;
     v0_1 = *(signed char *)(((*(int *)(((int)stk + 4))) + 0x3));
-    FUN_0c06233a((*(int *)((((0x2E0 + v0_2) + v0_4) + 0x0))), ((signed char)((((v0_1 << 1) + v0_1) << 2) << 1) + 0xC6002D0), 0x4);
+    obj_part_set_model((*(int *)((((0x2E0 + v0_2) + v0_4) + 0x0))), ((signed char)((((v0_1 << 1) + v0_1) << 2) << 1) + 0xC6002D0), 0x4);
     FUN_0c0b7998((*(int *)((((0x2E0 + v0_2) + v0_4) + 0x0))));
     v0_1 = (int)(v0_3 + 0x1) < (int)0xA;
     v0_3 = ((v0_3 + 0x1));

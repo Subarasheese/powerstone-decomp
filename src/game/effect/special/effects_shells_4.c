@@ -18,7 +18,7 @@ struct o90_uint { char p[0x90]; unsigned int v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_041820(int);
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int memset(int, int, int);
 typedef struct { int x, y, z; } vec3i;
 
@@ -51,13 +51,13 @@ int FUN_0c0c9834(int a4, int a5)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         t5 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t5 << 1) + t5) << 2) << 1) + 0xC6002D0), 0x7);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t5 << 1) + t5) << 2) << 1) + 0xC6002D0), 0x7);
         (((struct o24_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 0.0f;
         (((struct o90_uint *)(((((struct o2E0_int *)(t0))->v))))->v) = (*(int *)(((int)stk + 0)));
         t14 = *(signed char *)((a4 + 0x3));
         t15 = *(int *)((((0x2E0 + t0) + 0x4) + 0x0));
         *(volatile int *)(((0x50 + ((((struct o2E0_int *)(t0))->v))) + 0x0));
-        FUN_0c06233a(t15, ((signed char)((((t14 << 1) + t14) << 2) << 1) + 0xC6002D0), 0x6);
+        obj_part_set_model(t15, ((signed char)((((t14 << 1) + t14) << 2) << 1) + 0xC6002D0), 0x6);
         *(unsigned char *)((t15 + 0x0)) = 0x0;
         *(unsigned short *)((t15 + 0x2)) = 0x41F;
         (((struct o24_float *)(t15))->v) = 1.0f;

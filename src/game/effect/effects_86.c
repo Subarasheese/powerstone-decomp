@@ -21,7 +21,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
 int obj_create_beside(int, int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_cos_angle16(int);
 float math_rand_float(void);
 float math_sin_angle16(int);
@@ -134,7 +134,7 @@ int fx_spawn_040a84_beside(int a4)
             t41 = *(signed char *)(((int)stk + 8));
             *(unsigned char *)(((int)stk + 20)) = (t41 << 1);
             t43 = *(signed char *)((t13 + 0x3));
-            FUN_0c06233a(t40, ((signed char)((((t43 << 1) + t43) << 2) << 1) + 0xC6002D0), ((t41 << 1) + 0x19));
+            obj_part_set_model(t40, ((signed char)((((t43 << 1) + t43) << 2) << 1) + 0xC6002D0), ((t41 << 1) + 0x19));
             *(unsigned short *)((t40 + 0x2)) = 0x1F;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t40 + 0x1C)) = *(struct mv3 *)(0xC149B3C); }
             (((struct o20_float *)(t40))->v) = 0.0f;
@@ -182,7 +182,7 @@ int fx_spawn_040a84_beside(int a4)
             t92 = *(int *)((((0x2E0 + t13) + (*(int *)(((int)stk + 12)))) + 0x4));
             *(unsigned char *)((t92 + 0x0)) = 0x1;
             t94 = *(signed char *)((t13 + 0x3));
-            FUN_0c06233a(t92, ((signed char)((((t94 << 1) + t94) << 2) << 1) + 0xC6002D0), ((*(signed char *)(((int)stk + 20))) + 0x1A));
+            obj_part_set_model(t92, ((signed char)((((t94 << 1) + t94) << 2) << 1) + 0xC6002D0), ((*(signed char *)(((int)stk + 20))) + 0x1A));
             *(unsigned short *)((t92 + 0x2)) = 0x21F;
             (((struct o90_uint *)(t92))->v) = ((*(int *)((((0x2E0 + t13) + (*(int *)(((int)stk + 12)))) + 0x0))) + 0x50);
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t92 + 0x44)) = *(struct mv3 *)(0xC149B3C); }
@@ -211,7 +211,7 @@ int fx_spawn_040a84_beside(int a4)
             *(unsigned char *)((((t104 + 0xA) + t105) + 0x0)) = (((int)((unsigned int)(int)u109 % (unsigned int)0x8)) + 0x4);
             *(unsigned char *)((t102 + 0x0)) = 0x1;
             t112 = *(signed char *)((t13 + 0x3));
-            FUN_0c06233a(t102, ((signed char)((((t112 << 1) + t112) << 2) << 1) + 0xC6002D0), 0x21);
+            obj_part_set_model(t102, ((signed char)((((t112 << 1) + t112) << 2) << 1) + 0xC6002D0), 0x21);
             *(unsigned short *)((t102 + 0x2)) = 0x21F;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t102 + 0x1C)) = *(struct mv3 *)(0xC149B3C); }
             (((struct o20_float *)(t102))->v) = 0.0f;
@@ -349,7 +349,7 @@ int fx_spawn_040a84(int a4, int a5, int a6, int a7)
         t6 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t6 + 0x0)) = 0x1;
         t7 = *(signed char *)(((int)stk + 52));
-        FUN_0c06233a(t6, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), 0xC);
+        obj_part_set_model(t6, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), 0xC);
         *(unsigned short *)((t6 + 0x2)) = 0x121F;
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t6 + 0x1C)) = *(struct mv3 *)(0xC149B14); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t6 + 0x44)) = *(struct mv3 *)(0xC149B08); }

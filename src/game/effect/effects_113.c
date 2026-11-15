@@ -8,7 +8,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_rand_float(void);
 int _modlu(void);
 
@@ -38,7 +38,7 @@ int fx_spawn_0485f8(int a4)
         (((struct o54_float *)(t0))->v) = 1.0f;
         (((struct o50_float *)(t0))->v) = 1.0f;
         *(unsigned int *)((t0 + 0x1C)) = a4;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x42);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x42);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x19;
         t2 = (((struct o2E0_int *)(t0))->v);

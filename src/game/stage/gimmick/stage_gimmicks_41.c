@@ -7,7 +7,7 @@ struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 
 int FUN_0c0b5420(int a4);
@@ -54,7 +54,7 @@ int stage_gimmick_38_spawn(int a4)
         for (;;) {
             t3 = *(int *)((t2 + 0x0));
             t2 = (t2 + 0x4);
-            FUN_0c06233a(t3, 0xC664958, (*(signed char *)((a4 + 0x2))));
+            obj_part_set_model(t3, 0xC664958, (*(signed char *)((a4 + 0x2))));
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned short *)((t3 + 0x2)) = 0x31;
             FUN_0c0b5420((t3 + 0x4));

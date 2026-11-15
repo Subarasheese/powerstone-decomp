@@ -97,7 +97,7 @@ int obj_tick_class(int);
 int FUN_0c05f2d4(int, int);
 int res_switch_scene(int, int, int, int);
 int FUN_0c061f9c(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c062436(int, int, int);
 int FUN_0c0634b4(int);
 int pl_timer_disable(int);

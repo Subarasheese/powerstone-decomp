@@ -20,7 +20,7 @@ struct o40_float { char p[0x40]; float v; };
 struct oC_float { char p[0xC]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct o94_float { char p[0x94]; float v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
 struct o4_float { char p[0x4]; float v; };
@@ -534,7 +534,7 @@ int menu_ui_task_29(int a4)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x21);
+    obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x21);
     (((struct o94_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
@@ -584,7 +584,7 @@ void menu_ui_task_30(int a4)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0xF;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x1F);
+    obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664A60, 0x1F);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0xF;
     { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x20)) = *(struct mv3 *)(0xC152938); }
@@ -869,11 +869,11 @@ int menu_ui_task_34_bind_models(int a4, int a5)
     register int t12;
 
     if ((signed char)a5 == 0) {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o0_float *)0xC0AB29C)->v));
         t12 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     } else {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), ((*(signed char *)(((unsigned char)((unsigned short)((*(signed char *)0xC7F3071) + 0xFF) * (unsigned short)0x78) + 0xC7F2E46))) + 0x26));
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), ((*(signed char *)(((unsigned char)((unsigned short)((*(signed char *)0xC7F3071) + 0xFF) * (unsigned short)0x78) + 0xC7F2E46))) + 0x26));
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct oC_float *)0xC0AB29C)->v));
         t12 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     }
@@ -1283,7 +1283,7 @@ int menu_ui_task_37(int a4, int a5, int a6, int a7)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ksel), 0x4);
+    obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((int)g_res_csel_ksel), 0x4);
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x11F;
     (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;

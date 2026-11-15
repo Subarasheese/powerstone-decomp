@@ -13,7 +13,7 @@ struct o5C_float { char p[0x5C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record(int, int);
 int _quick_odd_mvn(void);
 struct o105_uchar { char p[0x105]; unsigned char v; };
@@ -61,7 +61,7 @@ int fx_spawn_03(int a4, int a5, int a6, float f4)
         (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B6438;
         t8 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t8, 0xC4CFA68, 0x58);
+        obj_part_set_model(t8, 0xC4CFA68, 0x58);
         *(unsigned char *)((t8 + 0x0)) = 0x1;
         *(unsigned short *)((t8 + 0x2)) = 0xF;
         t10 = 0xF;

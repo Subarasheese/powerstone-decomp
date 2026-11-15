@@ -544,7 +544,7 @@ void FUN_0c0a3f0e(int a4)
     }
 }
 
-void FUN_0c0a3f30(int a4)
+void snd_play_se_indexed(int a4)
 {
     int stk[1];
 

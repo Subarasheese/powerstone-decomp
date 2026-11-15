@@ -32,7 +32,7 @@ struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int ui_draw_text_stub(int, int, float, float, float, float);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int fx_spawn_03(int, int, int, float);
 int fx_spawn_33(int, int, int, int);
 float FUN_0c0d5bc0(void);

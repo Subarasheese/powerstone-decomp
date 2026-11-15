@@ -2,7 +2,7 @@
 
 extern char *obj_create(int, int, int, int);
 extern char g_spr_bank_player_fx[];
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern float math_rand_float(void);
 extern void fx_tick_0375d4(void);
 
@@ -31,7 +31,7 @@ void fx_spawn_0375d4(char *owner)
     *(float *)(slot + 56) = 0.0f;
     *(float *)(slot + 60) = 0.0f;
     *(float *)(slot + 64) = 0.0f;
-    FUN_0c06233a(*(char **)(slot + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 18);
+    obj_part_set_model(*(char **)(slot + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 18);
     child = *(char **)(slot + 0x2E0);
     child[0] = 1;
     child = *(char **)(slot + 0x2E0);

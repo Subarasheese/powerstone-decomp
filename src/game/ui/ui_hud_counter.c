@@ -25,7 +25,7 @@ int sprintf(char *buf, const char *fmt, ...);
 extern char g_dbg_text_buf[];
 extern char g_hit_fmt_2d[], g_hit_text[], g_hit_fmt_d[];     /* "%2d", "HIT", "%d" */
 int FUN_0c0555c4(void);
-int FUN_0c0a3f30(int voice);
+int snd_play_se_indexed(int voice);
 
 /* the two faces; Falcon (character 0) shows his other face while FACE_ALT_FLAG is set */
 void ui_draw_hud_faces(void)
@@ -151,9 +151,9 @@ void FUN_0c0302b6(int slot)
     if (h->rating == 99)
         return;
     if ((signed char)slot == 0)
-        FUN_0c0a3f30(h->rating / 2 + 11);
+        snd_play_se_indexed(h->rating / 2 + 11);
     else
-        FUN_0c0a3f30(h->rating / 2 + 33);
+        snd_play_se_indexed(h->rating / 2 + 33);
 }
 
 void FUN_0c0302fe(int slot, int frames)

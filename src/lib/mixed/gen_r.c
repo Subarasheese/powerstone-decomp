@@ -122,7 +122,7 @@ int sys_shutdown_all(void);
 int math_vec3_add(int, int, int);
 int math_vec3_sub(int, int, int);
 int math_vec3_normalize(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_mode15_cls05_07_f1_move(int);
 int pl_mode15_cls05_07_f1_land(int);
 int pl_start_motion(int, int, int);

@@ -2,7 +2,7 @@
 
 typedef struct { int x, y, z; } vec3_int;
 extern char *obj_create(int, int, int, int);
-extern void FUN_0c06233a(int shooter, char *b, int c);
+extern void obj_part_set_model(int shooter, char *b, int c);
 extern float math_rand_float(void);
 extern void FUN_0c0cb3b8(char *effect);
 struct o1C_float { char p[0x1C]; float v; };
@@ -51,7 +51,7 @@ void fx_spawn_spark_pair(char *shooter)
     effect[263] = 1;
     particle = (char *)*(int *)(effect + 736);
     *particle = 1;
-    FUN_0c06233a((int)particle, (char *)(0xC6002D0 + (signed char)(effect[3] * 24)), 8);
+    obj_part_set_model((int)particle, (char *)(0xC6002D0 + (signed char)(effect[3] * 24)), 8);
     *(short *)(particle + 2) = 543;
     *(vec3_int *)(particle + 4) = *(vec3_int *)0xC153398;
     *(vec3_int *)(particle + 16) = *tmpl_b;
@@ -63,7 +63,7 @@ void fx_spawn_spark_pair(char *shooter)
     *(vec3_int *)(particle + 68) = *tmpl_a;
     particle = (char *)*(int *)(effect + 740);
     *particle = 0;
-    FUN_0c06233a((int)particle, (char *)(0xC6002D0 + (signed char)(effect[3] * 24)), 34);
+    obj_part_set_model((int)particle, (char *)(0xC6002D0 + (signed char)(effect[3] * 24)), 34);
     *(short *)(particle + 2) = 1055;
     *(vec3_int *)(particle + 4) = *(vec3_int *)0xC153398;
     *(float *)(particle + 12) = *(float *)(particle + 12) + 30.0f;

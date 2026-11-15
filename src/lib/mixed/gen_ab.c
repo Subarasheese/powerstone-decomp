@@ -105,7 +105,7 @@ int obj_create(int, int, int);
 int item_draw_marker(int, int, int, float, float, float, float);
 int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0634b4(int);
 int FUN_0c0641a0(int, float, float);
 int pl_mode12_phase0(int);

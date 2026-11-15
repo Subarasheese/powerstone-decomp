@@ -1,4 +1,4 @@
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c047df4-0c048074) */
 
 /* named globals (symbols.txt) */
@@ -92,7 +92,7 @@ int fx_spawn_item_sparkle(int a4)
         (((struct oEC_ushort *)(t0))->v) = 0x4;
         (((struct oEE_ushort *)(t0))->v) = 0x0;
         t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, ((*(signed char *)((t0 + 0xEE))) - 128));
+        obj_part_set_model(t2, 0xC4CFA68, ((*(signed char *)((t0 + 0xEE))) - 128));
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0xF;
         (((struct oC_float *)(t2))->v) = (*(float *)0xC048068);

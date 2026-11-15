@@ -14,7 +14,7 @@ struct o58_float { char p[0x58]; float v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create_beside(int, int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 
 int fx_trail_spawn_segment(int a4)
@@ -46,7 +46,7 @@ int fx_trail_spawn_segment(int a4)
         (((struct o54_float *)(t0))->v) = u0;
         (((struct o50_float *)(t0))->v) = u0;
         t1 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0x0);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0x0);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x61F;
         (((struct o40_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 0.899999976f;

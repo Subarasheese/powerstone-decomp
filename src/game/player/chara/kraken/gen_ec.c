@@ -18,7 +18,7 @@ struct o7248_short { char p[0x7248]; short v; };
 struct o7248_uint { char p[0x7248]; unsigned int v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int FUN_0c086350(int, int, int, int);
+int pl_kraken_attack_kind4(int, int, int, int);
 int FUN_0c0c6094(int, int);
 int pl_angle_to_target_pos(int);
 int pl_apply_motion_translation(int);
@@ -115,7 +115,7 @@ int pl_kraken_attack_dispatch(int a4, int a5, int a6, int a7)
                     }
                     return pl_kraken_attack_kind5(a4, a5, a6, a7);
                 }
-                return FUN_0c086350(a4, a5, a6, a7);
+                return pl_kraken_attack_kind4(a4, a5, a6, a7);
             }
             return pl_kraken_attack_kind3(a4, a5, a6, a7);
         }

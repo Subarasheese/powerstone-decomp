@@ -3,7 +3,7 @@
 struct o2EC_int { char p[0x2EC]; int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int stage_gimmick_08_spawn(void)
@@ -38,7 +38,7 @@ int stage_gimmick_08_spawn(void)
             t3 = *(int *)(((int)stk + 0));
             *(unsigned int *)(((int)stk + 0)) = (t3 + 0x1);
             t4 = *(signed char *)((((t3 + 0x1) - 1) + 0x0));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t2) + 0x0))), 0xC664958, t4);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t2) + 0x0))), 0xC664958, t4);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x0)) = 0x1;
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x4)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x18))) + ((((signed char)t4 << 1) + (signed char)t4) << 2))); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x10)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x1C))) + ((((signed char)t4 << 1) + (signed char)t4) << 2))); }

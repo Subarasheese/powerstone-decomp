@@ -30,7 +30,7 @@ int snd_play_char_voice(int, int);
 int FUN_0c085996(int a4);
 int FUN_0c08f310(int a4);
 int FUN_0c08642c(int a4);
-int FUN_0c085d0e(int a4);
+int pl_kraken_attack_kind3_phase1(int a4);
 
 int FUN_0c085996(int a4)
 {
@@ -153,7 +153,7 @@ int FUN_0c08642c(int a4)
     return t0;
 }
 
-int FUN_0c085d0e(int a4)
+int pl_kraken_attack_kind3_phase1(int a4)
 {
     register int t0;
     register int t1;

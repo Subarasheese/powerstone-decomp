@@ -21,7 +21,7 @@ struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int FUN_0c0555dc(void);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int snd_play_stage_obj_se(int, int, int);
 int FUN_0c0afac2(int);
 int FUN_0c0afb0a(int);
@@ -160,7 +160,7 @@ int FUN_0c0afb68(int a4)
                     return t3;
                 }
                 (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-                FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
+                obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
                 (((struct o5C_float *)(a4))->v) = (((((struct o5C_float *)(a4))->v)) - 0.099999994f);
                 t1 = 0xEC;
                 if ((int)((((struct oEC_short *)(a4))->v)) <= (int)0x46) {
@@ -189,7 +189,7 @@ int FUN_0c0afb68(int a4)
                 return t1;
             }
             (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-            FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
+            obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
             t1 = 0xEC;
             if ((int)((((struct oEC_short *)(a4))->v)) <= (int)0x3C) {
             } else {
@@ -200,7 +200,7 @@ int FUN_0c0afb68(int a4)
             return t1;
         }
         (((struct oEC_ushort *)(a4))->v) = (((((struct oEC_short *)(a4))->v)) + 0x1);
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0x2F));
         u0 = (((struct o54_float *)(a4))->v);
         (((struct o54_float *)(a4))->v) = (u0 + 0.199999988f);
         t0 = 0x54;

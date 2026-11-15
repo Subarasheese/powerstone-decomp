@@ -35,7 +35,7 @@ struct burst_task {
 };
 struct burst_task *obj_create(int a, int b, int c, int d);
 void fx_update_burst_sprites(void);
-void FUN_0c06233a(struct part *part_ref, int tbl, int n);
+void obj_part_set_model(struct part *part_ref, int tbl, int n);
 float math_rand_float(void);
 float math_cos_angle16(int a);
 float math_sin_angle16(int a);
@@ -67,7 +67,7 @@ void fx_spawn_random_burst_sprites(char *parent)
     task->parent = parent;
     task->counter = 8;
     for (idx = 0; idx < 10; idx++) {
-        FUN_0c06233a(task->sub[idx], 0xC6002D0 + (signed char)(parent[3] * 24), 2);
+        obj_part_set_model(task->sub[idx], 0xC6002D0 + (signed char)(parent[3] * 24), 2);
         task->sub[idx]->active = 1;
         task->sub[idx]->model_id = 1055;
         task->sub[idx]->field_64 = 1.0f;

@@ -100,7 +100,7 @@ int ai_calc_dist_to_goal_obj(int);
 int ai_angle_to_pad_dir(int);
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c08e382(int);
 int pl_start_knockback_reaction(int);
 int FUN_0c08f6c8(int);

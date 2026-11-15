@@ -35,7 +35,7 @@ void fx_spawn_ryoma_spray(char *a, int b)
         blk = ((char **)(o + 0x2E0))[i];
         *blk = 1;
         *(short *)(blk + 2) = 31;
-        FUN_0c06233a(blk, (char *)0x0C6002D0 + (signed char)(a[3] * 24), 16);
+        obj_part_set_model(blk, (char *)0x0C6002D0 + (signed char)(a[3] * 24), 16);
         *(float *)(blk + 36) = 0.599999964f;
         *(float *)(blk + 32) = 0.599999964f;
         *(float *)(blk + 28) = 0.599999964f;

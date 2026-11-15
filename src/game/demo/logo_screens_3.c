@@ -30,7 +30,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct o0_uchar { unsigned char v; };
 struct o1_uchar { char p[0x1]; unsigned char v; };
@@ -44,7 +44,7 @@ struct o2E8_int { char p[0x2E8]; int v; };
 struct o2EC_int { char p[0x2EC]; int v; };
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 struct o2F0_int { char p[0x2F0]; int v; };
 int FUN_0c06231c(int, int, int);
 struct o2F4_int { char p[0x2F4]; int v; };
@@ -180,7 +180,7 @@ int logo_spawn_overlay(float f4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x41F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
         u7 = (((struct oC_float *)0xC02BC7C)->v);
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u7;
         (((struct o20_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u7;
@@ -188,7 +188,7 @@ int logo_spawn_overlay(float f4)
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x0;
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x41F;
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x6);
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x6);
         (((struct o40_float *)(((((struct o2E4_int *)(t0))->v))))->v) = 0.0f;
         (((struct o1C_float *)(((((struct o2E4_int *)(t0))->v))))->v) = u7;
         (((struct o20_float *)(((((struct o2E4_int *)(t0))->v))))->v) = u7;
@@ -248,8 +248,8 @@ int FUN_0c02bd8c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
             (((struct oEE_ushort *)(a4))->v) = 0x2;
             (((struct o20_float *)(a4))->v) = 0.0f;
             (((struct o24_float *)(a4))->v) = 0.0f;
-            FUN_0c0a3f30(0x1F);
-            return FUN_0c0a3f30(0x20);
+            snd_play_se_indexed(0x1F);
+            return snd_play_se_indexed(0x20);
         }
         if (t0 == 2) {
             if ((*(signed char *)((a4 + 0x4))) != 0) {
@@ -436,8 +436,8 @@ int FUN_0c02bd8c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     (((struct oEE_ushort *)(a4))->v) = 0x2;
     (((struct o20_float *)(a4))->v) = 0.0f;
     (((struct o24_float *)(a4))->v) = 0.0f;
-    FUN_0c0a3f30(0x1F);
-    return FUN_0c0a3f30(0x20);
+    snd_play_se_indexed(0x1F);
+    return snd_play_se_indexed(0x20);
 }
 
 int FUN_0c02c2d0(int a4)
@@ -477,7 +477,7 @@ int FUN_0c02c2d0(int a4)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
             t8 = *(signed char *)((t3 + 0x0));
             t3 = (t3 + 0x1);
-            t10 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_pstone_logo), t8);
+            t10 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((int)g_res_pstone_logo), t8);
             t2 = (t2 + 0x1);
             t4 = (t4 + 0x4);
             if ((int)t2 >= (int)0x4) {
@@ -822,7 +822,7 @@ int FUN_0c02c830(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x2)) = 0x41F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A00, (*(signed char *)((t2 + 0xC14915E))));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A00, (*(signed char *)((t2 + 0xC14915E))));
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t2 << 1) + t2) << 2) + 0xC149164)); }
             t11 = (t2 << 2);
             t2 = (t2 + 0x1);

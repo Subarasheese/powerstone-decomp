@@ -4,7 +4,7 @@
 extern char g_res_kyoutsuu[];
 typedef struct { int x, y, z; } vec3_int;
 extern void FUN_0c042304(void);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
@@ -33,7 +33,7 @@ void fx_init_subblock_effect(char *obj, vec3_int *pos_ptr, char arg_byte, short 
         *sub_blk = 0;
         sub_blk = ((char **)(obj + 0x2E0))[i];
         *(short *)(sub_blk + 2) = 31;
-        FUN_0c06233a(((char **)(obj + 0x2E0))[i], (char *)g_res_kyoutsuu, i + 58);
+        obj_part_set_model(((char **)(obj + 0x2E0))[i], (char *)g_res_kyoutsuu, i + 58);
     }
 }
 

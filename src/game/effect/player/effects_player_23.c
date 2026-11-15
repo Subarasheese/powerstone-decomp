@@ -19,7 +19,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_rand_float(void);
 int _modlu(void);
@@ -76,7 +76,7 @@ int FUN_0c0bd640(int a4, int a5)
         *(unsigned char *)(((0x105 + t0) + 0x1)) = 0x1;
         (((struct o105_uchar *)(t0))->v) = 0x1;
         t3 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x0);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x0);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         *(unsigned int *)((t0 + 0x1C)) = a4;

@@ -2,7 +2,7 @@
 
 extern char g_spr_bank_player_fx;
 char *obj_create(int a, int b, int c);
-int FUN_0c06233a(char *dst, char *table, int n);
+int obj_part_set_model(char *dst, char *table, int n);
 int obj_set_record_char(char *obj, int n);
 float math_rand_float(void);
 float math_cos_angle16(int ang);
@@ -47,7 +47,7 @@ void fx_spawn_17(char *parent, signed char kind)
     B(fx, 8) = kind;
     B(fx, 9) = 0;
     if (kind == 0 || kind == 2) {
-        FUN_0c06233a(Q(fx), &g_spr_bank_player_fx + (signed char)(B(parent, 3) * 24), 2);
+        obj_part_set_model(Q(fx), &g_spr_bank_player_fx + (signed char)(B(parent, 3) * 24), 2);
         sub = Q(fx);
         *sub = 1;
         H(Q(fx), 2) = 1055;
@@ -75,7 +75,7 @@ void fx_spawn_17(char *parent, signed char kind)
         if (kind == 3) {
             *(vec3_int *)(fx + 32) = *(vec3_int *)(*(char **)(parent + 28) + 32);
         }
-        FUN_0c06233a(Q(fx), &g_spr_bank_player_fx + (signed char)(B(parent, 3) * 24), 2);
+        obj_part_set_model(Q(fx), &g_spr_bank_player_fx + (signed char)(B(parent, 3) * 24), 2);
         sub = Q(fx);
         *sub = 1;
         H(Q(fx), 2) = 1055;

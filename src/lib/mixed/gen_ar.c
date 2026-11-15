@@ -307,7 +307,7 @@ int FUN_0c08c15a(int a4);
 int pl_state08_update(int a4);
 int FUN_0c097f3c(int a4);
 int pl_start_motion(int a4, int a5, int a6);
-void FUN_0c0a3f30(int a4);
+void snd_play_se_indexed(int a4);
 void FUN_0c0a3fce(int a4);
 void FUN_0c0a416c(int a4);
 void FUN_0c0a40b0(int a4);

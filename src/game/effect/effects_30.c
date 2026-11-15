@@ -5,7 +5,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o2E4_int { char p[0x2E4]; int v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -42,7 +42,7 @@ int obj_spawn_037848(int a4)
         t2 = 0x0;
         for (;;) {
             t3 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), (t2 + 0x14));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), (t2 + 0x14));
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x1;
             t3 = *(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0));
             t4 = (t2 << 2);

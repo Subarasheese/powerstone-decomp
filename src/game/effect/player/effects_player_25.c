@@ -5,7 +5,7 @@ extern char *obj_create(int, int, int, int);
 extern char g_players[];
 extern char g_spr_bank_player_fx[];
 extern void thunk_math_mat_get_translate(char *, char *);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern int pl_motion_length(char *);
 extern void fx_update_garuda_debris(void);
 
@@ -37,7 +37,7 @@ void fx_spawn_garuda_debris(char *owner, char mode)
     child[0] = 1;
     child = *(char **)(debris + 0x2E0);
     *(short *)(child + 2) = 1055;
-    FUN_0c06233a(*(char **)(debris + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 2);
+    obj_part_set_model(*(char **)(debris + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 2);
     pl_base = g_players + (unsigned short)((unsigned short)owner[3] * 0x72D0);
     if (mode == 0) {
         thunk_math_mat_get_translate(pl_base + 0x300 + (short)(pl_base[0x71F1] * 3520) + 1408, debris + 32);

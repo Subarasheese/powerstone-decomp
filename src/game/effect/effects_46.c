@@ -4,7 +4,7 @@ struct o118_uint { char p[0x118]; unsigned int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEE_short { char p[0xEE]; short v; };
@@ -56,7 +56,7 @@ int fx_spawn_039c78(int a4, int a5, int a6, int a7)
         for (;;) {
             t10 = *(int *)((t8 + 0x0));
             t8 = (t8 + 0x4);
-            FUN_0c06233a(t10, ((signed char)((((t5 << 1) + t5) << 2) << 1) + 0xC6002D0), 0x14);
+            obj_part_set_model(t10, ((signed char)((((t5 << 1) + t5) << 2) << 1) + 0xC6002D0), 0x14);
             *(unsigned char *)((t10 + 0x0)) = 0x0;
             t9 = (t9 + 0x1);
             *(unsigned short *)((t10 + 0x2)) = 0x13;

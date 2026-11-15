@@ -55,7 +55,7 @@ int FUN_0c05414e(void);
 int FUN_0c05590c(int);
 int FUN_0c0a2f66(int);
 int FUN_0c0a3308(int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 int FUN_0c0a3fce(int);
 int FUN_0c0a4030(int);
 int FUN_0c0a4070(int, int);
@@ -535,10 +535,10 @@ int FUN_0c05436c(void)
     pl_change_state(((unsigned short)((unsigned short)(*(signed char *)0xC7F304F) * (unsigned short)0x72D0) + 0xC7E40C4), 0x15, t58, 0x0);
     pl_change_state(((unsigned short)((unsigned short)(signed char)((-(*(signed char *)0xC7F304F)) + 0x1) * (unsigned short)0x72D0) + 0xC7E40C4), 0x8, 0x0, 0x0);
     if ((*(signed char *)0xC7F302E) == 2) {
-        FUN_0c0a3f30(0x19);
+        snd_play_se_indexed(0x19);
         fx_spawn_057ab6();
     } else {
-        FUN_0c0a3f30(0x18);
+        snd_play_se_indexed(0x18);
         fx_spawn_0577ca();
     }
     if ((*(signed char *)0xC7F301C) == 0) {

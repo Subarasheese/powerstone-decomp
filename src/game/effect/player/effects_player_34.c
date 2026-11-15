@@ -37,7 +37,7 @@ struct effect_task {
 struct effect_task *obj_create(int a, int b, int c, int d);
 void FUN_0c0c00aa(void);
 void thunk_math_mat_get_translate(char *m, struct vec3_int *v);
-void FUN_0c06233a(struct sub_obj *s, int tbl, int n);
+void obj_part_set_model(struct sub_obj *s, int tbl, int n);
 
 void FUN_0c0bfecc(char *obj, char kind)
 {
@@ -64,7 +64,7 @@ void FUN_0c0bfecc(char *obj, char kind)
     player_base = (char *)(0xC7E40C4 + (unsigned short)((unsigned char)obj[3] * 0x72D0));
     thunk_math_mat_get_translate(player_base + 768 + (short)(*(signed char *)(player_base + 0x71F1) * 3520), &task->pos);
     task->counter_236 = 0;
-    FUN_0c06233a(task->sub[0], 0xC6002D0 + (signed char)(obj[3] * 24), 20);
+    obj_part_set_model(task->sub[0], 0xC6002D0 + (signed char)(obj[3] * 24), 20);
     task->sub[0]->active = 1;
     task->sub[0]->field_2 = 543;
     task->sub[0]->field_144 = (int)obj + 768 + (short)(*(signed char *)(obj + 0x71F1) * 3520);
@@ -74,7 +74,7 @@ void FUN_0c0bfecc(char *obj, char kind)
     task->sub[0]->field_76 = 0.0f;
     task->sub[0]->field_72 = 0.0f;
     task->sub[0]->field_68 = 0.0f;
-    FUN_0c06233a(task->sub[1], 0xC6002D0 + (signed char)(obj[3] * 24), 20);
+    obj_part_set_model(task->sub[1], 0xC6002D0 + (signed char)(obj[3] * 24), 20);
     task->sub[1]->active = 1;
     task->sub[1]->field_2 = 543;
     task->sub[1]->field_144 = (int)obj + 768 + (short)(*(signed char *)(obj + 0x71F1) * 3520);

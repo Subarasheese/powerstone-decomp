@@ -19,7 +19,7 @@ struct o5C_float { char p[0x5C]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
@@ -129,7 +129,7 @@ int staffroll_spawn_line(int a4, int a5)
                                 }
                                 (((struct o18_float *)(((int)stk + 0)))->v) = (*(float *)((((signed char)t20 << 2) + 0xC117300)));
                                 u18 = (*(float *)((((signed char)t20 << 2) + 0xC117500)));
-                                FUN_0c06233a((*(int *)((((0x2E0 + t14) + t17) + 0x0))), ((int)g_res_font), (*(short *)((((signed char)t20 << 1) + 0xC117200))));
+                                obj_part_set_model((*(int *)((((0x2E0 + t14) + t17) + 0x0))), ((int)g_res_font), (*(short *)((((signed char)t20 << 1) + 0xC117200))));
                                 *(unsigned short *)(((*(int *)((((0x2E0 + t14) + t17) + 0x0))) + 0x2)) = 0x31F;
                                 (((struct o4_float *)((*(int *)((((0x2E0 + t14) + t17) + 0x0)))))->v) = (*(float *)(((int)stk + 0)));
                                 (((struct o8_float *)((*(int *)((((0x2E0 + t14) + t17) + 0x0)))))->v) = 0.0f;
@@ -200,7 +200,7 @@ int staffroll_spawn_line(int a4, int a5)
                                 }
                                 (((struct o18_float *)(((int)stk + 0)))->v) = (*(float *)((0xC117300 + (t107 << 2))));
                                 *(volatile float *)((0xC117500 + (t107 << 2)));
-                                FUN_0c06233a(((((struct o2E0_int *)(t95))->v)), ((int)g_res_font), (*(short *)((((*(signed char *)(((int)stk + 12))) << 1) + 0xC117200))));
+                                obj_part_set_model(((((struct o2E0_int *)(t95))->v)), ((int)g_res_font), (*(short *)((((*(signed char *)(((int)stk + 12))) << 1) + 0xC117200))));
                                 *(unsigned short *)((((((struct o2E0_int *)(t95))->v)) + 0x2)) = 0x31F;
                                 (((struct o4_float *)(((((struct o2E0_int *)(t95))->v))))->v) = (*(float *)(((int)stk + 0)));
                                 (((struct o8_float *)(((((struct o2E0_int *)(t95))->v))))->v) = 0.0f;
@@ -229,7 +229,7 @@ int staffroll_spawn_line(int a4, int a5)
                     (((struct o50_float *)(t177))->v) = 0.0078125f;
                     (((struct o54_float *)(t177))->v) = 0.0078125f;
                     (((struct o58_float *)(t177))->v) = 0.0078125f;
-                    FUN_0c06233a(((((struct o2E0_int *)(t177))->v)), 0xC6649D0, 0x1C);
+                    obj_part_set_model(((((struct o2E0_int *)(t177))->v)), 0xC6649D0, 0x1C);
                     *(unsigned char *)((((((struct o2E0_int *)(t177))->v)) + 0x0)) = 0x1;
                     *(unsigned short *)((((((struct o2E0_int *)(t177))->v)) + 0x2)) = 0x100;
                     (((struct o4_float *)(((((struct o2E0_int *)(t177))->v))))->v) = 0.0f;
@@ -255,7 +255,7 @@ int staffroll_spawn_line(int a4, int a5)
                 (((struct o50_float *)(t206))->v) = 0.0078125f;
                 (((struct o54_float *)(t206))->v) = 0.0078125f;
                 (((struct o58_float *)(t206))->v) = 0.0078125f;
-                FUN_0c06233a(((((struct o2E0_int *)(t206))->v)), 0xC6649D0, 0x1D);
+                obj_part_set_model(((((struct o2E0_int *)(t206))->v)), 0xC6649D0, 0x1D);
                 *(unsigned char *)((((((struct o2E0_int *)(t206))->v)) + 0x0)) = 0x1;
                 *(unsigned short *)((((((struct o2E0_int *)(t206))->v)) + 0x2)) = 0x100;
                 (((struct o4_float *)(((((struct o2E0_int *)(t206))->v))))->v) = 0.0f;
@@ -281,7 +281,7 @@ int staffroll_spawn_line(int a4, int a5)
             (((struct o50_float *)(t235))->v) = 0.0078125f;
             (((struct o54_float *)(t235))->v) = 0.0078125f;
             (((struct o58_float *)(t235))->v) = 0.0078125f;
-            FUN_0c06233a(((((struct o2E0_int *)(t235))->v)), 0xC6649D0, 0x1E);
+            obj_part_set_model(((((struct o2E0_int *)(t235))->v)), 0xC6649D0, 0x1E);
             *(unsigned char *)((((((struct o2E0_int *)(t235))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(t235))->v)) + 0x2)) = 0x100;
             (((struct o4_float *)(((((struct o2E0_int *)(t235))->v))))->v) = 0.0f;

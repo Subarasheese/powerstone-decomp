@@ -4,7 +4,7 @@ struct o90_uint { char p[0x90]; unsigned int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 int memset(int, int, int);
 
@@ -38,19 +38,19 @@ int stage_gimmick_20_spawn(void)
         for (;;) {
             *(unsigned int *)(((int)stk + 0)) = (((t1 << 1) + t1) << 2);
             t3 = *(int *)((((((t1 << 1) + t1) << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t3, 0xC664958, 0x2E);
+            obj_part_set_model(t3, 0xC664958, 0x2E);
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned short *)((t3 + 0x2)) = 0xF;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t3 + 0x4)) = *(struct mv3 *)((0xC152E90 + (signed char)(((t1 << 1) + t1) << 2))); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t3 + 0x10)) = *(struct mv3 *)((0xC152EB4 + (signed char)(((t1 << 1) + t1) << 2))); }
             memset((t3 + 0x28), 0x0, 0x28);
             t8 = *(int *)((((0x2E0 + t0) + (*(int *)(((int)stk + 0)))) + 0x4));
-            FUN_0c06233a(t8, 0xC664958, 0x2F);
+            obj_part_set_model(t8, 0xC664958, 0x2F);
             *(unsigned char *)((t8 + 0x0)) = 0x1;
             *(unsigned short *)((t8 + 0x2)) = 0xF;
             (((struct o90_uint *)(t8))->v) = (t3 + 0x50);
             t11 = *(int *)((((0x2E0 + t0) + (*(int *)(((int)stk + 0)))) + 0x8));
-            FUN_0c06233a(t11, 0xC664958, 0x30);
+            obj_part_set_model(t11, 0xC664958, 0x30);
             *(unsigned char *)((t11 + 0x0)) = 0x1;
             *(unsigned short *)((t11 + 0x2)) = 0xF;
             t1 = (t1 + 0x1);

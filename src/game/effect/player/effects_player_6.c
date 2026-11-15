@@ -13,7 +13,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -82,7 +82,7 @@ int fx_spawn_ryoma_spray(int a4, int a5)
             *(unsigned short *)((t3 + 0x2)) = 0x1F;
             t4 = *(signed char *)((a4 + 0x3));
             t5 = 0xC06233A;
-            FUN_0c06233a(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x10);
+            obj_part_set_model(t3, ((signed char)((((t4 << 1) + t4) << 2) << 1) + 0xC6002D0), 0x10);
             (((struct o24_float *)(t3))->v) = 0.599999964f;
             (((struct o20_float *)(t3))->v) = 0.599999964f;
             (((struct o1C_float *)(t3))->v) = 0.599999964f;

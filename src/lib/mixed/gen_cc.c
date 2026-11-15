@@ -72,7 +72,7 @@ int FUN_0c044868(int, int);
 int FUN_0c0448f6(int);
 int FUN_0c0555dc(void);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c08a6e4(int);
 int FUN_0c092894(int);
 int FUN_0c097b10(int);

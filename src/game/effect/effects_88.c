@@ -5,7 +5,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct oC_float { char p[0xC]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -38,7 +38,7 @@ int FUN_0c041574(int a4)
         t2 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         t3 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x18);
+        obj_part_set_model(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x18);
         *(unsigned short *)((t2 + 0x2)) = 0x1F;
         (((struct oC_float *)(t2))->v) = (*(float *)0xC0416C0);
         t8 = 0xC;

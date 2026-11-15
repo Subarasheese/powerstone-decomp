@@ -13,7 +13,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
@@ -48,7 +48,7 @@ int fx_spawn_04a294(int a4)
         (((struct o58_float *)(t0))->v) = 1.0f;
         (((struct o54_float *)(t0))->v) = 1.0f;
         (((struct o50_float *)(t0))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x63);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x63);
         t4 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t4 + 0x0)) = 0x1;
         *(unsigned short *)((t4 + 0x2)) = 0x411;

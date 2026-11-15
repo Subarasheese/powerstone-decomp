@@ -3,9 +3,9 @@
 
 struct o7223_uchar { char p[0x7223]; unsigned char v; };
 int pl_end_action_choose_state(int);
-int FUN_0c0862a8(int a4);
+int pl_kraken_attack_kind4_phase5(int a4);
 
-int FUN_0c0862a8(int a4)
+int pl_kraken_attack_kind4_phase5(int a4)
 {
     (((struct o7223_uchar *)(a4))->v) = 0x0;
     return pl_end_action_choose_state(a4);

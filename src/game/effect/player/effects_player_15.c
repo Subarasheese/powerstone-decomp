@@ -12,7 +12,7 @@ struct field_54_float { char p[0x54]; float field_54; };
 struct field_58_float { char p[0x58]; float field_58; };
 struct field_f2_ushort { char p[0xF2]; unsigned short field_f2; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -80,7 +80,7 @@ int fx_spawn_jack_projectile_alt(int owner, int variant)
         idx = 0x0;
         for (;;) {
             char_id_b = *(signed char *)((owner + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + effect) + (idx << 2)) + 0x0))), ((signed char)((((char_id_b << 1) + char_id_b) << 2) << 1) + 0xC6002D0), (idx + 0x2));
+            obj_part_set_model((*(int *)((((0x2E0 + effect) + (idx << 2)) + 0x0))), ((signed char)((((char_id_b << 1) + char_id_b) << 2) << 1) + 0xC6002D0), (idx + 0x2));
             *(unsigned char *)(((*(int *)((((0x2E0 + effect) + (idx << 2)) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + effect) + (idx << 2)) + 0x0))) + 0x2)) = 0x1F;
             (((struct field_1c_float *)((*(int *)((((0x2E0 + effect) + (idx << 2)) + 0x0)))))->field_1c) = 1.0f;
