@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.1&b=97.1&m=1.4&a=61&s=0)
+![decomp progress](badges/progress.svg?p=98.1&b=97.1&m=1.4&a=61&s=1)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -35,7 +35,9 @@ FUNCTIONS
   Drawn with errors               22  5350 bytes
   Checked with errors             30  8952 bytes
   No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   54.1%  3042 named functions in docs/*.md
+  documented                   53.6%  3006 named functions in docs/*.md
+GAME ASSETS (EXTRA)                   
+  models named                 17.0%  534 of 3146 models: a name, or a named table or collection
 ```
 <!-- /progress -->
 
