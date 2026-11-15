@@ -186,12 +186,20 @@ void fx_trail_resize_chain(char *obj)
         seg = *(char **)(obj + 24);
         if (want > 0) {
             do {
+#ifdef NATIVE_PORT
+                if (seg == 0)       /* the end of the object list (see FUN_0c0c9394) */
+                    break;
+#endif
                 idx++;
                 seg = *(char **)(seg + 24);
             } while (idx < want);
         }
         if (idx < old_count) {
             do {
+#ifdef NATIVE_PORT
+                if (seg == 0)       /* the end of the object list (see FUN_0c0c9394) */
+                    break;
+#endif
                 if (*(void (**)(void))(seg + 16) == fx_update_trail_segment) {
                     obj_destroy(seg);
                     obj[14]--;
@@ -206,6 +214,10 @@ void fx_trail_resize_chain(char *obj)
     seg = *(char **)(obj + 24);
     if (want > 0) {
         do {
+#ifdef NATIVE_PORT
+            if (seg == 0)           /* the end of the object list (see FUN_0c0c9394) */
+                break;
+#endif
             *(vec12 *)(seg + 44) = *(vec12 *)(obj + 44);
             *(vec12 *)(seg + 32) = *(vec12 *)(obj + 32);
             seg_num = (float)(idx + 1);
@@ -261,6 +273,14 @@ int FUN_0c0c9394(int a4)
                 t3 = (*(int *)(((int)stk + 4)));
                 t4 = (t4 + 0x1);
                 t5 = (*(int *)((t5 + 0x18)));
+#ifdef NATIVE_PORT
+                /* The walk follows the object list (+0x18), counting the parent's segments (+0xE), but a segment that
+                   destroys itself (fx_update_trail_segment) does not lower that count: the walk can then run off the
+                   end of the list. The console reads boot ROM at 0x2D8 there; on the host nothing is mapped at 0,
+                   so the walk ends at the end of the list, as if no segment had hit. */
+                if (t5 == 0)
+                    return *(signed char *)((a4 + 0xF));
+#endif
                 if ((int)t4 < (int)t3) continue;
                 t14 = *(signed char *)((a4 + 0xF));
                 if ((t14 != 0) && (t15 = *(int *)(((int)stk + 4)), t16 = *(int *)((t5 + 0x18)), t5 = t16, (int)t4 < (int)(t15 - 1))) {
@@ -299,9 +319,27 @@ int FUN_0c0c9394(int a4)
         t52 = t4;
         t53 = t5;
     }
+    /* a segment hit: the trail segments after it go (each destroyed, the count lowered); the return value is what
+       r0 last held, as in the original (the callers ignore it) */
     t58 = *(signed char *)((a4 + 0xF));
-    if ((t58 != 0) && (t59 = *(int *)(((int)stk + 4)), t60 = *(int *)((t53 + 0x18)), (int)t52 < (int)(t59 - 1))) {
-        *(volatile int *)((t60 + 0x10));
+    if (t58 != 0) {
+        t59 = (*(int *)(((int)stk + 4))) - 1;
+        t60 = *(int *)((t53 + 0x18));
+        while ((int)t52 < (int)t59) {
+#ifdef NATIVE_PORT
+            if (t60 == 0)       /* the end of the object list (see the walk above) */
+                break;
+#endif
+            if ((*(int *)((t60 + 0x10))) == 0xC0C9760) {      /* fx_update_trail_segment */
+                obj_destroy((char *)t60);
+                t58 = (*(signed char *)((a4 + 0xE))) - 1;
+                *(unsigned char *)((a4 + 0xE)) = t58;
+            }
+            t52 = (t52 + 0x1);
+            if ((int)t52 >= (int)t59)
+                break;
+            t60 = *(int *)((t60 + 0x18));
+        }
     }
     return t58;
 }
