@@ -2793,6 +2793,7 @@ fx_spawn_04
 fx_spawn_04015c
 fx_spawn_040550
 fx_spawn_040a84
+fx_spawn_040a84_beside
 fx_spawn_0416d8
 fx_spawn_041820
 fx_spawn_042514
@@ -2981,6 +2982,7 @@ fx_tick_03fd08
 fx_tick_04015c
 fx_tick_040550
 fx_tick_040a84
+fx_tick_040a84_first
 fx_tick_0416d8
 fx_tick_041820
 fx_tick_042514

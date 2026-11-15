@@ -38926,7 +38926,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 58 of 70 instructions
 
 ### FUN_0c0c9394 (`0C0C9394`, 402 bytes, `src/game/effect/special/effects_shells.c`)
-- equivalent on 19 development and 19 holdout cases, in `tests/effects_shells/FUN_0c0c9394.json`
+- equivalent on 20 development and 19 holdout cases, in `tests/effects_shells/FUN_0c0c9394.json`
 - case 0
 - case 1
 - case 2
@@ -38946,6 +38946,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 16
 - case 17
 - directed: flips 0C0C93CE (not taken)
+- a segment hit (the second of four): the parent aims at it and the trail segments after it are destroyed, the count lowered (the found path and its tail loop)
 - case 133
 - case 147
 - case 83
@@ -38965,7 +38966,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 140
 - case 98
 - directed: flips 0C0C94DA (taken)
-- the cases run 63 of 178 instructions
+- the cases run 179 of 179 instructions
 
 ### FUN_0c0c9526 (`0C0C9526`, 270 bytes, `src/game/save/gen_t.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_t/FUN_0c0c9526.json`
@@ -79243,11 +79244,110 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fuzz 13.0
 - the cases run 348 of 380 instructions
 
-### fx_spawn_040a84 (`0C040A84`, 1844 bytes, `src/game/effect/effects_86.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/effects_86/fx_spawn_040a84.json`
+### fx_spawn_040a84 (`0C040A84`, 230 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 41 development and 1 holdout cases, in `tests/effects_86/fx_spawn_040a84.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 24 of 650 instructions
+- the cases run 115 of 115 instructions
+
+### fx_spawn_040a84_beside (`0C040CD0`, 1256 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 40 development and 15 holdout cases, in `tests/effects_86/fx_spawn_040a84_beside.json`
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- the cases run 505 of 546 instructions
 
 ### fx_spawn_0416d8 (`0C0416D8`, 194 bytes, `src/game/effect/effects_89.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_89/fx_spawn_0416d8.json`
@@ -82315,6 +82415,96 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 128 of 437 instructions
+
+### fx_tick_040a84_first (`0C040B6A`, 358 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 50 development and 36 holdout cases, in `tests/effects_86/fx_tick_040a84_first.json`
+- hand: state 0, the sprite reaches full size (state 1, its scale set from 0C149B14)
+- hand: state 0, still growing
+- hand: state 1, the count ends with +0xEE set: the voice and the sparks
+- hand: state 1, the count ends with +0xEE clear: the sparks only
+- hand: state 1, the count goes on
+- hand: state 2, fading out (state 3)
+- hand: state 2, still fading
+- hand: state 3: the object ends
+- hand: an unknown state: nothing
+- hand: FUN_0c0555dc set: state 3 and the end
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- the cases run 122 of 122 instructions
 
 ### fx_tick_0416d8 (`0C04179A`, 92 bytes, `src/game/effect/effects_89.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/effects_89/fx_tick_0416d8.json`
