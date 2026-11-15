@@ -13,6 +13,17 @@ void FUN_0c0276c4(char *pl);
 void FUN_0c092a58(void);
 void FUN_0c092ace(int side);
 typedef struct { int w[9]; } PAD36;
+#ifdef NATIVE_PORT
+void port_agent_input(char *p, int side);   /* --agent: a learned policy's command in place of the pad's or the AI's */
+#define AGENT_INPUT(p, side) port_agent_input((p), (side))
+void port_ai_level_enter(int side), port_ai_level_leave(void); /* --cpu-level: the computer's level for one side's AI */
+#define AI_LEVEL_ENTER(side) port_ai_level_enter(side)
+#define AI_LEVEL_LEAVE() port_ai_level_leave()
+#else
+#define AGENT_INPUT(p, side) ((void)0)
+#define AI_LEVEL_ENTER(side) ((void)0)
+#define AI_LEVEL_LEAVE() ((void)0)
+#endif
 #define P0 ((char *)0xC7E40C4)
 #define P1 ((char *)(0xC7E40C4 + 0x72D0))
 #define B(o, n) (*(signed char *)((o) + (n)))
@@ -47,14 +58,17 @@ static void mask_input(char *p, int m)
     case 1: \
     case 2: \
         if (B(p, 0x71ED) != 0) { \
+            AI_LEVEL_ENTER(side); \
             if (B(p, 4) == 10) \
                 ai_update_slot(p); \
             else \
                 ai_draw_debug_info(p); \
+            AI_LEVEL_LEAVE(); \
         } else { \
             *(PAD36 *)((p) + 0x2DC) = *(PAD36 *)(pad); \
             keycfg_remap_player_buttons(side); \
         } \
+        AGENT_INPUT(p, side); \
         if (mode == 1) { \
             if (B(p, 4) != 10) \
                 mask_input(p, 0xF4); \

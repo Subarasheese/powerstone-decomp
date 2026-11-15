@@ -171,7 +171,23 @@ static void on_fault(int sig, siginfo_t *si, void *ctx)
             uc->uc_mcontext.gregs[REG_RIP] = (greg_t)(uintptr_t)e->fn;
             return;
         }
-        /* a jump into the middle of library code (Kamui's hardware routines, reached by raw address): it returns 0 */
+        /* a call to an address where functions.txt lists no function: code the decomp has not found yet. The game stops
+           here on purpose, so it gets listed and given C instead of running on with a wrong result; PORT_UNLISTED_OK=1
+           lets it return 0 and go on (the old behaviour) */
+        if (!getenv("PORT_UNLISTED_OK")) {
+            const struct port_entry *n = port_nearest(target);
+            char line[200];
+            int k = snprintf(line, sizeof line, "powerstone: STOP: call to 0x%08X, where no function is listed (nearest before it: %s); "
+                             "list it in functions.txt and give it C\n", target, n ? n->name : "?");
+            if (write(2, line, k) < 0)
+                _exit(86);
+            FILE *f = fopen("unlisted_calls.txt", "a");
+            if (f) {
+                fprintf(f, "0x%08X %s\n", target, n ? n->name : "?");
+                fclose(f);
+            }
+            _exit(86);
+        }
         static uint32_t warned[64];
         int seen = 0;
         for (int i = 0; i < 64 && warned[i]; i++)
@@ -347,15 +363,54 @@ int main(int argc, char **argv)
         } else if (!strcmp(argv[i], "--press") && i + 1 < argc) {
             extern unsigned long port_press_frame;
             port_press_frame = strtoul(argv[++i], 0, 10);
+        } else if (!strcmp(argv[i], "--boot-fight") && i + 3 < argc) {
+            extern int port_boot_mode, port_boot_stage, port_boot_p1, port_boot_p2;
+            port_boot_mode = 1;
+            port_boot_stage = atoi(argv[i + 1]);
+            port_boot_p1 = atoi(argv[i + 2]);
+            port_boot_p2 = atoi(argv[i + 3]);
+            i += 3;
+        } else if (!strcmp(argv[i], "--agent") && i + 2 < argc && (argv[i + 1][0] == '1' || argv[i + 1][0] == '2')) {
+            extern const char *port_agent_model[2];
+            port_agent_model[argv[i + 1][0] - '1'] = argv[i + 2];
+            i += 2;
+        } else if (!strcmp(argv[i], "--record") && i + 1 < argc) {
+            extern const char *port_record_file;
+            port_record_file = argv[++i];
+        } else if (!strcmp(argv[i], "--boot-random")) {
+            extern int port_boot_random;
+            port_boot_random = 1;
+        } else if (!strcmp(argv[i], "--cpu-vs-cpu")) {
+            extern int port_boot_cpu;
+            port_boot_cpu = 1;
+        } else if (!strcmp(argv[i], "--cpu-level") && i + 2 < argc && (argv[i + 1][0] == '1' || argv[i + 1][0] == '2')) {
+            extern int port_ai_level[2];
+            port_ai_level[argv[i + 1][0] - '1'] = atoi(argv[i + 2]);
+            i += 2;
+        } else if (!strcmp(argv[i], "--matches") && i + 1 < argc) {
+            extern int port_boot_matches;
+            port_boot_matches = atoi(argv[++i]);
+        } else if (!strcmp(argv[i], "--difficulty") && i + 1 < argc) {
+            extern int port_boot_difficulty;
+            port_boot_difficulty = atoi(argv[++i]);
         } else if (!strcmp(argv[i], "--vmu") && i + 1 < argc) {
             extern const char *port_vmu_dir;
             port_vmu_dir = argv[++i];
+        } else if (!strcmp(argv[i], "--fast")) {
+            extern int port_fast;
+            port_fast = 1;
         } else if (!strcmp(argv[i], "--headless"))
             port_headless = 1;
         else if (!strcmp(argv[i], "--image") && i + 1 < argc)
             image_path = argv[++i];
         else {
             fprintf(stderr, "usage: powerstone [--data DIR] [--vmu DIR] [--headless] [--strict] [--trace-calls] [--seconds N] [--image FILE]\n"
+                            "       [--boot-fight STAGE P1 P2 [--difficulty 0-7] [--matches N]]: arcade fights on that stage with those fighters, again and again (N: then quit)\n"
+                            "       [--record FILE]: log every fight frame (state and both fighters' inputs) for port/rl\n"
+                            "       [--agent 1|2 MODEL]: a learned policy (port/rl) plays that side in every fight\n"
+                            "       [--cpu-vs-cpu] [--cpu-level 1|2 N]: the game's AI on both sides; a side's AI at level N (0..31)\n"
+                            "       [--boot-random]: with --boot-fight, each match draws its stage and both fighters (not the bosses)\n"
+                            "       [--fast]: no wait for the vsync (with --headless: as fast as the host runs, for training)\n"
                             "  DIR: a folder holding the files of your Power Stone disc (1ST_READ.BIN, COMMON.BIN, ...)\n");
             return 2;
         }

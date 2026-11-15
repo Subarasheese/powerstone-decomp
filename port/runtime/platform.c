@@ -22,6 +22,7 @@
 #include "port.h"
 
 int port_headless;
+int port_fast;
 static SDL_Window *window;
 static SDL_GLContext gl;
 static SDL_Gamepad *pad;
@@ -375,6 +376,9 @@ void port_frame_end(void)
     port_host_fp_leave(game);
     extern void port_vmu_deliver(void);
     port_vmu_deliver();
+    extern int port_fast;
+    if (port_fast)          /* --fast: no wait for the vsync, the game runs as fast as the host does (for training) */
+        return;
     unsigned long seen = vsyncs;
     while (vsyncs == seen) {
         struct timespec ts = {0, 500000};

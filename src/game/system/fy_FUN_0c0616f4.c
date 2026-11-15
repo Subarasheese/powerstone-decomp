@@ -38,6 +38,11 @@ void FUN_0c0d7318(void);
 void game_play_step(void);
 void sys_main_loop_step(void)
 {
+#ifdef NATIVE_PORT
+    extern void port_boot_step(void), port_record_step(void);
+    port_record_step();
+    port_boot_step();
+#endif
     FUN_0c0f250a();
     syRtcExecServer();
     pad_poll_all();
