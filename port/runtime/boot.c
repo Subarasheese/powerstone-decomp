@@ -62,7 +62,9 @@ static void set_choices(void)
 }
 
 int port_boot_matches;    /* --matches N: quit after N matches (0: never) */
-int port_ai_level[2] = {-1, -1};  /* --cpu-level SIDE N: that side's AI plays at level N (0..31) */
+int port_ai_level[2] = {-1, -1};
+int port_match_level = -1;  /* --match-level N: hold the match's level g_305c at N (0..31): the damage scale, and the AI where
+                               --cpu-level does not set it */  /* --cpu-level SIDE N: that side's AI plays at level N (0..31) */
 
 /* The computer's level g_305c (0x0C7F305C; [1] holds level * 8) is one value for both sides: set by the match start
    from the difficulty option and the ladder (FUN_0c0597ce), read by the AI (ai_think, ai_roll_chance, ai_difficulty_tier)
@@ -134,6 +136,15 @@ static void match_over(int won, int taken, int perfect_rounds, int rounds_won)
 void port_boot_step(void)
 {
     static int phase, lost;
+    if (port_match_level >= 0 && B(G + 4) == 4) {   /* the match start and the game's own adjustments set it: hold it */
+        static int said;
+        if (!said) {
+            said = 1;
+            fprintf(stderr, "powerstone: match level held at %d (the game had %d)\n", port_match_level, B(0x0C7F305C));
+        }
+        B(0x0C7F305C) = (unsigned char)port_match_level;
+        B(0x0C7F305D) = (unsigned char)(port_match_level << 3);
+    }
     static int prev_life, round_taken, match_taken, perfect_rounds, rounds_won, rounds_lost, in_round;
     if (!port_boot_mode)
         return;

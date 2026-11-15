@@ -370,6 +370,16 @@ int main(int argc, char **argv)
             port_boot_p1 = atoi(argv[i + 2]);
             port_boot_p2 = atoi(argv[i + 3]);
             i += 3;
+        } else if (!strcmp(argv[i], "--timeout-penalty") && i + 1 < argc) {
+            extern float port_agent_timeout_penalty;
+            port_agent_timeout_penalty = (float)atof(argv[++i]);
+        } else if (!strcmp(argv[i], "--tag") && i + 1 < argc) {
+            extern int port_agent_tag;
+            port_agent_tag = atoi(argv[++i]);
+        } else if (!strcmp(argv[i], "--teach") && i + 2 < argc && (argv[i + 1][0] == '1' || argv[i + 1][0] == '2')) {
+            extern const char *port_teach_sock[2];
+            port_teach_sock[argv[i + 1][0] - '1'] = argv[i + 2];
+            i += 2;
         } else if (!strcmp(argv[i], "--agent") && i + 2 < argc && (argv[i + 1][0] == '1' || argv[i + 1][0] == '2')) {
             extern const char *port_agent_model[2];
             port_agent_model[argv[i + 1][0] - '1'] = argv[i + 2];
@@ -387,6 +397,9 @@ int main(int argc, char **argv)
             extern int port_ai_level[2];
             port_ai_level[argv[i + 1][0] - '1'] = atoi(argv[i + 2]);
             i += 2;
+        } else if (!strcmp(argv[i], "--match-level") && i + 1 < argc) {
+            extern int port_match_level;
+            port_match_level = atoi(argv[++i]);
         } else if (!strcmp(argv[i], "--matches") && i + 1 < argc) {
             extern int port_boot_matches;
             port_boot_matches = atoi(argv[++i]);
@@ -396,6 +409,12 @@ int main(int argc, char **argv)
         } else if (!strcmp(argv[i], "--vmu") && i + 1 < argc) {
             extern const char *port_vmu_dir;
             port_vmu_dir = argv[++i];
+        } else if (!strcmp(argv[i], "--fast-fpu")) {
+            extern int port_fast_fpu;
+            port_fast_fpu = 1;
+        } else if (!strcmp(argv[i], "--no-draw")) {
+            extern int port_no_draw;
+            port_no_draw = 1;
         } else if (!strcmp(argv[i], "--fast")) {
             extern int port_fast;
             port_fast = 1;
@@ -407,10 +426,15 @@ int main(int argc, char **argv)
             fprintf(stderr, "usage: powerstone [--data DIR] [--vmu DIR] [--headless] [--strict] [--trace-calls] [--seconds N] [--image FILE]\n"
                             "       [--boot-fight STAGE P1 P2 [--difficulty 0-7] [--matches N]]: arcade fights on that stage with those fighters, again and again (N: then quit)\n"
                             "       [--record FILE]: log every fight frame (state and both fighters' inputs) for port/rl\n"
-                            "       [--agent 1|2 MODEL]: a learned policy (port/rl) plays that side in every fight\n"
+                            "       [--agent 1|2 MODEL|unix:SOCKET]: a learned policy (port/rl) plays that side in every fight\n"
+                            "       [--teach 1|2 SOCKET]: the game's AI plays that side and its decisions go to the server to learn from\n"
+                            "       [--tag N]: tells the servers what the opponent is (their reports group by it)\n"
+                            "       [--timeout-penalty N]: what a round ending on time costs the agent (default 60; behind, at least 120)\n"
                             "       [--cpu-vs-cpu] [--cpu-level 1|2 N]: the game's AI on both sides; a side's AI at level N (0..31)\n"
+                            "       [--match-level N]: hold the match's level (the damage scale) at N (0..31)\n"
                             "       [--boot-random]: with --boot-fight, each match draws its stage and both fighters (not the bosses)\n"
                             "       [--fast]: no wait for the vsync (with --headless: as fast as the host runs, for training)\n"
+                            "       [--fast-fpu] [--no-draw]: training speed: host float math for FIPR/FTRV/FSCA, no draw records\n"
                             "  DIR: a folder holding the files of your Power Stone disc (1ST_READ.BIN, COMMON.BIN, ...)\n");
             return 2;
         }

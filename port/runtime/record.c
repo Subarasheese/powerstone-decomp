@@ -3,7 +3,7 @@
 
    The file is a header and then one record per game frame while a fight is shown (scene 4, fight-flow modes 1..5):
 
-     header  "PSREC3\0\0", then u32 fixed record size, u32 header size (32), u32 player snapshot sizes (A, Bsz),
+     header  "PSREC4\0\0", then u32 fixed record size, u32 header size (32), u32 player snapshot sizes (A, Bsz),
              u32 object size, u32 zero
      record  u32  frame number (counts every game frame since the start, so gaps show where nothing was recorded)
              u8   scene (g_game_work[4]), u8 fight-flow mode, u8 its sub-state, u8 the computer's level (g_305c)
@@ -16,6 +16,9 @@
                A   the fighter's first A bytes (position +0x20..+0x28, angle +0x30, velocities, motion, ...)
                B   the fighter's bytes 0x7100..0x7100+B (state 0x71BA, held item 0x71CC, life 0x71D4, power form 0x71F3,
                    stones 0x7230, ...)
+               128 its motion's next 16 hit rows (8 bytes each; byte 1 is the attack set, non-zero while an attack is
+                   live): row 0 is the one at +0x71A0 + +0x71A2, in the motion data at 0x0C664B50 + side * 0xB5EC8 +
+                   0xAC288 (rl-data/hitvolumes.md); zero past the motion data
              u16  the number of objects that follow, u16 zero
              per object, every live object of classes 1..4 (the classes the hit system handles: 1 shots and special-attack
              effects, 2 stage objects that can be picked up or broken, 3 items and stones, 4 stage gimmicks), at most
@@ -23,7 +26,8 @@
                u32  the object's console address (so a fighter's held-item pointer can be matched)
                u32  its tick handler as a console address (the object's kind; a native function is turned back into its
                     console address)
-               0x120  the object's first bytes (+2 class, +4 type, +8 state, +0x20 position, +0x2C rotation, +0x50 ...)
+               0x270  the object's first bytes (+2 class, +4 type, +8 state, +0x20 position, +0x2C rotation, +0x50 ...,
+                      attack spheres +0x148, hurt spheres +0x188, body volume +0x248)
                0x10   its bytes 0x300..0x310 (+0x30C kind of an item)
 
    The state in a record is the state after the frame just played; its input block is the input of that frame. So the
@@ -41,8 +45,9 @@ const char *port_record_file;
 #define SNAP_A 0x300
 #define SNAP_B 0x200
 #define EXTRA 32
-#define FIXED_SIZE (8 + 96 + EXTRA + 2 * (36 + SNAP_A + SNAP_B))
-#define OBJ_HEAD 0x120
+#define ROWS 128
+#define FIXED_SIZE (8 + 96 + EXTRA + 2 * (36 + SNAP_A + SNAP_B + ROWS))
+#define OBJ_HEAD 0x270
 #define OBJ_SIZE (8 + OBJ_HEAD + 0x10)
 #define MAX_OBJ 96
 #define REC_MAX (FIXED_SIZE + 4 + MAX_OBJ * OBJ_SIZE)
@@ -100,6 +105,17 @@ unsigned port_record_build(unsigned char *rec, uint32_t frame)
         r += SNAP_A;
         memcpy(r, (const void *)(uintptr_t)(PL(i) + 0x7100), SNAP_B);
         r += SNAP_B;
+        {
+            uint32_t row = *(volatile uint16_t *)(uintptr_t)(PL(i) + 0x71A0) + B(PL(i) + 0x71A2);
+            uint32_t a = 0x0C664B50u + (uint32_t)i * 0xB5EC8u + 0xAC288u + row * 8u;
+            uint32_t end = 0x0C664B50u + (uint32_t)(i + 1) * 0xB5EC8u;
+            for (int k = 0; k < 16; k++, a += 8)
+                if (a + 8 <= end)
+                    memcpy(r + 8 * k, (const void *)(uintptr_t)a, 8);
+                else
+                    memset(r + 8 * k, 0, 8);
+            r += ROWS;
+        }
     }
     unsigned char *count = r;
     r += 4;
@@ -139,7 +155,7 @@ void port_record_step(void)
             return;
         }
         uint32_t h[8] = {0, 0, FIXED_SIZE, 32, SNAP_A, SNAP_B, OBJ_SIZE, 0};
-        memcpy(h, "PSREC3\0\0", 8);
+        memcpy(h, "PSREC4\0\0", 8);
         fwrite(h, sizeof h, 1, f);
         fprintf(stderr, "powerstone: recording to %s\n", port_record_file);
     }

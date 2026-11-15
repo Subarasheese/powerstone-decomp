@@ -28,6 +28,8 @@ def main():
     ap.add_argument('--p1', type=int, default=0)
     ap.add_argument('--p2', type=int, default=1)
     ap.add_argument('--level', type=int, default=1)
+    ap.add_argument('--difficulty', type=int, default=0, help='the game\'s difficulty option, 0..7')
+    ap.add_argument('--match-level', type=int, default=-1, help='hold the match level (the damage scale) at N, 0..31')
     ap.add_argument('--random', action='store_true', help='each match draws its stage and both fighters (not the bosses)')
     ap.add_argument('--data', default=os.path.join(REPO, '..', 'powerstone_extracted'))
     a = ap.parse_args()
@@ -53,12 +55,15 @@ def main():
     def start(k, level):
         env = dict(os.environ, PS_RL_DIR=os.path.join(run, 'env_%02d' % k), PS_REPEAT='2', PS_INFER_SOCK=sock)
         cmd = [os.path.join(REPO, 'build', 'native', 'powerstone'), '--data', a.data, '--headless', '--fast',
-               '--boot-fight', str(a.stage), str(a.p1), str(a.p2), '--difficulty', '0', '--cpu-level', '2', str(level),
-               '--agent', '1', model] + (['--boot-random'] if a.random else [])
+               '--boot-fight', str(a.stage), str(a.p1), str(a.p2), '--difficulty', str(a.difficulty), '--cpu-level', '2', str(level),
+               '--agent', '1', model] + (['--boot-random'] if a.random else []) + \
+              (['--match-level', str(a.match_level)] if a.match_level >= 0 else [])
         return subprocess.Popen(cmd, cwd=REPO, env=env, stdout=subprocess.DEVNULL,
                                 stderr=open(os.path.join(run, 'env_%02d.err' % k), 'a'), start_new_session=True)
 
     def stop_all():
+        signal.signal(signal.SIGTERM, signal.SIG_IGN)       # a second signal must not cut the cleanup short
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
         for sig in (signal.SIGTERM, signal.SIGKILL):
             for p in procs.values():
                 try:

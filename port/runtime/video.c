@@ -417,8 +417,13 @@ static int culled(const struct rvert *t, int mode)
 
 static uint32_t polygon_counter; /* ids of polygons for the renderer to sort translucent ones whole */
 
+int port_no_draw;   /* --no-draw (training, no window): the game's models are not turned into draw records; nothing in the
+                       game reads them back */
+
 static void draw_object(uint32_t obj, uint32_t light, float alpha)
 {
+    if (port_no_draw)
+        return;
     uint32_t fmt = U32(obj);
     if (fmt > 1)
         return;

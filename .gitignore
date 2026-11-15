@@ -24,3 +24,4 @@ __pycache__/
 # case-file backups the retest tool leaves behind
 *.json.old
 unlisted_calls.txt
+port/rl/*.so

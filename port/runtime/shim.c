@@ -40,18 +40,39 @@ uint32_t port_strcpy(uint32_t d, uint32_t s)
 float port_xmtrx[16];
 void port_ld_ext(uint32_t m) { memcpy(port_xmtrx, (void *)(uintptr_t)m, sizeof port_xmtrx); }
 void port_st_ext(uint32_t m) { memcpy((void *)(uintptr_t)m, port_xmtrx, sizeof port_xmtrx); }
+/* --fast-fpu (for training): the host's own float arithmetic for FIPR, FTRV and FSCA instead of the console's exact bits
+   (sa_numeric's emulation of the SH-4's approximate units is most of a frame's time). The results differ in the last bits;
+   play keeps the exact ones. */
+int port_fast_fpu;
+
 void port_ftrv(uint32_t in, uint32_t out)
 {
     float v[4], r[4];
     memcpy(v, (void *)(uintptr_t)in, sizeof v);
-    sa_ftrv(port_xmtrx, v, r);
+    if (port_fast_fpu) {
+        const float *m = port_xmtrx;        /* XF0-XF15 column by column, as sa_ftrv takes them */
+        for (int i = 0; i < 4; i++)
+            r[i] = m[i] * v[0] + m[4 + i] * v[1] + m[8 + i] * v[2] + m[12 + i] * v[3];
+    } else
+        sa_ftrv(port_xmtrx, v, r);
     memcpy((void *)(uintptr_t)out, r, sizeof r);
 }
-float port_fipr(uint32_t a, uint32_t b) { return sa_fipr((const float *)(uintptr_t)a, (const float *)(uintptr_t)b); }
+float port_fipr(uint32_t a, uint32_t b)
+{
+    const float *x = (const float *)(uintptr_t)a, *y = (const float *)(uintptr_t)b;
+    if (port_fast_fpu)
+        return x[0] * y[0] + x[1] * y[1] + x[2] * y[2] + x[3] * y[3];
+    return sa_fipr(x, y);
+}
 void port_fsca(uint32_t angle, uint32_t sinv, uint32_t cosv)
 {
     float sc[2];
-    sa_fsca(angle, sc);
+    if (port_fast_fpu) {
+        float a = (float)(angle & 0xFFFF) * (6.28318530718f / 65536.0f);
+        sc[0] = sinf(a);
+        sc[1] = cosf(a);
+    } else
+        sa_fsca(angle, sc);
     *(float *)(uintptr_t)sinv = sc[0];
     *(float *)(uintptr_t)cosv = sc[1];
 }
