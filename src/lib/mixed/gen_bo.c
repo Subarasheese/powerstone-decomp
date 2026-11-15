@@ -74,7 +74,7 @@ int FUN_0c040938(int);
 int fx_spawn_on_player_part(int, int, int, int, int, int, int, int);
 int ai_clear_op_state(void);
 int game_reset_match_screen(void);
-int FUN_0c052b9e(void);
+int game_flow_init_match(void);
 int FUN_0c0537fe(int);
 int FUN_0c053b62(void);
 int FUN_0c0555dc(void);

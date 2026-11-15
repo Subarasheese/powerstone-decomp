@@ -87,7 +87,7 @@ struct oF8_uint { char p[0xF8]; unsigned int v; };
 int ADXERR_CallErrFunc(int, ...);
 int ADXPD_GetStat(int);
 int FUN_0c01eb32(int);
-int FUN_0c01ed94(int);
+int vmu_menu_save_flow_dispatch(int);
 int FUN_0c01f48c(int, int);
 int vmu_menu_spawn_message(int);
 int vmu_menu_spawn_choice_cursor(int);

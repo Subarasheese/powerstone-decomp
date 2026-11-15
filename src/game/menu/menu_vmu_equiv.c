@@ -53,7 +53,7 @@ struct o31_uchar { char p[0x31]; unsigned char v; };
 struct o0_short { short v; };
 struct o14_short { char p[0x14]; short v; };
 
-int FUN_0c01f248(int a4, int a5, int a6, int a7);
+int vmu_menu_step_save_done_notice(int a4, int a5, int a6, int a7);
 void vmu_menu_spawn_message(int);
 int FUN_0c01fa70(int a4);
 int vmu_menu_pad_pressed(int a4);
@@ -126,7 +126,7 @@ int FUN_0c01e7ac(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int FUN_0c01ed94(int a4, int a5, int a6, int a7)
+int vmu_menu_save_flow_dispatch(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -144,7 +144,7 @@ int FUN_0c01ed94(int a4, int a5, int a6, int a7)
                                 }
                                 return vmu_menu_step_notice_wait_ok(a4, a5, a6, a7);
                             }
-                            return FUN_0c01f248(a4, a5, a6, a7);
+                            return vmu_menu_step_save_done_notice(a4, a5, a6, a7);
                         }
                         return vmu_menu_state_save(a4, a5, a6, a7);
                     }
@@ -203,7 +203,7 @@ int FUN_0c01ef8e(int a4, int a5, int a6, int a7)
         t1 = ((int (*)(int, int, int, int))(vmu_menu_update_objs))(a4, a5, a6, a7);
         vmu_menu_spawn_message(0x1);
         FUN_0c01f9a0();
-        t1 = vmu_menu_poll_confirm_cancel(0x3060E);
+        t1 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x4);   /* the original passes 4 as the cancel mask */
         t2 = (signed char)t1;
         if ((signed char)t1 != 0) {
             t1 = ((int (*)(void))(vmu_menu_update_objs))();
@@ -277,7 +277,7 @@ int FUN_0c01f164(int a4, int a5, int a6, int a7)
         vmu_menu_update_objs(a4, a5, a6, a7);
         vmu_menu_spawn_message(0x3);
         vmu_menu_spawn_message(0x16);
-        t1 = vmu_menu_poll_confirm_cancel(0x3060E);
+        t1 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);   /* the original passes 0 as the cancel mask */
         t2 = (signed char)t1;
         if ((signed char)t1 != 0) {
             *(unsigned char *)((a4 + 0x2)) = 0x0;
@@ -288,7 +288,7 @@ int FUN_0c01f164(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-int FUN_0c01f248(int a4, int a5, int a6, int a7)
+int vmu_menu_step_save_done_notice(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -315,7 +315,7 @@ int FUN_0c01f248(int a4, int a5, int a6, int a7)
         t1 = ((int (*)(int, int, int, int))(vmu_menu_update_objs))(a4, a5, a6, a7);
         vmu_menu_spawn_message(0xB);
         vmu_menu_spawn_message(0x16);
-        t1 = vmu_menu_poll_confirm_cancel(0x3060E);
+        t1 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);   /* the original passes 0 as the cancel mask (mov #0,r5) */
         t2 = (signed char)t1;
         if ((signed char)t1 != 0) {
             *(unsigned char *)((a4 + 0x4)) = ((*(signed char *)((a4 + 0x4))) + 0x1);
@@ -354,7 +354,7 @@ int FUN_0c01f350(int a4, int a5, int a6, int a7)
         t1 = ((int (*)(int, int, int, int))(vmu_menu_update_objs))(a4, a5, a6, a7);
         vmu_menu_spawn_message(0x6);
         vmu_menu_spawn_message(0x16);
-        t1 = vmu_menu_poll_confirm_cancel(0x3060E);
+        t1 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x0);   /* the original passes 0 as the cancel mask */
         t2 = (signed char)t1;
         if ((signed char)t1 != 0) {
             t1 = ((int (*)(void))(vmu_menu_update_objs))();

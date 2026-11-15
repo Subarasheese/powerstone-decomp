@@ -297,7 +297,7 @@ int FUN_0c01f060(int a4, int a5, int a6, int a7)
         vmu_menu_spawn_message(0x2);
         FUN_0c01f9a0();
         FUN_0c01f9a0();
-        t1 = vmu_menu_poll_confirm_cancel(0x3060E);
+        t1 = ((int (*)(int, int))vmu_menu_poll_confirm_cancel)(0x3060E, 0x80);   /* r5 still holds the 0x80 FUN_0c01f9a0 was given: it leaves r5 alone */
         t2 = (signed char)t1;
         if ((signed char)t1 != 0) {
             t1 = ((int (*)(void))(vmu_menu_update_objs))();

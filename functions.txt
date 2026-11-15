@@ -283,7 +283,7 @@ F 0c01eb32 114 FUN_0c01eb32
 F 0c01ebc0 112 FUN_0c01ebc0
 F 0c01ec30 108 FUN_0c01ec30
 F 0c01ec9c 218 FUN_0c01ec9c
-F 0c01ed94 172 FUN_0c01ed94
+F 0c01ed94 172 vmu_menu_save_flow_dispatch
 F 0c01ee40 160 FUN_0c01ee40
 F 0c01eee0 174 FUN_0c01eee0
 F 0c01ef8e 66 FUN_0c01ef8e
@@ -295,7 +295,7 @@ F 0c01f0e4 128 vmu_menu_step_notice_by_kind
 F 0c01f164 58 FUN_0c01f164
 F 0c01f19e 88 vmu_menu_step_choose_yes_no
 F 0c01f1f6 82 vmu_menu_state_save
-F 0c01f248 70 FUN_0c01f248
+F 0c01f248 70 vmu_menu_step_save_done_notice
 F 0c01f28e 58 vmu_menu_step_notice_wait_ok
 F 0c01f2c8 136 vmu_menu_state_load
 F 0c01f350 60 FUN_0c01f350
@@ -1049,7 +1049,7 @@ F 0c052774 46 game_poll_start_button_pl
 F 0c0527a2 558 game_frame_update
 F 0c0529f0 188 game_reset_state_block
 F 0c052aac 242 game_reset_match_screen
-F 0c052b9e 482 FUN_0c052b9e
+F 0c052b9e 482 game_flow_init_match
 F 0c052da0 94 FUN_0c052da0
 F 0c052dfe 64 game_mode_handler_0
 F 0c052e3e 204 FUN_0c052e3e
@@ -1084,7 +1084,7 @@ F 0c054760 272 FUN_0c054760
 F 0c054870 22 FUN_0c054870
 F 0c054886 94 FUN_0c054886
 F 0c0548e4 144 FUN_0c0548e4
-F 0c05499c 220 FUN_0c05499c
+F 0c05499c 220 game_flow_start_ending
 F 0c054a78 26 FUN_0c054a78
 F 0c054ab8 62 FUN_0c054ab8
 F 0c054af6 14 FUN_0c054af6
@@ -2784,7 +2784,7 @@ F 0c09a7ba 14 pl_timer_arm_forever
 F 0c09a7c8 40 pl_timer_arm_motion_end
 F 0c09a808 32 pl_start_motion
 F 0c09a828 32 pl_start_motion_owner
-F 0c09a848 200 FUN_0c09a848
+F 0c09a848 200 pl_start_motion_impl
 F 0c09a910 10 pl_step_motion
 F 0c09a91a 18 pl_step_motion_owner
 F 0c09a94c 804 pl_step_motion_impl

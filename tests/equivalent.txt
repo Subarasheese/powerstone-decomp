@@ -183,7 +183,7 @@ FUN_0c01eb32
 FUN_0c01ebc0
 FUN_0c01ec30
 FUN_0c01ec9c
-FUN_0c01ed94
+vmu_menu_save_flow_dispatch
 FUN_0c01ee40
 FUN_0c01eee0
 FUN_0c01ef8e
@@ -192,7 +192,7 @@ FUN_0c01f00a
 FUN_0c01f060
 FUN_0c01f0a8
 FUN_0c01f164
-FUN_0c01f248
+vmu_menu_step_save_done_notice
 FUN_0c01f350
 FUN_0c01f48c
 FUN_0c01f6fc
@@ -365,10 +365,6 @@ FUN_0c02cb4a
 FUN_0c02cb8e
 FUN_0c02cc18
 FUN_0c02ced4
-draw_object_classes
-draw_fighter
-draw_world
-draw_frame_should_skip
 FUN_0c02d744
 FUN_0c02d834
 FUN_0c02d83c
@@ -480,7 +476,7 @@ FUN_0c04fa64
 FUN_0c04fc3c
 FUN_0c050a12
 FUN_0c052630
-FUN_0c052b9e
+game_flow_init_match
 FUN_0c052da0
 FUN_0c052e3e
 FUN_0c052f0a
@@ -505,7 +501,7 @@ FUN_0c054760
 FUN_0c054870
 FUN_0c054886
 FUN_0c0548e4
-FUN_0c05499c
+game_flow_start_ending
 FUN_0c054a78
 FUN_0c054ab8
 FUN_0c054af6
@@ -628,7 +624,6 @@ FUN_0c05f68c
 FUN_0c05f6d8
 FUN_0c05f85a
 FUN_0c05f952
-draw_set_layer_lighting
 FUN_0c05fbee
 FUN_0c05fc00
 FUN_0c05fc08
@@ -644,7 +639,6 @@ FUN_0c06148a
 FUN_0c0614fc
 FUN_0c061f9c
 FUN_0c06231c
-obj_part_set_model
 FUN_0c0623a6
 FUN_0c062436
 FUN_0c06244a
@@ -945,18 +939,6 @@ FUN_0c085996
 FUN_0c085ad4
 FUN_0c085bb4
 FUN_0c085c16
-pl_kraken_attack_kind3_phase0
-pl_kraken_attack_kind3_phase1
-pl_kraken_attack_kind3_phase2
-pl_kraken_attack_kind3_phase3
-pl_kraken_attack_kind4_phase0
-pl_kraken_attack_kind4_phase1
-pl_kraken_attack_kind4_phase2
-pl_kraken_attack_kind4_phase3
-pl_kraken_attack_kind4_phase4
-pl_kraken_attack_kind4_phase5
-pl_kraken_attack_kind4_phase6
-pl_kraken_attack_kind4
 FUN_0c086392
 FUN_0c08642c
 FUN_0c0864b6
@@ -1209,7 +1191,7 @@ FUN_0c099ac6
 FUN_0c099ae4
 FUN_0c099afe
 FUN_0c099c30
-FUN_0c09a848
+pl_start_motion_impl
 FUN_0c09b704
 FUN_0c09b74c
 FUN_0c09bb9e
@@ -1286,7 +1268,6 @@ FUN_0c0a3e64
 FUN_0c0a3ea8
 FUN_0c0a3eec
 FUN_0c0a3f0e
-snd_play_se_indexed
 FUN_0c0a3f50
 FUN_0c0a3fa4
 FUN_0c0a3fce
@@ -1453,8 +1434,6 @@ FUN_0c0c68cc
 FUN_0c0c69e8
 FUN_0c0c8460
 FUN_0c0c8580
-fx_trail_set_part_lengths
-fx_trail_find_hit_segment
 FUN_0c0c9526
 FUN_0c0c9834
 FUN_0c0c9962
@@ -1555,8 +1534,6 @@ FUN_0c0d479e
 FUN_0c0d487e
 FUN_0c0d48d6
 FUN_0c0d48ea
-game_play_game_over_update
-game_world_tick
 FUN_0c0d5188
 FUN_0c0d51d0
 FUN_0c0d51d2
@@ -2618,9 +2595,14 @@ displayStrip_nc_vtxcol
 displayTriangle_bump
 displayTriangle_nc_bump
 displayTriangle_nc_vtxcol
+draw_fighter
+draw_frame_should_skip
+draw_object_classes
 draw_project_point_sprite
 draw_project_point_sprite_z01
 draw_set_euler_rotation
+draw_set_layer_lighting
+draw_world
 ending_exec_command
 ending_fade_obj_update
 ending_main
@@ -3036,8 +3018,10 @@ fx_tick_item_sparkle
 fx_tick_model_effect
 fx_tick_popup_marker
 fx_tick_pulsing_emitter
+fx_trail_find_hit_segment
 fx_trail_resize_chain
 fx_trail_resize_list
+fx_trail_set_part_lengths
 fx_trail_spawn_segment
 fx_update_01
 fx_update_02
@@ -3104,6 +3088,7 @@ game_mode_handler_8
 game_mode_handler_9
 game_pad_update
 game_play_dispatch_state
+game_play_game_over_update
 game_play_start_game_over
 game_play_state_00
 game_play_state_01
@@ -3125,6 +3110,7 @@ game_state_timer_tick
 game_tick_play_time
 game_update_fighters
 game_update_max_combo
+game_world_tick
 gdDcfChkDmaTrans_
 gdDcfDaPause_
 gdDcfDaPlay2_
@@ -3814,6 +3800,7 @@ obj_force_owner_state27
 obj_integrate_motion
 obj_launch_owner_projectile
 obj_node_scale_one
+obj_part_set_model
 obj_place_linked_ahead
 obj_pool_pop
 obj_release
@@ -4258,6 +4245,18 @@ pl_kraken_attack_kind2_phase4
 pl_kraken_attack_kind2_phase5
 pl_kraken_attack_kind2_phase6
 pl_kraken_attack_kind3
+pl_kraken_attack_kind3_phase0
+pl_kraken_attack_kind3_phase1
+pl_kraken_attack_kind3_phase2
+pl_kraken_attack_kind3_phase3
+pl_kraken_attack_kind4
+pl_kraken_attack_kind4_phase0
+pl_kraken_attack_kind4_phase1
+pl_kraken_attack_kind4_phase2
+pl_kraken_attack_kind4_phase3
+pl_kraken_attack_kind4_phase4
+pl_kraken_attack_kind4_phase5
+pl_kraken_attack_kind4_phase6
 pl_kraken_attack_kind5
 pl_kraken_attack_kind6
 pl_kraken_attack_kind6_phase0
@@ -4832,6 +4831,7 @@ snd_init_adx
 snd_play_announcer
 snd_play_char_voice
 snd_play_se
+snd_play_se_indexed
 snd_play_se_raw
 snd_play_side_se
 snd_play_stage_obj_se

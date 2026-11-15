@@ -96,7 +96,7 @@ int FUN_0c01ee40(int);
 int FUN_0c01f0a8(int);
 int vmu_menu_step_choose_yes_no(int);
 int vmu_menu_state_save(int, int, int, int);
-int FUN_0c01f248(int, int, int, int);
+int vmu_menu_step_save_done_notice(int, int, int, int);
 int vmu_menu_step_notice_wait_ok(int, int, int, int);
 int FUN_0c01f48c(int, int);
 int vmu_menu_spawn_message(int);
@@ -209,7 +209,7 @@ int FUN_0c08e3f2(int a4, int a5);
 int obj_set_mode_owner(int a4, int a5, int a6);
 int FUN_0c0208ec(int a4, int a5);
 int FUN_0c0200e2(int a4, int a5, int a6, int a7);
-int FUN_0c01ed94(int a4, int a5, int a6, int a7);
+int vmu_menu_save_flow_dispatch(int a4, int a5, int a6, int a7);
 int FUN_0c01db74(int a4, int a5, int a6, int a7);
 
 int FUN_0c10796a(int a4, int a5, int a6, int a7)

@@ -89,7 +89,7 @@ int kmiBGPlanePutColor2(int, int, int, int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlaneSetPCW(int, int, int);
 int thunk_math_mat_get_translate(int, int);
-int FUN_0c052b9e(void);
+int game_flow_init_match(void);
 int fx_tick_03d254(int a4);
 int pl_ryoma_special2_phase3(int a4);
 int kmiProcessVertex_13(int a4);

@@ -114,7 +114,7 @@ int FUN_0c0cd58e(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
 int FUN_0c05436c(void);
 int FUN_0c054760(int a4, int a5, int a6, int a7);
 int FUN_0c05426a(void);
-int FUN_0c05499c(int a4);
+int game_flow_start_ending(int a4);
 int FUN_0c0cd1ea(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9);
 int FUN_0c0a5506(void);
 int FUN_0c0cd028(int a4, int a5, int a6, int a7);
@@ -773,7 +773,7 @@ int FUN_0c05426a(void)
     return game_poll_start_button();
 }
 
-int FUN_0c05499c(int a4)
+int game_flow_start_ending(int a4)
 {
     int t0;
     register int t1;
