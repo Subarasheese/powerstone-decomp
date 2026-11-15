@@ -16,7 +16,8 @@ ppo: the policy's own decisions (--agent instances): clipped PPO with generalise
   imitation model) early on, fading slowly.
 
 Each line reports the rounds the chunks closed, per opponent level: knock-outs won, lost (by knock-out or behind when
-the time ran out), Perfect, time-outs, damage taken, lost by knock-out."""
+the time ran out), Perfect, time-outs, damage taken, lost by knock-out; and the rounds against Valgas's final form again,
+on their own."""
 import argparse
 import glob
 import os
@@ -89,15 +90,18 @@ def report(chunks):
     evs = [c['events'] for c in chunks if len(c['events'])]
     if not evs:
         return 'no rounds ended'
-    ev = np.concatenate(evs)
+    ev = np.concatenate([e if e.shape[1] == 7 else np.insert(e, 5, -1, axis=1) for e in evs])   # (older chunks: no character)
     parts = []
-    for lv in sorted(set(ev[:, 5].astype(int))):
-        e = ev[ev[:, 5] == lv]
-        n = len(e)
+
+    def line(label, e):
         ko_lost = (e[:, 1] > 0) & (e[:, 4] == 0)       # lost before the time ran out
-        parts.append('level %d: %d rounds, KO %.0f%% lost %.0f%% Perfect %.1f%% time-out %.0f%% damage %.0f KO-lost %.0f%%' % (
-            lv, n, 100 * e[:, 0].mean(), 100 * e[:, 1].mean(), 100 * e[:, 2].mean(), 100 * e[:, 4].mean(), e[:, 3].mean(),
-            100 * ko_lost.mean()))
+        return '%s: %d rounds, KO %.0f%% lost %.0f%% Perfect %.1f%% time-out %.0f%% damage %.0f KO-lost %.0f%%' % (
+            label, len(e), 100 * e[:, 0].mean(), 100 * e[:, 1].mean(), 100 * e[:, 2].mean(), 100 * e[:, 4].mean(),
+            e[:, 3].mean(), 100 * ko_lost.mean())
+    for lv in sorted(set(ev[:, 6].astype(int))):
+        parts.append(line('level %d' % lv, ev[ev[:, 6] == lv]))
+    for lv in sorted(set(ev[ev[:, 5] == 10][:, 6].astype(int))):       # Valgas's final form apart: the hardest fight
+        parts.append(line('final Valgas at level %d' % lv, ev[(ev[:, 5] == 10) & (ev[:, 6] == lv)]))
     return '; '.join(parts)
 
 

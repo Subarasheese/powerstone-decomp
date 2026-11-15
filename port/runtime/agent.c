@@ -53,7 +53,7 @@ typedef struct {
     uint8_t done;             /* the decision before ended a round */
     uint8_t has_event;        /* a round ended: event follows */
     uint8_t pad[2];
-    float event[5];           /* won by knock-out, lost, a Perfect, damage taken, the time ran out */
+    float event[6];           /* won by knock-out, lost, a Perfect, damage taken, the time ran out, the opponent's character */
 } psa_req;
 #pragma pack(pop)
 
@@ -65,7 +65,7 @@ struct side_state {
     uint32_t held, prev_held;
     float reward;
     int done, has_event;
-    float event[5];
+    float event[6];
     int round_on, taken, last_me, last_op, fight_me, fight_op, time_left, have_last;
     uint32_t frame_no;
 };
@@ -188,6 +188,7 @@ static void count(struct side_state *s, const unsigned char *rec, int side)
         s->has_event = 1;
         s->event[0] = ko_win, s->event[1] = ko_loss || (timeout && s->fight_me < s->fight_op);
         s->event[2] = ko_win && s->taken == 0, s->event[3] = (float)s->taken, s->event[4] = timeout;
+        s->event[5] = (float)*(const unsigned char *)(uintptr_t)(0x0C7E40C4u + (1 - side) * 0x72D0u + 4);
         /* a line per round in the log: what an arcade run went through can be read afterwards */
         static const char *names[] = {"Falcon", "Ryoma", "Wang-Tang", "Jack", "Gunrock", "Galuda", "Ayame", "Rouge",
                                       "Kraken", "Valgas", "Valgas (final)"};

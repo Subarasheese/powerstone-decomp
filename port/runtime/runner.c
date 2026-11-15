@@ -154,9 +154,97 @@ static void report_fault(const char *kind, uint64_t rip, uint64_t addr)
         _exit(3);
 }
 
+/* Integer division by zero. The SH-4 has no divide instruction: the game's C divides through the compiler's runtime
+   (_divls, _divlu, _modls, _modlu), which for a divisor of 0 returns 0 and sets the runtime's errno (0x0C7FD4D0) to
+   0x44E; nothing traps. On the host the same C compiles to div / idiv, which does. So a div or idiv that faults with a
+   divisor of 0 is given the console's answer (quotient and remainder 0, errno set) and the game goes on after it. Any
+   other arithmetic fault (INT_MIN / -1) is not handled here. Returns 1 when it handled the fault. */
+static int console_div_by_zero(ucontext_t *uc)
+{
+    greg_t *g = uc->uc_mcontext.gregs;
+    static const int R[16] = {REG_RAX, REG_RCX, REG_RDX, REG_RBX, REG_RSP, REG_RBP, REG_RSI, REG_RDI,
+                              REG_R8, REG_R9, REG_R10, REG_R11, REG_R12, REG_R13, REG_R14, REG_R15};
+    const unsigned char *p = (const unsigned char *)(uintptr_t)g[REG_RIP];
+    int n = 0, size = 4, rex = 0, addr32 = 0;
+    for (;; n++) {                                  /* prefixes */
+        unsigned char c = p[n];
+        if (c == 0x66)
+            size = 2;
+        else if (c == 0x67)
+            addr32 = 1;
+        else if (!(c == 0x2E || c == 0x3E || c == 0x26 || c == 0x36 || c == 0x64 || c == 0x65 || c == 0xF2 || c == 0xF3))
+            break;
+    }
+    if ((p[n] & 0xF0) == 0x40)
+        rex = p[n++];
+    if (rex & 8)
+        size = 8;
+    unsigned char op = p[n++];
+    if (op == 0xF6)
+        size = 1;
+    else if (op != 0xF7)
+        return 0;
+    unsigned char modrm = p[n++];
+    int mod = modrm >> 6, reg = (modrm >> 3) & 7, rm = modrm & 7;
+    if (reg != 6 && reg != 7)                       /* F6/F7 /6 div, /7 idiv */
+        return 0;
+    uint64_t divisor;
+    if (mod == 3) {
+        if (size == 1 && !rex && rm >= 4)           /* ah, ch, dh, bh */
+            divisor = (uint64_t)g[R[rm - 4]] >> 8;
+        else
+            divisor = (uint64_t)g[R[rm | (rex & 1) << 3]];
+    } else {
+        uint64_t ea = 0;
+        int rip_rel = 0;
+        if (rm == 4) {
+            unsigned char sib = p[n++];
+            int idx = ((sib >> 3) & 7) | (rex & 2) << 2, base = sib & 7;
+            if (idx != 4)
+                ea += (uint64_t)g[R[idx]] << (sib >> 6);
+            if (base == 5 && mod == 0) {
+                int32_t d;
+                memcpy(&d, p + n, 4), n += 4, ea += (uint64_t)(int64_t)d;
+            } else
+                ea += (uint64_t)g[R[base | (rex & 1) << 3]];
+        } else if (rm == 5 && mod == 0) {
+            int32_t d;
+            memcpy(&d, p + n, 4), n += 4, ea += (uint64_t)(int64_t)d, rip_rel = 1;
+        } else
+            ea += (uint64_t)g[R[rm | (rex & 1) << 3]];
+        if (mod == 1)
+            ea += (uint64_t)(int64_t)(int8_t)p[n++];
+        else if (mod == 2) {
+            int32_t d;
+            memcpy(&d, p + n, 4), n += 4, ea += (uint64_t)(int64_t)d;
+        }
+        if (rip_rel)
+            ea += (uint64_t)g[REG_RIP] + (uint64_t)n;
+        if (addr32)
+            ea = (uint32_t)ea;
+        divisor = 0;
+        memcpy(&divisor, (const void *)(uintptr_t)ea, (size_t)size);
+    }
+    if (size < 8)
+        divisor &= (1ull << (8 * size)) - 1;
+    if (divisor != 0)
+        return 0;
+    if (size == 1)
+        g[REG_RAX] &= ~(greg_t)0xFFFF;              /* al the quotient, ah the remainder */
+    else if (size == 2)
+        g[REG_RAX] &= ~(greg_t)0xFFFF, g[REG_RDX] &= ~(greg_t)0xFFFF;
+    else
+        g[REG_RAX] = 0, g[REG_RDX] = 0;             /* a 32-bit result clears the upper half too */
+    *(volatile uint32_t *)(uintptr_t)0x0C7FD4D0u = 0x44E;
+    g[REG_RIP] += n;
+    return 1;
+}
+
 static void on_fault(int sig, siginfo_t *si, void *ctx)
 {
     ucontext_t *uc = ctx;
+    if (sig == SIGFPE && console_div_by_zero(uc))
+        return;
     uint64_t rip = uc->uc_mcontext.gregs[REG_RIP];
     uint32_t target = (uint32_t)rip;
     if (sig == SIGSEGV && rip == target && (target >> 24 == 0x0C || target >> 24 == 0x8C || target >> 24 == 0xAC)) {
@@ -390,6 +478,12 @@ int main(int argc, char **argv)
         } else if (!strcmp(argv[i], "--boot-random")) {
             extern int port_boot_random;
             port_boot_random = 1;
+        } else if (!strcmp(argv[i], "--boot-bosses")) {
+            extern int port_boot_bosses;
+            port_boot_bosses = 1;
+        } else if (!strcmp(argv[i], "--boot-final") && i + 1 < argc) {
+            extern float port_boot_final;
+            port_boot_final = (float)atof(argv[++i]);
         } else if (!strcmp(argv[i], "--cpu-vs-cpu")) {
             extern int port_boot_cpu;
             port_boot_cpu = 1;
@@ -433,6 +527,8 @@ int main(int argc, char **argv)
                             "       [--cpu-vs-cpu] [--cpu-level 1|2 N]: the game's AI on both sides; a side's AI at level N (0..31)\n"
                             "       [--match-level N]: hold the match's level (the damage scale) at N (0..31)\n"
                             "       [--boot-random]: with --boot-fight, each match draws its stage and both fighters (not the bosses)\n"
+                            "       [--boot-bosses]: the draw takes Kraken and Valgas too (either side, stages 0-9), and [--boot-final P]\n"
+                            "         of the matches (0.15) are against Valgas's final form on his final stage\n"
                             "       [--fast]: no wait for the vsync (with --headless: as fast as the host runs, for training)\n"
                             "       [--fast-fpu] [--no-draw]: training speed: host float math for FIPR/FTRV/FSCA, no draw records\n"
                             "  DIR: a folder holding the files of your Power Stone disc (1ST_READ.BIN, COMMON.BIN, ...)\n");

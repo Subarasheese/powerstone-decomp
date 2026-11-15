@@ -27,7 +27,7 @@ import policy2
 CHUNK = 4096
 REQ = np.dtype([('obs', '<f4', (obsc.OBS,)), ('cats', '<i2', (obsc.CATS,)), ('ofeat', '<f4', (obsc.K, obsc.OF)),
                 ('ocats', '<i2', (obsc.K, 4)), ('omask', 'u1', (obsc.K,)), ('teacher', '<i4'), ('reward', '<f4'),
-                ('done', 'u1'), ('has_event', 'u1'), ('pad', 'u1', (2,)), ('event', '<f4', (5,))])
+                ('done', 'u1'), ('has_event', 'u1'), ('pad', 'u1', (2,)), ('event', '<f4', (6,))])
 
 
 class Conn:
@@ -54,7 +54,7 @@ class Writer:
             self.dropped += len(rows)
             return
         d = {k: np.stack([r[k] for r in rows]) for k in rows[0]}
-        d['events'] = np.asarray(events, np.float32).reshape(-1, 6)   # won by KO, lost, Perfect, damage taken, time out, opponent level
+        d['events'] = np.asarray(events, np.float32).reshape(-1, 7)   # won by KO, lost, Perfect, damage taken, time out, opponent's character, tag
         d['mode'] = np.int8(mode)
         name = 'chunk_%d_%06d_%s.npz' % (os.getpid(), self.n, 'teach' if mode else 'act')
         tmp = os.path.join(self.out, '.' + name)

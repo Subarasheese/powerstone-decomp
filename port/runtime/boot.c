@@ -31,20 +31,26 @@ extern void thunk_FUN_0c062d78(void);
 extern void cam_init_records(void);
 
 int port_boot_random;     /* --boot-random: each match draws its stage and both fighters among the 8 that are not bosses */
+int port_boot_bosses;     /* --boot-bosses: the draw takes Kraken (8) and Valgas (9) too, for either side, and their stages */
+float port_boot_final = 0.15f; /* --boot-final P: with --boot-bosses, the share of matches against Valgas's final form (10),
+                                  on his own stage (10) only; side 1 never plays him */
 
 static void set_choices(void)
 {
     if (port_boot_random) {
-        /* fighters 0..7 (Falcon .. Rouge; 8..10 are Kraken and Valgas) and their stages 0..7 (0x0C1525B4 gives each stage's
-           fighter: stage n is fighter n's) */
+        /* fighters 0..7 (Falcon .. Rouge; 8..10 are Kraken, Valgas and Valgas's final form) and their stages 0..7
+           (0x0C1525B4 gives each stage's fighter: stage n is fighter n's); with --boot-bosses 0..9, and the final form */
         static int seeded;
         if (!seeded) {
             srand((unsigned)time(0) ^ (unsigned)getpid() * 2654435761u);
             seeded = 1;
         }
-        port_boot_stage = rand() % 8;
-        port_boot_p1 = rand() % 8;
-        port_boot_p2 = rand() % 8;
+        int n = port_boot_bosses ? 10 : 8;
+        port_boot_stage = rand() % n;
+        port_boot_p1 = rand() % n;
+        port_boot_p2 = rand() % n;
+        if (port_boot_bosses && (float)rand() / ((float)RAND_MAX + 1.0f) < port_boot_final)
+            port_boot_stage = 10, port_boot_p2 = 10;
     }
     B(GS + 0x25) = (unsigned char)port_boot_stage;
     /* the difficulty option (g_game_work[49]): with the ladder position it sets the computer's level g_305c at the match's

@@ -15,7 +15,10 @@ The instances, by kind (--mix gives how many of each, in this order):
   past       the main agent against one of its past selves from the pool, damage equal (match level 11)  tag 101
   vs_exploit the main agent against the latest successful exploiter (the current one until there is one)  tag 102
   exploiter  the exploiter (side 1) against the current main agent                                     tag 103
-The tags group the learners' reports (learn.log: "level 31", "level 101", ...). In the agent-against-agent kinds a
+Every match draws its stage and both fighters among all ten (Kraken and Valgas too, on either side, stages 0-9), or is
+against Valgas's final form on his final stage: --final-ai of the games against the game's AI, --final-vs of the main
+agent's games against its past selves and the exploiter, none of the exploiter's own games.
+The tags group the learners' reports (learn.log: "level 31", "level 101", ...; the final form's rounds again apart). In the agent-against-agent kinds a
 round ending on time costs the main agent --main-vs-timeout (default 300) and the exploiter --vs-timeout (default
 150), against 60 elsewhere: the main agent has to finish an opponent who runs, and the exploiter keeps testing that.
 
@@ -63,6 +66,11 @@ def main():
                     help="the exploiter's games: what a round ending on time costs it")
     ap.add_argument('--main-vs-timeout', type=float, default=300,
                     help="the main agent's games against agents: what a round ending on time costs it")
+    ap.add_argument('--final-ai', type=float, default=0.25,
+                    help="the share of the games against the game's AI fought against Valgas's final form")
+    ap.add_argument('--final-vs', type=float, default=0.10,
+                    help="the share of the main agent's games against agents fought against him (the past self or the "
+                         "exploiter playing him); the exploiter's own games never have him")
     ap.add_argument('--data', default=os.path.join(REPO, '..', 'powerstone_extracted'))
     a = ap.parse_args()
     base = os.environ.get('PS_TRAIN_DIR')
@@ -155,7 +163,9 @@ def main():
         kind = kinds[i]
         main_sock = 'unix:' + sock('main%d' % (i % a.servers))
         cmd = [os.path.join(REPO, 'build', 'native', 'powerstone'), '--data', a.data, '--headless', '--fast', '--fast-fpu',
-               '--no-draw', '--boot-fight', '0', '0', '1', '--boot-random', '--difficulty', '0']
+               '--no-draw', '--boot-fight', '0', '0', '1', '--boot-random', '--boot-bosses', '--difficulty', '0',
+               '--boot-final', str(a.final_ai if kind == 'ai' else 0 if kind == 'exploiter' else a.final_vs)]
+        # Valgas's final form only in the main agent's own games: the exploiter does not train against him
         # agent against agent: playing for the time out must not pay. The main agent pays more, so that finishing an
         # opponent who runs is worth the risk; the exploiter less, so that it keeps testing that
         if kind in ('past', 'vs_exploit'):
@@ -177,7 +187,7 @@ def main():
     # the exploiter's results: read from its learn.log, since the current one started
     exp_log = os.path.join(d['exploit'], 'learn.log')
     state = {'offset': os.path.getsize(exp_log) if os.path.exists(exp_log) else 0, 'since': time.time(), 'gen': len(exploiters)}
-    pat = re.compile(r'level 103: (\d+) rounds, .*? KO-lost (\d+)%')     # the exploiter knocked out: the main agent's success
+    pat = re.compile(r'(?<!at )level 103: (\d+) rounds, .*? KO-lost (\d+)%')    # not the final form's own line     # the exploiter knocked out: the main agent's success
 
     def exploiter_record():
         if not os.path.exists(exp_log):
