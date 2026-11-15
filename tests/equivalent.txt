@@ -220,7 +220,7 @@ FUN_0c020886
 FUN_0c0208ec
 FUN_0c020998
 FUN_0c0209c6
-FUN_0c020a80
+pl_opponent_dist_to_body_sphere
 FUN_0c020d20
 FUN_0c0210c8
 FUN_0c0210f4
@@ -1557,7 +1557,7 @@ FUN_0c0d479e
 FUN_0c0d487e
 FUN_0c0d48d6
 FUN_0c0d48ea
-FUN_0c0d4d00
+game_check_player_join
 FUN_0c0d4ff4
 FUN_0c0d50be
 FUN_0c0d5188

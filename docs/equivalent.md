@@ -6570,8 +6570,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 86 of 86 instructions
 
-### FUN_0c020a80 (`0C020A80`, 352 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/FUN_0c020a80.json`
+### pl_opponent_dist_to_body_sphere (`0C020A80`, 352 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/pl_opponent_dist_to_body_sphere.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 131 of 176 instructions
@@ -41822,8 +41822,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 94
 - the cases run 9 of 9 instructions
 
-### FUN_0c0d4d00 (`0C0D4D00`, 238 bytes, `src/game/save/gen_t.c`)
-- equivalent on 21 development and 20 holdout cases, in `tests/gen_t/FUN_0c0d4d00.json`
+### game_check_player_join (`0C0D4D00`, 238 bytes, `src/game/save/gen_t.c`)
+- equivalent on 21 development and 20 holdout cases, in `tests/gen_t/game_check_player_join.json`
 - case 62
 - case 62
 - case 62

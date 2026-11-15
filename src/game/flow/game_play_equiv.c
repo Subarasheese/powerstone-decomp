@@ -4,7 +4,7 @@
 int FUN_0c0d54ac(void);
 int FUN_0c0d4ff4(int a4, int a5, int a6, int a7);
 int game_play_step(int a4, int a5, int a6, int a7);
-int FUN_0c0d4d00(int a4, int a5, int a6, int a7);
+int game_check_player_join(int a4, int a5, int a6, int a7);
 extern char g_select_ready_mask[];
 int memset(int, int, int);
 extern int sprintf(char *, const char *, ...);

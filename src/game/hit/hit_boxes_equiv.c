@@ -267,7 +267,7 @@ int FUN_0c0209c6(int a4, float f4)
     return (((((u9 + u10) - t23) > 0.0f)) ? 1 : 0);
 }
 
-float FUN_0c020a80(int a4, float f4)
+float pl_opponent_dist_to_body_sphere(int a4, float f4)
 {
     int stk[17];
     register int t1;

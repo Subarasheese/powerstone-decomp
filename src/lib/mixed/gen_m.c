@@ -134,7 +134,7 @@ int obj_set_mode_owner(int, int);
 int obj_clear_slot_contact(int);
 int obj_collect_slot_contacts(int);
 int FUN_0c0d48ea(int);
-int FUN_0c0d4d00(void);
+int game_check_player_join(void);
 int game_play_state_00(void);
 int game_play_state_01(void);
 int game_play_state_02(void);

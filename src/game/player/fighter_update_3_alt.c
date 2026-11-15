@@ -1,7 +1,7 @@
 /* input snapshot, round-level update of the two fighters, per-player update (part 3 of 4 of the same module) (0c092908-0c093254) */
 
 float math_signed_sqrt(float x);
-float FUN_0c020a80(char *pl, float y);
+float pl_opponent_dist_to_body_sphere(char *pl, float y);
 void FUN_0c09c80e(char *pl);
 void cam_publish_active_position(int side);
 void ai_draw_debug_info(char *pl);
@@ -74,8 +74,8 @@ void game_update_fighters(void)
     s.dx = F(P0, 0x20) - F(P1, 0x20);
     s.dz = F(P0, 0x28) - F(P1, 0x28);
     *(float *)0x0C494D1C = math_signed_sqrt(s.dz * s.dz + s.dx * s.dx);
-    F(P0, 0x722C) = FUN_0c020a80(P0, 0.0f);
-    F(P1, 0x722C) = FUN_0c020a80(P1, 0.0f);
+    F(P0, 0x722C) = pl_opponent_dist_to_body_sphere(P0, 0.0f);
+    F(P1, 0x722C) = pl_opponent_dist_to_body_sphere(P1, 0.0f);
     B(P0, 0x71F2) = B(P0, 0x71F1);
     B(P1, 0x71F2) = B(P1, 0x71F1);
     FUN_0c09c80e(P0);

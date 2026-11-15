@@ -4,7 +4,7 @@ extern int ui_draw_win_count();
 int ending_main(void);
 int FUN_0c0158ee(void);
 int ending_scene_main(void);
-int FUN_0c0d4d00(void);
+int game_check_player_join(void);
 int game_play_state_00(void);
 int game_play_state_01(void);
 int game_play_state_02(void);
@@ -48,7 +48,7 @@ int game_play_dispatch_state(void)
     register int R0;
     register int R3;
     register int T_;
-    FUN_0c0d4d00();
+    game_check_player_join();
     t1 = *(signed char *)0xC7F2EE4;
     R0 = ((unsigned char)t1);
     if (((unsigned char)t1 == 0)) goto L_C0D4E2A;
