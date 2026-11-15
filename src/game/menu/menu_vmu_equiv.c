@@ -30,7 +30,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o6_uchar { char p[0x6]; unsigned char v; };
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int _quick_odd_mvn(void);
 struct o2D_uchar { char p[0x2D]; unsigned char v; };
@@ -424,7 +424,7 @@ int FUN_0c01f874(int a4)
 
     *(unsigned char *)(((int)stk + 4)) = a4;
     (((struct o6_uchar *)0xC362A78)->v) = 0x0;
-    t0 = obj_create(0x5, 0x1, 0x9);
+    t0 = obj_create(0x5, 0x1, 0x9, 0x0);    /* the original sets r7 to 0: the parts come from pool 0 */
     t21 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
