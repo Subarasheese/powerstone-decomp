@@ -34,7 +34,7 @@ struct o1_uchar { char p[0x1]; unsigned char v; };
 struct o2_uchar { char p[0x2]; unsigned char v; };
 struct o3_uchar { char p[0x3]; unsigned char v; };
 int game_reset_match_screen(void);
-int FUN_0c052b9e(void);
+int game_flow_init_match(void);
 
 int game_poll_start_button(void)
 {
@@ -127,7 +127,7 @@ int game_mode_handler_0(int a4, int a5, int a6, int a7)
     if ((*(signed char *)g_game_substate) == 0) {
         (((struct o1_uchar *)0xC7F302C)->v) = ((*(signed char *)g_game_substate) + 0x1);
         game_reset_match_screen();
-        FUN_0c052b9e();
+        game_flow_init_match();
     } else {
         t5 = ((int)g_game_substate);
     }

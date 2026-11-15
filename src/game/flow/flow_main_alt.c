@@ -65,7 +65,7 @@ void game_reset_match_screen(void)
     state[86] = 0;
 }
 
-int FUN_0c052b9e(void)
+int game_flow_init_match(void)
 {
     register int t0;
     int t1;

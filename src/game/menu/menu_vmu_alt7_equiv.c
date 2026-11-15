@@ -3,7 +3,7 @@
 struct o2C_uchar { char p[0x2C]; unsigned char v; };
 struct o2D_uchar { char p[0x2D]; unsigned char v; };
 struct o31_uchar { char p[0x31]; unsigned char v; };
-int FUN_0c01ed94(int);
+int vmu_menu_save_flow_dispatch(int);
 int FUN_0c01f48c(int, int);
 int vmu_menu_spawn_message(int);
 int FUN_0c01f874(int);
@@ -25,7 +25,7 @@ int FUN_0c02002a(int a4, int a5, int a6, int a7)
             if (t0 != 2) {
                 return t0;
             }
-            return FUN_0c01ed94(a4);
+            return vmu_menu_save_flow_dispatch(a4);
         }
     } else {
         *(unsigned char *)((a4 + 0x3)) = ((*(signed char *)((a4 + 0x3))) + 0x1);

@@ -1,5 +1,5 @@
 
-int FUN_0c01ed94(int a4, int a5, int a6, int a7)
+int vmu_menu_save_flow_dispatch(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -17,7 +17,7 @@ int FUN_0c01ed94(int a4, int a5, int a6, int a7)
                                 }
                                 return vmu_menu_step_notice_wait_ok(a4, a5, a6, a7);
                             }
-                            return FUN_0c01f248(a4, a5, a6, a7);
+                            return vmu_menu_step_save_done_notice(a4, a5, a6, a7);
                         }
                         return vmu_menu_state_save(a4, a5, a6, a7);
                     }

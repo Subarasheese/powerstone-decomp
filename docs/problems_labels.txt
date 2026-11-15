@@ -12,7 +12,7 @@
 0c01f164 FUN_0c01f164 0c01eee0
 0c01f19e vmu_menu_step_choose_yes_no 0c01ed94 0c01ee40
 0c01f1f6 vmu_menu_state_save 0c01ed94 0c01ee40
-0c01f248 FUN_0c01f248 0c01ed94
+0c01f248 vmu_menu_step_save_done_notice 0c01ed94
 0c01f28e vmu_menu_step_notice_wait_ok 0c01ed94 0c01ee40
 0c01f2c8 vmu_menu_state_load 0c01eee0
 0c01f350 FUN_0c01f350 0c01eee0

@@ -162,7 +162,7 @@ int pl_turn_to_opponent(int, int);
 int snd_play_char_voice(int, int);
 int thunk_math_mat_get_translate(int, int);
 int FUN_0c07d56c(int a4);
-int FUN_0c09a848(int a4, int a5, int a6, int a7);
+int pl_start_motion_impl(int a4, int a5, int a6, int a7);
 int FUN_0c096dec(int a4);
 int FUN_0c086c34(int a4);
 int FUN_0c07d808(int a4);
@@ -245,7 +245,7 @@ int FUN_0c07d56c(int a4)
     return 0x0;
 }
 
-int FUN_0c09a848(int a4, int a5, int a6, int a7)
+int pl_start_motion_impl(int a4, int a5, int a6, int a7)
 {
     register int t0;
 

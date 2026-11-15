@@ -1,6 +1,6 @@
 /* motion engine: start/step motion, key tables, attack record load (0c09a808-0c09b068) */
 
-int FUN_0c09a848(int, int, int, int);
+int pl_start_motion_impl(int, int, int, int);
 struct o7198_short { char p[0x7198]; short v; };
 struct o7198_ushort { char p[0x7198]; unsigned short v; };
 struct o719A_ushort { char p[0x719A]; unsigned short v; };
@@ -50,7 +50,7 @@ int pl_start_motion_owner(int a4, int a5, int a6)
     *(unsigned int *)(((int)stk + 0)) = a4;
     *(unsigned char *)(((int)stk + 4)) = a5;
     *(unsigned char *)(((int)stk + 8)) = a6;
-    return FUN_0c09a848((*(int *)(((int)stk + 0))), (*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))), (*(signed char *)(((int)stk + 4))), (*(signed char *)(((int)stk + 8))));
+    return pl_start_motion_impl((*(int *)(((int)stk + 0))), (*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))), (*(signed char *)(((int)stk + 4))), (*(signed char *)(((int)stk + 8))));
 }
 
 int pl_step_motion(int a4)
