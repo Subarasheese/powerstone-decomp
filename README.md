@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.1&b=97.1&m=1.4&a=61&s=1)
+![decomp progress](badges/progress.svg?p=98.1&b=97.1&m=1.5&a=61&s=1)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
