@@ -13,7 +13,7 @@ struct o30E_uchar { char p[0x30E]; unsigned char v; };
 struct o314_uchar { char p[0x314]; unsigned char v; };
 struct o98_float { char p[0x98]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record(int, int);
 int stage_obj_load_layout_pos(int);
 int _quick_odd_mvn(void);
@@ -53,7 +53,7 @@ int stage_spawn_type02(int a4)
         (((struct o106_uchar *)(t0))->v) = 0x1;
         stage_obj_load_layout_pos(t0);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC339FCC); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1001;
         (((struct o98_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.39999998f;
@@ -109,7 +109,7 @@ int stage_spawn_type12(int a4)
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         stage_obj_load_layout_pos(t0);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A00C); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t11 = 0xF;
@@ -156,7 +156,7 @@ int stage_spawn_type08(int a4)
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         stage_obj_load_layout_pos(t0);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A034); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t10 = 0xF;

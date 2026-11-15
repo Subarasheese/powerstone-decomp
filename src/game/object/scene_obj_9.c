@@ -5,7 +5,7 @@ extern char g_res_font[];
 struct vec3i { int x, y, z; };
 extern int FUN_0c0d5188(void);
 extern int FUN_0c055634(void);
-extern void FUN_0c06233a(char *p, int q, int n);
+extern void obj_part_set_model(char *p, int q, int n);
 extern void obj_destroy(char *effect);
 
 void fx_tick_057ab6(char *effect)
@@ -17,7 +17,7 @@ void fx_tick_057ab6(char *effect)
         effect[1] = 1;
         *(short *)(effect + 6) = 31;
         effect[5] = 25;
-        FUN_0c06233a(*(char **)(effect + 736), ((int)g_res_font), ((signed char *)0xC14B970)[(unsigned char)(effect[4] * 28) + 24]);
+        obj_part_set_model(*(char **)(effect + 736), ((int)g_res_font), ((signed char *)0xC14B970)[(unsigned char)(effect[4] * 28) + 24]);
         **(char **)(effect + 736) = 0;
         *(struct vec3i *)(*(char **)(effect + 736) + 4) = *(struct vec3i *)(0xC14B970 + (unsigned char)(effect[4] * 28));
         *(struct vec3i *)(*(char **)(effect + 736) + 28) = *(struct vec3i *)(0xC14B970 + (unsigned char)(effect[4] * 28) + 12);
@@ -25,7 +25,7 @@ void fx_tick_057ab6(char *effect)
         *(float *)(*(char **)(effect + 736) + 68) = 1.0f;
         *(float *)(*(char **)(effect + 736) + 72) = 0.0f;
         *(float *)(*(char **)(effect + 736) + 76) = 0.0f;
-        FUN_0c06233a(*(char **)(effect + 740), ((int)g_res_font), ((signed char *)0xC14B970)[(unsigned char)(effect[4] * 28) + 25] + 1);
+        obj_part_set_model(*(char **)(effect + 740), ((int)g_res_font), ((signed char *)0xC14B970)[(unsigned char)(effect[4] * 28) + 25] + 1);
         **(char **)(effect + 740) = 0;
         *(struct vec3i *)(*(char **)(effect + 740) + 4) = *(struct vec3i *)(0xC14B970 + (unsigned char)(effect[4] * 28));
         *(struct vec3i *)(*(char **)(effect + 740) + 28) = *(struct vec3i *)(0xC14B970 + (unsigned char)(effect[4] * 28) + 12);

@@ -8,7 +8,7 @@ struct o3C_float { char p[0x3C]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o105_uchar { char p[0x105]; unsigned char v; };
 struct o106_uchar { char p[0x106]; unsigned char v; };
 struct o107_uchar { char p[0x107]; unsigned char v; };
@@ -64,7 +64,7 @@ int fx_spawn_036a6c(int a4, int a5)
         t7 = 0x0;
         for (;;) {
             t8 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t7) + 0x0))), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x6);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t7) + 0x0))), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x6);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t7) + 0x0))) + 0x0)) = 0x1;
             t6 = (t6 + 0x1);
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t7) + 0x0))) + 0x2)) = 0x1F;

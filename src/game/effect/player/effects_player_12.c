@@ -10,7 +10,7 @@ extern struct N *obj_create(int, int, int, int);
 extern void fx_update_16(void);
 extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(struct N *, int);
-extern void FUN_0c06233a(struct F *, char *, int);
+extern void obj_part_set_model(struct F *, char *, int);
 void fx_spawn_16(struct O *o, char c)
 {
     struct N *e;
@@ -35,17 +35,17 @@ void fx_spawn_16(struct O *o, char c)
         e->b257 = 2;
         e->b258 = 2;
         obj_set_record_char(e, 115);
-        FUN_0c06233a(e->p736, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 7);
+        obj_part_set_model(e->p736, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 7);
         e->p736->b0 = 1;
         e->p736->w2 = 15;
-        FUN_0c06233a(e->p740, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 10);
+        obj_part_set_model(e->p740, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 10);
         e->p740->b0 = 1;
         e->p740->w2 = 63;
         e->p740->f28 = 0.0f;
         e->p740->f32 = 0.0f;
         e->p740->f36 = 0.0f;
         e->p740->u20 = 16384;
-        FUN_0c06233a(e->p744, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 8);
+        obj_part_set_model(e->p744, g_spr_bank_player_fx + (signed char)(o->b3 * 24), 8);
         e->p744->b0 = 1;
         e->p744->w2 = 63;
         e->p744->f28 = 0.0f;

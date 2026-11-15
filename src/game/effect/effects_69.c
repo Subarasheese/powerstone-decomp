@@ -1,7 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03d254-0c03d60c) */
 
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
@@ -48,7 +48,7 @@ int fx_spawn_03d254(int a4, int a5)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + ((signed char)t3 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + ((signed char)t3 << 2)) + 0x0))) + 0x2)) = 0xF;
             t6 = *(signed char *)((a4 + 0x3));
-            t10 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + ((signed char)t3 << 2)) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), t3);
+            t10 = obj_part_set_model((*(int *)((((0x2E0 + t0) + ((signed char)t3 << 2)) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), t3);
             t3 = (t3 + 0x1);
             if ((int)(signed char)t3 >= (int)0x2) {
                 break;

@@ -92,7 +92,7 @@ int item_init_hold_pose(int);
 int fxslot_start(int, int, int, int, int, int, float);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0645ee(int);
 int FUN_0c08dacc(int, int);
 int FUN_0c097f3c(int);

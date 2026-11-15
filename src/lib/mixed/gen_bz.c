@@ -108,7 +108,7 @@ int FUN_0c092136(int a4);
 int FUN_0c04a9ae(int a4);
 int FUN_0c0766f0(int a4);
 int FUN_0c084a9e(int a4);
-int FUN_0c085d6c(int a4);
+int pl_kraken_attack_kind3_phase2(int a4);
 int FUN_0c086606(int a4);
 int FUN_0c089888(int a4);
 int FUN_0c0d5ece(int a4);
@@ -147,7 +147,7 @@ int FUN_0c04a9a0(int a4);
 int FUN_0c054db4(void);
 int FUN_0c054dc2(void);
 int FUN_0c085c16(int a4);
-int FUN_0c085d90(int a4);
+int pl_kraken_attack_kind3_phase3(int a4);
 int FUN_0c08662a(int a4);
 int FUN_0c08bcc8(int a4);
 int FUN_0c08bf1c(int a4);
@@ -681,7 +681,7 @@ int FUN_0c084a9e(int a4)
     return pl_apply_motion_translation(a4);
 }
 
-int FUN_0c085d6c(int a4)
+int pl_kraken_attack_kind3_phase2(int a4)
 {
     register int t4;
     register int t3;
@@ -1146,7 +1146,7 @@ int FUN_0c085c16(int a4)
     return pl_end_action_choose_state(a4);
 }
 
-int FUN_0c085d90(int a4)
+int pl_kraken_attack_kind3_phase3(int a4)
 {
     (((struct o7223_uchar *)(a4))->v) = 0x0;
     return pl_end_action_choose_state(a4);

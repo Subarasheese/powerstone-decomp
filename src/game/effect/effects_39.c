@@ -12,7 +12,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int math_rand_next(void);
 float math_rand_float(void);
 int _modls(void);
@@ -56,7 +56,7 @@ int fx_spawn_038b98(int a4)
         *(unsigned int *)((t0 + 0x10)) = 0xC038DB6;
         t2 = (((struct o2E0_int *)(t0))->v);
         t3 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x2);
+        obj_part_set_model(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x2);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x215;
         (((struct o8_float *)(t2))->v) = 100.0f;
@@ -70,7 +70,7 @@ int fx_spawn_038b98(int a4)
             *(unsigned int *)(((int)stk + 0)) = (t8 + 0x4);
             t9 = *(signed char *)((a4 + 0x3));
             t10 = *(int *)((((t8 + 0x4) - 4) + 0x0));
-            FUN_0c06233a(t10, ((signed char)((((t9 << 1) + t9) << 2) << 1) + 0xC6002D0), 0x1);
+            obj_part_set_model(t10, ((signed char)((((t9 << 1) + t9) << 2) << 1) + 0xC6002D0), 0x1);
             *(unsigned char *)((t10 + 0x0)) = 0x1;
             *(unsigned short *)((t10 + 0x2)) = 0x215;
             (((struct o4_float *)(t10))->v) = ((float)((int)((int)(math_rand_next()) % (int)0x64)) + -50.0f);
@@ -323,7 +323,7 @@ int fx_tick_038b98(int a4, int a5, int a6, int a7, float f4, float f5)
                 *(unsigned char *)((t0 + 0x0)) = 0x0;
             }
             t0 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x8);
+            obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x8);
             *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x31;
             (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;

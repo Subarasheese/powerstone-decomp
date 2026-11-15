@@ -72,7 +72,7 @@ int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int math_vec3_add(int, int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0623a6(int, int, int);
 int pl_start_motion(int, int, int);
 int pl_change_state(int, int, int, int);

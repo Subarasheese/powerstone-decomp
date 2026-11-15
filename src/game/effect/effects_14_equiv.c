@@ -10,7 +10,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 
 int fx_spawn_034dd0(int a4, int a5)
 {
@@ -38,11 +38,11 @@ int fx_spawn_034dd0(int a4, int a5)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x39;
         t1 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0xD);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0xD);
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x1F;
         t1 = *(signed char *)((t0 + 0x3));
-        return FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0xE);
+        return obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0xE);
     }
     return t0;
 }

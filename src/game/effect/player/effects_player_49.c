@@ -19,7 +19,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -91,7 +91,7 @@ int FUN_0c0c6094(int a4, int a5)
         t12 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t12 + 0x0)) = 0x1;
         *(unsigned short *)((t12 + 0x2)) = 0xF;
-        FUN_0c06233a(t12, 0xC664988, 0x9);
+        obj_part_set_model(t12, 0xC664988, 0x9);
         FUN_0c0c63c4(t0, 0x0);
         u15 = *(float *)0xC494D1C;
         t16 = *(int *)((a4 + 0x1C));
@@ -196,12 +196,12 @@ int FUN_0c0c63c4(int a4, int a5)
     (((struct o28_float *)(t1))->v) = 0.0f;
     *(unsigned char *)((t1 + 0x0)) = 0x1;
     *(unsigned short *)((t1 + 0x2)) = 0xF;
-    FUN_0c06233a(t1, ((int)g_res_item), (*(signed char *)((((*(signed char *)(((int)stk + 4))) << 1) + 0xC33C7A8))));
+    obj_part_set_model(t1, ((int)g_res_item), (*(signed char *)((((*(signed char *)(((int)stk + 4))) << 1) + 0xC33C7A8))));
     t7 = (((struct o2E8_int *)((*(int *)(((int)stk + 0)))))->v);
     (((struct o30_float *)(t7))->v) = 0.0f;
     (((struct o2C_float *)(t7))->v) = 0.0f;
     (((struct o28_float *)(t7))->v) = 0.0f;
     *(unsigned char *)((t7 + 0x0)) = 0x0;
     *(unsigned short *)((t7 + 0x2)) = 0x21F;
-    return FUN_0c06233a(t7, ((int)g_res_item), 0xF);
+    return obj_part_set_model(t7, ((int)g_res_item), 0xF);
 }

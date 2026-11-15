@@ -73,7 +73,7 @@ int fx_spawn_hit_effect(int, int, int, int, int, int, int, int, int, int, int, i
 int FUN_0c0555dc(void);
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0623a6(int, int, int);
 int pl_mode01_03_enter(int);
 int pl_mode04_enter(int);

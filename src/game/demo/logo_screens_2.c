@@ -8,7 +8,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o0_float { float v; };
 struct o0_int { int v; };
 struct o18_float { char p[0x18]; float v; };
@@ -30,7 +30,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int ui_draw_text_stub(int, int, float, float, float, float);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 float math_sin_angle16(int);
 struct o0_uint { unsigned int v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
@@ -70,7 +70,7 @@ int FUN_0c02b0dc(void)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_pstone_logo), 0x2);
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.5f;
         (((struct o20_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.5f;
         t8 = 0x20;
@@ -113,8 +113,8 @@ int FUN_0c02b164(int a4)
             (((struct oEE_ushort *)(a4))->v) = 0x2;
             (((struct o20_float *)(a4))->v) = 0.0f;
             (((struct o24_float *)(a4))->v) = 0.0f;
-            FUN_0c0a3f30(0x1F);
-            return FUN_0c0a3f30(0x20);
+            snd_play_se_indexed(0x1F);
+            return snd_play_se_indexed(0x20);
         }
         if (t0 == 2) {
             t1 = *(signed char *)((a4 + 0xA));
@@ -314,8 +314,8 @@ int FUN_0c02b164(int a4)
     (((struct oEE_ushort *)(a4))->v) = 0x2;
     (((struct o20_float *)(a4))->v) = 0.0f;
     (((struct o24_float *)(a4))->v) = 0.0f;
-    FUN_0c0a3f30(0x1F);
-    return FUN_0c0a3f30(0x20);
+    snd_play_se_indexed(0x1F);
+    return snd_play_se_indexed(0x20);
 }
 
 int FUN_0c02b724(void)
@@ -347,7 +347,7 @@ int FUN_0c02b724(void)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t2) + 0x0))) + 0x2)) = 0x1F;
-            t8 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t2) + 0x0))), ((int)g_res_pstone_logo), (*(int *)((t2 + 0xC1490B4))));
+            t8 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t2) + 0x0))), ((int)g_res_pstone_logo), (*(int *)((t2 + 0xC1490B4))));
             t1 = (t1 + 0x1);
             t2 = (t2 + 0x4);
             if ((int)t1 >= (int)0x4) {

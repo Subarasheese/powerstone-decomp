@@ -13,7 +13,7 @@ struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_rand_float(void);
 int _modlu(void);
 int _quick_odd_mvn(void);

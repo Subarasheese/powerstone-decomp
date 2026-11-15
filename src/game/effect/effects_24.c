@@ -6,7 +6,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o2D9_uchar { char p[0x2D9]; unsigned char v; };
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
@@ -48,7 +48,7 @@ int obj_spawn_0367e4(int a4, int a5)
             u10 = 1.5f;
         }
         t12 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), 0x6);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), 0x6);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u10;

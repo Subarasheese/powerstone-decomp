@@ -6,7 +6,7 @@ struct o308_uint { char p[0x308]; unsigned int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int stage_obj_load_layout_pos(int);
 int _quick_odd_mvn(void);
 struct o20_float { char p[0x20]; float v; };
@@ -37,7 +37,7 @@ int stage_gimmick_39_spawn(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33AA9C); }
         (((struct o102_uchar *)(t0))->v) = (*(signed char *)((a4 + 0x5)));
         t3 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t3, 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(t3, 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((t3 + 0x0)) = 0x1;
         *(unsigned short *)((t3 + 0x2)) = 0x1;
         t6 = 0x1;

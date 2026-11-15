@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0c033c-0c0c07bc) */
 
 char *obj_create(int a, int b, int c, int d);
-void FUN_0c06233a(char *model, char *palette, int kind);
+void obj_part_set_model(char *model, char *palette, int kind);
 void FUN_0c0c0532(char *e);
 typedef struct { float x, y, z; } VEC3;
 #define B(o, n) (*(signed char *)((o) + (n)))
@@ -35,7 +35,7 @@ void FUN_0c0c033c(char *src, char kind)
     for (i = 0; i < 2; i++) {
         MDL(e, i)[0] = 1;
         H(MDL(e, i), 2) = 1055;
-        FUN_0c06233a(MDL(e, i), (char *)0x0C6002D0 + (signed char)(B(src, 3) * 24), i);
+        obj_part_set_model(MDL(e, i), (char *)0x0C6002D0 + (signed char)(B(src, 3) * 24), i);
         F(MDL(e, i), 64) = 1.0f;
     }
     *(char **)(e + 28) = src;

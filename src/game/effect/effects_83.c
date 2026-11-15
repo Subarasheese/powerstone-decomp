@@ -8,7 +8,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int fx_spawn_04015c(int);
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 typedef struct { int x, y, z; } S12;
 typedef struct { float x, y, z; } V3;
@@ -42,7 +42,7 @@ int fx_spawn_03fd08(int a4)
         t2 = (((struct o2E0_int *)(t0))->v);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         t3 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x11);
+        obj_part_set_model(t2, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x11);
         *(unsigned short *)((t2 + 0x2)) = 0x230;
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x4)) = *(struct mv3 *)(0xC149AB8); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x1C)) = *(struct mv3 *)(0xC149AB8); }

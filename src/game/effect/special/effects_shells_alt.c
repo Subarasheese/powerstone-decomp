@@ -18,9 +18,9 @@ int fx_spawn_03ed0c(int);
 int FUN_0c0555dc(void);
 int obj_destroy(int, int, int);
 int snd_play_char_voice(int, int);
-int FUN_0c0c8cea(int, int, int, float);
+int fx_trail_set_part_lengths(int, int, int, float);
 int fx_trail_resize_chain(int);
-int FUN_0c0c9394(int);
+int fx_trail_find_hit_segment(int);
 int FUN_0c0c9526(int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -138,7 +138,7 @@ float fx_update_trail_chain(int a4)
     w0_2 = (100.0f);
     if (((*(signed char *)((v0_0 + 0xD))) != 0)) goto L_C0C902A;
     w0_3 = (((struct oF0_float *)(v0_0))->v);
-    FUN_0c0c9394(v0_0);
+    fx_trail_find_hit_segment(v0_0);
     w0_3 = (w0_3);
     if (((*(signed char *)((v0_0 + 0xF))) != 0)) goto L_C0C9004;
     if (((*(signed char *)(((*(int *)((v0_0 + 0x1C))) + 0x10B))) != 0)) goto L_C0C902A;
@@ -147,9 +147,9 @@ float fx_update_trail_chain(int a4)
     w0_3 = ((((struct oF0_float *)(v0_0))->v));
     w0_3 = w0_3 + w0_2 * (*(float *)((0xC33C960 + (((((struct oEE_short *)(v0_0))->v)) << 2))));
     *(float *)(((*(int *)(((int)stk + 4))) + 0x0)) = w0_3;
-    FUN_0c0c8cea(v0_0, 0x0, 0x1, w0_3);
-    FUN_0c0c8cea(v0_0, 0x1, 0x2, w0_3);
-    FUN_0c0c8cea(v0_0, 0x2, 0x3, w0_3);
+    fx_trail_set_part_lengths(v0_0, 0x0, 0x1, w0_3);
+    fx_trail_set_part_lengths(v0_0, 0x1, 0x2, w0_3);
+    fx_trail_set_part_lengths(v0_0, 0x2, 0x3, w0_3);
     fx_trail_resize_chain(v0_0);
     FUN_0c0c9526(v0_0);
     v0_3 = (0xC33C960);
@@ -183,10 +183,19 @@ float fx_update_trail_chain(int a4)
     v0_4 = (0xC0C9760);
     L_C0C9146:;
     if (((int)v0_1 < (int)(*(signed char *)((v0_0 + 0xE))))) goto L_C0C9138;
+#ifdef NATIVE_PORT
+    L_trail_end:;
+#endif
     *(unsigned char *)((((((struct o2EC_int *)(v0_0))->v)) + 0x0)) = v0_2;
     v0_3 = (0x2EC);
     goto L_C0C91B6;
     L_C0C9138:;
+#ifdef NATIVE_PORT
+    /* the segments are counted (+0xE) along the object list (+0x18), and one that destroyed itself left the count as it
+       was: past the end of the list the console reads boot ROM; here the loop ends there (fx_trail_find_hit_segment does the same) */
+    if (v0_3 == 0)
+        goto L_trail_end;
+#endif
     if (((*(int *)((v0_3 + 0x10))) != v0_4)) goto L_C0C9142;
     obj_destroy(v0_3, R5, R6);
     L_C0C9142:;

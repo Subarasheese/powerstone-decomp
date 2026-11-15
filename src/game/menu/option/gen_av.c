@@ -81,7 +81,7 @@ int FUN_0c028ea0(int, int, float);
 int FUN_0c049288(void);
 int FUN_0c0593e0(int);
 int FUN_0c05941e(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c062f10(int);
 int FUN_0c08e382(int);
 int FUN_0c08f6c8(int);
@@ -269,7 +269,7 @@ int FUN_0c032262(int a4, int a5)
                     t6 = (t6 + t1);
                     t6 = (t6 + t8);
                     t6 = (*(int *)((t6 + 0x0)));
-                    FUN_0c06233a(t6, ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), 0x7);
+                    obj_part_set_model(t6, ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), 0x7);
                     t6 = 0x2E0;
                     t6 = (t6 + t1);
                     t3 = 0xC1495A0;
@@ -349,7 +349,7 @@ int FUN_0c032262(int a4, int a5)
                             t34 = (t34 + t49);
                             t34 = (t34 << 2);
                             t34 = (t34 << 1);
-                            t34 = (FUN_0c06233a((*(int *)((((0x2E0 + t32) + t36) + 0x0))), ((signed char)t34 + 0xC6002D0), (t47 + 0x8)));
+                            t34 = (obj_part_set_model((*(int *)((((0x2E0 + t32) + t36) + 0x0))), ((signed char)t34 + 0xC6002D0), (t47 + 0x8)));
                             t53 = *(int *)((((0x2E0 + t32) + t36) + 0x0));
                             *(int *)((int)stk + 0) = (0x28 + t53);
                             u37 = (math_rand_float());
@@ -543,7 +543,7 @@ int FUN_0c032262(int a4, int a5)
                 t146 = (t146 + t162);
                 t146 = (t146 << 2);
                 t146 = (t146 << 1);
-                t146 = (FUN_0c06233a((*(int *)((((0x2E0 + t144) + t148) + 0x0))), ((signed char)t146 + 0xC6002D0), t159));
+                t146 = (obj_part_set_model((*(int *)((((0x2E0 + t144) + t148) + 0x0))), ((signed char)t146 + 0xC6002D0), t159));
                 t146 = (fx_randomize_particle((*(int *)((((0x2E0 + t144) + t148) + 0x0)))));
                 t148 = (t148 + 0x4);
                 t147 = (t147 + 0x1);
@@ -620,7 +620,7 @@ float FUN_0c028f48(int a4)
     *(unsigned char *)((v0_6 + 0x0)) = v0_2;
     *(unsigned char *)((v0_6 + 0x1)) = v0_1;
     *(unsigned short *)((v0_6 + 0x2)) = 0x100F;
-    FUN_0c06233a(v0_6, 0xC6649E8, (*(int *)((v0_0 + 0x4))));
+    obj_part_set_model(v0_6, 0xC6649E8, (*(int *)((v0_0 + 0x4))));
     (((struct o98_float *)(v0_6))->v) = ((((struct o50_float *)(v0_3))->v));
     v0_4 = (v0_6);
     if ((!(w0_0 > ((((struct o98_float *)(v0_6))->v))))) goto L_C028FE6;
@@ -654,7 +654,7 @@ float FUN_0c028f48(int a4)
     *(unsigned char *)((v0_6 + 0x0)) = v0_2;
     *(unsigned char *)((v0_6 + 0x1)) = v0_1;
     *(unsigned short *)((v0_6 + 0x2)) = 0x100F;
-    FUN_0c06233a(v0_6, 0xC6649E8, (-(*(int *)((v0_0 + 0x4)))));
+    obj_part_set_model(v0_6, 0xC6649E8, (-(*(int *)((v0_0 + 0x4)))));
     (((struct o98_float *)(v0_6))->v) = ((((struct o50_float *)(v0_3))->v));
     v0_4 = (v0_6);
     if ((!(w0_0 > ((((struct o98_float *)(v0_6))->v))))) goto L_C029098;
@@ -731,7 +731,7 @@ float FUN_0c028f48(int a4)
     if ((!(((((struct o54_float *)(v0_5))->v)) > ((((struct o98_float *)(v0_3))->v))))) goto L_C0291D0;
     (((struct o98_float *)(v0_3))->v) = ((((struct o54_float *)(v0_5))->v));
     L_C0291D0:;
-    FUN_0c06233a(v0_3, 0xC6649A0, v0_4);
+    obj_part_set_model(v0_3, 0xC6649A0, v0_4);
     (((struct o4_float *)(v0_3))->v) = (float)(((v0_7 << 2) << 2) << 2);
     (((struct o8_float *)(v0_3))->v) = 0.0f;
     FPUL_ = ((((v0_7 << 2) << 2) << 2));
@@ -918,7 +918,7 @@ void fx_spawn_04512c(int a4, int a5, int a6)
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t7 + 0x20)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t7 + 0x50)) = *(struct mv3 *)(0xC14A654); }
             t10 = (((struct o2E0_int *)(t7))->v);
-            FUN_0c06233a(t10, 0xC4CFA68, 0x69);
+            obj_part_set_model(t10, 0xC4CFA68, 0x69);
             *(unsigned char *)((t10 + 0x0)) = 0x1;
             *(unsigned short *)((t10 + 0x2)) = 0x218;
             t12 = math_rand_float();
@@ -952,7 +952,7 @@ void fx_spawn_04512c(int a4, int a5, int a6)
                     t33 = *(int *)(((int)stk + 0));
                     *(unsigned int *)(((int)stk + 0)) = (t33 + 0x4);
                     t34 = *(int *)((((t33 + 0x4) - 4) + 0x0));
-                    FUN_0c06233a(t34, 0xC4CFA68, 0x7A);
+                    obj_part_set_model(t34, 0xC4CFA68, 0x7A);
                     *(unsigned char *)((t34 + 0x0)) = 0x1;
                     *(unsigned short *)((t34 + 0x2)) = 0x21C;
                     *(unsigned int *)((t34 + 0x14)) = t32;
@@ -1000,7 +1000,7 @@ int fx_spawn_046360(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC14A764); }
         t2 = (((struct o2E0_int *)(t0))->v);
         memset((t2 + 0x34), 0x0, 0xC);
-        FUN_0c06233a(t2, 0xC4CFA68, ((*(signed char *)(((t2 + 0x34) + 0x6))) + 0x75));
+        obj_part_set_model(t2, 0xC4CFA68, ((*(signed char *)(((t2 + 0x34) + 0x6))) + 0x75));
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x31;
         u0 = math_rand_float();
@@ -1418,7 +1418,7 @@ int FUN_0c0419a8(int a4, int a5)
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0xF;
         t1 = *(signed char *)(((0x3 + t0) + 0x0));
-        FUN_0c06233a(t2, ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), (*(signed char *)(((signed char)a5 + 0xC3217C8))));
+        obj_part_set_model(t2, ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), (*(signed char *)(((signed char)a5 + 0xC3217C8))));
         if ((signed char)a5 != 0) {
             if ((signed char)a5 != 1) {
                 if ((signed char)a5 != 2) {

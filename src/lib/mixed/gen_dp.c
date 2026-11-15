@@ -84,7 +84,7 @@ int FUN_0c0555dc(void);
 int FUN_0c05566a(void);
 int obj_create(int, int, int);
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_ryoma_attack_kind68_phase1(int);
 int pl_ryoma_attack_kind68_phase2(int);
 int pl_ryoma_wait_anim_end_b(int);

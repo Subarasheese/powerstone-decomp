@@ -3,7 +3,7 @@
 struct o118_int { char p[0x118]; int v; };
 struct o118_uint { char p[0x118]; unsigned int v; };
 int obj_create_beside(int, int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 
 void fx_spawn_04015c(int a4)
@@ -37,7 +37,7 @@ void fx_spawn_04015c(int a4)
             t5 = *(int *)((((t4 + 0x4) - 4) + 0x0));
             *(unsigned char *)((t5 + 0x0)) = 0x0;
             t6 = *(signed char *)((t0 + 0x3));
-            FUN_0c06233a(t5, ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), 0x10);
+            obj_part_set_model(t5, ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), 0x10);
             *(unsigned short *)((t5 + 0x2)) = 0x221;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t5 + 0x1C)) = *(struct mv3 *)(0xC149AC4); }
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t5 + 0x10)) = *(struct mv3 *)(0xC149AD0); }

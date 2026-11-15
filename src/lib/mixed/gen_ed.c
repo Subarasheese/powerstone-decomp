@@ -58,7 +58,7 @@ int fx_spawn_model_effect(int, int, int, int, int, int, int, int, int);
 int FUN_0c0555dc(void);
 int obj_create(int, int, int);
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_timer_disable(int);
 int pl_start_motion(int, int, int);
 int pl_step_motion(int);

@@ -6,7 +6,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_destroy(int);
 float math_rand_float(void);
 struct Kid {
@@ -68,7 +68,7 @@ int FUN_0c029ec4(void)
                 *(unsigned char *)((t4 + 0x0)) = 0x1;
                 *(unsigned char *)((t4 + 0x1)) = 0x0;
                 *(unsigned short *)((t4 + 0x2)) = 0x1F;
-                FUN_0c06233a(t4, ((int)g_res_syukyaku), 0x49);
+                obj_part_set_model(t4, ((int)g_res_syukyaku), 0x49);
                 t1 = (t1 + 0x1);
             }
             t6 = 0x2DC;

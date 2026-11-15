@@ -6,7 +6,7 @@ extern char g_players[];
 extern char g_spr_bank_player_fx[];
 extern void thunk_math_mat_get_translate(char *, char *);
 extern void obj_set_record_char(char *, int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern void FUN_0c0c5920(void);
 struct o105_uchar { char p[0x105]; unsigned char v; };
 
@@ -37,7 +37,7 @@ char *FUN_0c0c571c(char *fighter, char marker_kind)
         child = *(char **)(slot + 0x2E0 + idx * 4);
         child[0] = 1;
         *(short *)(child + 2) = 31;
-        FUN_0c06233a(child, g_spr_bank_player_fx + (signed char)(fighter[3] * 24), 0);
+        obj_part_set_model(child, g_spr_bank_player_fx + (signed char)(fighter[3] * 24), 0);
         child = *(char **)(slot + 0x2E0 + idx * 4);
         *(float *)(child + 36) = 1.0f;
         *(float *)(child + 32) = 1.0f;

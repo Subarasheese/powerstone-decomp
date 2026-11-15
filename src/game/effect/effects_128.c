@@ -12,7 +12,7 @@ struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -45,14 +45,14 @@ int fx_spawn_04aa24(int a4, int a5)
         (((struct o118_uint *)(t1))->v) = 0x0;
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t1 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         t2 = (((struct o2E0_int *)(t1))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x60);
+        obj_part_set_model(t2, 0xC4CFA68, 0x60);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x231;
         (((struct o44_float *)(t2))->v) = 1.0f;
         (((struct o48_float *)(t2))->v) = 1.0f;
         (((struct o4C_float *)(t2))->v) = 1.0f;
         t2 = (((struct o2E4_int *)(t1))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x60);
+        obj_part_set_model(t2, 0xC4CFA68, 0x60);
         *(unsigned char *)((t2 + 0x0)) = 0x0;
         *(unsigned short *)((t2 + 0x2)) = 0x231;
         (((struct o44_float *)(t2))->v) = 1.0f;
@@ -60,14 +60,14 @@ int fx_spawn_04aa24(int a4, int a5)
         (((struct o4C_float *)(t2))->v) = 1.0f;
         if ((signed char)a5 == 0) {
             t2 = (((struct o2E8_int *)(t1))->v);
-            FUN_0c06233a(t2, 0xC4CFA68, 0x61);
+            obj_part_set_model(t2, 0xC4CFA68, 0x61);
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned short *)((t2 + 0x2)) = 0x214;
             (((struct o44_float *)(t2))->v) = 1.0f;
             (((struct o48_float *)(t2))->v) = 1.0f;
             (((struct o4C_float *)(t2))->v) = 1.0f;
             t2 = (((struct o2EC_int *)(t1))->v);
-            FUN_0c06233a(t2, 0xC4CFA68, 0x61);
+            obj_part_set_model(t2, 0xC4CFA68, 0x61);
             *(unsigned char *)((t2 + 0x0)) = 0x0;
             *(unsigned short *)((t2 + 0x2)) = 0x214;
             (((struct o44_float *)(t2))->v) = 1.0f;

@@ -54,7 +54,7 @@ struct oF0_ushort { char p[0xF0]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int FUN_0c0555dc(void);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0bfe20(int);
 int FUN_0c0bfe76(int);
 int fx_randomize_particle(int);
@@ -389,7 +389,7 @@ float FUN_0c0ca67e(int a4)
     goto L_C0CAFE0;
     L_C0CADA0:;
     v0_4 = *(signed char *)((v0_0 + 0x3));
-    FUN_0c06233a(((((struct o2E8_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x2);
+    obj_part_set_model(((((struct o2E8_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x2);
     *(unsigned char *)((((((struct o2E8_int *)(v0_0))->v)) + 0x0)) = v0_3;
     *(unsigned short *)((((((struct o2E8_int *)(v0_0))->v)) + 0x2)) = 0x1F;
     (((struct o40_float *)(((((struct o2E8_int *)(v0_0))->v))))->v) = w0_2;
@@ -399,7 +399,7 @@ float FUN_0c0ca67e(int a4)
     (((struct o20_float *)(v0_4))->v) = 2.0f;
     (((struct o1C_float *)(v0_4))->v) = 2.0f;
     v0_4 = *(signed char *)((v0_0 + 0x3));
-    FUN_0c06233a(((((struct o2EC_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x2);
+    obj_part_set_model(((((struct o2EC_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x2);
     *(unsigned char *)((((((struct o2EC_int *)(v0_0))->v)) + 0x0)) = v0_3;
     *(unsigned short *)((((((struct o2EC_int *)(v0_0))->v)) + 0x2)) = 0x1F;
     (((struct o40_float *)(((((struct o2EC_int *)(v0_0))->v))))->v) = w0_2;
@@ -411,7 +411,7 @@ float FUN_0c0ca67e(int a4)
     (((struct o20_float *)(v0_4))->v) = 2.0f;
     (((struct o1C_float *)(v0_4))->v) = 2.0f;
     v0_4 = *(signed char *)((v0_0 + 0x3));
-    FUN_0c06233a(((((struct o2E0_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x4);
+    obj_part_set_model(((((struct o2E0_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x4);
     *(unsigned char *)((((((struct o2E0_int *)(v0_0))->v)) + 0x0)) = v0_3;
     *(unsigned short *)((((((struct o2E0_int *)(v0_0))->v)) + 0x2)) = 0x1F;
     (((struct o40_float *)(((((struct o2E0_int *)(v0_0))->v))))->v) = w0_2;
@@ -421,7 +421,7 @@ float FUN_0c0ca67e(int a4)
     (((struct o20_float *)(v0_4))->v) = 2.0f;
     (((struct o1C_float *)(v0_4))->v) = 2.0f;
     v0_4 = *(signed char *)((v0_0 + 0x3));
-    FUN_0c06233a(((((struct o2E4_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x4);
+    obj_part_set_model(((((struct o2E4_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x4);
     *(unsigned char *)((((((struct o2E4_int *)(v0_0))->v)) + 0x0)) = v0_3;
     *(unsigned short *)((((((struct o2E4_int *)(v0_0))->v)) + 0x2)) = 0x1F;
     (((struct o40_float *)(((((struct o2E4_int *)(v0_0))->v))))->v) = w0_2;
@@ -433,7 +433,7 @@ float FUN_0c0ca67e(int a4)
     (((struct o20_float *)(v0_4))->v) = 2.0f;
     (((struct o1C_float *)(v0_4))->v) = 2.0f;
     v0_4 = *(signed char *)((v0_0 + 0x3));
-    FUN_0c06233a(((((struct o2F0_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x1);
+    obj_part_set_model(((((struct o2F0_int *)(v0_0))->v)), ((signed char)((((v0_4 << 1) + v0_4) << 2) << 1) + 0xC6002D0), 0x1);
     *(unsigned char *)((((((struct o2F0_int *)(v0_0))->v)) + 0x0)) = v0_3;
     *(unsigned short *)((((((struct o2F0_int *)(v0_0))->v)) + 0x2)) = 0x1F;
     (((struct o40_float *)(((((struct o2F0_int *)(v0_0))->v))))->v) = w0_2;
@@ -1750,7 +1750,7 @@ int FUN_0c0c15be(int a4)
                 *(unsigned char *)((t0 + 0x0)) = 0x0;
             }
             t0 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x8);
+            obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x8);
             *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x31;
             (((struct o4_float *)(((((struct o2E0_int *)(a4))->v))))->v) = 0.0f;

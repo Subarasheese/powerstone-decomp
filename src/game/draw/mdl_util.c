@@ -58,7 +58,7 @@ int FUN_0c06231c(int a4, int a5, int a6)
     return (((((((struct o9C_int *)(a4))->v)) == 0)) ? 1 : 0);
 }
 
-int FUN_0c06233a(int a4, int a5, int a6)
+int obj_part_set_model(int a4, int a5, int a6)
 {
     FUN_0c0624c4((0x9C + a4), a5, a6);
     if (((((struct o9C_int *)(a4))->v)) == 0) {

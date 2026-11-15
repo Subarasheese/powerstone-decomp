@@ -2,7 +2,7 @@
 
 /* named globals (symbols.txt) */
 int game_draw_frame(void);
-int FUN_0c02d1cc(int a4, int a5, int a6, int a7);
+int draw_fighter(int a4, int a5, int a6, int a7);
 extern char g_cam_split_flag[];
 int dbg_set_cell_size(int, int);
 int dbg_set_cursor_cell(int, int);
@@ -29,7 +29,7 @@ struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
 int FUN_0c05a164(int);
 int FUN_0c05a6e8(int);
-int FUN_0c05fb58(int);
+int draw_set_layer_lighting(int);
 int nlSetLightColor(float, float, float);
 int nlSelectMatrixStack(int);
 struct o0_int { int v; };
@@ -38,7 +38,7 @@ struct o14_uchar { char p[0x14]; unsigned char v; };
 struct o15_uchar { char p[0x15]; unsigned char v; };
 struct o8_int { char p[0x8]; int v; };
 int FUN_0c02828e(void);
-int FUN_0c02d420(void);
+int draw_world(void);
 int ui_draw_no_intro_bar(void);
 int FUN_0c0dca60(int, int, int, int, int);
 int FUN_0c0dcac0(int, int);
@@ -47,11 +47,11 @@ int nlLoadMatrix(int);
 int nlPerspective(int, float, float, float);
 int stage_draw_lights(void);
 int FUN_0c0282cc(void);
-int FUN_0c02cf18(void);
+int draw_object_classes(void);
 
 int FUN_0c02ca74(void);
 int FUN_0c02cade(void);
-int FUN_0c02d458(void);
+int draw_frame_should_skip(void);
 
 int FUN_0c02ca74(void)
 {
@@ -188,7 +188,7 @@ int FUN_0c02ced4(int a4, float f4, float f5)
 }
 
 
-int FUN_0c02d458(void)
+int draw_frame_should_skip(void)
 {
     register int t0;
     register int t1;
@@ -206,10 +206,10 @@ int FUN_0c02d744(void)
 {
     register int t0;
 
-    t0 = FUN_0c02d458();
+    t0 = draw_frame_should_skip();
     if (t0 == 0) {
         stage_draw_lights();
-        FUN_0c02cf18();
+        draw_object_classes();
         FUN_0c0282cc();
         FUN_0c02ca74();
         return FUN_0c02cade();

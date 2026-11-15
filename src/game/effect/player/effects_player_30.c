@@ -2,7 +2,7 @@
 
 typedef struct { int x, y, z; } vec3_int;
 extern char *obj_create(int, int, int, int);
-extern void FUN_0c06233a(int shooter, char *b, int c);
+extern void obj_part_set_model(int shooter, char *b, int c);
 struct o105_uchar { char p[0x105]; unsigned char v; };
 struct o1C_float { char p[0x1C]; float v; };
 struct o20_float { char p[0x20]; float v; };
@@ -58,7 +58,7 @@ void fx_spawn_four_particle_trail(char *shooter)
     effect[11] = 0;
     tenth_f = 0.0999999940f;
 
-    FUN_0c06233a(*(int *)(effect + 736), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 4);
+    obj_part_set_model(*(int *)(effect + 736), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 4);
     particle = (char *)*(int *)(effect + 736);
     *particle = 1;
     *(short *)(*(int *)(effect + 736) + 2) = 1055;
@@ -71,7 +71,7 @@ void fx_spawn_four_particle_trail(char *shooter)
     *(int *)(*(int *)(effect + 736) + 24) = 0;
     *(short *)(effect + 236) = 20;
 
-    FUN_0c06233a(*(int *)(effect + 740), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 5);
+    obj_part_set_model(*(int *)(effect + 740), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 5);
     particle = (char *)*(int *)(effect + 740);
     *particle = 1;
     *(short *)(*(int *)(effect + 740) + 2) = 1055;
@@ -84,7 +84,7 @@ void fx_spawn_four_particle_trail(char *shooter)
     *(int *)(*(int *)(effect + 740) + 24) = 0;
     *(short *)(effect + 238) = 18;
 
-    FUN_0c06233a(*(int *)(effect + 744), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 6);
+    obj_part_set_model(*(int *)(effect + 744), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 6);
     particle = (char *)*(int *)(effect + 744);
     *particle = 1;
     *(short *)(*(int *)(effect + 744) + 2) = 31;
@@ -97,7 +97,7 @@ void fx_spawn_four_particle_trail(char *shooter)
     *(int *)(*(int *)(effect + 744) + 24) = 0;
     *(short *)(effect + 240) = 1;
 
-    FUN_0c06233a(*(int *)(effect + 748), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 6);
+    obj_part_set_model(*(int *)(effect + 748), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), 6);
     particle = (char *)*(int *)(effect + 748);
     *particle = 1;
     *(short *)(*(int *)(effect + 748) + 2) = 31;

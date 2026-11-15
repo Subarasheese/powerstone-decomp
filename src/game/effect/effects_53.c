@@ -11,7 +11,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int, int);
 struct oEC_short { char p[0xEC]; short v; };
 int obj_destroy(int, int, int, int);
@@ -46,7 +46,7 @@ int fx_spawn_03adf8(int a4)
         *(unsigned int *)((t0 + 0x10)) = 0xC03AEC0;
         t2 = (((struct o2E0_int *)(t0))->v);
         t0 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t2, ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x9);
+        obj_part_set_model(t2, ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), 0x9);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x1;
         t1 = 0x1;

@@ -7,7 +7,7 @@ int FUN_0c01ed94(int);
 int FUN_0c01f48c(int, int);
 int vmu_menu_spawn_message(int);
 int FUN_0c01f874(int);
-int vmu_menu_scan_port_masks(void);
+int vmu_menu_scan_port_masks(int);
 int vmu_menu_update_objs(int, int, int, int);
 int vmu_menu_pad_pressed(int);
 int FUN_0c01fe52(int);
@@ -35,7 +35,7 @@ int FUN_0c02002a(int a4, int a5, int a6, int a7)
         (((struct o2C_uchar *)(a4))->v) = 0x0;
         FUN_0c01f874(0x0);
     }
-    t0 = vmu_menu_scan_port_masks();
+    t0 = vmu_menu_scan_port_masks(a4);       /* the original passes the menu object (mov r14,r4 in the delay slot) */
     t1 = (signed char)t0;
     if ((signed char)t0 == 0) {
         FUN_0c01fe52(a4);

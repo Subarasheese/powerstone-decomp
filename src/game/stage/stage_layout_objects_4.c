@@ -7,7 +7,7 @@ struct o40_float { char p[0x40]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int snd_play_stage_obj_se(int, int, int);
 int _quick_odd_mvn(void);
 
@@ -35,7 +35,7 @@ int fx_spawn_burst_sprites(int a4)
         t1 = 0x0;
         for (;;) {
             t2 = *(int *)((((t1 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t2, 0xC664970, (t1 + 0xF));
+            obj_part_set_model(t2, 0xC664970, (t1 + 0xF));
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned short *)((t2 + 0x2)) = 0x401;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x4)) = *(struct mv3 *)(((signed char)(((t1 << 1) + t1) << 2) + 0xC339D2C)); }

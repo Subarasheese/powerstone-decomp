@@ -256,7 +256,7 @@ Eight 144-byte slots at 0xc7f3238 (priority level, animation table, position blo
 (fills a slot when the new level >= current). Many menus/screens call FUN_0c05f2d4 / FUN_0c05f952 (not named).
 
 ## game_lighting (0c05f6d8-0c05fc50)
-Vector helpers using math_vec3_sub / normalize plus a call to nlObjPutSetGlobalAmbience (FUN_0c05fb58). Not named.
+Vector helpers using math_vec3_sub / normalize plus a call to nlObjPutSetGlobalAmbience (draw_set_layer_lighting). Not named.
 
 ## game_resload (0c05fc50-0c061094, 66 functions)  -- the resource manager
 * 24-byte records (loaded flag, count, handle, texture list). `res_textures_register/release`, `res_model_register/release`.
@@ -359,7 +359,7 @@ Placement records of type 13/15 are dispatched by `stage_spawn_gimmick_by_kind` 
 Effect objects: `fx_spawn_NN`/`fx_update_NN` pairs. The first group are position/angle/slot-argument effects (spark and impact style, with random-in-box placement helpers); the second are layer-1 player-bound effects (o+0x1C = owner, effect dies when the owner state changes, e.g. `fx_update_state11_aura`), with joint attachment via FUN_0c062242 (reads the owner's joint block at o+0x300+form*0xDC0). `obj_integrate_motion` (pos += vel, vel += accel) is the shared physics step.
 
 ## Connections
-Player states call sound, object and FX spawners; stage objects call back into player code through the owner pointer (o+0x1C) and the contact lists (o+0x294 / 0x2AE); menu code only uses the sound module, the task allocator and the sprite binder FUN_0c06233a. Unnamed 'FUN_' functions are mostly mode handlers inside the long gimmick/FX update functions and per-character hooks reached through function tables 0xC3393E0/0xC339468/0xC339338 (their code lives in 0c06.. - 0c08..).
+Player states call sound, object and FX spawners; stage objects call back into player code through the owner pointer (o+0x1C) and the contact lists (o+0x294 / 0x2AE); menu code only uses the sound module, the task allocator and the sprite binder obj_part_set_model. Unnamed 'FUN_' functions are mostly mode handlers inside the long gimmick/FX update functions and per-character hooks reached through function tables 0xC3393E0/0xC339468/0xC339338 (their code lives in 0c06.. - 0c08..).
 
 # Modules found (region 0c0c74bc-0c0ed750)
 

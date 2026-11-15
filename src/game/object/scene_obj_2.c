@@ -4,7 +4,7 @@
 extern char g_res_font[];
 typedef struct { int x, y, z; } vec3_int;
 extern int FUN_0c0d5188(void);
-extern void FUN_0c06233a(void *, int, int);
+extern void obj_part_set_model(void *, int, int);
 extern int obj_destroy(void *);
 #define STATE (*(signed char *)(obj + 8))
 #define SUBSTATE (*(signed char *)(obj + 9))
@@ -36,9 +36,9 @@ void fx_tick_05600c(char *obj)
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
         row = (char *)0xC14AD88 + (unsigned char)((unsigned short)(signed char)obj[4] * 28);
-        FUN_0c06233a(CHILD1, ((int)g_res_font), row[24]);
+        obj_part_set_model(CHILD1, ((int)g_res_font), row[24]);
         setup(CHILD1, row);
-        FUN_0c06233a(CHILD2, ((int)g_res_font), row[25] + 1);
+        obj_part_set_model(CHILD2, ((int)g_res_font), row[25] + 1);
         setup(CHILD2, row);
         COUNTER = 1;
         STATE = STATE + 1;

@@ -113,7 +113,7 @@ int obj_tick_class(int, int, int, int);
 int FUN_0c05f2d4(int, int);
 int FUN_0c05f952(void);
 int res_switch_scene(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c06b868(int, int);
 int obj_force_owner_state27(int, int);
 int obj_set_owner_hit_record(int, int);

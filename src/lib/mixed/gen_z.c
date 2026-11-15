@@ -205,7 +205,7 @@ int kdGetDriverMode(int a4);
 int FUN_0c1043c6(int a4, int a5, int a6, int a7);
 int FUN_0c024764(int a4, int a5, int a6, int a7);
 int res_pl_textures_release(int a4);
-int FUN_0c06233a(int a4, int a5, int a6);
+int obj_part_set_model(int a4, int a5, int a6);
 int FUN_0c064534(int a4);
 int pl_ryoma_mode04_phase0(int a4);
 int FUN_0c087cc4(int a4);

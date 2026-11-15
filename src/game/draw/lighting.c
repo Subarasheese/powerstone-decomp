@@ -120,7 +120,7 @@ int FUN_0c05f85a(int a4)
     return math_vec3_normalize((a4 + 0x44));
 }
 
-int FUN_0c05fb58(int a4)
+int draw_set_layer_lighting(int a4)
 {
     register int t0;
     register int t1;

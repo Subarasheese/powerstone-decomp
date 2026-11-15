@@ -6,7 +6,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int, int);
 extern int _quick_odd_mvn();
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o40_float { char p[0x40]; float v; };
@@ -40,7 +40,7 @@ int fx_spawn_044094(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(a4); }
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x54);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC4CFA68, 0x54);
         t5 = (((struct o2E0_int *)(t0))->v);
         (((struct oC_float *)(t5))->v) = (((((struct oC_float *)(t5))->v)) + 200.0f);
         t7 = 0xC;

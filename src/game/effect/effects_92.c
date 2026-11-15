@@ -5,7 +5,7 @@ extern char g_res_kyoutsuu[];
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o5C_float { char p[0x5C]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int a4, int a5, int a6);
+int obj_part_set_model(int a4, int a5, int a6);
 struct vec3_int { int x, y, z; };
 int nlLoadMatrix(char *);
 int nlInvertMatrix(int);
@@ -31,7 +31,7 @@ int FUN_0c041e14(int a4)
         *(unsigned int *)((t0 + 0x10)) = 0xC041E84;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x0);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x0);
     }
     return t0;
 }

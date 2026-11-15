@@ -9,7 +9,7 @@ struct o4C_float { char p[0x4C]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o2E0_int { char p[0x2E0]; int v; };
 
@@ -47,7 +47,7 @@ void fx_spawn_039424(int a4)
         for (;;) {
             t3 = *(signed char *)((a4 + 0x3));
             t4 = *(int *)((((0x2E0 + t0) + t2) + 0x0));
-            FUN_0c06233a(t4, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x6);
+            obj_part_set_model(t4, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x6);
             t1 = (t1 + 0x1);
             *(unsigned char *)((t4 + 0x0)) = 0x1;
             *(unsigned short *)((t4 + 0x2)) = 0x231;

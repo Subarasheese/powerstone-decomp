@@ -8,7 +8,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 int memset(int, int, int);
 
@@ -38,7 +38,7 @@ int fx_spawn_0457d0(void)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)(0xC14A678); }
         t2 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A18, t2);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A18, t2);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x2)) = 0xF;
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t2 << 1) + t2) << 2) + 0xC14A69C)); }
@@ -50,7 +50,7 @@ int fx_spawn_0457d0(void)
         }
         t2 = 0x6;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A18, 0x3);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))), 0xC664A18, 0x3);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x2)) = 0xF;
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t0) + (t2 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t2 << 1) + t2) << 2) + 0xC14A69C)); }

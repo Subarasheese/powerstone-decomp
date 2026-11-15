@@ -6,7 +6,7 @@ extern char g_camera_pos[];
 extern char g_res_kyoutsuu[];
 typedef struct { int x, y, zero; } S12;
 extern char *obj_create(int, int, int, int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern char g_spr_bank_player_fx[];
 extern void *memset(void *, int, int);
 extern void fx_update_trail_chain(void);
@@ -64,7 +64,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E0);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 21);
+    obj_part_set_model(*(char **)(puff + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 21);
     child = *(char **)(puff + 0x2E0);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
@@ -72,7 +72,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E4);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E4), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 22);
+    obj_part_set_model(*(char **)(puff + 0x2E4), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 22);
     child = *(char **)(puff + 0x2E4);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
@@ -80,12 +80,12 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E8);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E8), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 23);
+    obj_part_set_model(*(char **)(puff + 0x2E8), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 23);
     child = *(char **)(puff + 0x2E8);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
     child = *(char **)(puff + 0x2EC);
-    FUN_0c06233a(child, (char *)g_res_kyoutsuu, 106);
+    obj_part_set_model(child, (char *)g_res_kyoutsuu, 106);
     child[0] = 0;
     *(short *)(child + 2) = 543;
     *(float *)(child + 36) = 0.125f;
@@ -102,7 +102,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     *(short *)(puff + 238) = variant;
 }
 
-int FUN_0c0c8cea(int a4, int a5, int a6, float f4)
+int fx_trail_set_part_lengths(int a4, int a5, int a6, float f4)
 {
     register int t19;
     register int t0;
@@ -186,12 +186,20 @@ void fx_trail_resize_chain(char *obj)
         seg = *(char **)(obj + 24);
         if (want > 0) {
             do {
+#ifdef NATIVE_PORT
+                if (seg == 0)       /* the end of the object list (see fx_trail_find_hit_segment) */
+                    break;
+#endif
                 idx++;
                 seg = *(char **)(seg + 24);
             } while (idx < want);
         }
         if (idx < old_count) {
             do {
+#ifdef NATIVE_PORT
+                if (seg == 0)       /* the end of the object list (see fx_trail_find_hit_segment) */
+                    break;
+#endif
                 if (*(void (**)(void))(seg + 16) == fx_update_trail_segment) {
                     obj_destroy(seg);
                     obj[14]--;
@@ -206,6 +214,10 @@ void fx_trail_resize_chain(char *obj)
     seg = *(char **)(obj + 24);
     if (want > 0) {
         do {
+#ifdef NATIVE_PORT
+            if (seg == 0)           /* the end of the object list (see fx_trail_find_hit_segment) */
+                break;
+#endif
             *(vec12 *)(seg + 44) = *(vec12 *)(obj + 44);
             *(vec12 *)(seg + 32) = *(vec12 *)(obj + 32);
             seg_num = (float)(idx + 1);
@@ -222,7 +234,7 @@ void fx_trail_resize_chain(char *obj)
     obj[14] = want;
 }
 
-int FUN_0c0c9394(int a4)
+int fx_trail_find_hit_segment(int a4)
 {
     int stk[5];
     register int t4;
@@ -256,11 +268,23 @@ int FUN_0c0c9394(int a4)
         t53 = t5;
     } else {
         t4 = 0x0;
+#ifdef NATIVE_PORT
+        if (t5 == 0)        /* the parent is the last object of the list: no segment after it (see the walk below) */
+            return *(signed char *)((a4 + 0xF));
+#endif
         for (;;) {
             if (((*(signed char *)((t5 + 0x2D8))) == 0) && (t7 = *(signed char *)((t5 + 0x108)), t3 = t7, t3 == 0)) {
                 t3 = (*(int *)(((int)stk + 4)));
                 t4 = (t4 + 0x1);
                 t5 = (*(int *)((t5 + 0x18)));
+#ifdef NATIVE_PORT
+                /* The walk follows the object list (+0x18), counting the parent's segments (+0xE), but a segment that
+                   destroys itself (fx_update_trail_segment) does not lower that count: the walk can then run off the
+                   end of the list. The console reads boot ROM at 0x2D8 there; on the host nothing is mapped at 0,
+                   so the walk ends at the end of the list, as if no segment had hit. */
+                if (t5 == 0)
+                    return *(signed char *)((a4 + 0xF));
+#endif
                 if ((int)t4 < (int)t3) continue;
                 t14 = *(signed char *)((a4 + 0xF));
                 if ((t14 != 0) && (t15 = *(int *)(((int)stk + 4)), t16 = *(int *)((t5 + 0x18)), t5 = t16, (int)t4 < (int)(t15 - 1))) {
@@ -299,9 +323,27 @@ int FUN_0c0c9394(int a4)
         t52 = t4;
         t53 = t5;
     }
+    /* a segment hit: the trail segments after it go (each destroyed, the count lowered); the return value is what
+       r0 last held, as in the original (the callers ignore it) */
     t58 = *(signed char *)((a4 + 0xF));
-    if ((t58 != 0) && (t59 = *(int *)(((int)stk + 4)), t60 = *(int *)((t53 + 0x18)), (int)t52 < (int)(t59 - 1))) {
-        *(volatile int *)((t60 + 0x10));
+    if (t58 != 0) {
+        t59 = (*(int *)(((int)stk + 4))) - 1;
+        t60 = *(int *)((t53 + 0x18));
+        while ((int)t52 < (int)t59) {
+#ifdef NATIVE_PORT
+            if (t60 == 0)       /* the end of the object list (see the walk above) */
+                break;
+#endif
+            if ((*(int *)((t60 + 0x10))) == 0xC0C9760) {      /* fx_update_trail_segment */
+                obj_destroy((char *)t60);
+                t58 = (*(signed char *)((a4 + 0xE))) - 1;
+                *(unsigned char *)((a4 + 0xE)) = t58;
+            }
+            t52 = (t52 + 0x1);
+            if ((int)t52 >= (int)t59)
+                break;
+            t60 = *(int *)((t60 + 0x18));
+        }
     }
     return t58;
 }

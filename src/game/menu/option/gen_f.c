@@ -72,7 +72,7 @@ int FUN_0c0593e0(int);
 int FUN_0c05a164(int);
 int FUN_0c05a6e8(int);
 int FUN_0c05f2d4(int, int);
-int FUN_0c05fb58(int);
+int draw_set_layer_lighting(int);
 int FUN_0c06231c(int, int, int);
 int FUN_0c0a2f66(int);
 int FUN_0c0d71f4(int);
@@ -110,7 +110,7 @@ int FUN_0c0276c4(int a4);
 int omake_menu_main(int a4, int a5, int a6);
 int FUN_0c021238(int a4, int a5, int a6, int a7);
 int FUN_0c025a0e(int a4, int a5);
-int FUN_0c02d1cc(int a4);
+int draw_fighter(int a4);
 int opt_page3_main(int a4, int a5, int a6);
 int FUN_0c0c8580(int a4);
 
@@ -1075,7 +1075,7 @@ int FUN_0c025a0e(int a4, int a5)
     return R0;
 }
 
-int FUN_0c02d1cc(int a4)
+int draw_fighter(int a4)
 {
     register int t0;
     int t1;
@@ -1128,7 +1128,7 @@ int FUN_0c02d1cc(int a4)
             t25 = t24;
         } else {
             nlSelectMatrixStack(0x1);
-            FUN_0c05fb58((*(signed char *)((a4 + 0x5))));
+            draw_set_layer_lighting((*(signed char *)((a4 + 0x5))));
             if (((unsigned short)(*(short *)((a4 + 0x6))) & 0x200) != 0) {
                 nlSetLightColor(((((struct o60_float *)(a4))->v)), ((((struct o64_float *)(a4))->v)), ((((struct o68_float *)(a4))->v)));
             }

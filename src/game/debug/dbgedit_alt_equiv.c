@@ -46,7 +46,7 @@ void FUN_0c0d00c8(void);
 void FUN_0c0d00ea(char *task, int s);
 int pl_start_motion(char *p, int a, int b);
 struct task *obj_create(int a, int b, int c, int d);
-void FUN_0c06233a(struct sub_obj *s, int tbl, int n);
+void obj_part_set_model(struct sub_obj *s, int tbl, int n);
 
 int dbgedit_update_camera(void)
 {
@@ -126,7 +126,7 @@ void dbgedit_spawn_player_tasks(struct spawner *spawner)
         task->scale_x = 1.0f;
         task->sub->active = 1;
         task->sub->model_id = 15;
-        FUN_0c06233a(task->sub, 0xC6002D0, 0);
+        obj_part_set_model(task->sub, 0xC6002D0, 0);
     }
     spawner->task_a = task;
     task = obj_create(2, 1, 1, 0);
@@ -147,7 +147,7 @@ void dbgedit_spawn_player_tasks(struct spawner *spawner)
         task->scale_z = 1.0f;
         task->scale_y = 1.0f;
         task->scale_x = 1.0f;
-        FUN_0c06233a(task->sub, 0xC664958, spawner->field_156);
+        obj_part_set_model(task->sub, 0xC664958, spawner->field_156);
         task->sub->active = 1;
         task->sub->model_id = 15;
     }

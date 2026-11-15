@@ -116,7 +116,7 @@ float math_vec3_length(int);
 int math_vec3_normalize(int, float);
 int math_mat_transform_vector(int, int);
 int math_mat_get_translate(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int mdl_vtx_iter_begin(int, int);
 int mdl_vtx_iter_next(void);
 int mdl_vtx_get_pos(int);

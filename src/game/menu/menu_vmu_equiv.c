@@ -30,8 +30,8 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o6_uchar { char p[0x6]; unsigned char v; };
-int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_create(int, int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o2D_uchar { char p[0x2D]; unsigned char v; };
 struct o300_int { char p[0x300]; int v; };
@@ -408,7 +408,7 @@ void vmu_menu_spawn_message(int a4)
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t6 = *(signed char *)(((int)stk + 0));
         *(unsigned int *)(((int)stk + 4)) = (((t6 << 2) << 2) + 0xC11C644);
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664B08, (*(signed char *)(((((t6 << 2) << 2) + 0xC11C644) + 0xC))));
         { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(t0))->v)) + 0x4)) = *(struct mv3 *)((*(int *)(((int)stk + 4)))); }
     }
 }
@@ -424,7 +424,7 @@ int FUN_0c01f874(int a4)
 
     *(unsigned char *)(((int)stk + 4)) = a4;
     (((struct o6_uchar *)0xC362A78)->v) = 0x0;
-    t0 = obj_create(0x5, 0x1, 0x9);
+    t0 = obj_create(0x5, 0x1, 0x9, 0x0);    /* the original sets r7 to 0: the parts come from pool 0 */
     t21 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;
@@ -449,7 +449,7 @@ int FUN_0c01f874(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))) + 0x2)) = 0x40F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))), ((int)g_res_system_font), ((0x1 & t3) + 0xC));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t3 << 2)) + 0x0))), ((int)g_res_system_font), ((0x1 & t3) + 0xC));
             t3 = (t3 + 0x1);
             if ((int)t3 >= (int)0x8) {
                 break;
@@ -458,7 +458,7 @@ int FUN_0c01f874(int a4)
         *(unsigned char *)((((((struct o300_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o300_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o300_int *)(t0))->v)) + 0x2)) = 0x40F;
-        FUN_0c06233a(((((struct o300_int *)(t0))->v)), ((int)g_res_system_font), 0x23);
+        obj_part_set_model(((((struct o300_int *)(t0))->v)), ((int)g_res_system_font), 0x23);
         t15 = (((struct o300_int *)(t0))->v);
         *(int *)((int)stk + 0) = (0x40 + t15);
         u20 = ((((struct o0_float *)0xC01F9E4)->v));

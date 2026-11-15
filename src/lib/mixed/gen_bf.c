@@ -89,7 +89,7 @@ int game_reset_objects(void);
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int math_vec3_add(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c062436(int, int, int);
 int FUN_0c06b868(int, int);
 int FUN_0c08bd78(int);

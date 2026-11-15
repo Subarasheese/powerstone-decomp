@@ -111,7 +111,7 @@ int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int FUN_0c0593e0(int);
 int obj_tick_class(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0623a6(int, int, int);
 int obj_force_owner_state27(int, int);
 int obj_set_owner_hit_record(int, int);

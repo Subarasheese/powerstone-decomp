@@ -113,7 +113,7 @@ int obj_create(int, int, int);
 int obj_create_beside(int, int, int, int, int);
 int FUN_0c05f2d4(int, int);
 int FUN_0c061f9c(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c06336c(int);
 int FUN_0c0634b4(int);
 int FUN_0c08d6ec(int, int);

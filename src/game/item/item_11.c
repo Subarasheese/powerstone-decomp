@@ -16,7 +16,7 @@ struct o30C_uchar { char p[0x30C]; unsigned char v; };
 struct o30D_uchar { char p[0x30D]; unsigned char v; };
 struct o30F_uchar { char p[0x30F]; unsigned char v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int item_create(int a4, int a5)
@@ -70,7 +70,7 @@ int item_create(int a4, int a5)
         t12 = 0x0;
         t13 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t13) + 0x0))), 0xC4CFA68, (*(signed char *)(((signed char)t12 + 0xC336374))));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t13) + 0x0))), 0xC4CFA68, (*(signed char *)(((signed char)t12 + 0xC336374))));
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t13) + 0x0))) + 0x0)) = 0x0;
             t18 = *(int *)(((int)stk + 4));
             t19 = *(int *)((((0x2E0 + t0) + t13) + 0x0));

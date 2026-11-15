@@ -5,7 +5,7 @@ int FUN_0c0d0d80(int a4, int a5, int a6, int a7);
 extern char g_hit_table_desc[];
 extern char g_res_kyoutsuu[];
 int FUN_0c0282cc(void);
-int FUN_0c02d420(void);
+int draw_world(void);
 int game_reset_objects(void);
 int FUN_0c0593e0(int);
 int obj_tick_class(int);
@@ -26,7 +26,7 @@ typedef struct { int x, y, z; } Vec12;
 extern void res_stage_release(void);
 extern void res_stage_load(int);
 extern void FUN_0c062d78(void);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern int sprintf(char *, const char *, ...);
 extern void dbg_print_at(char *, int, float, float, float, float);
 struct o44_int { char p[0x44]; int v; };
@@ -74,7 +74,7 @@ int dbgedit_update(float f4, float f5, float f6, float f7, float f8, float f9)
             FUN_0c0593e0(0x2);
             FUN_0c0593e0(0x1);
             FUN_0c0593e0(0x5);
-            FUN_0c02d420();
+            draw_world();
             FUN_0c0282cc();
         }
     } else {
@@ -103,7 +103,7 @@ int dbgedit_update(float f4, float f5, float f6, float f7, float f8, float f9)
         FUN_0c0593e0(0x2);
         FUN_0c0593e0(0x1);
         FUN_0c0593e0(0x5);
-        FUN_0c02d420();
+        draw_world();
         FUN_0c0282cc();
     }
     FUN_0c05f952();
@@ -184,7 +184,7 @@ void dbgedit_select_stage_object(char *menu)
     } else {
         name_src = (char *)g_res_kyoutsuu;
     }
-    FUN_0c06233a(*(char **)(target + 0x2E0), name_src, *(short *)(menu + 156));
+    obj_part_set_model(*(char **)(target + 0x2E0), name_src, *(short *)(menu + 156));
     sprintf(text, (const char *)0x0C1544E0);
     dbg_print_at(text, 7, 80.0f, 104.0f, 8.0f, 8.0f);
     sprintf(text, (const char *)0x0C1544C8, (unsigned char)menu[158]);

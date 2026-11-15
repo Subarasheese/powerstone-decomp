@@ -5,7 +5,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _modls(int);
 extern int _quick_odd_mvn();
 typedef struct { int x, y, z; } vec3_int;
@@ -47,7 +47,7 @@ int fx_spawn_03e918(int a4, int a5)
             t4 = (t4 + 0x4);
             *(unsigned char *)((t6 + 0x0)) = 0x0;
             t7 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a(t6, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), 0x1B);
+            obj_part_set_model(t6, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), 0x1B);
             t5 = (t5 + 0x1);
             *(unsigned short *)((t6 + 0x2)) = 0x1F;
             if ((int)t5 >= (int)0x4) {

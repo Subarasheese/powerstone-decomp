@@ -1,7 +1,7 @@
 /* player-bound effect objects (layer 1): spawn + update pairs for transform/power/hit effects (0c0b87b0-0c0b8968) */
 
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 struct o50_float { char p[0x50]; float v; };
 struct o58_float { char p[0x58]; float v; };
@@ -44,7 +44,7 @@ int fx_spawn_10(int a4, int a5)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x2)) = 0xF;
             t8 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x2);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t3) + 0x0))), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x2);
             t4 = (t4 + 0x1);
         }
         t13 = 0x2DC;

@@ -5,7 +5,7 @@ struct O { char b0, b1, b2, b3, b4, b5; short s6; char c8[8]; void (*fn)(void); 
   float f80, f84, f88, f92; char c96[140]; short s236; short s238; char c240[496]; struct { char b0; char x; short s2; } *p736; struct { char b0; char x; short s2; } *p740; };
 extern struct O *obj_create(int, int, int, int);
 extern void fx_tick_034dd0(void);
-extern void FUN_0c06233a(void *, char *, int);
+extern void obj_part_set_model(void *, char *, int);
 extern char g_spr_bank_player_fx[];
 void fx_spawn_034dd0(struct O *a, int b)
 {
@@ -26,8 +26,8 @@ void fx_spawn_034dd0(struct O *a, int b)
     if (!o->s238) o->s238 = 1;
     o->p736->b0 = 1;
     o->p736->s2 = 57;
-    FUN_0c06233a(o->p736, &g_spr_bank_player_fx[(char)(o->b3 * 24)], 13);
+    obj_part_set_model(o->p736, &g_spr_bank_player_fx[(char)(o->b3 * 24)], 13);
     o->p740->b0 = 1;
     o->p740->s2 = 31;
-    FUN_0c06233a(o->p740, &g_spr_bank_player_fx[(char)(o->b3 * 24)], 14);
+    obj_part_set_model(o->p740, &g_spr_bank_player_fx[(char)(o->b3 * 24)], 14);
 }

@@ -11,7 +11,7 @@ struct o64_float { char p[0x64]; float v; };
 struct o68_float { char p[0x68]; float v; };
 struct o98_float { char p[0x98]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o40_float { char p[0x40]; float v; };
@@ -50,7 +50,7 @@ int demo_spawn_keyframe_mover(int a4, int a5, float f4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x101F;
         (((struct o98_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_syukyaku), (*(int *)(((int)stk + 0))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_syukyaku), (*(int *)(((int)stk + 0))));
         *(unsigned char *)((t0 + 0x8)) = 0x0;
         t14 = *(signed char *)(((int)stk + 4));
         *(unsigned char *)((t0 + 0xA)) = t14;

@@ -55,7 +55,7 @@ struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_short { char p[0xF0]; short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c097eb6(int);
 int FUN_0c0bf488(int, int);
 int FUN_0c0c571c(int, int);
@@ -94,28 +94,28 @@ int pl_step_motion(int);
 int pl_stick_dir_angle(int);
 int snd_play_char_voice(int, int);
 int thunk_math_mat_get_translate(int, int);
-int FUN_0c086070(int a4);
+int pl_kraken_attack_kind4_phase3(int a4);
 int FUN_0c05e244(int a4);
 int FUN_0c05dd38(int a4);
-int FUN_0c085e8a(int a4);
+int pl_kraken_attack_kind4_phase1(int a4);
 void FUN_0c0aff3c(int a4);
 int FUN_0c07cf8e(int a4);
 int FUN_0c07d0c0(int a4);
 int FUN_0c041c3a(int a4);
 int FUN_0c07cdf8(int a4);
 int FUN_0c041d14(int a4);
-int FUN_0c085df8(int a4);
+int pl_kraken_attack_kind4_phase0(int a4);
 int FUN_0c041b3a(int a4);
 int FUN_0c041bc0(int a4);
-int FUN_0c0862b4(int a4);
+int pl_kraken_attack_kind4_phase6(int a4);
 int FUN_0c088fb2(int a4);
-int FUN_0c085fd2(int a4);
+int pl_kraken_attack_kind4_phase2(int a4);
 int FUN_0c07ceb2(int a4);
 int FUN_0c05ba04(int a4);
-int FUN_0c086284(int a4);
+int pl_kraken_attack_kind4_phase4(int a4);
 int FUN_0c097eb0(int a4);
 
-int FUN_0c086070(int a4)
+int pl_kraken_attack_kind4_phase3(int a4)
 {
     int stk[6];
     register int t0;
@@ -141,7 +141,7 @@ int FUN_0c086070(int a4)
     pl_step_motion(a4);
     t2 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 8);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 12);   /* the vector goes to stk+12..20, where the code below reads it (the original's r15+8) */
     *(float *)(((int)stk + 12)) = (((((struct o20_float *)(t0))->v)) - (*(float *)(((int)stk + 12))));
     *(float *)(((int)stk + 16)) = (((((struct o24_float *)(t0))->v)) - (*(float *)(((int)stk + 16))));
     *(float *)(((int)stk + 20)) = (((((struct o28_float *)(t0))->v)) - (*(float *)(((int)stk + 20))));
@@ -322,7 +322,7 @@ int FUN_0c05dd38(int a4)
     return math_vec3_accumulate((a4 + 0x38), (a4 + 0x44));
 }
 
-int FUN_0c085e8a(int a4)
+int pl_kraken_attack_kind4_phase1(int a4)
 {
     int stk[7];
     register int t9;
@@ -403,7 +403,7 @@ void FUN_0c0aff3c(int a4)
         t1 = 0x0;
         for (;;) {
             t2 = *(int *)((((t1 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t2, 0xC664958, (t1 + 0x4));
+            obj_part_set_model(t2, 0xC664958, (t1 + 0x4));
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             *(unsigned short *)((t2 + 0x2)) = 0xF;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x4)) = *(struct mv3 *)((((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x18))) + (((t1 << 1) + t1) << 2)) + 0x30)); }
@@ -631,7 +631,7 @@ int FUN_0c041d14(int a4)
     return t1;
 }
 
-int FUN_0c085df8(int a4)
+int pl_kraken_attack_kind4_phase0(int a4)
 {
     register int t0;
 
@@ -658,7 +658,7 @@ int FUN_0c085df8(int a4)
         (((struct o71F4_ushort *)(a4))->v) = 0x0;
     }
     (((struct oF0_ushort *)(a4))->v) = 0xD;
-    return FUN_0c085e8a(a4);
+    return pl_kraken_attack_kind4_phase1(a4);
 }
 
 int FUN_0c041b3a(int a4)
@@ -755,7 +755,7 @@ int FUN_0c041bc0(int a4)
     return 0xEC;
 }
 
-int FUN_0c0862b4(int a4)
+int pl_kraken_attack_kind4_phase6(int a4)
 {
     register int t0;
     register int t3;
@@ -806,7 +806,7 @@ int FUN_0c088fb2(int a4)
     return snd_play_char_voice(a4, 0x34);
 }
 
-int FUN_0c085fd2(int a4)
+int pl_kraken_attack_kind4_phase2(int a4)
 {
     int t0;
     register int t1;
@@ -874,7 +874,7 @@ int FUN_0c05ba04(int a4)
     return 0x8;
 }
 
-int FUN_0c086284(int a4)
+int pl_kraken_attack_kind4_phase4(int a4)
 {
     register int t4;
     register int t3;

@@ -8,7 +8,7 @@ extern int fx_tick_0567c4(void);
 extern struct spawn_obj *obj_create(int, int, int, int);
 typedef struct { int x, y, z; } Vec3i;
 extern int FUN_0c0d5188(void);
-extern void FUN_0c06233a(void *, int, int);
+extern void obj_part_set_model(void *, int, int);
 extern int obj_destroy(void *);
 #define STATE (*(signed char *)(obj + 8))
 #define SUBSTATE (*(signed char *)(obj + 9))
@@ -47,7 +47,7 @@ void fx_tick_056b2c(char *obj)
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
         layout_row = (char *)0xC14B020 + (unsigned char)((unsigned short)ROW_INDEX * 28);
-        FUN_0c06233a(ACTOR_A, ((int)g_res_font), layout_row[24]);
+        obj_part_set_model(ACTOR_A, ((int)g_res_font), layout_row[24]);
         *ACTOR_A = 0;
         *(Vec3i *)(ACTOR_A + 4) = *(Vec3i *)layout_row;
         *(Vec3i *)(ACTOR_A + 28) = *(Vec3i *)(layout_row + 12);
@@ -61,7 +61,7 @@ void fx_tick_056b2c(char *obj)
             *(float *)(ACTOR_A + 72) = 0.29999998211860657f;
             *(float *)(ACTOR_A + 76) = 0.0f;
         }
-        FUN_0c06233a(ACTOR_B, ((int)g_res_font), layout_row[25] + 1);
+        obj_part_set_model(ACTOR_B, ((int)g_res_font), layout_row[25] + 1);
         *ACTOR_B = 0;
         *(Vec3i *)(ACTOR_B + 4) = *(Vec3i *)layout_row;
         *(Vec3i *)(ACTOR_B + 28) = *(Vec3i *)(layout_row + 12);

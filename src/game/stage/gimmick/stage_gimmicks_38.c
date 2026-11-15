@@ -2,7 +2,7 @@
 
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 
 void stage_gimmick_35_spawn(void)
@@ -39,7 +39,7 @@ void stage_gimmick_35_spawn(void)
             t3 = *(signed char *)((((t1 + 0x1) - 1) + 0x0));
             *(unsigned int *)(((int)stk + 4)) = (t2 + 0x4);
             t4 = *(int *)((((t2 + 0x4) - 4) + 0x0));
-            FUN_0c06233a(t4, 0xC664958, t3);
+            obj_part_set_model(t4, 0xC664958, t3);
             *(unsigned char *)((t4 + 0x0)) = 0x1;
             *(unsigned short *)((t4 + 0x2)) = 0xF;
             { struct mv3 { int w[3]; }; *(struct mv3 *)((t4 + 0x4)) = *(struct mv3 *)(((*(int *)((((short)((short)(*(signed char *)0xC7F3051) * (short)0x34) + 0xC350B60) + 0x18))) + ((((signed char)t3 << 1) + (signed char)t3) << 2))); }

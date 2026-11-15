@@ -1,7 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03d60c-0c03d8b0) */
 
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int thunk_math_mat_get_translate(int, int);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -53,7 +53,7 @@ int fx_spawn_03d60c(int a4, int a5)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t10) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t10) + 0x0))) + 0x2)) = 0xF;
             t13 = *(signed char *)((a4 + 0x3));
-            t17 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t10) + 0x0))), ((signed char)((((t13 << 1) + t13) << 2) << 1) + 0xC6002D0), t9);
+            t17 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t10) + 0x0))), ((signed char)((((t13 << 1) + t13) << 2) << 1) + 0xC6002D0), t9);
             t8 = (t8 + 0x1);
             t9 = (t9 + 0x1);
             t10 = (t10 + 0x4);

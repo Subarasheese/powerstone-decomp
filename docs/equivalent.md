@@ -5945,10 +5945,50 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 101 of 141 instructions
 
 ### FUN_0c01f874 (`0C01F874`, 282 bytes, `src/game/menu/menu_vmu_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/menu_vmu_equiv/FUN_0c01f874.json`
+- equivalent on 41 development and 1 holdout cases, in `tests/menu_vmu_equiv/FUN_0c01f874.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 32 of 134 instructions
+- the cases run 141 of 141 instructions
 
 ### FUN_0c01f98e (`0C01F98E`, 18 bytes, `src/game/menu/menu_vmu_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/menu_vmu_equiv/FUN_0c01f98e.json`
@@ -6204,7 +6244,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 39 of 65 instructions
 
 ### FUN_0c02002a (`0C02002A`, 184 bytes, `src/game/menu/menu_vmu_alt7_equiv.c`)
-- equivalent on 7 development and 18 holdout cases, in `tests/menu_vmu_alt7_equiv/FUN_0c02002a.json`
+- equivalent on 24 development and 18 holdout cases, in `tests/menu_vmu_alt7_equiv/FUN_0c02002a.json`
 - case 12
 - case 15
 - case 16
@@ -6212,6 +6252,23 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 20
 - case 28
 - case 33
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - case 69
 - case 104
 - case 57
@@ -6230,7 +6287,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 39
 - case 84
 - case 45
-- the cases run 17 of 89 instructions
+- the cases run 86 of 92 instructions
 
 ### FUN_0c0200e2 (`0C0200E2`, 172 bytes, `src/game/menu/menu_vmu_alt3_equiv.c`)
 - equivalent on 8 development and 18 holdout cases, in `tests/menu_vmu_alt3_equiv/FUN_0c0200e2.json`
@@ -10344,14 +10401,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 34 of 34 instructions
 
-### FUN_0c02cf18 (`0C02CF18`, 674 bytes, `src/game/draw/draw_frame_alt3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt3/FUN_0c02cf18.json`
+### draw_object_classes (`0C02CF18`, 674 bytes, `src/game/draw/draw_frame_alt3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt3/draw_object_classes.json`
 - rescue: flips 0C02D198
 - rescue: flips 0C02D198
 - the cases run 76 of 274 instructions
 
-### FUN_0c02d1cc (`0C02D1CC`, 596 bytes, `src/game/menu/option/gen_f.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_f/FUN_0c02d1cc.json`
+### draw_fighter (`0C02D1CC`, 596 bytes, `src/game/menu/option/gen_f.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_f/draw_fighter.json`
 - case 0
 - case 1
 - case 2
@@ -10390,14 +10447,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 78
 - the cases run 31 of 263 instructions
 
-### FUN_0c02d420 (`0C02D420`, 56 bytes, `src/game/draw/draw_frame_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt/FUN_0c02d420.json`
+### draw_world (`0C02D420`, 56 bytes, `src/game/draw/draw_frame_alt.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt/draw_world.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 23 of 28 instructions
 
-### FUN_0c02d458 (`0C02D458`, 38 bytes, `src/game/draw/draw_frame.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/draw_frame/FUN_0c02d458.json`
+### draw_frame_should_skip (`0C02D458`, 38 bytes, `src/game/draw/draw_frame.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/draw_frame/draw_frame_should_skip.json`
 - case 1
 - case 73
 - case 0
@@ -18497,8 +18554,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C05F992 (taken)
 - the cases run 221 of 236 instructions
 
-### FUN_0c05fb58 (`0C05FB58`, 150 bytes, `src/game/draw/lighting.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/lighting/FUN_0c05fb58.json`
+### draw_set_layer_lighting (`0C05FB58`, 150 bytes, `src/game/draw/lighting.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/lighting/draw_set_layer_lighting.json`
 - case 0
 - case 1
 - case 3
@@ -18978,8 +19035,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - the cases run 15 of 15 instructions
 
-### FUN_0c06233a (`0C06233A`, 108 bytes, `src/game/draw/mdl_util.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/mdl_util/FUN_0c06233a.json`
+### obj_part_set_model (`0C06233A`, 108 bytes, `src/game/draw/mdl_util.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/mdl_util/obj_part_set_model.json`
 - case 0
 - case 1
 - case 2
@@ -24988,16 +25045,16 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - the cases run 6 of 6 instructions
 
-### FUN_0c085c54 (`0C085C54`, 186 bytes, `src/game/flow/gen_bn.c`)
-- equivalent on 2 development and 2 holdout cases, in `tests/gen_bn/FUN_0c085c54.json`
+### pl_kraken_attack_kind3_phase0 (`0C085C54`, 186 bytes, `src/game/flow/gen_bn.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/gen_bn/pl_kraken_attack_kind3_phase0.json`
 - rescue: empty case
 - rescue: empty case
 - rescue: empty case
 - rescue: empty case
 - the cases run 36 of 43 instructions
 
-### FUN_0c085d0e (`0C085D0E`, 94 bytes, `src/game/player/chara/kraken/gen_cl.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_cl/FUN_0c085d0e.json`
+### pl_kraken_attack_kind3_phase1 (`0C085D0E`, 94 bytes, `src/game/player/chara/kraken/gen_cl.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cl/pl_kraken_attack_kind3_phase1.json`
 - case 14
 - case 0
 - case 2
@@ -25036,14 +25093,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 80
 - the cases run 34 of 46 instructions
 
-### FUN_0c085d6c (`0C085D6C`, 36 bytes, `src/lib/mixed/gen_bz.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bz/FUN_0c085d6c.json`
+### pl_kraken_attack_kind3_phase2 (`0C085D6C`, 36 bytes, `src/lib/mixed/gen_bz.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bz/pl_kraken_attack_kind3_phase2.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
 
-### FUN_0c085d90 (`0C085D90`, 12 bytes, `src/lib/mixed/gen_bz.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bz/FUN_0c085d90.json`
+### pl_kraken_attack_kind3_phase3 (`0C085D90`, 12 bytes, `src/lib/mixed/gen_bz.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bz/pl_kraken_attack_kind3_phase3.json`
 - case 0
 - case 1
 - case 2
@@ -25082,38 +25139,78 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 112
 - the cases run 6 of 6 instructions
 
-### FUN_0c085df8 (`0C085DF8`, 146 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085df8.json`
+### pl_kraken_attack_kind4_phase0 (`0C085DF8`, 146 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase0.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 36 of 43 instructions
 
-### FUN_0c085e8a (`0C085E8A`, 328 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085e8a.json`
+### pl_kraken_attack_kind4_phase1 (`0C085E8A`, 328 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase1.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 61 of 132 instructions
 
-### FUN_0c085fd2 (`0C085FD2`, 112 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085fd2.json`
+### pl_kraken_attack_kind4_phase2 (`0C085FD2`, 112 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase2.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 33 of 56 instructions
 
-### FUN_0c086070 (`0C086070`, 532 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c086070.json`
+### pl_kraken_attack_kind4_phase3 (`0C086070`, 532 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 41 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase3.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
 - the cases run 157 of 230 instructions
 
-### FUN_0c086284 (`0C086284`, 36 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c086284.json`
+### pl_kraken_attack_kind4_phase4 (`0C086284`, 36 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase4.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
 
-### FUN_0c0862a8 (`0C0862A8`, 12 bytes, `src/game/player/chara/kraken/gen_dj.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_dj/FUN_0c0862a8.json`
+### pl_kraken_attack_kind4_phase5 (`0C0862A8`, 12 bytes, `src/game/player/chara/kraken/gen_dj.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dj/pl_kraken_attack_kind4_phase5.json`
 - case 0
 - case 1
 - case 2
@@ -25152,14 +25249,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 6 of 6 instructions
 
-### FUN_0c0862b4 (`0C0862B4`, 116 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c0862b4.json`
+### pl_kraken_attack_kind4_phase6 (`0C0862B4`, 116 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase6.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 58 of 58 instructions
 
-### FUN_0c086350 (`0C086350`, 66 bytes, `src/game/effect/gen_db.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/FUN_0c086350.json`
+### pl_kraken_attack_kind4 (`0C086350`, 66 bytes, `src/game/effect/gen_db.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/pl_kraken_attack_kind4.json`
 - case 13
 - case 0
 - case 1
@@ -33814,8 +33911,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 157
 - the cases run 17 of 17 instructions
 
-### FUN_0c0a3f30 (`0C0A3F30`, 32 bytes, `src/game/sound/sound_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/sound_2_equiv/FUN_0c0a3f30.json`
+### snd_play_se_indexed (`0C0A3F30`, 32 bytes, `src/game/sound/sound_2_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/sound_2_equiv/snd_play_se_indexed.json`
 - case 0
 - case 2
 - case 1
@@ -38885,8 +38982,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C0C8732 (taken)
 - the cases run 179 of 248 instructions
 
-### FUN_0c0c8cea (`0C0C8CEA`, 140 bytes, `src/game/effect/special/effects_shells.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/effects_shells/FUN_0c0c8cea.json`
+### fx_trail_set_part_lengths (`0C0C8CEA`, 140 bytes, `src/game/effect/special/effects_shells.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/effects_shells/fx_trail_set_part_lengths.json`
 - case 17
 - case 16
 - case 0
@@ -38925,8 +39022,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 102
 - the cases run 58 of 70 instructions
 
-### FUN_0c0c9394 (`0C0C9394`, 402 bytes, `src/game/effect/special/effects_shells.c`)
-- equivalent on 19 development and 19 holdout cases, in `tests/effects_shells/FUN_0c0c9394.json`
+### fx_trail_find_hit_segment (`0C0C9394`, 402 bytes, `src/game/effect/special/effects_shells.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/effects_shells/fx_trail_find_hit_segment.json`
 - case 0
 - case 1
 - case 2
@@ -38946,6 +39043,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 16
 - case 17
 - directed: flips 0C0C93CE (not taken)
+- a segment hit (the second of four): the parent aims at it and the trail segments after it are destroyed, the count lowered (the found path and its tail loop)
 - case 133
 - case 147
 - case 83
@@ -38965,7 +39063,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 140
 - case 98
 - directed: flips 0C0C94DA (taken)
-- the cases run 63 of 178 instructions
+- the cases run 179 of 179 instructions
 
 ### FUN_0c0c9526 (`0C0C9526`, 270 bytes, `src/game/save/gen_t.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_t/FUN_0c0c9526.json`
@@ -41827,8 +41925,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C0D4DBA (taken)
 - the cases run 103 of 103 instructions
 
-### FUN_0c0d4ff4 (`0C0D4FF4`, 202 bytes, `src/game/menu/gen_az.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_az/FUN_0c0d4ff4.json`
+### game_play_game_over_update (`0C0D4FF4`, 202 bytes, `src/game/menu/gen_az.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_az/game_play_game_over_update.json`
 - case 0
 - case 9
 - case 1
@@ -41867,8 +41965,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 34 of 71 instructions
 
-### FUN_0c0d50be (`0C0D50BE`, 166 bytes, `src/game/player/state/gen_bv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bv/FUN_0c0d50be.json`
+### game_world_tick (`0C0D50BE`, 166 bytes, `src/game/player/state/gen_bv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bv/game_world_tick.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 83 of 83 instructions
@@ -76853,7 +76951,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 91 of 159 instructions
 
 ### ending_obj_update_t07 (`0C013876`, 562 bytes, `src/game/demo/ending_objects_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/ending_objects_equiv/ending_obj_update_t07.json`
+- equivalent on 55 development and 18 holdout cases, in `tests/ending_objects_equiv/ending_obj_update_t07.json`
 - case 2
 - case 3
 - case 4
@@ -76872,6 +76970,43 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 24
 - case 27
 - case 28
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - case 155
 - case 150
 - case 152
@@ -76890,7 +77025,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 58
 - case 158
 - case 129
-- the cases run 36 of 230 instructions
+- the cases run 225 of 230 instructions
 
 ### ending_obj_update_t08 (`0C013AA8`, 786 bytes, `src/game/demo/ending_objects_alt2_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/ending_objects_alt2_equiv/ending_obj_update_t08.json`
@@ -77271,10 +77406,50 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 19 of 56 instructions
 
 ### ending_spawn_obj_t03 (`0C01491C`, 184 bytes, `src/game/demo/ending_objects_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_t03.json`
+- equivalent on 41 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_t03.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 32 of 87 instructions
+- the cases run 92 of 92 instructions
 
 ### ending_spawn_obj_t04 (`0C014A9C`, 110 bytes, `src/game/demo/ending_objects_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_t04.json`
@@ -77427,10 +77602,50 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 27 of 27 instructions
 
 ### ending_spawn_obj_typed (`0C0147C8`, 196 bytes, `src/game/demo/ending_objects_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_typed.json`
+- equivalent on 41 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_typed.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 26 of 96 instructions
+- the cases run 98 of 98 instructions
 
 ### ending_spawn_obj_typed_b (`0C014C8C`, 118 bytes, `src/game/demo/ending_objects_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/ending_objects_equiv/ending_spawn_obj_typed_b.json`
@@ -79243,11 +79458,110 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - fuzz 13.0
 - the cases run 348 of 380 instructions
 
-### fx_spawn_040a84 (`0C040A84`, 1844 bytes, `src/game/effect/effects_86.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/effects_86/fx_spawn_040a84.json`
+### fx_spawn_040a84 (`0C040A84`, 230 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 41 development and 1 holdout cases, in `tests/effects_86/fx_spawn_040a84.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 24 of 650 instructions
+- the cases run 115 of 115 instructions
+
+### fx_spawn_040a84_beside (`0C040CD0`, 1256 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 40 development and 15 holdout cases, in `tests/effects_86/fx_spawn_040a84_beside.json`
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- the cases run 505 of 546 instructions
 
 ### fx_spawn_0416d8 (`0C0416D8`, 194 bytes, `src/game/effect/effects_89.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_89/fx_spawn_0416d8.json`
@@ -82315,6 +82629,96 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 128 of 437 instructions
+
+### fx_tick_040a84_first (`0C040B6A`, 358 bytes, `src/game/effect/effects_86.c`)
+- equivalent on 50 development and 36 holdout cases, in `tests/effects_86/fx_tick_040a84_first.json`
+- hand: state 0, the sprite reaches full size (state 1, its scale set from 0C149B14)
+- hand: state 0, still growing
+- hand: state 1, the count ends with +0xEE set: the voice and the sparks
+- hand: state 1, the count ends with +0xEE clear: the sparks only
+- hand: state 1, the count goes on
+- hand: state 2, fading out (state 3)
+- hand: state 2, still fading
+- hand: state 3: the object ends
+- hand: an unknown state: nothing
+- hand: FUN_0c0555dc set: state 3 and the end
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- the cases run 122 of 122 instructions
 
 ### fx_tick_0416d8 (`0C04179A`, 92 bytes, `src/game/effect/effects_89.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/effects_89/fx_tick_0416d8.json`
@@ -119092,6 +119496,486 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 63
 - the cases run 12 of 17 instructions
 
+### pl_kraken_attack_dispatch (`0C084B1C`, 80 bytes, `src/gen_ec.c`)
+- equivalent on 68 development and 18 holdout cases, in `tests/gen_ec/pl_kraken_attack_dispatch.json`
+- hand: attack type (+0x7223) 0
+- hand: attack type (+0x7223) 1
+- hand: attack type (+0x7223) 2
+- hand: attack type (+0x7223) 3
+- hand: attack type (+0x7223) 4
+- hand: attack type (+0x7223) 5
+- hand: attack type (+0x7223) 6
+- hand: attack type (+0x7223) 7
+- hand: attack type (+0x7223) 8
+- hand: attack type (+0x7223) 9
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 71
+- case 78
+- case 62
+- case 89
+- case 107
+- case 88
+- case 95
+- case 50
+- case 92
+- case 74
+- case 80
+- case 60
+- case 97
+- case 118
+- case 110
+- case 99
+- case 103
+- case 73
+- the cases run 40 of 40 instructions
+
+### pl_kraken_attack_kind1 (`0C084CB0`, 42 bytes, `src/gen_ec.c`)
+- equivalent on 63 development and 18 holdout cases, in `tests/gen_ec/pl_kraken_attack_kind1.json`
+- hand: phase (+0xB) 0
+- hand: phase (+0xB) 1
+- hand: phase (+0xB) 2
+- hand: phase (+0xB) 3
+- hand: phase (+0xB) 4
+- case 12
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 93
+- case 57
+- case 52
+- case 77
+- case 112
+- case 61
+- case 108
+- case 44
+- case 111
+- case 63
+- case 59
+- case 72
+- case 104
+- case 62
+- case 68
+- case 115
+- case 65
+- case 36
+- the cases run 21 of 21 instructions
+
+### pl_kraken_attack_kind1_phase0 (`0C084B6C`, 182 bytes, `src/gen_ec.c`)
+- equivalent on 44 development and 1 holdout cases, in `tests/gen_ec/pl_kraken_attack_kind1_phase0.json`
+- hand: stick held (+0x2DC & 0xF0): the facing from the stick plus the camera yaw; the super timer stays above 0
+- hand: no stick: the facing toward the target; the super timer would go below 0 and is held at 0
+- hand: stick held, the super timer at exactly 288 (it reaches 0)
+- rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- rescue: empty case
+- the cases run 44 of 44 instructions
+
+### pl_kraken_attack_kind1_phase1 (`0C084C22`, 94 bytes, `src/gen_ec.c`)
+- equivalent on 58 development and 18 holdout cases, in `tests/gen_ec/pl_kraken_attack_kind1_phase1.json`
+- case 12
+- case 0
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 18
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 48
+- case 86
+- case 37
+- case 93
+- case 112
+- case 88
+- case 84
+- case 45
+- case 65
+- case 100
+- case 38
+- case 108
+- case 75
+- case 77
+- case 59
+- case 114
+- case 106
+- case 56
+- the cases run 47 of 47 instructions
+
+### pl_kraken_attack_kind1_phase2 (`0C084C80`, 36 bytes, `src/gen_ec.c`)
+- equivalent on 43 development and 1 holdout cases, in `tests/gen_ec/pl_kraken_attack_kind1_phase2.json`
+- hand: the motion ended (+0x71AA): the phase counter +0xB goes on
+- hand: the motion goes on
+- rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- rescue: empty case
+- the cases run 18 of 18 instructions
+
+### pl_kraken_attack_kind1_phase3 (`0C084CA4`, 12 bytes, `src/gen_ec.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_ec/pl_kraken_attack_kind1_phase3.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 103
+- case 101
+- case 70
+- case 66
+- case 60
+- case 117
+- case 119
+- case 108
+- case 54
+- case 85
+- case 112
+- case 69
+- case 74
+- case 47
+- case 87
+- case 84
+- case 82
+- case 86
+- the cases run 6 of 6 instructions
+
+### pl_kraken_attack_kind2 (`0C085264`, 66 bytes, `src/gen_ee.c`)
+- equivalent on 66 development and 18 holdout cases, in `tests/gen_ee/pl_kraken_attack_kind2.json`
+- hand: phase (+0xB) 0
+- hand: phase (+0xB) 1
+- hand: phase (+0xB) 2
+- hand: phase (+0xB) 3
+- hand: phase (+0xB) 4
+- hand: phase (+0xB) 5
+- hand: phase (+0xB) 6
+- hand: phase (+0xB) 7
+- case 14
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 15
+- case 16
+- case 17
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 81
+- case 79
+- case 97
+- case 59
+- case 49
+- case 45
+- case 75
+- case 86
+- case 37
+- case 92
+- case 107
+- case 56
+- case 40
+- case 69
+- case 95
+- case 63
+- case 104
+- case 46
+- the cases run 33 of 33 instructions
+
 ### pl_kraken_attack_kind2_phase0 (`0C084D0C`, 146 bytes, `src/game/player/chara/kraken/kraken_states_2.c`)
 - equivalent on 3 development and 2 holdout cases, in `tests/kraken_states_2/pl_kraken_attack_kind2_phase0.json`
 - turn flags set, big counter
@@ -119118,16 +120002,96 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 33 of 56 instructions
 
 ### pl_kraken_attack_kind2_phase3 (`0C084F84`, 532 bytes, `src/game/player/chara/kraken/kraken_states_2_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/kraken_states_2_alt/pl_kraken_attack_kind2_phase3.json`
+- equivalent on 41 development and 1 holdout cases, in `tests/kraken_states_2_alt/pl_kraken_attack_kind2_phase3.json`
 - rescue: empty case
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - rescue: empty case
-- the cases run 157 of 230 instructions
+- the cases run 218 of 232 instructions
 
 ### pl_kraken_attack_kind2_phase4 (`0C085198`, 36 bytes, `src/game/player/chara/kraken/kraken_states_2_alt.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/kraken_states_2_alt/pl_kraken_attack_kind2_phase4.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
+
+### pl_kraken_attack_kind2_phase5 (`0C0851BC`, 12 bytes, `src/gen_eg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_eg/pl_kraken_attack_kind2_phase5.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 101
+- case 93
+- case 36
+- case 45
+- case 89
+- case 105
+- case 102
+- case 99
+- case 42
+- case 60
+- case 78
+- case 55
+- case 70
+- case 87
+- case 61
+- case 62
+- case 47
+- case 40
+- the cases run 6 of 6 instructions
 
 ### pl_kraken_attack_kind2_phase6 (`0C0851C8`, 116 bytes, `src/game/player/chara/kraken/kraken_states_2_alt.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/kraken_states_2_alt/pl_kraken_attack_kind2_phase6.json`
@@ -119215,7 +120179,96 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 116
 - the cases run 17 of 21 instructions
 
-### pl_kraken_attack_kind6_phase0 (`0C085310`, 266 bytes, `src/game/player/chara/kraken/kraken_states_2_alt2.c`)
+### pl_kraken_attack_kind6 (`0C0855BC`, 74 bytes, `src/gen_ee.c`)
+- equivalent on 67 development and 18 holdout cases, in `tests/gen_ee/pl_kraken_attack_kind6.json`
+- hand: phase (+0xB) 0
+- hand: phase (+0xB) 1
+- hand: phase (+0xB) 2
+- hand: phase (+0xB) 3
+- hand: phase (+0xB) 4
+- hand: phase (+0xB) 5
+- hand: phase (+0xB) 6
+- hand: phase (+0xB) 7
+- hand: phase (+0xB) 8
+- case 13
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 14
+- case 15
+- case 16
+- case 17
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 115
+- case 50
+- case 75
+- case 48
+- case 110
+- case 70
+- case 85
+- case 101
+- case 64
+- case 97
+- case 109
+- case 104
+- case 93
+- case 72
+- case 81
+- case 69
+- case 84
+- case 39
+- the cases run 37 of 37 instructions
+
+### pl_kraken_attack_kind6_phase0 (`0C085310`, 128 bytes, `src/game/player/chara/kraken/kraken_states_2_alt2.c`)
 - equivalent on 4 development and 8 holdout cases, in `tests/kraken_states_2_alt2/pl_kraken_attack_kind6_phase0.json`
 - high nibble set, easing, timer 4
 - nibble clear, timer 1 -> 0 -> reset to 1
@@ -119229,7 +120282,87 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - timer 0 -> -1
 - callee pl_apply_motion_translation leaves the timer at 1: it reaches 0 and is reset to 1
 - same with timer 2 left over (no reset)
-- the cases run 133 of 133 instructions
+- the cases run 54 of 54 instructions
+
+### pl_kraken_attack_kind6_phase1 (`0C085390`, 138 bytes, `src/game/player/chara/kraken/kraken_states_2_alt2.c`)
+- equivalent on 58 development and 18 holdout cases, in `tests/kraken_states_2_alt2/pl_kraken_attack_kind6_phase1.json`
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- the cases run 69 of 69 instructions
 
 ### pl_kraken_attack_kind6_phase2 (`0C085458`, 62 bytes, `src/game/player/chara/kraken/kraken_states_2_alt.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/kraken_states_2_alt/pl_kraken_attack_kind6_phase2.json`
@@ -119328,6 +120461,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
+
+### pl_kraken_attack_kind6_phase7 (`0C0855B0`, 12 bytes, `src/gen_eg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_eg/pl_kraken_attack_kind6_phase7.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 57
+- case 91
+- case 47
+- case 116
+- case 100
+- case 97
+- case 103
+- case 119
+- case 59
+- case 74
+- case 106
+- case 115
+- case 99
+- case 60
+- case 81
+- case 76
+- case 78
+- case 70
+- the cases run 6 of 6 instructions
 
 ### pl_kraken_attack_kind78 (`0C086636`, 102 bytes, `src/game/player/chara/kraken/kraken_states_4.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/kraken_states_4/pl_kraken_attack_kind78.json`
@@ -119543,7 +120716,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 65
 - the cases run 17 of 21 instructions
 
-### pl_kraken_mode07_update (`0C084AC2`, 478 bytes, `src/game/player/chara/kraken/kraken_states_1_alt.c`)
+### pl_kraken_mode07_update (`0C084AC2`, 34 bytes, `src/game/player/chara/kraken/kraken_states_1_alt.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/kraken_states_1_alt/pl_kraken_mode07_update.json`
 - case 12
 - case 0
