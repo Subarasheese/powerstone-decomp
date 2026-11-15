@@ -17,3 +17,30 @@
 #                                                executable that holds the character)
 #   name <file> <offset> <text>   /   table <addr> <group> <label>   /   sound <file> <entry> <text>   /   image <file> <offset> <text>   names (the viewer writes these)
 # Nothing is needed here to start: with no rules the map still lists every model, grouped by the table that holds it.
+
+# The characters (11, two forms each; the last has one model file for both), in bind pose. One line each, from the loader's record at 0C34BBA0 + character * 0x120 + form * 0x48 and the model file table at 0C14DA54.
+# Falcon (P00.MDL, base form; the character ids follow the sound-bank order: 0 Falcon, 1 Ryoma, 2 Wang-Tang-Tang, 3 Jack, 4 Gunrock, 5 Garuda, 6 Ayame, 7 Rouge, 8 Kraken, 9 and 10 Valgas), in bind pose. The loader's record at 0C34BBA0 holds the offsets of the parts in the file (word 0, 19 of them), the 19 bone
+# offsets (word 10) and the second group of parts with their offsets (word 11) and links (word 14, a byte pair each: the second is the bone it hangs
+# from); words 1-4 of the record are the models the setup hangs on bones 4 (head, 2 variants), 8 and 12 (hands, 4 variants each), the first of each is placed;
+# the parents of the 19 bones are the table at 0C14E3D4 (FUN_0c0624ea, character setup: 128 marks the root).
+fileparts Character_00_form_0 0x00 file=P00.MDL models=C347720:19 bones=C347820 parents=C14E3D4:128 extra=C3477B8:3:C347904:C34794C attach=C3477D0:1:4 attach=C3477E0:1:8 attach=C347800:1:12 mot=P00_MOT.MDT
+fileparts Character_00_form_1 0x00 file=P01.MDL models=C347954:19 bones=C347A54 parents=C14E3D4:128 extra=C3479EC:3:C347B38:C347B80 attach=C347A04:1:4 attach=C347A14:1:8 attach=C347A34:1:12 mot=P00_MOT.MDT
+fileparts Character_01_form_0 0x01 file=P10.MDL models=C347B88:19 bones=C347D00 parents=C14E3D4:128 extra=C347C20:18:C347DE4:C347F94 attach=C347CB0:1:4 attach=C347CC0:1:8 attach=C347CE0:1:12 mot=P10_MOT.MDT
+fileparts Character_01_form_1 0x01 file=P11.MDL models=C347FB8:19 bones=C348178 parents=C14E3D4:128 extra=C348050:27:C34825C:C3484E4 attach=C348128:1:4 attach=C348138:1:8 attach=C348158:1:12 mot=P10_MOT.MDT
+fileparts Character_02_form_0 0x02 file=P20.MDL models=C34851C:19 bones=C34864C parents=C14E3D4:128 extra=C3485B4:9:C348730:C348808 attach=C3485FC:1:4 attach=C34860C:1:8 attach=C34862C:1:12 mot=P20_MOT.MDT
+fileparts Character_02_form_1 0x02 file=P21.MDL models=C34881C:19 bones=C34896C parents=C14E3D4:128 extra=C3488B4:13:C348A50:C348B88 attach=C34891C:1:4 attach=C34892C:1:8 attach=C34894C:1:12 mot=P20_MOT.MDT
+fileparts Character_03_form_0 0x03 file=P30.MDL models=C348BA4:19 bones=C348D0C parents=C14E3D4:128 extra=C348C3C:16:C348DF0:C348F70 attach=C348CBC:1:4 attach=C348CCC:1:8 attach=C348CEC:1:12 mot=P30_MOT.MDT
+fileparts Character_03_form_1 0x03 file=P31.MDL models=C348F90:19 bones=C349140 parents=C14E3D4:128 extra=C349028:25:C349224:C34947C attach=C3490F0:1:4 attach=C349100:1:8 attach=C349120:1:12 mot=P30_MOT.MDT
+fileparts Character_04_form_0 0x04 file=P40.MDL models=C3494B0:19 bones=C3495C8 parents=C14E3D4:128 extra=C349548:6:C3496AC:C34973C attach=C349578:1:4 attach=C349588:1:8 attach=C3495A8:1:12 mot=P40_MOT.MDT
+fileparts Character_04_form_1 0x04 file=P41.MDL models=C349748:19 bones=C349830 parents=C14E3D4:128 extra=0:0:0:0 attach=C3497E0:1:4 attach=C3497F0:1:8 attach=C349810:1:12 mot=P40_MOT.MDT
+fileparts Character_05_form_0 0x05 file=P50.MDL models=C349914:19 bones=C349A24 parents=C14E3D4:128 extra=C3499AC:5:C349B08:C349B80 attach=C3499D4:1:4 attach=C3499E4:1:8 attach=C349A04:1:12 mot=P50_MOT.MDT
+fileparts Character_05_form_1 0x05 file=P51.MDL models=C349B8C:19 bones=C349C84 parents=C14E3D4:128 extra=C349C24:2:C349D68:C349D98 attach=C349C34:1:4 attach=C349C44:1:8 attach=C349C64:1:12 mot=P50_MOT.MDT
+fileparts Character_06_form_0 0x06 file=P60.MDL models=C349D9C:19 bones=C349F04 parents=C14E3D4:128 extra=C349E34:16:C349FE8:C34A168 attach=C349EB4:1:4 attach=C349EC4:1:8 attach=C349EE4:1:12 mot=P60_MOT.MDT
+fileparts Character_06_form_1 0x06 file=P61.MDL models=C34A188:19 bones=C34A2C0 parents=C14E3D4:128 extra=C34A220:10:C34A3A4:C34A494 attach=C34A270:1:4 attach=C34A280:1:8 attach=C34A2A0:1:12 mot=P60_MOT.MDT
+fileparts Character_07_form_0 0x07 file=P70.MDL models=C34A4A8:19 bones=C34A5F8 parents=C14E3D4:128 extra=C34A540:13:C34A6DC:C34A814 attach=C34A5A8:1:4 attach=C34A5B8:1:8 attach=C34A5D8:1:12 mot=P70_MOT.MDT
+fileparts Character_07_form_1 0x07 file=P71.MDL models=C34A830:19 bones=C34A990 parents=C14E3D4:128 extra=C34A8C8:15:C34AA74:C34ABDC attach=C34A940:1:4 attach=C34A950:1:8 attach=C34A970:1:12 mot=P70_MOT.MDT
+fileparts Character_08_form_0 0x08 file=P80.MDL models=C34ABFC:19 bones=C34AD64 parents=C14E3D4:128 extra=C34AC94:16:C34AE48:C34AFC8 attach=C34AD14:1:4 attach=C34AD24:1:8 attach=C34AD44:1:12 mot=P80_MOT.MDT
+fileparts Character_08_form_1 0x08 file=P81.MDL models=C34AFE8:19 bones=C34B140 parents=C14E3D4:128 extra=C34B080:14:C34B224:C34B374 attach=C34B0F0:1:4 attach=C34B100:1:8 attach=C34B120:1:12 mot=P80_MOT.MDT
+fileparts Character_09_form_0 0x09 file=P90.MDL models=C34B390:19 bones=C34B490 parents=C14E3D4:128 extra=C34B428:3:C34B574:C34B5BC attach=C34B440:1:4 attach=C34B450:1:8 attach=C34B470:1:12 mot=P90_MOT.MDT
+fileparts Character_09_form_1 0x09 file=P91.MDL models=C34B5C4:19 bones=C34B6EC parents=C14E3D4:128 extra=C34B65C:8:C34B7D0:C34B890 attach=C34B69C:1:4 attach=C34B6AC:1:8 attach=C34B6CC:1:12 mot=P90_MOT.MDT
+fileparts Character_0A_form_0 0x0A file=PA0.MDL models=C34B8A0:19 bones=C34B9D0 parents=C14E420:128 extra=C34B938:9:C34BAB4:C34BB8C attach=C34B980:1:4 attach=C34B990:1:8 attach=C34B9B0:1:12 mot=PA0_MOT.MDT
