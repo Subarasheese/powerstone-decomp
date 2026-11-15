@@ -8,7 +8,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o4_float { char p[0x4]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int thunk_math_mat_get_translate(int, int);
 struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
@@ -49,7 +49,7 @@ int fx_spawn_037d88(int a4, int a5)
         *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4);
         thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + (short)((short)(*(int *)((((unsigned char)(*(signed char *)(((int)stk + 0))) << 2) + 0xC321398))) * (short)0xB0)), t0 + 0x20);
         t8 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x0);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t8 << 1) + t8) << 2) << 1) + 0xC6002D0), 0x0);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = ((((struct o0_float *)0xC037EDC)->v));

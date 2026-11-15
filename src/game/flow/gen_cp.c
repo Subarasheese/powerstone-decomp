@@ -32,7 +32,7 @@ struct oF8_int { char p[0xF8]; int v; };
 int FUN_0c08e382(int);
 int FUN_0c08e5b4(int);
 int FUN_0c09c45a(int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 int bgm_play_continue(void);
 int bgm_set_volume(int, int);
 int cam_force_mode_10(int, int);
@@ -129,7 +129,7 @@ int FUN_0c054e46(void)
     if (((*(signed char *)0xC7F2F0D) == 0)) goto L_C054EAC;
     bgm_play_continue();
     bgm_set_volume(0x0, 0x7F);
-    FUN_0c0a3f30(0x1C);
+    snd_play_se_indexed(0x1C);
     fx_spawn_057da8();
     fx_spawn_0581b4();
     L_C054EB8:;

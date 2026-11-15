@@ -12,7 +12,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int fx_tick_0586de(int a4, float f4)
@@ -106,12 +106,12 @@ int fx_tick_0586de(int a4, float f4)
     *(unsigned char *)((a4 + 0x1)) = 0x1;
     *(unsigned short *)((a4 + 0x6)) = 0x1F;
     *(unsigned char *)((a4 + 0x5)) = 0x19;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC4CFA80, (*(signed char *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0x18))));
+    obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC4CFA80, (*(signed char *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0x18))));
     *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
     { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(a4))->v)) + 0x4)) = *(struct mv3 *)(((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24)); }
     { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E0_int *)(a4))->v)) + 0x1C)) = *(struct mv3 *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0xC)); }
     *(unsigned short *)(((0x2 + ((((struct o2E0_int *)(a4))->v))) + 0x0)) = 0x11F;
-    FUN_0c06233a(((((struct o2E4_int *)(a4))->v)), 0xC4CFA80, ((*(signed char *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0x19))) + 0x1));
+    obj_part_set_model(((((struct o2E4_int *)(a4))->v)), 0xC4CFA80, ((*(signed char *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0x19))) + 0x1));
     *(unsigned char *)((((((struct o2E4_int *)(a4))->v)) + 0x0)) = 0x1;
     { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E4_int *)(a4))->v)) + 0x4)) = *(struct mv3 *)(((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24)); }
     { struct mv3 { int w[3]; }; *(struct mv3 *)((((((struct o2E4_int *)(a4))->v)) + 0x1C)) = *(struct mv3 *)((((short)((short)(*(signed char *)((a4 + 0x4))) * (short)0x1C) + 0xC14BC24) + 0xC)); }

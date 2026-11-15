@@ -28,7 +28,7 @@ struct o2F0_int { char p[0x2F0]; int v; };
 struct o2F4_int { char p[0x2F4]; int v; };
 int obj_destroy(int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _divls(void);
 int _modls(int);
 struct o1C_float { char p[0x1C]; float v; };
@@ -201,7 +201,7 @@ int opt_page1_tick_menu_rows(int a4)
             *(unsigned char *)((((((struct o2F4_int *)(a4))->v)) + 0x0)) = 0x1;
             t2 = (*(signed char *)0xC36232F);
         }
-        FUN_0c06233a(((((struct o2F4_int *)(a4))->v)), 0xC664AD8, t2);
+        obj_part_set_model(((((struct o2F4_int *)(a4))->v)), 0xC664AD8, t2);
     }
     t0 = opt_page1_obj_in_mask(a4);
     if ((signed char)t0 != 0) {
@@ -246,7 +246,7 @@ int opt_page1_spawn_menu_rows(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC664AC0, (*(signed char *)((t5 + 0xC))));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t6) + 0x0))), 0xC664AC0, (*(signed char *)((t5 + 0xC))));
             t13 = *(int *)((((0x2E0 + t0) + t6) + 0x0));
             (((struct o24_float *)(t13))->v) = 1.0f;
             (((struct o20_float *)(t13))->v) = 1.0f;
@@ -366,7 +366,7 @@ int opt_page1_spawn_bg_scroll(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0x4);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0x4);
     }
     return t0;
 }

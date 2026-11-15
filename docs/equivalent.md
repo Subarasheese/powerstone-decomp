@@ -6244,7 +6244,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 39 of 65 instructions
 
 ### FUN_0c02002a (`0C02002A`, 184 bytes, `src/game/menu/menu_vmu_alt7_equiv.c`)
-- equivalent on 7 development and 18 holdout cases, in `tests/menu_vmu_alt7_equiv/FUN_0c02002a.json`
+- equivalent on 24 development and 18 holdout cases, in `tests/menu_vmu_alt7_equiv/FUN_0c02002a.json`
 - case 12
 - case 15
 - case 16
@@ -6252,6 +6252,23 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 20
 - case 28
 - case 33
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
+- hand: search
 - case 69
 - case 104
 - case 57
@@ -6270,7 +6287,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 39
 - case 84
 - case 45
-- the cases run 17 of 89 instructions
+- the cases run 86 of 92 instructions
 
 ### FUN_0c0200e2 (`0C0200E2`, 172 bytes, `src/game/menu/menu_vmu_alt3_equiv.c`)
 - equivalent on 8 development and 18 holdout cases, in `tests/menu_vmu_alt3_equiv/FUN_0c0200e2.json`
@@ -10378,14 +10395,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 34 of 34 instructions
 
-### FUN_0c02cf18 (`0C02CF18`, 674 bytes, `src/game/draw/draw_frame_alt3.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt3/FUN_0c02cf18.json`
+### draw_object_classes (`0C02CF18`, 674 bytes, `src/game/draw/draw_frame_alt3.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt3/draw_object_classes.json`
 - rescue: flips 0C02D198
 - rescue: flips 0C02D198
 - the cases run 76 of 274 instructions
 
-### FUN_0c02d1cc (`0C02D1CC`, 596 bytes, `src/game/menu/option/gen_f.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_f/FUN_0c02d1cc.json`
+### draw_fighter (`0C02D1CC`, 596 bytes, `src/game/menu/option/gen_f.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_f/draw_fighter.json`
 - case 0
 - case 1
 - case 2
@@ -10424,14 +10441,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 78
 - the cases run 31 of 263 instructions
 
-### FUN_0c02d420 (`0C02D420`, 56 bytes, `src/game/draw/draw_frame_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt/FUN_0c02d420.json`
+### draw_world (`0C02D420`, 56 bytes, `src/game/draw/draw_frame_alt.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/draw_frame_alt/draw_world.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 23 of 28 instructions
 
-### FUN_0c02d458 (`0C02D458`, 38 bytes, `src/game/draw/draw_frame.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/draw_frame/FUN_0c02d458.json`
+### draw_frame_should_skip (`0C02D458`, 38 bytes, `src/game/draw/draw_frame.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/draw_frame/draw_frame_should_skip.json`
 - case 1
 - case 73
 - case 0
@@ -18531,8 +18548,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C05F992 (taken)
 - the cases run 221 of 236 instructions
 
-### FUN_0c05fb58 (`0C05FB58`, 150 bytes, `src/game/draw/lighting.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/lighting/FUN_0c05fb58.json`
+### draw_set_layer_lighting (`0C05FB58`, 150 bytes, `src/game/draw/lighting.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/lighting/draw_set_layer_lighting.json`
 - case 0
 - case 1
 - case 3
@@ -19012,8 +19029,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - the cases run 15 of 15 instructions
 
-### FUN_0c06233a (`0C06233A`, 108 bytes, `src/game/draw/mdl_util.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/mdl_util/FUN_0c06233a.json`
+### obj_part_set_model (`0C06233A`, 108 bytes, `src/game/draw/mdl_util.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/mdl_util/obj_part_set_model.json`
 - case 0
 - case 1
 - case 2
@@ -25022,16 +25039,16 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 66
 - the cases run 6 of 6 instructions
 
-### FUN_0c085c54 (`0C085C54`, 186 bytes, `src/game/flow/gen_bn.c`)
-- equivalent on 2 development and 2 holdout cases, in `tests/gen_bn/FUN_0c085c54.json`
+### pl_kraken_attack_kind3_phase0 (`0C085C54`, 186 bytes, `src/game/flow/gen_bn.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/gen_bn/pl_kraken_attack_kind3_phase0.json`
 - rescue: empty case
 - rescue: empty case
 - rescue: empty case
 - rescue: empty case
 - the cases run 36 of 43 instructions
 
-### FUN_0c085d0e (`0C085D0E`, 94 bytes, `src/game/player/chara/kraken/gen_cl.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_cl/FUN_0c085d0e.json`
+### pl_kraken_attack_kind3_phase1 (`0C085D0E`, 94 bytes, `src/game/player/chara/kraken/gen_cl.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cl/pl_kraken_attack_kind3_phase1.json`
 - case 14
 - case 0
 - case 2
@@ -25070,14 +25087,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 80
 - the cases run 34 of 46 instructions
 
-### FUN_0c085d6c (`0C085D6C`, 36 bytes, `src/lib/mixed/gen_bz.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bz/FUN_0c085d6c.json`
+### pl_kraken_attack_kind3_phase2 (`0C085D6C`, 36 bytes, `src/lib/mixed/gen_bz.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bz/pl_kraken_attack_kind3_phase2.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
 
-### FUN_0c085d90 (`0C085D90`, 12 bytes, `src/lib/mixed/gen_bz.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_bz/FUN_0c085d90.json`
+### pl_kraken_attack_kind3_phase3 (`0C085D90`, 12 bytes, `src/lib/mixed/gen_bz.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_bz/pl_kraken_attack_kind3_phase3.json`
 - case 0
 - case 1
 - case 2
@@ -25116,26 +25133,26 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 112
 - the cases run 6 of 6 instructions
 
-### FUN_0c085df8 (`0C085DF8`, 146 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085df8.json`
+### pl_kraken_attack_kind4_phase0 (`0C085DF8`, 146 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase0.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 36 of 43 instructions
 
-### FUN_0c085e8a (`0C085E8A`, 328 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085e8a.json`
+### pl_kraken_attack_kind4_phase1 (`0C085E8A`, 328 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase1.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 61 of 132 instructions
 
-### FUN_0c085fd2 (`0C085FD2`, 112 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c085fd2.json`
+### pl_kraken_attack_kind4_phase2 (`0C085FD2`, 112 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase2.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 33 of 56 instructions
 
-### FUN_0c086070 (`0C086070`, 532 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 41 development and 1 holdout cases, in `tests/gen_dh/FUN_0c086070.json`
+### pl_kraken_attack_kind4_phase3 (`0C086070`, 532 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 41 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase3.json`
 - rescue: empty case
 - hand: search
 - hand: search
@@ -25180,14 +25197,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 157 of 230 instructions
 
-### FUN_0c086284 (`0C086284`, 36 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c086284.json`
+### pl_kraken_attack_kind4_phase4 (`0C086284`, 36 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase4.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 15 of 18 instructions
 
-### FUN_0c0862a8 (`0C0862A8`, 12 bytes, `src/game/player/chara/kraken/gen_dj.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_dj/FUN_0c0862a8.json`
+### pl_kraken_attack_kind4_phase5 (`0C0862A8`, 12 bytes, `src/game/player/chara/kraken/gen_dj.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dj/pl_kraken_attack_kind4_phase5.json`
 - case 0
 - case 1
 - case 2
@@ -25226,14 +25243,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 37
 - the cases run 6 of 6 instructions
 
-### FUN_0c0862b4 (`0C0862B4`, 116 bytes, `src/game/effect/gen_dh.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c0862b4.json`
+### pl_kraken_attack_kind4_phase6 (`0C0862B4`, 116 bytes, `src/game/effect/gen_dh.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/pl_kraken_attack_kind4_phase6.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 58 of 58 instructions
 
-### FUN_0c086350 (`0C086350`, 66 bytes, `src/game/effect/gen_db.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/FUN_0c086350.json`
+### pl_kraken_attack_kind4 (`0C086350`, 66 bytes, `src/game/effect/gen_db.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/pl_kraken_attack_kind4.json`
 - case 13
 - case 0
 - case 1
@@ -33888,8 +33905,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 157
 - the cases run 17 of 17 instructions
 
-### FUN_0c0a3f30 (`0C0A3F30`, 32 bytes, `src/game/sound/sound_2_equiv.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/sound_2_equiv/FUN_0c0a3f30.json`
+### snd_play_se_indexed (`0C0A3F30`, 32 bytes, `src/game/sound/sound_2_equiv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/sound_2_equiv/snd_play_se_indexed.json`
 - case 0
 - case 2
 - case 1
@@ -38959,8 +38976,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - directed: flips 0C0C8732 (taken)
 - the cases run 179 of 248 instructions
 
-### FUN_0c0c8cea (`0C0C8CEA`, 140 bytes, `src/game/effect/special/effects_shells.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/effects_shells/FUN_0c0c8cea.json`
+### fx_trail_set_part_lengths (`0C0C8CEA`, 140 bytes, `src/game/effect/special/effects_shells.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/effects_shells/fx_trail_set_part_lengths.json`
 - case 17
 - case 16
 - case 0
@@ -38999,8 +39016,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 102
 - the cases run 58 of 70 instructions
 
-### FUN_0c0c9394 (`0C0C9394`, 402 bytes, `src/game/effect/special/effects_shells.c`)
-- equivalent on 20 development and 19 holdout cases, in `tests/effects_shells/FUN_0c0c9394.json`
+### fx_trail_find_hit_segment (`0C0C9394`, 402 bytes, `src/game/effect/special/effects_shells.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/effects_shells/fx_trail_find_hit_segment.json`
 - case 0
 - case 1
 - case 2
@@ -41857,8 +41874,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 94
 - the cases run 9 of 9 instructions
 
-### FUN_0c0d4ff4 (`0C0D4FF4`, 202 bytes, `src/game/menu/gen_az.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_az/FUN_0c0d4ff4.json`
+### game_play_game_over_update (`0C0D4FF4`, 202 bytes, `src/game/menu/gen_az.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_az/game_play_game_over_update.json`
 - case 0
 - case 9
 - case 1
@@ -41897,8 +41914,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 34 of 71 instructions
 
-### FUN_0c0d50be (`0C0D50BE`, 166 bytes, `src/game/player/state/gen_bv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_bv/FUN_0c0d50be.json`
+### game_world_tick (`0C0D50BE`, 166 bytes, `src/game/player/state/gen_bv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_bv/game_world_tick.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 83 of 83 instructions

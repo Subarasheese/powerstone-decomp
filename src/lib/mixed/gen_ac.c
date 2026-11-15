@@ -116,7 +116,7 @@ int ui_fade_reset(void);
 int obj_create(int, int, int);
 int FUN_0c05ef8c(int);
 int FUN_0c05f136(void);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c062de8(int);
 int FUN_0c063428(int);
 int FUN_0c0634b4(int);

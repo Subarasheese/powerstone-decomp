@@ -10,7 +10,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 int _quick_odd_mvn(void);
 int thunk_math_mat_get_translate(int, int);
@@ -43,7 +43,7 @@ int fx_spawn_24(int a4)
         t1 = *(signed char *)((a4 + 0x3));
         thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t1 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x840), (t0 + 0x20));
         t1 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0x1);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t1 << 1) + t1) << 2) << 1) + 0xC6002D0), 0x1);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x3F;
         (((struct o1C_float *)(((((struct o2E0_int *)(t0))->v))))->v) = ((((struct o50_float *)(t0))->v));
@@ -91,7 +91,7 @@ int fx_update_24(int a4, int a5, int a6, int a7)
                 (((struct oEE_ushort *)(a4))->v) = 0x0;
             }
             t2 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), ((*(signed char *)((a4 + 0xEE))) + 0x1));
+            obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), ((*(signed char *)((a4 + 0xEE))) + 0x1));
             *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x3F;
             (((struct o1C_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((((struct o50_float *)(a4))->v));
@@ -130,7 +130,7 @@ int fx_update_24(int a4, int a5, int a6, int a7)
             (((struct oEE_ushort *)(a4))->v) = 0x0;
         }
         t0 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), ((*(signed char *)((a4 + 0xEE))) + 0x1));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((signed char)((((t0 << 1) + t0) << 2) << 1) + 0xC6002D0), ((*(signed char *)((a4 + 0xEE))) + 0x1));
         *(unsigned char *)((((((struct o2E0_int *)(a4))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(a4))->v)) + 0x2)) = 0x3F;
         (((struct o1C_float *)(((((struct o2E0_int *)(a4))->v))))->v) = ((((struct o50_float *)(a4))->v));

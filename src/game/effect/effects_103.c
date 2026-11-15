@@ -20,7 +20,7 @@ struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
 struct o4C_float { char p[0x4C]; float v; };
 struct o98_float { char p[0x98]; float v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _modls(void);
 struct o0_float { float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
@@ -186,7 +186,7 @@ int FUN_0c044868(int a4, int a5)
         t2 = *(int *)(((((*(signed char *)((a5 + 0x4))) << 2) + (0x2E0 + a4)) + 0x18));
         if ((*(signed char *)((t2 + 0x0))) == 0) {
             *(unsigned char *)((a5 + 0x5)) = 0xF;
-            FUN_0c06233a(t2, ((int)g_res_kyoutsuu), 0x6C);
+            obj_part_set_model(t2, ((int)g_res_kyoutsuu), 0x6C);
             *(unsigned char *)((t2 + 0x0)) = 0x1;
             (((struct o24_float *)(t2))->v) = 0.0f;
             (((struct o20_float *)(t2))->v) = 0.0f;
@@ -272,7 +272,7 @@ int FUN_0c04492c(int a4)
                 *(unsigned char *)((a4 + 0x9)) = ((*(signed char *)((a4 + 0x9))) + 0x1);
                 *(unsigned char *)((a4 + 0xA)) = 0x0;
                 t1 = (((struct o2E0_int *)(a4))->v);
-                FUN_0c06233a(t1, ((int)g_res_kyoutsuu), 0x6E);
+                obj_part_set_model(t1, ((int)g_res_kyoutsuu), 0x6E);
                 *(unsigned char *)((t1 + 0x0)) = 0x1;
                 (((struct o20_float *)(t1))->v) = 1.0f;
                 (((struct o24_float *)(t1))->v) = 0.199999988f;
@@ -312,7 +312,7 @@ int FUN_0c04492c(int a4)
         *(unsigned char *)((a4 + 0xA)) = ((*(signed char *)((a4 + 0xA))) + 0x1);
         (((struct o3C_float *)(a4))->v) = -30.0f;
         (((struct o48_float *)(a4))->v) = -1.0f;
-        FUN_0c06233a(t0, ((int)g_res_kyoutsuu), 0x6B);
+        obj_part_set_model(t0, ((int)g_res_kyoutsuu), 0x6B);
         *(unsigned char *)((t0 + 0x0)) = 0x1;
         *(unsigned short *)((t0 + 0x2)) = 0x11;
     }

@@ -12,7 +12,7 @@ struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oF2_short { char p[0xF2]; short v; };
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 typedef struct { int x, y, z; } S12;
 
@@ -218,7 +218,7 @@ int fx_tick_0574d2(int a4)
         t2 = 0x18;
         t4 = 0xC06233A;
         t5 = (t5 << 2);
-        t2 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t3) + t2))) + t0)));
+        t2 = (obj_part_set_model((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t3) + t2))) + t0)));
         t1 = 0x2E0;
         t6 = 0x2E0;
         t1 = (t1 + a4);

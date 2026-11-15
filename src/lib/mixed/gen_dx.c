@@ -99,7 +99,7 @@ int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int math_mat_transform_vector(int, int);
 int math_mat_get_translate(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_mode15_cls14_f1_phase0(int);
 int pl_mode15_cls14_f1_phase2(int);
 int pl_timer_disable(int);

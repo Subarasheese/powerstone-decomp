@@ -6,7 +6,7 @@ struct vec3f { float x, y, z; };
 char *obj_create(int, int, int, int);
 int math_rand_next(void);
 void obj_set_record(char *, int);
-void FUN_0c06233a(char *, int, int);
+void obj_part_set_model(char *, int, int);
 
 void fx_spawn_thrown_item_kind(struct vec3f *src, signed char kind)
 {
@@ -55,7 +55,7 @@ void fx_spawn_thrown_item_kind(struct vec3f *src, signed char kind)
     *(struct vec3f *)(item + 68) = *(struct vec3f *)0xC33C27C;
     child = *(char **)(item + 0x2e0);
     phase = *(short *)(item + 0xEE);
-    FUN_0c06233a(child, ((int)g_res_kyoutsuu), 132 + phase / 2 % 8);
+    obj_part_set_model(child, ((int)g_res_kyoutsuu), 132 + phase / 2 % 8);
     child[0] = 1;
     *(short *)(child + 2) = 561;
     *(float *)(child + 68) = 1.0f;

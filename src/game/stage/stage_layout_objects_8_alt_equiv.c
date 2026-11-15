@@ -9,7 +9,7 @@ int FUN_0c0ae396(void);
 int stage_obj_on_break(int);
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o308_int { char p[0x308]; int v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int stage_obj_load_layout_pos(int);
 int stage_type02_mode_03(void);
 
@@ -74,7 +74,7 @@ int FUN_0c0ae4f0(int a4)
     *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     *(unsigned char *)((a4 + 0x1)) = 0x0;
     *(unsigned char *)((a4 + 0x3)) = 0x2;
-    FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
+    obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
     return stage_obj_load_layout_pos(a4);
 }
 

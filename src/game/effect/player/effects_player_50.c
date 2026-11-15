@@ -4,7 +4,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(void);
@@ -54,7 +54,7 @@ int fx_spawn_34(int a4, int a5)
         *(unsigned char *)((t14 + 0x0)) = 0x1;
         *(unsigned short *)((t14 + 0x2)) = 0xF;
         t15 = *(signed char *)((a4 + 0x3));
-        FUN_0c06233a(t14, ((signed char)((((t15 << 1) + t15) << 2) << 1) + 0xC6002D0), 0x4);
+        obj_part_set_model(t14, ((signed char)((((t15 << 1) + t15) << 2) << 1) + 0xC6002D0), 0x4);
         *(unsigned int *)(((int)stk + 4)) = ((0x2E0 + t0) + 0x4);
         t19 = 0x0;
         for (;;) {
@@ -64,7 +64,7 @@ int fx_spawn_34(int a4, int a5)
             *(unsigned char *)((t21 + 0x0)) = 0x1;
             *(unsigned short *)((t21 + 0x2)) = 0x3F;
             t22 = *(signed char *)((a4 + 0x3));
-            t25 = FUN_0c06233a(t21, ((signed char)((((t22 << 1) + t22) << 2) << 1) + 0xC6002D0), 0x5);
+            t25 = obj_part_set_model(t21, ((signed char)((((t22 << 1) + t22) << 2) << 1) + 0xC6002D0), 0x5);
             t19 = (t19 + 0x1);
             if ((int)t19 >= (int)0x3) {
                 break;

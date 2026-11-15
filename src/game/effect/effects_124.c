@@ -13,7 +13,7 @@ int obj_create(int, int, int, int);
 int _quick_odd_mvn(void);
 struct oEC_short { char p[0xEC]; short v; };
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 
 int fx_spawn_04a13c(int a4)
 {
@@ -54,7 +54,7 @@ int fx_tick_04a13c(int a4, int a5, int a6, int a7)
     register int t1;
 
     if ((*(signed char *)((a4 + 0x8))) == 0) {
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), ((int)g_res_item), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC321854))));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), ((int)g_res_item), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC321854))));
         if ((int)((((struct oEC_short *)(a4))->v)) >= (int)0x6) {
             (((struct o60_float *)(a4))->v) = (((((struct o60_float *)(a4))->v)) - 0.199999988f);
             (((struct o64_float *)(a4))->v) = (((((struct o64_float *)(a4))->v)) - 0.199999988f);

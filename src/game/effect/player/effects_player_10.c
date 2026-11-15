@@ -6,7 +6,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 int thunk_math_mat_get_translate(int, int);
 
@@ -46,7 +46,7 @@ int fx_spawn_15(int a4, int a5)
         t11 = 0x0;
         for (;;) {
             t12 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + (t11 << 2)) + 0x0))), ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), ((t11 << 2) + t11));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + (t11 << 2)) + 0x0))), ((signed char)((((t12 << 1) + t12) << 2) << 1) + 0xC6002D0), ((t11 << 2) + t11));
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + (t11 << 2)) + 0x0))) + 0x0)) = 0x1;
             t18 = *(int *)((((t11 << 2) + (0x2E0 + t0)) + 0x0));
             t11 = (t11 + 0x1);

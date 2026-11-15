@@ -11,7 +11,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
@@ -109,7 +109,7 @@ int FUN_0c02a5e4(void)
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned char *)((t3 + 0x1)) = 0x0;
             *(unsigned short *)((t3 + 0x2)) = 0xF;
-            FUN_0c06233a(t3, ((int)g_res_syukyaku), 0x56);
+            obj_part_set_model(t3, ((int)g_res_syukyaku), 0x56);
             t1 = (t1 + 0x1);
         }
         t5 = 0x2DC;
@@ -160,7 +160,7 @@ int FUN_0c02a6c4(void)
             *(unsigned char *)((t3 + 0x0)) = 0x1;
             *(unsigned char *)((t3 + 0x1)) = 0x0;
             *(unsigned short *)((t3 + 0x2)) = 0xF;
-            FUN_0c06233a(t3, ((int)g_res_syukyaku), 0x57);
+            obj_part_set_model(t3, ((int)g_res_syukyaku), 0x57);
             t1 = (t1 + 0x1);
         }
         (((struct oEC_ushort *)(t0))->v) = 0x2;

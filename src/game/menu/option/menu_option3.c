@@ -38,7 +38,7 @@ float math_sin_angle16(int, int, int, int);
 struct o28_float { char p[0x28]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 struct o2E4_int { char p[0x2E4]; int v; };
 int FUN_0c06231c(int, int, int);
@@ -124,7 +124,7 @@ void FUN_0c01b144(int a4, int a5)
         if ((short)t5 != 0) {
             t8 = (*(signed char *)(((((signed char)a5 << 2) << 2) + 0xC11C17C)));
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, t8);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664AC0, t8);
         t12 = (((struct o2E0_int *)(t0))->v);
         (((struct o24_float *)(t12))->v) = 1.0f;
         (((struct o20_float *)(t12))->v) = 1.0f;
@@ -201,7 +201,7 @@ int opt_page3_spawn_bg_scroll(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0xD);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0xD);
     }
     return t0;
 }

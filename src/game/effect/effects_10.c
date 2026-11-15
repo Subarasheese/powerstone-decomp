@@ -5,7 +5,7 @@ extern char *obj_create(int, int, int, int);
 extern float math_rand_float(void);
 extern float math_sin_angle16(int);
 extern float math_cos_angle16(int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern char g_spr_bank_player_fx[];
 extern void fx_tick_0342a0(void);
 
@@ -45,6 +45,6 @@ void fx_spawn_0342a0(char *obj)
         child = *(char **)(slot + 0x2E0 + i * 4);
         child[0] = 1;
         *(short *)(child + 2) = 15;
-        FUN_0c06233a(child, g_spr_bank_player_fx + (signed char)(obj[3] * 24), *(int *)0xC149650);
+        obj_part_set_model(child, g_spr_bank_player_fx + (signed char)(obj[3] * 24), *(int *)0xC149650);
     }
 }

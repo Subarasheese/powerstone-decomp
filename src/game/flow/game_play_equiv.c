@@ -2,7 +2,7 @@
 
 /* named globals (symbols.txt) */
 int FUN_0c0d54ac(void);
-int FUN_0c0d4ff4(int a4, int a5, int a6, int a7);
+int game_play_game_over_update(int a4, int a5, int a6, int a7);
 int game_play_step(int a4, int a5, int a6, int a7);
 int game_check_player_join(int a4, int a5, int a6, int a7);
 extern char g_select_ready_mask[];
@@ -67,7 +67,7 @@ int ui_fade_reset(void);
 int fx_spawn_058460(void);
 int bgm_stop_streams(void);
 int bgm_play_game_over(void);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 struct oC_short { char p[0xC]; short v; };
 struct oC_ushort { char p[0xC]; unsigned short v; };
 int fx_spawn_0586de(void);
@@ -84,7 +84,7 @@ int FUN_0c0d48d6(void);
 int thunk_FUN_0c0a3180(void);
 int FUN_0c0d48ea(int a4);
 int game_play_start_game_over(void);
-int FUN_0c0d4ff4(int a4, int a5, int a6, int a7);
+int game_play_game_over_update(int a4, int a5, int a6, int a7);
 int FUN_0c0d54ac(void);
 
 int rank_init_default_entries(void)
@@ -292,7 +292,7 @@ int game_play_start_game_over(void)
     ui_fade_reset();
     bgm_stop_streams();
     bgm_play_game_over();
-    t5 = FUN_0c0a3f30(0x1E);
+    t5 = snd_play_se_indexed(0x1E);
     if ((*(signed char *)0xC7F3080) == 0) {
         return fx_spawn_058460();
     }
@@ -308,7 +308,7 @@ int game_play_state_06(int a4, int a5, int a6, int a7)
     if ((unsigned char)t0 != 0) {
         if ((unsigned char)t0 != 1) {
         } else {
-            FUN_0c0d4ff4(a4, a5, a6, a7);
+            game_play_game_over_update(a4, a5, a6, a7);
         }
     } else {
         game_play_start_game_over();
@@ -329,7 +329,7 @@ int FUN_0c0d51d2(int a4)
     FUN_0c05fc00();
     bgm_stop_all();
     bgm_play_here();
-    FUN_0c0a3f30(0x1D);
+    snd_play_se_indexed(0x1D);
     fx_spawn_0586de();
     *(unsigned char *)0xC7F2E3E = 0x0;
     *(unsigned char *)0xC7F2EB6 = 0x0;

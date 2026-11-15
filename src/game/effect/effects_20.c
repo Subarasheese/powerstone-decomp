@@ -2,7 +2,7 @@
 
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 struct o0_short { short v; };
 struct o2_short { char p[0x2]; short v; };
@@ -60,7 +60,7 @@ int fx_spawn_03598c(int a4)
             *(unsigned short *)((t2 + 0x2)) = 0xF;
             t7 = *(signed char *)(((0x3 + a4) + 0x0));
             t3 = 0xC06233A;
-            FUN_0c06233a(t2, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), (*(int *)((t6 + 0xC149670))));
+            obj_part_set_model(t2, ((signed char)((((t7 << 1) + t7) << 2) << 1) + 0xC6002D0), (*(int *)((t6 + 0xC149670))));
             t3 = t4;
             t3 = (t3 << 1);
             t3 = (t3 + t4);

@@ -70,7 +70,7 @@ int fx_spawn_on_player_part(int, int, int, int, int, int, int, int);
 extern int game_frame_update();
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0623a6(int, int, int);
 int FUN_0c0634b4(int);
 int pl_start_motion(int, int, int);

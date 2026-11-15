@@ -14,7 +14,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int math_rand_next(void);
 int _modls(void);
 extern int _quick_odd_mvn();
@@ -50,7 +50,7 @@ int fx_spawn_03b1ec(int a4, int a5)
         *(unsigned int *)((t0 + 0x10)) = 0xC03B2D6;
         t3 = *(signed char *)(((int)stk + 0));
         t5 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t5, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x17);
+        obj_part_set_model(t5, ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), 0x17);
         *(unsigned char *)((t5 + 0x0)) = 0x1;
         *(unsigned short *)((t5 + 0x2)) = 0x239;
         *(unsigned int *)((t5 + 0x18)) = ((int)(((((float)((int)((int)(math_rand_next()) % (int)0xB4)) * ((((struct o0_float *)0xC03B368)->v))) / ((((struct o4_float *)0xC03B368)->v)))) + ((((struct o8_float *)0xC03B368)->v))) & 0xFFFF);

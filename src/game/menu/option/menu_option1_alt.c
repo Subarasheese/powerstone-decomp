@@ -17,7 +17,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 int obj_tick_class(int, int, int, int);
 
@@ -129,7 +129,7 @@ void opt_page1_spawn_cursor_pulse(int a4)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0x1F;
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664AC0, (*(signed char *)((t3 + 0xC))));
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t4) + 0x0))), 0xC664AC0, (*(signed char *)((t3 + 0xC))));
             t11 = *(int *)((((0x2E0 + t0) + t4) + 0x0));
             (((struct o24_float *)(t11))->v) = 1.0f;
             (((struct o20_float *)(t11))->v) = 1.0f;

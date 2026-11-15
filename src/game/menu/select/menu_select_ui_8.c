@@ -13,7 +13,7 @@ struct o2C_float { char p[0x2C]; float v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o2E0_int { char p[0x2E0]; int v; };
 struct o2E4_int { char p[0x2E4]; int v; };
 struct o38_float { char p[0x38]; float v; };
@@ -34,11 +34,11 @@ int menu_ui_task_24_bind_models(int a4, int a5)
     register int t10;
 
     if ((signed char)a5 == 0) {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x24);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o0_float *)0xC0A9AE0)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     } else {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x25);
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x25);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o4_float *)0xC0A9AE0)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     }

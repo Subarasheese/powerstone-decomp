@@ -14,7 +14,7 @@ struct o58_float { char p[0x58]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int, int, int, int);
 int thunk_math_mat_get_translate(int, int);
@@ -40,7 +40,7 @@ int fx_spawn_034884(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         t2 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0xB);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0xB);
         t2 = (((struct o2E0_int *)(t0))->v);
         (((struct o24_float *)(t2))->v) = 0.0f;
         (((struct o20_float *)(t2))->v) = 0.0f;
@@ -49,7 +49,7 @@ int fx_spawn_034884(int a4)
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0x1F;
         t2 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0xC);
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0xC);
         t2 = (((struct o2E4_int *)(t0))->v);
         (((struct o24_float *)(t2))->v) = 0.0f;
         (((struct o20_float *)(t2))->v) = 0.0f;
@@ -58,7 +58,7 @@ int fx_spawn_034884(int a4)
         *(unsigned char *)((((((struct o2E8_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E8_int *)(t0))->v)) + 0x2)) = 0x1F;
         t2 = *(signed char *)((t0 + 0x3));
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x17);
+        obj_part_set_model(((((struct o2E8_int *)(t0))->v)), ((signed char)((((t2 << 1) + t2) << 2) << 1) + 0xC6002D0), 0x17);
         t2 = (((struct o2E8_int *)(t0))->v);
         (((struct o24_float *)(t2))->v) = 0.0f;
         (((struct o20_float *)(t2))->v) = 0.0f;

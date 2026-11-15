@@ -16,7 +16,7 @@ struct fld8_float { char pad[0x8]; float value; };
 struct fldEC_ushort { char pad[0xEC]; unsigned short value; };
 struct fldEE_ushort { char pad[0xEE]; unsigned short value; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 int FUN_0c0c07bc(int, int, int, int, float);
 float math_cos_angle16(int);
@@ -75,12 +75,12 @@ int fx_spawn_state11_pulse(int owner, int kind, int variant)
         }
         obj_set_record_char(new_obj, model);
         char_a = *(signed char *)((owner + 0x3));
-        FUN_0c06233a(((((struct fld2E0_int *)(new_obj))->value)), ((signed char)((((char_a << 1) + char_a) << 2) << 1) + 0xC6002D0), 0x3);
+        obj_part_set_model(((((struct fld2E0_int *)(new_obj))->value)), ((signed char)((((char_a << 1) + char_a) << 2) << 1) + 0xC6002D0), 0x3);
         *(unsigned char *)((((((struct fld2E0_int *)(new_obj))->value)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct fld2E0_int *)(new_obj))->value)) + 0x2)) = 0xB;
         *(unsigned int *)((((((struct fld2E0_int *)(new_obj))->value)) + 0x18)) = 0x4000;
         char_b = *(signed char *)((owner + 0x3));
-        FUN_0c06233a(((((struct fld2E4_int *)(new_obj))->value)), ((signed char)((((char_b << 1) + char_b) << 2) << 1) + 0xC6002D0), 0x4);
+        obj_part_set_model(((((struct fld2E4_int *)(new_obj))->value)), ((signed char)((((char_b << 1) + char_b) << 2) << 1) + 0xC6002D0), 0x4);
         *(unsigned char *)((((((struct fld2E4_int *)(new_obj))->value)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct fld2E4_int *)(new_obj))->value)) + 0x2)) = 0x21B;
         ftmp41 = *(float *)0xC0C0AFC;

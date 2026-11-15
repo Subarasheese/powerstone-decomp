@@ -3,7 +3,7 @@
 int FUN_0c040938(int a4, int a5, int a6, int a7);
 struct vec3i { int x, y, z; };
 extern unsigned char *obj_create(int, int, int, int);
-extern int FUN_0c06233a(unsigned char *, int, int);
+extern int obj_part_set_model(unsigned char *, int, int);
 extern float math_cos_angle16(int);
 extern float math_rand_float(void);
 extern float math_sin_angle16(int);
@@ -46,7 +46,7 @@ void fx_spawn_040550(char obj, char arg1, struct vec3i *arg2)
     *(int *)(burst + 280) = 0;
     first_child = *(unsigned char **)(burst + 736);
     first_child[0] = 1;
-    FUN_0c06233a(first_child, (signed char)(obj * 24) + 0xC6002D0, arg1 + 9);
+    obj_part_set_model(first_child, (signed char)(obj * 24) + 0xC6002D0, arg1 + 9);
     *(short *)(first_child + 2) = 543;
     *(struct vec3i *)(first_child + 28) = *(struct vec3i *)0xC149AE0;
     *(struct vec3i *)(first_child + 16) = *(struct vec3i *)0xC149AF8;
@@ -61,7 +61,7 @@ void fx_spawn_040550(char obj, char arg1, struct vec3i *arg2)
         child = *(unsigned char **)(burst + 736 + 4 * i);
         child[0] = 0;
         *(float *)(child + 64) = 0.0f;
-        FUN_0c06233a(child, model_base, i % 2 + 14);
+        obj_part_set_model(child, model_base, i % 2 + 14);
         *(short *)(child + 2) = 575;
         *(struct vec3i *)(child + 4) = *(struct vec3i *)0xC149AE0;
         *(struct vec3i *)(child + 28) = *(struct vec3i *)0xC149AEC;

@@ -5,7 +5,7 @@ extern int thunk_math_mat_get_translate(int, float *);
 extern float math_cos_angle16(int shooter);
 extern float math_sin_angle16(int shooter);
 extern void obj_set_record_char(char *proj, int shooter);
-extern void FUN_0c06233a(int shooter, char *variant, int c);
+extern void obj_part_set_model(int shooter, char *variant, int c);
 
 void fx_spawn_jack_projectile(char *shooter, char variant)
 {
@@ -48,7 +48,7 @@ void fx_spawn_jack_projectile(char *shooter, char variant)
     obj_set_record_char(proj, 120);
     two_f = 2.0f;
     for (i = 0; i < 3; i++) {
-        FUN_0c06233a(*(int *)(proj + 736 + i * 4), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), i + 2);
+        obj_part_set_model(*(int *)(proj + 736 + i * 4), (char *)(0xC6002D0 + (signed char)(shooter[3] * 24)), i + 2);
         *(char *)*(int *)(proj + 736 + i * 4) = 1;
         *(short *)(*(int *)(proj + 736 + i * 4) + 2) = 31;
         *(float *)(*(int *)(proj + 736 + i * 4) + 28) = one_f;

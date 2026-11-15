@@ -13,7 +13,7 @@ struct o40_float { char p[0x40]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 void fx_spawn_056e2c(void)
@@ -163,7 +163,7 @@ int fx_tick_057128(int a4)
         t1 = 0x18;
         t3 = 0xC06233A;
         t5 = (t5 << 2);
-        t1 = (FUN_0c06233a((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t0) + t1))) + t4)));
+        t1 = (obj_part_set_model((*(int *)((((0x2E0 + a4) + t5) + 0x0))), 0xC4CFA80, ((*(signed char *)(((t6 + t0) + t1))) + t4)));
         t2 = 0x2E0;
         t6 = 0x2E0;
         t2 = (t2 + a4);

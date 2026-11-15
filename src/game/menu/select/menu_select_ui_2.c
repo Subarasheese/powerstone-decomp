@@ -25,7 +25,7 @@ struct oC_float { char p[0xC]; float v; };
 int menu_ui_spawn_21(int);
 int _quick_odd_mvn(void);
 struct o1C_float { char p[0x1C]; float v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o38_float { char p[0x38]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 typedef struct { int a, b, c; } vec12;
@@ -278,7 +278,7 @@ int menu_ui_task_14_bind_models(int a4)
             } else {
                 t3 = ((*(signed char *)((0xC1525B4 + t2))) + 0xF);
             }
-            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), t3);
+            obj_part_set_model((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), t3);
             t2 = *(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0));
             t3 = 0x8000;
             if ((*(signed char *)((a4 + 0x3))) != 0) {
@@ -302,7 +302,7 @@ int menu_ui_task_14_bind_models(int a4)
             (((struct o20_float *)((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0)))))->v) = ((-(((((struct o28_float *)(a4))->v)) * 0.699999988f)) / 480.0f);
         } else {
             if (((*(signed char *)0xC7F2F08) != 0) && (t0 = *(signed char *)((a4 + 0x4)), t0 == 0)) {
-                FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x3);
+                obj_part_set_model((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x3);
             } else {
                 t2 = *(signed char *)((a4 + 0x4));
                 t3 = 0x46;
@@ -310,7 +310,7 @@ int menu_ui_task_14_bind_models(int a4)
                 } else {
                     t3 = ((*(signed char *)((0xC1525B4 + t2))) + 0x19);
                 }
-                FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), t3);
+                obj_part_set_model((*(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0))), ((int)g_res_csel_ksel), t3);
             }
             t2 = *(int *)((((0x2E0 + a4) + (t1 << 2)) + 0x0));
             t3 = 0xFFFFFFCE;
@@ -484,11 +484,11 @@ int menu_ui_task_15_bind_models(int a4, int a5)
     register int t10;
 
     if ((signed char)a5 == 0) {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x23);
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x23);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o0_float *)0xC0A7E48)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     } else {
-        FUN_0c06233a((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x25);
+        obj_part_set_model((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0))), ((int)g_res_csel_ksel), 0x25);
         (((struct o28_float *)((*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)))))->v) = ((((struct o4_float *)0xC0A7E48)->v));
         t10 = (*(int *)((((0x2E0 + a4) + ((signed char)a5 << 2)) + 0x0)));
     }

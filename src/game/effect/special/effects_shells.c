@@ -6,7 +6,7 @@ extern char g_camera_pos[];
 extern char g_res_kyoutsuu[];
 typedef struct { int x, y, zero; } S12;
 extern char *obj_create(int, int, int, int);
-extern void FUN_0c06233a(char *, char *, int);
+extern void obj_part_set_model(char *, char *, int);
 extern char g_spr_bank_player_fx[];
 extern void *memset(void *, int, int);
 extern void fx_update_trail_chain(void);
@@ -64,7 +64,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E0);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 21);
+    obj_part_set_model(*(char **)(puff + 0x2E0), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 21);
     child = *(char **)(puff + 0x2E0);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
@@ -72,7 +72,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E4);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E4), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 22);
+    obj_part_set_model(*(char **)(puff + 0x2E4), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 22);
     child = *(char **)(puff + 0x2E4);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
@@ -80,12 +80,12 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     child[0] = 1;
     child = *(char **)(puff + 0x2E8);
     *(short *)(child + 2) = 31;
-    FUN_0c06233a(*(char **)(puff + 0x2E8), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 23);
+    obj_part_set_model(*(char **)(puff + 0x2E8), g_spr_bank_player_fx + (signed char)(owner[3] * 24), 23);
     child = *(char **)(puff + 0x2E8);
     *(float *)(child + 36) = 0.0f;
     *(int *)(child + 144) = zero;
     child = *(char **)(puff + 0x2EC);
-    FUN_0c06233a(child, (char *)g_res_kyoutsuu, 106);
+    obj_part_set_model(child, (char *)g_res_kyoutsuu, 106);
     child[0] = 0;
     *(short *)(child + 2) = 543;
     *(float *)(child + 36) = 0.125f;
@@ -102,7 +102,7 @@ void fx_spawn_trail_chain(char *owner, unsigned char variant)
     *(short *)(puff + 238) = variant;
 }
 
-int FUN_0c0c8cea(int a4, int a5, int a6, float f4)
+int fx_trail_set_part_lengths(int a4, int a5, int a6, float f4)
 {
     register int t19;
     register int t0;
@@ -187,7 +187,7 @@ void fx_trail_resize_chain(char *obj)
         if (want > 0) {
             do {
 #ifdef NATIVE_PORT
-                if (seg == 0)       /* the end of the object list (see FUN_0c0c9394) */
+                if (seg == 0)       /* the end of the object list (see fx_trail_find_hit_segment) */
                     break;
 #endif
                 idx++;
@@ -197,7 +197,7 @@ void fx_trail_resize_chain(char *obj)
         if (idx < old_count) {
             do {
 #ifdef NATIVE_PORT
-                if (seg == 0)       /* the end of the object list (see FUN_0c0c9394) */
+                if (seg == 0)       /* the end of the object list (see fx_trail_find_hit_segment) */
                     break;
 #endif
                 if (*(void (**)(void))(seg + 16) == fx_update_trail_segment) {
@@ -215,7 +215,7 @@ void fx_trail_resize_chain(char *obj)
     if (want > 0) {
         do {
 #ifdef NATIVE_PORT
-            if (seg == 0)           /* the end of the object list (see FUN_0c0c9394) */
+            if (seg == 0)           /* the end of the object list (see fx_trail_find_hit_segment) */
                 break;
 #endif
             *(vec12 *)(seg + 44) = *(vec12 *)(obj + 44);
@@ -234,7 +234,7 @@ void fx_trail_resize_chain(char *obj)
     obj[14] = want;
 }
 
-int FUN_0c0c9394(int a4)
+int fx_trail_find_hit_segment(int a4)
 {
     int stk[5];
     register int t4;

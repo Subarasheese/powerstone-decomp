@@ -31,7 +31,7 @@ int FUN_0c06231c(int, int, int);
 float math_sin_angle16(int, int, int, int);
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
@@ -121,7 +121,7 @@ int FUN_0c01a800(int a4)
             *(unsigned char *)((((((struct o2E0_int *)(t2))->v)) + 0x0)) = 0x1;
             *(unsigned char *)((((((struct o2E0_int *)(t2))->v)) + 0x1)) = 0x0;
             *(unsigned short *)((((((struct o2E0_int *)(t2))->v)) + 0x2)) = 0xF;
-            FUN_0c06233a(((((struct o2E0_int *)(t2))->v)), 0xC664AC0, (*(signed char *)((t0 + 0xC))));
+            obj_part_set_model(((((struct o2E0_int *)(t2))->v)), 0xC664AC0, (*(signed char *)((t0 + 0xC))));
             *(unsigned char *)((t2 + 0xF)) = t1;
             t10 = t1;
         }
@@ -228,11 +228,11 @@ int opt_page2_spawn_bg_scroll(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0xD);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0xD);
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_art_model), 0xC);
+        return obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((int)g_res_art_model), 0xC);
     }
     return t0;
 }
@@ -272,11 +272,11 @@ int FUN_0c01ab4c(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), ((*(signed char *)0xC36233E) + 0xF));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), ((*(signed char *)0xC36233E) + 0xF));
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E4_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E4_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_art_model), 0xE);
+        return obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((int)g_res_art_model), 0xE);
     }
     return t0;
 }
@@ -318,7 +318,7 @@ int FUN_0c01ac74(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0x6A);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_art_model), 0x6A);
     }
     return t0;
 }

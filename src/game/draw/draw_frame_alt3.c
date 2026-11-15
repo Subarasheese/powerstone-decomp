@@ -14,7 +14,7 @@ struct o98_float { char p[0x98]; float v; };
 struct o9C_int { char p[0x9C]; int v; };
 int FUN_0c02cb4a(int);
 int FUN_0c02ced4(int, float, float);
-int FUN_0c05fb58(int, float);
+int draw_set_layer_lighting(int, float);
 int nlSetLightColor(float, float, float);
 int nlLoadMatrix(int, int, int, float, float, float);
 int nlSelectMatrixStack(int);
@@ -26,7 +26,7 @@ int nlObjPutTrnsl(int, float);
 int nlObjPutUseViewMatrix(int);
 int nlObjPutUseViewMatrixTrnsl(int, float);
 
-int FUN_0c02cf18(int a4)
+int draw_object_classes(int a4)
 {
     int stk[4];
 
@@ -85,7 +85,7 @@ int FUN_0c02cf18(int a4)
     if ((((unsigned short)(*(short *)((v0_1 + 0x6))) & 128) == 0)) goto L_C02CFA2;
     goto L_C02D182;
     L_C02CFA2:;
-    FUN_0c05fb58((*(signed char *)((v0_1 + 0x5))), F4);
+    draw_set_layer_lighting((*(signed char *)((v0_1 + 0x5))), F4);
     if ((((unsigned short)(*(short *)((v0_1 + 0x6))) & R10) == 0)) goto L_C02CFC0;
     nlSetLightColor(((((struct o60_float *)(v0_1))->v)), ((((struct o64_float *)(v0_1))->v)), ((((struct o68_float *)(v0_1))->v)));
     L_C02CFC0:;

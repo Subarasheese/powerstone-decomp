@@ -72,7 +72,7 @@ struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int fx_spawn_043bdc(int);
 int snd_play_side_se(int, int);
 int fx_spawn_0485f8(int a4);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 struct o7118_float { char p[0x7118]; float v; };
 struct o3C_float { char p[0x3C]; float v; };
 struct o44_float { char p[0x44]; float v; };
@@ -557,7 +557,7 @@ int FUN_0c08e4bc(int a4)
             if ((*(signed char *)((a4 + 0x3))) != 0) {
                 t0 = 0x15;
             }
-            FUN_0c0a3f30(t0);
+            snd_play_se_indexed(t0);
         }
     } else {
         if ((unsigned char)(*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x4))) == 6) {
@@ -565,7 +565,7 @@ int FUN_0c08e4bc(int a4)
             if ((*(signed char *)((a4 + 0x3))) != 0) {
                 t0 = 0x13;
             }
-            FUN_0c0a3f30(t0);
+            snd_play_se_indexed(t0);
         } else {
             if ((unsigned char)(*(signed char *)((((((struct oF8_int *)(a4))->v)) + 0x4))) == 7) {
                 t0 = FUN_0c0555c4();
@@ -574,7 +574,7 @@ int FUN_0c08e4bc(int a4)
                     if ((*(signed char *)((a4 + 0x3))) != 0) {
                         t0 = 0x12;
                     }
-                    FUN_0c0a3f30(t0);
+                    snd_play_se_indexed(t0);
                 }
             }
         }
@@ -779,7 +779,7 @@ int FUN_0c08e980(int a4)
     if (((*(signed char *)((v0_2 + 0x3))) == 0)) goto L_C08EB6E;
     R4 = (0x2D);
     L_C08EB70:;
-    v0_4 = ((FUN_0c0a3f30(R4)));
+    v0_4 = ((snd_play_se_indexed(R4)));
     goto L_C08EB76;
     L_C08EB6E:;
     R4 = (0x17);

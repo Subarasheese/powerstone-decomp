@@ -17,7 +17,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o0_float { float v; };
 struct o4_float { char p[0x4]; float v; };
 
@@ -72,7 +72,7 @@ int fx_tick_04b6b8(int a4, int a5, int a6, int a7)
 
     if ((*(signed char *)((a4 + 0x8))) == 0) {
         t1 = (((struct o2E0_int *)(a4))->v);
-        FUN_0c06233a(t1, ((int)g_res_kyoutsuu), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC32203C))));
+        obj_part_set_model(t1, ((int)g_res_kyoutsuu), (*(signed char *)((((((struct oEC_short *)(a4))->v)) + 0xC32203C))));
         u5 = *(float *)0xC04B8F8;
         (((struct o1C_float *)(t1))->v) = u5;
         (((struct o20_float *)(t1))->v) = u5;

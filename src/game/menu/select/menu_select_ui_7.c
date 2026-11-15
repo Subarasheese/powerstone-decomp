@@ -35,7 +35,7 @@ struct Obj {
     char pad_18[736 - 44];
     struct Sub *sub[8];
 };
-void FUN_0c06233a(struct Sub *dst, int tbl, int type);
+void obj_part_set_model(struct Sub *dst, int tbl, int type);
 typedef struct { int w0, w1, w2; } vec3i;
 extern void menu_ui_task_24(void);
 
@@ -236,7 +236,7 @@ void menu_ui_setup_subobject(struct Obj *obj, int n, int flag)
         type = 35;
     else
         type = *(signed char *)(0xC152C2C + n * 16) + obj->kind4;
-    FUN_0c06233a(obj->sub[n], ((int)g_res_csel_ssel), type);
+    obj_part_set_model(obj->sub[n], ((int)g_res_csel_ssel), type);
     obj->sub[n]->field_00 = 1;
     obj->sub[n]->field_02 = 287;
     obj->sub[n]->rec = *(struct V3 *)(0xC152C20 + n * 16);

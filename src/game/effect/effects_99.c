@@ -39,7 +39,7 @@ struct Task {
 struct Task *obj_create(int a, int b, int c, int d);
 void fx_tick_043bdc(void);
 void *memset(void *p, int c, unsigned n);
-void FUN_0c06233a(struct Sub *s, int tbl, int n);
+void obj_part_set_model(struct Sub *s, int tbl, int n);
 float math_rand_float(void);
 
 void fx_spawn_043bdc(char *src)
@@ -65,7 +65,7 @@ void fx_spawn_043bdc(char *src)
         part = task->sub[idx];
         rec = &part->rec;
         memset(rec, 0, 12);
-        FUN_0c06233a(part, ((int)g_res_kyoutsuu), rec->b6 + 117);
+        obj_part_set_model(part, ((int)g_res_kyoutsuu), rec->b6 + 117);
         part->b0 = 1;
         part->s2 = 49;
         part->f36 = (float)((unsigned int)(math_rand_float() * 255.0f) % 10u + 1) / 10.0f + 1.0f;

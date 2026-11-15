@@ -6,7 +6,7 @@ struct B { char p[0x2e0]; short *q; };
 struct A { char a0, a1, a2; };
 extern struct E *obj_create(int, int, int, int);
 extern void stage_obj_load_layout_pos(struct E *);
-extern void FUN_0c06233a(char *, int, int);
+extern void obj_part_set_model(char *, int, int);
 extern struct V g_vec3_one_33a20c;
 extern char g_res_stage_b;
 void stage_gimmick_07_update(void);
@@ -27,7 +27,7 @@ void stage_gimmick_07_spawn(struct A *a)
         e->c30e = a->a1;
         stage_obj_load_layout_pos(e);
         e->v80 = g_vec3_one_33a20c;
-        FUN_0c06233a(e->p2e0, (int)&g_res_stage_b, a->a2);
+        obj_part_set_model(e->p2e0, (int)&g_res_stage_b, a->a2);
         *e->p2e0 = one;
         ((short *)((struct B *)e)->q)[1] = one;
     }

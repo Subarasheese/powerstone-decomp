@@ -1,7 +1,7 @@
 /* same module: large constructor (0c0ca268-0c0cb00c) */
 
 char *obj_create(int a, int b, int c, int d);
-void FUN_0c06233a(char *model, char *palette, int kind);
+void obj_part_set_model(char *model, char *palette, int kind);
 void obj_set_record_char(char *e, int action);
 typedef struct { float x, y, z; } VEC3;
 #define B(o, n) (*(signed char *)((o) + (n)))
@@ -54,13 +54,13 @@ void FUN_0c0ca268(char *src, char kind)
     F(e, 88) = 0.5f;
     F(e, 84) = 0.5f;
     F(e, 80) = 0.5f;
-    FUN_0c06233a(MDL(e, 0), PAL(src), 0);
+    obj_part_set_model(MDL(e, 0), PAL(src), 0);
     MDL(e, 0)[0] = 0;
     H(MDL(e, 0), 2) = 1055;
     F(MDL(e, 0), 64) = 1.0f;
     I(MDL(e, 0), 16) = I(MDL(e, 0), 16) + 0x4000;
     scale(MDL(e, 0), 2.0f);
-    FUN_0c06233a(MDL(e, 1), PAL(src), 1);
+    obj_part_set_model(MDL(e, 1), PAL(src), 1);
     MDL(e, 1)[0] = 0;
     H(MDL(e, 1), 2) = 1055;
     F(MDL(e, 1), 64) = 1.0f;
@@ -69,7 +69,7 @@ void FUN_0c0ca268(char *src, char kind)
     F(MDL(e, 1), 36) = 1.0f;
     I(MDL(e, 1), 16) = I(MDL(e, 1), 16) - 0x4000;
     scale(MDL(e, 1), 2.0f);
-    FUN_0c06233a(MDL(e, 2), PAL(src), 4);
+    obj_part_set_model(MDL(e, 2), PAL(src), 4);
     MDL(e, 2)[0] = 0;
     H(MDL(e, 2), 2) = 1055;
     F(MDL(e, 2), 64) = 1.0f;
@@ -77,7 +77,7 @@ void FUN_0c0ca268(char *src, char kind)
     F(MDL(e, 2), 32) = 0.0999999940f;
     F(MDL(e, 2), 36) = 0.0999999940f;
     scale(MDL(e, 2), 2.0f);
-    FUN_0c06233a(MDL(e, 3), PAL(src), 5);
+    obj_part_set_model(MDL(e, 3), PAL(src), 5);
     MDL(e, 3)[0] = 0;
     H(MDL(e, 3), 2) = 1055;
     F(MDL(e, 3), 64) = 1.0f;
@@ -85,13 +85,13 @@ void FUN_0c0ca268(char *src, char kind)
     F(MDL(e, 3), 32) = 1.0f;
     F(MDL(e, 3), 36) = 0.0f;
     scale(MDL(e, 3), 2.0f);
-    FUN_0c06233a(MDL(e, 4), PAL(src), 2);
+    obj_part_set_model(MDL(e, 4), PAL(src), 2);
     MDL(e, 4)[0] = 0;
     H(MDL(e, 4), 2) = 1055;
     F(MDL(e, 4), 64) = 1.0f;
     *(VEC3 *)(MDL(e, 4) + 28) = *(VEC3 *)0x0C153380;
     scale(MDL(e, 4), 2.0f);
-    FUN_0c06233a(MDL(e, 5), PAL(src), 2);
+    obj_part_set_model(MDL(e, 5), PAL(src), 2);
     MDL(e, 5)[0] = 0;
     H(MDL(e, 5), 2) = 1055;
     F(MDL(e, 5), 64) = 1.0f;

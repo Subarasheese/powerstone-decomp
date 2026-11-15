@@ -105,7 +105,7 @@ int obj_create(int, int, int);
 int FUN_0c0593e0(int);
 int obj_tick_class(int);
 int FUN_0c05f2d4(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c08d662(int);
 int hit_probe_step_by_velocity(int, int, float);
 int pl_apply_acceleration(int);

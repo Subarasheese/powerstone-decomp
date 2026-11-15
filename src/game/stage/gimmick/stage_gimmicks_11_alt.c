@@ -5,7 +5,7 @@ struct o54_float { char p[0x54]; float v; };
 struct o5C_float { char p[0x5C]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int math_rand_next(void);
 extern int _modls();
 int _quick_odd_mvn(void);
@@ -27,7 +27,7 @@ void stage_gimmick_11_update(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((a4 + 0x20)) = *(struct mv3 *)(((signed char)(((t0 << 1) + t0) << 2) + 0xC33A2D4)); }
         break;
     case 1:
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
         (((struct o54_float *)(a4))->v) = (((((struct o54_float *)(a4))->v)) + 0.199999988f);
         if (1.0f > ((((struct o54_float *)(a4))->v))) {
         } else {
@@ -35,13 +35,13 @@ void stage_gimmick_11_update(int a4)
         }
         break;
     case 2:
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
         if ((int)((((struct oEC_short *)(a4))->v)) > (int)0x3C) {
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
         }
         break;
     case 3:
-        FUN_0c06233a(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
+        obj_part_set_model(((((struct o2E0_int *)(a4))->v)), 0xC664958, (t0 + 0xE));
         (((struct o5C_float *)(a4))->v) = (((((struct o5C_float *)(a4))->v)) - 0.099999994f);
         if ((int)((((struct oEC_short *)(a4))->v)) > (int)0x46) {
             *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);

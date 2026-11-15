@@ -8,7 +8,7 @@ struct o40_float { char p[0x40]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oC_float { char p[0xC]; float v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
 extern int _quick_odd_mvn();
@@ -48,7 +48,7 @@ int fx_spawn_03fab4(int a4)
         for (;;) {
             t5 = *(int *)((((t3 << 2) + (0x2E0 + t0)) + 0x0));
             *(unsigned char *)((t5 + 0x0)) = 0x1;
-            FUN_0c06233a(t5, 0xC4CFA68, (t3 + 0x59));
+            obj_part_set_model(t5, 0xC4CFA68, (t3 + 0x59));
             *(unsigned short *)((t5 + 0x2)) = 0x1F;
             (((struct o4_float *)(t5))->v) = ((math_cos_angle16(t4)) * ((((struct o40_float *)(t0))->v)));
             t3 = (t3 + 0x1);

@@ -9,7 +9,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_destroy(int, int, int, int);
 int FUN_0c0ace1c(int, int);
 int thunk_math_mat_get_translate(int, int);
@@ -43,7 +43,7 @@ int fx_spawn_048aa0(int a4)
             *(unsigned int *)((t0 + 0x34)) = 0x8000;
             t3 = *(signed char *)((a4 + 0x3));
             (((struct o118_uint *)(t0))->v) = (0x2C0 + ((short)((short)(*(signed char *)((((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0) + (0x300 + ((unsigned short)((unsigned short)t3 * (unsigned short)0x72D0) + 0xC7E40C4))));
-            FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, 0xF);
+            obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, 0xF);
             *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
             *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
             t1 = 0xF;

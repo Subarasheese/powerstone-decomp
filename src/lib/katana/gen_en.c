@@ -80,7 +80,7 @@ int res_switch_scene(int);
 int FUN_0c0613c4(int);
 int FUN_0c061400(int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0634b4(int);
 int FUN_0c0989ea(int);
 int FUN_0c0989fc(int);

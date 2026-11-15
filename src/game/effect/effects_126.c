@@ -8,7 +8,7 @@ struct o50_float { char p[0x50]; float v; };
 struct o54_float { char p[0x54]; float v; };
 struct o58_float { char p[0x58]; float v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o10_uchar { char p[0x10]; unsigned char v; };
 struct o11_uchar { char p[0x11]; unsigned char v; };
 struct o12_uchar { char p[0x12]; unsigned char v; };
@@ -49,7 +49,7 @@ int fx_spawn_04a4c4(int a4)
         (((struct o58_float *)(t0))->v) = 1.0f;
         (((struct o54_float *)(t0))->v) = 1.0f;
         (((struct o50_float *)(t0))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x62);
+        obj_part_set_model(((((struct o2FC_int *)(t0))->v)), ((int)g_res_kyoutsuu), 0x62);
         *(unsigned char *)((((((struct o2FC_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2FC_int *)(t0))->v)) + 0x2)) = 0x5;
         t6 = 0x0;

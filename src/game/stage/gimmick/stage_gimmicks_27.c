@@ -9,7 +9,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o308_uint { char p[0x308]; unsigned int v; };
 struct o30E_uchar { char p[0x30E]; unsigned char v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int stage_obj_load_layout_pos(int);
 int _quick_odd_mvn(void);
 int obj_destroy(int, int, int, int);
@@ -54,7 +54,7 @@ int stage_gimmick_25_spawn(int a4)
         stage_obj_load_layout_pos(t0);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A6C4); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x38)) = *(struct mv3 *)(0xC33A6B8); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t10 = 0xF;
@@ -126,7 +126,7 @@ int stage_gimmick_25_spawn_b(int a4, int a5)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A6C4); }
         (((struct o3C_float *)(t0))->v) = (*(float *)0xC0B2B18);
         (((struct oEC_ushort *)(t0))->v) = 0x50;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((((((struct o308_int *)(a4))->v)) + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x40F;
         (((struct o40_float *)(((((struct o2E0_int *)(t0))->v))))->v) = 1.0f;

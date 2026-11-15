@@ -5,7 +5,7 @@ extern char g_res_font[];
 typedef struct { int x, y, z; } Vec3i;
 typedef struct { float f0, f1, f2, f3; } Float4;
 extern int FUN_0c0d5188(void);
-extern void FUN_0c06233a(void *, int, int);
+extern void obj_part_set_model(void *, int, int);
 extern int obj_destroy(void *);
 extern signed char g_game_state;
 #define STATE (*(signed char *)(obj + 8))
@@ -31,7 +31,7 @@ void fx_tick_0581b4(char *obj)
         *(short *)(obj + 6) = 31;
         obj[5] = 25;
         for (idx = 0; idx < 2; idx++) {
-            FUN_0c06233a(ACTOR(idx), ((int)g_res_font), layout_row[24] + (signed char)obj[0xEE] * 2 + idx);
+            obj_part_set_model(ACTOR(idx), ((int)g_res_font), layout_row[24] + (signed char)obj[0xEE] * 2 + idx);
             *ACTOR(idx) = 0;
             *(Vec3i *)(ACTOR(idx) + 4) = *(Vec3i *)layout_row;
             *(Vec3i *)(ACTOR(idx) + 28) = *(Vec3i *)(layout_row + 12);
@@ -52,7 +52,7 @@ void fx_tick_0581b4(char *obj)
         STYLE_NUM = STYLE_SRC;
         tint_rows = (Float4 *)0xC32DEC4;
         for (idx = 0; idx < 2; idx++) {
-            FUN_0c06233a(ACTOR(idx), ((int)g_res_font), layout_row[24] + (signed char)obj[0xEE] * 2 + idx);
+            obj_part_set_model(ACTOR(idx), ((int)g_res_font), layout_row[24] + (signed char)obj[0xEE] * 2 + idx);
             *ACTOR(idx) = 0;
             *(Vec3i *)(ACTOR(idx) + 4) = *(Vec3i *)layout_row;
             *(Vec3i *)(ACTOR(idx) + 28) = *(Vec3i *)(layout_row + 12);

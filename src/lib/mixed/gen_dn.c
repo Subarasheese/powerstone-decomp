@@ -86,7 +86,7 @@ int FUN_0c0158d8(void);
 int FUN_0c022a5a(int, int, int);
 int FUN_0c022b08(int, int, int, int);
 int FUN_0c0555c4(void);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c0641a0(int, float, float);
 int FUN_0c087cc4(int);
 int pl_valgas_attack_type1(int);
@@ -1100,7 +1100,7 @@ int FUN_0c0b04d4(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x20)) = *(struct mv3 *)((a4 + 0x20)); }
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC33A36C); }
         t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC664958, (*(signed char *)(((((*(signed char *)((t0 + 0x30E))) << 2) << 2) + 0xC33A384))));
+        obj_part_set_model(t2, 0xC664958, (*(signed char *)(((((*(signed char *)((t0 + 0x30E))) << 2) << 2) + 0xC33A384))));
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x31;
         t3 = *(signed char *)((t0 + 0x30E));
@@ -1119,7 +1119,7 @@ int FUN_0c0b04d4(int a4)
             break;
         }
         t2 = (((struct o2E4_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC664958, (*(signed char *)(((*(signed char *)((t0 + 0x30E))) + 0xC33A3C4))));
+        obj_part_set_model(t2, 0xC664958, (*(signed char *)(((*(signed char *)((t0 + 0x30E))) + 0xC33A3C4))));
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x11;
         t1 = 0x11;
@@ -1189,7 +1189,7 @@ int FUN_0c036180(int a4, int a5)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1F;
         t14 = *(signed char *)((a4 + 0x3));
-        t19 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t14 << 1) + t14) << 2) << 1) + 0xC6002D0), 0x6));
+        t19 = (obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t14 << 1) + t14) << 2) << 1) + 0xC6002D0), 0x6));
     }
     return t19;
 }

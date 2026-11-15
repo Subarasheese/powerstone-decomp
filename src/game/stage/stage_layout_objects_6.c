@@ -13,7 +13,7 @@ struct o24_float { char p[0x24]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 extern int _quick_odd_mvn();
 int snd_play_stage_obj_se(int a4, int a5, int a6);
 
@@ -80,7 +80,7 @@ int fx_spawn_debris_sprites(int a4, int a5)
         t4 = 0x0;
         for (;;) {
             t5 = *(int *)((((t4 << 2) + (0x2E0 + t0)) + 0x0));
-            FUN_0c06233a(t5, 0xC664970, (t4 + ((t3 << 2) + t3)));
+            obj_part_set_model(t5, 0xC664970, (t4 + ((t3 << 2) + t3)));
             *(unsigned char *)((t5 + 0x0)) = 0x1;
             *(unsigned short *)((t5 + 0x2)) = 0x1F;
             (((struct o1C_float *)(t5))->v) = u2;

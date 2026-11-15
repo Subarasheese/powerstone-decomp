@@ -14,7 +14,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_short { char p[0xEE]; short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_destroy(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int menu_ui_task_22(int a4)
@@ -39,7 +39,7 @@ int menu_ui_task_22(int a4)
             if ((int)t0 < (int)0x2) {
                 t1 = 0x1;
             }
-            FUN_0c06233a((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A60, (t1 + 0x25));
+            obj_part_set_model((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))), 0xC664A60, (t1 + 0x25));
             *(unsigned char *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x0)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x2)) = 0x3F;
             { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + a4) + (t0 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(((signed char)(((t0 << 1) + t0) << 2) + 0xC152BC0)); }

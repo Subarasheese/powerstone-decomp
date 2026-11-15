@@ -64,7 +64,7 @@ int obj_create(int, int, int);
 int obj_destroy(int);
 int math_vec3_sub(int, int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int fx_swirl_create(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);

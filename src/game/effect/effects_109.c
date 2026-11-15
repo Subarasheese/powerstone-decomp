@@ -8,7 +8,7 @@ struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 struct o44_float { char p[0x44]; float v; };
 struct o48_float { char p[0x48]; float v; };
@@ -45,7 +45,7 @@ int fx_spawn_045f9c(int a4)
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC14A73C); }
         *(unsigned int *)((t0 + 0x1C)) = a4;
         t2 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t2, 0xC4CFA68, 0x7C);
+        obj_part_set_model(t2, 0xC4CFA68, 0x7C);
         *(unsigned char *)((t2 + 0x0)) = 0x1;
         *(unsigned short *)((t2 + 0x2)) = 0x1F;
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t2 + 0x10)) = *(struct mv3 *)((a4 + 0x2C)); }
@@ -57,7 +57,7 @@ int fx_spawn_045f9c(int a4)
         for (;;) {
             t3 = *(int *)((t2 + 0x0));
             t2 = (t2 + 0x4);
-            FUN_0c06233a(t3, 0xC4CFA68, 0x7C);
+            obj_part_set_model(t3, 0xC4CFA68, 0x7C);
             *(unsigned char *)((t3 + 0x0)) = 0x0;
             t0 = (t0 + 0x1);
             *(unsigned short *)((t3 + 0x2)) = 0x21F;

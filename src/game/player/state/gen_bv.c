@@ -174,7 +174,7 @@ int FUN_0c06d7d2(int a4, int a5, int a6, int a7);
 int FUN_0c086a04(int a4);
 int FUN_0c07cba8(int a4);
 int FUN_0c085ad4(int a4);
-int FUN_0c0d50be(float f4);
+int game_world_tick(float f4);
 int FUN_0c0b1028(int a4);
 int FUN_0c0d21fc(int a4);
 int FUN_0c06c7b4(int a4);
@@ -711,7 +711,7 @@ int FUN_0c085ad4(int a4)
     return FUN_0c085606(a4);
 }
 
-int FUN_0c0d50be(float f4)
+int game_world_tick(float f4)
 {
     *(unsigned int *)0xC7F307C = ((*(int *)0xC7F307C) + 0x1);
     game_update_fighters();

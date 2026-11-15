@@ -28,7 +28,7 @@ struct EffectObj {
 };
 void stage_obj_on_break(struct EffectObj *obj);
 void fx_spawn_with_params(struct Vec3f *p, float a, float b, float c, float d);
-void FUN_0c06233a(int model, int tbl, int idx);
+void obj_part_set_model(int model, int tbl, int idx);
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_set_mode_owner(int, int, int);
@@ -95,7 +95,7 @@ void stage_type02_break_step(struct EffectObj *obj)
     top = obj->pos;
     top.y = top.y + 50.0f;
     fx_spawn_with_params(&top, 1.0f, 1.0f, 1.0f, 2.0f);
-    FUN_0c06233a(obj->model, 0xC664958, obj->spec_ptr[1]);
+    obj_part_set_model(obj->model, 0xC664958, obj->spec_ptr[1]);
     obj->table_ptr = (int)owner_obj + 768 + (short)(owner_obj->slot * 3520) + 1408;
     obj->pos = *(struct Vec3f *)0xC339FE4;
     obj->vel = *(struct Vec3f *)0xC339FF0;

@@ -13,7 +13,7 @@ struct o58_float { char p[0x58]; float v; };
 struct o8_float { char p[0x8]; float v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record_char(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -80,7 +80,7 @@ int fx_spawn_09(int a4, int a5)
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x0)) = 0x1;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t4) + 0x0))) + 0x2)) = 0xF;
             t3 = *(signed char *)((a4 + 0x3));
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), t2);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t4) + 0x0))), ((signed char)((((t3 << 1) + t3) << 2) << 1) + 0xC6002D0), t2);
             t2 = (t2 + 0x1);
         }
         (((struct o8_float *)(((((struct o2E4_int *)(t0))->v))))->v) = (((((struct o2D4_float *)(a4))->v)) - ((((struct o24_float *)(t0))->v)));

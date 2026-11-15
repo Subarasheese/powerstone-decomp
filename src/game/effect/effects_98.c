@@ -3,7 +3,7 @@
 /* named globals (symbols.txt) */
 extern char g_res_kyoutsuu[];
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(int);
 struct o28_float { char p[0x28]; float v; };
 struct o2C_float { char p[0x2C]; float v; };
@@ -62,7 +62,7 @@ int fx_spawn_043730(int a4, int a5)
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t3) + 0x0))) + 0x2)) = 0x3F;
             t6 = *(signed char *)((t2 + 0x0));
             t2 = (t2 + 0x1);
-            t8 = FUN_0c06233a((*(int *)((((0x2E0 + t0) + t3) + 0x0))), 0xC4CFA68, t6);
+            t8 = obj_part_set_model((*(int *)((((0x2E0 + t0) + t3) + 0x0))), 0xC4CFA68, t6);
             t1 = (t1 + 0x1);
             t3 = (t3 + 0x4);
             if ((int)(signed char)t1 >= (int)0x3) {

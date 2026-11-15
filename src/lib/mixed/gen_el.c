@@ -81,7 +81,7 @@ int res_load_file_unpack(int);
 int res_load_file_raw_d(int);
 int res_textures_register(int);
 int math_mat_transform_point(int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_start_motion(int, int, int);
 int pl_step_motion(int);
 int pl_get_hit_count_of_opponent(int);

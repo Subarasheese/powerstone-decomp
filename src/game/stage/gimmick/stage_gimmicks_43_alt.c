@@ -6,7 +6,7 @@ struct o24_float { char p[0x24]; float v; };
 struct o40_float { char p[0x40]; float v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int stage_random_spawn_position(int);
 extern int _quick_odd_mvn();
 
@@ -40,7 +40,7 @@ int stage_gimmick_40_spawn(int a4)
         for (;;) {
             t4 = *(int *)((t2 + 0x0));
             t2 = (t2 + 0x4);
-            FUN_0c06233a(t4, 0xC664958, (*(signed char *)((a4 + 0x2))));
+            obj_part_set_model(t4, 0xC664958, (*(signed char *)((a4 + 0x2))));
             *(unsigned char *)((t4 + 0x0)) = 0x1;
             *(unsigned short *)((t4 + 0x2)) = 0x411;
             stage_random_spawn_position((t4 + 0x4));

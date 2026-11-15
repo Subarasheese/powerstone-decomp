@@ -79,7 +79,7 @@ int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
 int FUN_0c05f2d4(int, int);
 int FUN_0c06231c(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int mdl_vtx_iter_begin(int, int);
 int mdl_vtx_iter_next(void);
 int mdl_vtx_get_pos(int);

@@ -4,7 +4,7 @@ struct o118_uint { char p[0x118]; unsigned int v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _quick_odd_mvn(void);
 
 int fx_spawn_032fd4(int a4, int a5)
@@ -40,7 +40,7 @@ int fx_spawn_032fd4(int a4, int a5)
                 *(unsigned char *)(((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))) + 0x0)) = 0x1;
                 *(unsigned short *)(((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))) + 0x2)) = 0x1F;
                 t6 = *(signed char *)((a4 + 0x3));
-                FUN_0c06233a((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), (t3 + 0xB));
+                obj_part_set_model((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))), ((signed char)((((t6 << 1) + t6) << 2) << 1) + 0xC6002D0), (t3 + 0xB));
                 { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))) + 0x4)) = *(struct mv3 *)(0xC1495F8); }
                 { struct mv3 { int w[3]; }; *(struct mv3 *)(((*(int *)((((0x2E0 + t1) + (t3 << 2)) + 0x0))) + 0x1C)) = *(struct mv3 *)(0xC149604); }
                 t3 = (t3 + 0x1);

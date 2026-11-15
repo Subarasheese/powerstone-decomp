@@ -13,7 +13,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF0_ushort { char p[0xF0]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int obj_set_record(int, int);
 float math_cos_angle16(int);
 float math_sin_angle16(int);
@@ -73,7 +73,7 @@ int fx_spawn_02(int a4, int a5, int a6)
         (((struct o118_uint *)(t0))->v) = 0x0;
         *(unsigned int *)((t0 + 0x10)) = 0xC0B605C;
         t11 = (((struct o2E0_int *)(t0))->v);
-        FUN_0c06233a(t11, 0xC4CFA68, 0x39);
+        obj_part_set_model(t11, 0xC4CFA68, 0x39);
         *(unsigned char *)((t11 + 0x0)) = 0x1;
         *(unsigned short *)((t11 + 0x2)) = 0xF;
         t13 = 0xF;

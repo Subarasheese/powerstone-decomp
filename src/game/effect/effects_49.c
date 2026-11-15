@@ -1,7 +1,7 @@
 /* effect object spawn/tick pairs (obj_create class 5/6/1/3 + tick); consecutive rows are one module game_fx (0c03a12c-0c03a278) */
 
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int _modls(void);
 int _quick_odd_mvn(void);
 
@@ -99,7 +99,7 @@ int FUN_0c03a12c(int a4, int a5, int a6)
                 t4 = (signed char)t0;
                 t4 = (t4 + t2);
                 t3 = t1;
-                t0 = (FUN_0c06233a(t3, t4, t5));
+                t0 = (obj_part_set_model(t3, t4, t5));
                 t2 = (*(int *)(((int)stk + 0)));
                 t7 = (t7 + 0x1);
                 *(unsigned char *)((t2 + 0x0)) = 0x1;

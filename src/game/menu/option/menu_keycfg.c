@@ -48,7 +48,7 @@ struct o28_float { char p[0x28]; float v; };
 struct o2E0_int { char p[0x2E0]; int v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o2E4_int { char p[0x2E4]; int v; };
 struct o2E8_int { char p[0x2E8]; int v; };
 struct o2EC_int { char p[0x2EC]; int v; };
@@ -1464,7 +1464,7 @@ int FUN_0c0187a8(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
-        return FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1A);
+        return obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1A);
     }
     return t0;
 }
@@ -1516,14 +1516,14 @@ int FUN_0c018b96(int a4, int a5)
                 break;
             }
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1);
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x2);
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x3);
-        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x4);
-        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x5);
-        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x6);
-        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0);
-        t31 = (FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1);
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x2);
+        obj_part_set_model(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x3);
+        obj_part_set_model(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x4);
+        obj_part_set_model(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x5);
+        obj_part_set_model(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x6);
+        obj_part_set_model(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0);
+        t31 = (obj_part_set_model(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x0));
     }
     return t31;
 }
@@ -1665,14 +1665,14 @@ int FUN_0c018ed0(int a4, int a5)
                 break;
             }
         }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0xE);
-        FUN_0c06233a(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0xF);
-        FUN_0c06233a(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x10);
-        FUN_0c06233a(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x11);
-        FUN_0c06233a(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x12);
-        FUN_0c06233a(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x13);
-        FUN_0c06233a(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
-        FUN_0c06233a(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0xE);
+        obj_part_set_model(((((struct o2E4_int *)(t0))->v)), ((int)g_res_key_cfg), 0xF);
+        obj_part_set_model(((((struct o2E8_int *)(t0))->v)), ((int)g_res_key_cfg), 0x10);
+        obj_part_set_model(((((struct o2EC_int *)(t0))->v)), ((int)g_res_key_cfg), 0x11);
+        obj_part_set_model(((((struct o2F0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x12);
+        obj_part_set_model(((((struct o2F4_int *)(t0))->v)), ((int)g_res_key_cfg), 0x13);
+        obj_part_set_model(((((struct o2F8_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
+        obj_part_set_model(((((struct o2FC_int *)(t0))->v)), ((int)g_res_key_cfg), 0xD);
         *(unsigned char *)((((((struct o2FC_int *)(t0))->v)) + 0x0)) = 0x0;
         t31 = 0x2FC;
     }
@@ -1749,7 +1749,7 @@ int FUN_0c019204(int a4, int a5)
         t5 = 0xC11B784;
         t6 = 0x0;
         for (;;) {
-            FUN_0c06233a((*(int *)((((0x2E0 + t0) + t6) + 0x0))), ((int)g_res_key_cfg), 0x1E);
+            obj_part_set_model((*(int *)((((0x2E0 + t0) + t6) + 0x0))), ((int)g_res_key_cfg), 0x1E);
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x0)) = 0x1;
             *(unsigned char *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x1)) = 0x0;
             *(unsigned short *)(((*(int *)((((0x2E0 + t0) + t6) + 0x0))) + 0x2)) = 0xF;
@@ -1823,7 +1823,7 @@ int FUN_0c0193b2(int a4, int a5)
         *(unsigned int *)((t0 + 0x2C)) = 0x0;
         (((struct oF2_ushort *)(t0))->v) = (*(short *)(((int)stk + 4)));
         (((struct o5C_float *)(t0))->v) = 1.0f;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1D);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), 0x1D);
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
@@ -1886,7 +1886,7 @@ int FUN_0c0194dc(int a4, int a5)
             u5 = ((((struct o4_float *)0xC0195D4)->v));
         }
         (((struct o20_float *)(t0))->v) = u5;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), ((*(signed char *)(((((signed char)a4 << 2) << 2) + 0xC3622F7))) + 0x1B));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((int)g_res_key_cfg), ((*(signed char *)(((((signed char)a4 << 2) << 2) + 0xC3622F7))) + 0x1B));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;

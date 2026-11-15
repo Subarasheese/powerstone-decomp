@@ -3,7 +3,7 @@
 char *obj_create(int a, int b, int c, int d);
 void thunk_math_mat_get_translate(char *slot, float *pos);
 void obj_set_record_char(char *e, int action);
-void FUN_0c06233a(char *model, char *palette, int kind);
+void obj_part_set_model(char *model, char *palette, int kind);
 int math_rand_next(void);
 float math_rand_float(void);
 typedef struct { float x, y, z; } VEC3;
@@ -46,7 +46,7 @@ void FUN_0c0c1360(char *src, char kind)
     e[0x107] = 1;
     obj_set_record_char(e, 112);
     m = *(char **)(e + 0x2E0);
-    FUN_0c06233a(m, PAL(src), 2);
+    obj_part_set_model(m, PAL(src), 2);
     m[0] = 1;
     H(m, 2) = 533;
     F(m, 8) = 0.0f;
@@ -56,7 +56,7 @@ void FUN_0c0c1360(char *src, char kind)
     s.next = (char **)(e + 0x2E0 + 4);
     for (j = 1; j < 10; j++) {
         m = *s.next++;
-        FUN_0c06233a(m, PAL(src), 1);
+        obj_part_set_model(m, PAL(src), 1);
         m[0] = 1;
         H(m, 2) = 533;
         F(m, 4) = (float)(math_rand_next() % 100) + -50.0f;

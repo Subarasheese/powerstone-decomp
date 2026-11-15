@@ -9,7 +9,7 @@ struct o2E0_int { char p[0x2E0]; int v; };
 struct o308_uint { char p[0x308]; unsigned int v; };
 struct o30D_uchar { char p[0x30D]; unsigned char v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int stage_obj_load_layout_pos(int);
 int _quick_odd_mvn(void);
 
@@ -39,7 +39,7 @@ int stage_spawn_type03(int a4)
         (((struct o106_uchar *)(t0))->v) = 0x1;
         stage_obj_load_layout_pos(t0);
         { struct mv3 { int w[3]; }; *(struct mv3 *)((t0 + 0x50)) = *(struct mv3 *)(0xC339CEC); }
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664958, (*(signed char *)((a4 + 0x2))));
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x1;
         t10 = 0x1;

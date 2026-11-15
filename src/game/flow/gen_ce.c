@@ -85,7 +85,7 @@ int FUN_0c0a2f66(int);
 int FUN_0c0a3762(int, int);
 int FUN_0c0a3d5c(int, int);
 int FUN_0c0a3f0e(int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 int FUN_0c0bf488(int, int);
 float FUN_0c0d5bc0(void);
 extern float _builtin_sqrtf(float);
@@ -332,7 +332,7 @@ int FUN_0c053434(void)
     if ((signed char)t76 == t71) {
         t77 = 0x6;
     }
-    FUN_0c0a3f30(t77);
+    snd_play_se_indexed(t77);
     *(unsigned short *)0xC7F3036 = 0x96;
     return fx_spawn_055cba();
 }

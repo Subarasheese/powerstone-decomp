@@ -362,7 +362,7 @@ int FUN_0c114b50(int a4);
 int FUN_0c01e75e(int a4, int a5);
 int FUN_0c020468(int a4);
 int FUN_0c027c7e(void);
-int FUN_0c02d458(void);
+int draw_frame_should_skip(void);
 int FUN_0c04ca6e(int a4);
 int obj_tick_class(int a4, int a5, int a6, int a7);
 int mdl_vtx_iter_begin(int a4, int a5);

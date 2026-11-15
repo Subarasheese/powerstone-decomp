@@ -65,7 +65,7 @@ float FUN_0c02649a(int, int);
 int FUN_0c0593e0(int);
 int FUN_0c05b400(int, float);
 int FUN_0c061f9c(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int FUN_0c063468(int);
 int FUN_0c0634b4(int);
 int FUN_0c0641a0(int, float, float);
@@ -132,7 +132,7 @@ int pl_try_grab_target_object(int a4, int a5, int a6, int a7);
 int FUN_0c0d780c(void);
 int FUN_0c02a9bc(float f4);
 int vmu_menu_scan_port_masks(int a4);
-int FUN_0c0d4ff4(void);
+int game_play_game_over_update(void);
 int pl_mode15_cls05_07_f1(int a4);
 int FUN_0c06428a(int a4);
 int pl_mode12_phase0(int a4);
@@ -630,7 +630,7 @@ int demo_spawn_jitter_sparkle(int a4, int a5)
                             *(unsigned char *)((t6 + 0x0)) = 0x1;
                             *(unsigned char *)((t6 + 0x1)) = 0x0;
                             *(unsigned short *)((t6 + 0x2)) = 0xF;
-                            FUN_0c06233a(t6, 0xC6649E8, 0x4F);
+                            obj_part_set_model(t6, 0xC6649E8, 0x4F);
                             t5 = (t5 + 0x1);
                             if (((((struct oEE_short *)(t8))->v)) != 0) {
                                 u14 = ((((struct o0_float *)0xC02A52C)->v));
@@ -691,7 +691,7 @@ int demo_spawn_jitter_sparkle(int a4, int a5)
                     *(unsigned char *)((t59 + 0x0)) = 0x1;
                     *(unsigned char *)((t59 + 0x1)) = 0x0;
                     *(unsigned short *)((t59 + 0x2)) = 0xF;
-                    FUN_0c06233a(t59, 0xC6649E8, (0x53 - t56));
+                    obj_part_set_model(t59, 0xC6649E8, (0x53 - t56));
                     t57 = (t57 + 0x1);
                 }
                 t61 = 0x2DC;
@@ -732,7 +732,7 @@ int demo_spawn_jitter_sparkle(int a4, int a5)
                 *(unsigned char *)((t84 + 0x0)) = 0x1;
                 *(unsigned char *)((t84 + 0x1)) = 0x0;
                 *(unsigned short *)((t84 + 0x2)) = 0xF;
-                FUN_0c06233a(t84, 0xC6649E8, (*(int *)(((*(int *)(((int)stk + 0))) + 0xC148EE8))));
+                obj_part_set_model(t84, 0xC6649E8, (*(int *)(((*(int *)(((int)stk + 0))) + 0xC148EE8))));
                 t83 = (t83 + 0x1);
                 u85 = (*(float *)(((*(int *)(((int)stk + 0))) + 0xC148EF0)));
                 (((struct oC_float *)(t84))->v) = u85;
@@ -1233,7 +1233,7 @@ int FUN_0c02a9bc(float f4)
                 *(unsigned char *)((t3 + 0x0)) = 0x1;
                 *(unsigned char *)((t3 + 0x1)) = 0x0;
                 *(unsigned short *)((t3 + 0x2)) = 0xF;
-                FUN_0c06233a(t3, 0xC6649E8, 0x38);
+                obj_part_set_model(t3, 0xC6649E8, 0x38);
                 t1 = (t1 + 0x1);
             }
             t5 = 0x2DC;
@@ -1318,7 +1318,7 @@ int vmu_menu_scan_port_masks(int a4)
     return t1;
 }
 
-int FUN_0c0d4ff4(void)
+int game_play_game_over_update(void)
 {
     int t0;
     int t1;

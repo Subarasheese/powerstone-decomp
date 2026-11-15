@@ -30,7 +30,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oEC_short { char p[0xEC]; short v; };
 struct oEC_ushort { char p[0xEC]; unsigned short v; };
 int obj_create(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 float math_sin_angle16(int);
 int _quick_odd_mvn(int);
 struct o300_int { char p[0x300]; int v; };
@@ -199,7 +199,7 @@ int vmu_menu_spawn_choice_cursor(int a4)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x1)) = 0x0;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0x40F;
-        FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), 0xC664B08, 0xF);
+        obj_part_set_model(((((struct o2E0_int *)(t0))->v)), 0xC664B08, 0xF);
         u13 = ((((struct o0_float *)0xC01F794)->v));
         u13 = u13 + ((((struct o4_float *)0xC01F794)->v)) * (float)(*(signed char *)((t0 + 0xF)));
         (((struct o4_float *)(((((struct o2E0_int *)(t0))->v))))->v) = u13;

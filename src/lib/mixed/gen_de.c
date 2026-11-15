@@ -76,7 +76,7 @@ int FUN_0c02e050(int, float, float);
 int fx_spawn_048074(int);
 int obj_create(int, int, int);
 int obj_destroy(int, int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int ai_roll_chance(int, int);
 int obj_set_record_char(int, int);
 int menu_ui_task_34_bind_models(int, int);

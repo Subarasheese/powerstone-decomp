@@ -151,7 +151,7 @@ int obj_create_beside(int, int, int, int, int);
 int obj_destroy(int);
 int FUN_0c0593e0(int);
 int obj_tick_class(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_timer_disable(int);
 int pl_start_motion(int, int, int);
 int pl_step_motion(int);

@@ -80,7 +80,7 @@ int FUN_0c05f2d4(int, int);
 int res_switch_scene(int);
 int math_vec3_sub(int, int, int);
 float math_vec3_length(int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_timer_disable(int);
 int pl_start_motion(int, int, int);
 int bgm_stop_all(void);
@@ -127,7 +127,7 @@ int menu_scene1_update(int a4, int a5, int a6, int a7);
 int FUN_0c0d3be6(void);
 float nlLUDecompose(int a4, int a5, float f4, float f5);
 int pl_hitreact_23_phase0(int a4);
-int FUN_0c0c9394(int a4);
+int fx_trail_find_hit_segment(int a4);
 
 int kmiProcessVertex_03(int a4)
 {

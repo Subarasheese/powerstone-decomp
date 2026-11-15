@@ -19,7 +19,7 @@ extern void dbgmotion_update_player(int);
 extern void pl_blend_motion_pose(char *);
 extern void pl_build_model_matrix(char *);
 extern void FUN_0c062f10(char *);
-extern void FUN_0c02d1cc(char *);
+extern void draw_fighter(char *);
 extern void FUN_0c05f952(void);
 int pl_step_motion(int);
 int pl_apply_motion_translation(int);
@@ -207,7 +207,7 @@ void dbgmotion_update(void)
         pl_blend_motion_pose(player);
         pl_build_model_matrix(player);
         FUN_0c062f10(player);
-        FUN_0c02d1cc(player);
+        draw_fighter(player);
     }
     FUN_0c05f952();
 }

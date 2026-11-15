@@ -89,7 +89,7 @@ int FUN_0c0a2830(int);
 int FUN_0c0a3304(void);
 int FUN_0c0a3d5c(int, int);
 int FUN_0c0a3f0e(int);
-int FUN_0c0a3f30(int);
+int snd_play_se_indexed(int);
 int FUN_0c0a502e(void);
 int FUN_0c0a5240(int);
 int FUN_0c0bed78(int, int);
@@ -795,13 +795,13 @@ int FUN_0c0535b4(int a4)
         *(unsigned short *)0xC7F25A0 = 0x78;
         ui_enable_hud();
         FUN_0c02d834();
-        FUN_0c0a3f30(0x8);
+        snd_play_se_indexed(0x8);
         (((struct o0_uchar *)0xC7F31D0)->v) = 0x1;
         (((struct o1_uchar *)0xC7F31D0)->v) = 0x6;
     }
     t0 = *(short *)0xC7F3036;
     if (t0 == 60) {
-        FUN_0c0a3f30(0x7);
+        snd_play_se_indexed(0x7);
         t1 = *(short *)0xC7F3036;
         if (t1 == 60) {
             return fx_spawn_05600c();

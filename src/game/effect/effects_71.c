@@ -2,7 +2,7 @@
 
 struct o2E0_int { char p[0x2E0]; int v; };
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 struct o20_float { char p[0x20]; float v; };
 struct o24_float { char p[0x24]; float v; };
 struct o28_float { char p[0x28]; float v; };
@@ -55,7 +55,7 @@ int fx_spawn_03d8b0(int a4, int a5)
         *(unsigned char *)((((((struct o2E0_int *)(t0))->v)) + 0x0)) = 0x1;
         *(unsigned short *)((((((struct o2E0_int *)(t0))->v)) + 0x2)) = 0xF;
         t9 = *(signed char *)((a4 + 0x3));
-        t14 = (FUN_0c06233a(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t9 << 1) + t9) << 2) << 1) + 0xC6002D0), ((*(signed char *)((t0 + 0x4))) + 0x8)));
+        t14 = (obj_part_set_model(((((struct o2E0_int *)(t0))->v)), ((signed char)((((t9 << 1) + t9) << 2) << 1) + 0xC6002D0), ((*(signed char *)((t0 + 0x4))) + 0x8)));
     }
     return t14;
 }

@@ -100,7 +100,7 @@ int FUN_0c02c91a(int);
 int ui_fade_start(int, int, int, int);
 int fx_spawn_0457d0(void);
 int obj_create(int, int, int);
-int FUN_0c06233a(int, int, int);
+int obj_part_set_model(int, int, int);
 int pl_rel_angle_to_linked(int);
 float ai_dist_to_opponent(int);
 int ai_roll_chance(void);
