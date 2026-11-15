@@ -397,7 +397,7 @@ FUN_0c036180
 FUN_0c039c6c
 FUN_0c03a12c
 FUN_0c03a278
-FUN_0c03a58c
+fx_ayame_state22_phase1
 FUN_0c03a918
 FUN_0c03b5da
 FUN_0c03b9f0

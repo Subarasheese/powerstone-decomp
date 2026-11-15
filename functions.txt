@@ -699,7 +699,7 @@ F 0c03a024 168 fx_spawn_03a024
 F 0c03a0cc 50 fx_tick_03a024
 F 0c03a12c 292 FUN_0c03a12c
 F 0c03a278 754 FUN_0c03a278
-F 0c03a58c 890 FUN_0c03a58c
+F 0c03a58c 890 fx_ayame_state22_phase1
 F 0c03a918 1234 FUN_0c03a918
 F 0c03adf8 200 fx_spawn_03adf8
 F 0c03aec0 56 fx_tick_03adf8

@@ -11405,8 +11405,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 48
 - the cases run 47 of 343 instructions
 
-### FUN_0c03a58c (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/FUN_0c03a58c.json`
+### fx_ayame_state22_phase1 (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/fx_ayame_state22_phase1.json`
 - case 3
 - case 4
 - case 5
