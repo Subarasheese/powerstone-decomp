@@ -2,7 +2,7 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 int kmiWriteRegister(int, int);
-int FUN_0c110c26(int, ...);
+int kmi_set_system_config(int, ...);
 int FUN_0c10bce0(void);
 struct o0_int { int v; };
 struct o10_float { char p[0x10]; float v; };
@@ -184,7 +184,7 @@ int FUN_0c0fb820(int a4, int a5, int a6, int a7)
     *(volatile int *)0xC817034;
     *(volatile int *)0xC817030;
     *(volatile int *)0xC81702C;
-    FUN_0c110c26(t49);
+    kmi_set_system_config(t49);
     (((struct o0_uint *)0xC817260)->v) = 0x1;
     t55 = *(int *)0xC817328;
     for (;;) {

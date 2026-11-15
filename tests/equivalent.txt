@@ -396,7 +396,6 @@ FUN_0c036180
 FUN_0c039c6c
 FUN_0c03a12c
 FUN_0c03a278
-fx_ayame_state22_phase1
 FUN_0c03a918
 FUN_0c03b5da
 FUN_0c03b9f0
@@ -2704,6 +2703,7 @@ fx31_steer_toward_target
 fx31_thrown_update
 fx35_calc_angles_to_point
 fx_aim_at_target
+fx_ayame_state22_phase1
 fx_burst_create
 fx_burst_place_sprites
 fx_burst_update
@@ -3406,6 +3406,10 @@ kmiReadRegister
 kmiRegisterPhIntHandler
 kmiReqRestOfDMA
 kmiWriteRegister
+kmi_init_pvr_hw
+kmi_init_vram_layout
+kmi_set_display_mode
+kmi_set_system_config
 logo_spawn_overlay
 math_angle3_delta
 math_angle3_delta_scaled

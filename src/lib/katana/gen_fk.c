@@ -85,7 +85,7 @@ int FUN_0c0fa8c0(int);
 int FUN_0c0fa966(int, int, int, int, int, int, int);
 int FUN_0c0ff1ac(int, int, int, int);
 int FUN_0c109440(int, int, int);
-int FUN_0c110c26(int, ...);
+int kmi_set_system_config(int, ...);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
 int gdFsCheckMedia(int);
@@ -441,7 +441,7 @@ int FUN_0c0f94a0(int a4, int a5, int a6, int a7, int a8)
                 *(volatile int *)0xC817034;
                 *(volatile int *)0xC817030;
                 *(volatile int *)0xC81702C;
-                FUN_0c110c26(((~t90) & t91));
+                kmi_set_system_config(((~t90) & t91));
                 (((struct o20_uint *)0xC803E0C)->v) = ((((struct o38_int *)0xC803DCC)->v));
                 (((struct o24_uint *)0xC803E0C)->v) = ((((struct o3C_int *)0xC803DCC)->v));
                 (((struct o28_uint *)0xC803E0C)->v) = ((((struct o0_int *)0xC803E0C)->v));

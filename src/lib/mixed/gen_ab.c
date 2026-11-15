@@ -176,15 +176,15 @@ int get_fat(int, int, int, int);
 int direntry(int, int);
 int BCDtoDEC(int);
 int FUN_0c107048(int);
-int FUN_0c109100(void);
-int FUN_0c10bd02(void);
+int kmi_init_vram_layout(void);
+int kmi_init_pvr_hw(void);
 int FUN_0c10c01a(void);
 int FUN_0c10d0c0(void);
 int kmiModuleInitialize(void);
 int kmiWriteRegister(int, int);
 int kmiCopyToFrameBuffer(int, int, int);
 int FUN_0c110be0(void);
-int FUN_0c110c26(int, ...);
+int kmi_set_system_config(int, ...);
 int mpdrv_exit(void);
 int FUN_0c113ef4(int, int, int);
 int FUN_0c11408a(int, int, int);
@@ -332,9 +332,9 @@ int FUN_0c108e74(void)
     register int t7;
 
     kmiModuleInitialize();
-    FUN_0c10bd02();
+    kmi_init_pvr_hw();
     FUN_0c110be0();
-    FUN_0c109100();
+    kmi_init_vram_layout();
     FUN_0c10d0c0();
     FUN_0c10c01a();
     (((struct o0_uint *)0xC817410)->v) = 0x100000;
@@ -346,7 +346,7 @@ int FUN_0c108e74(void)
     *(volatile int *)0xC817034;
     *(volatile int *)0xC817030;
     *(volatile int *)0xC81702C;
-    return (FUN_0c110c26(t7));
+    return (kmi_set_system_config(t7));
 }
 
 int kmSetFogTable(int a4)

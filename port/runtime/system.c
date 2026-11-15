@@ -34,6 +34,86 @@ int32_t km_device_init(void)
     return 0;
 }
 
+/* Kamui's PowerVR set-up and display mode (src/lib/katana/kamui_init.c has their proven C). On the host the PowerVR's
+   registers are plain memory (they read 0, so kmi_init_pvr_hw would take the chip for an unknown one and stop in its trap)
+   and the host renderer does the display: these keep only what they leave in RAM for the rest of Kamui and the game, as
+   the console's retail chip does, and skip the register writes, the VRAM clear and the calls that only program the
+   video hardware. kmi_init_vram_layout (RAM and one register) runs its own C. */
+#define KW(a) (*(volatile uint32_t *)(uintptr_t)(a))
+
+int32_t kmi_init_pvr_hw(void) __asm__("kmi_init_pvr_hw");
+int32_t kmi_init_pvr_hw(void)
+{
+    KW(0x0C816FC4) = 6;               /* the retail chip (id 0x17FD11DB, revision 17 on): Kamui's model 6 */
+    KW(0x0C8172CC) = 0x00800408;
+    switch (KW(0xA05F689C)) {         /* the cable bits, as the console reports them */
+    case 0: KW(0x0C816FC8) = 0; break;
+    case 1: KW(0x0C816FC8) = 1; break;
+    case 2: KW(0x0C816FC8) = 3; break;
+    case 4: case 5: case 6: KW(0x0C816FC8) = 127; break;
+    case 8: KW(0x0C816FC8) = 31; break;
+    default: KW(0x0C816FC8) = 15; break;
+    }
+    return 1;
+}
+
+int32_t FUN_0c110320(int32_t a4);
+/* the console's callers pass the configuration word as their first stack word (the four register arguments go unused);
+   their generated C (gen_ab, gen_dm, gen_dr, gen_fk: "kmi_set_system_config(int, ...)") passes it as the only argument, so
+   on the host it comes first */
+int32_t kmi_set_system_config(uint32_t cfg) __asm__("kmi_set_system_config");
+int32_t kmi_set_system_config(uint32_t cfg)
+{
+    KW(0x0C817028) = cfg;
+    KW(0x0C817464) = (cfg & 0x00010000) >> 16;
+    KW(0x0C817468) = (cfg & 0x00060000) >> 17;
+    KW(0x0C81746C) = (cfg & 0x00180000) >> 19;
+    KW(0x0C817470) = (cfg & 0x00600000) >> 21;
+    KW(0x0C817474) = (cfg & 0x01800000) >> 23;
+    KW(0x0C817478) = (cfg & 0x06000000) >> 25;
+    KW(0x0C817404) = (KW(0x0C817410) >> 2) * 3;
+    uint32_t prod = (uint32_t)((int32_t)KW(0x0C817418) * (int32_t)KW(0x0C817414));
+    uint32_t gap = (uint32_t)FUN_0c110320((int32_t)prod);
+    for (int i = 0; i < 2; i++) {     /* the two vertex buffers' areas, as kamui_init.c lays them out */
+        uint32_t b = 0x0C817424 + 32 * i;
+        KW(b + 4) = KW(b) + KW(0x0C817410);
+        if (KW(0x0C816FC8) & 32)
+            KW(b + 4) = KW(0x0C81741C) ? KW(b + 4) - 68 - prod * 96 : KW(b + 4) - prod * 48;
+        else
+            KW(b + 4) = KW(b + 4) - prod * 24;
+        if (KW(0x0C817464) == 0) {
+            KW(b + 12) = (KW(b) + KW(0x0C817404)) & ~31u;
+            KW(b + 16) = (KW(b + 4) - gap) & ~127u;
+            KW(b + 20) = KW(b + 12) + gap;
+        } else {
+            KW(b + 12) = (KW(b + 4) - gap) & ~127u;
+            KW(b + 16) = (KW(b) + KW(0x0C817404)) & ~31u;
+            KW(b + 20) = KW(b + 12);
+        }
+        KW(b + 24) = KW(b);
+        KW(b + 28) = KW(b) + KW(0x0C817404) - 256;
+    }
+    return 0;                         /* the registration with the video hardware (FUN_0c1104c8) is the host renderer's */
+}
+
+int32_t FUN_0c10bc80(int32_t table, int32_t key, int32_t value);
+int32_t kmi_set_display_mode(int32_t mode, int32_t format, int32_t dither, int32_t antialias) __asm__("kmi_set_display_mode");
+int32_t kmi_set_display_mode(int32_t mode, int32_t format, int32_t dither, int32_t antialias)
+{
+    uint32_t m = (uint32_t)FUN_0c10bc80(0x0C15AAA0, 0x0C15AAB4, mode);
+    int32_t aa = FUN_0c10bc80(0x0C15AAA0, 0x0C15AAC0, antialias);
+    int32_t di = FUN_0c10bc80(0x0C15AAA0, 0x0C15AACC, dither);
+    KW(0x0C816FE0) = m & 3;
+    if (!(format == 0 || format == 1 || format == 3 || format == 4 || format == 5))
+        return 1;
+    KW(0x0C816FE4) = m;
+    KW(0x0C816FE8) = (uint32_t)format;
+    KW(0x0C816FEC) = di ? 1 : 0;
+    KW(0x0C816FF0) = aa ? 1 : 0;
+    KW(0x0C8172D8) = m == 1 ? 480 : 240;
+    return (m & 3) == 3;              /* an unknown video standard: 1, as the original returns */
+}
+
 static int32_t sound_mode; /* 0 stereo, 1 mono */
 
 int32_t sy_cfg_get_sound_mode(uint32_t out) __asm__("syCfgGetSoundMode");
