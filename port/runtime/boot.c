@@ -139,9 +139,50 @@ static void match_over(int won, int taken, int perfect_rounds, int rounds_won)
     }
 }
 
+/* PORT_DEBUG_GAMEOVER: during "GAME OVER" (scene 6), every 30 frames, the UI objects (class 6) with their state and the
+   two parts each draws (+0x2E0, +0x2E4): shown, position, colour; to see whether the letters exist and are shown */
+static void debug_game_over(void)
+{
+    static unsigned long n;
+    if (B(G + 4) != 6) {
+        n = 0;
+        return;
+    }
+    if (n++ % 30)
+        return;
+    fprintf(stderr, "powerstone: game over frame %lu: phase %d.%d\n", n - 1, B(G + 5), B(G + 6));
+    const float *m = (const float *)(uintptr_t)0x0C7F2A24u;     /* the view matrix game_draw_frame loads */
+    fprintf(stderr, "  view %.2f %.2f %.2f %.2f | %.2f %.2f %.2f %.2f | %.2f %.2f %.2f %.2f | %.2f %.2f %.2f %.2f; split %d, 50Hz %d\n",
+            m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7], m[8], m[9], m[10], m[11], m[12], m[13], m[14], m[15],
+            B(0x0C7F319E), *(volatile int *)(uintptr_t)0x0C386830u);
+    for (uint32_t o = *(volatile uint32_t *)(uintptr_t)(0x0C7E4070u + 6 * 4); o; o = *(volatile uint32_t *)(uintptr_t)(o + 0x18)) {
+        uint32_t h = *(volatile uint32_t *)(uintptr_t)(o + 0x10);
+        fprintf(stderr, "  obj %08X handler %08X index %d state %d.%d", o, h, B(o + 4), B(o + 8), B(o + 9));
+        for (int k = 0; k < 2; k++) {
+            uint32_t pt = *(volatile uint32_t *)(uintptr_t)(o + 0x2E0 + 4 * k);
+            if (pt < 0x0C000000u || pt >= 0x0D000000u)
+                continue;
+            const float *f = (const float *)(uintptr_t)pt;
+            fprintf(stderr, " | part%d %s pos %.1f %.1f %.1f scale/colour %.2f %.2f %.2f", k, B(pt) ? "shown" : "hidden",
+                    f[1], f[2], f[3], f[17], f[18], f[19]);
+            if (k == 0) {       /* the part's own matrix (+0x50, column-major as nlLoadMatrix takes it) and its origin in view space */
+                const float *pm = (const float *)(uintptr_t)(pt + 0x50), *v = (const float *)(uintptr_t)0x0C7F2A24u;
+                float wx = pm[12], wy = pm[13], wz = pm[14];
+                float vx = v[0] * wx + v[4] * wy + v[8] * wz + v[12], vy = v[1] * wx + v[5] * wy + v[9] * wz + v[13],
+                      vz = v[2] * wx + v[6] * wy + v[10] * wz + v[14];
+                fprintf(stderr, " [matrix x %.2f %.2f %.2f, origin %.1f %.1f %.1f -> view %.1f %.1f %.1f]", pm[0], pm[1], pm[2],
+                        wx, wy, wz, vx, vy, vz);
+            }
+        }
+        fprintf(stderr, "\n");
+    }
+}
+
 void port_boot_step(void)
 {
     static int phase, lost;
+    if (getenv("PORT_DEBUG_GAMEOVER"))
+        debug_game_over();
     if (port_match_level >= 0 && B(G + 4) == 4) {   /* the match start and the game's own adjustments set it: hold it */
         static int said;
         if (!said) {
