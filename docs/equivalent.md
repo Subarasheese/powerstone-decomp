@@ -6570,12 +6570,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 86 of 86 instructions
 
-### pl_opponent_dist_to_body_sphere (`0C020A80`, 352 bytes, `src/game/hit/hit_boxes_equiv.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/pl_opponent_dist_to_body_sphere.json`
-- rescue: empty case
-- rescue: empty case
-- the cases run 131 of 176 instructions
-
 ### FUN_0c020d20 (`0C020D20`, 286 bytes, `src/game/hit/hit_boxes_equiv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/hit_boxes_equiv/FUN_0c020d20.json`
 - case 0
@@ -11405,8 +11399,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 48
 - the cases run 47 of 343 instructions
 
-### FUN_0c03a58c (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/FUN_0c03a58c.json`
+### fx_ayame_state22_phase1 (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/fx_ayame_state22_phase1.json`
 - case 3
 - case 4
 - case 5
@@ -41821,51 +41815,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 103
 - case 94
 - the cases run 9 of 9 instructions
-
-### game_check_player_join (`0C0D4D00`, 238 bytes, `src/game/save/gen_t.c`)
-- equivalent on 21 development and 20 holdout cases, in `tests/gen_t/game_check_player_join.json`
-- case 62
-- case 62
-- case 62
-- case 0
-- case 1
-- case 2
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 12
-- case 13
-- case 14
-- directed: flips 0C0D4D50 (taken)
-- directed: flips 0C0D4D54 (taken)
-- directed: flips 0C0D4D58 (taken)
-- case 125
-- case 84
-- case 137
-- case 113
-- case 74
-- case 96
-- case 131
-- case 117
-- case 37
-- case 150
-- case 134
-- case 82
-- case 139
-- case 70
-- case 68
-- case 132
-- case 141
-- case 133
-- directed: flips 0C0D4DB0 (taken)
-- directed: flips 0C0D4DBA (taken)
-- the cases run 103 of 103 instructions
 
 ### FUN_0c0d4ff4 (`0C0D4FF4`, 202 bytes, `src/game/menu/gen_az.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_az/FUN_0c0d4ff4.json`
@@ -85480,6 +85429,51 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - hold i=127 lvl=254 cur=255 tbl=c702000
 - the cases run 58 of 58 instructions
 
+### game_check_player_join (`0C0D4D00`, 238 bytes, `src/game/save/gen_t.c`)
+- equivalent on 21 development and 20 holdout cases, in `tests/gen_t/game_check_player_join.json`
+- case 62
+- case 62
+- case 62
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- directed: flips 0C0D4D50 (taken)
+- directed: flips 0C0D4D54 (taken)
+- directed: flips 0C0D4D58 (taken)
+- case 125
+- case 84
+- case 137
+- case 113
+- case 74
+- case 96
+- case 131
+- case 117
+- case 37
+- case 150
+- case 134
+- case 82
+- case 139
+- case 70
+- case 68
+- case 132
+- case 141
+- case 133
+- directed: flips 0C0D4DB0 (taken)
+- directed: flips 0C0D4DBA (taken)
+- the cases run 103 of 103 instructions
+
 ### game_clear_win_records (`0C0D2FB0`, 46 bytes, `src/game/demo/attract_ranking_equiv.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/attract_ranking_equiv/game_clear_win_records.json`
 - rescue: empty case
@@ -122173,6 +122167,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 63
 - case 77
 - the cases run 10 of 10 instructions
+
+### pl_opponent_dist_to_body_sphere (`0C020A80`, 352 bytes, `src/game/hit/hit_boxes_equiv.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hit_boxes_equiv/pl_opponent_dist_to_body_sphere.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 131 of 176 instructions
 
 ### pl_part_copy_pose_vectors (`0C0999E8`, 52 bytes, `src/game/player/player_setup_equiv.c`)
 - equivalent on 2 development and 2 holdout cases, in `tests/player_setup_equiv/pl_part_copy_pose_vectors.json`

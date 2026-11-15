@@ -12,7 +12,7 @@ float math_sin_angle16(int);
 extern int _modls();
 extern int _quick_odd_mvn();
 
-int FUN_0c03a58c(int a4, int a5, int a6)
+int fx_ayame_state22_phase1(int a4, int a5, int a6)
 {
     int stk[3];
     register int t0;
@@ -79,7 +79,7 @@ int FUN_0c03a58c(int a4, int a5, int a6)
                         u11 = ((*(float *)((t5 + 0x0))) - (*(float *)((t7 + 0x0))));
                         u10 = (math_sin_angle16(((int)(((((float)(((t17 << 1) + t6) << 2) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF)));
                         u11 = (u11 * u10);
-                        t5 = (0x10 + t6);
+                        t5 = (*(int *)((int)stk + 0));   /* the part field the loop set up (stk[0] = part + 0x10): not the timer */
                         u11 = (u11 * 65536.0f);
                         u11 = (u11 / 360.0f);
                         u11 = (u11 + 0.5f);
@@ -94,7 +94,7 @@ int FUN_0c03a58c(int a4, int a5, int a6)
                         u11 = (((((struct o4_float *)(t5))->v)) - ((((struct o4_float *)(t7))->v)));
                         u10 = (math_sin_angle16(((int)(((((float)(((t25 << 1) + t6) << 2) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF)));
                         u11 = (u11 * u10);
-                        t5 = (0x14 + t6);
+                        t5 = (*(int *)((int)stk + 0));   /* the part field the loop set up (stk[0] = part + 0x14): not the timer */
                         t8 = (t8 + (0x2E0 + a4));
                         u11 = (u11 * 65536.0f);
                         u11 = (u11 / 360.0f);
@@ -109,7 +109,7 @@ int FUN_0c03a58c(int a4, int a5, int a6)
                         u11 = (((((struct o8_float *)((*(int *)(((int)stk + 4)))))->v)) - ((((struct o8_float *)(t7))->v)));
                         u10 = (math_sin_angle16(((int)(((((float)(((t35 << 1) + t6) << 2) * 65536.0f) / 360.0f)) + 0.5f) & 0xFFFF)));
                         u11 = (u11 * u10);
-                        t5 = (0x18 + t6);
+                        t5 = (*(int *)((int)stk + 0));   /* the part field the loop set up (stk[0] = part + 0x18): not the timer */
                         t9 = (t9 + 0x1);
                         u11 = (u11 * 65536.0f);
                         u11 = (u11 / 360.0f);

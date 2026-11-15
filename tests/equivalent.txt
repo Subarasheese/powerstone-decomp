@@ -220,7 +220,6 @@ FUN_0c020886
 FUN_0c0208ec
 FUN_0c020998
 FUN_0c0209c6
-pl_opponent_dist_to_body_sphere
 FUN_0c020d20
 FUN_0c0210c8
 FUN_0c0210f4
@@ -397,7 +396,7 @@ FUN_0c036180
 FUN_0c039c6c
 FUN_0c03a12c
 FUN_0c03a278
-FUN_0c03a58c
+fx_ayame_state22_phase1
 FUN_0c03a918
 FUN_0c03b5da
 FUN_0c03b9f0
@@ -1557,7 +1556,6 @@ FUN_0c0d479e
 FUN_0c0d487e
 FUN_0c0d48d6
 FUN_0c0d48ea
-game_check_player_join
 FUN_0c0d4ff4
 FUN_0c0d50be
 FUN_0c0d5188
@@ -3089,6 +3087,7 @@ fx_update_trail_chain
 fx_update_trail_segment
 fxslot_clear_all
 fxslot_start
+game_check_player_join
 game_clear_win_records
 game_draw_frame
 game_frame_update
@@ -4361,6 +4360,7 @@ pl_mode15_enter
 pl_mode15_update
 pl_motion_length
 pl_no_ground
+pl_opponent_dist_to_body_sphere
 pl_part_copy_pose_vectors
 pl_place_start_positions
 pl_play_side_se_at_frame
