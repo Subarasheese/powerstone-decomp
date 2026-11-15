@@ -11405,46 +11405,6 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 48
 - the cases run 47 of 343 instructions
 
-### fx_ayame_state22_phase1 (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/fx_ayame_state22_phase1.json`
-- case 3
-- case 4
-- case 5
-- case 6
-- case 7
-- case 8
-- case 9
-- case 10
-- case 11
-- case 15
-- case 16
-- case 17
-- case 18
-- case 19
-- case 20
-- case 24
-- case 25
-- case 27
-- case 129
-- case 71
-- case 139
-- case 122
-- case 41
-- case 120
-- case 81
-- case 144
-- case 38
-- case 108
-- case 94
-- case 118
-- case 67
-- case 48
-- case 109
-- case 110
-- case 54
-- case 142
-- the cases run 47 of 387 instructions
-
 ### FUN_0c03a918 (`0C03A918`, 1234 bytes, `src/game/effect/effects_52.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/effects_52/FUN_0c03a918.json`
 - case 2
@@ -78565,6 +78525,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - dz<0, big
 - the cases run 75 of 75 instructions
 
+### fx_ayame_state22_phase1 (`0C03A58C`, 890 bytes, `src/game/effect/effects_51.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/effects_51/fx_ayame_state22_phase1.json`
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 15
+- case 16
+- case 17
+- case 18
+- case 19
+- case 20
+- case 24
+- case 25
+- case 27
+- case 129
+- case 71
+- case 139
+- case 122
+- case 41
+- case 120
+- case 81
+- case 144
+- case 38
+- case 108
+- case 94
+- case 118
+- case 67
+- case 48
+- case 109
+- case 110
+- case 54
+- case 142
+- the cases run 47 of 387 instructions
+
 ### fx_burst_create (`0C0C7AA0`, 348 bytes, `src/game/effect/special/effects_burst.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/effects_burst/fx_burst_create.json`
 - rescue: empty case
@@ -94790,6 +94790,55 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 61
 - case 68
 - the cases run 5 of 5 instructions
+
+### kmi_init_pvr_hw (`0C10BD02`, 792 bytes, `src/lib/katana/kamui_init.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/kamui_init/kmi_init_pvr_hw.json`
+- retail chip (rev 17), cable 0 (VGA), the VRAM clear begins
+- another chip id: model 5, the trap; cable 1
+- rev 1: model 5, the trap; cable 2
+- rev 16: model 5 (no change), the trap; cable 4
+- rev 20, cable 8, display mode bit 0 clear
+- rev 17, cable 9
+- rev 255, cable 3 (none of the listed: 15)
+- rev 2, cable 5: trap
+- rev 17, cable 6
+- the cases run 230 of 239 instructions
+
+### kmi_init_vram_layout (`0C109100`, 396 bytes, `src/lib/katana/kamui_init.c`)
+- equivalent on 4 development and 4 holdout cases, in `tests/kamui_init/kmi_init_vram_layout.json`
+- display mode 1, 16 MB of VRAM: one frame-buffer node on the list
+- display mode 1, 8 MB, no node free: 3
+- display mode 0, 16 MB: two nodes, on the two lists
+- display mode 2, 8 MB: the second node is not free: 3
+- display mode 3, 8 MB, no node: 3
+- display mode 1, 8 MB: one node
+- display mode 0, 8 MB: two nodes
+- display mode 1, the lookup answers 2 (not 1): 8 MB
+- the cases run 159 of 159 instructions
+
+### kmi_set_display_mode (`0C0FB5DC`, 474 bytes, `src/lib/katana/kamui_init.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/kamui_init/kmi_set_display_mode.json`
+- VGA (mode word 1): 640x480, NTSC set-up FUN_0c10cf60, format 0, anti-alias on, dither off
+- mode 0x30 (640 wide, 480 high, even, bits 44 set: interlaced), standard 0, format 4
+- mode 0x0E (standard 2: FUN_0c10ca40), 320x240, interlaced
+- pixel format 2: an error before any store but the standard
+- mode 0x13: standard 3, unknown: error 1, still sets the size; odd mode word: not interlaced
+- format 6: error
+- mode 0x20 (standard 0, 320 x 480, bits 44: interlaced), format 1
+- mode 0x12 (standard 2, 640 x 240), format 0, dither on
+- mode 0x05 (standard 1, odd: not interlaced), format 3
+- the cases run 164 of 164 instructions
+
+### kmi_set_system_config (`0C110C26`, 642 bytes, `src/lib/katana/kamui_init.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/kamui_init/kmi_set_system_config.json`
+- config 0: bit 16 clear (the first layout), output mode without bit 5 (24 x)
+- every field set, output mode bit 5, double buffer (96 x, -68)
+- output bit 5 without double buffer (48 x), bit 0 clear
+- bits 17-26 by turns
+- config 0xFFFFFFFF, output 0x20, single
+- config 1, output 0x7F double
+- config 0x00180000, mode 0
+- the cases run 243 of 243 instructions
 
 ### logo_spawn_overlay (`0C02BB32`, 220 bytes, `src/game/demo/logo_screens_3.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/logo_screens_3/logo_spawn_overlay.json`

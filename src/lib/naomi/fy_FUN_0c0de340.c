@@ -24,7 +24,7 @@ static void setgbr(int v)
 typedef struct { int a, b, c; } S12;
 extern void FUN_0c0ddf30(void);
 extern void FUN_0c0fb54c(int a);
-extern void FUN_0c0fb5dc(int a, int b, int c, int d);
+extern void kmi_set_display_mode(int a, int b, int c, int d);
 extern void gfx_init_background_render_state(int a);
 extern void FUN_0c0de120(int a);
 extern void nlSetViewport(float a, float b, float c, float d);
@@ -56,7 +56,7 @@ void gfx_init_display_mode(int a, int b, int c)
     *(int *)0xC7F88EC = *(int *)(0xC155694 + (b & 15) * 4);
     rec = (int *)(0xC155598 + (unsigned char)(a * 12));
     FUN_0c0fb54c(rec[0]);
-    FUN_0c0fb5dc(rec[1], *(int *)0xC7F88EC, w[4], w[5]);
+    kmi_set_display_mode(rec[1], *(int *)0xC7F88EC, w[4], w[5]);
     w[2] = ((short *)rec)[4];
     w[3] = ((short *)rec)[5];
     gfx_init_background_render_state(0xC7F8EB8);

@@ -142,7 +142,7 @@ int FUN_0c0fb0fc(int, int);
 int FUN_0c104742(int);
 int FUN_0c104962(int, int, int);
 int FUN_0c109440(int, int, int);
-int FUN_0c110c26(int, ...);
+int kmi_set_system_config(int, ...);
 int SJ_SplitChunk(int, int, int, int);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
@@ -237,7 +237,7 @@ int FUN_0c0f9a20(int a4, int a5)
             *(volatile int *)0xC817034;
             *(volatile int *)0xC817030;
             *(volatile int *)0xC81702C;
-            FUN_0c110c26((t27 & (~t40)));
+            kmi_set_system_config((t27 & (~t40)));
             *(unsigned int *)0xC8171CC = 0x1;
         }
     }
