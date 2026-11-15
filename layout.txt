@@ -1,0 +1,8 @@
+# The executable's layout for the tools (tools/layout.py): <name> <start hex> [<end hex>]
+# Power Stone (USA), linked at 0C010000, image 0C010000-0C351947 (1ST_READ.BIN 3415592 bytes). Every value is read from this
+# disc's functions.txt, docs/sourcetree*.csv and the literal pools of the code; none comes from another game.
+fixed   0CA00000             # first address the build may not move. The literal pools of the listed code load addresses in 0C351948-0C857C8C (the game's RAM variables past the image: SaveBuffer 0C351948, 0C6002D0, 0C664B50, 0C7F2664 ...), then nothing until 0CA00000, 0CC00000, 0CE00000, 0CFF0000 (round-numbered buffers). 0C351948-0CA00000 is the room the image may grow into
+bss     0C857E40             # where the BSS ends: syStart's literal pool (0C1161D0, just before its "syStart Ver 1.07" string) holds 0C351948 (the BSS start) and 0C857E40 twice (its end). From there up to `fixed` is room the image may grow into
+game    0C010160 0C351948    # the game's own code and data: after crt0 (entry stub, cache ops, empty stubs 0C010028-0C010160, the Katana start-up) up to the image end
+keep    0C0DCA60 0C159FB0    # the NAOMI library (first function: nlObjPutInit 0C0DCAE0; the two small functions before it, 0C0DCA60 and 0C0DCAC0, are taken in rather than left out), the C runtime, the Katana libraries, ADX/Sofdec and their tables, up to where the data blob starts (docs/sourcetree.csv, data_0c159fb0). Stays as the original bytes
+mixed   1                    # mbuild may copy a group that also holds pieces without C: a pointer into the middle of pl_enter_state_41 (0C0A0B78), now C, needs a running copy of its group (tools/layout.py)
