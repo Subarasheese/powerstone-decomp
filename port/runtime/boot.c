@@ -3,7 +3,7 @@
    NATIVE_PORT). It presses nothing: it sets the bytes the menus leave behind.
 
    The fight flow (g_game_state mode, run by game_play_state_04 through g_tab_game_mode_handlers):
-     mode 0  set-up: loads the stage and the fighters (game_reset_match_screen), places them (FUN_0c052b9e)
+     mode 0  set-up: loads the stage and the fighters (game_reset_match_screen), places them (game_flow_init_match)
      mode 1  the fighters' introduction (camera on each in turn); the boot leaves it as it is
      mode 2  the round's opening: FUN_0c053434 sets the round up and spawns "CHALLENGE n" (fx_spawn_055cba), then FUN_0c0535b4
              counts 150 frames ("ACTION!" at 60) and turns the HUD on; the boot leaves it as it is
