@@ -71,7 +71,7 @@ float math_rand_float(void);
 int _modlu(void);
 struct o10_float { char p[0x10]; float v; };
 int ending_exec_command(int);
-int obj_create(int, int, int);
+int obj_create(int, int, int, int);
 int FUN_0c06233a(int, int, int);
 int FUN_0c06233a(int a4, int a5, int a6);
 int FUN_0c06233a(int, int, int);
@@ -922,7 +922,7 @@ int ending_obj_update_t07(int a4, int a5, int a6, int a7)
         *(unsigned char *)((a4 + 0x8)) = ((*(signed char *)((a4 + 0x8))) + 0x1);
     }
     t0 = *(int *)0xC361C74;
-    u0 = ((((struct o28_float *)((*(int *)0xC361C74)))->v));
+    u0 = *(volatile float *)(t0 + 0x28);        /* read before +0x2C, as the original does */
     u0 = u0 + 100.0f * (math_cos_angle16(((*(int *)(((*(int *)0xC361C74) + 0x2C))) + 0x4000)));
     u1 = (((struct o24_float *)(t0))->v);
     t0 = *(int *)0xC361C74;
@@ -1664,7 +1664,7 @@ int ending_spawn_obj_t03(int a4)
 
     *(unsigned char *)(((int)stk + 0)) = a4;
     *(unsigned int *)0xC361C74 = 0x0;
-    t0 = obj_create(0x5, 0x1, 0x6);
+    t0 = obj_create(0x5, 0x1, 0x6, 0x0);    /* the original sets r7 to 0: the parts come from pool 0 */
     t15 = t0;
     if (t0 != 0) {
         *(unsigned char *)((t0 + 0x0)) = 0x1;

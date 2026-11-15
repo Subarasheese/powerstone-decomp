@@ -7,11 +7,11 @@ extern int pl_step_motion(unsigned char *);
 extern int pl_apply_motion_translation(unsigned char *);
 extern int pl_start_hit_freeze(unsigned char *, int);
 
+void pl_kraken_attack_kind6_phase1(unsigned char *obj);
+
 void pl_kraken_attack_kind6_phase0(unsigned char *obj)
 {
     int target_ang;
-    short timer;
-    short diff;
 
     obj[11]++;
     *(float *)(obj + 64) = 0;
@@ -33,6 +33,15 @@ void pl_kraken_attack_kind6_phase0(unsigned char *obj)
     else
         target_ang = pl_angle_to_target_pos(obj);
     *(int *)(obj + 0x7248) = (unsigned short)target_ang;
+    pl_kraken_attack_kind6_phase1(obj);     /* the original falls into it */
+}
+
+/* Phase 1: the motion steps; when it reaches its end (+0x71AA), the next phase starts its motion (103) with a hit-freeze;
+   until then the timer counts down (held at 1) and the facing turns toward +0x7248 by the part the timer leaves. */
+void pl_kraken_attack_kind6_phase1(unsigned char *obj)
+{
+    short timer;
+    short diff;
 
     pl_step_motion(obj);
     pl_apply_motion_translation(obj);
@@ -49,6 +58,11 @@ void pl_kraken_attack_kind6_phase0(unsigned char *obj)
     *(short *)(obj + 236) = timer;
     if (timer == 0)
         *(short *)(obj + 236) = 1;
-    diff = *(short *)(obj + 0x7248) - *(int *)(obj + 48);
-    *(int *)(obj + 48) = (unsigned short)(*(int *)(obj + 48) + diff / *(short *)(obj + 236));
+    {
+        /* the original reads the facing (+0x30) twice, before +0x7248 and again before the timer: kept apart */
+        int facing = *(volatile int *)(obj + 48);
+        diff = *(short *)(obj + 0x7248) - facing;
+        facing = *(volatile int *)(obj + 48);
+        *(int *)(obj + 48) = (unsigned short)(facing + diff / *(short *)(obj + 236));
+    }
 }

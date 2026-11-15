@@ -91,7 +91,7 @@ int pl_kraken_attack_kind2_phase3(int a4)
     pl_step_motion(a4);
     t2 = *(signed char *)((a4 + 0x3));
     *(unsigned int *)(((int)stk + 4)) = ((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4);
-    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 8);
+    thunk_math_mat_get_translate((((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x300) + (short)((short)(*(signed char *)((((unsigned short)((unsigned short)t2 * (unsigned short)0x72D0) + 0xC7E40C4) + 0x71F1))) * (short)0xDC0)) + 0x580), (int)stk + 12);   /* the vector goes to stk+12..20, where the code below reads it (the original's r15+8) */
     *(float *)(((int)stk + 12)) = (((((struct o20_float *)(t0))->v)) - (*(float *)(((int)stk + 12))));
     *(float *)(((int)stk + 16)) = (((((struct o24_float *)(t0))->v)) - (*(float *)(((int)stk + 16))));
     *(float *)(((int)stk + 20)) = (((((struct o28_float *)(t0))->v)) - (*(float *)(((int)stk + 20))));

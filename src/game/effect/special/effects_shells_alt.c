@@ -183,10 +183,19 @@ float fx_update_trail_chain(int a4)
     v0_4 = (0xC0C9760);
     L_C0C9146:;
     if (((int)v0_1 < (int)(*(signed char *)((v0_0 + 0xE))))) goto L_C0C9138;
+#ifdef NATIVE_PORT
+    L_trail_end:;
+#endif
     *(unsigned char *)((((((struct o2EC_int *)(v0_0))->v)) + 0x0)) = v0_2;
     v0_3 = (0x2EC);
     goto L_C0C91B6;
     L_C0C9138:;
+#ifdef NATIVE_PORT
+    /* the segments are counted (+0xE) along the object list (+0x18), and one that destroyed itself left the count as it
+       was: past the end of the list the console reads boot ROM; here the loop ends there (FUN_0c0c9394 does the same) */
+    if (v0_3 == 0)
+        goto L_trail_end;
+#endif
     if (((*(int *)((v0_3 + 0x10))) != v0_4)) goto L_C0C9142;
     obj_destroy(v0_3, R5, R6);
     L_C0C9142:;

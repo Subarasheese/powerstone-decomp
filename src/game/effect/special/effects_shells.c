@@ -268,6 +268,10 @@ int FUN_0c0c9394(int a4)
         t53 = t5;
     } else {
         t4 = 0x0;
+#ifdef NATIVE_PORT
+        if (t5 == 0)        /* the parent is the last object of the list: no segment after it (see the walk below) */
+            return *(signed char *)((a4 + 0xF));
+#endif
         for (;;) {
             if (((*(signed char *)((t5 + 0x2D8))) == 0) && (t7 = *(signed char *)((t5 + 0x108)), t3 = t7, t3 == 0)) {
                 t3 = (*(int *)(((int)stk + 4)));
