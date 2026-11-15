@@ -164,7 +164,7 @@ float cam_calc_fighter_dir(int a4);
 int opt_page1_tick_cursor_pulse(int a4);
 int FUN_0c023680(int a4, int a5);
 int opt_page4_main(int a4);
-int FUN_0c0d4d00(int a4, int a5, int a6, int a7);
+int game_check_player_join(int a4, int a5, int a6, int a7);
 int FUN_0c023b22(int a4, int a5);
 int pl_jack_victim_phase2(int a4);
 int stage_gimmick_11_update_b(int a4);

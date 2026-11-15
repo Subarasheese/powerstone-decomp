@@ -343,7 +343,7 @@ F 0c020886 78 FUN_0c020886
 F 0c0208ec 172 FUN_0c0208ec
 F 0c020998 46 FUN_0c020998
 F 0c0209c6 172 FUN_0c0209c6
-F 0c020a80 352 FUN_0c020a80
+F 0c020a80 352 pl_opponent_dist_to_body_sphere
 F 0c020be0 170 hit_list_save_positions
 F 0c020c8a 56 hit_list_calc_displacement
 F 0c020cc2 70 conv_s16x6_to_f32
@@ -3737,7 +3737,7 @@ F 0c0d48d6 14 FUN_0c0d48d6
 F 0c0d48e4 6 thunk_FUN_0c0a3180
 F 0c0d48ea 18 FUN_0c0d48ea
 F 0c0d48fc 1028 game_play_step
-F 0c0d4d00 238 FUN_0c0d4d00
+F 0c0d4d00 238 game_check_player_join
 F 0c0d4dee 158 game_play_dispatch_state
 F 0c0d4e8c 46 game_play_state_00
 F 0c0d4eba 38 game_play_state_01

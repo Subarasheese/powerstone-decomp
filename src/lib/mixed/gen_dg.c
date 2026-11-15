@@ -98,7 +98,7 @@ int kmiBGPlaneSetPCW(int, int, int);
 int pl_state34_update(int a4);
 int kmiProcessVertex_02(int a4);
 int fx_tick_039424(int a4, int a5, int a6, int a7);
-float FUN_0c020a80(int a4, float f4);
+float pl_opponent_dist_to_body_sphere(int a4, float f4);
 float ai_op66(int a4, float f4);
 int ending_obj_update_t06(int a4, int a5, int a6);
 int ai_op73_set_goal_by_side(int a4);

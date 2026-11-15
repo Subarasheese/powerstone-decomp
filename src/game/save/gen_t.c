@@ -183,7 +183,7 @@ int menu_vs_announce_names(void);
 void FUN_0c055686(void);
 int FUN_0c0d7318(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9);
 int FUN_0c05ed92(int a4, int a5, int a6);
-int FUN_0c0d4d00(int a4, int a5, int a6, int a7);
+int game_check_player_join(int a4, int a5, int a6, int a7);
 int FUN_0c01db74(int a4);
 int FUN_0c0109e4(void);
 
@@ -1972,7 +1972,7 @@ int FUN_0c05ed92(int a4, int a5, int a6)
     return t1;
 }
 
-int FUN_0c0d4d00(int a4, int a5, int a6, int a7)
+int game_check_player_join(int a4, int a5, int a6, int a7)
 {
     int t0;
     int t1;
