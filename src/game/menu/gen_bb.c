@@ -59,7 +59,7 @@ int stage_draw_lights(void);
 int ui_draw_hud(void);
 int ui_fade_draw(void);
 int vmu_menu_pad_pressed(int);
-int vmu_menu_scan_port_masks(void);
+int vmu_menu_scan_port_masks(int);
 int vmu_menu_spawn_message(int);
 extern int vmu_menu_update_objs();
 int game_draw_frame(void);
@@ -247,7 +247,7 @@ int FUN_0c02018e(int a4, int a5, int a6, int a7)
         (((struct o2C_uchar *)(a4))->v) = 0x0;
         FUN_0c01f874(0x1);
     }
-    t0 = vmu_menu_scan_port_masks();
+    t0 = vmu_menu_scan_port_masks(a4);       /* the original passes the menu object (mov r14,r4 in the delay slot) */
     if ((signed char)t0 == 0) {
         FUN_0c01fe52(a4);
         t1 = vmu_menu_pad_pressed(0x2);

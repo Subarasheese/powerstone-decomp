@@ -1995,8 +1995,12 @@ FUN_0c0ff90c
 FUN_0c0ff9e0
 FUN_0c0ffa04
 FUN_0c0ffa42
+FUN_0c0ffaf8
+FUN_0c0ffb32
+FUN_0c0ffb4c
 FUN_0c0ffb56
 FUN_0c0ffbac
+FUN_0c0ffc30
 FUN_0c0ffc72
 FUN_0c0ffcda
 FUN_0c0ffd90

@@ -1,4 +1,4 @@
-/* INLINE-ASM: the original copies 208 bytes through the library routine at 0xC0E7080 (r0 = byte count, r1 = destination, r2 = source), a register convention C cannot express and a call the checker must see as a call */
+/* INLINE-ASM: the original copies 208 bytes through the library routine _quick_mvn (r0 = byte count, r1 = destination, r2 = source), a register convention C cannot express and a call the checker must see as a call */
 /* Camera follow step for an object: builds the view matrix, aims at the target with yaw/pitch limited by a per-type table, then applies the rotations. */
 struct vec3 { float x, y, z; };
 struct cam_frame {
@@ -16,9 +16,11 @@ struct cam_frame {
     struct vec3 aim_vec;
     struct vec3 tgt_vec;
 };
+extern void _quick_mvn(void);
 #pragma inline_asm(mvn208)
 static void mvn208(void *d, void *s)
 {
+    .IMPORT __quick_mvn
     MOV.L L1,R3
     MOV.W L2,R0
     MOV R4,R1
@@ -27,11 +29,10 @@ static void mvn208(void *d, void *s)
     BRA L3
     NOP
     .ALIGN 4
-L1: .DATA.L H'0C0E7080
+L1: .DATA.L __quick_mvn
 L2: .DATA.W H'00D0
 L3: NOP
 }
-extern void _quick_mvn(void);
 extern void nlLoadMatrix(unsigned char *);
 extern void nlStoreMatrix(unsigned char *);
 extern void nlTranslateV(unsigned char *);

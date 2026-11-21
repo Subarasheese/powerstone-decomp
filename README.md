@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=100.0&b=100.0&m=1.4&a=64&s=2)
+![decomp progress](badges/progress.svg?p=100.0&b=100.0&m=1.4&a=64&s=6)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,18 +24,18 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE           63.6%  the instructions the cases ran, of all instructions, over the 5573 functions that can be C; the 5329 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (100.0% complete) 0  of the 5573 functions that can be C (45 with no C form are counted apart)
-BYTES LEFT      (100.0% complete) 0  of 999232 bytes of code that can be C
+TOTAL TEST COVERAGE           63.6%  the instructions the cases ran, of all instructions, over the 5577 functions that can be C; the 5333 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (100.0% complete) 0  of the 5577 functions that can be C (30 with no C form are counted apart)
+BYTES LEFT      (100.0% complete) 0  of 999418 bytes of code that can be C
 FUNCTIONS                            
-  unnamed                      2351  functions still called FUN_... (2351 of 5618)
+  unnamed                      2340  functions still called FUN_... (2340 of 5607)
   Not written C                   0  0 bytes
   Written C with errors           0  0 bytes
   Not drawn                       0  0 bytes
   Drawn with errors               0  0 bytes
   Checked with errors             0  0 bytes
-  No C form                    0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                  54.9%  3084 named functions in docs/*.md
+  No C form                    0.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                  55.0%  3084 named functions in docs/*.md
 GAME ASSETS (EXTRA)                  
   models named                17.0%  534 of 3146 models: a name, or a named table or collection
 ```

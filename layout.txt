@@ -6,3 +6,4 @@ bss     0C857E40             # where the BSS ends: syStart's literal pool (0C116
 game    0C010160 0C351948    # the game's own code and data: after crt0 (entry stub, cache ops, empty stubs 0C010028-0C010160, the Katana start-up) up to the image end
 keep    0C0DCA60 0C159FB0    # the NAOMI library (first function: nlObjPutInit 0C0DCAE0; the two small functions before it, 0C0DCA60 and 0C0DCAC0, are taken in rather than left out), the C runtime, the Katana libraries, ADX/Sofdec and their tables, up to where the data blob starts (docs/sourcetree.csv, data_0c159fb0). Stays as the original bytes
 mixed   1                    # mbuild may copy a group that also holds pieces without C: a pointer into the middle of pl_enter_state_41 (0C0A0B78), now C, needs a running copy of its group (tools/layout.py)
+arm     0C16C40C 0C177B6C    # the sound CPU driver snd_driver_upload copies to sound RAM as it is (0xB760 bytes, the size at +84): ARM code, never an SH-4 address
