@@ -68,7 +68,7 @@ int fx_spawn_03d60c(int a4, int a5)
 
 int fx_tick_03d60c(int a4, int a5, int a6, int a7)
 {
-    int stk[8];
+    int stk[12];      /* the local words at +20 are the output of math_mat_get_translate: nlGetTranslate writes four words there, and in the original the word above the locals is a saved macl; here it would be the saved PR */
     register int t0;
     register int t2;
     register int t4;

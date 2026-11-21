@@ -1,6 +1,6 @@
 # Power Stone decomp
 
-![decomp progress](badges/progress.svg?p=98.1&b=97.1&m=1.5&a=61&s=1)
+![decomp progress](badges/progress.svg?p=100.0&b=100.0&m=1.4&a=64&s=2)
 [![ByteMatch progress](https://bytematch.dev/Subarasheese/pwrstn-decomp.svg?label=Byte-matched&measure=matched_code_percent)](https://bytematch.dev/Subarasheese/pwrstn-decomp)
 
 A decompilation of the Dreamcast game **Power Stone**, in progress. It rebuilds the game's executable byte for byte.
@@ -24,20 +24,20 @@ no SH-4 code overlays are under [overlays/](overlays/README.md).
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            61.3%  the instructions the cases ran, of all instructions, over the 5573 functions that can be C; the 5225 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (98.1% complete) 104  of the 5573 functions that can be C (45 with no C form are counted apart)
-BYTES LEFT    (97.1% complete) 28504  of 994536 bytes of code that can be C
-FUNCTIONS                             
-  unnamed                       2351  functions still called FUN_... (2351 of 5618)
-  Not written C                   44  12904 bytes
-  Written C with errors            0  0 bytes
-  Not drawn                        8  1298 bytes
-  Drawn with errors               22  5350 bytes
-  Checked with errors             30  8952 bytes
-  No C form                     0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   54.2%  3047 named functions in docs/*.md
-GAME ASSETS (EXTRA)                   
-  models named                 17.0%  534 of 3146 models: a name, or a named table or collection
+TOTAL TEST COVERAGE           63.6%  the instructions the cases ran, of all instructions, over the 5573 functions that can be C; the 5329 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (100.0% complete) 0  of the 5573 functions that can be C (45 with no C form are counted apart)
+BYTES LEFT      (100.0% complete) 0  of 999232 bytes of code that can be C
+FUNCTIONS                            
+  unnamed                      2351  functions still called FUN_... (2351 of 5618)
+  Not written C                   0  0 bytes
+  Written C with errors           0  0 bytes
+  Not drawn                       0  0 bytes
+  Drawn with errors               0  0 bytes
+  Checked with errors             0  0 bytes
+  No C form                    0.8%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                  54.9%  3084 named functions in docs/*.md
+GAME ASSETS (EXTRA)                  
+  models named                17.0%  534 of 3146 models: a name, or a named table or collection
 ```
 <!-- /progress -->
 
