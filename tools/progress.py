@@ -262,9 +262,18 @@ def write_badge(rows, label, path='badges/progress.svg', extra=()):
     gtext = '%.1f%%' % wavg
     title = ('%s: %s of functions, %s of code bytes done (%s byte-matched); the total test coverage over all of them is %s'
              % (label, ftext, btext, mtext, gtext))
-    H = 80 + 20 * len(extra)
-    lines = ''.join('<text x="71" y="%d">%s</text><text x="278" y="%d">%s</text>' % (94 + 20 * k, t, 94 + 20 * k, v)
-                    for k, (t, v) in enumerate(extra))
+    # extra: (the shown columns' headings, [(status, [its mark in each shown column])]), from grid_columns(): under the metrics, a grid
+    # with one check per status in each column that builds from C
+    heads, grid = extra if extra else ((), [])
+    H = 80
+    lines = ''
+    if heads and grid:
+        xs = (150, 208, 268)[3 - len(heads):]           # the shown columns, kept to the right
+        lines = ('<g font-size="10" fill="#b8c4d9">%s</g>' % ''.join('<text x="%d" y="%d">%s</text>' % (x, H + 14, h) for x, h in zip(xs, heads))
+                 ) + ''.join('<text x="14" y="%d" text-anchor="start">%s</text>' % (H + 34 + 18 * k, n) +
+                             ''.join('<text x="%d" y="%d">%s</text>' % (x, H + 34 + 18 * k, mk) for x, mk in zip(xs, marks))
+                             for k, (n, marks) in enumerate(grid))
+        H += 22 + 18 * len(grid)
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="304" height="%d" role="img" aria-label="%%s">' % H +
            '<title>%%s</title><clipPath id="r"><rect width="304" height="%d" rx="3"/></clipPath>' % H +
            '<g clip-path="url(#r)"><rect width="304" height="%d" fill="#1a2233"/>' % H +
@@ -298,9 +307,12 @@ def write_badge(rows, label, path='badges/progress.svg', extra=()):
 
 
 def statuses(path='status.txt'):
-    """[(status, state)] from status.txt, in its order: one status a line, "[x] NAME" reached (state True), "[ ] NAME" not reached
-    (False), "[?] NAME" unknown, not tested yet (None); # starts a comment. Each status needs the ones above it, so a ticked line
-    under an unticked or unknown one stops the report. No file: no statuses."""
+    """[(status, state)] or [(status, Flycast, Dreamcast, Native)] from status.txt, in its order: one status a line, "[x] NAME"
+    reached (state True), "[ ] NAME" not reached (False), "[?] NAME" unknown, not tested yet (None); a line with three marks,
+    "[x] [x] [ ] NAME", gives the Flycast, the Dreamcast and the Native state (the badge's grid); one with two marks, the Dreamcast
+    and the Native state, Flycast not tested; # starts a comment. Each status needs the ones above it in its own column (the grid's
+    columns, and the lines with one mark among themselves), so a ticked line under an unticked or unknown one stops the report.
+    No file: no statuses."""
     if not os.path.exists(path):
         return []
     out = []
@@ -308,20 +320,40 @@ def statuses(path='status.txt'):
         l = l.split('#')[0].strip()
         if not l:
             continue
-        m = re.match(r'^\[([ xX?])\]\s+(\S.*)$', l)
+        m = re.match(r'^((?:\[[ xX?]\]\s+){1,3})(\S.*)$', l)
         if not m:
-            sys.exit('[ERROR] %s line %d: expected "[x] NAME", "[ ] NAME" or "[?] NAME", found: %s' % (path, i, l))
-        out.append((m.group(2).strip(), None if m.group(1) == '?' else m.group(1) != ' '))
-    for k, (n, on) in enumerate(out):
-        if on and not all(o for _, o in out[:k]):
-            sys.exit('[ERROR] %s: "%s" is ticked but %s above it is not' % (path, n, ', '.join('"%s"' % x for x, o in out[:k] if not o)))
+            sys.exit('[ERROR] %s line %d: expected "[x] NAME" or "[x] [x] [ ] NAME" ([ ] or [?] for each mark), found: %s' % (path, i, l))
+        state = lambda c: None if c == '?' else c != ' '
+        s = [state(c) for c in re.findall(r'\[([ xX?])\]', m.group(1))]
+        name = m.group(2).strip()
+        out.append((name, s[0]) if len(s) == 1 else (name, None, s[0], s[1]) if len(s) == 2 else (name, s[0], s[1], s[2]))
+    for group, col in ((2, 1), (4, 1), (4, 2), (4, 3)):       # the one-mark lines; the grid's Flycast, Dreamcast, Native columns
+        seen = [e for e in out if len(e) == group]
+        for k, e in enumerate(seen):
+            if e[col] and not all(o[col] for o in seen[:k]):
+                sys.exit('[ERROR] %s: "%s" is ticked but %s above it is not' % (path, e[0], ', '.join('"%s"' % o[0] for o in seen[:k] if not o[col])))
     return out
 
 
+def grid_columns(status, mark):
+    """the badge's grid from statuses(): (the shown columns' headings, [(status, [its mark in each shown column])]). The lines with
+    three marks, columns Flycast, Dreamcast, Native; a column shows only when its first line (BUILDS FROM C) is ticked: a target the
+    game does not build for yet has no column. None shown: no grid"""
+    grid = [e for e in status if len(e) == 4]
+    shown = [c for c in (1, 2, 3) if grid and grid[0][c] is True]
+    heads = [('FLYCAST', 'DREAMCAST', 'NATIVE')[c - 1] for c in shown]
+    return heads, [(e[0], [mark(e[c]) for c in shown]) for e in grid] if shown else []
+
+
+def mark(on):
+    """a status as the badge shows it: a tick, a cross, or a question mark for not tested yet"""
+    return '\u2753' if on is None else '\u2705' if on else '\u274c'
+
+
 status = statuses()
-reached = [n for n, on in status if on]
+reached = [e[0] for e in status for on in e[1:] if on]
 # the statuses show whenever status.txt has any: BUILDS FROM C crossed while the build fails
-write_badge(rows, 'decomp', extra=[(n, '\u2753' if on is None else '\u2705' if on else '\u274c') for n, on in status] if status else ())
+write_badge(rows, 'decomp', extra=grid_columns(status, mark))      # the grid: Flycast, Dreamcast, Native, the columns that build from C
 # what the status shows (the badge above was written from every row): the layout the README uses, one group per kind of measure
 _drop = ('THE GAME', 'done: equivalent C', 'of which matching C', 'of which SDK source', 'of which SDK object code', 'size of what is done',
          'named only', 'with partial C', 'named globals', 'of which library', 'done', 'named')
