@@ -3354,8 +3354,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 24 of 84 instructions
 
-### FUN_0c019a06 (`0C019A06`, 94 bytes, `src/game/menu/option/menu_game_options_alt.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/menu_game_options_alt/FUN_0c019a06.json`
+### opt_game_settings_queue_static_sprite (`0C019A06`, 94 bytes, `src/game/menu/option/menu_game_options_alt.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/menu_game_options_alt/opt_game_settings_queue_static_sprite.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 47 of 47 instructions

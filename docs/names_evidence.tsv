@@ -2352,3 +2352,4 @@
 0c0ecc40	nl_objasm_transform_tri_vtxcol	medium	transforms 3 vertices and builds clip bits with rotcl; vtxcol twin of transform_tri_bump
 0c0ecce0	nl_objasm_draw_obj_bump	medium	loops the primitive list calling displayStrip/Triangle(_nc)_bump by flag bits
 0c030368	ui_update_hit_counter	medium	per-frame from ui_draw_hud: steps the 2 hit-counter slots (g_hit_counter_slots) on combo count +0x720E, draws via ui_draw_hit_counter
+0c019a06	opt_game_settings_queue_static_sprite	medium	12-byte sprite table at 0x0c11b7c8; queues 44 fixed entries using g_res_option before cursor and option rows

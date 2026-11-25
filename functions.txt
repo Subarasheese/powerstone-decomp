@@ -165,7 +165,7 @@ F 0c0195fa 84 opt_game_settings_changed
 F 0c01964e 610 opt_game_settings_main
 F 0c0198b8 208 opt_game_settings_move_cursor
 F 0c019988 126 opt_game_settings_queue_row
-F 0c019a06 94 FUN_0c019a06
+F 0c019a06 94 opt_game_settings_queue_static_sprite
 F 0c019a64 124 opt_game_settings_queue_cursor
 F 0c019b30 168 opt_game_settings_draw
 F 0c019bf4 10 opt_page1_init

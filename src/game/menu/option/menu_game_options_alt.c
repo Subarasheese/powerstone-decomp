@@ -7,7 +7,7 @@ int _quick_evn_mvn(int);
 int opt_game_settings_queue_row(int, int, int);
 int opt_game_settings_queue_cursor(int, int);
 
-int FUN_0c019a06(int);
+int opt_game_settings_queue_static_sprite(int);
 
 int opt_game_settings_move_cursor(int a4, int a5)
 {
@@ -70,7 +70,7 @@ int opt_game_settings_move_cursor(int a4, int a5)
     return t0;
 }
 
-int FUN_0c019a06(int a4)
+int opt_game_settings_queue_static_sprite(int a4)
 {
     int stk[17];
 
@@ -93,7 +93,7 @@ int opt_game_settings_draw(int a4, int a5)
 
     t0 = 0x0;
     for (;;) {
-        FUN_0c019a06(t0);
+        opt_game_settings_queue_static_sprite(t0);
         t0 = (t0 + 0x1);
         if ((unsigned int)t0 >= (unsigned int)0x2C) {
             break;

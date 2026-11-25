@@ -108,7 +108,7 @@ FUN_0c019334
 FUN_0c0193b2
 FUN_0c019488
 FUN_0c0194dc
-FUN_0c019a06
+opt_game_settings_queue_static_sprite
 FUN_0c019d1c
 FUN_0c01a5cc
 FUN_0c01a74c

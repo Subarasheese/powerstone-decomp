@@ -215,7 +215,7 @@ int FUN_0c0c63c4(int a4, int a5);
 int FUN_0c0fd1e0(int a4, int a5, int a6, int a7);
 int FUN_0c109440(int a4, int a5, int a6);
 int kmiInitializeBackGroundPlane(void);
-int FUN_0c019a06(int a4);
+int opt_game_settings_queue_static_sprite(int a4);
 int FUN_0c02754e(int a4, int a5);
 int FUN_0c024300(int a4, float f4, float f5, float f6, float f7);
 int FUN_0c0275ac(int a4, int a5);

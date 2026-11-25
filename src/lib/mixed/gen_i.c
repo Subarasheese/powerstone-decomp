@@ -84,7 +84,7 @@ struct oEC_ushort { char p[0xEC]; unsigned short v; };
 struct oEE_ushort { char p[0xEE]; unsigned short v; };
 struct oF2_ushort { char p[0xF2]; unsigned short v; };
 int opt_game_settings_queue_row(int, int, int);
-int FUN_0c019a06(int);
+int opt_game_settings_queue_static_sprite(int);
 int opt_game_settings_queue_cursor(int, int);
 int FUN_0c01f164(int);
 int vmu_menu_state_load(int, int, int, int);
